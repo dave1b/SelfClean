@@ -72,7 +72,7 @@ class Trainer(ABC, object):
                 if additional_run_info != "":
                     wandb.config.update({"additional_run_info": additional_run_info})
                 wandb.run.name = run_name
-                wandb.run.save()
+                # wandb.save()
             self.run_dir = Path(wandb.run.dir)
         else:
             current_directory = self.config.get("work_dir", os.getcwd())
@@ -120,7 +120,12 @@ class Trainer(ABC, object):
             return self.run_dir / "checkpoints"
 
     def _get_device(self):
-        device = "cuda" if torch.cuda.is_available() else "cpu"
+        if torch.cuda.is_available():
+            device = torch.device('cuda')
+        elif torch.backends.mps.is_available():
+            device = torch.device('mps')
+        else:
+            device = torch.device('cpu')
         logger.info(f"Running on: {device}")
         return device
 
@@ -288,7 +293,7 @@ class Trainer(ABC, object):
                 # log the embeddings to wandb
                 imgs = [wandb.Image(x) for x in imgs]
                 df_emb = pd.DataFrame(embeddings.tolist())
-                emb_cols = [f"dim_{x+1}" for x in range(embeddings[0].size()[0])]
+                emb_cols = [f"dim_{x + 1}" for x in range(embeddings[0].size()[0])]
                 df_emb.columns = emb_cols
                 df_emb["lbls"] = lbls.tolist()
                 df_emb["image"] = imgs
