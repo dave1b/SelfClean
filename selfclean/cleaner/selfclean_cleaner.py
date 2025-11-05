@@ -1,5 +1,6 @@
 import math
 import tempfile
+from enum import Enum
 from pathlib import Path
 from typing import Callable, List, Optional, Union
 
@@ -22,8 +23,14 @@ from ..distances import *  # noqa: F401, F403
 from ..distances.projective_distance import *  # noqa: F401, F403
 from ..core.src.utils.logging import set_log_level
 from ..core.src.utils.utils import fix_random_seeds
-from ..utils.plotting import plot_inspection_result
+from ..utils.plotting import plot_inspection_result, plot_inspection_result_text
 from ..utils.utils import triu_indices_memmap
+
+
+class DataType(Enum):
+    IMAGE = "image"
+    TEXT = "text"
+    AUDIO = "audio"
 
 
 class SelfCleanCleaner(
@@ -186,6 +193,7 @@ class SelfCleanCleaner(
             IssueTypes.OFF_TOPIC_SAMPLES,
             IssueTypes.LABEL_ERRORS,
         ],
+        data_type:  DataType = DataType.IMAGE,
     ) -> IssueManager:
         return_dict = {}
         if IssueTypes.NEAR_DUPLICATES in issues_to_detect:
@@ -230,14 +238,23 @@ class SelfCleanCleaner(
         )
 
         if self.plot_top_N is not None and self.dataset is not None:
-            plot_inspection_result(
-                issue_manger=issue_manager,
-                dataset=self.dataset,
-                labels=labels,
-                plot_top_N=self.plot_top_N,
-                output_path=self.output_path,
-                figsize=self.figsize,
-            )
+            if data_type is DataType.IMAGE:
+                plot_inspection_result(
+                    issue_manager=issue_manager,
+                    dataset=self.dataset,
+                    labels=labels,
+                    plot_top_N=self.plot_top_N,
+                    output_path=self.output_path,
+                    figsize=self.figsize,
+                )
+            elif data_type is DataType.TEXT:
+                plot_inspection_result_text(
+                    issue_manager=issue_manager,
+                    dataset=self.dataset,
+                    plot_top_N=self.plot_top_N,
+                    output_path=self.output_path,
+                )
+
         return_dict = self.perform_auto_cleaning(
             issue_manger=issue_manager,
             return_dict=return_dict,

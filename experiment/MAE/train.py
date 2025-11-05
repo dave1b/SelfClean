@@ -2,35 +2,22 @@ import gc
 import os
 import platform
 from datetime import datetime
-from distutils import dist
 from typing import List, Optional, Union
-
-from experiment.datasets.hellaswag.hella_swag_dataset import HellaSwagDataset
-from selfclean.core.src.models.text.encoders.utils import get_encoder_tokenizer_class
-from selfclean.core.src.trainers.text.simcse_trainer import SimCSETrainer
 
 import torch
 from torch.utils.data import Dataset, DataLoader, DistributedSampler
 from pathlib import Path
 
-from selfclean.core.src.utils.utils import init_distributed_mode
+from experiment.datasets.hellaswag.hella_swag_dataset import HellaSwagDataset
+from selfclean.core.src.models.text.encoders.utils import get_encoder_tokenizer_class
+from selfclean.core.src.trainers.text.mae_text_trainer import MAETextTrainer
+from selfclean.core.src.utils.utils import init_distributed_mode, cleanup
 
-
-def cleanup():
-    if is_dist_avail_and_initialized():
-        dist.destroy_process_group()
-
-
-def is_dist_avail_and_initialized():
-    if not dist.is_available():
-        return False
-    if not dist.is_initialized():
-        return False
-    return True
-
-
-SIMCSE_STANDARD_HYPERPARAMETERS = {
-    "optim": "adamw",
+MAE_TEXT_STANDARD_HYPERPARAMETERS = {
+    "optimizer": {
+        "name": "adamw",
+        "args": {}
+    },
     "lr": 0.00005,
     "min_lr": 1e-6,
     "weight_decay": 0.04,
@@ -56,26 +43,27 @@ SIMCSE_STANDARD_HYPERPARAMETERS = {
         "encoder": {
             "out_dim": 756,
             "patch_size": None,
-        }
+        },
+        "encoder_mask_ratio": 0.3,
+        "decoder_mask_ratio": 0.45,
     },
     "loss": {
         "temperature": 0.04,
         "use_cosine_similarity": True,
     },
-    "optimizer": {"freeze_last_layer": 1},
     "visualize_attention": False,
     "embed_vis_every_n_epochs": 1
 }
 
 
-def train_simcse(
+def train_mae_text(
     dataset: Dataset,
     epochs: int = 2,
     batch_size: int = 32,
     ssl_pre_training: bool = True,
     save_every_n_epochs: int = 10,
     work_dir: Optional[str] = None,
-    hyperparameters: dict = SIMCSE_STANDARD_HYPERPARAMETERS,
+    hyperparameters: dict = MAE_TEXT_STANDARD_HYPERPARAMETERS,
     num_workers: Optional[int] = os.cpu_count(),
     # logging
     additional_run_info: str = "",
@@ -84,7 +72,7 @@ def train_simcse(
     model_name: str = "SimCSE",
 ):
     assert all(
-        key in hyperparameters for key in SIMCSE_STANDARD_HYPERPARAMETERS
+        key in hyperparameters for key in MAE_TEXT_STANDARD_HYPERPARAMETERS
     ), "`hyperparameters` need to contain all standard hyperparameters."
 
     hyperparameters["epochs"] = epochs
@@ -95,7 +83,6 @@ def train_simcse(
         hyperparameters["work_dir"] = work_dir
 
     init_distributed_mode()
-
     if torch.cuda.is_available():
         sampler = DistributedSampler(dataset, shuffle=True)
         kwargs = {"sampler": sampler}
@@ -116,7 +103,7 @@ def train_simcse(
         **kwargs,
     )
 
-    trainer = SimCSETrainer(
+    trainer = MAETextTrainer(
         train_dataset=train_loader,
         config=hyperparameters,
         additional_run_info=additional_run_info,
@@ -127,21 +114,24 @@ def train_simcse(
     model = trainer.fit()
     del trainer, train_loader
     gc.collect()
+    model = model.get_encoder_model()
+    if epochs > 0:
+        model.save_pretrained(f'models/Mae{model_name}')
     if torch.cuda.is_available():
         cleanup()
-    model.save_pretrained(f'models/SimCSE{model_name}')
     return model
 
 
 if __name__ == "__main__":
-    tokenizer = get_encoder_tokenizer_class("bert")[1]
+    start = datetime.now()
+    tokenizer = get_encoder_tokenizer_class("bert_mlm")[1]
 
-    dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_train_1ksubset.json"
+    dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_train_0.01ksubset.json"
     dataset = HellaSwagDataset(str(dataset_path), tokenizer)
 
-    print("Training SimCSE")
-    model = train_simcse(dataset, 1, 32, True, 1, None, SIMCSE_STANDARD_HYPERPARAMETERS,
-                         os.cpu_count(), model_name=f'{datetime.now().strftime("_%Y%m%d-%H%M%S")}_1ksubset')
-    print("Finished SimCSE training")
+    print("Training MAE Text")
+    model = train_mae_text(dataset, 1, 32, True, 1, None, MAE_TEXT_STANDARD_HYPERPARAMETERS,
+                           os.cpu_count(), model_name=f'{datetime.now().strftime("_%Y%m%d-%H%M%S")}_0.01ksubset')
+    print(f'Finished MAE training after: {datetime.now() - start}')
 
-# PYTHONPATH=/Users/davebrunner/Documents/repositories/SelfClean/experiment/SimCSE /Users/davebrunner/Documents/repositories/SelfClean/.venv/bin/python3.10 experiment/SimCSE/train.py
+# PYTHONPATH=/Users/davebrunner/Documents/repositories/SelfClean/experiment/MAE /Users/davebrunner/Documents/repositories/SelfClean/.venv/bin/python3.10 experiment/MAE/train.py

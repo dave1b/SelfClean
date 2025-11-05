@@ -7,7 +7,7 @@ class HellaSwagDataset(Dataset):
     def __init__(self, json_path: str, tokenizer, max_length: int = 128):
         """HellaSwag dataset that returns tokenized sentences and labels."""
         # Load and validate data
-        df = pd.read_json(json_path)
+        df = pd.read_json(json_path, encoding="utf-8")
         self._validate_data(df)
 
         # Create data points
@@ -53,11 +53,12 @@ class HellaSwagDataset(Dataset):
     def __len__(self):
         return len(self.data)
 
-    def __getitem__(self, idx) -> Tuple[Dict[str, torch.Tensor], int]:
+    def __getitem__(self, idx) -> Tuple[Dict[str, torch.Tensor], int, str, str]:
         """Return tokenized sentence and label."""
         # Get the text and label
         text = self.data.iloc[idx]["text"]
         label = self.data.iloc[idx]["correct"]
+        category = self.data.iloc[idx]["category"]
 
         inputs = self.tokenizer(
             text,
@@ -69,5 +70,4 @@ class HellaSwagDataset(Dataset):
 
         # Remove batch dimension from tokenized inputs
         inputs = {k: v.squeeze(0) for k, v in inputs.items()}
-
-        return inputs, label
+        return inputs, label, category, text

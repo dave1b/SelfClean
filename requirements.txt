@@ -22,3 +22,10 @@ codecov
 jupyter
 loguru
 memory-profiler
+
+torchaudio
+nnAudio
+loguru
+transformers
+timm
+wandb
