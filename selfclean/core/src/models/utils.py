@@ -13,6 +13,7 @@ class ModelType(Enum):
     VIT = 0
     CNN = 1
     UNET = 2
+    BERT = 3
 
 
 def initialize_weights(*models):
