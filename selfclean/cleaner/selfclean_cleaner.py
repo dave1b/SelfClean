@@ -96,12 +96,14 @@ class SelfCleanCleaner(
         self,
         emb_space: np.ndarray,
         labels: Optional[np.ndarray] = None,
+        categories: Optional[np.ndarray] = None,
         paths: Optional[np.ndarray] = None,
         dataset: Optional[Dataset] = None,
         class_labels: Optional[list] = None,
     ):
         self.emb_space = emb_space
         self.labels = labels
+        self.categories = categories
         self.dataset = dataset
         self.paths = paths
         self.class_labels = class_labels
@@ -196,7 +198,7 @@ class SelfCleanCleaner(
         data_type:  DataType = DataType.IMAGE,
     ) -> IssueManager:
         return_dict = {}
-        if IssueTypes.NEAR_DUPLICATES in issues_to_detect:
+        if IssueTypes.NEAR_DUPLICATES in issues_to_detect or IssueTypes.NEAR_DUPLICATES_Q in issues_to_detect:
             if not self.approximate_nn:
                 pred_nd_scores, pred_nd_indices = self.get_near_duplicate_ranking()
                 return_dict["near_duplicates"] = {
@@ -219,6 +221,20 @@ class SelfCleanCleaner(
                     "indices": pred_lbl_errs_indices,
                     "scores": pred_lbl_errs_scores,
                 }
+        if IssueTypes.CATEGORY_ERRORS in issues_to_detect:
+            local_copy = self.labels.copy()
+            # temporarily set categories as labels to find category errors
+            self.labels = self.categories
+            pred_lbl_errs_scores, pred_lbl_errs_indices = self.get_label_error_ranking()
+            if pred_lbl_errs_scores is not None and pred_lbl_errs_indices is not None:
+                return_dict["category_errors"] = {
+                    "indices": pred_lbl_errs_indices,
+                    "scores": pred_lbl_errs_scores,
+                }
+            # restore original labels
+            self.labels = local_copy
+            del local_copy
+
 
         if self.labels is not None:
             # transform labels using class names if given

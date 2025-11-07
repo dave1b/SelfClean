@@ -122,6 +122,9 @@ def plot_inspection_result_text(
     if issue_manager["label_errors"] is not None:
         rows += 2
         height_ratios.extend([0.8, 1.2])
+    if issue_manager["category_errors"] is not None:
+        rows += 4
+        height_ratios.extend([0.8, 1.2])
 
     fig = plt.figure(figsize=figsize)
     grid = GridSpec(
@@ -138,7 +141,7 @@ def plot_inspection_result_text(
         wrapper = textwrap.TextWrapper(width=max_line_length, break_long_words=False)
         return "\n".join(wrapper.wrap(text))
 
-    def truncate_text(text, max_chars=350):
+    def truncate_text(text, max_chars=300):
         """Limit text length and add ellipsis."""
         return text if len(text) <= max_chars else text[:max_chars - 3] + "..."
 
@@ -172,8 +175,8 @@ def plot_inspection_result_text(
 
         near_duplicate_issues = issue_manager["near_duplicates"]
         for i, (idx1, idx2) in enumerate(near_duplicate_issues["indices"][:plot_top_N]):
-            text1 = wrap_text(truncate_text(dataset[int(idx1)][-1]))
-            text2 = wrap_text(truncate_text(dataset[int(idx2)][-1]))
+            text1 = wrap_text(truncate_text(dataset[int(idx1)][3]))
+            text2 = wrap_text(truncate_text(dataset[int(idx2)][3]))
 
             ax = fig.add_subplot(grid[row_idx, i])
             make_ax_text(ax, text1, "lightblue", "gray")
@@ -200,16 +203,13 @@ def plot_inspection_result_text(
 
         off_topic_issues = issue_manager["off_topic_samples"]
         for i, idx in enumerate(off_topic_issues["indices"][:plot_top_N]):
-            text = wrap_text(truncate_text(dataset[int(idx)][-1]))
+            text = wrap_text(truncate_text(dataset[int(idx)][3]))
             category = dataset[int(idx)][2]
-            score = off_topic_issues.get("scores", [None] * len(off_topic_issues["indices"]))[i]
             ax = fig.add_subplot(grid[row_idx, i])
             make_ax_text(ax, text, "lightyellow", "orange")
             title = f"Ranking: {i + 1}, Idx: {int(idx)}"
             if category != "N/A":
                 title += f"\nCategory: {category}"
-            if score is not None:
-                title += f"\nScore: {score:.3f}"
             ax.set_title(title, fontsize=h2_font_size, pad=20, y=1.05)
         row_idx += 1
 
@@ -219,23 +219,49 @@ def plot_inspection_result_text(
             ax = fig.add_subplot(grid[row_idx, i])
             ax.set_axis_off()
             if i == 0:
-                ax.text(0.5, 0.4, "Label Error Ranking",
+                ax.text(0.5, 0.4, "Wrong Label Error Ranking",
                        ha='center', va='bottom',
                        fontsize=h1_font_size, fontweight='bold')
         row_idx += 1
 
         label_error_issues = issue_manager["label_errors"]
         for i, idx in enumerate(label_error_issues["indices"][:plot_top_N]):
-            text = wrap_text(truncate_text(dataset[int(idx)][-1]))
+            text = wrap_text(truncate_text(dataset[int(idx)][3]))
             true_label = dataset[int(idx)][1]
             category = dataset[int(idx)][2]
             ax = fig.add_subplot(grid[row_idx, i])
             make_ax_text(ax, text, "lightcoral", "red")
-            title = f"Rank: {i + 1}\nIdx: {int(idx)}"
+            title = f"Ranking: {i + 1}, Idx: {int(idx)}"
             if true_label != "N/A":
                 title += f"\nTrue: {true_label}"
+            # if category != "N/A":
+            #     title += f"\nCategory: {category}"
+            ax.set_title(title, fontsize=h2_font_size, pad=20, y=1.05)
+        row_idx += 1
+
+    # ==== Category Errors ====
+    if issue_manager["category_errors"] is not None:
+        for i in range(plot_top_N):
+            ax = fig.add_subplot(grid[row_idx, i])
+            ax.set_axis_off()
+            if i == 0:
+                ax.text(0.5, 0.4, "Wrong Category Error Ranking",
+                       ha='center', va='bottom',
+                       fontsize=h1_font_size, fontweight='bold')
+        row_idx += 1
+
+        category_error_issues = issue_manager["category_errors"]
+        for i, idx in enumerate(category_error_issues["indices"][:plot_top_N]):
+            text = wrap_text(truncate_text(dataset[int(idx)][3]))
+            true_label = dataset[int(idx)][1]
+            category = dataset[int(idx)][2]
+            ax = fig.add_subplot(grid[row_idx, i])
+            make_ax_text(ax, text, "lightcoral", "red")
+            title = f"Ranking: {i + 1}, Idx: {int(idx)}"
             if category != "N/A":
                 title += f"\nCategory: {category}"
+            if true_label != "N/A":
+                title += f"\nTrue: {true_label}"
             ax.set_title(title, fontsize=h2_font_size, pad=20, y=1.05)
         row_idx += 1
 

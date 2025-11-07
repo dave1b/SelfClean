@@ -1,3 +1,5 @@
+from copy import deepcopy
+
 from torch.utils.data import Dataset
 import pandas as pd
 from typing import Dict, Any, Tuple
@@ -14,6 +16,7 @@ class HellaSwagDataset(Dataset):
         self.data = self._create_data_points(df)
         self.tokenizer = tokenizer
         self.max_length = max_length
+        self.provide_tokenized_context = False
 
     def _validate_data(self, df: pd.DataFrame) -> None:
         """Validate that the dataset has the required structure."""
@@ -36,7 +39,8 @@ class HellaSwagDataset(Dataset):
                 "text": context + " " + correct_ending,
                 "correct": 1,
                 "category": entry["activity_label"],
-                "task_id": idx
+                "task_id": idx,
+                "context_only": context
             })
 
             # Add wrong endings
@@ -53,7 +57,7 @@ class HellaSwagDataset(Dataset):
     def __len__(self):
         return len(self.data)
 
-    def __getitem__(self, idx) -> Tuple[Dict[str, torch.Tensor], int, str, str]:
+    def __getitem__(self, idx) -> Tuple[Dict[str, torch.Tensor], int, str, str, Dict[str, torch.Tensor], bool]:
         """Return tokenized sentence and label."""
         # Get the text and label
         text = self.data.iloc[idx]["text"]
@@ -67,7 +71,26 @@ class HellaSwagDataset(Dataset):
             max_length=self.max_length,
             return_tensors='pt'
         )
-
         # Remove batch dimension from tokenized inputs
         inputs = {k: v.squeeze(0) for k, v in inputs.items()}
-        return inputs, label, category, text
+
+        context_flag = False
+        context_inputs = deepcopy(inputs)
+        if self.provide_tokenized_context:
+            context = self.data.iloc[idx]["context_only"]
+            if isinstance(context, str):
+                context_inputs = self.tokenizer(
+                    context,
+                    padding='max_length',
+                    truncation=True,
+                    max_length=self.max_length,
+                    return_tensors='pt'
+                )
+                context_inputs = {k: v.squeeze(0) for k, v in context_inputs.items()}
+                context_flag = True
+
+        return inputs, label, category, text, context_inputs, context_flag
+
+    def set_provide_tokenized_context(self, provide: bool) -> None:
+        """Set whether to provide tokenized context separately."""
+        self.provide_tokenized_context = provide

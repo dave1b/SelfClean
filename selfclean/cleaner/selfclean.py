@@ -20,7 +20,6 @@ from experiment.datasets.mmlu.mmlu_dataset import MMLUDataset
 from ..cleaner.issue_manager import IssueTypes
 from ..cleaner.selfclean_cleaner import SelfCleanCleaner, DataType
 from ..core.src.augmentations.multi_crop import MultiCropAugmentation
-from ..core.src.models.text.mae.model import BertMae
 from ..core.src.pkg import Embedder, embed_dataset
 from ..core.src.trainers.dino_trainer import DINOTrainer
 from ..core.src.utils.logging import set_log_level
@@ -392,8 +391,10 @@ class SelfClean:
         hyperparameters: dict = None,
         issues_to_detect: List[IssueTypes] = [
             IssueTypes.NEAR_DUPLICATES,
+            IssueTypes.NEAR_DUPLICATES_Q,
             IssueTypes.OFF_TOPIC_SAMPLES,
             IssueTypes.LABEL_ERRORS,
+            IssueTypes.CATEGORY_ERRORS
         ],
         base_model: str = "",
         # embedding
@@ -444,7 +445,7 @@ class SelfClean:
 
         if dataset_name == "hellaswag":
             dataset = HellaSwagDataset(str(dataset_path), tokenizer, max_length=max_length)
-        elif dataset_name is "mmlu":
+        elif dataset_name == "mmlu":
             dataset = MMLUDataset(str(dataset_path), tokenizer, max_length=max_length)
 
         # Set additional run info
@@ -546,33 +547,53 @@ class SelfClean:
                 pin_memory=True,
                 **kwargs,
             )
+            if IssueTypes.NEAR_DUPLICATES_Q in issues_to_detect:
+                dataset.set_provide_tokenized_context(True)
 
             # Get embeddings
-            emb_space, labels, paths = self._embed_text_dataset(
+            emb_space, labels, paths, categories, context_only_emb_space = self._embed_text_dataset(
                 torch_dataset=torch_dataset,
                 model=self.model,
                 n_layers=n_layers,
                 normalize=apply_l2_norm,
                 tqdm_desc="Creating dataset representation",
+                issues_to_detect=issues_to_detect,
+                batch_size=batch_size
             )
 
-            # Fit the cleaner
+            if IssueTypes.NEAR_DUPLICATES_Q in issues_to_detect:
+                # keep only every 4th item in context_only_emb_space, labels, categories, paths
+                labels_ = [labels[i] for i in range(len(labels)) if i % 4 == 0]
+                categories_ = [categories[i] for i in range(len(categories)) if i % 4 == 0]
+                paths_ = [paths[i] for i in range(len(paths)) if i % 4 == 0]
+                self.cleaner.fit(
+                    emb_space=np.asarray(context_only_emb_space),
+                    labels=np.asarray(labels_),
+                    categories=np.asarray(categories_),
+                    paths=np.asarray(paths_),
+                    dataset=dataset,
+                    class_labels=None,
+                )
+                self.cleaner.predict(issues_to_detect=[IssueTypes.NEAR_DUPLICATES_Q], data_type=DataType.TEXT)
+
             self.cleaner.fit(
                 emb_space=np.asarray(emb_space),
                 labels=np.asarray(labels),
+                categories=np.asarray(categories),
                 paths=np.asarray(paths),
                 dataset=dataset,
-                class_labels=None,  # You might want to add category labels here
+                class_labels=None,
             )
 
-        return self.cleaner.predict(issues_to_detect=issues_to_detect, data_type = DataType.TEXT)
+        return self.cleaner.predict(issues_to_detect=issues_to_detect, data_type=DataType.TEXT)
 
-    def _embed_text_dataset(self, torch_dataset, model, n_layers=1, normalize=True, tqdm_desc=""):
+    def _embed_text_dataset(self, torch_dataset, model, batch_size, n_layers=1, normalize=True, tqdm_desc="", issues_to_detect=[]):
         """Embed a text dataset using the given model."""
         from tqdm.auto import tqdm
 
         model.eval()
         embeddings = []
+        context_only_embeddings = []
         labels = []
         paths = []  # We'll use task_id as a unique identifier
         categories = []
@@ -580,7 +601,7 @@ class SelfClean:
         with torch.no_grad():
             for batch in tqdm(torch_dataset, desc=tqdm_desc):
                 # Unpack batch (inputs, label)
-                inputs, label, category, *_ = batch
+                inputs, label, category, _, context_only_inputs, context_only_flag = batch
                 inputs = {k: v.to(_get_device()) for k, v in inputs.items()}
 
                 # Get embeddings
@@ -594,6 +615,28 @@ class SelfClean:
 
                 [embeddings.append(emb[i].cpu().numpy()) for i in range(emb.shape[0])]
 
+                if IssueTypes.NEAR_DUPLICATES_Q in issues_to_detect:
+                    # Also embed context
+                    filtered_context_only_inputs = {'input_ids': torch.tensor([], dtype=torch.int64),
+                                                    'token_type_ids': torch.tensor([], dtype=torch.int64),
+                                                    'attention_mask': torch.tensor([], dtype=torch.int64)}
+                    for i in range(min(batch_size, len(label))):
+                        flag_ = context_only_flag[i]
+                        if flag_:
+                            for k in context_only_inputs.keys():
+                                filtered_context_only_inputs[k] = torch.cat(
+                                    (filtered_context_only_inputs[k], context_only_inputs[k][i].unsqueeze(0)), dim=0
+                                )
+
+                    filtered_context_only_inputs = {k: v.to(_get_device()) for k, v in filtered_context_only_inputs.items()}
+                    context_emb = model(**filtered_context_only_inputs)
+                    if isinstance(context_emb, BaseModelOutputWithPoolingAndCrossAttentions):
+                        context_emb = context_emb.pooler_output
+                    if normalize:
+                        context_emb = torch.nn.functional.normalize(context_emb, p=2, dim=1)
+                    # You might want to store or use context_emb as needed
+                    [context_only_embeddings.append(context_emb[i].cpu().numpy()) for i in range(context_emb.shape[0])]
+
                 labels.extend(label.cpu().numpy())
                 categories.extend(category)
 
@@ -601,8 +644,7 @@ class SelfClean:
                 task_ids = [f"task_{i}" for i in range(len(paths), len(paths) + len(label))]
                 paths.extend(task_ids)
 
-
-        return embeddings, labels, paths
+        return embeddings, labels, paths, categories, context_only_embeddings
 
     def train_simcse(
         self,
@@ -696,4 +738,3 @@ class SelfClean:
         )
 
         return model
-

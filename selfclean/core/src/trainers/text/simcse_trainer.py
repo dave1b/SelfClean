@@ -69,20 +69,20 @@ class SimCSETrainer(Trainer):
         optimizer = optimizer_cls(
             params=self.model.parameters(),
             lr=self.config["lr"],
-            weight_decay=eval(self.config["weight_decay"]),
+            weight_decay=self.config["weight_decay"],
         )
 
         # create schedulers
         lr_schedule = cosine_scheduler(
             # linear scaling rule
             self.config["lr"] * (self.config["batch_size"] * get_world_size()) / 256.0,
-            eval(self.config["min_lr"]),
+            self.config["min_lr"],
             self.config["epochs"],
             len(self.train_dataset),
             warmup_epochs=min(self.config["warmup_epochs"], self.config["epochs"]),
         )
         wd_schedule = cosine_scheduler(
-            eval(self.config["weight_decay"]),
+            self.config["weight_decay"],
             self.config["weight_decay_end"],
             self.config["epochs"],
             len(self.train_dataset),
