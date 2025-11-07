@@ -91,9 +91,12 @@ class Trainer(ABC, object):
         # optimize various tensor operations automatically
         torch.backends.cudnn.benchmark = True
         torch.backends.cudnn.enabled = True
+        data = "images"
+        if self.model_type is ModelType.BERT:
+            data = "text samples"
         logger.info(
             f"Data loaded: there are "
-            f"{len(self.train_dataset.dataset)} train images and "
+            f"{len(self.train_dataset.dataset)} train {data} and "
             f"{len(self.train_dataset)} batches "
             f"with a batch size of {self.config['batch_size']}."
         )
@@ -103,7 +106,7 @@ class Trainer(ABC, object):
                 no_val_samples = len(self.val_dataset.sampler)
             logger.info(
                 f"Data loaded: there are "
-                f"{no_val_samples} val images and "
+                f"{no_val_samples} val {data} and "
                 f"{len(self.val_dataset)} batches "
                 f"with a batch size of {self.config['batch_size']}."
             )
