@@ -1,3 +1,4 @@
+import gc
 from pathlib import Path
 from typing import Optional, Union
 
@@ -114,7 +115,7 @@ class MAETextTrainer(Trainer):
             if isinstance(self.train_dataset.sampler, DistributedSampler):
                 self.train_dataset.sampler.set_epoch(epoch - 1)
             self.model.train()
-            for sentences, *_ in self.train_dataset:
+            for batch in self.train_dataset:
                 # update weight decay and learning rate according to their schedule
                 self.update_optim_from_schedulers(
                     optimizer=optimizer,
@@ -123,7 +124,10 @@ class MAETextTrainer(Trainer):
                     n_iter=n_iter,
                 )
                 # move batch to device
-                sentences = {k: v.to(self.device) for k, v in sentences.items()}
+                sentences = {
+                    'input_ids': batch['input_ids'].to(self.device, non_blocking=True),
+                    'attention_mask': batch['attention_mask'].to(self.device, non_blocking=True)
+                }
 
                 optimizer.zero_grad()
 
@@ -137,11 +141,10 @@ class MAETextTrainer(Trainer):
                     _ = clip_gradients(self.model, self.config["clip_grad"])
                 optimizer.step()
 
-                with torch.no_grad():
-                    entropy = calculate_embedding_entropy(
-                        embeddings=embeddings.cpu(),
-                    )
-                    ent_avg, ent_min, ent_max, ent_std, ent_med = entropy
+                if n_iter % 25 == 0: # Calculate entropy every 25 iterations
+                    with torch.no_grad():
+                        entropy = calculate_embedding_entropy(embeddings.cpu())
+                        ent_avg, ent_min, ent_max, ent_std, ent_med = entropy
 
                 progress_bar.set_description(f"Epoch: {epoch}, Train loss: {loss:.6f}")
                 lr = optimizer.param_groups[0]["lr"]
@@ -163,6 +166,10 @@ class MAETextTrainer(Trainer):
 
                     wandb.log(log_dict)
                 n_iter += 1
+                if n_iter % 100 == 0:  # Clean up every 100 iterations
+                    gc.collect()
+                    if torch.cuda.is_available():
+                        torch.cuda.empty_cache()
 
             # log the embeddings if wanted (included online evaluation)
             if epoch % self.config["embed_vis_every_n_epochs"] == 0:

@@ -1,8 +1,6 @@
 import gc
 import os
 import platform
-from datetime import datetime
-from distutils import dist
 from typing import Optional
 
 from experiment.datasets.hellaswag.hella_swag_dataset import HellaSwagDataset
@@ -55,7 +53,7 @@ def train_simcse(
     save_every_n_epochs: int = 10,
     work_dir: Optional[str] = None,
     hyperparameters: dict = SIMCSE_STANDARD_HYPERPARAMETERS,
-    num_workers: Optional[int] = os.cpu_count(),
+    num_workers: Optional[int] = min(8, os.cpu_count()),
     # logging
     additional_run_info: str = "",
     wandb_logging: bool = True,
@@ -89,6 +87,7 @@ def train_simcse(
     train_loader = DataLoader(
         dataset,
         batch_size=batch_size,
+        collate_fn=dataset.get_collate_fn(),
         drop_last=True,
         pin_memory=True,
         **kwargs,
@@ -113,9 +112,14 @@ if __name__ == "__main__":
     tokenizer = get_encoder_tokenizer_class("bert")[1]
 
     dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_train.json"
-    dataset = HellaSwagDataset(str(dataset_path), tokenizer)
+
+    dataset = HellaSwagDataset(
+        json_path=dataset_path,
+        tokenizer=tokenizer,
+        cache_dir="./cache",
+        pre_tokenize=True  # Enable pre-tokenization
+    )
 
     print("Training SimCSE")
-    model = train_simcse(dataset, 50, 64, True, 5, None, SIMCSE_STANDARD_HYPERPARAMETERS,
-                         os.cpu_count())
+    model = train_simcse(dataset, 10, 64, True, 1, None, SIMCSE_STANDARD_HYPERPARAMETERS)
     print("Finished SimCSE training")

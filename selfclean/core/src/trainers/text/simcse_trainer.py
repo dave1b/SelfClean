@@ -1,5 +1,6 @@
+import gc
 from pathlib import Path
-from typing import List, Optional, Union
+from typing import List, Optional, Union, Dict
 
 import torch
 import torch.nn.functional as F
@@ -122,7 +123,7 @@ class SimCSETrainer(Trainer):
             if type(self.train_dataset.sampler) is DistributedSampler:
                 self.train_dataset.sampler.set_epoch(epoch - 1)
             self.model.train()
-            for sentences, *_ in self.train_dataset:
+            for batch in self.train_dataset:
                 # update weight decay and learning rate according to their schedule
                 self.update_optim_from_schedulers(
                     optimizer=optimizer,
@@ -131,15 +132,21 @@ class SimCSETrainer(Trainer):
                     n_iter=n_iter,
                 )
 
-                # move batch to device
-                sentences = {k: v.to(self.device) for k, v in sentences.items()}
+                sentences = {
+                    'input_ids': batch['input_ids'].to(self.device, non_blocking=True),
+                    'attention_mask': batch['attention_mask'].to(self.device, non_blocking=True)
+                }
 
                 # zero the parameter gradients
                 optimizer.zero_grad()
 
                 # --- forward pass ---
-                loss, entropy = self._model_step(self.model, sentences)
-                ent_avg, ent_min, ent_max, ent_std, ent_med = entropy
+                loss, embeddings = self._model_step(self.model, sentences)
+
+                if n_iter % 25 == 0:  # Calculate entropy every 25 iterations
+                    with torch.no_grad():
+                        entropy = calculate_embedding_entropy(embeddings.cpu())
+                        ent_avg, ent_min, ent_max, ent_std, ent_med = entropy
 
                 # check if loss is not infinite
                 self.check_loss_nan(loss.detach())
@@ -173,6 +180,11 @@ class SimCSETrainer(Trainer):
                     wandb.log(log_dict)
                 n_iter += 1
 
+                if n_iter % 100 == 0:  # Clean up every 100 iterations
+                    gc.collect()
+                    if torch.cuda.is_available():
+                        torch.cuda.empty_cache()
+
             # log the embeddings if wanted
             if epoch % self.config["embed_vis_every_n_epochs"] == 0:
                 self._log_embeddings(
@@ -196,7 +208,7 @@ class SimCSETrainer(Trainer):
         model = backbone
         return model
 
-    def _model_step(self, model, sentences: List[torch.Tensor]):
+    def _model_step(self, model, sentences: Dict[str, torch.Tensor]):
         # Get the embeddings and projections for the same sentences (two views)
         embs_1, projs_1 = model(sentences['input_ids'], sentences['attention_mask'])  # First view
         embs_2, projs_2 = model(sentences['input_ids'], sentences['attention_mask'])  # Second view
@@ -207,9 +219,8 @@ class SimCSETrainer(Trainer):
 
         # Stack embeddings for entropy calculation
         embeddings = torch.cat([embs_1, embs_2])
-        entropy = calculate_embedding_entropy(embeddings)
 
         # Calculate the loss for the batch
         loss = self.loss(projs_1, projs_2)  # Pass the two views of the batch
 
-        return loss, entropy
+        return loss, embeddings

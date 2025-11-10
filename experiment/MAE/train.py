@@ -54,7 +54,7 @@ def train_mae_text(
     save_every_n_epochs: int = 10,
     work_dir: Optional[str] = None,
     hyperparameters: dict = MAE_TEXT_STANDARD_HYPERPARAMETERS,
-    num_workers: Optional[int] = os.cpu_count(),
+    num_workers: Optional[int] = min(8, os.cpu_count()),
     # logging
     additional_run_info: str = "",
     wandb_logging: bool = True,
@@ -87,6 +87,7 @@ def train_mae_text(
     train_loader = DataLoader(
         dataset,
         batch_size=batch_size,
+        collate_fn=dataset.get_collate_fn(),
         drop_last=True,
         pin_memory=True,
         **kwargs,
@@ -112,9 +113,13 @@ if __name__ == "__main__":
     tokenizer = get_encoder_tokenizer_class("bert_mlm")[1]
 
     dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_train_0.01ksubset.json"
-    dataset = HellaSwagDataset(str(dataset_path), tokenizer)
 
+    dataset = HellaSwagDataset(
+        json_path=dataset_path,
+        tokenizer=tokenizer,
+        cache_dir="./cache",
+        pre_tokenize=True  # Enable pre-tokenization
+    )
     print("Training MAE Text")
-    model = train_mae_text(dataset, 2, 32, True, 1, None, MAE_TEXT_STANDARD_HYPERPARAMETERS,
-                           os.cpu_count())
+    model = train_mae_text(dataset, 2, 32, True, 1, None, MAE_TEXT_STANDARD_HYPERPARAMETERS)
     print(f'Finished MAE training after: {datetime.now() - start}')
