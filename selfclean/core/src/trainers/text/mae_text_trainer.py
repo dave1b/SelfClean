@@ -46,7 +46,8 @@ class MAETextTrainer(Trainer):
         self.loss = nn.CrossEntropyLoss().to(self.device)
         self.print_model_summary = print_model_summary
         # create model
-        self.model = BertMae(self.config["model"]["base_model"], self.config["model"]["encoder_mask_ratio"], self.config["model"]["decoder_mask_ratio"])
+        self.model = BertMae(self.config["model"]["base_model"], self.config["model"]["encoder_mask_ratio"],
+                             self.config["model"]["decoder_mask_ratio"])
         self.model.to(self.device)
         self.model = torch.nn.SyncBatchNorm.convert_sync_batchnorm(self.model)
         self.model = self.distribute_model(self.model)
@@ -87,7 +88,7 @@ class MAETextTrainer(Trainer):
             run_variables=to_restore,
             state_dict=self.model,
             optimizer=optimizer,
-            loss=self.loss,        )
+            loss=self.loss)
         self.start_epoch = to_restore["epoch"]
         self.config = to_restore["config"]
 
@@ -199,6 +200,6 @@ class MAETextTrainer(Trainer):
         if self.multi_gpu:
             backbone = self.model.module
         else:
-            backbone = self.model
+            backbone = self.model.encoder
         model = backbone
         return model

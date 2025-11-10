@@ -59,6 +59,3 @@ class BertMae(nn.Module):
             # In evaluation mode, just return the encoder outputs
             encoder_outputs = self.encoder(input_ids=input_ids, attention_mask=attention_mask)
             return encoder_outputs
-
-    def get_encoder_model(self):
-        return self.encoder

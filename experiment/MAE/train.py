@@ -114,7 +114,6 @@ def train_mae_text(
     model = trainer.fit()
     del trainer, train_loader
     gc.collect()
-    model = model.get_encoder_model()
     if epochs > 0:
         model.save_pretrained(f'models/Mae{model_name}')
     if torch.cuda.is_available():
@@ -133,5 +132,3 @@ if __name__ == "__main__":
     model = train_mae_text(dataset, 1, 32, True, 1, None, MAE_TEXT_STANDARD_HYPERPARAMETERS,
                            os.cpu_count(), model_name=f'{datetime.now().strftime("_%Y%m%d-%H%M%S")}_0.01ksubset')
     print(f'Finished MAE training after: {datetime.now() - start}')
-
-# PYTHONPATH=/Users/davebrunner/Documents/repositories/SelfClean/experiment/MAE /Users/davebrunner/Documents/repositories/SelfClean/.venv/bin/python3.10 experiment/MAE/train.py

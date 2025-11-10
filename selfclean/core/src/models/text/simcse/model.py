@@ -1,4 +1,3 @@
-import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from ..encoders.utils import get_encoder_tokenizer_class
@@ -6,9 +5,10 @@ from ..encoders.utils import get_encoder_tokenizer_class
 class BertSimCSE(nn.Module):
     def __init__(self, base_model: str):
         super(BertSimCSE, self).__init__()
-        encoder_cls, _ = get_encoder_tokenizer_class(base_model)
-        self.backbone = encoder_cls
+        self.backbone, _ = get_encoder_tokenizer_class(base_model)
+        self.backbone.dropout = nn.Dropout(p=0.1)
         n_feat = self.backbone.config.hidden_size
+
         # Projection MLP
         self.dense1 = nn.Linear(n_feat, n_feat)
         self.dense2 = nn.Linear(n_feat, n_feat)

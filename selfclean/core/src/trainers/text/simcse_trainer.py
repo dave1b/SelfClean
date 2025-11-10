@@ -7,7 +7,6 @@ from torch.utils.data import DataLoader, DistributedSampler
 from torchinfo import summary
 from tqdm.auto import tqdm
 
-from ....src.models.text.encoders.utils import get_encoder_tokenizer_class
 from ....src.models.text.simcse.model import BertSimCSE
 from ....src.losses.nt_xent import NTXentLoss
 from ....src.models.utils import ModelType, cosine_scheduler
@@ -143,7 +142,7 @@ class SimCSETrainer(Trainer):
                 loss, entropy = self._model_step(self.model, sentences)
                 ent_avg, ent_min, ent_max, ent_std, ent_med = entropy
 
-                # check if loss is not infiniteaa
+                # check if loss is not infinite
                 self.check_loss_nan(loss.detach())
 
                 # update model
@@ -219,6 +218,7 @@ class SimCSETrainer(Trainer):
         embs_1, projs_1 = model(**sentences)  # First view
         embs_2, projs_2 = model(**sentences)  # Second view
 
+        # Normalize projections
         projs_1 = torch.stack([F.normalize(proj, dim=0) for proj in projs_1])
         projs_2 = torch.stack([F.normalize(proj, dim=0) for proj in projs_2])
 

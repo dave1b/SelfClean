@@ -3,7 +3,7 @@ import os
 import platform
 from datetime import datetime
 from distutils import dist
-from typing import List, Optional, Union
+from typing import Optional
 
 from experiment.datasets.hellaswag.hella_swag_dataset import HellaSwagDataset
 from selfclean.core.src.models.text.encoders.utils import get_encoder_tokenizer_class
@@ -13,21 +13,7 @@ import torch
 from torch.utils.data import Dataset, DataLoader, DistributedSampler
 from pathlib import Path
 
-from selfclean.core.src.utils.utils import init_distributed_mode
-
-
-def cleanup():
-    if is_dist_avail_and_initialized():
-        dist.destroy_process_group()
-
-
-def is_dist_avail_and_initialized():
-    if not dist.is_available():
-        return False
-    if not dist.is_initialized():
-        return False
-    return True
-
+from selfclean.core.src.utils.utils import init_distributed_mode, cleanup
 
 SIMCSE_STANDARD_HYPERPARAMETERS = {
     "optim": "adamw",
@@ -136,12 +122,10 @@ def train_simcse(
 if __name__ == "__main__":
     tokenizer = get_encoder_tokenizer_class("bert")[1]
 
-    dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_train_1ksubset.json"
+    dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_train_0.01ksubset.json"
     dataset = HellaSwagDataset(str(dataset_path), tokenizer)
 
     print("Training SimCSE")
     model = train_simcse(dataset, 1, 32, True, 1, None, SIMCSE_STANDARD_HYPERPARAMETERS,
                          os.cpu_count(), model_name=f'{datetime.now().strftime("_%Y%m%d-%H%M%S")}_1ksubset')
     print("Finished SimCSE training")
-
-# PYTHONPATH=/Users/davebrunner/Documents/repositories/SelfClean/experiment/SimCSE /Users/davebrunner/Documents/repositories/SelfClean/.venv/bin/python3.10 experiment/SimCSE/train.py
