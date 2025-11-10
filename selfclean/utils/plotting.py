@@ -124,7 +124,7 @@ def plot_inspection_result_text(
         height_ratios.extend([0.8, 1.2])
     if issue_manager["category_errors"] is not None:
         rows += 4
-        height_ratios.extend([0.8, 1.2])
+        height_ratios.extend([0.8, 1.2, 0.8, 1.2])
 
     fig = plt.figure(figsize=figsize)
     grid = GridSpec(
@@ -169,8 +169,8 @@ def plot_inspection_result_text(
             ax.set_axis_off()
             if i == 0:
                 ax.text(0.5, 0.4, "Near-Duplicate Ranking",
-                       ha='center', va='bottom',
-                       fontsize=h1_font_size, fontweight='bold')
+                        ha='center', va='bottom',
+                        fontsize=h1_font_size, fontweight='bold')
         row_idx += 1
 
         near_duplicate_issues = issue_manager["near_duplicates"]
@@ -197,8 +197,8 @@ def plot_inspection_result_text(
             ax.set_axis_off()
             if i == 0:
                 ax.text(0.5, 0.4, "Off-Topic Samples Ranking",
-                       ha='center', va='bottom',
-                       fontsize=h1_font_size, fontweight='bold')
+                        ha='center', va='bottom',
+                        fontsize=h1_font_size, fontweight='bold')
         row_idx += 1
 
         off_topic_issues = issue_manager["off_topic_samples"]
@@ -220,8 +220,8 @@ def plot_inspection_result_text(
             ax.set_axis_off()
             if i == 0:
                 ax.text(0.5, 0.4, "Wrong Label Error Ranking",
-                       ha='center', va='bottom',
-                       fontsize=h1_font_size, fontweight='bold')
+                        ha='center', va='bottom',
+                        fontsize=h1_font_size, fontweight='bold')
         row_idx += 1
 
         label_error_issues = issue_manager["label_errors"]
@@ -246,8 +246,8 @@ def plot_inspection_result_text(
             ax.set_axis_off()
             if i == 0:
                 ax.text(0.5, 0.4, "Wrong Category Error Ranking",
-                       ha='center', va='bottom',
-                       fontsize=h1_font_size, fontweight='bold')
+                        ha='center', va='bottom',
+                        fontsize=h1_font_size, fontweight='bold')
         row_idx += 1
 
         category_error_issues = issue_manager["category_errors"]

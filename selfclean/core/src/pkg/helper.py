@@ -5,6 +5,10 @@ from typing import Optional, Tuple, Union
 import numpy as np
 import torch
 from tqdm.auto import tqdm
+from transformers.modeling_outputs import BaseModelOutputWithPoolingAndCrossAttentions
+
+from selfclean.cleaner.issue_manager import IssueTypes
+from selfclean.core.src.utils.utils import get_device
 
 ARR_TYPE = Union[np.ndarray, np.memmap, torch.Tensor]
 
@@ -107,6 +111,64 @@ def embed_dataset(
     else:
         paths = None
     return emb_space, labels, images, paths
+
+def embed_text_dataset(torch_dataset, model, batch_size, normalize=True, tqdm_desc="", issues_to_detect=[]):
+    """Embed a text dataset using the given model."""
+    from tqdm.auto import tqdm
+
+    model.eval()
+    embeddings = []
+    context_only_embeddings = []
+    labels = []
+    paths = []
+    categories = []
+
+    with torch.no_grad():
+        for batch in tqdm(torch_dataset, desc=tqdm_desc):
+            # Unpack batch (inputs, label)
+            inputs, label, category, _, context_only_inputs, context_only_flag = batch
+            inputs = {k: v.to(get_device()) for k, v in inputs.items()}
+
+            # Get embeddings
+            emb = model(**inputs)
+
+            if isinstance(emb, BaseModelOutputWithPoolingAndCrossAttentions):
+                emb = emb.pooler_output
+
+            if normalize:
+                emb = torch.nn.functional.normalize(emb, p=2, dim=1)
+
+            [embeddings.append(emb[i].cpu().numpy()) for i in range(emb.shape[0])]
+
+            if IssueTypes.NEAR_DUPLICATES_Q in issues_to_detect:
+                # Also embed context only
+                filtered_context_only_inputs = {'input_ids': torch.tensor([], dtype=torch.int64),
+                                                'token_type_ids': torch.tensor([], dtype=torch.int64),
+                                                'attention_mask': torch.tensor([], dtype=torch.int64)}
+                for i in range(min(batch_size, len(label))):
+                    flag_ = context_only_flag[i]
+                    if flag_:
+                        for k in context_only_inputs.keys():
+                            filtered_context_only_inputs[k] = torch.cat(
+                                (filtered_context_only_inputs[k], context_only_inputs[k][i].unsqueeze(0)), dim=0
+                            )
+
+                filtered_context_only_inputs = {k: v.to(get_device()) for k, v in filtered_context_only_inputs.items()}
+                context_emb = model(**filtered_context_only_inputs)
+                if isinstance(context_emb, BaseModelOutputWithPoolingAndCrossAttentions):
+                    context_emb = context_emb.pooler_output
+                if normalize:
+                    context_emb = torch.nn.functional.normalize(context_emb, p=2, dim=1)
+                [context_only_embeddings.append(context_emb[i].cpu().numpy()) for i in range(context_emb.shape[0])]
+
+            labels.extend(label.cpu().numpy())
+            categories.extend(category)
+
+            # Use task_id as path identifier
+            task_ids = [f"task_{i}" for i in range(len(paths), len(paths) + len(label))]
+            paths.extend(task_ids)
+
+    return embeddings, labels, paths, categories, context_only_embeddings
 
 
 def create_memmap(memmap_path: Path, memmap_file_name: str, len_dataset: int, *dims):

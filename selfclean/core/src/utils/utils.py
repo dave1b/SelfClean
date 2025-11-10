@@ -129,6 +129,13 @@ def get_rank():
 def is_main_process():
     return get_rank() == 0
 
+def get_device():
+    if torch.cuda.is_available():
+        return torch.device('cuda')
+    elif torch.backends.mps.is_available():
+        return torch.device('mps')
+    else:
+        return torch.device('cpu')
 
 def is_dist_avail_and_initialized():
     if not dist.is_available():
