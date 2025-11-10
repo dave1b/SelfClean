@@ -19,7 +19,7 @@ ELECTRA_STANDARD_HYPERPARAMETERS = {
         "name": "adamw",
         "args": {}
     },
-    "lr": 0.00005,
+    "lr": 0.0005,
     "min_lr": 1e-6,
     "weight_decay": 0.04,
     "weight_decay_end": 0.4,
@@ -28,29 +28,17 @@ ELECTRA_STANDARD_HYPERPARAMETERS = {
     "clip_grad": 3.0,
     "apply_l2_norm": True,
     "model": {
-        "out_dim": 4096,
-        "emb_dim": 192,
+        "out_dim": None,
+        "emb_dim": None,
         "base_model": "electra",
         "model_type": "BERT",
         "use_bn_in_head": False,
         "norm_last_layer": True,
-        "student": {
-            "drop_path_rate": 0.1,
-        },
-        "teacher": {
-            "drop_path_rate": 0.1,
-        },
         "eval": {"n_last_blocks": 4, "avgpool_patchtokens": False},
         "encoder": {
             "out_dim": 756,
             "patch_size": None,
         },
-        "encoder_mask_ratio": 0.3,
-        "decoder_mask_ratio": 0.45,
-    },
-    "loss": {
-        "temperature": 0.04,
-        "use_cosine_similarity": True,
     },
     "visualize_attention": False,
     "embed_vis_every_n_epochs": 1
@@ -70,7 +58,6 @@ def train_electra(
     additional_run_info: str = "",
     wandb_logging: bool = True,
     wandb_project_name: str = "SelfClean",
-    model_name: str = "SimCSE",
 ):
     assert all(
         key in hyperparameters for key in ELECTRA_STANDARD_HYPERPARAMETERS
@@ -110,7 +97,6 @@ def train_electra(
         additional_run_info=additional_run_info,
         wandb_logging=wandb_logging,
         wandb_project_name=wandb_project_name,
-        additional_arch_info=model_name,
     )
     model = trainer.fit()
     del trainer, train_loader
@@ -128,6 +114,6 @@ if __name__ == "__main__":
     dataset = HellaSwagDataset(str(dataset_path), tokenizer)
 
     print("Training ELECTRA Text")
-    model = train_electra(dataset, 2, 32, True, 1, None, ELECTRA_STANDARD_HYPERPARAMETERS,
-                           os.cpu_count(), model_name=f'{datetime.now().strftime("_%Y%m%d-%H%M%S")}_0.01ksubset')
+    model = train_electra(dataset, 50, 32, True, 1, None, ELECTRA_STANDARD_HYPERPARAMETERS,
+                           os.cpu_count())
     print(f'Finished ELECTRA training after: {datetime.now() - start}')

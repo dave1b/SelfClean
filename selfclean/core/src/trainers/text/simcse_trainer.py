@@ -30,7 +30,6 @@ class SimCSETrainer(Trainer):
         val_dataset: Optional[DataLoader] = None,
         config_path: Optional[Union[str, Path]] = None,
         additional_run_info: str = "",
-        additional_arch_info: str = "",
         print_model_summary: bool = False,
         wandb_logging: bool = True,
         wandb_project_name="SSL",
@@ -40,7 +39,7 @@ class SimCSETrainer(Trainer):
             val_dataset=val_dataset,
             config=config,
             config_path=config_path,
-            arch_name=f"SimCSE{additional_arch_info}",
+            arch_name=f"SimCSE_{train_dataset.dataset.name}",
             additional_run_info=additional_run_info,
             wandb_logging=wandb_logging,
             wandb_project_name=wandb_project_name,
@@ -199,8 +198,8 @@ class SimCSETrainer(Trainer):
 
     def _model_step(self, model, sentences: List[torch.Tensor]):
         # Get the embeddings and projections for the same sentences (two views)
-        embs_1, projs_1 = model(**sentences)  # First view
-        embs_2, projs_2 = model(**sentences)  # Second view
+        embs_1, projs_1 = model(sentences['input_ids'], sentences['attention_mask'])  # First view
+        embs_2, projs_2 = model(sentences['input_ids'], sentences['attention_mask'])  # Second view
 
         # Normalize projections
         projs_1 = torch.stack([F.normalize(proj, dim=0) for proj in projs_1])

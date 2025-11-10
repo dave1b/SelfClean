@@ -12,6 +12,7 @@ class MMLUDataset(Dataset):
         # Load and validate data
         df = pd.read_json(json_path, encoding="utf-8")
         self._validate_data(df)
+        self.name = "MMLU"
 
         # Create data points
         self.data = self._create_data_points(df)
@@ -70,7 +71,8 @@ class MMLUDataset(Dataset):
             padding='max_length',
             truncation=True,
             max_length=self.max_length,
-            return_tensors='pt'
+            return_tensors='pt',
+            return_token_type_ids=False
         )
         # Remove batch dimension from tokenized inputs
         inputs = {k: v.squeeze(0) for k, v in inputs.items()}
@@ -85,7 +87,8 @@ class MMLUDataset(Dataset):
                     padding='max_length',
                     truncation=True,
                     max_length=self.max_length,
-                    return_tensors='pt'
+                    return_tensors='pt',
+                    return_token_type_ids=False
                 )
                 context_inputs = {k: v.squeeze(0) for k, v in context_inputs.items()}
                 context_flag = True

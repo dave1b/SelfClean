@@ -5,6 +5,7 @@ import shutil
 import sys
 import warnings
 from abc import ABC, abstractmethod
+from datetime import datetime
 from pathlib import Path
 from typing import Optional, Tuple, Union
 
@@ -56,17 +57,19 @@ class Trainer(ABC, object):
             import wandb
 
             if wandb.run is None:
+                if self.dist_training:
+                    self.local_rank = int(os.environ["LOCAL_RANK"])
+                    run_name = f"{arch_name}_{datetime.now().strftime('%Y%m%d-%H%M%S')}-rank-{self.local_rank}"
+                else:
+                    run_name = f"{arch_name}_{datetime.now().strftime('%Y%m%d-%H%M%S')}"
+
                 wandb.init(
                     config=self.config,
                     project=wandb_project_name,
                     group=arch_name,
+                    # current run path with pathlib
+                    dir=f'{Path().absolute()}/wandb/{run_name}',
                 )
-
-                if self.dist_training:
-                    self.local_rank = int(os.environ["LOCAL_RANK"])
-                    run_name = f"{arch_name}-{additional_run_info}-{wandb.run.name}-rank-{self.local_rank}"
-                else:
-                    run_name = f"{arch_name}-{additional_run_info}-{wandb.run.name}"
 
                 # update the name of the run
                 if additional_run_info != "":

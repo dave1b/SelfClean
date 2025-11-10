@@ -17,7 +17,7 @@ from selfclean.core.src.utils.utils import init_distributed_mode, cleanup
 
 SIMCSE_STANDARD_HYPERPARAMETERS = {
     "optim": "adamw",
-    "lr": 0.00005,
+    "lr": 3e-5,
     "min_lr": 1e-6,
     "weight_decay": 0.04,
     "weight_decay_end": 0.4,
@@ -26,18 +26,11 @@ SIMCSE_STANDARD_HYPERPARAMETERS = {
     "clip_grad": 3.0,
     "apply_l2_norm": True,
     "model": {
-        "out_dim": 4096,
-        "emb_dim": 192,
+        "emb_dim": None,
         "base_model": "bert",
         "model_type": "BERT",
         "use_bn_in_head": False,
         "norm_last_layer": True,
-        "student": {
-            "drop_path_rate": 0.1,
-        },
-        "teacher": {
-            "drop_path_rate": 0.1,
-        },
         "eval": {"n_last_blocks": 4, "avgpool_patchtokens": False},
         "encoder": {
             "out_dim": 756,
@@ -66,8 +59,7 @@ def train_simcse(
     # logging
     additional_run_info: str = "",
     wandb_logging: bool = True,
-    wandb_project_name: str = "SelfClean",
-    model_name: str = "SimCSE",
+    wandb_project_name: str = "SelfClean"
 ):
     assert all(
         key in hyperparameters for key in SIMCSE_STANDARD_HYPERPARAMETERS
@@ -107,8 +99,7 @@ def train_simcse(
         config=hyperparameters,
         additional_run_info=additional_run_info,
         wandb_logging=wandb_logging,
-        wandb_project_name=wandb_project_name,
-        additional_arch_info=model_name,
+        wandb_project_name=wandb_project_name
     )
     model = trainer.fit()
     del trainer, train_loader
@@ -121,10 +112,10 @@ def train_simcse(
 if __name__ == "__main__":
     tokenizer = get_encoder_tokenizer_class("bert")[1]
 
-    dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_train_0.01ksubset.json"
+    dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_train.json"
     dataset = HellaSwagDataset(str(dataset_path), tokenizer)
 
     print("Training SimCSE")
-    model = train_simcse(dataset, 2, 32, True, 1, None, SIMCSE_STANDARD_HYPERPARAMETERS,
-                         os.cpu_count(), model_name=f'{datetime.now().strftime("_%Y%m%d-%H%M%S")}_1ksubset')
+    model = train_simcse(dataset, 50, 64, True, 5, None, SIMCSE_STANDARD_HYPERPARAMETERS,
+                         os.cpu_count())
     print("Finished SimCSE training")

@@ -16,11 +16,9 @@ class BertSimCSE(nn.Module):
         nn.init.xavier_uniform_(self.dense1.weight)
         nn.init.xavier_uniform_(self.dense2.weight)
 
-    def forward(self, **kwargs):
-        outputs = self.backbone(**kwargs, output_hidden_states=True)
-        hidden_states = outputs.hidden_states
-        cls_embedding = hidden_states[-1][:, 0, :]
-
+    def forward(self, input_ids, attention_mask):
+        outputs = self.backbone(input_ids, attention_mask)
+        cls_embedding = outputs.pooler_output  # [CLS] token representation
 
         if self.training:
             z = self.dense1(cls_embedding)

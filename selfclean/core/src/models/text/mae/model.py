@@ -26,7 +26,7 @@ class BertMae(nn.Module):
         # Projection layer to map encoder hidden size to vocab size for reconstruction
         self.proj = nn.Linear(self.encoder.config.hidden_size, self.encoder.config.vocab_size)
 
-    def forward(self, input_ids, attention_mask=None):
+    def forward(self, input_ids, attention_mask):
 
         if self.training:
             batch_size, seq_length = input_ids.shape
