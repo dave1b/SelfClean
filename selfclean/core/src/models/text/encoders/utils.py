@@ -2,7 +2,7 @@ from typing import Callable, Tuple
 import torch.nn as nn
 from transformers import models as transformers_models
 
-from .....src.models.text.encoders.llm import bert, distilbert, roberta, bert_mlm, pretrained_bert_mae
+from .....src.models.text.encoders.llm import bert, distilbert, roberta, bert_mlm, pretrained_bert_mae, electra
 
 LLM_DICT = {
     "bert": bert,
@@ -10,6 +10,7 @@ LLM_DICT = {
     "roberta": roberta,
     "distilbert": distilbert,
     "bert_mlm": bert_mlm,
+    "electra": electra,
 }
 
 def get_encoder_tokenizer_class(base_model_name: str) -> Tuple[nn.Module, nn.Module]:

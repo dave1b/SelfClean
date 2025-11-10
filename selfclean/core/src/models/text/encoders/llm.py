@@ -1,4 +1,4 @@
-from transformers import AutoModel, AutoTokenizer, BertTokenizer, BertForMaskedLM
+from transformers import AutoModel, AutoTokenizer, BertTokenizer, BertForMaskedLM, ElectraForPreTraining
 
 
 def bert():
@@ -24,4 +24,10 @@ def distilbert():
 def bert_mlm():
     tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
     model = BertForMaskedLM.from_pretrained('bert-base-uncased')
+    return model, tokenizer
+
+def electra():
+    tokenizer = AutoTokenizer.from_pretrained('google/electra-base-discriminator')
+    model = ElectraForPreTraining.from_pretrained('google/electra-small-discriminator')
+    # model = AutoModel.from_pretrained('google/electra-base-discriminator')
     return model, tokenizer
