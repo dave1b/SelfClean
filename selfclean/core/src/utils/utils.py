@@ -221,6 +221,14 @@ def save_checkpoint(run_dir, save_dict, epoch, save_best=False):
             logger.info("Saving current best: model_best.pth ...")
 
 
+def save_model(run_dir, model, epoch):
+    if is_main_process():
+        (run_dir / "models").mkdir(parents=True, exist_ok=True)
+        folder_name = str(run_dir / "models" / "model-epoch{}.pth".format(epoch))
+        model.save_pretrained(folder_name)
+        logger.info("Saving model: {} ...".format(folder_name))
+
+
 class EarlyStopping:
     """
     Early stopping to stop the training when the loss does not improve after

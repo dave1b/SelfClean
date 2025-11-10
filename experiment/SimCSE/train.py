@@ -115,7 +115,6 @@ def train_simcse(
     gc.collect()
     if torch.cuda.is_available():
         cleanup()
-    model.save_pretrained(f'models/SimCSE{model_name}')
     return model
 
 
@@ -126,6 +125,6 @@ if __name__ == "__main__":
     dataset = HellaSwagDataset(str(dataset_path), tokenizer)
 
     print("Training SimCSE")
-    model = train_simcse(dataset, 1, 32, True, 1, None, SIMCSE_STANDARD_HYPERPARAMETERS,
+    model = train_simcse(dataset, 2, 32, True, 1, None, SIMCSE_STANDARD_HYPERPARAMETERS,
                          os.cpu_count(), model_name=f'{datetime.now().strftime("_%Y%m%d-%H%M%S")}_1ksubset')
     print("Finished SimCSE training")

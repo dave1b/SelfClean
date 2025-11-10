@@ -114,8 +114,6 @@ def train_mae_text(
     model = trainer.fit()
     del trainer, train_loader
     gc.collect()
-    if epochs > 0:
-        model.save_pretrained(f'models/Mae{model_name}')
     if torch.cuda.is_available():
         cleanup()
     return model
@@ -129,6 +127,6 @@ if __name__ == "__main__":
     dataset = HellaSwagDataset(str(dataset_path), tokenizer)
 
     print("Training MAE Text")
-    model = train_mae_text(dataset, 1, 32, True, 1, None, MAE_TEXT_STANDARD_HYPERPARAMETERS,
+    model = train_mae_text(dataset, 2, 32, True, 1, None, MAE_TEXT_STANDARD_HYPERPARAMETERS,
                            os.cpu_count(), model_name=f'{datetime.now().strftime("_%Y%m%d-%H%M%S")}_0.01ksubset')
     print(f'Finished MAE training after: {datetime.now() - start}')

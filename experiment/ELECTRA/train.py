@@ -115,8 +115,6 @@ def train_electra(
     model = trainer.fit()
     del trainer, train_loader
     gc.collect()
-    if epochs > 0:
-        model.save_pretrained(f'models/Electra{model_name}')
     if torch.cuda.is_available():
         cleanup()
     return model

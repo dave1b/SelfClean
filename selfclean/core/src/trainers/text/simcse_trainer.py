@@ -18,7 +18,7 @@ from ....src.utils.utils import (
     clip_gradients,
     get_world_size,
     restart_from_checkpoint,
-    save_checkpoint,
+    save_checkpoint, save_model,
 )
 
 
@@ -187,25 +187,9 @@ class SimCSETrainer(Trainer):
                 )
 
             # save the model
-            if epoch % self.config["save_every_n_epochs"] == 0:
-                if self.multi_gpu:
-                    model = self.model.module.state_dict()
-                else:
-                    model = self.model.state_dict()
-                save_dict = {
-                    "arch": type(self.model).__name__,
-                    "epoch": epoch,
-                    "state_dict": model,
-                    "optimizer": optimizer.state_dict(),
-                    "config": self.config,
-                    "loss": self.loss.state_dict(),
-                }
-                save_checkpoint(
-                    run_dir=self.run_dir,
-                    save_dict=save_dict,
-                    epoch=epoch,
-                    save_best=True,
-                )
+            if epoch % self.config["save_every_n_epochs"] == 0 or epoch == self.config["epochs"]:
+                save_model(run_dir=self.run_dir, model=self.model.backbone, epoch=epoch)
+
         if self.multi_gpu:
             backbone = self.model.module.backbone
         else:
