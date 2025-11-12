@@ -10,7 +10,7 @@ from pathlib import Path
 class MMLUDataset(Dataset):
     """Optimized MMLU dataset with pre-tokenization and caching."""
 
-    def __init__(self, json_path: str, tokenizer, max_length: int = 128,
+    def __init__(self, json_path: Path, tokenizer, max_length: int = 128,
                  cache_dir: Optional[str] = None, pre_tokenize: bool = True):
         """
         Args:
@@ -32,9 +32,8 @@ class MMLUDataset(Dataset):
         if pre_tokenize:
             self._pre_tokenize_all(json_path, cache_dir)
 
-    def _load_and_validate_data(self, json_path: str) -> None:
+    def _load_and_validate_data(self, path: Path) -> None:
         """Load and validate the dataset."""
-        path = Path(json_path)
 
         # Load with more efficient JSON parser if file is large
         if path.stat().st_size > 100 * 1024 * 1024:  # >100MB

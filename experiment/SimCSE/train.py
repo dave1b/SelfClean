@@ -4,6 +4,7 @@ import platform
 from typing import Optional
 
 from experiment.datasets.hellaswag.hella_swag_dataset import HellaSwagDataset
+from experiment.datasets.mmlu.mmlu_dataset import MMLUDataset
 from selfclean.core.src.models.text.encoders.utils import get_encoder_tokenizer_class
 from selfclean.core.src.trainers.text.simcse_trainer import SimCSETrainer
 
@@ -111,15 +112,16 @@ def train_simcse(
 if __name__ == "__main__":
     tokenizer = get_encoder_tokenizer_class("bert")[1]
 
-    dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_train.json"
+    hellaswag_dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_train.json"
+    mmlu_dataset_path = Path(__file__).parent.parent / "datasets" / "mmlu" / "mmlu_test.json"
 
-    dataset = HellaSwagDataset(
-        json_path=dataset_path,
+    dataset = MMLUDataset(
+        json_path=mmlu_dataset_path,
         tokenizer=tokenizer,
         cache_dir="./cache",
         pre_tokenize=True  # Enable pre-tokenization
     )
 
     print("Training SimCSE")
-    model = train_simcse(dataset, 10, 64, True, 1, None, SIMCSE_STANDARD_HYPERPARAMETERS)
+    model = train_simcse(dataset, 5, 64, True, 1, None, SIMCSE_STANDARD_HYPERPARAMETERS)
     print("Finished SimCSE training")
