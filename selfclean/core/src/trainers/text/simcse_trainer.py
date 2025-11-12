@@ -180,11 +180,6 @@ class SimCSETrainer(Trainer):
                     wandb.log(log_dict)
                 n_iter += 1
 
-                if n_iter % 100 == 0:  # Clean up every 100 iterations
-                    gc.collect()
-                    if torch.cuda.is_available():
-                        torch.cuda.empty_cache()
-
             # log the embeddings if wanted
             if epoch % self.config["embed_vis_every_n_epochs"] == 0:
                 self._log_embeddings(
