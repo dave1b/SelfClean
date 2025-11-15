@@ -121,5 +121,5 @@ if __name__ == "__main__":
         pre_tokenize=True  # Enable pre-tokenization
     )
     print("Training MAE Text")
-    model = train_mae_text(dataset, 2, 32, True, 1, None, MAE_TEXT_STANDARD_HYPERPARAMETERS)
+    model = train_mae_text(dataset, 10, 32, True, 1, None, MAE_TEXT_STANDARD_HYPERPARAMETERS)
     print(f'Finished MAE training after: {datetime.now() - start}')

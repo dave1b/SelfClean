@@ -62,20 +62,19 @@ class Trainer(ABC, object):
                     run_name = f"{arch_name}_{datetime.now().strftime('%Y%m%d-%H%M%S')}-rank-{self.local_rank}"
                 else:
                     run_name = f"{arch_name}_{datetime.now().strftime('%Y%m%d-%H%M%S')}"
+                wandb_dir = Path(self.config.get("work_dir", os.getcwd()))  / run_name
 
                 wandb.init(
                     config=self.config,
                     project=wandb_project_name,
                     group=arch_name,
-                    # current run path with pathlib
-                    dir=f'{Path().absolute()}/wandb/{run_name}',
+                    name=run_name,
+                    dir=str(wandb_dir),
                 )
 
-                # update the name of the run
                 if additional_run_info != "":
                     wandb.config.update({"additional_run_info": additional_run_info})
-                wandb.run.name = run_name
-                # wandb.save()
+
             self.run_dir = Path(wandb.run.dir)
         else:
             current_directory = self.config.get("work_dir", os.getcwd())

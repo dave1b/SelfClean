@@ -369,7 +369,7 @@ class SelfClean:
 
     def run_on_text_dataset(
         self,
-        dataset_path: Union[str, Path],
+        dataset_path: Path,
         tokenizer_name: str = "bert",
         epochs: int = 10,
         batch_size: int = 64,
@@ -409,12 +409,12 @@ class SelfClean:
         # Create dataset
         tokenizer = get_encoder_tokenizer_class(tokenizer_name)[1]
         if dataset_name == "hellaswag":
-            dataset = HellaSwagDataset(str(dataset_path), tokenizer, max_length=max_length)
+            dataset = HellaSwagDataset(dataset_path, tokenizer, max_length=max_length)
         elif dataset_name == "mmlu":
-            dataset = MMLUDataset(str(dataset_path), tokenizer, max_length=max_length)
+            dataset = MMLUDataset(dataset_path, tokenizer, max_length=max_length)
 
         additional_run_info = (
-            Path(dataset_path).stem if dataset_name is None else dataset_name
+            dataset_path.stem if dataset_name is None else dataset_name
         )
 
         return self._run_text(

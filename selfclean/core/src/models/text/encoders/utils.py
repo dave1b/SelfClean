@@ -2,16 +2,21 @@ from typing import Callable, Tuple
 import torch.nn as nn
 from transformers import models as transformers_models
 
-from .....src.models.text.encoders.llm import bert, distilbert, roberta, bert_mlm, pretrained_bert_mae, electra
+from .....src.models.text.encoders.llm import bert, distilbert, roberta, bert_mlm, pretrained_bert_hellaSwag_mae, electra, \
+    pretrained_bert_hellaSwag_simcse, pretrained_bert_mmlu_simcse, pretrained_bert_mmlu_mae
 
 LLM_DICT = {
     "bert": bert,
-    "pretrained_bert_mae": pretrained_bert_mae,
     "roberta": roberta,
     "distilbert": distilbert,
     "bert_mlm": bert_mlm,
     "electra": electra,
+    "pretrained_bert_hellaSwag_simcse": pretrained_bert_hellaSwag_simcse,
+    "pretrained_bert_mmlu_simcse": pretrained_bert_mmlu_simcse,
+    "pretrained_bert_hellaSwag_mae": pretrained_bert_hellaSwag_mae,
+    "pretrained_bert_mmlu_mae": pretrained_bert_mmlu_mae,
 }
+
 
 def get_encoder_tokenizer_class(base_model_name: str) -> Tuple[nn.Module, nn.Module]:
     encoder, tokenizer = LLM_DICT.get(base_model_name, None)()
