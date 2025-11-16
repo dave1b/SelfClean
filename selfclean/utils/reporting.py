@@ -1,0 +1,175 @@
+from pathlib import Path
+from typing import Optional, Union, Dict, List
+import pandas as pd
+from IPython.display import Markdown, display
+import textwrap
+
+from selfclean.cleaner.issue_manager import IssueManager
+
+
+def generate_markdown_report(
+    issue_manager: IssueManager,
+    dataset: List,
+    model_name: str,
+    top_n: int = 5,
+    output_path: Optional[Union[str, Path]] = None,
+    max_text_length: int = 300,
+    wrap_width: int = 50
+) -> str:
+    """
+    Generate a markdown report for data quality issues.
+
+    Args:
+        issue_manager: Dictionary containing issue data from SelfClean
+        dataset: The dataset containing the original samples
+        top_n: Number of top issues to display for each category
+        output_path: Path to save the markdown report
+        max_text_length: Maximum length of displayed text
+        wrap_width: Width for text wrapping
+
+    Returns:
+        Markdown report as a string
+    """
+    def wrap_text(text: str) -> str:
+        return text
+        """Wrap text and truncate if too long."""
+        if not isinstance(text, str):
+            return str(text)
+
+        # Truncate if too long
+        if len(text) > max_text_length:
+            text = text[:max_text_length] + "..."
+
+        # Wrap text
+        return textwrap.fill(text, width=wrap_width)
+
+    def create_issue_table(issues: Dict, issue_type: str, dataset: List) -> str:
+        """Create a markdown table for a specific issue type."""
+
+        # Create table data
+        table_data = []
+        for i, idx in enumerate(issues["indices"][:top_n]):
+            if issue_type in ["near_duplicates", "near_duplicates_questions/context"]:
+                # Handle near duplicates (pairs of indices)
+                idx1, idx2 = idx
+                text1 = wrap_text(dataset[int(idx1)][3] if isinstance(dataset[int(idx1)], (list, tuple)) else dataset[int(idx1)].get("text", ""))
+                text2 = wrap_text(dataset[int(idx2)][3] if isinstance(dataset[int(idx2)], (list, tuple)) else dataset[int(idx2)].get("text", ""))
+
+                score = issues["scores"][i] if "scores" in issues else "N/A"
+
+                table_data.append({
+                    "Rank": i+1,
+                    "Index 1": int(idx1),
+                    "Index 2": int(idx2),
+                    "Text 1": text1,
+                    "Text 2": text2,
+                    "Score": f"{score:.4f}" if isinstance(score, (int, float)) else score
+                })
+            else:
+                # Handle single indices
+                text = wrap_text(dataset[int(idx)][3] if isinstance(dataset[int(idx)], (list, tuple)) else dataset[int(idx)].get("text", ""))
+                category = dataset[int(idx)][2] if isinstance(dataset[int(idx)], (list, tuple)) else dataset[int(idx)].get("category", "N/A")
+                true_label = dataset[int(idx)][1] if isinstance(dataset[int(idx)], (list, tuple)) else dataset[int(idx)].get("correct", "N/A")
+                score = issues["scores"][i] if "scores" in issues else "N/A"
+
+                row = {
+                    "Rank": i+1,
+                    "Index": int(idx),
+                    "Text": text,
+                    "Score": f"{score:.4f}" if isinstance(score, (int, float)) else score
+                }
+
+                if issue_type == "off_topic_samples":
+                    row["Category"] = category
+                elif issue_type in ["label_errors", "category_errors"]:
+                    row["True Label"] = true_label
+                    row["Category"] = category
+
+                table_data.append(row)
+
+        # Create DataFrame and convert to markdown
+        df = pd.DataFrame(table_data)
+
+        # Set index to Rank for better display
+        if "Rank" in df.columns:
+            df.set_index("Rank", inplace=True)
+
+        # Generate markdown table
+        md_table = f"## {issue_type.replace('_', ' ').title()}\n\n"
+        md_table += df.to_markdown(tablefmt="github")
+        md_table += "\n\n"
+        return md_table
+
+    # Create the full report
+    report = "# Data Quality Report\n\n"
+    report += f"Generated on: {pd.Timestamp.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n"
+    report += f"Dataset name: {dataset.name}"
+    report += f"Dataset size: {len(dataset)} samples\n\n"
+    report += f"Model used: {model_name}\n\n"
+
+    report += f"Top {top_n} issues per category\n\n"
+
+    # Add near duplicates (questions)
+    if issue_manager["near_duplicates_questions/context"] is not None:
+        report += create_issue_table(issue_manager["near_duplicates_questions/context"], "near_duplicates_questions/context", dataset)
+        report += "\n\n"
+
+    # Add near duplicates
+    if issue_manager["near_duplicates"] is not None:
+        report += create_issue_table(issue_manager["near_duplicates"], "near_duplicates", dataset)
+        report += "\n\n"
+
+    # Add off-topic samples
+    if issue_manager["off_topic_samples"] is not None:
+        report += create_issue_table(issue_manager["off_topic_samples"], "off_topic_samples", dataset)
+        report += "\n\n"
+
+    # Add label errors
+    if issue_manager["label_errors"] is not None:
+        report += create_issue_table(issue_manager["label_errors"], "label_errors", dataset)
+        report += "\n\n"
+
+    # Add category errors
+    if issue_manager["category_errors"] is not None:
+        report += create_issue_table(issue_manager["category_errors"], "category_errors", dataset)
+        report += "\n\n"
+
+    # Add summary statistics
+    report += "## Summary Statistics\n\n"
+
+    stats = []
+    # for issue_type in ["near_duplicates_questions", "near_duplicates", "off_topic_samples", "label_errors", "category_errors"]:
+    #     if issue_type in issue_manager and issue_manager[issue_type]:
+    #         count = len(issue_manager[issue_type]["indices"])
+    #         stats.append({
+    #             "Issue Type": issue_type.replace("_", " ").title(),
+    #             "Count": count,
+    #             "Percentage": f"{100 * count / len(dataset):.2f}%"
+    #         })
+
+    if stats:
+        stats_df = pd.DataFrame(stats)
+        stats_df.set_index("Issue Type", inplace=True)
+        report += stats_df.to_markdown(tablefmt="grid")
+    else:
+        report += "No issues found in the dataset."
+
+    # Save to file if output_path is provided
+
+    if output_path:
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path_ = Path(f'{output_path}.md')
+        counter = 1
+        while(output_path_.exists()):
+            output_path_ = output_path.with_stem(f"{output_path.stem}_{counter}.md")
+            counter += 1
+        with open(output_path_, "w", encoding="utf-8") as f:
+            f.write(report)
+
+    display_markdown_report(report)
+    return report
+
+# Helper function to display the report in a Jupyter notebook
+def display_markdown_report(report: str):
+    """Display the markdown report in a Jupyter notebook."""
+    display(Markdown(report))

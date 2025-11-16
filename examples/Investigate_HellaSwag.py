@@ -3,7 +3,7 @@ from pathlib import Path
 from selfclean import SelfClean
 
 selfclean = SelfClean(
-    plot_top_N=7,
+    plot_top_N=10,
     # auto_cleaning=True,
 )
 

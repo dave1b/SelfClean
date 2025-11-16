@@ -74,6 +74,7 @@ class SelfCleanCleaner(
         self.output_path = output_path
         if self.output_path is not None:
             self.output_path = Path(self.output_path)
+            self.output_path.parent.mkdir(parents=True, exist_ok=True)
 
         if memmap_path is None:
             self.memmap_path = Path(tempfile.mkdtemp())
@@ -199,15 +200,20 @@ class SelfCleanCleaner(
     ) -> IssueManager:
         return_dict = {}
         if IssueTypes.NEAR_DUPLICATES in issues_to_detect or IssueTypes.NEAR_DUPLICATES_Q in issues_to_detect:
+            issue_name = (
+                IssueTypes.NEAR_DUPLICATES_Q.value
+                if IssueTypes.NEAR_DUPLICATES_Q in issues_to_detect
+                else IssueTypes.NEAR_DUPLICATES.value
+            )
             if not self.approximate_nn:
                 pred_nd_scores, pred_nd_indices = self.get_near_duplicate_ranking()
-                return_dict["near_duplicates"] = {
+                return_dict[issue_name] = {
                     "indices": pred_nd_indices,
                     "scores": pred_nd_scores,
                 }
             else:
                 approx_result_df = self.get_approx_near_duplicate_ranking()
-                return_dict["approx_near_duplicates"] = approx_result_df
+                return_dict[f'approx_{issue_name}'] = approx_result_df
         if IssueTypes.OFF_TOPIC_SAMPLES in issues_to_detect:
             pred_ot_scores, pred_ot_indices = self.get_off_topic_ranking()
             return_dict["off_topic_samples"] = {
@@ -263,14 +269,6 @@ class SelfCleanCleaner(
                     output_path=self.output_path,
                     figsize=self.figsize,
                 )
-            elif data_type is DataType.TEXT:
-                plot_inspection_result_text(
-                    issue_manager=issue_manager,
-                    dataset=self.dataset,
-                    plot_top_N=self.plot_top_N,
-                    output_path=self.output_path,
-                )
-
         return_dict = self.perform_auto_cleaning(
             issue_manger=issue_manager,
             return_dict=return_dict,

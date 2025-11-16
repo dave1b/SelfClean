@@ -16,7 +16,7 @@ from experiment.MAE.train import MAE_TEXT_STANDARD_HYPERPARAMETERS, train_mae_te
 from experiment.SimCSE.train import SIMCSE_STANDARD_HYPERPARAMETERS, train_simcse
 from experiment.datasets.hellaswag.hella_swag_dataset import HellaSwagDataset
 from experiment.datasets.mmlu.mmlu_dataset import MMLUDataset
-from ..cleaner.issue_manager import IssueTypes
+from ..cleaner.issue_manager import IssueTypes, IssueManager
 from ..cleaner.selfclean_cleaner import SelfCleanCleaner, DataType
 from ..core.src.augmentations.multi_crop import MultiCropAugmentation
 from ..core.src.pkg import Embedder, embed_dataset
@@ -29,6 +29,8 @@ from ..core.src.utils.utils import (
     init_distributed_mode,
 )
 from ..core.src.models.text.encoders.utils import get_encoder_tokenizer_class
+from ..utils.plotting import plot_inspection_result_text
+from ..utils.reporting import generate_markdown_report
 from ..utils.utils import set_dataset_transformation
 
 DINO_STANDARD_HYPERPARAMETERS = {
@@ -79,6 +81,7 @@ class PretrainingType(Enum):
     IMAGENET_VIT = "imagenet_vit_tiny"
     DINO = "dino"
 
+
 class SelfClean:
     def __init__(
         self,
@@ -93,7 +96,7 @@ class SelfClean:
         # plotting
         plot_distribution: bool = False,
         plot_top_N: Optional[int] = None,
-        output_path: Optional[str] = None,
+        output_path: Optional[str] = Path(__file__).parent / "output" / "hellaswag_simcse" / "result",
         figsize: tuple = (10, 8),
         # utils
         random_seed: int = 42,
@@ -395,6 +398,7 @@ class SelfClean:
         wandb_logging: bool = False,
         wandb_project_name: str = "SelfClean",
         max_length: int = 128,
+        cache_dir: Optional[str] = None,
     ):
         if hyperparameters is None:
             if pretraining_type == "simcse":
@@ -409,9 +413,9 @@ class SelfClean:
         # Create dataset
         tokenizer = get_encoder_tokenizer_class(tokenizer_name)[1]
         if dataset_name == "hellaswag":
-            dataset = HellaSwagDataset(dataset_path, tokenizer, max_length=max_length)
+            dataset = HellaSwagDataset(dataset_path, tokenizer, max_length=max_length, cache_dir=cache_dir)
         elif dataset_name == "mmlu":
-            dataset = MMLUDataset(dataset_path, tokenizer, max_length=max_length)
+            dataset = MMLUDataset(dataset_path, tokenizer, max_length=max_length, cache_dir=cache_dir)
 
         additional_run_info = (
             dataset_path.stem if dataset_name is None else dataset_name
@@ -556,6 +560,21 @@ class SelfClean:
                 batch_size=batch_size
             )
 
+            # save to disk
+            np.savez("embeddings_compact.npz", emb_space=emb_space, labels=labels, paths=paths, categories=categories,
+                     context_only_emb_space=context_only_emb_space)
+
+            self.cleaner.fit(
+                emb_space=np.asarray(emb_space),
+                labels=np.asarray(labels),
+                categories=np.asarray(categories),
+                paths=np.asarray(paths),
+                dataset=dataset,
+                class_labels=None,
+            )
+            issues_to_detect_copy = [issue for issue in issues_to_detect if issue != IssueTypes.NEAR_DUPLICATES_Q]
+            issue_manger = self.cleaner.predict(issues_to_detect=issues_to_detect_copy, data_type=DataType.TEXT)
+
             if IssueTypes.NEAR_DUPLICATES_Q in issues_to_detect:
                 # keep only every 4th item in context_only_emb_space, labels, categories, paths
                 labels_ = [labels[i] for i in range(len(labels)) if i % 4 == 0]
@@ -569,15 +588,16 @@ class SelfClean:
                     dataset=dataset,
                     class_labels=None,
                 )
-                self.cleaner.predict(issues_to_detect=[IssueTypes.NEAR_DUPLICATES_Q], data_type=DataType.TEXT)
-
-            self.cleaner.fit(
-                emb_space=np.asarray(emb_space),
-                labels=np.asarray(labels),
-                categories=np.asarray(categories),
-                paths=np.asarray(paths),
+                issue_manager_context_only = self.cleaner.predict(issues_to_detect=[IssueTypes.NEAR_DUPLICATES_Q], data_type=DataType.TEXT)
+                issue_manager = IssueManager(issue_dict={**issue_manger.issue_dict, **issue_manager_context_only.issue_dict},
+                                             meta_data_dict=issue_manger.meta_data_dict)
+            plot_inspection_result_text(
+                issue_manager=issue_manager,
                 dataset=dataset,
-                class_labels=None,
+                plot_top_N=self.cleaner.plot_top_N,
+                output_path=self.cleaner.output_path,
             )
-
-        return self.cleaner.predict(issues_to_detect=issues_to_detect, data_type=DataType.TEXT)
+            md = generate_markdown_report(issue_manager=issue_manager, dataset=dataset,
+                                          top_n=self.cleaner.plot_top_N,
+                                          output_path=self.cleaner.output_path, model_name=hyperparameters["model"]["base_model"])
+            return issue_manager

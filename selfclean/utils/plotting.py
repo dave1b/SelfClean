@@ -96,7 +96,13 @@ def plot_inspection_result(
         )
 
     fig.tight_layout()
-    if output_path is not None:
+    if output_path:
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path_ = Path(f'{output_path}.png')
+        counter = 1
+        while (output_path_.exists()):
+            output_path_ = output_path.with_stem(f"{output_path.stem}_{counter}.png")
+            counter += 1
         plt.savefig(output_path, bbox_inches="tight")
     plt.show()
 
@@ -106,13 +112,16 @@ def plot_inspection_result_text(
     dataset,
     plot_top_N: int = 5,
     output_path: Optional[Union[str, Path]] = None,
-    figsize: tuple = (28, 18),
+    figsize: tuple = (28, 22),
     h1_font_size: int = 15,
     h2_font_size: int = 12,
     h3_font_size: int = 12,
 ):
     rows = 0
     height_ratios = []
+    if issue_manager["near_duplicates_questions/context"] is not None:
+        rows += 3
+        height_ratios.extend([0.8, 1.2, 1.2])
     if issue_manager["near_duplicates"] is not None:
         rows += 3
         height_ratios.extend([0.8, 1.2, 1.2])
@@ -161,6 +170,34 @@ def plot_inspection_result_text(
         ax.set_xticks([])
         ax.set_yticks([])
         ax.set_axis_off()
+
+    # ==== Near Duplicates (Questions/Context) ====
+    if issue_manager["near_duplicates_questions/context"] is not None:
+        for i in range(plot_top_N):
+            ax = fig.add_subplot(grid[row_idx, i])
+            ax.set_axis_off()
+            if i == 0:
+                ax.text(0.5, 0.4, "Near-Duplicate for question/context only Ranking",
+                        ha='center', va='bottom',
+                        fontsize=h1_font_size, fontweight='bold')
+        row_idx += 1
+
+        near_duplicate_issues = issue_manager["near_duplicates"]
+        for i, (idx1, idx2) in enumerate(near_duplicate_issues["indices"][:plot_top_N]):
+            text1 = wrap_text(truncate_text(dataset[int(idx1)][3]))
+            text2 = wrap_text(truncate_text(dataset[int(idx2)][3]))
+
+            ax = fig.add_subplot(grid[row_idx, i])
+            make_ax_text(ax, text1, "lightblue", "gray")
+            ax.set_title(
+                f"Ranking: {i + 1}, Idx: {int(idx1)}",
+                fontsize=h2_font_size, pad=20, y=1.05
+            )
+
+            ax = fig.add_subplot(grid[row_idx + 1, i])
+            make_ax_text(ax, text2, "lightblue", "gray")
+            ax.set_title(f"Idx: {int(idx2)}", fontsize=h2_font_size, pad=20, y=1.05)
+        row_idx += 2
 
     # ==== Near Duplicates ====
     if issue_manager["near_duplicates"] is not None:
@@ -266,10 +303,16 @@ def plot_inspection_result_text(
         row_idx += 1
 
     plt.tight_layout(rect=[0.02, 0.02, 0.98, 0.98])
-    if output_path is not None:
-        plt.savefig(output_path, bbox_inches="tight", dpi=200)
-    plt.show()
 
+    if output_path:
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path_ = Path(f'{output_path}.png')
+        counter = 1
+        while (output_path_.exists()):
+            output_path_ = output_path.with_stem(f"{output_path.stem}_{counter}.png")
+            counter += 1
+        plt.savefig(output_path_, bbox_inches="tight", dpi=200)
+    plt.show()
 
 def plot_frac_cut(dist, logit_scores, bins, q1, q2, cutoff, loc, scale, path):
     with plt.style.context(["science", "std-colors", "grid"]):
