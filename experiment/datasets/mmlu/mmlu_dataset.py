@@ -75,7 +75,8 @@ class MMLUDataset(Dataset):
                 "text": f"{context} {wrong}",
                 "correct": 0,
                 "category": entry["subject"],
-                "task_id": idx
+                "task_id": idx,
+                "context_only": None
             } for wrong in wrong_endings)
 
         return data_points

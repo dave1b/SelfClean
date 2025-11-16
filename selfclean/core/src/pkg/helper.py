@@ -143,7 +143,6 @@ def embed_text_dataset(torch_dataset, model, batch_size, normalize=True, tqdm_de
             if IssueTypes.NEAR_DUPLICATES_Q in issues_to_detect:
                 # Also embed context only
                 filtered_context_only_inputs = {'input_ids': torch.tensor([], dtype=torch.int64),
-                                                'token_type_ids': torch.tensor([], dtype=torch.int64),
                                                 'attention_mask': torch.tensor([], dtype=torch.int64)}
                 for i in range(min(batch_size, len(label))):
                     flag_ = context_only_flag[i]

@@ -386,7 +386,7 @@ class SelfClean:
             IssueTypes.LABEL_ERRORS,
             IssueTypes.CATEGORY_ERRORS
         ],
-        base_model: str = "",
+        base_model: str = "bert",
         # embedding
         n_layers: int = 1,
         apply_l2_norm: bool = True,
