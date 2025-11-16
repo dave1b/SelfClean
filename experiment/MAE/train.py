@@ -112,14 +112,15 @@ if __name__ == "__main__":
     start = datetime.now()
     tokenizer = get_encoder_tokenizer_class("bert_mlm")[1]
 
-    dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_train_0.01ksubset.json"
+    hellaswag_dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_train.json"
+    mmlu_dataset_path = Path(__file__).parent.parent / "datasets" / "mmlu" / "mmlu_test.json"
 
     dataset = HellaSwagDataset(
-        json_path=dataset_path,
+        json_path=hellaswag_dataset_path,
         tokenizer=tokenizer,
         cache_dir="./cache",
         pre_tokenize=True  # Enable pre-tokenization
     )
     print("Training MAE Text")
-    model = train_mae_text(dataset, 10, 32, True, 1, None, MAE_TEXT_STANDARD_HYPERPARAMETERS)
+    model = train_mae_text(dataset, 5, 64, True, 1, None, MAE_TEXT_STANDARD_HYPERPARAMETERS)
     print(f'Finished MAE training after: {datetime.now() - start}')

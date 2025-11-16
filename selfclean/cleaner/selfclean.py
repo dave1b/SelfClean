@@ -96,7 +96,7 @@ class SelfClean:
         # plotting
         plot_distribution: bool = False,
         plot_top_N: Optional[int] = None,
-        output_path: Optional[str] = Path(__file__).parent / "output" / "hellaswag_simcse" / "result",
+        output_path: Optional[str] = Path(__file__).parent.parent.parent / "examples" / "output" / "hellaswag_simcse" / "result",
         figsize: tuple = (10, 8),
         # utils
         random_seed: int = 42,

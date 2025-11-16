@@ -1,6 +1,7 @@
 import gc
 import os
 import platform
+from datetime import datetime
 from typing import Optional
 
 from experiment.datasets.hellaswag.hella_swag_dataset import HellaSwagDataset
@@ -110,6 +111,7 @@ def train_simcse(
 
 
 if __name__ == "__main__":
+    start = datetime.now()
     tokenizer = get_encoder_tokenizer_class("bert")[1]
 
     hellaswag_dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_train.json"
@@ -124,4 +126,4 @@ if __name__ == "__main__":
 
     print("Training SimCSE")
     model = train_simcse(dataset, 5, 64, True, 1, None, SIMCSE_STANDARD_HYPERPARAMETERS)
-    print("Finished SimCSE training")
+    print(f'Finished SimCSE training after: {datetime.now() - start}')

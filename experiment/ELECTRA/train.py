@@ -111,14 +111,16 @@ if __name__ == "__main__":
     start = datetime.now()
     tokenizer = get_encoder_tokenizer_class("electra")[1]
 
-    dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_train_0.01ksubset.json"
+    hellaswag_dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_train.json"
+    mmlu_dataset_path = Path(__file__).parent.parent / "datasets" / "mmlu" / "mmlu_test.json"
+
     dataset = HellaSwagDataset(
-        json_path=dataset_path,
+        json_path=hellaswag_dataset_path,
         tokenizer=tokenizer,
         cache_dir="./cache",
         pre_tokenize=True  # Enable pre-tokenization
     )
 
     print("Training ELECTRA Text")
-    model = train_electra(dataset, 50, 32, True, 1, None, ELECTRA_STANDARD_HYPERPARAMETERS)
+    model = train_electra(dataset, 5, 32, True, 1, None, ELECTRA_STANDARD_HYPERPARAMETERS)
     print(f'Finished ELECTRA training after: {datetime.now() - start}')
