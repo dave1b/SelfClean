@@ -128,7 +128,7 @@ class MMLUDataset(Dataset):
     def __len__(self) -> int:
         return len(self.data_points)
 
-    def __getitem__(self, idx: int) -> Tuple[Dict[str, torch.Tensor], int, str, str, Dict[str, torch.Tensor], bool]:
+    def __getitem__(self, idx: int) -> Tuple[Dict[str, torch.Tensor], int, str, str, Dict[str, torch.Tensor], bool, str]:
         """Return tokenized sentence and label with optimized access."""
         item = self.data_points[idx]
         label = item["correct"]
@@ -147,16 +147,17 @@ class MMLUDataset(Dataset):
 
         # Handle context if needed
         context_flag = False
+        context_text = None
         context_inputs = {k: v.clone() for k, v in inputs.items()}  # Shallow copy is sufficient
 
         if self.provide_tokenized_context:
-            context = item["context_only"]
-            if isinstance(context, str):
-                context_inputs = self._tokenize(context)
+            context_text = item["context_only"]
+            if isinstance(context_text, str):
+                context_inputs = self._tokenize(context_text)
                 context_inputs = {k: v.squeeze(0) for k, v in context_inputs.items()}
                 context_flag = True
 
-        return inputs, label, category, text, context_inputs, context_flag
+        return inputs, label, category, text, context_inputs, context_flag, context_text
 
     def set_provide_tokenized_context(self, provide: bool) -> None:
         """Set whether to provide tokenized context separately."""
@@ -166,7 +167,7 @@ class MMLUDataset(Dataset):
         """Return a collate function for DataLoader that handles dynamic padding."""
         def collate_fn(batch):
             # Separate components
-            inputs_list, labels, categories, texts, context_inputs_list, context_flags = zip(*batch)
+            inputs_list, labels, categories, texts, context_inputs_list, context_flags, context_text = zip(*batch)
 
             # Stack labels and convert to tensor
             labels = torch.stack(labels) if torch.is_tensor(labels[0]) else torch.tensor(labels)
@@ -191,6 +192,7 @@ class MMLUDataset(Dataset):
                 'labels': labels,
                 'categories': categories,
                 'texts': texts,
-                'context_inputs': context_inputs
+                'context_inputs': context_inputs,
+                'context_text': context_text
             }
         return collate_fn

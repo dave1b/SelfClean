@@ -11,9 +11,9 @@ def generate_markdown_report(
     issue_manager: IssueManager,
     dataset: List,
     model_name: str,
-    top_n: int = 15,
+    top_n: int,
     output_path: Optional[Union[str, Path]] = None,
-    max_text_length: int = 300,
+    max_text_length: int = 400,
     wrap_width: int = 50
 ) -> str:
     """
@@ -50,17 +50,22 @@ def generate_markdown_report(
         table_data = []
         for i, idx in enumerate(issues["indices"][:top_n]):
             if issue_type in ["near_duplicates", "near_duplicates_questions/context"]:
+                factor = 1
+                tuple_index = 3
+                if issue_type == "near_duplicates_questions/context":
+                    factor = 4
+                    tuple_index = 6
                 # Handle near duplicates (pairs of indices)
                 idx1, idx2 = idx
-                text1 = wrap_text(dataset[int(idx1)][3] if isinstance(dataset[int(idx1)], (list, tuple)) else dataset[int(idx1)].get("text", ""))
-                text2 = wrap_text(dataset[int(idx2)][3] if isinstance(dataset[int(idx2)], (list, tuple)) else dataset[int(idx2)].get("text", ""))
+                text1 = wrap_text(dataset[int(idx1)*factor][tuple_index] if isinstance(dataset[int(idx1)], (list, tuple)) else dataset[int(idx1)].get("text", ""))
+                text2 = wrap_text(dataset[int(idx2)*factor][tuple_index] if isinstance(dataset[int(idx2)], (list, tuple)) else dataset[int(idx2)].get("text", ""))
 
                 score = issues["scores"][i] if "scores" in issues else "N/A"
 
                 table_data.append({
                     "Rank": i+1,
-                    "Index 1": int(idx1),
-                    "Index 2": int(idx2),
+                    "Index 1": int(idx1)*factor,
+                    "Index 2": int(idx2)*factor,
                     "Text 1": text1,
                     "Text 2": text2,
                     "Score": f"{score:.4f}" if isinstance(score, (int, float)) else score
@@ -166,6 +171,7 @@ def generate_markdown_report(
             counter += 1
         with open(output_path_, "w", encoding="utf-8") as f:
             f.write(report)
+        print(f"Report saved to {output_path_}")
 
     display_markdown_report(report)
     return report

@@ -126,7 +126,7 @@ def embed_text_dataset(torch_dataset, model, batch_size, normalize=True, tqdm_de
     with torch.no_grad():
         for batch in tqdm(torch_dataset, desc=tqdm_desc):
             # Unpack batch (inputs, label)
-            inputs, label, category, _, context_only_inputs, context_only_flag = batch
+            inputs, label, category, _, context_only_inputs, context_only_flag, *_ = batch
             inputs = {k: v.to(get_device()) for k, v in inputs.items()}
 
             # Get embeddings

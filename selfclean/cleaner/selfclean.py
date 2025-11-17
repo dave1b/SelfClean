@@ -572,6 +572,7 @@ class SelfClean:
             issue_manger = self.cleaner.predict(issues_to_detect=issues_to_detect_copy, data_type=DataType.TEXT)
 
             if IssueTypes.NEAR_DUPLICATES_Q in issues_to_detect:
+                dataset.set_provide_tokenized_context(True)
                 # keep only every 4th item in context_only_emb_space, labels, categories, paths
                 labels_ = [labels[i] for i in range(len(labels)) if i % 4 == 0]
                 categories_ = [categories[i] for i in range(len(categories)) if i % 4 == 0]
