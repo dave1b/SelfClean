@@ -11,7 +11,7 @@ def generate_markdown_report(
     issue_manager: IssueManager,
     dataset: List,
     model_name: str,
-    top_n: int = 5,
+    top_n: int = 15,
     output_path: Optional[Union[str, Path]] = None,
     max_text_length: int = 300,
     wrap_width: int = 50
@@ -103,7 +103,8 @@ def generate_markdown_report(
     # Create the full report
     report = "# Data Quality Report\n\n"
     report += f"Generated on: {pd.Timestamp.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n"
-    report += f"Dataset name: {dataset.name}"
+    report += f"Dataset type: {dataset.name}\n\n"
+    report += f"Dataset name: {dataset.path.name}\n\n"
     report += f"Dataset size: {len(dataset)} samples\n\n"
     report += f"Model used: {model_name}\n\n"
 

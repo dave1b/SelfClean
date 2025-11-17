@@ -560,10 +560,6 @@ class SelfClean:
                 batch_size=batch_size
             )
 
-            # save to disk
-            np.savez("embeddings_compact.npz", emb_space=emb_space, labels=labels, paths=paths, categories=categories,
-                     context_only_emb_space=context_only_emb_space)
-
             self.cleaner.fit(
                 emb_space=np.asarray(emb_space),
                 labels=np.asarray(labels),

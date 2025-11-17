@@ -26,6 +26,7 @@ class HellaSwagDataset(Dataset):
         self.max_length = max_length
         self.provide_tokenized_context = False
         self.name = "HellaSwag"
+        self.path = json_path
 
         # Load and validate data
         self._load_and_validate_data(json_path)

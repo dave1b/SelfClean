@@ -3,13 +3,13 @@ from pathlib import Path
 from selfclean import SelfClean
 
 selfclean = SelfClean(
-    plot_top_N=10,
+    plot_top_N=20,
     # auto_cleaning=True,
 )
 
 # Run with SimCSE
 results = selfclean.run_on_text_dataset(
-    dataset_path=Path("../experiment/datasets/hellaswag/hellaswag_train_0.01ksubset.json"),
+    dataset_path=Path("../experiment/datasets/hellaswag/hs_train_25percent.json"),
     pretraining_type="simcse",
     epochs=0,
     batch_size=32,
