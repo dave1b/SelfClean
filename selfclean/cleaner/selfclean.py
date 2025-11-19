@@ -480,6 +480,8 @@ class SelfClean:
                     if work_dir is not None:
                         hyperparameters["work_dir"] = work_dir
 
+                    init_distributed_mode()
+
                     self.model = train_simcse(
                         dataset=dataset,
                         epochs=epochs,

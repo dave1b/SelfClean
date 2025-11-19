@@ -158,7 +158,7 @@ def generate_markdown_report(
         stats_df.set_index("Issue Type", inplace=True)
         report += stats_df.to_markdown(tablefmt="grid")
     else:
-        report += "No issues found in the dataset."
+        report += ""
 
     # Save to file if output_path is provided
 
