@@ -9,7 +9,7 @@ selfclean = SelfClean(
 
 # Run with SimCSE
 results = selfclean.run_on_text_dataset(
-    dataset_path=Path("../experiment/datasets/hellaswag/hs_train_25percent.json"),
+    dataset_path=Path("../experiment/datasets/hellaswag/hellaswag_train.json"),
     pretraining_type="simcse",
     epochs=0,
     batch_size=32,
