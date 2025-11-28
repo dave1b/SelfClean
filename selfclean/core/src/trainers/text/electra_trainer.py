@@ -28,7 +28,7 @@ class ElectraTrainer(Trainer):
         print_model_summary: bool = False,
         wandb_logging: bool = True,
         wandb_project_name: str = "SSL",
-        tokenizer = None,
+        mask_token_id = 103
     ):
         super().__init__(
             train_dataset=train_dataset,
@@ -44,8 +44,8 @@ class ElectraTrainer(Trainer):
         self.model = ElectraModel(self.config["model"]["base_model"])
         self.model.to(self.device)
         self.model = self.distribute_model(self.model)
-        self.tokenizer = tokenizer
         self.val_dataset = val_dataset
+        self.mask_token_id = mask_token_id
 
         if wandb_logging:
             import wandb
@@ -272,7 +272,7 @@ class ElectraTrainer(Trainer):
 
         # 2. Replace masked tokens with [MASK] for generator
         masked_ids = input_ids.clone()
-        masked_ids[mask_arr] = self.tokenizer.mask_token_id
+        masked_ids[mask_arr] = self.mask_token_id
 
         # 3. Run generator
         with torch.no_grad():

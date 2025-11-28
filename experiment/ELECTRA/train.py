@@ -110,7 +110,7 @@ def train_electra(
         additional_run_info=additional_run_info,
         wandb_logging=wandb_logging,
         wandb_project_name=wandb_project_name,
-        tokenizer=tokenizer,
+        mask_token_id=tokenizer.mask_token_id,
     )
     model = trainer.fit()
     del trainer, train_loader
