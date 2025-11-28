@@ -480,7 +480,6 @@ class SelfClean:
                     if work_dir is not None:
                         hyperparameters["work_dir"] = work_dir
 
-                    init_distributed_mode()
 
                     self.model = train_simcse(
                         dataset=dataset,
@@ -512,7 +511,6 @@ class SelfClean:
                     if work_dir is not None:
                         hyperparameters["work_dir"] = work_dir
 
-                    init_distributed_mode()
 
                     self.model = train_mae_text(
                         dataset=dataset,
@@ -531,6 +529,7 @@ class SelfClean:
                     raise ValueError(f"Unknown pretraining type: {pretraining_type}")
 
             # Create data loader for embedding
+            init_distributed_mode()
             if torch.cuda.is_available():
                 sampler = DistributedSampler(dataset, shuffle=False)
                 kwargs = {"sampler": sampler}
