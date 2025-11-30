@@ -124,10 +124,10 @@ if __name__ == "__main__":
     start = datetime.now()
     tokenizer = get_encoder_tokenizer_class("electra")[1]
 
-    # hs_train_dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_train.json"
-    # hs_val_dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_val.json"
-    hs_train_dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_train_1ksubset.json"
-    hs_val_dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_train_1ksubset.json"
+    hs_train_dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_train.json"
+    hs_val_dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_val.json"
+    # hs_train_dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_train_1ksubset.json"
+    # hs_val_dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_train_1ksubset.json"
     mmlu_dataset_path = Path(__file__).parent.parent / "datasets" / "mmlu" / "mmlu_test.json"
 
     train_dataset = HellaSwagDataset(
@@ -145,5 +145,5 @@ if __name__ == "__main__":
     )
 
     print("Training ELECTRA Text")
-    model = train_electra(train_dataset, val_dataset, 10, 32, True, 1, None, ELECTRA_STANDARD_HYPERPARAMETERS)
+    model = train_electra(train_dataset, val_dataset, 50, 32, True, 1, None, ELECTRA_STANDARD_HYPERPARAMETERS)
     print(f'Finished ELECTRA training after: {datetime.now() - start}')
