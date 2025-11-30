@@ -48,7 +48,8 @@ SIMCSE_STANDARD_HYPERPARAMETERS = {
 
 
 def train_simcse(
-    dataset: Dataset,
+    train_dataset: Dataset,
+    val_dataset: Dataset,
     epochs: int = 2,
     batch_size: int = 32,
     ssl_pre_training: bool = True,
@@ -75,7 +76,7 @@ def train_simcse(
     init_distributed_mode()
 
     if torch.cuda.is_available():
-        sampler = DistributedSampler(dataset, shuffle=True)
+        sampler = DistributedSampler(train_dataset, shuffle=True)
         kwargs = {"sampler": sampler}
     else:
         kwargs = {"shuffle": True}
@@ -87,16 +88,29 @@ def train_simcse(
         kwargs["num_workers"] = 0
 
     train_loader = DataLoader(
-        dataset,
+        train_dataset,
         batch_size=batch_size,
-        collate_fn=dataset.get_collate_fn(),
+        collate_fn=train_dataset.get_collate_fn(),
         drop_last=True,
         pin_memory=True,
         **kwargs,
     )
 
+    if val_dataset is not None:
+        val_loader = DataLoader(
+            train_dataset,
+            batch_size=batch_size,
+            collate_fn=val_dataset.get_collate_fn(),
+            drop_last=True,
+            pin_memory=True,
+            **kwargs,
+        )
+    else :
+        val_loader = None
+
     trainer = SimCSETrainer(
         train_dataset=train_loader,
+        val_dataset=val_loader,
         config=hyperparameters,
         additional_run_info=additional_run_info,
         wandb_logging=wandb_logging,
@@ -114,16 +128,26 @@ if __name__ == "__main__":
     start = datetime.now()
     tokenizer = get_encoder_tokenizer_class("bert")[1]
 
-    hellaswag_dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_train.json"
+    hs_train_dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_train.json"
+    hs_val_dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_val.json"
+    # hs_train_dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_train_1ksubset.json"
+    # hs_val_dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_train_1ksubset.json"
     mmlu_dataset_path = Path(__file__).parent.parent / "datasets" / "mmlu" / "mmlu_test.json"
 
-    dataset = MMLUDataset(
-        json_path=mmlu_dataset_path,
+    train_dataset = HellaSwagDataset(
+        json_path=hs_train_dataset_path,
+        tokenizer=tokenizer,
+        cache_dir="./cache",
+        pre_tokenize=True  # Enable pre-tokenization
+    )
+
+    val_dataset = HellaSwagDataset(
+        json_path=hs_val_dataset_path,
         tokenizer=tokenizer,
         cache_dir="./cache",
         pre_tokenize=True  # Enable pre-tokenization
     )
 
     print("Training SimCSE")
-    model = train_simcse(dataset, 5, 64, True, 1, None, SIMCSE_STANDARD_HYPERPARAMETERS)
+    model = train_simcse(train_dataset, val_dataset, 5, 64, True, 1, None, SIMCSE_STANDARD_HYPERPARAMETERS)
     print(f'Finished SimCSE training after: {datetime.now() - start}')

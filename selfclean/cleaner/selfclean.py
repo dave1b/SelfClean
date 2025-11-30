@@ -482,7 +482,8 @@ class SelfClean:
 
 
                     self.model = train_simcse(
-                        dataset=dataset,
+                        train_dataset=dataset,
+                        val_dataset=None,
                         epochs=epochs,
                         batch_size=batch_size,
                         ssl_pre_training=ssl_pre_training,
@@ -513,7 +514,8 @@ class SelfClean:
 
 
                     self.model = train_mae_text(
-                        dataset=dataset,
+                        train_dataset=dataset,
+                        val_dataset=None,
                         epochs=epochs,
                         batch_size=batch_size,
                         ssl_pre_training=ssl_pre_training,
