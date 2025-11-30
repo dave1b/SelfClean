@@ -172,7 +172,7 @@ class HellaSwagDataset(Dataset):
 
         def collate_fn(batch):
             # Separate components
-            inputs_list, labels, categories, texts, context_inputs_list, context_flags, context_text = zip(*batch)
+            inputs_list, labels, categories, texts, context_inputs_list, context_flags, context_text, id  = zip(*batch)
 
             # Stack labels and convert to tensor
             labels = torch.stack(labels) if torch.is_tensor(labels[0]) else torch.tensor(labels)
@@ -198,7 +198,8 @@ class HellaSwagDataset(Dataset):
                 'categories': categories,
                 'texts': texts,
                 'context_inputs': context_inputs,
-                'context_text': context_text
+                'context_text': context_text,
+                'ids': id
             }
 
         return collate_fn
