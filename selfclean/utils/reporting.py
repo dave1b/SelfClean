@@ -43,7 +43,7 @@ def generate_markdown_report(
         # Wrap text
         return textwrap.fill(text, width=wrap_width)
 
-    def create_issue_table(issues: Dict, issue_type: str, dataset: List) -> str:
+    def create_issue_table(issues: Dict, issue_type: str, dataset: List, description: str) -> str:
         """Create a markdown table for a specific issue type."""
 
         # Create table data
@@ -64,8 +64,10 @@ def generate_markdown_report(
 
                 table_data.append({
                     "Rank": i+1,
-                    "Index 1": int(idx1)*factor,
-                    "Index 2": int(idx2)*factor,
+                    # "Index 1": int(idx1)*factor,
+                    # "Index 2": int(idx2)*factor,
+                    "Index 1": dataset[int(idx1)*factor][7],
+                    "Index 2": dataset[int(idx2)*factor][7],
                     "Text 1": text1,
                     "Text 2": text2,
                     "Score": f"{score:.4f}" if isinstance(score, (int, float)) else score
@@ -79,7 +81,7 @@ def generate_markdown_report(
 
                 row = {
                     "Rank": i+1,
-                    "Index": int(idx),
+                    "Index": dataset[int(idx)][7],
                     "Text": text,
                     "Score": f"{score:.4f}" if isinstance(score, (int, float)) else score
                 }
@@ -101,6 +103,7 @@ def generate_markdown_report(
 
         # Generate markdown table
         md_table = f"## {issue_type.replace('_', ' ').title()}\n\n"
+        md_table += f"{description}\n\n" if description else ""
         md_table += df.to_markdown(tablefmt="github")
         md_table += "\n\n"
         return md_table
@@ -117,27 +120,32 @@ def generate_markdown_report(
 
     # Add near duplicates (questions)
     if issue_manager["near_duplicates_questions/context"] is not None:
-        report += create_issue_table(issue_manager["near_duplicates_questions/context"], "near_duplicates_questions/context", dataset)
+        description = "Near duplicate questions based only on context question similarity."
+        report += create_issue_table(issue_manager["near_duplicates_questions/context"], "near_duplicates_questions/context", dataset, description)
         report += "\n\n"
 
     # Add near duplicates
     if issue_manager["near_duplicates"] is not None:
-        report += create_issue_table(issue_manager["near_duplicates"], "near_duplicates", dataset)
+        description = "Near duplicate questions based on combined question and answer similarity."
+        report += create_issue_table(issue_manager["near_duplicates"], "near_duplicates", dataset, description)
         report += "\n\n"
 
     # Add off-topic samples
     if issue_manager["off_topic_samples"] is not None:
-        report += create_issue_table(issue_manager["off_topic_samples"], "off_topic_samples", dataset)
+        description = "Off-topic samples based on combined question and answer."
+        report += create_issue_table(issue_manager["off_topic_samples"], "off_topic_samples", dataset, description)
         report += "\n\n"
 
     # Add label errors
     if issue_manager["label_errors"] is not None:
-        report += create_issue_table(issue_manager["label_errors"], "label_errors", dataset)
+        description = "Label errors based only on Label."
+        report += create_issue_table(issue_manager["label_errors"], "label_errors", dataset, description)
         report += "\n\n"
 
     # Add category errors
     if issue_manager["category_errors"] is not None:
-        report += create_issue_table(issue_manager["category_errors"], "category_errors", dataset)
+        description = "Category errors based only on Category."
+        report += create_issue_table(issue_manager["category_errors"], "category_errors", dataset, description)
         report += "\n\n"
 
     # Add summary statistics

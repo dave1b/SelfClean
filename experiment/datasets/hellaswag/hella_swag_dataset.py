@@ -61,6 +61,7 @@ class HellaSwagDataset(Dataset):
 
         for idx, entry in self.df.iterrows():
             context = entry["ctx"]
+            id = entry["ind"]
             correct_ending = entry["endings"][entry["label"]]
             wrong_endings = [entry["endings"][i] for i in range(4) if i != entry["label"]]
 
@@ -69,7 +70,7 @@ class HellaSwagDataset(Dataset):
                 "text": f"{context} {correct_ending}",
                 "correct": 1,
                 "category": entry["activity_label"],
-                "task_id": idx,
+                "task_id": f'{id}-0',
                 "context_only": context
             })
 
@@ -78,9 +79,9 @@ class HellaSwagDataset(Dataset):
                                    "text": f"{context} {wrong}",
                                    "correct": 0,
                                    "category": entry["activity_label"],
-                                   "task_id": idx,
+                                   "task_id": f'{id}-{wrong_idx+1}',
                                    "context_only": None
-                               } for wrong in wrong_endings)
+                               } for wrong_idx, wrong in enumerate(wrong_endings))
 
         return data_points
 
@@ -133,6 +134,7 @@ class HellaSwagDataset(Dataset):
     def __getitem__(self, idx: int) -> Tuple[Dict[str, torch.Tensor], int, str, str, Dict[str, torch.Tensor], bool, str]:
         """Return tokenized sentence and label with optimized access."""
         item = self.data_points[idx]
+        id = item["task_id"]
         label = item["correct"]
         category = item["category"]
         text = item["text"]
@@ -159,7 +161,7 @@ class HellaSwagDataset(Dataset):
                 context_inputs = {k: v.squeeze(0) for k, v in context_inputs.items()}
                 context_flag = True
 
-        return inputs, label, category, text, context_inputs, context_flag, context_text
+        return inputs, label, category, text, context_inputs, context_flag, context_text, id
 
     def set_provide_tokenized_context(self, provide: bool) -> None:
         """Set whether to provide tokenized context separately."""
