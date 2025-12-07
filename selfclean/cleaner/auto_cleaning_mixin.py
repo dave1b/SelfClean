@@ -39,7 +39,7 @@ class AutoCleaningMixin:
         issue_manger: IssueManager,
         return_dict: dict,
         output_path: Optional[Union[str, Path]] = None,
-    ):
+    ) -> dict:
         if self.auto_cleaning:
             # make sure the significance level is correctly set
             self.cleaner_kwargs["q"] = self.significance_level
@@ -57,6 +57,20 @@ class AutoCleaningMixin:
                     **self.cleaner_kwargs,
                 )
                 return_dict["near_duplicates"]["auto_issues"] = issues_dup
+
+            # Near Duplicates (Questions/Context)
+            near_duplicate_context_only_issues = issue_manger["near_duplicates_questions/context"]
+            if near_duplicate_context_only_issues is not None:
+                if output_path is not None:
+                    self.cleaner_kwargs["path"] = (
+                        f"{output_path.stem}_auto_dupqs{output_path.suffix}"
+                    )
+                self.cleaner_kwargs["alpha"] = self.near_duplicate_cut_off
+                issues_dup = self.fraction_cut(
+                    scores=near_duplicate_context_only_issues["scores"],
+                    **self.cleaner_kwargs,
+                )
+                return_dict["near_duplicates_questions/context"]["auto_issues"] = issues_dup
 
             # Off-Topic Samples
             off_topic_issues = issue_manger["off_topic_samples"]
@@ -86,6 +100,20 @@ class AutoCleaningMixin:
                 )
                 return_dict["label_errors"]["auto_issues"] = issues_lbl
 
+            # Category Errors
+            category_error_issues = issue_manger["category_errors"]
+            if category_error_issues is not None:
+                if output_path is not None:
+                    self.cleaner_kwargs["path"] = (
+                        f"{output_path.stem}_auto_cats{output_path.suffix}"
+                    )
+                self.cleaner_kwargs["alpha"] = self.label_error_cut_off
+                issues_lbl = self.fraction_cut(
+                    scores=category_error_issues["scores"],
+                    **self.cleaner_kwargs,
+                )
+                return_dict["category_errors"]["auto_issues"] = issues_lbl
+
         return return_dict
 
     def fraction_cut(
@@ -102,7 +130,7 @@ class AutoCleaningMixin:
         M = len(scores)
         if M == self.condensed_size:
             # scale alpha for duplicates
-            alpha = alpha**2
+            alpha = alpha ** 2
         # only consider the point in range [0,1]
         _scores = scores[(scores > 0) & (scores < 1)]
         # logit transform
@@ -121,8 +149,8 @@ class AutoCleaningMixin:
         cutoff = dist.ppf(prob) * scale + loc
 
         # Exclude the scores below probability threshold
-        exclude = logit_scores < cutoff
-        n = exclude.sum()
+        outlier = logit_scores < cutoff
+        n = outlier.sum()
         logger.debug(f"{n} outliers ({n/self.N:.1%})")
 
         if plot_result:
@@ -151,7 +179,7 @@ class AutoCleaningMixin:
                     path,
                 )
 
-        return np.where(exclude)[0]
+        return outlier
 
     def threshold_sensitivity(self, scores: np.ndarray, ax=None):
         thresholds = 2 ** np.linspace(-10, -2, 17)
