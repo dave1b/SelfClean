@@ -1,35 +1,153 @@
-import json
 import pandas as pd
 from pathlib import Path
 from typing import Dict, List, Optional, Union
 from selfclean.cleaner.issue_manager import IssueManager, IssueTypes
 
 
-def generate_issue_scores_json(
+def generate_outlier_parquet(
+    auto_clean_dict: Dict,
+    dataset: List,
+    output_path: Optional[Union[str, Path]] = None,
+    include_all: bool = False,
+) -> Dict:
+    """
+    Generate a Parquet file with only the entries marked as issues (True in auto_issues)
+    for each issue type in auto_clean_dict.
+
+    Args:
+        auto_clean_dict: Dictionary containing issue types and their auto_issues lists
+        dataset: The dataset containing the original samples
+        output_path: Path to save the Parquet file
+
+    Returns:
+        Dictionary containing all issue data and indices for True entries
+    """
+
+    def process_issue_type(issue_type: str, issue_data: Dict) -> pd.DataFrame:
+        """Process a specific issue type and return a DataFrame with only True entries."""
+        data = []
+        auto_issues = issue_data["auto_issues"]
+        indices = issue_data["indices"]
+        scores = issue_data.get("scores", [None] * len(indices))
+
+        # Only process entries where auto_issues is True
+        for i, is_issue in enumerate(auto_issues):
+            if is_issue:
+                idx = indices[i]
+                score = scores[i]
+
+                if issue_type in ["near_duplicates", "near_duplicates_questions/context"]:
+                    # Handle near duplicates (pairs of indices)
+                    idx1, idx2 = idx
+                    factor = 1
+                    if issue_type == "near_duplicates_questions/context":
+                        factor = 4
+
+                    # Get the unique IDs for each sample
+                    id1 = dataset[int(idx1) * factor][7] if isinstance(dataset[int(idx1)], (list, tuple)) else f"idx_{int(idx1) * factor}"
+                    id2 = dataset[int(idx2) * factor][7] if isinstance(dataset[int(idx2)], (list, tuple)) else f"idx_{int(idx2) * factor}"
+
+                    data.append({
+                        "id_1": id1,
+                        "id_2": id2,
+                        "score": round(float(score), 5) if score is not None else None,
+                        "issue_type": issue_type,
+                        "id": None
+                    })
+                else:
+                    # Handle single indices
+                    factor = 1
+                    if issue_type == "off_topic_samples":
+                        factor = 1
+                    elif issue_type in ["label_errors", "category_errors"]:
+                        factor = 1
+
+                    # Get the unique ID for the sample
+                    sample_id = dataset[int(idx) * factor][7] if isinstance(dataset[int(idx)],
+                                                                            (list, tuple)) else f"idx_{int(idx) * factor}"
+
+                    data.append({
+                        "id": sample_id,
+                        "score": round(float(score), 5) if score is not None else None,
+                        "issue_type": issue_type,
+                        "id_1": None,
+                        "id_2": None
+                    })
+
+        return pd.DataFrame(data)
+
+    # Initialize a list to hold all DataFrames
+    all_dfs = []
+
+    # Create metadata
+    metadata = {
+        "dataset_name": getattr(dataset, "name", "unknown"),
+        "dataset_size": len(dataset),
+        "generated_on": str(pd.Timestamp.now()),
+        "issue_types": list(auto_clean_dict.keys())
+    }
+
+    # Process each issue type in auto_clean_dict
+    for issue_type, issue_data in auto_clean_dict.items():
+        df = process_issue_type(issue_type, issue_data)
+        if not df.empty:
+            all_dfs.append(df)
+
+    # Combine all DataFrames
+    if all_dfs:
+        combined_df = pd.concat(all_dfs, ignore_index=True)
+        # Add metadata as attributes
+        combined_df.attrs = metadata
+
+        # Save to Parquet file if output_path is provided
+        if output_path:
+            output_path = Path(output_path)
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+
+            # Ensure unique filename
+            output_path_ = output_path.with_suffix('.parquet')
+            counter = 1
+            while output_path_.exists():
+                output_path_ = output_path.with_stem(f"{output_path.stem}_{counter}").with_suffix('.parquet')
+                counter += 1
+
+            combined_df.to_parquet(output_path_, engine='pyarrow')
+            combined_df.to_json(output_path_.with_suffix(".json"), orient="records", lines=False)
+            print(f"Issue scores saved to {output_path_}")
+
+        return {
+            "data": combined_df,
+            "metadata": metadata
+        }
+
+
+
+def generate_issue_scores_parquet(
     issue_manager: IssueManager,
     dataset: List,
     output_path: Optional[Union[str, Path]] = None,
     include_all_scores: bool = True
 ) -> Dict:
     """
-    Generate a JSON file with issue scores and indices for each issue type.
+    Generate a Parquet file with issue scores and indices for each issue type.
+    Parquet format provides better performance and compression than JSON.
 
     Args:
         issue_manager: IssueManager containing issue data from SelfClean
         dataset: The dataset containing the original samples
-        output_path: Path to save the JSON file
+        output_path: Path to save the Parquet file
         include_all_scores: If True, includes all scores. If False, only includes top issues.
 
     Returns:
         Dictionary containing all issue scores and indices
     """
 
-    def process_issue_type(issue_type: str, issues: Dict) -> List[Dict]:
-        """Process a specific issue type and return a list of dictionaries with scores and indices."""
-        processed = []
+    def process_issue_type(issue_type: str, issues: Dict) -> pd.DataFrame:
+        """Process a specific issue type and return a DataFrame with scores and indices."""
+        data = []
 
         if issues is None:
-            return processed
+            return pd.DataFrame()
 
         # Get all indices and scores
         indices = issues["indices"]
@@ -47,10 +165,11 @@ def generate_issue_scores_json(
                 id1 = dataset[int(idx1) * factor][7] if isinstance(dataset[int(idx1)], (list, tuple)) else f"idx_{int(idx1) * factor}"
                 id2 = dataset[int(idx2) * factor][7] if isinstance(dataset[int(idx2)], (list, tuple)) else f"idx_{int(idx2) * factor}"
 
-                processed.append({
+                data.append({
                     "id_1": id1,
                     "id_2": id2,
-                    "score": round(float(score), 5) if score is not None else None
+                    "score": round(float(score), 5) if score is not None else None,
+                    "issue_type": issue_type
                 })
             else:
                 # Handle single indices
@@ -63,15 +182,16 @@ def generate_issue_scores_json(
                 # Get the unique ID for the sample
                 sample_id = dataset[int(idx) * factor][7] if isinstance(dataset[int(idx)], (list, tuple)) else f"idx_{int(idx) * factor}"
 
-                processed.append({
+                data.append({
                     "id": sample_id,
-                    "score": round(float(score), 5) if score is not None else None
+                    "score": round(float(score), 5) if score is not None else None,
+                    "issue_type": issue_type
                 })
 
-        return processed
+        return pd.DataFrame(data)
 
-    # Initialize the output dictionary
-    output = {}
+    # Initialize a list to hold all DataFrames
+    all_dfs = []
 
     # Process each issue type
     issue_types = {
@@ -82,12 +202,23 @@ def generate_issue_scores_json(
         IssueTypes.CATEGORY_ERRORS.value: "category_errors"
     }
 
+    # Create metadata DataFrame
+    metadata = {
+        "dataset_name": getattr(dataset, "name", "unknown"),
+        "dataset_size": len(dataset),
+        "generated_on": str(pd.Timestamp.now()),
+        "issue_types": list(issue_types.values())
+    }
+
+    # Process each issue type and collect DataFrames
     for enum_type, json_key in issue_types.items():
         issues = issue_manager.get_issues(enum_type)
         if issues is not None:
             if include_all_scores:
                 # Include all scores
-                output[json_key] = process_issue_type(enum_type, issues)
+                df = process_issue_type(enum_type, issues)
+                if not df.empty:
+                    all_dfs.append(df)
             else:
                 # Only include top issues (first 100 or all if less)
                 top_n = min(100, len(issues["indices"])) if issues.get("indices") else 0
@@ -96,30 +227,35 @@ def generate_issue_scores_json(
                         "indices": issues["indices"][:top_n],
                         "scores": issues["scores"][:top_n] if "scores" in issues else [None] * top_n
                     }
-                    output[json_key] = process_issue_type(enum_type, top_issues)
+                    df = process_issue_type(enum_type, top_issues)
+                    if not df.empty:
+                        all_dfs.append(df)
 
-    # Add metadata
-    output["metadata"] = {
-        "dataset_name": getattr(dataset, "name", "unknown"),
-        "dataset_size": len(dataset),
-        "generated_on": str(pd.Timestamp.now()),
-        "issue_types": list(issue_types.values())
-    }
+    # Combine all DataFrames
+    if all_dfs:
+        combined_df = pd.concat(all_dfs, ignore_index=True)
 
-    # Save to file if output_path is provided
-    if output_path:
-        output_path = Path(output_path)
-        output_path.parent.mkdir(parents=True, exist_ok=True)
-        output_path_ = Path(f'{output_path}.json')
-        counter = 1
-        # Handle case where file already exists
-        while output_path_.exists():
-            output_path_ = output_path.with_stem(f"{output_path.stem}_{counter}.json")
-            counter += 1
+        # Add metadata as attributes
+        combined_df.attrs = metadata
 
-        with open(output_path_, "w", encoding="utf-8") as f:
-            json.dump(output, f, indent=2, ensure_ascii=False)
+        # Save to Parquet file if output_path is provided
+        if output_path:
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+            output_path_ = Path(f'{output_path}.parquet')
+            counter = 1
 
-        print(f"Issue scores saved to {output_path_}")
+            while output_path_.exists():
+                output_path_ = output_path.with_stem(f"{output_path.stem}_{counter}.parquet")
+                counter += 1
 
-    return output
+            combined_df.to_parquet(output_path_, engine='pyarrow')
+            combined_df.to_json(output_path_.with_suffix(".json"), orient="records", lines=False)
+            print(f"Issue scores saved to {output_path_}")
+
+        return {
+            "data": combined_df,
+            "metadata": metadata
+        }
+    else:
+        print("No issues found to save.")
+        return {"data": pd.DataFrame(), "metadata": metadata}
