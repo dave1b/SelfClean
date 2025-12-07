@@ -148,33 +148,12 @@ def generate_markdown_report(
         report += create_issue_table(issue_manager["category_errors"], "category_errors", dataset, description)
         report += "\n\n"
 
-    # Add summary statistics
-    report += "## Summary Statistics\n\n"
-
-    stats = []
-    # for issue_type in ["near_duplicates_questions", "near_duplicates", "off_topic_samples", "label_errors", "category_errors"]:
-    #     if issue_type in issue_manager and issue_manager[issue_type]:
-    #         count = len(issue_manager[issue_type]["indices"])
-    #         stats.append({
-    #             "Issue Type": issue_type.replace("_", " ").title(),
-    #             "Count": count,
-    #             "Percentage": f"{100 * count / len(dataset):.2f}%"
-    #         })
-
-    if stats:
-        stats_df = pd.DataFrame(stats)
-        stats_df.set_index("Issue Type", inplace=True)
-        report += stats_df.to_markdown(tablefmt="grid")
-    else:
-        report += ""
-
     # Save to file if output_path is provided
-
     if output_path:
         output_path.parent.mkdir(parents=True, exist_ok=True)
         output_path_ = Path(f'{output_path}.md')
         counter = 1
-        while(output_path_.exists()):
+        while output_path_.exists():
             output_path_ = output_path.with_stem(f"{output_path.stem}_{counter}.md")
             counter += 1
         with open(output_path_, "w", encoding="utf-8") as f:
