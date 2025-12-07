@@ -8,32 +8,36 @@ def generate_outlier_parquet(
     auto_clean_dict: Dict,
     dataset: List,
     output_path: Optional[Union[str, Path]] = None,
+    pretraining_type: str = "undefined",
     include_all: bool = False,
 ) -> Dict:
     """
-    Generate a Parquet file with only the entries marked as issues (True in auto_issues)
-    for each issue type in auto_clean_dict.
+    Generate a Parquet file with issue scores and indices for each issue type.
+    If include_all=True, includes all data points with a 'prediction' column.
+    If include_all=False, only includes entries marked as issues (True in auto_issues).
 
     Args:
         auto_clean_dict: Dictionary containing issue types and their auto_issues lists
         dataset: The dataset containing the original samples
         output_path: Path to save the Parquet file
+        pretraining_type: e.g. "SimCSE" or "MAE" used for metadata
+        include_all: If True, includes all data points with prediction status
 
     Returns:
-        Dictionary containing all issue data and indices for True entries
+        Dictionary containing all issue data and indices
     """
 
-    def process_issue_type(issue_type: str, issue_data: Dict) -> pd.DataFrame:
-        """Process a specific issue type and return a DataFrame with only True entries."""
+    def process_issue_type(issue_type: str, issue_data: Dict, include_all: bool) -> pd.DataFrame:
+        """Process a specific issue type and return a DataFrame."""
         data = []
         auto_issues = issue_data["auto_issues"]
         indices = issue_data["indices"]
         scores = issue_data.get("scores", [None] * len(indices))
 
-        # Only process entries where auto_issues is True
-        for i, is_issue in enumerate(auto_issues):
-            if is_issue:
-                idx = indices[i]
+        if include_all:
+            # Include all entries with prediction status
+            for i, idx in enumerate(indices):
+                is_issue = auto_issues[i]
                 score = scores[i]
 
                 if issue_type in ["near_duplicates", "near_duplicates_questions/context"]:
@@ -52,7 +56,7 @@ def generate_outlier_parquet(
                         "id_2": id2,
                         "score": round(float(score), 5) if score is not None else None,
                         "issue_type": issue_type,
-                        "id": None
+                        "prediction": is_issue
                     })
                 else:
                     # Handle single indices
@@ -70,9 +74,53 @@ def generate_outlier_parquet(
                         "id": sample_id,
                         "score": round(float(score), 5) if score is not None else None,
                         "issue_type": issue_type,
-                        "id_1": None,
-                        "id_2": None
+                        "prediction": is_issue
                     })
+        else:
+            # Only include entries where auto_issues is True
+            for i, is_issue in enumerate(auto_issues):
+                if is_issue:
+                    idx = indices[i]
+                    score = scores[i]
+
+                    if issue_type in ["near_duplicates", "near_duplicates_questions/context"]:
+                        # Handle near duplicates (pairs of indices)
+                        idx1, idx2 = idx
+                        factor = 1
+                        if issue_type == "near_duplicates_questions/context":
+                            factor = 4
+
+                        # Get the unique IDs for each sample
+                        id1 = dataset[int(idx1) * factor][7] if isinstance(dataset[int(idx1)],
+                                                                           (list, tuple)) else f"idx_{int(idx1) * factor}"
+                        id2 = dataset[int(idx2) * factor][7] if isinstance(dataset[int(idx2)],
+                                                                           (list, tuple)) else f"idx_{int(idx2) * factor}"
+
+                        data.append({
+                            "id_1": id1,
+                            "id_2": id2,
+                            "score": round(float(score), 5) if score is not None else None,
+                            "issue_type": issue_type,
+                            "prediction": True  # All included entries are issues
+                        })
+                    else:
+                        # Handle single indices
+                        factor = 1
+                        if issue_type == "off_topic_samples":
+                            factor = 1
+                        elif issue_type in ["label_errors", "category_errors"]:
+                            factor = 1
+
+                        # Get the unique ID for the sample
+                        sample_id = dataset[int(idx) * factor][7] if isinstance(dataset[int(idx)],
+                                                                                (list, tuple)) else f"idx_{int(idx) * factor}"
+
+                        data.append({
+                            "id": sample_id,
+                            "score": round(float(score), 5) if score is not None else None,
+                            "issue_type": issue_type,
+                            "prediction": True  # All included entries are issues
+                        })
 
         return pd.DataFrame(data)
 
@@ -84,18 +132,21 @@ def generate_outlier_parquet(
         "dataset_name": getattr(dataset, "name", "unknown"),
         "dataset_size": len(dataset),
         "generated_on": str(pd.Timestamp.now()),
-        "issue_types": list(auto_clean_dict.keys())
+        "issue_types": list(auto_clean_dict.keys()),
+        "include_all": include_all,
+        "pretraining_type": pretraining_type
     }
 
     # Process each issue type in auto_clean_dict
     for issue_type, issue_data in auto_clean_dict.items():
-        df = process_issue_type(issue_type, issue_data)
+        df = process_issue_type(issue_type, issue_data, include_all)
         if not df.empty:
             all_dfs.append(df)
 
     # Combine all DataFrames
     if all_dfs:
         combined_df = pd.concat(all_dfs, ignore_index=True)
+
         # Add metadata as attributes
         combined_df.attrs = metadata
 
@@ -119,7 +170,9 @@ def generate_outlier_parquet(
             "data": combined_df,
             "metadata": metadata
         }
-
+    else:
+        print("No issues found to save.")
+        return {"data": pd.DataFrame(), "metadata": metadata}
 
 
 def generate_issue_scores_parquet(
