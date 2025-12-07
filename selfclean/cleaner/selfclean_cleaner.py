@@ -54,7 +54,7 @@ class SelfCleanCleaner(
         # plotting
         plot_distribution: bool = False,
         plot_top_N: Optional[int] = None,
-        output_path: Optional[str] = None,
+        output_path: Optional[Path] = None,
         figsize: tuple = (10, 8),
         # utils
         random_seed: int = 42,
@@ -197,7 +197,7 @@ class SelfCleanCleaner(
             IssueTypes.LABEL_ERRORS,
         ],
         data_type:  DataType = DataType.IMAGE,
-    ) -> IssueManager:
+    ) -> tuple[IssueManager, dict]:
         return_dict = {}
         if IssueTypes.NEAR_DUPLICATES in issues_to_detect or IssueTypes.NEAR_DUPLICATES_Q in issues_to_detect:
             issue_name = (
@@ -274,4 +274,4 @@ class SelfCleanCleaner(
             return_dict=return_dict,
             output_path=self.output_path,
         )
-        return issue_manager
+        return issue_manager, return_dict

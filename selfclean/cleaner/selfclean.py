@@ -31,6 +31,7 @@ from ..core.src.utils.utils import (
 from ..core.src.models.text.encoders.utils import get_encoder_tokenizer_class
 from ..utils.plotting import plot_inspection_result_text
 from ..utils.reporting import generate_markdown_report
+from ..utils.score_export import generate_issue_scores_parquet, generate_prediction_parquet
 from ..utils.utils import set_dataset_transformation
 
 DINO_STANDARD_HYPERPARAMETERS = {
@@ -96,7 +97,7 @@ class SelfClean:
         # plotting
         plot_distribution: bool = False,
         plot_top_N: Optional[int] = None,
-        output_path: Optional[str] = Path(__file__).parent.parent.parent / "examples" / "output" / "hellaswag_simcse" / "result",
+        output_path: Optional[Path] = None,
         figsize: tuple = (10, 8),
         # utils
         random_seed: int = 42,
@@ -118,7 +119,7 @@ class SelfClean:
             memmap_path=memmap_path,
             plot_distribution=plot_distribution,
             plot_top_N=plot_top_N,
-            output_path=output_path,
+            output_path=output_path / "result" if output_path else None,
             figsize=figsize,
             log_level=log_level,
             **kwargs,
@@ -480,7 +481,6 @@ class SelfClean:
                     if work_dir is not None:
                         hyperparameters["work_dir"] = work_dir
 
-
                     self.model = train_simcse(
                         train_dataset=dataset,
                         val_dataset=None,
@@ -511,7 +511,6 @@ class SelfClean:
                     hyperparameters["save_every_n_epochs"] = save_every_n_epochs
                     if work_dir is not None:
                         hyperparameters["work_dir"] = work_dir
-
 
                     self.model = train_mae_text(
                         train_dataset=dataset,
@@ -572,7 +571,7 @@ class SelfClean:
                 class_labels=None,
             )
             issues_to_detect_copy = [issue for issue in issues_to_detect if issue != IssueTypes.NEAR_DUPLICATES_Q]
-            issue_manger = self.cleaner.predict(issues_to_detect=issues_to_detect_copy, data_type=DataType.TEXT)
+            issue_manger, auto_clean_dict = self.cleaner.predict(issues_to_detect=issues_to_detect_copy, data_type=DataType.TEXT)
 
             if IssueTypes.NEAR_DUPLICATES_Q in issues_to_detect:
                 dataset.set_provide_tokenized_context(True)
@@ -588,16 +587,26 @@ class SelfClean:
                     dataset=dataset,
                     class_labels=None,
                 )
-                issue_manager_context_only = self.cleaner.predict(issues_to_detect=[IssueTypes.NEAR_DUPLICATES_Q], data_type=DataType.TEXT)
+                issue_manager_context_only, auto_clean_dict_context_only = self.cleaner.predict(
+                    issues_to_detect=[IssueTypes.NEAR_DUPLICATES_Q], data_type=DataType.TEXT)
                 issue_manager = IssueManager(issue_dict={**issue_manger.issue_dict, **issue_manager_context_only.issue_dict},
                                              meta_data_dict=issue_manger.meta_data_dict)
-            plot_inspection_result_text(
-                issue_manager=issue_manager,
-                dataset=dataset,
-                plot_top_N=self.cleaner.plot_top_N,
-                output_path=self.cleaner.output_path,
-            )
+                # combine the two auto_clean_dicts
+                auto_clean_dict.update(auto_clean_dict_context_only)
+
+            # plot_inspection_result_text(
+            #     issue_manager=issue_manager,
+            #     dataset=dataset,
+            #     plot_top_N=self.cleaner.plot_top_N,
+            #     output_path=self.cleaner.output_path,
+            # )
             md = generate_markdown_report(issue_manager=issue_manager, dataset=dataset,
                                           top_n=self.cleaner.plot_top_N,
                                           output_path=self.cleaner.output_path, model_name=hyperparameters["model"]["base_model"])
-            return issue_manager
+
+            # save automatic cleaning suggestions
+            prediction_parquet = generate_prediction_parquet(auto_clean_dict=auto_clean_dict, dataset=dataset,
+                                                             output_path=self.cleaner.output_path, pretraining_type=pretraining_type,
+                                                             include_all=True)
+
+            return issue_manager, prediction_parquet

@@ -4,7 +4,7 @@ from typing import Dict, List, Optional, Union
 from selfclean.cleaner.issue_manager import IssueManager, IssueTypes
 
 
-def generate_outlier_parquet(
+def generate_prediction_parquet(
     auto_clean_dict: Dict,
     dataset: List,
     output_path: Optional[Union[str, Path]] = None,
