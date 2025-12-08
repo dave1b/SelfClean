@@ -20,30 +20,28 @@ def generate_near_duplicate_mistral(
     import os
     from dotenv import load_dotenv
     load_dotenv()  # Loads the .env file
-    return "should be a near duplicate"
 
     prompt = f"""
-          You are a text paraphraser. Your task is to generate a near-duplicate of the given text.
-          The near-duplicate should:
-          1. Preserve the original meaning.
-          2. Make subtle changes (e.g., synonyms, rephrasing, minor restructuring).
-          3. Avoid adding or removing major details.
+    You are a text paraphraser. Your task is to generate a near-duplicate of the given text.
+    The near-duplicate needs to:
+    1. Preserve the original meaning.
+    2. Make subtle changes (e.g., synonyms, rephrasing, minor restructuring).
+    3. Avoid adding or removing major details.
+    4. Do not add any new information, event when sentences are incomplete.
 
-          Original text:
-          {text}
+    Return ONLY the paraphrased text, with no additional commentary:
 
-          Near-duplicate:
-          """
+    Original text:
+    {text}
+    """
 
-    with Mistral(
-        api_key=os.getenv("MISTRAL_API_KEY", ""),
-    ) as mistral:
-        res = mistral.chat.complete(model="mistral-small-latest", messages=[
-            {
-                "content": prompt,
-                "role": "user",
-            },
-        ], stream=False)
+    client = Mistral(api_key=os.getenv("MISTRAL_API_KEY", ""))
+    res = client.chat.complete(model="mistral-medium-2508", messages=[
+        {
+            "content": prompt,
+            "role": "user",
+        },
+    ], stream=False)
 
-        # Handle response
-        return res.choices[-1].message.content
+    # Handle response
+    return res.choices[-1].message.content.replace("\n", " ")

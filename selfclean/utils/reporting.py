@@ -49,16 +49,11 @@ def generate_markdown_report(
         # Create table data
         table_data = []
         for i, idx in enumerate(issues["indices"][:top_n]):
-            if issue_type in ["near_duplicates", "near_duplicates_questions/context"]:
-                factor = 1
-                tuple_index = 3
-                if issue_type == "near_duplicates_questions/context":
-                    factor = 4
-                    tuple_index = 6
+            if issue_type == "near_duplicates":
                 # Handle near duplicates (pairs of indices)
                 idx1, idx2 = idx
-                text1 = wrap_text(dataset[int(idx1)*factor][tuple_index] if isinstance(dataset[int(idx1)], (list, tuple)) else dataset[int(idx1)].get("text", ""))
-                text2 = wrap_text(dataset[int(idx2)*factor][tuple_index] if isinstance(dataset[int(idx2)], (list, tuple)) else dataset[int(idx2)].get("text", ""))
+                text1 = wrap_text(dataset[int(idx1)][3])
+                text2 = wrap_text(dataset[int(idx2)][3])
 
                 score = issues["scores"][i] if "scores" in issues else "N/A"
 
@@ -66,24 +61,44 @@ def generate_markdown_report(
                     "Rank": i+1,
                     # "Index 1": int(idx1)*factor,
                     # "Index 2": int(idx2)*factor,
-                    "Index 1": dataset[int(idx1)*factor][7],
-                    "Index 2": dataset[int(idx2)*factor][7],
+                    "Index 1": dataset[int(idx1)][7],
+                    "Index 2": dataset[int(idx2)][7],
                     "Text 1": text1,
                     "Text 2": text2,
-                    "Score": f"{score:.4f}" if isinstance(score, (int, float)) else score
+                    "Score": f"{score:.4f}" if isinstance(score, (int, float)) else score,
+                    "Outlier Prediction": issues.get('auto_issues')[i],
+                })
+            elif issue_type == "near_duplicates_questions/context":
+                # Handle near duplicates (pairs of indices)
+                idx1, idx2 = idx
+                text1 = wrap_text(dataset.get_context_only_text(int(idx1))[6])
+                text2 = wrap_text(dataset.get_context_only_text(int(idx2))[6])
+
+                score = issues["scores"][i] if "scores" in issues else "N/A"
+
+                table_data.append({
+                    "Rank": i + 1,
+                    # "Index 1": int(idx1)*factor,
+                    # "Index 2": int(idx2)*factor,
+                    "Index 1": dataset.get_context_only_text(int(idx1))[7],
+                    "Index 2": dataset.get_context_only_text(int(idx2))[7],
+                    "Text 1": text1,
+                    "Text 2": text2,
+                    "Score": f"{score:.4f}" if isinstance(score, (int, float)) else score,
+                    "Outlier Prediction": issues.get('auto_issues')[i],
                 })
             else:
                 # Handle single indices
-                text = wrap_text(dataset[int(idx)][3] if isinstance(dataset[int(idx)], (list, tuple)) else dataset[int(idx)].get("text", ""))
-                category = dataset[int(idx)][2] if isinstance(dataset[int(idx)], (list, tuple)) else dataset[int(idx)].get("category", "N/A")
-                true_label = dataset[int(idx)][1] if isinstance(dataset[int(idx)], (list, tuple)) else dataset[int(idx)].get("correct", "N/A")
+                text = wrap_text(dataset[int(idx)][3])
+                category = dataset[int(idx)][2]
+                true_label = dataset[int(idx)][1]
                 score = issues["scores"][i] if "scores" in issues else "N/A"
 
                 row = {
                     "Rank": i+1,
                     "Index": dataset[int(idx)][7],
                     "Text": text,
-                    "Score": f"{score:.4f}" if isinstance(score, (int, float)) else score
+                    "Score": f"{score:.4f}" if isinstance(score, (int, float)) else score,
                 }
 
                 if issue_type == "off_topic_samples":
@@ -92,6 +107,7 @@ def generate_markdown_report(
                     row["True Label"] = true_label
                     row["Category"] = category
 
+                row["Outlier Prediction"] = issues.get('auto_issues')[i]
                 table_data.append(row)
 
         # Create DataFrame and convert to markdown
@@ -120,6 +136,8 @@ def generate_markdown_report(
 
     # Add near duplicates (questions)
     if issue_manager["near_duplicates_questions/context"] is not None:
+        # assert that dataset has method get_context_only_text
+        assert hasattr(dataset, 'get_context_only_text'), "Dataset must have method get_context_only_text to properly return context_only texts."
         description = "Near duplicate questions based only on context question similarity."
         report += create_issue_table(issue_manager["near_duplicates_questions/context"], "near_duplicates_questions/context", dataset, description)
         report += "\n\n"

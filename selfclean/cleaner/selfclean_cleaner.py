@@ -4,7 +4,6 @@ from enum import Enum
 from pathlib import Path
 from typing import Callable, List, Optional, Union
 
-import numpy as np
 import scienceplots  # noqa: F401
 import sklearn  # noqa: F401
 from loguru import logger
@@ -74,7 +73,7 @@ class SelfCleanCleaner(
         self.output_path = output_path
         if self.output_path is not None:
             self.output_path = Path(self.output_path)
-            self.output_path.parent.mkdir(parents=True, exist_ok=True)
+            self.output_path.mkdir(parents=True, exist_ok=True)
 
         if memmap_path is None:
             self.memmap_path = Path(tempfile.mkdtemp())

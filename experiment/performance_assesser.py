@@ -20,7 +20,6 @@ class PerformanceAssesser:
         output_folder = f"{self.meta_data['dataset_name']}_{self.meta_data['pretraining_type']}".lower()
         self.output_path: Optional[Path] = Path(__file__).parent.parent / "examples" / "output" / output_folder / "result_roc"
 
-
     def assess_performance(self):
         print("Assessing performance of auto-cleaning...")
         total_length = self.meta_data['dataset_size']
@@ -134,8 +133,9 @@ class PerformanceAssesser:
 
     def calculate_mean_average_precision(self):
         if self.tp + self.fp == 0:
-            return 0.0
-        self.precision = self.tp / (self.tp + self.fp)
+            self.precision = 0.0
+        else:
+            self.precision = self.tp / (self.tp + self.fp)
         return self.precision
 
     def plot_roc_curve(self):
@@ -148,7 +148,7 @@ class PerformanceAssesser:
 
         for _, outlier in self.predictions.iterrows():
             # Check if this outlier is actually contaminated
-            if outlier['id']:
+            if outlier.get('id'):
                 is_contaminated = not self.contamination_log[self.contamination_log['id'] == outlier['id']].empty
             else:
                 is_contaminated = not self.contamination_log[
@@ -185,9 +185,8 @@ class PerformanceAssesser:
             output_path_ = output_path.with_suffix('.png')
             counter = 1
             while output_path_.exists():
-                output_path_ = output_path.with_stem(f"{output_path.stem}_{counter}").with_suffix('.png')
+                output_path_ = output_path.with_stem(f"{output_path.stem.split('_')[0]}_{counter}_roc").with_suffix('.png')
                 counter += 1
             plt.savefig(output_path_)
             print(f"Issue scores saved to {output_path_}")
-        plt.show()
         plt.close()

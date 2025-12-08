@@ -3,7 +3,11 @@ import pandas as pd
 import random
 import json
 from typing import List, Optional, Set
-from experiment.datasets.utils import generate_near_duplicate_mistral
+
+from duckdb.experimental.spark import DataFrame
+
+from experiment.datasets.llm_api_util import generate_near_duplicate_mistral
+
 
 class HellaSwagContaminator:
     def __init__(self, contamination_percent: float = 0.1):
@@ -13,19 +17,18 @@ class HellaSwagContaminator:
         """
         self.contamination_percent = contamination_percent
         self.contamination_records = []
-        self.contaminated_indices: Set[int] = set()  # Track contaminated 'ind' values to avoid overlap
+        self.contaminated_indices: Set[int, str] = set()  # Track contaminated 'ind' values to avoid overlap
 
     def hs_contamination(
         self,
-        df: pd.DataFrame,
+        file: Path,
         contamination_types: List[str] = [
             "question_duplication_contamination",
             "answer_duplicate_contamination",
             "off_topic_contamination",
             "category_contamination",
             "label_contamination"
-        ],
-        output_contamination_log: Optional[str] = None
+        ]
     ) -> pd.DataFrame:
         """
         Contaminate the dataset according to the specified types.
@@ -36,6 +39,8 @@ class HellaSwagContaminator:
         """
         self.contamination_records = []
         self.contaminated_indices = set()
+
+        df = pd.read_json(file, encoding='utf-8')
 
         if "question_duplication_contamination" in contamination_types:
             df = self._question_duplication_contamination(df)
@@ -48,8 +53,11 @@ class HellaSwagContaminator:
         if "label_contamination" in contamination_types:
             df = self._label_contamination(df)
 
-        if output_contamination_log:
-            self._save_contamination_log(output_contamination_log)
+        contaminated_path = Path(f"{file.stem}_{contamination_type}.json")
+        contaminated_log_path = Path(f"{file.stem}_{contamination_type}_logs.json")
+
+        self._save_file(contaminated_path, df)
+        self._save_file(contaminated_log_path, self.contamination_records)
 
         return df
 
@@ -71,15 +79,17 @@ class HellaSwagContaminator:
             contaminated_ctx = generate_near_duplicate_mistral(original_ctx)
 
             # Add the near-duplicate as a new row (without answers)
+            new_ind = f"x{ind}"
             new_row = df.loc[row_index].copy()
-            new_row['ind'] = -1  # Assign a unique identifier for the new row
+            new_row['ind'] = new_ind  # Assign a unique identifier for the new row
             new_row['ctx'] = contaminated_ctx
             new_row['endings'] = []  # No answers for the near-duplicate question
             new_row['label'] = -1  # Mark as invalid
 
             df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
-            self.contamination_records.append({"type": "question_duplication_contamination", "ind": ind})
+            self.contamination_records.append({"type": "question_duplication_contamination", "id_1": ind, "id_2": new_ind, "id": None})
             self.contaminated_indices.add(ind)
+            self.contaminated_indices.add(new_ind)
 
         return df
 
@@ -92,13 +102,17 @@ class HellaSwagContaminator:
         for ind in indices:
             row_index = df[df['ind'] == ind].index[0]  # Get the DataFrame index for the 'ind' value
             # Randomly select one of the four endings to duplicate
-            answer_index = random.randint(0, 3)
+            correct_ending = df.at[row_index, 'label']
+            # one of the four endings to duplicate but not the correct one
+            answer_index = random.choice([i for i in range(4) if i != correct_ending])
+
             original_ending = df.at[row_index, 'endings'][answer_index]
             contaminated_ending = generate_near_duplicate_mistral(original_ending)
 
             # Add the near-duplicate as a fifth answer
             df.at[row_index, 'endings'].append(contaminated_ending)
-            self.contamination_records.append({"type": "answer_duplicate_contamination", "ind": f"{ind}-4"})
+            self.contamination_records.append(
+                {"type": "answer_duplicate_contamination", "id_1": f"{ind}-{answer_index}", "id_2": f"{ind}-4", "id": None})
             self.contaminated_indices.add(ind)
 
         return df
@@ -110,10 +124,12 @@ class HellaSwagContaminator:
         indices = random.sample(uncontaminated_indices, min(num_to_contaminate, len(uncontaminated_indices)))
 
         off_topic_texts = [
-            "The sky is blue and the grass is green.",
-            "I enjoy eating pizza on Fridays.",
-            "The capital of France is Paris.",
-            "Cats and dogs are common pets."
+            "print('Hello, World!'), for i in range(10): pass",
+            "`!##^ The capital of Fr$nce is P$ris. ####",
+            "def fibonacci(n): a, b = 0, 1; for _ in range(n): a, b = b, a + b; return a",
+            "<html><head><title>Test</title></head><body><h1>Hello World</h1></body></html>",
+            "SELECT * FROM users WHERE age > 30;",
+            "E = mc^2; F = ma; a^2 + b^2 = c^2",
         ]
 
         for ind in indices:
@@ -121,7 +137,7 @@ class HellaSwagContaminator:
             # Randomly select one of the four endings to contaminate
             answer_index = random.randint(0, 3)
             df.at[row_index, 'endings'][answer_index] = random.choice(off_topic_texts)
-            self.contamination_records.append({"type": "off_topic_contamination", "ind": f"{ind}-{answer_index}"})
+            self.contamination_records.append({"type": "off_topic_contamination", "id": f"{ind}-{answer_index}", "id_1": None, "id_2": None})
             self.contaminated_indices.add(ind)
 
         return df
@@ -138,7 +154,7 @@ class HellaSwagContaminator:
             possible_categories = df['activity_label'].unique()
             contaminated_category = random.choice([cat for cat in possible_categories if cat != original_category])
             df.at[row_index, 'activity_label'] = contaminated_category
-            self.contamination_records.append({"type": "category_contamination", "ind": ind})
+            self.contamination_records.append({"type": "category_contamination", "id": ind, "id_1": None, "id_2": None})
             self.contaminated_indices.add(ind)
 
         return df
@@ -154,32 +170,34 @@ class HellaSwagContaminator:
             original_label = df.at[row_index, 'label']
             contaminated_label = random.choice([i for i in range(4) if i != original_label])
             df.at[row_index, 'label'] = contaminated_label
-            self.contamination_records.append({"type": "label_contamination", "ind": ind})
+            self.contamination_records.append({"type": "label_contamination", "id": ind, "id_1": None, "id_2": None})
             self.contaminated_indices.add(ind)
 
         return df
 
-    def _save_contamination_log(self, output_path: str) -> None:
+    @staticmethod
+    def _save_file(output_path: Path, data: DataFrame | List):
         """Save the contamination records to a JSON file."""
-        with open(output_path, 'w', encoding='utf-8') as f:
-            json.dump(self.contamination_records, f, indent=4)
+        if isinstance(data, list):
+            with open(output_path, 'w', encoding='utf-8') as f:
+                json.dump(data, f, indent=4)
+        elif isinstance(data, pd.DataFrame):
+            data.to_json(output_path, orient="records")
+
 
 if __name__ == "__main__":
     # Example usage
-    file = Path("hs_train_10percent.json")
-    df = pd.read_json(file, encoding='utf-8')
-    contaminator = HellaSwagContaminator(contamination_percent=0.025)
+    contamination_type = "question_duplication_contamination"
+    # "answer_duplicate_contamination"
+    # "off_topic_contamination"
+    # "category_contamination"
+    # "label_contamination"
+
+    file_path = Path("hellaswag_train_0.01ksubset.json")
+
+    contaminator = HellaSwagContaminator(contamination_percent=0.1)
+
     contaminated_df = contaminator.hs_contamination(
-        df,
-        contamination_types=[
-            "question_duplication_contamination",
-            "answer_duplicate_contamination",
-            "off_topic_contamination",
-            "category_contamination",
-            "label_contamination"
-        ],
-        output_contamination_log=f"{file.stem}_contamination_log.json"
+        file_path,
+        contamination_types=[contamination_type]
     )
-    contaminated_file = Path(f"{file.stem}_contaminated.json")
-    print(f"Saving {contaminated_file}")
-    contaminated_df.to_json(contaminated_file, orient="records")

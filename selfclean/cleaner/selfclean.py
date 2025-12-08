@@ -571,7 +571,7 @@ class SelfClean:
                 class_labels=None,
             )
             issues_to_detect_copy = [issue for issue in issues_to_detect if issue != IssueTypes.NEAR_DUPLICATES_Q]
-            issue_manger, auto_clean_dict = self.cleaner.predict(issues_to_detect=issues_to_detect_copy, data_type=DataType.TEXT)
+            issue_manager, auto_clean_dict = self.cleaner.predict(issues_to_detect=issues_to_detect_copy, data_type=DataType.TEXT)
 
             if IssueTypes.NEAR_DUPLICATES_Q in issues_to_detect:
                 dataset.set_provide_tokenized_context(True)
@@ -589,8 +589,8 @@ class SelfClean:
                 )
                 issue_manager_context_only, auto_clean_dict_context_only = self.cleaner.predict(
                     issues_to_detect=[IssueTypes.NEAR_DUPLICATES_Q], data_type=DataType.TEXT)
-                issue_manager = IssueManager(issue_dict={**issue_manger.issue_dict, **issue_manager_context_only.issue_dict},
-                                             meta_data_dict=issue_manger.meta_data_dict)
+                issue_manager = IssueManager(issue_dict={**issue_manager.issue_dict, **issue_manager_context_only.issue_dict},
+                                             meta_data_dict=issue_manager.meta_data_dict)
                 # combine the two auto_clean_dicts
                 auto_clean_dict.update(auto_clean_dict_context_only)
 
@@ -600,8 +600,7 @@ class SelfClean:
             #     plot_top_N=self.cleaner.plot_top_N,
             #     output_path=self.cleaner.output_path,
             # )
-            md = generate_markdown_report(issue_manager=issue_manager, dataset=dataset,
-                                          top_n=self.cleaner.plot_top_N,
+            md = generate_markdown_report(issue_manager=issue_manager, dataset=dataset, top_n=self.cleaner.plot_top_N,
                                           output_path=self.cleaner.output_path, model_name=hyperparameters["model"]["base_model"])
 
             # save automatic cleaning suggestions

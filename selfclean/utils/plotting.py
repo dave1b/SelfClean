@@ -312,7 +312,7 @@ def plot_inspection_result_text(
             output_path_ = output_path.with_stem(f"{output_path.stem}_{counter}.png")
             counter += 1
         plt.savefig(output_path_, bbox_inches="tight", dpi=200)
-    plt.show()
+    # plt.show()
 
 def plot_frac_cut(dist, logit_scores, bins, q1, q2, cutoff, loc, scale, path):
     with plt.style.context(["science", "std-colors", "grid"]):

@@ -1,3 +1,4 @@
+import math
 from typing import Dict, Any, Tuple, List, Optional
 import torch
 import pandas as pd
@@ -6,6 +7,7 @@ from transformers import BatchEncoding
 from tqdm.auto import tqdm
 import json
 from pathlib import Path
+
 
 class MMLUDataset(Dataset):
     """Optimized MMLU dataset with pre-tokenization and caching."""
@@ -25,6 +27,7 @@ class MMLUDataset(Dataset):
         self.provide_tokenized_context = False
         self.name = "MMLU"
         self.path = json_path
+        self.context_only_id_start = None
 
         # Load and validate data
         self._load_and_validate_data(json_path)
@@ -52,6 +55,12 @@ class MMLUDataset(Dataset):
 
         # Create data points
         self.data_points = self._create_data_points_efficient()
+
+        # iterate from last to first and find index where label == -1
+        for i in range(len(self.data_points)-1, -1, -1):
+            if self.data_points[i]['correct'] != -1:
+                self.context_only_id_start = i
+                break
 
     def _create_data_points_efficient(self) -> List[Dict[str, Any]]:
         """Create data points more efficiently using list comprehensions."""
@@ -128,9 +137,10 @@ class MMLUDataset(Dataset):
     def __len__(self) -> int:
         return len(self.data_points)
 
-    def __getitem__(self, idx: int) -> Tuple[Dict[str, torch.Tensor], int, str, str, Dict[str, torch.Tensor], bool, str]:
+    def __getitem__(self, idx: int) -> tuple[dict[Any, Any], Any, Any, Any, dict[Any, Any], bool, str | None | Any, Any]:
         """Return tokenized sentence and label with optimized access."""
         item = self.data_points[idx]
+        id = item["task_id"]
         label = item["correct"]
         category = item["category"]
         text = item["text"]
@@ -157,7 +167,18 @@ class MMLUDataset(Dataset):
                 context_inputs = {k: v.squeeze(0) for k, v in context_inputs.items()}
                 context_flag = True
 
-        return inputs, label, category, text, context_inputs, context_flag, context_text
+        return inputs, label, category, text, context_inputs, context_flag, context_text, id
+
+    def get_context_only_text(self, idx: int) -> Tuple[None, None, None, None, None, None, str, str]:
+        """Return the context-only text for a given index, if available."""
+        if idx * 4 <= self.context_only_id_start:
+            return None, None, None, None, None, None, self.data_points[idx * 4]["context_only"], self.data_points[idx * 4]["task_id"].split('-')[0]
+        else:
+            diff = idx * 4 - self.context_only_id_start
+            diff_to_add = math.floor(diff / 4) + diff % 4
+            id = self.context_only_id_start + diff_to_add
+            return None, None, None, None, None, None, self.data_points[id]["context_only"], self.data_points[id]["task_id"].split("-")[0]
+
 
     def set_provide_tokenized_context(self, provide: bool) -> None:
         """Set whether to provide tokenized context separately."""
@@ -167,7 +188,7 @@ class MMLUDataset(Dataset):
         """Return a collate function for DataLoader that handles dynamic padding."""
         def collate_fn(batch):
             # Separate components
-            inputs_list, labels, categories, texts, context_inputs_list, context_flags, context_text = zip(*batch)
+            inputs_list, labels, categories, texts, context_inputs_list, context_flags, context_text, id = zip(*batch)
 
             # Stack labels and convert to tensor
             labels = torch.stack(labels) if torch.is_tensor(labels[0]) else torch.tensor(labels)
@@ -193,6 +214,7 @@ class MMLUDataset(Dataset):
                 'categories': categories,
                 'texts': texts,
                 'context_inputs': context_inputs,
-                'context_text': context_text
+                'context_text': context_text,
+                'ids': id
             }
         return collate_fn

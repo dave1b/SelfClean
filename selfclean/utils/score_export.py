@@ -37,44 +37,41 @@ def generate_prediction_parquet(
         if include_all:
             # Include all entries with prediction status
             for i, idx in enumerate(indices):
+                if i >= len(auto_issues):
+                    continue  # Skip if no prediction available (e.g. context duplication contamination)
                 is_issue = auto_issues[i]
                 score = scores[i]
 
                 if issue_type in ["near_duplicates", "near_duplicates_questions/context"]:
                     # Handle near duplicates (pairs of indices)
                     idx1, idx2 = idx
-                    factor = 1
                     if issue_type == "near_duplicates_questions/context":
-                        factor = 4
-
-                    # Get the unique IDs for each sample
-                    id1 = dataset[int(idx1) * factor][7] if isinstance(dataset[int(idx1)], (list, tuple)) else f"idx_{int(idx1) * factor}"
-                    id2 = dataset[int(idx2) * factor][7] if isinstance(dataset[int(idx2)], (list, tuple)) else f"idx_{int(idx2) * factor}"
+                        id1 = dataset.get_context_only_text(int(idx1))[7]
+                        id2 = dataset.get_context_only_text(int(idx2))[7]
+                    else:
+                        id1 = dataset[int(idx1)][7]
+                        id2 = dataset[int(idx2)][7]
 
                     data.append({
                         "id_1": id1,
                         "id_2": id2,
                         "score": round(float(score), 5) if score is not None else None,
                         "issue_type": issue_type,
-                        "prediction": is_issue
+                        "prediction": is_issue,
+                        'id': None
                     })
                 else:
                     # Handle single indices
-                    factor = 1
-                    if issue_type == "off_topic_samples":
-                        factor = 1
-                    elif issue_type in ["label_errors", "category_errors"]:
-                        factor = 1
-
                     # Get the unique ID for the sample
-                    sample_id = dataset[int(idx) * factor][7] if isinstance(dataset[int(idx)],
-                                                                            (list, tuple)) else f"idx_{int(idx) * factor}"
+                    id = dataset[int(idx)][7]
 
                     data.append({
-                        "id": sample_id,
+                        "id": id,
                         "score": round(float(score), 5) if score is not None else None,
                         "issue_type": issue_type,
-                        "prediction": is_issue
+                        "prediction": is_issue,
+                        "id_1": None,
+                        "id_2": None,
                     })
         else:
             # Only include entries where auto_issues is True
@@ -84,42 +81,37 @@ def generate_prediction_parquet(
                     score = scores[i]
 
                     if issue_type in ["near_duplicates", "near_duplicates_questions/context"]:
-                        # Handle near duplicates (pairs of indices)
                         idx1, idx2 = idx
-                        factor = 1
                         if issue_type == "near_duplicates_questions/context":
-                            factor = 4
+                            id1 = dataset.get_context_only_text(int(idx1))[7]
+                            id2 = dataset.get_context_only_text(int(idx2))[7]
+                        else:
+                            id1 = dataset[int(idx1)][7]
+                            id2 = dataset[int(idx2)][7]
 
                         # Get the unique IDs for each sample
-                        id1 = dataset[int(idx1) * factor][7] if isinstance(dataset[int(idx1)],
-                                                                           (list, tuple)) else f"idx_{int(idx1) * factor}"
-                        id2 = dataset[int(idx2) * factor][7] if isinstance(dataset[int(idx2)],
-                                                                           (list, tuple)) else f"idx_{int(idx2) * factor}"
+                        id1 = dataset[int(idx1)][7]
+                        id2 = dataset[int(idx2)][7]
 
                         data.append({
                             "id_1": id1,
                             "id_2": id2,
                             "score": round(float(score), 5) if score is not None else None,
                             "issue_type": issue_type,
-                            "prediction": True  # All included entries are issues
+                            "prediction": True,  # All included entries are issues
+                            'id': None
                         })
                     else:
-                        # Handle single indices
-                        factor = 1
-                        if issue_type == "off_topic_samples":
-                            factor = 1
-                        elif issue_type in ["label_errors", "category_errors"]:
-                            factor = 1
-
                         # Get the unique ID for the sample
-                        sample_id = dataset[int(idx) * factor][7] if isinstance(dataset[int(idx)],
-                                                                                (list, tuple)) else f"idx_{int(idx) * factor}"
+                        sample_id = dataset[int(idx)][7]
 
                         data.append({
                             "id": sample_id,
                             "score": round(float(score), 5) if score is not None else None,
                             "issue_type": issue_type,
-                            "prediction": True  # All included entries are issues
+                            "prediction": True,  # All included entries are issues
+                            "id_1": None,
+                            "id_2": None,
                         })
 
         return pd.DataFrame(data)

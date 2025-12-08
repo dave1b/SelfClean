@@ -1,7 +1,7 @@
+import math
 from typing import Dict, Any, Tuple, List, Optional
 import torch
 import pandas as pd
-import numpy as np
 from torch.utils.data import Dataset
 from transformers import BatchEncoding
 from tqdm.auto import tqdm
@@ -27,6 +27,7 @@ class HellaSwagDataset(Dataset):
         self.provide_tokenized_context = False
         self.name = "HellaSwag"
         self.path = json_path
+        self.context_only_id_start = None
 
         # Load and validate data
         self._load_and_validate_data(json_path)
@@ -55,6 +56,12 @@ class HellaSwagDataset(Dataset):
         # Create data points
         self.data_points = self._create_data_points_efficient()
 
+        # iterate from last to first and find index where label == -1
+        for i in range(len(self.data_points) - 1, -1, -1):
+            if self.data_points[i]['correct'] != -1:
+                self.context_only_id_start = i + 1
+                break
+
     def _create_data_points_efficient(self) -> List[Dict[str, Any]]:
         """Create data points more efficiently using list comprehensions."""
         data_points = []
@@ -62,7 +69,20 @@ class HellaSwagDataset(Dataset):
         for idx, entry in self.df.iterrows():
             context = entry["ctx"]
             id = entry["ind"]
+
+            if entry["label"] == -1:
+                # Only add context if label is -1 (no endings), because of contamination
+                data_points.append({
+                    "text": context,
+                    "correct": -1,
+                    "category": entry["activity_label"],
+                    "task_id": f'{id}',
+                    "context_only": context
+                })
+                continue
+
             correct_ending = entry["endings"][entry["label"]]
+
             wrong_endings = [entry["endings"][i] for i in range(4) if i != entry["label"]]
 
             # Add correct ending
@@ -79,7 +99,7 @@ class HellaSwagDataset(Dataset):
                                    "text": f"{context} {wrong}",
                                    "correct": 0,
                                    "category": entry["activity_label"],
-                                   "task_id": f'{id}-{wrong_idx+1}',
+                                   "task_id": f'{id}-{wrong_idx + 1}',
                                    "context_only": None
                                } for wrong_idx, wrong in enumerate(wrong_endings))
 
@@ -131,7 +151,7 @@ class HellaSwagDataset(Dataset):
     def __len__(self) -> int:
         return len(self.data_points)
 
-    def __getitem__(self, idx: int) -> Tuple[Dict[str, torch.Tensor], int, str, str, Dict[str, torch.Tensor], bool, str]:
+    def __getitem__(self, idx: int) -> tuple[dict[Any, Any], Any, Any, Any, dict[Any, Any], bool, str | Any, Any]:
         """Return tokenized sentence and label with optimized access."""
         item = self.data_points[idx]
         id = item["task_id"]
@@ -151,7 +171,7 @@ class HellaSwagDataset(Dataset):
 
         # Handle context if needed
         context_flag = False
-        context_text = None
+        context_text = ""
         context_inputs = {k: v.clone() for k, v in inputs.items()}  # Shallow copy is sufficient
 
         if self.provide_tokenized_context:
@@ -163,6 +183,16 @@ class HellaSwagDataset(Dataset):
 
         return inputs, label, category, text, context_inputs, context_flag, context_text, id
 
+    def get_context_only_text(self, idx: int) -> Tuple[None, None, None, None, None, None, str, str]:
+        """Return the context-only text for a given index, if available."""
+        if idx * 4 <= self.context_only_id_start:
+            return None, None, None, None, None, None, self.data_points[idx * 4]["context_only"], self.data_points[idx * 4]["task_id"].split('-')[0]
+        else:
+            diff = idx * 4 - self.context_only_id_start
+            diff_to_add = math.floor(diff / 4) + diff % 4
+            id = self.context_only_id_start + diff_to_add
+            return None, None, None, None, None, None, self.data_points[id]["context_only"], self.data_points[id]["task_id"].split('-')[0]
+
     def set_provide_tokenized_context(self, provide: bool) -> None:
         """Set whether to provide tokenized context separately."""
         self.provide_tokenized_context = provide
@@ -172,7 +202,7 @@ class HellaSwagDataset(Dataset):
 
         def collate_fn(batch):
             # Separate components
-            inputs_list, labels, categories, texts, context_inputs_list, context_flags, context_text, id  = zip(*batch)
+            inputs_list, labels, categories, texts, context_inputs_list, context_flags, context_text, id = zip(*batch)
 
             # Stack labels and convert to tensor
             labels = torch.stack(labels) if torch.is_tensor(labels[0]) else torch.tensor(labels)
