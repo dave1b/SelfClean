@@ -400,7 +400,7 @@ class SelfClean:
         wandb_logging: bool = False,
         wandb_project_name: str = "SelfClean",
         max_length: int = 128,
-        cache_dir: Optional[str] = None,
+        cache_dir: Optional[str] = "./cache",
     ):
         if hyperparameters is None:
             if pretraining_type == "simcse":
@@ -569,16 +569,17 @@ class SelfClean:
                 batch_size=batch_size
             )
 
-            self.cleaner.fit(
-                emb_space=np.asarray(emb_space),
-                labels=np.asarray(labels),
-                categories=np.asarray(categories),
-                paths=np.asarray(paths),
-                dataset=dataset,
-                class_labels=None,
-            )
-            issues_to_detect_copy = [issue for issue in issues_to_detect if issue != IssueTypes.NEAR_DUPLICATES_Q]
-            issue_manager, auto_clean_dict = self.cleaner.predict(issues_to_detect=issues_to_detect_copy, data_type=DataType.TEXT)
+            if not len(issues_to_detect) == 1 and issues_to_detect[0] == IssueTypes.NEAR_DUPLICATES_Q:
+                self.cleaner.fit(
+                    emb_space=np.asarray(emb_space),
+                    labels=np.asarray(labels),
+                    categories=np.asarray(categories),
+                    paths=np.asarray(paths),
+                    dataset=dataset,
+                    class_labels=None,
+                )
+                issues_to_detect_copy = [issue for issue in issues_to_detect if issue != IssueTypes.NEAR_DUPLICATES_Q]
+                issue_manager, auto_clean_dict = self.cleaner.predict(issues_to_detect=issues_to_detect_copy, data_type=DataType.TEXT)
 
             if IssueTypes.NEAR_DUPLICATES_Q in issues_to_detect:
                 dataset.set_provide_tokenized_context(True)
@@ -596,10 +597,15 @@ class SelfClean:
                 )
                 issue_manager_context_only, auto_clean_dict_context_only = self.cleaner.predict(
                     issues_to_detect=[IssueTypes.NEAR_DUPLICATES_Q], data_type=DataType.TEXT)
-                issue_manager = IssueManager(issue_dict={**issue_manager.issue_dict, **issue_manager_context_only.issue_dict},
-                                             meta_data_dict=issue_manager.meta_data_dict)
-                # combine the two auto_clean_dicts
-                auto_clean_dict.update(auto_clean_dict_context_only)
+                if 'issue_manager' in locals() and 'auto_clean_dict' in locals():
+                    # combine the two issue_managers
+                    issue_manager = IssueManager(issue_dict={**issue_manager.issue_dict, **issue_manager_context_only.issue_dict},
+                                                 meta_data_dict=issue_manager.meta_data_dict)
+                    # combine the two auto_clean_dicts
+                    auto_clean_dict.update(auto_clean_dict_context_only)
+                else:
+                    issue_manager = issue_manager_context_only
+                    auto_clean_dict = auto_clean_dict_context_only
 
             # plot_inspection_result_text(
             #     issue_manager=issue_manager,

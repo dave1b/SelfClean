@@ -79,10 +79,13 @@ def triu_indices_memmap(filename: str, N: int, k: int = 0):
 
     idx = 0
     for i in range(N):
-        for j in range(i + k, N):
-            rows_memmap[idx] = i
-            cols_memmap[idx] = j
-            idx += 1
+        start_j = i + k
+        if start_j >= N:
+            continue
+        # Vectorized assignment for this row
+        rows_memmap[idx : idx + N - start_j] = i
+        cols_memmap[idx : idx + N - start_j] = np.arange(start_j, N)
+        idx += N - start_j
 
     return rows_memmap, cols_memmap
 

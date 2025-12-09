@@ -26,6 +26,7 @@ def generate_prediction_parquet(
     Returns:
         Dictionary containing all issue data and indices
     """
+    print(f"Generating prediction parquet with include_all={include_all}")
 
     def process_issue_type(issue_type: str, issue_data: Dict, include_all: bool) -> pd.DataFrame:
         """Process a specific issue type and return a DataFrame."""
@@ -34,16 +35,18 @@ def generate_prediction_parquet(
         indices = issue_data["indices"]
         scores = issue_data.get("scores", [None] * len(indices))
 
-        if include_all:
-            # Include all entries with prediction status
-            for i, idx in enumerate(indices):
-                if i >= len(auto_issues):
-                    continue  # Skip if no prediction available (e.g. context duplication contamination)
-                is_issue = auto_issues[i]
-                score = scores[i]
 
-                if issue_type in ["near_duplicates", "near_duplicates_questions/context"]:
-                    # Handle near duplicates (pairs of indices)
+        is_near_duplicate = issue_type in ["near_duplicates", "near_duplicates_questions/context"]
+
+        for i, idx in enumerate(indices):
+            if i >= len(auto_issues):
+                continue  # Skip if no prediction available
+
+            is_issue = auto_issues[i]
+            score = round(float(scores[i]), 5) if scores[i] is not None else None
+
+            if include_all or is_issue:
+                if is_near_duplicate:
                     idx1, idx2 = idx
                     if issue_type == "near_duplicates_questions/context":
                         id1 = dataset.get_context_only_text(int(idx1))[7]
@@ -51,69 +54,24 @@ def generate_prediction_parquet(
                     else:
                         id1 = dataset[int(idx1)][7]
                         id2 = dataset[int(idx2)][7]
-
                     data.append({
                         "id_1": id1,
                         "id_2": id2,
-                        "score": round(float(score), 5) if score is not None else None,
+                        "score": score,
                         "issue_type": issue_type,
                         "prediction": is_issue,
-                        'id': None
+                        'id': None,
                     })
                 else:
-                    # Handle single indices
-                    # Get the unique ID for the sample
-                    id = dataset[int(idx)][7]
-
+                    sample_id = dataset[int(idx)][7]
                     data.append({
-                        "id": id,
-                        "score": round(float(score), 5) if score is not None else None,
+                        "id": sample_id,
+                        "score": score,
                         "issue_type": issue_type,
                         "prediction": is_issue,
                         "id_1": None,
                         "id_2": None,
                     })
-        else:
-            # Only include entries where auto_issues is True
-            for i, is_issue in enumerate(auto_issues):
-                if is_issue:
-                    idx = indices[i]
-                    score = scores[i]
-
-                    if issue_type in ["near_duplicates", "near_duplicates_questions/context"]:
-                        idx1, idx2 = idx
-                        if issue_type == "near_duplicates_questions/context":
-                            id1 = dataset.get_context_only_text(int(idx1))[7]
-                            id2 = dataset.get_context_only_text(int(idx2))[7]
-                        else:
-                            id1 = dataset[int(idx1)][7]
-                            id2 = dataset[int(idx2)][7]
-
-                        # Get the unique IDs for each sample
-                        id1 = dataset[int(idx1)][7]
-                        id2 = dataset[int(idx2)][7]
-
-                        data.append({
-                            "id_1": id1,
-                            "id_2": id2,
-                            "score": round(float(score), 5) if score is not None else None,
-                            "issue_type": issue_type,
-                            "prediction": True,  # All included entries are issues
-                            'id': None
-                        })
-                    else:
-                        # Get the unique ID for the sample
-                        sample_id = dataset[int(idx)][7]
-
-                        data.append({
-                            "id": sample_id,
-                            "score": round(float(score), 5) if score is not None else None,
-                            "issue_type": issue_type,
-                            "prediction": True,  # All included entries are issues
-                            "id_1": None,
-                            "id_2": None,
-                        })
-
         return pd.DataFrame(data)
 
     # Initialize a list to hold all DataFrames

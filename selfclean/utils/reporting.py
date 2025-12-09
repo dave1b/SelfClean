@@ -178,7 +178,7 @@ def generate_markdown_report(
             f.write(report)
         print(f"Report saved to {output_path_}")
 
-    display_markdown_report(report)
+    # display_markdown_report(report)
     return report
 
 # Helper function to display the report in a Jupyter notebook
