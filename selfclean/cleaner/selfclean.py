@@ -374,6 +374,7 @@ class SelfClean:
     def run_on_text_dataset(
         self,
         dataset_path: Path,
+        val_dataset_path: Optional[Path] = None,
         tokenizer_name: str = "bert",
         epochs: int = 10,
         batch_size: int = 64,
@@ -415,8 +416,12 @@ class SelfClean:
         tokenizer = get_encoder_tokenizer_class(tokenizer_name)[1]
         if dataset_name == "hellaswag":
             dataset = HellaSwagDataset(dataset_path, tokenizer, max_length=max_length, cache_dir=cache_dir)
+            if val_dataset_path is not None:
+                val_dataset = HellaSwagDataset(val_dataset_path, tokenizer, max_length=max_length, cache_dir=cache_dir)
         elif dataset_name == "mmlu":
             dataset = MMLUDataset(dataset_path, tokenizer, max_length=max_length, cache_dir=cache_dir)
+            if val_dataset_path is not None:
+                val_dataset = MMLUDataset(val_dataset_path, tokenizer, max_length=max_length, cache_dir=cache_dir)
 
         additional_run_info = (
             dataset_path.stem if dataset_name is None else dataset_name
@@ -424,6 +429,7 @@ class SelfClean:
 
         return self._run_text(
             dataset=dataset,
+            val_dataset=val_dataset if val_dataset is not None else None,
             epochs=epochs,
             batch_size=batch_size,
             ssl_pre_training=ssl_pre_training,
@@ -443,6 +449,7 @@ class SelfClean:
     def _run_text(
         self,
         dataset,
+        val_dataset,
         epochs: int = 10,
         batch_size: int = 64,
         ssl_pre_training: bool = True,
@@ -483,7 +490,7 @@ class SelfClean:
 
                     self.model = train_simcse(
                         train_dataset=dataset,
-                        val_dataset=None,
+                        val_dataset=val_dataset,
                         epochs=epochs,
                         batch_size=batch_size,
                         ssl_pre_training=ssl_pre_training,
@@ -514,7 +521,7 @@ class SelfClean:
 
                     self.model = train_mae_text(
                         train_dataset=dataset,
-                        val_dataset=None,
+                        val_dataset=val_dataset,
                         epochs=epochs,
                         batch_size=batch_size,
                         ssl_pre_training=ssl_pre_training,

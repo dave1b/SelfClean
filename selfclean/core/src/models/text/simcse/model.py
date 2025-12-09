@@ -2,6 +2,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from ..encoders.utils import get_encoder_tokenizer_class
 
+
 class BertSimCSE(nn.Module):
     def __init__(self, base_model: str):
         super(BertSimCSE, self).__init__()
@@ -20,13 +21,9 @@ class BertSimCSE(nn.Module):
         outputs = self.backbone(input_ids, attention_mask)
         cls_embedding = outputs.pooler_output  # [CLS] token representation
 
-        if self.training:
-            z = self.dense1(cls_embedding)
-            z = F.relu(z)
-            z = self.dropout(z)
-            z = self.dense2(z)
-            z = F.normalize(z, dim=1)
-            return cls_embedding, z
-        else:
-            return cls_embedding
-
+        z = self.dense1(cls_embedding)
+        z = F.relu(z)
+        z = self.dropout(z)
+        z = self.dense2(z)
+        z = F.normalize(z, dim=1)
+        return cls_embedding, z

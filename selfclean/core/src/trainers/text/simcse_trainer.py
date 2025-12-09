@@ -87,12 +87,6 @@ class SimCSETrainer(Trainer):
         self.start_epoch = to_restore["epoch"]
         self.config = to_restore["config"]
         self._save_config_file(self.run_dir / "checkpoints")
-        self._log_embeddings(
-            model=self.model,
-            patch_size=self.config["model"]["encoder"]["patch_size"],
-            log_self_attention=self.config["visualize_attention"],
-            log_dict={"counters/epoch": 0, "counters/train_step": 0},
-        )
         n_iter = 0
         best_val_loss = float('inf')  # Track best validation loss
         progress_bar = tqdm(

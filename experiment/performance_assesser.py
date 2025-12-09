@@ -28,7 +28,7 @@ class PerformanceAssesser:
         self.calculate_false_positives()
         self.calculate_false_negatives()
         self.calculate_mean_average_precision()
-        self.plot_roc_curve()
+        self.roc_curve()
 
         # print overview
         print(f"Total dataset size: {total_length}")
@@ -99,7 +99,7 @@ class PerformanceAssesser:
             self.precision = self.tp / (self.tp + self.fp)
         return self.precision
 
-    def plot_roc_curve(self):
+    def roc_curve(self):
         """
         Plots the AUC-ROC (Area Under the Receiver Operating Characteristic Curve)
         Measures how well the model differentiates between classes.
@@ -107,18 +107,19 @@ class PerformanceAssesser:
         labels = []
         scores = []
 
-        for _, outlier in self.predictions.iterrows():
+        for _, pred in self.predictions.iterrows():
             # Check if this outlier is actually contaminated
-            if outlier.get('id'):
-                is_contaminated = not self.contamination_log[self.contamination_log['id'] == outlier['id']].empty
+            is_contaminated = False
+            if pred['id']:
+                if pred['id'] in self.contamination_log['id'].astype(str).values:
+                    is_contaminated = True
             else:
-                is_contaminated = not self.contamination_log[
-                    (self.contamination_log['id_1'] == outlier['id_1']) &
-                    (self.contamination_log['id_2'] == outlier['id_2'])
-                    ].empty
+                if pred['id_1'] in self.contamination_log['id_1'].astype(str).values and pred['id_2'] in self.contamination_log[
+                    'id_2'].astype(str).values:
+                    is_contaminated = True
 
             labels.append(1 if is_contaminated else 0)
-            scores.append(1 - outlier['score'])  # Use inverse of score as detection confidence
+            scores.append(1 - pred['score'])  # Use inverse of score as detection confidence
 
         fpr, tpr, thresholds = roc_curve(labels, scores)
         auc = roc_auc_score(labels, scores)
