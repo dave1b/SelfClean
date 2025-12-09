@@ -43,18 +43,14 @@ class PerformanceAssesser:
         Only considers entries where prediction=True.
         """
         true_positives = 0
-        for _, outlier in self.predictions[self.predictions['prediction'] == True].iterrows():
-            if 'id' in outlier and pd.notna(outlier['id']):
-                contamination_record = self.contamination_log[self.contamination_log['id'] == outlier['id']]
+        for _, pred in self.predictions[self.predictions['prediction'] == True].iterrows():
+            if pred['id']:
+                if pred['id'] in self.contamination_log['id'].astype(str).values:
+                    true_positives += 1
             else:
-                id_1 = outlier['id_1']
-                id_2 = outlier['id_2']
-                contamination_record = self.contamination_log[
-                    (self.contamination_log['id_1'] == id_1) &
-                    (self.contamination_log['id_2'] == id_2)
-                    ]
-            if not contamination_record.empty:
-                true_positives += 1
+                if pred['id_1'] in self.contamination_log['id_1'].astype(str).values and pred['id_2'] in self.contamination_log[
+                    'id_2'].astype(str).values:
+                    true_positives += 1
         self.tp = true_positives
         return true_positives
 
@@ -64,16 +60,15 @@ class PerformanceAssesser:
         Only considers entries where prediction=True.
         """
         false_positives = 0
-        for _, outlier in self.predictions[self.predictions['prediction'] == True].iterrows():
-            if 'id' in outlier and pd.notna(outlier['id']):
-                contamination_record = self.contamination_log[self.contamination_log['id'] == outlier['id']]
+        for _, pred in self.predictions[self.predictions['prediction'] == True].iterrows():
+            if pred['id']:
+                if pred['id'] not in self.contamination_log['id'].astype(str).values:
+                    false_positives += 1
             else:
-                contamination_record = self.contamination_log[
-                    (self.contamination_log['id_1'] == outlier['id_1']) &
-                    (self.contamination_log['id_2'] == outlier['id_2'])
-                    ]
-            if contamination_record.empty:
-                false_positives += 1
+                if pred['id_1'] not in self.contamination_log['id_1'].astype(str).values and pred['id_2'] not in self.contamination_log[
+                    'id_2'].astype(
+                    str).values:
+                    false_positives += 1
         self.fp = false_positives
         return false_positives
 
@@ -81,55 +76,21 @@ class PerformanceAssesser:
         """
         Calculate the number of false negatives (missed issues).
         """
-        # Get all contaminated IDs from the contamination log
-        contaminated_ids = set()
+        true_pred = self.predictions[self.predictions['prediction'] == True]
+        true_pred_id = true_pred['id_1'].astype(str).values
+        true_pred_id_1 = true_pred['id_1'].astype(str).values
+        true_pred_id_2 = true_pred['id_2'].astype(str).values
+
+        false_negatives = 0
         for _, record in self.contamination_log.iterrows():
-            if 'id' in record and pd.notna(record.get('id')):
-                contaminated_ids.add(record['id'])
+            if record['id'] and not pd.isna(record['id']):
+                if str(record['id']) not in true_pred_id:
+                    false_negatives += 1
             else:
-                contaminated_ids.add((record['id_1'], record['id_2']))
-
-        # Get all detected IDs from the predictions (only where prediction=True)
-        detected_ids = set()
-        for _, outlier in self.predictions[self.predictions['prediction'] == True].iterrows():
-            if 'id' in outlier and pd.notna(outlier.get('id')):
-                detected_ids.add(outlier['id'])
-            else:
-                detected_ids.add((outlier['id_1'], outlier['id_2']))
-
-        false_negatives = len(contaminated_ids - detected_ids)
+                if str(record['id_1']) not in true_pred_id_1 and str(record['id_2']) not in true_pred_id_2:
+                    false_negatives += 1
         self.fn = false_negatives
         return false_negatives
-
-    def calculate_true_negatives(self):
-        """
-        Calculate the number of true negatives (correctly identified non-issues).
-        Only considers entries where prediction=False.
-        """
-        true_negatives = 0
-
-        # Get all contaminated IDs from the contamination log
-        contaminated_ids = set()
-        for _, record in self.contamination_log.iterrows():
-            if 'id' in record and pd.notna(record.get('id')):
-                contaminated_ids.add(record['id'])
-            else:
-                contaminated_ids.add((record['id_1'], record['id_2']))
-
-        # Check entries where prediction=False
-        for _, outlier in self.predictions[self.predictions['prediction'] == False].iterrows():
-            if 'id' in outlier and pd.notna(outlier.get('id')):
-                # Check if this ID is NOT in contaminated_ids
-                if outlier['id'] not in contaminated_ids:
-                    true_negatives += 1
-            else:
-                # Check if this pair is NOT in contaminated_ids
-                pair = (outlier['id_1'], outlier['id_2'])
-                if pair not in contaminated_ids:
-                    true_negatives += 1
-
-        self.tn = true_negatives
-        return true_negatives
 
     def calculate_mean_average_precision(self):
         if self.tp + self.fp == 0:
