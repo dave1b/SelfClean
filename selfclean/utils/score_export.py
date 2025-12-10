@@ -1,5 +1,8 @@
-import pandas as pd
+import concurrent.futures
+import os
 from pathlib import Path
+
+import pandas as pd
 from typing import Dict, List, Optional, Union
 from selfclean.cleaner.issue_manager import IssueManager, IssueTypes
 
@@ -10,119 +13,122 @@ def generate_prediction_parquet(
     output_path: Optional[Union[str, Path]] = None,
     pretraining_type: str = "undefined",
     include_all: bool = False,
+    max_workers: int = os.cpu_count() // 2,
+    batch_size: int = 1_000_000,
 ) -> Dict:
     """
     Generate a Parquet file with issue scores and indices for each issue type.
-    If include_all=True, includes all data points with a 'prediction' column.
-    If include_all=False, only includes entries marked as issues (True in auto_issues).
-
-    Args:
-        auto_clean_dict: Dictionary containing issue types and their auto_issues lists
-        dataset: The dataset containing the original samples
-        output_path: Path to save the Parquet file
-        pretraining_type: e.g. "SimCSE" or "MAE" used for metadata
-        include_all: If True, includes all data points with prediction status
-
-    Returns:
-        Dictionary containing all issue data and indices
+    Processes entries in parallel batches for efficiency.
     """
-    print(f"Generating prediction parquet with include_all={include_all}")
+    print(f"Generating prediction parquet with include_all={include_all}, parallelism={max_workers}, batch_size={batch_size}")
 
-    def process_issue_type(issue_type: str, issue_data: Dict, include_all: bool) -> pd.DataFrame:
-        """Process a specific issue type and return a DataFrame."""
-        data = []
+    def process_batch(issue_type: str, batch_indices: List, batch_auto_issues: List, batch_scores: List, is_near_duplicate: bool) -> List[dict]:
+        """Process a batch of entries and return a list of results."""
+        batch_results = []
+        for i, idx in enumerate(batch_indices):
+            is_issue = batch_auto_issues[i]
+            score = round(batch_scores[i], 5)
+            if not (include_all or is_issue):
+                continue
+            if is_near_duplicate:
+                idx1, idx2 = idx
+                if issue_type == "near_duplicates_questions/context":
+                    id1 = dataset.get_context_only_text(int(idx1))[1]
+                    id2 = dataset.get_context_only_text(int(idx2))[1]
+                else:
+                    id1 = dataset[int(idx1)][7]
+                    id2 = dataset[int(idx2)][7]
+                batch_results.append({
+                    "id_1": id1,
+                    "id_2": id2,
+                    "score": score,
+                    "issue_type": issue_type,
+                    "prediction": is_issue,
+                    'id': None,
+                })
+            else:
+                sample_id = dataset[int(idx)][7]
+                batch_results.append({
+                    "id": sample_id,
+                    "score": score,
+                    "issue_type": issue_type,
+                    "prediction": is_issue,
+                    "id_1": None,
+                    "id_2": None,
+                })
+        return batch_results
+
+    def process_issue_type(issue_type: str, issue_data: Dict) -> pd.DataFrame:
+        """Process a specific issue type in parallel batches and return a DataFrame."""
         auto_issues = issue_data["auto_issues"]
         indices = issue_data["indices"]
         scores = issue_data.get("scores", [None] * len(indices))
-
-
         is_near_duplicate = issue_type in ["near_duplicates", "near_duplicates_questions/context"]
 
-        for i, idx in enumerate(indices):
-            if i >= len(auto_issues):
-                continue  # Skip if no prediction available
+        # Split into batches
+        batches = [
+            (indices[i:i + batch_size], auto_issues[i:i + batch_size], scores[i:i + batch_size])
+            for i in range(0, len(indices), batch_size)
+            if i < len(auto_issues)
+        ]
 
-            is_issue = auto_issues[i]
-            score = round(float(scores[i]), 5) if scores[i] is not None else None
+        # Use ThreadPoolExecutor for parallel batch processing
+        with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+            futures = [
+                executor.submit(process_batch, issue_type, batch_indices, batch_auto_issues, batch_scores, is_near_duplicate)
+                for batch_indices, batch_auto_issues, batch_scores in batches
+            ]
+            # Collect results as they complete
+            results = []
+            for i, future in enumerate(concurrent.futures.as_completed(futures)):
+                if i % max(1, len(batches) // 10) == 0:
+                    print(f"Processing {issue_type}: batch {i}/{len(batches)}")
+                results.extend(future.result())
 
-            if include_all or is_issue:
-                if is_near_duplicate:
-                    idx1, idx2 = idx
-                    if issue_type == "near_duplicates_questions/context":
-                        id1 = dataset.get_context_only_text(int(idx1))[7]
-                        id2 = dataset.get_context_only_text(int(idx2))[7]
-                    else:
-                        id1 = dataset[int(idx1)][7]
-                        id2 = dataset[int(idx2)][7]
-                    data.append({
-                        "id_1": id1,
-                        "id_2": id2,
-                        "score": score,
-                        "issue_type": issue_type,
-                        "prediction": is_issue,
-                        'id': None,
-                    })
-                else:
-                    sample_id = dataset[int(idx)][7]
-                    data.append({
-                        "id": sample_id,
-                        "score": score,
-                        "issue_type": issue_type,
-                        "prediction": is_issue,
-                        "id_1": None,
-                        "id_2": None,
-                    })
-        return pd.DataFrame(data)
+        return pd.DataFrame(results)
 
-    # Initialize a list to hold all DataFrames
     all_dfs = []
-
-    # Create metadata
     metadata = {
         "dataset_name": getattr(dataset, "name", "unknown"),
         "dataset_size": len(dataset),
         "generated_on": str(pd.Timestamp.now()),
         "issue_types": list(auto_clean_dict.keys()),
         "include_all": include_all,
-        "pretraining_type": pretraining_type
+        "pretraining_type": pretraining_type,
     }
 
     # Process each issue type in auto_clean_dict
     for issue_type, issue_data in auto_clean_dict.items():
-        df = process_issue_type(issue_type, issue_data, include_all)
+        df = process_issue_type(issue_type, issue_data)
         if not df.empty:
             all_dfs.append(df)
 
     # Combine all DataFrames
     if all_dfs:
         combined_df = pd.concat(all_dfs, ignore_index=True)
-
         # Add metadata as attributes
         combined_df.attrs = metadata
-
         # Save to Parquet file if output_path is provided
         if output_path:
             output_path = Path(output_path)
             output_path.parent.mkdir(parents=True, exist_ok=True)
-
             # Ensure unique filename
             output_path_ = output_path.with_suffix('.parquet')
             counter = 1
             while output_path_.exists():
                 output_path_ = output_path.with_stem(f"{output_path.stem}_{counter}").with_suffix('.parquet')
                 counter += 1
-
             combined_df.to_parquet(output_path_, engine='pyarrow')
             combined_df.to_json(output_path_.with_suffix(".json"), orient="records", lines=False)
             print(f"Issue scores saved to {output_path_}")
-
         return {
             "data": combined_df,
-            "metadata": metadata
+            "metadata": metadata,
         }
     else:
         print("No issues found to save.")
         return {"data": pd.DataFrame(), "metadata": metadata}
+
 
 
 def generate_issue_scores_parquet(

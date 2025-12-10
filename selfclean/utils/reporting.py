@@ -71,8 +71,8 @@ def generate_markdown_report(
             elif issue_type == "near_duplicates_questions/context":
                 # Handle near duplicates (pairs of indices)
                 idx1, idx2 = idx
-                text1 = wrap_text(dataset.get_context_only_text(int(idx1))[6])
-                text2 = wrap_text(dataset.get_context_only_text(int(idx2))[6])
+                text1 = wrap_text(dataset.get_context_only_text(int(idx1))[0])
+                text2 = wrap_text(dataset.get_context_only_text(int(idx2))[0])
 
                 score = issues["scores"][i] if "scores" in issues else "N/A"
 
@@ -80,8 +80,8 @@ def generate_markdown_report(
                     "Rank": i + 1,
                     # "Index 1": int(idx1)*factor,
                     # "Index 2": int(idx2)*factor,
-                    "Index 1": dataset.get_context_only_text(int(idx1))[7],
-                    "Index 2": dataset.get_context_only_text(int(idx2))[7],
+                    "Index 1": dataset.get_context_only_text(int(idx1))[1],
+                    "Index 2": dataset.get_context_only_text(int(idx2))[1],
                     "Text 1": text1,
                     "Text 2": text2,
                     "Score": f"{score:.4f}" if isinstance(score, (int, float)) else score,

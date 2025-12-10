@@ -169,16 +169,16 @@ class MMLUDataset(Dataset):
 
         return inputs, label, category, text, context_inputs, context_flag, context_text, id
 
-    def get_context_only_text(self, idx: int) -> Tuple[None, None, None, None, None, None, str, str]:
+    def get_context_only_text(self, idx: int) -> Tuple[str, str]:
         """Return the context-only text for a given index, if available."""
-        if idx * 4 <= self.context_only_id_start:
-            return None, None, None, None, None, None, self.data_points[idx * 4]["context_only"], self.data_points[idx * 4]["task_id"].split('-')[0]
+        id_x_4 = idx * 4
+        if id_x_4 <= self.context_only_id_start:
+            data_point = self.data_points[id_x_4]
         else:
-            diff = idx * 4 - self.context_only_id_start
-            diff_to_add = math.floor(diff / 4) + diff % 4
-            id = self.context_only_id_start + diff_to_add
-            return None, None, None, None, None, None, self.data_points[id]["context_only"], self.data_points[id]["task_id"].split("-")[0]
-
+            diff = id_x_4 - self.context_only_id_start
+            index = self.context_only_id_start + (diff // 4) + (diff % 4)
+            data_point = self.data_points[index]
+        return data_point["context_only"], data_point["task_id"].split('-')[0]
 
     def set_provide_tokenized_context(self, provide: bool) -> None:
         """Set whether to provide tokenized context separately."""

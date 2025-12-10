@@ -1,3 +1,5 @@
+import concurrent.futures
+import os
 from pathlib import Path
 from typing import Optional
 import pandas as pd
@@ -115,10 +117,9 @@ class PerformanceAssesser:
         return self.precision
 
     def roc_curve(self):
-        print("Calculating AUC-ROC...")
+        cpu_count = os.cpu_count()
 
-        # Vectorized label assignment using isin for speed
-        # Create a set for fast lookup
+        print(f"Calculating AUC-ROC... with parallelism={cpu_count}")
         contamination_ids = set(self.contamination_log['id'].dropna().astype(str))
         contamination_pairs = set(
             zip(
@@ -127,14 +128,30 @@ class PerformanceAssesser:
             )
         )
 
-        # Assign labels using vectorized operations
-        labels = (
-            self.predictions['id'].isin(contamination_ids) |
-            self.predictions.apply(
-                lambda x: (str(x['id_1']), str(x['id_2'])) in contamination_pairs,
-                axis=1
+        def is_contaminated(row):
+            return (
+                str(row['id']) in contamination_ids or
+                (str(row['id_1']), str(row['id_2'])) in contamination_pairs
             )
-        ).astype(int)
+
+        # Split the DataFrame into chunks for parallel processing
+        chunk_size = 1_000_000  # Adjust based on your memory and system
+        chunks = [
+            self.predictions[i:i + chunk_size]
+            for i in range(0, len(self.predictions), chunk_size)
+        ]
+
+        # Parallelize the label assignment
+        with concurrent.futures.ThreadPoolExecutor(max_workers= cpu_count // 2) as executor:
+            # Submit all chunks for parallel processing
+            futures = [
+                executor.submit(
+                    lambda chunk=chunk: chunk.apply(is_contaminated, axis=1)
+                )
+                for chunk in chunks
+            ]
+            # Combine results as they complete
+            labels = pd.concat([f.result() for f in concurrent.futures.as_completed(futures)])
 
         scores = 1 - self.predictions['score']
         fpr, tpr, thresholds = roc_curve(labels, scores)
