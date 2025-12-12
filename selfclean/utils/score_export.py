@@ -1,3 +1,4 @@
+import gc
 import os
 import shutil
 import time
@@ -19,7 +20,7 @@ def generate_prediction_parquet(
     output_path: Optional[Union[str, Path]] = None,
     pretraining_type: str = "undefined",
     max_workers: int = max(os.cpu_count() - 4, 16),
-    batch_size: int = 100_000,
+    batch_size: int = 50_000,
 ) -> Dict:
     """
     Generate a Parquet file with issue scores and indices for each issue type.
@@ -31,7 +32,7 @@ def generate_prediction_parquet(
     def get_sample_id(idx: int, issue_type: str) -> str:
         """Optimized helper function to get sample ID based on issue type."""
         if issue_type == "near_duplicates_questions/context":
-            return dataset.get_context_only_id(int(idx))
+            return dataset.get_context_only_id(idx)
         return dataset.get_id(idx)
 
     def process_batch(issue_type: str, batch_indices, batch_auto_issues, batch_scores, is_near_duplicate: bool, batch_id, unique_id) -> str:
@@ -39,49 +40,50 @@ def generate_prediction_parquet(
         Process a batch of entries and return a list of results.
         Optimized to minimize memory usage and maximize speed.
         """
-        batch_results = []
-        batch_auto_issues_len = len(batch_auto_issues)
+        min_len = min(len(batch_indices), len(batch_auto_issues), len(batch_scores))
+        batch_indices = batch_indices[:min_len]
+        batch_auto_issues = batch_auto_issues[:min_len]
+        batch_scores = batch_scores[:min_len]
 
-        # Pre-allocate list for results
-        batch_results = [None] * batch_auto_issues_len
 
-        for i, idx in enumerate(batch_indices):
-            if i >= batch_auto_issues_len:
-                break  # Skip if no prediction available (e.g. context duplication contamination)
-            is_issue = batch_auto_issues[i]
+        scores = np.round(batch_scores, 5)
+        prediction = batch_auto_issues
+        issue_type_col = pd.Series([issue_type] * min_len)
 
-            score = round(batch_scores[i], 5)
+        if is_near_duplicate:
+            # Near Duplicates: indices are pairs (idx1, idx2)
+            idx1_arr = batch_indices[:, 0]
+            idx2_arr = batch_indices[:, 1]
 
-            if is_near_duplicate:
-                idx1, idx2 = idx
-                id1 = get_sample_id(idx1, issue_type)
-                id2 = get_sample_id(idx2, issue_type)
+            id1_arr = get_sample_id(idx1_arr, issue_type)
+            id2_arr = get_sample_id(idx2_arr, issue_type)
 
-                batch_results[i] = {
-                    "id_1": id1,
-                    "id_2": id2,
-                    "score": score,
-                    "issue_type": issue_type,
-                    "prediction": is_issue,
-                    'id': None,
-                }
-            else:
-                id = get_sample_id(idx, issue_type)
+            batch_df = pd.DataFrame({
+                "id_1": id1_arr,
+                "id_2": id2_arr,
+                "score": scores,
+                "issue_type": issue_type_col,
+                "prediction": prediction,
+                'id': None,
+            })
+        else:
+            # Single Index
+            id_arr = get_sample_id(batch_indices, issue_type)
 
-                batch_results[i] = {
-                    "id": id,
-                    "score": score,
-                    "issue_type": issue_type,
-                    "prediction": is_issue,
-                    "id_1": None,
-                    "id_2": None,
-                }
+            batch_df = pd.DataFrame({
+                "id": id_arr,
+                "score": scores,
+                "issue_type": issue_type_col,
+                "prediction": prediction,
+                "id_1": None,
+                "id_2": None,
+            })
 
         # Filter out None values (from skipped entries)
         temp_file_path = f"./.temp/{unique_id}/temp_batch_{batch_id}.parquet"
-        batch_df = pd.DataFrame(batch_results)
         batch_df.to_parquet(temp_file_path, index=False)  # Use Parquet for efficiency
         return temp_file_path
+
 
     def process_issue_type(issue_type: str, issue_data: Dict) -> dd.DataFrame:
         """
@@ -133,8 +135,11 @@ def generate_prediction_parquet(
                 for batch_indices, batch_auto_issues, batch_scores, batch_id, unique_id in batch_iterator()
             ]
 
+            gc.collect()
+            log_divisor = max(1, num_batches // 10)
+
             for i, future in enumerate(concurrent.futures.as_completed(futures)):
-                if i % num_batches // 10 == 0 or i == 1:
+                if i % log_divisor == 0:
                     logger.info(f"---- Processed batch {i + 1}/{num_batches}, {ram_usage()}")
 
                 temp_file_path = future.result()

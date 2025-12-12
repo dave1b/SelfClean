@@ -415,6 +415,7 @@ class SelfClean:
 
         # Create dataset
         tokenizer = get_encoder_tokenizer_class(tokenizer_name)[1]
+        val_dataset = None
         if dataset_name == "hellaswag":
             dataset = HellaSwagDataset(dataset_path, tokenizer, max_length=max_length, cache_dir=cache_dir)
             if val_dataset_path is not None:
@@ -574,7 +575,7 @@ class SelfClean:
             del self.model
             gc.collect()
 
-            if not len(issues_to_detect) == 1 and issues_to_detect[0] == IssueTypes.NEAR_DUPLICATES_Q:
+            if len(issues_to_detect) > 1 or len(issues_to_detect) == 1 and issues_to_detect[0] != IssueTypes.NEAR_DUPLICATES_Q:
                 self.cleaner.fit(
                     emb_space=np.asarray(emb_space),
                     labels=np.asarray(labels),
@@ -584,7 +585,7 @@ class SelfClean:
                     class_labels=None,
                 )
                 issues_to_detect_copy = [issue for issue in issues_to_detect if issue != IssueTypes.NEAR_DUPLICATES_Q]
-                issue_manager, auto_clean_dict = self.cleaner.predict(issues_to_detect=issues_to_detect_copy, data_type=DataType.TEXT)
+                issue_manager = self.cleaner.predict(issues_to_detect=issues_to_detect_copy, data_type=DataType.TEXT)
 
             if IssueTypes.NEAR_DUPLICATES_Q in issues_to_detect:
                 dataset.set_provide_tokenized_context(True)
@@ -602,11 +603,10 @@ class SelfClean:
                 )
                 issue_manager_context_only = self.cleaner.predict(
                     issues_to_detect=[IssueTypes.NEAR_DUPLICATES_Q], data_type=DataType.TEXT)
-                if 'issue_manager' in locals() and 'auto_clean_dict' in locals():
+                if 'issue_manager' in locals():
                     # combine the two issue_managers
                     issue_manager = IssueManager(issue_dict={**issue_manager.issue_dict, **issue_manager_context_only.issue_dict},
                                                  meta_data_dict=issue_manager.meta_data_dict)
-                    # combine the two auto_clean_dicts
                 else:
                     issue_manager = issue_manager_context_only
 

@@ -88,7 +88,6 @@ class MMLUDataset(Dataset):
                 "task_id": idx,
                 "context_only": None
             } for wrong in wrong_endings)
-
         return data_points
 
     def _pre_tokenize_all(self, json_path: str, cache_dir: Optional[str] = None) -> None:
@@ -168,6 +167,10 @@ class MMLUDataset(Dataset):
                 context_flag = True
 
         return inputs, label, category, text, context_inputs, context_flag, context_text, id
+
+    def get_id(self, idx: int) -> str:
+        """Return the task ID for a given index."""
+        return self.data_points[idx]["task_id"]
 
     def get_context_only_text(self, idx: int) -> Tuple[str, str]:
         """Return the context-only text for a given index, if available."""
