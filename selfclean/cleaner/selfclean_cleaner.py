@@ -268,9 +268,9 @@ class SelfCleanCleaner(
                     output_path=self.output_path,
                     figsize=self.figsize,
                 )
-        return_dict = self.perform_auto_cleaning(
+        self.perform_auto_cleaning(
             issue_manger=issue_manager,
             return_dict=return_dict,
             output_path=self.output_path,
         )
-        return issue_manager, return_dict
+        return issue_manager

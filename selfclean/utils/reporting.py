@@ -1,6 +1,7 @@
 from pathlib import Path
 from typing import Optional, Union, Dict, List
 import pandas as pd
+from loguru import logger
 from IPython.display import Markdown, display
 import textwrap
 
@@ -168,15 +169,10 @@ def generate_markdown_report(
 
     # Save to file if output_path is provided
     if output_path:
-        output_path.parent.mkdir(parents=True, exist_ok=True)
-        output_path_ = Path(f'{output_path}.md')
-        counter = 1
-        while output_path_.exists():
-            output_path_ = output_path.with_stem(f"{output_path.stem}_{counter}.md")
-            counter += 1
-        with open(output_path_, "w", encoding="utf-8") as f:
+        path = output_path / 'report.md'
+        with open(path, "w", encoding="utf-8") as f:
             f.write(report)
-        print(f"Report saved to {output_path_}")
+        logger.info(f"Report saved to {path}")
 
     # display_markdown_report(report)
     return report

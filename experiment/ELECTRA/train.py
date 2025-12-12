@@ -3,7 +3,7 @@ import os
 import platform
 from datetime import datetime
 from typing import Optional
-
+from loguru import logger
 import torch
 from torch.utils.data import Dataset, DataLoader, DistributedSampler
 from pathlib import Path
@@ -144,6 +144,6 @@ if __name__ == "__main__":
         pre_tokenize=True  # Enable pre-tokenization
     )
 
-    print("Training ELECTRA Text")
+    logger.info("Training ELECTRA Text")
     model = train_electra(train_dataset, val_dataset, 50, 32, True, 1, None, ELECTRA_STANDARD_HYPERPARAMETERS)
-    print(f'Finished ELECTRA training after: {datetime.now() - start}')
+    logger.info(f'Finished ELECTRA training after: {datetime.now() - start}')

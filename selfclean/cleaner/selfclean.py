@@ -26,7 +26,7 @@ from ..core.src.utils.logging import set_log_level
 from ..core.src.utils.utils import (
     cleanup,
     fix_random_seeds,
-    init_distributed_mode,
+    init_distributed_mode, get_export_path,
 )
 from ..core.src.models.text.encoders.utils import get_encoder_tokenizer_class
 from ..utils.plotting import plot_inspection_result_text
@@ -110,6 +110,7 @@ class SelfClean:
         self.memmap = memmap
         self.memmap_path = memmap_path
         self.model = None
+        self.output_path = get_export_path(output_path)
         self.cleaner = SelfCleanCleaner(
             distance_function_path=distance_function_path,
             distance_function_name=distance_function_name,
@@ -119,7 +120,7 @@ class SelfClean:
             memmap_path=memmap_path,
             plot_distribution=plot_distribution,
             plot_top_N=plot_top_N,
-            output_path=output_path / "result" if output_path else None,
+            output_path=self.output_path if self.output_path else None,
             figsize=figsize,
             log_level=log_level,
             **kwargs,
@@ -400,7 +401,7 @@ class SelfClean:
         wandb_logging: bool = False,
         wandb_project_name: str = "SelfClean",
         max_length: int = 128,
-        cache_dir: Optional[str] = "./cache",
+        cache_dir: Optional[str] = "./.cache",
     ):
         if hyperparameters is None:
             if pretraining_type == "simcse":
@@ -569,6 +570,10 @@ class SelfClean:
                 batch_size=batch_size
             )
 
+            # cleanup
+            del self.model
+            gc.collect()
+
             if not len(issues_to_detect) == 1 and issues_to_detect[0] == IssueTypes.NEAR_DUPLICATES_Q:
                 self.cleaner.fit(
                     emb_space=np.asarray(emb_space),
@@ -595,17 +600,15 @@ class SelfClean:
                     dataset=dataset,
                     class_labels=None,
                 )
-                issue_manager_context_only, auto_clean_dict_context_only = self.cleaner.predict(
+                issue_manager_context_only = self.cleaner.predict(
                     issues_to_detect=[IssueTypes.NEAR_DUPLICATES_Q], data_type=DataType.TEXT)
                 if 'issue_manager' in locals() and 'auto_clean_dict' in locals():
                     # combine the two issue_managers
                     issue_manager = IssueManager(issue_dict={**issue_manager.issue_dict, **issue_manager_context_only.issue_dict},
                                                  meta_data_dict=issue_manager.meta_data_dict)
                     # combine the two auto_clean_dicts
-                    auto_clean_dict.update(auto_clean_dict_context_only)
                 else:
                     issue_manager = issue_manager_context_only
-                    auto_clean_dict = auto_clean_dict_context_only
 
             # plot_inspection_result_text(
             #     issue_manager=issue_manager,
@@ -614,11 +617,10 @@ class SelfClean:
             #     output_path=self.cleaner.output_path,
             # )
             md = generate_markdown_report(issue_manager=issue_manager, dataset=dataset, top_n=self.cleaner.plot_top_N,
-                                          output_path=self.cleaner.output_path, model_name=hyperparameters["model"]["base_model"])
-
+                                          output_path=self.output_path, model_name=hyperparameters["model"]["base_model"])
+            gc.collect()
             # save automatic cleaning suggestions
-            prediction_parquet = generate_prediction_parquet(auto_clean_dict=auto_clean_dict, dataset=dataset,
-                                                             output_path=self.cleaner.output_path, pretraining_type=pretraining_type,
-                                                             include_all=True)
+            prediction_parquet = generate_prediction_parquet(issue_manager=issue_manager, dataset=dataset,
+                                                             output_path=self.cleaner.output_path, pretraining_type=pretraining_type)
 
             return issue_manager, prediction_parquet

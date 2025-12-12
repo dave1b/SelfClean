@@ -1,6 +1,7 @@
 import gc
 import os
 import platform
+from loguru import logger
 from datetime import datetime
 from typing import Optional
 
@@ -148,6 +149,6 @@ if __name__ == "__main__":
         pre_tokenize=True  # Enable pre-tokenization
     )
 
-    print("Training SimCSE")
+    logger.info("Training SimCSE")
     model = train_simcse(train_dataset, val_dataset, 5, 64, True, 1, None, SIMCSE_STANDARD_HYPERPARAMETERS)
-    print(f'Finished SimCSE training after: {datetime.now() - start}')
+    logger.info(f'Finished SimCSE training after: {datetime.now() - start}')

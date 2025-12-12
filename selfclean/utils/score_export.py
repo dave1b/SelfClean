@@ -1,25 +1,30 @@
 import concurrent.futures
+from loguru import logger
 import os
+import time
 from pathlib import Path
 import pandas as pd
 import numpy as np
 from typing import Dict, List, Optional, Union, Tuple
+import dask.dataframe as dd
 from selfclean.cleaner.issue_manager import IssueManager, IssueTypes
+from selfclean.core.src.utils.utils import ram_usage
+
 
 def generate_prediction_parquet(
-    auto_clean_dict: Dict,
+    issue_manager: IssueManager,
     dataset: List,
     output_path: Optional[Union[str, Path]] = None,
     pretraining_type: str = "undefined",
-    include_all: bool = False,
-    max_workers: int = min(16, os.cpu_count() or 1),
-    batch_size: int = 100_000,
+    max_workers: int = max(os.cpu_count() - 4, 16),
+    batch_size: int = 1_000_000,
 ) -> Dict:
     """
     Generate a Parquet file with issue scores and indices for each issue type.
     Optimized for processing large datasets efficiently with parallel processing.
     """
-    print(f"Generating prediction parquet with include_all={include_all}, parallelism={max_workers}, batch_size={batch_size}")
+    logger.info(f"Generating prediction parquet, parallelism={max_workers}, batch_size={batch_size}")
+    start_time = time.time()
 
     def get_sample_id(idx: int, issue_type: str) -> str:
         """Optimized helper function to get sample ID based on issue type."""
@@ -27,25 +32,21 @@ def generate_prediction_parquet(
             return dataset.get_context_only_text(int(idx))[1]
         return dataset[int(idx)][7]
 
-    def process_batch(
-        issue_type: str,
-        batch_data: Tuple[List, List[bool], List[float]],
-        is_near_duplicate: bool
-    ) -> List[dict]:
+    def process_batch(issue_type: str, batch_indices, batch_auto_issues, batch_scores, is_near_duplicate: bool, batch_id) -> str:
         """
         Process a batch of entries and return a list of results.
         Optimized to minimize memory usage and maximize speed.
         """
-        batch_indices, batch_auto_issues, batch_scores = batch_data
         batch_results = []
+        batch_auto_issues_len = len(batch_auto_issues)
 
         # Pre-allocate list for results
         batch_results = [None] * len(batch_indices)
 
         for i, idx in enumerate(batch_indices):
+            if i >= batch_auto_issues_len:
+                break  # Skip if no prediction available (e.g. context duplication contamination)
             is_issue = batch_auto_issues[i]
-            if not (include_all or is_issue):
-                continue
 
             score = round(batch_scores[i], 5)
 
@@ -75,9 +76,12 @@ def generate_prediction_parquet(
                 }
 
         # Filter out None values (from skipped entries)
-        return [result for result in batch_results if result is not None]
+        temp_file_path = f"./.temp/temp_batch_{batch_id}.parquet"
+        batch_df = pd.DataFrame(batch_results)
+        batch_df.to_parquet(temp_file_path, index=False)  # Use Parquet for efficiency
+        return temp_file_path
 
-    def process_issue_type(issue_type: str, issue_data: Dict) -> pd.DataFrame:
+    def process_issue_type(issue_type: str, issue_data: Dict) -> dd.DataFrame:
         """
         Process a specific issue type in parallel batches and return a DataFrame.
         """
@@ -90,104 +94,82 @@ def generate_prediction_parquet(
         auto_issues_np = np.array(auto_issues)
         scores_np = np.array(scores)
 
-        # Create batches
         num_batches = (len(indices) + batch_size - 1) // batch_size
-        batches = []
 
-        for i in range(num_batches):
-            start = i * batch_size
-            end = min((i + 1) * batch_size, len(indices))
+        split_points = np.arange(1, num_batches) * batch_size
 
-            if start >= end:
-                continue
+        batched_indices = np.split(indices, split_points)
+        batched_auto_issues = np.split(auto_issues_np, split_points)
+        batched_scores = np.split(scores_np, split_points)
 
-            batch_indices = indices[start:end]
-            batch_auto_issues = auto_issues_np[start:end]
-            batch_scores = scores_np[start:end]
+        result_files = []
 
-            batches.append((batch_indices, batch_auto_issues, batch_scores))
+        temp_dir = Path("./.temp")
+        temp_dir.mkdir(parents=True, exist_ok=True)
 
         # Use ThreadPoolExecutor for parallel batch processing
-        with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+        with concurrent.futures.ThreadPoolExecutor(max_workers) as executor:
             # Submit all tasks at once
             futures = [
-                executor.submit(process_batch, issue_type, batch, is_near_duplicate)
-                for batch in batches
+                executor.submit(process_batch, issue_type, *batch_data, is_near_duplicate, i)
+                for i, batch_data in enumerate(zip(batched_indices, batched_auto_issues, batched_scores))
             ]
 
-            # Process results as they complete
-            results = []
             for i, future in enumerate(concurrent.futures.as_completed(futures)):
-                if i % max(1, len(batches) // 10) == 0:
-                    print(f"Processing {issue_type}: batch {i+1}/{len(batches)}")
+                if i % max(1, len(batched_indices) // 10) == 0:
+                    logger.info(f"---- Processing {issue_type}: batch {i + 1}/{len(batched_indices)}, {ram_usage()}")
 
-                batch_result = future.result()
-                if batch_result:
-                    results.extend(batch_result)
+                temp_file_path = future.result()
+                if temp_file_path:
+                    result_files.append(temp_file_path)
 
-        # Create DataFrame in one operation
-        if results:
-            return pd.DataFrame(results)
-        return pd.DataFrame()
+        # Combine all batch DataFrame paths with dask
+        result_df = dd.read_parquet(result_files)
 
-    # Initialize a list to hold all DataFrames
-    all_dfs = []
+        # Because dask df -> not in memory
+        return result_df
+
+    combined_df = None
 
     # Create metadata
     metadata = {
         "dataset_name": getattr(dataset, "name", "unknown"),
         "dataset_size": len(dataset),
         "generated_on": str(pd.Timestamp.now()),
-        "issue_types": list(auto_clean_dict.keys()),
-        "include_all": include_all,
+        "issue_types": list[issue_manager.issue_dict.keys()],
         "pretraining_type": pretraining_type,
     }
 
     # Process each issue type in auto_clean_dict
-    for issue_type, issue_data in auto_clean_dict.items():
-        print(f"Starting processing for {issue_type}")
+    for issue_type, issue_data in issue_manager.issue_dict.items():
+        logger.info(f"Starting generating prediction export for {issue_type}")
         df = process_issue_type(issue_type, issue_data)
-        if not df.empty:
-            all_dfs.append(df)
-            print(f"Completed processing for {issue_type}. Found {len(df)} entries.")
+        if combined_df is None:
+            combined_df = df
+        else:
+            combined_df = combined_df.append(df)
+        logger.info(f"Completed processing for {issue_type}. Found {len(df)} entries.")
 
     # Combine all DataFrames
-    if all_dfs:
-        combined_df = pd.concat(all_dfs, ignore_index=True, copy=False)
+    if len(combined_df.index) > 0:
 
-        combined_df.attrs = metadata
+        path = output_path / 'predictions_dask'
+        combined_df.to_parquet(
+            path,
+            engine='pyarrow',
+            compression='snappy'
+        )
 
-        # Save to Parquet file if output_path is provided
-        if output_path:
-            output_path = Path(output_path)
-            output_path.parent.mkdir(parents=True, exist_ok=True)
-
-            # Ensure unique filename
-            output_path_ = output_path.with_suffix('.parquet')
-            counter = 1
-            while output_path_.exists():
-                output_path_ = output_path.with_stem(f"{output_path.stem}_{counter}").with_suffix('.parquet')
-                counter += 1
-
-            combined_df.to_parquet(
-                output_path_,
-                engine='pyarrow',
-                compression='snappy',
-                index=False
-            )
-
-            # combined_df.to_json(output_path_.with_suffix(".json"), orient="records", lines=False)
-
-            print(f"Issue scores saved to {output_path_}")
+        # combined_df.to_json(output_path_.with_suffix(".json"), orient="records", lines=False)
+        logger.info(f"Finished in {(time.time() - start_time) / 60:.2f} minutes, predictions saved to {path} ")
 
         return {
-            "data": combined_df,
+            "data_path": path,
             "metadata": metadata,
         }
     else:
-        print("No issues found to save.")
+        logger.info("No issues found to save.")
         return {"data": pd.DataFrame(), "metadata": metadata}
-
 
 
 def generate_issue_scores_parquet(
@@ -318,12 +300,12 @@ def generate_issue_scores_parquet(
 
             combined_df.to_parquet(output_path_, engine='pyarrow')
             combined_df.to_json(output_path_.with_suffix(".json"), orient="records", lines=False)
-            print(f"Issue scores saved to {output_path_}")
+            logger.info(f"Issue scores saved to {output_path_}")
 
         return {
             "data": combined_df,
             "metadata": metadata
         }
     else:
-        print("No issues found to save.")
+        logger.info("No issues found to save.")
         return {"data": pd.DataFrame(), "metadata": metadata}

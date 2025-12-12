@@ -1,6 +1,7 @@
 import gc
 import os
 import platform
+from loguru import logger
 from datetime import datetime
 from typing import List, Optional, Union
 
@@ -147,6 +148,6 @@ if __name__ == "__main__":
         pre_tokenize=True  # Enable pre-tokenization
     )
 
-    print("Training MAE Text")
+    logger.info("Training MAE Text")
     model = train_mae_text(train_dataset, val_dataset, 5, 64, True, 1, None, MAE_TEXT_STANDARD_HYPERPARAMETERS)
-    print(f'Finished MAE training after: {datetime.now() - start}')
+    logger.info(f'Finished MAE training after: {datetime.now() - start}')

@@ -1,6 +1,8 @@
 import os
+from pathlib import Path
 
 import numpy as np
+import psutil
 import torch
 import torch.distributed as dist
 from loguru import logger
@@ -291,3 +293,22 @@ def latex_median_quantile(arr: np.ndarray) -> str:
     diff_95 = "{" + "{0:+.1f}".format(q_95 - median) + "}"
 
     return f"{median:.1f}^{diff_95}_{diff_05}"
+
+
+def ram_usage():
+    mem = psutil.virtual_memory()
+
+    return f"Used RAM: {mem.used / (1024 ** 3):.2f} GB, {mem.percent}%"
+
+def get_export_path(base_path: Path) -> Path:
+    # Save to Parquet file if output_path is provided
+    base_path = Path(base_path) / 'result'
+    base_path.parent.mkdir(parents=True, exist_ok=True)
+
+    # Ensure unique filename
+    counter = 1
+    output_path = base_path
+    while output_path.exists():
+        output_path = base_path.with_stem(f"{base_path.stem}_{counter}")
+        counter += 1
+    return output_path
