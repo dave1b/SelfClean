@@ -1,5 +1,5 @@
-import math
 from typing import Dict, Any, Tuple, List, Optional
+import numpy as np
 import torch
 import pandas as pd
 from torch.utils.data import Dataset
@@ -28,6 +28,8 @@ class HellaSwagDataset(Dataset):
         self.name = "HellaSwag"
         self.path = json_path
         self.context_only_id_start = None
+        self.task_ids_arr: Optional[np.ndarray] = None
+        self.context_only_task_ids_arr: Optional[np.ndarray] = None
 
         # Load and validate data
         self._load_and_validate_data(json_path)
@@ -65,13 +67,15 @@ class HellaSwagDataset(Dataset):
     def _create_data_points_efficient(self) -> List[Dict[str, Any]]:
         """Create data points more efficiently using list comprehensions."""
         data_points = []
+        task_ids_list = []
+        context_task_ids_list = []
 
         for idx, entry in self.df.iterrows():
             context = entry["ctx"]
             id = entry["ind"]
 
+            # Handle cases which are contaminated (questions) and have no endings
             if entry["label"] == -1:
-                # Only add context if label is -1 (no endings), because of contamination
                 data_points.append({
                     "text": context,
                     "correct": -1,
@@ -79,10 +83,11 @@ class HellaSwagDataset(Dataset):
                     "task_id": f'{id}',
                     "context_only": context
                 })
+                task_ids_list.append(idx)
+                context_task_ids_list.append(id)
                 continue
 
             correct_ending = entry["endings"][entry["label"]]
-
             wrong_endings = [entry["endings"][i] for i in range(4) if i != entry["label"]]
 
             # Add correct ending
@@ -93,16 +98,23 @@ class HellaSwagDataset(Dataset):
                 "task_id": f'{id}-0',
                 "context_only": context
             })
+            task_ids_list.append(idx)
+            context_task_ids_list.append(id)
 
             # Add wrong endings
-            data_points.extend({
-                                   "text": f"{context} {wrong}",
-                                   "correct": 0,
-                                   "category": entry["activity_label"],
-                                   "task_id": f'{id}-{wrong_idx + 1}',
-                                   "context_only": None
-                               } for wrong_idx, wrong in enumerate(wrong_endings))
+            for wrong_idx, wrong in enumerate(wrong_endings):
+                task_id = f'{id}-{wrong_idx}'
+                task_ids_list.append(task_id)
+                data_points.append({
+                    "text": f"{context} {wrong}",
+                    "correct": 0,
+                    "category": entry["activity_label"],
+                    "task_id": task_id,
+                    "context_only": None
+                })
 
+        self.task_ids_arr = np.array(task_ids_list, dtype=object)
+        self.context_only_task_ids_arr = np.array(context_task_ids_list, dtype=object)
         return data_points
 
     def _pre_tokenize_all(self, json_path: str, cache_dir: Optional[str] = None, ) -> None:
@@ -183,6 +195,14 @@ class HellaSwagDataset(Dataset):
 
         return inputs, label, category, text, context_inputs, context_flag, context_text, id
 
+    def get_id(self, idx: int) -> str:
+        """Return the task ID for a given index."""
+        return str(self.task_ids_arr[idx])
+
+    def get_context_only_id(self, idx: int) -> str:
+        """Return the task ID for a given index."""
+        return str(self.context_only_task_ids_arr[idx])
+
     def get_context_only_text(self, idx: int) -> Tuple[str, str]:
         """Return the context-only text for a given index, if available."""
         id_x_4 = idx * 4
@@ -192,7 +212,7 @@ class HellaSwagDataset(Dataset):
             diff = id_x_4 - self.context_only_id_start
             index = self.context_only_id_start + (diff // 4) + (diff % 4)
             data_point = self.data_points[index]
-        return data_point["context_only"], data_point["task_id"].split('-')[0]
+        return data_point["context_only"], data_point["task_id"].partition('-')[0]
 
     def set_provide_tokenized_context(self, provide: bool) -> None:
         """Set whether to provide tokenized context separately."""

@@ -1,4 +1,3 @@
-import os
 from loguru import logger
 import time
 from pathlib import Path
@@ -50,14 +49,8 @@ class PerformanceAssesser:
         }])
 
         if self.output_path:
-            output_path = Path(self.output_path / "result_metrics")
-            output_path.parent.mkdir(parents=True, exist_ok=True)
-            output_path_ = output_path.with_suffix('.csv')
-            counter = 1
-            while output_path_.exists():
-                output_path_ = output_path.with_stem(f"{output_path.stem.split('_')[0]}_{counter}_metrics").with_suffix('.csv')
-                counter += 1
-            metrics_df.to_csv(output_path_, index=False)
+            path = Path(self.output_path / "result_metrics.csv")
+            metrics_df.to_csv(path, index=False)
 
     def calculate_true_positives(self):
         logger.info("Calculating true positives...")

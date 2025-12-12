@@ -31,7 +31,7 @@ from ..core.src.utils.utils import (
 from ..core.src.models.text.encoders.utils import get_encoder_tokenizer_class
 from ..utils.plotting import plot_inspection_result_text
 from ..utils.reporting import generate_markdown_report
-from ..utils.score_export import generate_issue_scores_parquet, generate_prediction_parquet
+from ..utils.score_export import generate_prediction_parquet
 from ..utils.utils import set_dataset_transformation
 
 DINO_STANDARD_HYPERPARAMETERS = {
