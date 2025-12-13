@@ -2,6 +2,7 @@ from pathlib import Path
 import pandas as pd
 import random
 import json
+from loguru import logger
 from typing import List, Optional, Set
 
 from duckdb.experimental.spark import DataFrame
@@ -10,33 +11,20 @@ from experiment.datasets.llm_api_util import generate_near_duplicate_mistral
 
 
 class HellaSwagContaminator:
-    def __init__(self, contamination_percent: float = 0.1):
+    def __init__(self, contamination_ratio: float = 0.1):
         """
         Initialize the contaminator with the percentage of items to contaminate.
-        :param contamination_percent: Percentage of items to contaminate (0.0 to 1.0).
+        :param contamination_ratio: Percentage of items to contaminate (0.0 to 1.0).
         """
-        self.contamination_percent = contamination_percent
+        self.contamination_ratio = contamination_ratio
         self.contamination_records = []
         self.contaminated_indices: Set[int, str] = set()  # Track contaminated 'ind' values to avoid overlap
 
     def hs_contamination(
         self,
         file: Path,
-        contamination_types: List[str] = [
-            "question_duplication_contamination",
-            "answer_duplicate_contamination",
-            "off_topic_contamination",
-            "category_contamination",
-            "label_contamination"
-        ]
+        contamination_types: List[str]
     ) -> pd.DataFrame:
-        """
-        Contaminate the dataset according to the specified types.
-        :param df: Input DataFrame with HellaSwag data.
-        :param contamination_types: List of contamination types to apply.
-        :param output_contamination_log: Path to save the contamination log as JSON.
-        :return: Contaminated DataFrame.
-        """
         self.contamination_records = []
         self.contaminated_indices = set()
 
@@ -69,7 +57,8 @@ class HellaSwagContaminator:
 
     def _question_duplication_contamination(self, df: pd.DataFrame) -> pd.DataFrame:
         """Contaminate by adding a near-duplicate question using Mistral."""
-        num_to_contaminate = int(len(df) * self.contamination_percent)
+        num_to_contaminate = int(len(df) * self.contamination_ratio)
+        logger.info(f"Contaminating {num_to_contaminate} questions")
         uncontaminated_indices = self._get_uncontaminated_indices(df)
         indices = random.sample(uncontaminated_indices, min(num_to_contaminate, len(uncontaminated_indices)))
 
@@ -95,11 +84,14 @@ class HellaSwagContaminator:
 
     def _answer_duplicate_contamination(self, df: pd.DataFrame) -> pd.DataFrame:
         """Contaminate by adding a fifth near-duplicate answer using Mistral."""
-        num_to_contaminate = int(len(df) * self.contamination_percent)
+        num_to_contaminate = int(len(df) * self.contamination_ratio)
         uncontaminated_indices = self._get_uncontaminated_indices(df)
         indices = random.sample(uncontaminated_indices, min(num_to_contaminate, len(uncontaminated_indices)))
 
-        for ind in indices:
+        for i, ind in enumerate(indices):
+            if i & 1000 == 0:
+                logger.info(f"Answer duplicate contamination progress: {i}/{len(indices)}")
+
             row_index = df[df['ind'] == ind].index[0]  # Get the DataFrame index for the 'ind' value
             # Randomly select one of the four endings to duplicate
             correct_ending = df.at[row_index, 'label']
@@ -119,7 +111,7 @@ class HellaSwagContaminator:
 
     def _off_topic_contamination(self, df: pd.DataFrame) -> pd.DataFrame:
         """Contaminate one of the answer options ('endings') with off-topic text."""
-        num_to_contaminate = int(len(df) * self.contamination_percent)
+        num_to_contaminate = int(len(df) * self.contamination_ratio)
         uncontaminated_indices = self._get_uncontaminated_indices(df)
         indices = random.sample(uncontaminated_indices, min(num_to_contaminate, len(uncontaminated_indices)))
 
@@ -144,7 +136,7 @@ class HellaSwagContaminator:
 
     def _category_contamination(self, df: pd.DataFrame) -> pd.DataFrame:
         """Contaminate the 'activity_label' (category) column."""
-        num_to_contaminate = int(len(df) * self.contamination_percent)
+        num_to_contaminate = int(len(df) * self.contamination_ratio)
         uncontaminated_indices = self._get_uncontaminated_indices(df)
         indices = random.sample(uncontaminated_indices, min(num_to_contaminate, len(uncontaminated_indices)))
 
@@ -161,7 +153,7 @@ class HellaSwagContaminator:
 
     def _label_contamination(self, df: pd.DataFrame) -> pd.DataFrame:
         """Contaminate the 'label' (correct answer index) column."""
-        num_to_contaminate = int(len(df) * self.contamination_percent)
+        num_to_contaminate = int(len(df) * self.contamination_ratio)
         uncontaminated_indices = self._get_uncontaminated_indices(df)
         indices = random.sample(uncontaminated_indices, min(num_to_contaminate, len(uncontaminated_indices)))
 
@@ -170,7 +162,8 @@ class HellaSwagContaminator:
             original_label = df.at[row_index, 'label']
             contaminated_label = random.choice([i for i in range(4) if i != original_label])
             df.at[row_index, 'label'] = contaminated_label
-            self.contamination_records.append({"type": "label_contamination", "id": ind, "id_1": None, "id_2": None})
+            self.contamination_records.append({"type": "label_contamination", "id": f"{ind}-{original_label}", "id_1": None, "id_2": None})
+            self.contamination_records.append({"type": "label_contamination", "id": f"{ind}-{contaminated_label}", "id_1": None, "id_2": None})
             self.contaminated_indices.add(ind)
 
         return df
@@ -187,15 +180,17 @@ class HellaSwagContaminator:
 
 if __name__ == "__main__":
     # Example usage
-    contamination_type = "question_duplication_contamination"
+    contamination_type = "label_contamination"
+    # "question_duplication_contamination"
     # "answer_duplicate_contamination"
     # "off_topic_contamination"
     # "category_contamination"
-    # "label_contamination"
 
-    file_path = Path("hellaswag_train_0.01ksubset.json")
+    file_path = Path("hellaswag_train.json")
+    # file_path = Path("hs_train_10percent.json")
+    # file_path = Path("hellaswag_train_0.01ksubset.json")
 
-    contaminator = HellaSwagContaminator(contamination_percent=0.1)
+    contaminator = HellaSwagContaminator(contamination_ratio=0.05)
 
     contaminated_df = contaminator.hs_contamination(
         file_path,
