@@ -99,7 +99,7 @@ def train_simcse(
 
     if val_dataset is not None:
         val_loader = DataLoader(
-            train_dataset,
+            val_dataset,
             batch_size=batch_size,
             collate_fn=val_dataset.get_collate_fn(),
             drop_last=True,
@@ -131,24 +131,24 @@ if __name__ == "__main__":
 
     hs_train_dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_train.json"
     hs_val_dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_val.json"
-    # hs_train_dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_train_1ksubset.json"
+    # hs_train_dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_train_0.01ksubset.json"
     # hs_val_dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_train_1ksubset.json"
-    mmlu_dataset_path = Path(__file__).parent.parent / "datasets" / "mmlu" / "mmlu_test.json"
+    # mmlu_dataset_path = Path(__file__).parent.parent / "datasets" / "mmlu" / "mmlu_test.json"
 
     train_dataset = HellaSwagDataset(
         json_path=hs_train_dataset_path,
         tokenizer=tokenizer,
-        cache_dir="./cache",
+        cache_dir="./.cache",
         pre_tokenize=True  # Enable pre-tokenization
     )
 
     val_dataset = HellaSwagDataset(
         json_path=hs_val_dataset_path,
         tokenizer=tokenizer,
-        cache_dir="./cache",
+        cache_dir="./.cache",
         pre_tokenize=True  # Enable pre-tokenization
     )
 
     logger.info("Training SimCSE")
-    model = train_simcse(train_dataset, val_dataset, 8, 64, True, 1, None, SIMCSE_STANDARD_HYPERPARAMETERS)
+    model = train_simcse(train_dataset, val_dataset, 8, 32, True, 1, None, SIMCSE_STANDARD_HYPERPARAMETERS)
     logger.info(f'Finished SimCSE training after: {datetime.now() - start}')

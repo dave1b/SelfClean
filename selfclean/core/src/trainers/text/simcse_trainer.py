@@ -1,6 +1,7 @@
 import gc
 from pathlib import Path
 from typing import List, Optional, Union, Dict
+from loguru import logger
 
 import torch
 import torch.nn.functional as F
@@ -57,6 +58,7 @@ class SimCSETrainer(Trainer):
             summary(self.model, input_size=(self.config["batch_size"], 3, 224, 224))
 
     def fit(self) -> torch.nn.Module:
+        logger.info(f"Start training {self.arch_name}")
         optimizer_cls = get_optimizer_type(self.config["optim"])
         optimizer = optimizer_cls(
             params=self.model.parameters(),
@@ -168,10 +170,12 @@ class SimCSETrainer(Trainer):
                     "counters/epoch": epoch,
                     "counters/train_step": n_iter,
                 })
-            if n_iter % 100 == 0:
-                gc.collect()
-                if torch.cuda.is_available():
-                    torch.cuda.empty_cache()
+            if n_iter % 400 == 0:
+                if self.val_dataset and self.wandb_logging:
+                    val_loss = self._validate_epoch(epoch)
+                    import wandb
+                    wandb.log({"val_loss": val_loss, "epoch": epoch})
+
         return total_loss / total_samples
 
     def _validate_epoch(self, epoch: int) -> float:
