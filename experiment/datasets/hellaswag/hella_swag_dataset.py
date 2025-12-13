@@ -88,21 +88,24 @@ class HellaSwagDataset(Dataset):
                 continue
 
             correct_ending = entry["endings"][entry["label"]]
+            correct_ending_idx = entry["endings"].index(correct_ending)
             wrong_endings = [entry["endings"][i] for i in range(4) if i != entry["label"]]
+            wrong_endings_idx = [entry["endings"].index(wrong_ending) for wrong_ending in wrong_endings]
 
             # Add correct ending
+            task_id = f'{id}-{correct_ending_idx}'
             data_points.append({
                 "text": f"{context} {correct_ending}",
                 "correct": 1,
                 "category": entry["activity_label"],
-                "task_id": f'{id}-0',
+                "task_id": task_id,
                 "context_only": context
             })
-            task_ids_list.append(idx)
+            task_ids_list.append(task_id)
             context_task_ids_list.append(id)
 
             # Add wrong endings
-            for wrong_idx, wrong in enumerate(wrong_endings):
+            for i, (wrong, wrong_idx) in enumerate(zip(wrong_endings, wrong_endings_idx)):
                 task_id = f'{id}-{wrong_idx}'
                 task_ids_list.append(task_id)
                 data_points.append({
@@ -197,11 +200,12 @@ class HellaSwagDataset(Dataset):
 
     def get_id(self, idx: int) -> str:
         """Return the task ID for a given index."""
-        return str(self.task_ids_arr[idx])
+        print("get_context_only_id, length of idx: {}".format(len(idx)))
+        return self.task_ids_arr[idx].astype(str)
 
     def get_context_only_id(self, idx: int) -> str:
         """Return the task ID for a given index."""
-        return str(self.context_only_task_ids_arr[idx])
+        return self.context_only_task_ids_arr[idx].astype(str)
 
     def get_context_only_text(self, idx: int) -> Tuple[str, str]:
         """Return the context-only text for a given index, if available."""

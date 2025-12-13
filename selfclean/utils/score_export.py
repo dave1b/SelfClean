@@ -29,7 +29,7 @@ def generate_prediction_parquet(
     logger.info(f"Generating prediction parquet, parallelism={max_workers}, batch_size={batch_size}")
     start_time = time.time()
 
-    def get_sample_id(idx: int, issue_type: str) -> str:
+    def get_sample_id(idx: np.ndarray, issue_type: str) -> str:
         """Optimized helper function to get sample ID based on issue type."""
         if issue_type == "near_duplicates_questions/context":
             return dataset.get_context_only_id(idx)
