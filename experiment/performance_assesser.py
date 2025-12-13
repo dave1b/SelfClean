@@ -62,10 +62,10 @@ class PerformanceAssesser:
 
         positive_preds = self.predictions[self.predictions['prediction'] == True]
         # Vectorized check for single IDs
-        tp_single = positive_preds[positive_preds['id'].isna() & positive_preds['id'].astype(str).isin(contamination_ids)].shape[0]
+        tp_single = positive_preds[positive_preds['id'].notnull() & positive_preds['id'].astype(str).isin(contamination_ids)].shape[0]
         # Vectorized check for pairs
         if {'id_1', 'id_2'}.issubset(positive_preds.columns):
-            positive_preds_pairs = positive_preds[positive_preds['id'].isna()]
+            positive_preds_pairs = positive_preds[positive_preds['id'].notnull()]
             tp_pairs = positive_preds_pairs.apply(
                 lambda x: (str(x['id_1']), str(x['id_2'])) in contamination_pairs, axis=1
             ).sum()
@@ -82,10 +82,10 @@ class PerformanceAssesser:
 
         positive_preds = self.predictions[self.predictions['prediction'] == True]
         # Vectorized check for single IDs
-        fp_single = positive_preds[positive_preds['id'].isna() & ~positive_preds['id'].astype(str).isin(contamination_ids)].shape[0]
+        fp_single = positive_preds[positive_preds['id'].notnull() & ~positive_preds['id'].astype(str).isin(contamination_ids)].shape[0]
         # Vectorized check for pairs
         if {'id_1', 'id_2'}.issubset(positive_preds.columns):
-            positive_preds_pairs = positive_preds[positive_preds['id'].isna()]
+            positive_preds_pairs = positive_preds[positive_preds['id'].notnull()]
             fp_pairs = positive_preds_pairs.apply(
                 lambda x: str(x['id_1']) not in contamination_id1 and str(x['id_2']) not in contamination_id2, axis=1
             ).sum()
