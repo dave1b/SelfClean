@@ -150,5 +150,5 @@ if __name__ == "__main__":
     )
 
     logger.info("Training SimCSE")
-    model = train_simcse(train_dataset, val_dataset, 5, 64, True, 1, None, SIMCSE_STANDARD_HYPERPARAMETERS)
+    model = train_simcse(train_dataset, val_dataset, 8, 64, True, 1, None, SIMCSE_STANDARD_HYPERPARAMETERS)
     logger.info(f'Finished SimCSE training after: {datetime.now() - start}')
