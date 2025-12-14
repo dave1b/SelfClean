@@ -13,7 +13,7 @@ from pathlib import Path
 class HellaSwagDataset(Dataset):
     """HellaSwag dataset with pre-tokenization and caching."""
 
-    def __init__(self, json_path: Path, tokenizer, max_length: int = 512,
+    def __init__(self, json_path: Path, tokenizer, max_length: int = 180,
                  cache_dir: Optional[str] = None, pre_tokenize: bool = True):
         """
         Args:
@@ -204,7 +204,6 @@ class HellaSwagDataset(Dataset):
 
     def get_id(self, idx: int) -> str:
         """Return the task ID for a given index."""
-        print("get_context_only_id, length of idx: {}".format(len(idx)))
         return self.task_ids_arr[idx].astype(str)
 
     def get_context_only_id(self, idx: int) -> str:

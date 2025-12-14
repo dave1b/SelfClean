@@ -13,6 +13,8 @@ from selfclean.core.src.models.text.encoders.utils import get_encoder_tokenizer_
 from selfclean.core.src.trainers.text.electra_trainer import ElectraTrainer
 from selfclean.core.src.utils.utils import init_distributed_mode, cleanup
 
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
+
 ELECTRA_STANDARD_HYPERPARAMETERS = {
     "optimizer": {
         "name": "adamw",
@@ -130,10 +132,8 @@ if __name__ == "__main__":
     start = datetime.now()
     tokenizer = get_encoder_tokenizer_class("electra")[1]
 
-    hs_train_dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_train.json"
-    hs_val_dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_val.json"
-    # hs_train_dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_train_1ksubset.json"
-    # hs_val_dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_train_1ksubset.json"
+    hs_train_dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "golden_swag_train.json"
+    hs_val_dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "golden_swag_validation.json"
     # mmlu_dataset_path = Path(__file__).parent.parent / "datasets" / "mmlu" / "mmlu_test.json"
 
     train_dataset = HellaSwagDataset(
@@ -142,6 +142,7 @@ if __name__ == "__main__":
         cache_dir="./cache",
         pre_tokenize=True  # Enable pre-tokenization
     )
+    train_dataset.name = "GoldenSwag"
 
     val_dataset = HellaSwagDataset(
         json_path=hs_val_dataset_path,
@@ -149,6 +150,8 @@ if __name__ == "__main__":
         cache_dir="./cache",
         pre_tokenize=True  # Enable pre-tokenization
     )
+    val_dataset.name = "GoldenSwag"
+
 
     logger.info("Training ELECTRA Text")
     model = train_electra(train_dataset, val_dataset, 50, 32, True, 1, None, ELECTRA_STANDARD_HYPERPARAMETERS)

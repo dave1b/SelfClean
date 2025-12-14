@@ -14877,9 +14877,9 @@
   {
     "ind": 17528,
     "activity_label": "Personal Care and Style",
-    "ctx_a": "[header] How to style straight hair [title] Opt for a pixie cut. [step] A [style a pixie cut | pixie cut] can provide short straight hair with a lot of volume and movement. To achieve a voluminous pixie, keep the sides cropped, the top long, and add lots of layers throughout your short locks.",
+    "ctx_a": "[header] How to style straight hair [title] Opt for a pixie cut. [step] A [style a pixie cut I pixie cut] can provide short straight hair with a lot of volume and movement. To achieve a voluminous pixie, keep the sides cropped, the top long, and add lots of layers throughout your short locks.",
     "ctx_b": "",
-    "ctx": "[header] How to style straight hair [title] Opt for a pixie cut. [step] A [style a pixie cut | pixie cut] can provide short straight hair with a lot of volume and movement. To achieve a voluminous pixie, keep the sides cropped, the top long, and add lots of layers throughout your short locks.",
+    "ctx": "[header] How to style straight hair [title] Opt for a pixie cut. [step] A [style a pixie cut I pixie cut] can provide short straight hair with a lot of volume and movement. To achieve a voluminous pixie, keep the sides cropped, the top long, and add lots of layers throughout your short locks.",
     "endings": [
       "[substeps] You can style your hair or model it. Make sure your hair isn't too long or too short and that you fill in any lumps.",
       "Make sure your short locks fall evenly throughout your hair to provide approximately a dozen layers. [title] Keep extensions or pomade for wavy hair.",
@@ -18284,7 +18284,7 @@
       "[title] Put in a spray bottle of mousse. [step] While light hairspray may not provide foam, a bit of hold can help, which will hold the waves when you straighten your hair.",
       "[substeps] If you want curls that aren't yet in place, you'll have to sacrifice curls by just getting a light texturizing product. You can use a texturizing spray to tame unruly waves.",
       "Dry hair is easier to style by itself than wet hair, so it is important that you find out how to do it. [substeps] Use a smoothing serum, a shine serum and a thin, oil-free water-based product.",
-      "[substeps] If your hair is naturally very curly, [straighten your hair | straighten it] before continuing. If you want loose waves, you'll need to start with either straight or slightly wavy hair."
+      "[substeps] If your hair is naturally very curly, [straighten your hair I straighten it] before continuing. If you want loose waves, you'll need to start with either straight or slightly wavy hair."
     ],
     "source_id": "wikihow~24936",
     "split": "val",
