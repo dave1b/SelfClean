@@ -120,7 +120,6 @@ class SimCSETrainer(Trainer):
             # Save model periodically
             if epoch % self.config["save_every_n_epochs"] == 0 or epoch == self.config["epochs"]:
                 save_model(run_dir=self.run_dir, model=self.model.backbone, epoch=epoch)
-            n_iter += len(self.train_dataset)
         if self.multi_gpu:
             backbone = self.model.module.backbone
         else:

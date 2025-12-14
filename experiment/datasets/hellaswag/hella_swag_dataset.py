@@ -124,7 +124,8 @@ class HellaSwagDataset(Dataset):
     def _pre_tokenize_all(self, json_path: str, cache_dir: Optional[str] = None, ) -> None:
         """Pre-tokenize all texts and cache results."""
         cache_path = None
-        if cache_dir:
+        # if cache_dir:
+        if False:
             cache_dir = Path(cache_dir)
             cache_dir.mkdir(parents=True, exist_ok=True)
             file_name = Path(json_path).stem

@@ -134,8 +134,8 @@ if __name__ == "__main__":
     start = datetime.now()
     tokenizer = get_encoder_tokenizer_class("bert")[1]
 
-    hs_train_dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_train.json"
-    hs_val_dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_val.json"
+    hs_train_dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "golden_swag_train.json"
+    hs_val_dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "golden_swag_validation.json"
     # hs_train_dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_train_0.01ksubset.json"
     # hs_val_dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_train_1ksubset.json"
     # mmlu_dataset_path = Path(__file__).parent.parent / "datasets" / "mmlu" / "mmlu_test.json"
@@ -155,5 +155,5 @@ if __name__ == "__main__":
     )
 
     logger.info("Training SimCSE")
-    model = train_simcse(train_dataset, val_dataset, 8, 16, True, 1, None, SIMCSE_STANDARD_HYPERPARAMETERS)
+    model = train_simcse(train_dataset, val_dataset, 15, 16, True, 1, None, SIMCSE_STANDARD_HYPERPARAMETERS)
     logger.info(f'Finished SimCSE training after: {datetime.now() - start}')
