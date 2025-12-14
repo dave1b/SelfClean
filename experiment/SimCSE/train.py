@@ -78,15 +78,20 @@ def train_simcse(
 
     if torch.cuda.is_available():
         sampler = DistributedSampler(train_dataset, shuffle=True)
+        sampler_val = DistributedSampler(val_dataset, shuffle=False)
         kwargs = {"sampler": sampler}
+        kwargs_val = {"sampler": sampler_val}
     else:
         kwargs = {"shuffle": True}
+        kwargs_val = {"shuffle": True}
 
     # due to a problem with worker spawning on apple silicon
     # we set it here to 0
     kwargs["num_workers"] = num_workers
+    kwargs_val["num_workers"] = num_workers
     if platform.machine().lower() == "arm64":
         kwargs["num_workers"] = 0
+        kwargs_val["num_workers"] = 0
 
     train_loader = DataLoader(
         train_dataset,
@@ -104,7 +109,7 @@ def train_simcse(
             collate_fn=val_dataset.get_collate_fn(),
             drop_last=True,
             pin_memory=True,
-            **kwargs,
+            **kwargs_val
         )
     else :
         val_loader = None
@@ -138,14 +143,14 @@ if __name__ == "__main__":
     train_dataset = HellaSwagDataset(
         json_path=hs_train_dataset_path,
         tokenizer=tokenizer,
-        cache_dir="./.cache",
+        cache_dir="./cache",
         pre_tokenize=True  # Enable pre-tokenization
     )
 
     val_dataset = HellaSwagDataset(
         json_path=hs_val_dataset_path,
         tokenizer=tokenizer,
-        cache_dir="./.cache",
+        cache_dir="./cache",
         pre_tokenize=True  # Enable pre-tokenization
     )
 

@@ -2,6 +2,7 @@ from typing import Dict, Any, Tuple, List, Optional
 import numpy as np
 import torch
 import pandas as pd
+from loguru import logger
 from torch.utils.data import Dataset
 from transformers import BatchEncoding
 from tqdm.auto import tqdm
@@ -131,6 +132,7 @@ class HellaSwagDataset(Dataset):
 
             # Try to load cached tokenized data
             if cache_path.exists():
+                logger.info(f"Loading cached tokenization from {cache_path}")
                 self.tokenized_data = torch.load(cache_path, weights_only=False)
                 return
 
@@ -150,6 +152,7 @@ class HellaSwagDataset(Dataset):
 
         # Save to cache if directory provided
         if cache_path:
+            logger.info(f"Saving cached tokenization into {cache_path}")
             torch.save(self.tokenized_data, cache_path)
 
     def _tokenize(self, text: str) -> BatchEncoding:
