@@ -31,7 +31,7 @@ def generate_prediction_parquet(
 
     def get_sample_id(idx: np.ndarray, issue_type: str) -> str:
         """Optimized helper function to get sample ID based on issue type."""
-        if issue_type == "near_duplicates_questions/context":
+        if issue_type == "near_duplicates_questions":
             return dataset.get_context_only_id(idx)
         return dataset.get_id(idx)
 
@@ -97,7 +97,7 @@ def generate_prediction_parquet(
         scores_data = np.array(issue_data["scores"])
         scores_np = np.array(scores_data)  # Convert scores to numpy array for slicing
 
-        is_near_duplicate = issue_type in ["near_duplicates", "near_duplicates_questions/context"]
+        is_near_duplicate = issue_type in ["near_duplicates", "near_duplicates_questions"]
         total_entries = len(indices_np)
 
         unique_id = str(int(time.time() * 1000))

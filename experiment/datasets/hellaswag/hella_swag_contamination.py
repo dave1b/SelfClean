@@ -2,197 +2,208 @@ from pathlib import Path
 import pandas as pd
 import random
 import json
+import numpy as np
 from loguru import logger
-from typing import List, Optional, Set
+from typing import List, Set, Dict, Any
+from datetime import datetime
 
-from duckdb.experimental.spark import DataFrame
-
+from experiment.datasets.hellaswag.off_topic_texts import get_off_topic_texts
 from experiment.datasets.llm_api_util import generate_near_duplicate_mistral
+from selfclean.cleaner.issue_manager import IssueTypes
 
+seeded_random = random.Random(42)
 
 class HellaSwagContaminator:
-    def __init__(self, contamination_ratio: float = 0.1):
-        """
-        Initialize the contaminator with the percentage of items to contaminate.
-        :param contamination_ratio: Percentage of items to contaminate (0.0 to 1.0).
-        """
-        self.contamination_ratio = contamination_ratio
-        self.contamination_records = []
-        self.contaminated_indices: Set[int, str] = set()  # Track contaminated 'ind' values to avoid overlap
+    def __init__(self, contamination_ratios: Dict[IssueTypes, float]):
+        self.contamination_ratios = contamination_ratios
+        self.contaminated_indices: Set[int] = set()
 
-    def hs_contamination(
-        self,
-        file: Path,
-        contamination_types: List[str]
-    ) -> pd.DataFrame:
-        self.contamination_records = []
-        self.contaminated_indices = set()
-
-        df = pd.read_json(file, encoding='utf-8')
-
-        if "question_duplication_contamination" in contamination_types:
-            df = self._question_duplication_contamination(df)
-        if "answer_duplicate_contamination" in contamination_types:
-            df = self._answer_duplicate_contamination(df)
-        if "off_topic_contamination" in contamination_types:
-            df = self._off_topic_contamination(df)
-        if "category_contamination" in contamination_types:
-            df = self._category_contamination(df)
-        if "label_contamination" in contamination_types:
-            df = self._label_contamination(df)
-
-        contaminated_path = Path(f"{file.stem}_{contamination_type}.json")
-        contaminated_log_path = Path(f"{file.stem}_{contamination_type}_logs.json")
-
-        self._save_file(contaminated_path, df)
-        self._save_file(contaminated_log_path, self.contamination_records)
-
-        return df
+    def hs_contamination(self, file: Path, contamination_types: List[IssueTypes]) -> None:
+        for contamination_type in contamination_types:
+            if contamination_type == IssueTypes.NEAR_DUPLICATES_Q:
+                self._question_duplication_contamination(file)
+            elif contamination_type == IssueTypes.NEAR_DUPLICATES:
+                self._answer_duplicate_contamination(file)
+            elif contamination_type == IssueTypes.OFF_TOPIC_SAMPLES:
+                self._off_topic_contamination(file)
+            elif contamination_type == IssueTypes.CATEGORY_ERRORS:
+                self._category_contamination(file)
+            elif contamination_type == IssueTypes.LABEL_ERRORS:
+                self._label_contamination(file)
 
     def _get_uncontaminated_indices(self, df: pd.DataFrame) -> List[int]:
-        """Return a list of 'ind' values that have not been contaminated yet."""
         all_indices = set(df['ind'].tolist())
-        uncontaminated_indices = list(all_indices - self.contaminated_indices)
-        return uncontaminated_indices
+        return list(all_indices - self.contaminated_indices)
 
-    def _question_duplication_contamination(self, df: pd.DataFrame) -> pd.DataFrame:
-        """Contaminate by adding a near-duplicate question using Mistral."""
-        num_to_contaminate = int(len(df) * self.contamination_ratio)
-        logger.info(f"Contaminating {num_to_contaminate} questions")
+    def _question_duplication_contamination(self, file: Path) -> None:
+        df = pd.read_json(file, encoding='utf-8')
+        contamination_records = []
+        num_to_contaminate = int(len(df) * self.contamination_ratios[IssueTypes.NEAR_DUPLICATES_Q])
         uncontaminated_indices = self._get_uncontaminated_indices(df)
-        indices = random.sample(uncontaminated_indices, min(num_to_contaminate, len(uncontaminated_indices)))
+        indices = seeded_random.sample(uncontaminated_indices, min(num_to_contaminate, len(uncontaminated_indices)))
 
         for ind in indices:
-            row_index = df[df['ind'] == ind].index[0]  # Get the DataFrame index for the 'ind' value
+            row_index = df[df['ind'] == ind].index[0]
             original_ctx = df.at[row_index, 'ctx']
             contaminated_ctx = generate_near_duplicate_mistral(original_ctx)
-
-            # Add the near-duplicate as a new row (without answers)
             new_ind = f"x{ind}"
             new_row = df.loc[row_index].copy()
-            new_row['ind'] = new_ind  # Assign a unique identifier for the new row
+            new_row['ind'] = new_ind
             new_row['ctx'] = contaminated_ctx
-            new_row['endings'] = []  # No answers for the near-duplicate question
-            new_row['label'] = -1  # Mark as invalid
-
+            new_row['endings'] = []
+            new_row['label'] = -1
             df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
-            self.contamination_records.append({"type": "question_duplication_contamination", "id_1": ind, "id_2": new_ind, "id": None})
+            contamination_records.append({
+                "type": "question_duplication",
+                "id": ind,
+                "id_2": new_ind,
+                "original_ctx": original_ctx,
+                "contaminated_ctx": contaminated_ctx,
+                "timestamp": datetime.now().isoformat()
+            })
             self.contaminated_indices.add(ind)
-            self.contaminated_indices.add(new_ind)
 
-        return df
+        self._save_contamination_results(file, df, contamination_records, IssueTypes.NEAR_DUPLICATES_Q)
 
-    def _answer_duplicate_contamination(self, df: pd.DataFrame) -> pd.DataFrame:
-        """Contaminate by adding a fifth near-duplicate answer using Mistral."""
-        num_to_contaminate = int(len(df) * self.contamination_ratio)
+    def _answer_duplicate_contamination(self, file: Path) -> None:
+        df = pd.read_json(file, encoding='utf-8')
+        contamination_records = []
+        num_to_contaminate = int(len(df) * self.contamination_ratios[IssueTypes.NEAR_DUPLICATES])
         uncontaminated_indices = self._get_uncontaminated_indices(df)
-        indices = random.sample(uncontaminated_indices, min(num_to_contaminate, len(uncontaminated_indices)))
+        indices = seeded_random.sample(uncontaminated_indices, min(num_to_contaminate, len(uncontaminated_indices)))
 
-        for i, ind in enumerate(indices):
-            if i & 1000 == 0:
-                logger.info(f"Answer duplicate contamination progress: {i}/{len(indices)}")
-
-            row_index = df[df['ind'] == ind].index[0]  # Get the DataFrame index for the 'ind' value
-            # Randomly select one of the four endings to duplicate
+        for ind in indices:
+            row_index = df[df['ind'] == ind].index[0]
             correct_ending = df.at[row_index, 'label']
-            # one of the four endings to duplicate but not the correct one
             answer_index = random.choice([i for i in range(4) if i != correct_ending])
-
             original_ending = df.at[row_index, 'endings'][answer_index]
             contaminated_ending = generate_near_duplicate_mistral(original_ending)
-
-            # Add the near-duplicate as a fifth answer
             df.at[row_index, 'endings'].append(contaminated_ending)
-            self.contamination_records.append(
-                {"type": "answer_duplicate_contamination", "id_1": f"{ind}-{answer_index}", "id_2": f"{ind}-4", "id": None})
+            contamination_records.append({
+                "type": "answer_duplicate",
+                "id_1": f"{ind}-{answer_index}",
+                "id_2": f"{ind}-4",
+                "original_ending": original_ending,
+                "contaminated_ending": contaminated_ending,
+                "timestamp": datetime.now().isoformat()
+            })
             self.contaminated_indices.add(ind)
 
-        return df
+        self._save_contamination_results(file, df, contamination_records, IssueTypes.NEAR_DUPLICATES)
 
-    def _off_topic_contamination(self, df: pd.DataFrame) -> pd.DataFrame:
-        """Contaminate one of the answer options ('endings') with off-topic text."""
-        num_to_contaminate = int(len(df) * self.contamination_ratio)
+    def _off_topic_contamination(self, file: Path) -> None:
+        df = pd.read_json(file, encoding='utf-8')
+        contamination_records = []
+        num_to_contaminate = int(len(df) * self.contamination_ratios[IssueTypes.OFF_TOPIC_SAMPLES])
         uncontaminated_indices = self._get_uncontaminated_indices(df)
-        indices = random.sample(uncontaminated_indices, min(num_to_contaminate, len(uncontaminated_indices)))
-
-        off_topic_texts = [
-            "print('Hello, World!'), for i in range(10): pass",
-            "`!##^ The capital of Fr$nce is P$ris. ####",
-            "def fibonacci(n): a, b = 0, 1; for _ in range(n): a, b = b, a + b; return a",
-            "<html><head><title>Test</title></head><body><h1>Hello World</h1></body></html>",
-            "SELECT * FROM users WHERE age > 30;",
-            "E = mc^2; F = ma; a^2 + b^2 = c^2",
-        ]
+        indices = seeded_random.sample(uncontaminated_indices, min(num_to_contaminate, len(uncontaminated_indices)))
 
         for ind in indices:
-            row_index = df[df['ind'] == ind].index[0]  # Get the DataFrame index for the 'ind' value
-            # Randomly select one of the four endings to contaminate
+            row_index = df[df['ind'] == ind].index[0]
             answer_index = random.randint(0, 3)
-            df.at[row_index, 'endings'][answer_index] = random.choice(off_topic_texts)
-            self.contamination_records.append({"type": "off_topic_contamination", "id": f"{ind}-{answer_index}", "id_1": None, "id_2": None})
+            original_ending = df.at[row_index, 'endings'][answer_index]
+            contaminated_ending = random.choice(get_off_topic_texts())
+            df.at[row_index, 'endings'][answer_index] = contaminated_ending
+            contamination_records.append({
+                "type": "off_topic",
+                "id": f"{ind}-{answer_index}",
+                "original_ending": original_ending,
+                "contaminated_ending": contaminated_ending,
+                "timestamp": datetime.now().isoformat()
+            })
             self.contaminated_indices.add(ind)
 
-        return df
+        self._save_contamination_results(file, df, contamination_records, IssueTypes.OFF_TOPIC_SAMPLES)
 
-    def _category_contamination(self, df: pd.DataFrame) -> pd.DataFrame:
-        """Contaminate the 'activity_label' (category) column."""
-        num_to_contaminate = int(len(df) * self.contamination_ratio)
+    def _category_contamination(self, file: Path) -> None:
+        df = pd.read_json(file, encoding='utf-8')
+        contamination_records = []
+        num_to_contaminate = int(len(df) * self.contamination_ratios[IssueTypes.CATEGORY_ERRORS])
         uncontaminated_indices = self._get_uncontaminated_indices(df)
-        indices = random.sample(uncontaminated_indices, min(num_to_contaminate, len(uncontaminated_indices)))
+        indices = seeded_random.sample(uncontaminated_indices, min(num_to_contaminate, len(uncontaminated_indices)))
 
         for ind in indices:
-            row_index = df[df['ind'] == ind].index[0]  # Get the DataFrame index for the 'ind' value
+            row_index = df[df['ind'] == ind].index[0]
             original_category = df.at[row_index, 'activity_label']
             possible_categories = df['activity_label'].unique()
             contaminated_category = random.choice([cat for cat in possible_categories if cat != original_category])
             df.at[row_index, 'activity_label'] = contaminated_category
-            self.contamination_records.append({"type": "category_contamination", "id": ind, "id_1": None, "id_2": None})
+            contamination_records.append({
+                "type": "category_error",
+                "id": ind,
+                "original_category": original_category,
+                "contaminated_category": contaminated_category,
+                "timestamp": datetime.now().isoformat()
+            })
             self.contaminated_indices.add(ind)
 
-        return df
+        self._save_contamination_results(file, df, contamination_records, IssueTypes.CATEGORY_ERRORS)
 
-    def _label_contamination(self, df: pd.DataFrame) -> pd.DataFrame:
-        """Contaminate the 'label' (correct answer index) column."""
-        num_to_contaminate = int(len(df) * self.contamination_ratio)
+    def _label_contamination(self, file: Path) -> None:
+        df = pd.read_json(file, encoding='utf-8')
+        contamination_records = []
+        num_to_contaminate = int(len(df) * self.contamination_ratios[IssueTypes.LABEL_ERRORS])
         uncontaminated_indices = self._get_uncontaminated_indices(df)
-        indices = random.sample(uncontaminated_indices, min(num_to_contaminate, len(uncontaminated_indices)))
+        indices = seeded_random.sample(uncontaminated_indices, min(num_to_contaminate, len(uncontaminated_indices)))
 
         for ind in indices:
-            row_index = df[df['ind'] == ind].index[0]  # Get the DataFrame index for the 'ind' value
+            row_index = df[df['ind'] == ind].index[0]
             original_label = df.at[row_index, 'label']
             contaminated_label = random.choice([i for i in range(4) if i != original_label])
             df.at[row_index, 'label'] = contaminated_label
-            self.contamination_records.append({"type": "label_contamination", "id": f"{ind}-{original_label}", "id_1": None, "id_2": None})
-            self.contamination_records.append({"type": "label_contamination", "id": f"{ind}-{contaminated_label}", "id_1": None, "id_2": None})
+            contamination_records.append({
+                "type": "label_error",
+                "id": f"{ind}-{original_label}",
+                "original_label": original_label,
+                "contaminated_label": contaminated_label,
+                "timestamp": datetime.now().isoformat()
+            })
+            contamination_records.append({
+                "type": "label_error",
+                "id": f"{ind}-{contaminated_label}",
+                "original_label": original_label,
+                "contaminated_label": contaminated_label,
+                "timestamp": datetime.now().isoformat()
+            })
             self.contaminated_indices.add(ind)
 
-        return df
+        self._save_contamination_results(file, df, contamination_records, IssueTypes.LABEL_ERRORS)
 
-    @staticmethod
-    def _save_file(output_path: Path, data: DataFrame | List):
-        """Save the contamination records to a JSON file."""
-        if isinstance(data, list):
-            with open(output_path, 'w', encoding='utf-8') as f:
-                json.dump(data, f, indent=4)
-        elif isinstance(data, pd.DataFrame):
-            data.to_json(output_path, orient="records")
+    def _save_contamination_results(
+        self,
+        file: Path,
+        df: pd.DataFrame,
+        contamination_records: List[Dict[str, Any]],
+        contamination_type: IssueTypes
+    ) -> None:
+        contaminated_path = file.with_stem(f"{file.stem}_synthetic_{contamination_type.value.upper()}")
+        contaminated_log_path = file.with_stem(f"{file.stem}_synthetic_{contamination_type.value.upper()}_logs")
 
+        def convert_types(obj):
+            if isinstance(obj, (np.int64, np.int32)):
+                return int(obj)
+            raise TypeError(f"Object of type {type(obj)} is not JSON serializable")
+
+        df.to_json(contaminated_path, orient="records", indent=4)
+        with open(contaminated_log_path, 'w', encoding='utf-8') as f:
+            json.dump(contamination_records, f, indent=4, default=convert_types)
+        logger.info(f"Saved {len(contamination_records)} {contamination_type} contamination records to {contaminated_log_path}.")
 
 if __name__ == "__main__":
-    # Example usage
-    contamination_type = "label_contamination"
-    # "question_duplication_contamination"
-    # "answer_duplicate_contamination"
-    # "off_topic_contamination"
-    # "category_contamination"
-
-    file_path = Path("hellaswag_train.json")
-    # file_path = Path("hs_train_10percent.json")
-    # file_path = Path("hellaswag_train_0.01ksubset.json")
-
-    contaminator = HellaSwagContaminator(contamination_ratio=0.05)
-
-    contaminated_df = contaminator.hs_contamination(
-        file_path,
-        contamination_types=[contamination_type]
-    )
+    contamination_types = [
+        IssueTypes.OFF_TOPIC_SAMPLES,
+        IssueTypes.NEAR_DUPLICATES_Q,
+        IssueTypes.NEAR_DUPLICATES,
+        IssueTypes.LABEL_ERRORS,
+        IssueTypes.CATEGORY_ERRORS
+    ]
+    contamination_ratios = {
+        IssueTypes.OFF_TOPIC_SAMPLES: 0.015,
+        IssueTypes.NEAR_DUPLICATES_Q: 0.015,
+        IssueTypes.NEAR_DUPLICATES: 0.02,
+        IssueTypes.LABEL_ERRORS: 0.04,
+        IssueTypes.CATEGORY_ERRORS: 0.02,
+    }
+    file_path = Path("hs_train_10percent.json")
+    contaminator = HellaSwagContaminator(contamination_ratios)
+    contaminator.hs_contamination(file_path, contamination_types)

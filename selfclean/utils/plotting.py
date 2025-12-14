@@ -119,7 +119,7 @@ def plot_inspection_result_text(
 ):
     rows = 0
     height_ratios = []
-    if issue_manager["near_duplicates_questions/context"] is not None:
+    if issue_manager["near_duplicates_questions"] is not None:
         rows += 3
         height_ratios.extend([0.8, 1.2, 1.2])
     if issue_manager["near_duplicates"] is not None:
@@ -172,7 +172,7 @@ def plot_inspection_result_text(
         ax.set_axis_off()
 
     # ==== Near Duplicates (Questions/Context) ====
-    if issue_manager["near_duplicates_questions/context"] is not None:
+    if issue_manager["near_duplicates_questions"] is not None:
         for i in range(plot_top_N):
             ax = fig.add_subplot(grid[row_idx, i])
             ax.set_axis_off()

@@ -69,7 +69,7 @@ def generate_markdown_report(
                     "Score": f"{score:.4f}" if isinstance(score, (int, float)) else score,
                     "Outlier Prediction": issues.get('auto_issues')[i],
                 })
-            elif issue_type == "near_duplicates_questions/context":
+            elif issue_type == "near_duplicates_questions":
                 # Handle near duplicates (pairs of indices)
                 idx1, idx2 = idx
                 text1 = wrap_text(dataset.get_context_only_text(int(idx1))[0])
@@ -136,11 +136,11 @@ def generate_markdown_report(
     report += f"Top {top_n} issues per category\n\n"
 
     # Add near duplicates (questions)
-    if issue_manager["near_duplicates_questions/context"] is not None:
+    if issue_manager["near_duplicates_questions"] is not None:
         # assert that dataset has method get_context_only_text
         assert hasattr(dataset, 'get_context_only_text'), "Dataset must have method get_context_only_text to properly return context_only texts."
         description = "Near duplicate questions based only on context question similarity."
-        report += create_issue_table(issue_manager["near_duplicates_questions/context"], "near_duplicates_questions/context", dataset, description)
+        report += create_issue_table(issue_manager["near_duplicates_questions"], "near_duplicates_questions", dataset, description)
         report += "\n\n"
 
     # Add near duplicates

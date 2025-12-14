@@ -12,7 +12,7 @@ class IssueTypes(Enum):
     IRRELEVANTS = "irrelevants"
     OFF_TOPIC_SAMPLES = "off_topic_samples"
     NEAR_DUPLICATES = "near_duplicates"
-    NEAR_DUPLICATES_Q = "near_duplicates_questions/context"
+    NEAR_DUPLICATES_Q = "near_duplicates_questions"
     LABEL_ERRORS = "label_errors"
     CATEGORY_ERRORS = "category_errors"
 

@@ -19,9 +19,9 @@ class AutoCleaningMixin:
     def __init__(
         self,
         auto_cleaning: bool = False,
-        off_topic_cut_off: float = 0.01,
-        near_duplicate_cut_off: float = 0.01,
-        label_error_cut_off: float = 0.01,
+        off_topic_cut_off: float = 0.015,
+        near_duplicate_cut_off: float = 0.015,
+        label_error_cut_off: float = 0.04,
         significance_level: float = 0.05,
         cleaner_kwargs: dict = {},
         **kwargs,
@@ -59,7 +59,7 @@ class AutoCleaningMixin:
                 return_dict["near_duplicates"]["auto_issues"] = issues_dup
 
             # Near Duplicates (Questions/Context)
-            near_duplicate_context_only_issues = issue_manger["near_duplicates_questions/context"]
+            near_duplicate_context_only_issues = issue_manger["near_duplicates_questions"]
             if near_duplicate_context_only_issues is not None:
                 if output_path is not None:
                     self.cleaner_kwargs["path"] = (
@@ -70,7 +70,7 @@ class AutoCleaningMixin:
                     scores=near_duplicate_context_only_issues["scores"],
                     **self.cleaner_kwargs,
                 )
-                return_dict["near_duplicates_questions/context"]["auto_issues"] = issues_dup
+                return_dict["near_duplicates_questions"]["auto_issues"] = issues_dup
 
             # Off-Topic Samples
             off_topic_issues = issue_manger["off_topic_samples"]
