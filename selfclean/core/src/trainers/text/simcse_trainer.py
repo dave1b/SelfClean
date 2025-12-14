@@ -170,11 +170,6 @@ class SimCSETrainer(Trainer):
                     "counters/epoch": epoch,
                     "counters/train_step": n_iter,
                 })
-            if n_iter % 400 == 0:
-                if self.val_dataset and self.wandb_logging:
-                    val_loss = self._validate_epoch(epoch)
-                    import wandb
-                    wandb.log({"val_loss": val_loss, "epoch": epoch})
 
         return total_loss / total_samples
 
