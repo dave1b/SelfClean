@@ -145,7 +145,7 @@ class SimCSETrainer(Trainer):
             }
             optimizer.zero_grad()
             loss, embeddings = self._model_step(self.model, sentences)
-            if n_iter % 25 == 0:
+            if n_iter % 100 == 0:
                 with torch.no_grad():
                     entropy = calculate_embedding_entropy(embeddings.cpu())
                     ent_avg, ent_min, ent_max, ent_std, ent_med = entropy
@@ -162,11 +162,11 @@ class SimCSETrainer(Trainer):
                     "train_loss": loss.item(),
                     "lr": optimizer.param_groups[0]["lr"],
                     "weight_decay": optimizer.param_groups[0]["weight_decay"],
-                    "entropy/train_ent_avg": ent_avg if n_iter % 25 == 0 else None,
-                    "entropy/train_ent_min": ent_min if n_iter % 25 == 0 else None,
-                    "entropy/train_ent_max": ent_max if n_iter % 25 == 0 else None,
-                    "entropy/train_ent_std": ent_std if n_iter % 25 == 0 else None,
-                    "entropy/train_ent_med": ent_med if n_iter % 25 == 0 else None,
+                    "entropy/train_ent_avg": ent_avg if n_iter % 100 == 0 else None,
+                    "entropy/train_ent_min": ent_min if n_iter % 100 == 0 else None,
+                    "entropy/train_ent_max": ent_max if n_iter % 100 == 0 else None,
+                    "entropy/train_ent_std": ent_std if n_iter % 100 == 0 else None,
+                    "entropy/train_ent_med": ent_med if n_iter % 100 == 0 else None,
                     "counters/epoch": epoch,
                     "counters/train_step": n_iter,
                 })

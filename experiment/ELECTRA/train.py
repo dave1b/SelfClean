@@ -70,17 +70,23 @@ def train_electra(
         hyperparameters["work_dir"] = work_dir
 
     init_distributed_mode()
+
     if torch.cuda.is_available():
         sampler = DistributedSampler(train_dataset, shuffle=True)
+        sampler_val = DistributedSampler(val_dataset, shuffle=False)
         kwargs = {"sampler": sampler}
+        kwargs_val = {"sampler": sampler_val}
     else:
         kwargs = {"shuffle": True}
+        kwargs_val = {"shuffle": True}
 
-    # due to a problem with worker spawning on apple silicon
-    # we set it here to 0
+        # due to a problem with worker spawning on apple silicon
+        # we set it here to 0
     kwargs["num_workers"] = num_workers
+    kwargs_val["num_workers"] = num_workers
     if platform.machine().lower() == "arm64":
         kwargs["num_workers"] = 0
+        kwargs_val["num_workers"] = 0
 
     train_loader = DataLoader(
         train_dataset,
@@ -93,12 +99,12 @@ def train_electra(
 
     if val_dataset is not None:
         val_loader = DataLoader(
-            train_dataset,
+            val_dataset,
             batch_size=batch_size,
             collate_fn=val_dataset.get_collate_fn(),
             drop_last=True,
             pin_memory=True,
-            **kwargs,
+            **kwargs_val,
         )
     else :
         val_loader = None
@@ -128,7 +134,7 @@ if __name__ == "__main__":
     hs_val_dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_val.json"
     # hs_train_dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_train_1ksubset.json"
     # hs_val_dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "hellaswag_train_1ksubset.json"
-    mmlu_dataset_path = Path(__file__).parent.parent / "datasets" / "mmlu" / "mmlu_test.json"
+    # mmlu_dataset_path = Path(__file__).parent.parent / "datasets" / "mmlu" / "mmlu_test.json"
 
     train_dataset = HellaSwagDataset(
         json_path=hs_train_dataset_path,

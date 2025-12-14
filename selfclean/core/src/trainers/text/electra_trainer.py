@@ -106,15 +106,12 @@ class ElectraTrainer(Trainer):
             # Validate if validation dataset is provided
             if self.val_dataset is not None:
                 val_loss = self._validate_epoch(epoch)
-
-                # Log validation metrics
                 if self.wandb_logging:
                     import wandb
                     wandb.log({
                         "val_loss": val_loss,
                         "epoch": epoch
                     })
-
                 progress_bar.set_description(
                     f"Epoch: {epoch}, Train loss: {train_loss:.6f}, Val loss: {val_loss:.6f}"
                 )
@@ -160,7 +157,6 @@ class ElectraTrainer(Trainer):
         total_samples = 0
 
         for batch in self.train_dataset:
-            # Update weight decay and learning rate according to their schedule
             self.update_optim_from_schedulers(
                 optimizer=optimizer,
                 lr_schedule=lr_schedule,
@@ -173,10 +169,8 @@ class ElectraTrainer(Trainer):
             attention_masks = batch['attention_mask'].to(self.device, non_blocking=True)
             corrupted_ids, labels = self.generate_corrupted_input(input_ids, attention_masks)
 
-            # Zero gradients
             optimizer.zero_grad()
 
-            # Forward pass (validation doesn't need gradients)
             outputs = self.model(
                 input_ids=corrupted_ids,
                 attention_mask=attention_masks,
@@ -186,50 +180,43 @@ class ElectraTrainer(Trainer):
             embeddings = outputs.logits
             loss = outputs.loss
 
-            # Check loss
             self.check_loss_nan(loss.detach())
 
-            # Backward pass
             loss.backward()
 
-            # Gradient clipping
             if self.config["clip_grad"]:
                 _ = clip_gradients(self.model, self.config["clip_grad"])
 
-            # Update weights
             optimizer.step()
 
-            # Calculate entropy every 25 iterations
-            if n_iter % 25 == 0:
+            if n_iter % 100 == 0:
                 with torch.no_grad():
                     entropy = calculate_embedding_entropy(embeddings.cpu())
                     ent_avg, ent_min, ent_max, ent_std, ent_med = entropy
 
-            # Accumulate loss
             total_loss += loss.item() * input_ids.size(0)
             total_samples += input_ids.size(0)
 
-            # Log metrics
             if self.wandb_logging:
                 import wandb
                 wandb.log({
                     "train_loss": loss.item(),
                     "lr": optimizer.param_groups[0]["lr"],
                     "weight_decay": optimizer.param_groups[0]["weight_decay"],
-                    "entropy/train_ent_avg": ent_avg if n_iter % 25 == 0 else None,
-                    "entropy/train_ent_min": ent_min if n_iter % 25 == 0 else None,
-                    "entropy/train_ent_max": ent_max if n_iter % 25 == 0 else None,
-                    "entropy/train_ent_std": ent_std if n_iter % 25 == 0 else None,
-                    "entropy/train_ent_med": ent_med if n_iter % 25 == 0 else None,
+                    "entropy/train_ent_avg": ent_avg if n_iter % 100 == 0 else None,
+                    "entropy/train_ent_min": ent_min if n_iter % 100 == 0 else None,
+                    "entropy/train_ent_max": ent_max if n_iter % 100 == 0 else None,
+                    "entropy/train_ent_std": ent_std if n_iter % 100 == 0 else None,
+                    "entropy/train_ent_med": ent_med if n_iter % 100 == 0 else None,
                     "counters/epoch": epoch,
                     "counters/train_step": n_iter,
                 })
 
-            # Clean up every 100 iterations
-            if n_iter % 100 == 0:
-                gc.collect()
-                if torch.cuda.is_available():
-                    torch.cuda.empty_cache()
+            if n_iter % 400 == 0:
+                if self.val_dataset and self.wandb_logging:
+                    val_loss = self._validate_epoch(epoch)
+                    import wandb
+                    wandb.log({"val_loss": val_loss, "epoch": epoch})
 
         # Return average loss
         return total_loss / total_samples
