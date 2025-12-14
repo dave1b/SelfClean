@@ -13,7 +13,7 @@ from pathlib import Path
 class HellaSwagDataset(Dataset):
     """HellaSwag dataset with pre-tokenization and caching."""
 
-    def __init__(self, json_path: Path, tokenizer, max_length: int = 128,
+    def __init__(self, json_path: Path, tokenizer, max_length: int = 512,
                  cache_dir: Optional[str] = None, pre_tokenize: bool = True):
         """
         Args:
@@ -57,7 +57,7 @@ class HellaSwagDataset(Dataset):
             raise ValueError(f"Dataset is missing required columns: {missing}")
 
         # Create data points
-        self.data_points = self._create_data_points_efficient()
+        self.data_points = self._create_data_points()
 
         # iterate from last to first and find index where label == -1
         for i in range(len(self.data_points) - 1, -1, -1):
@@ -65,7 +65,7 @@ class HellaSwagDataset(Dataset):
                 self.context_only_id_start = i + 1
                 break
 
-    def _create_data_points_efficient(self) -> List[Dict[str, Any]]:
+    def _create_data_points(self) -> List[Dict[str, Any]]:
         """Create data points more efficiently using list comprehensions."""
         data_points = []
         task_ids_list = []

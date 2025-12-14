@@ -12,7 +12,7 @@ from pathlib import Path
 class MMLUDataset(Dataset):
     """Optimized MMLU dataset with pre-tokenization and caching."""
 
-    def __init__(self, json_path: Path, tokenizer, max_length: int = 128,
+    def __init__(self, json_path: Path, tokenizer, max_length: int = 512,
                  cache_dir: Optional[str] = None, pre_tokenize: bool = True):
         """
         Args:

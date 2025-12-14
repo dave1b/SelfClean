@@ -400,7 +400,7 @@ class SelfClean:
         dataset_name: Optional[str] = None,
         wandb_logging: bool = False,
         wandb_project_name: str = "SelfClean",
-        max_length: int = 128,
+        max_length: int = 512,
         cache_dir: Optional[str] = "./.cache",
     ):
         if hyperparameters is None:

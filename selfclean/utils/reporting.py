@@ -170,6 +170,7 @@ def generate_markdown_report(
     # Save to file if output_path is provided
     if output_path:
         path = output_path / 'report.md'
+        output_path.mkdir(exist_ok=True)
         with open(path, "w", encoding="utf-8") as f:
             f.write(report)
         logger.info(f"Report saved to {path}")
