@@ -22,12 +22,12 @@ def generate_near_duplicate_mistral(
     load_dotenv()  # Loads the .env file
 
     prompt = f"""
-    You are a text paraphraser. Your task is to generate a near-duplicate of the given text.
+    You are a text paraphraser. Your task is to generate a close near-duplicate of the given text.
     The near-duplicate needs to:
     1. Preserve the original meaning.
-    2. Make subtle changes (e.g., synonyms, rephrasing, minor restructuring).
-    3. Avoid adding or removing major details.
-    4. Do not add any new information, event when sentences are incomplete.
+    2. Make only subtle changes (e.g., synonyms, rephrasing, minor restructuring).
+    3. Avoid adding or removing details.
+    4. Do not add any new information, even when sentences are incomplete.
 
     Return ONLY the paraphrased text, with no additional commentary:
 

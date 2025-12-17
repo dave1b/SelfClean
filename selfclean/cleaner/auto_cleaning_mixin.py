@@ -2,7 +2,6 @@ from pathlib import Path
 from typing import Optional, Union
 
 import numpy as np
-import scipy
 import scipy.stats
 from loguru import logger
 
@@ -253,3 +252,9 @@ class AutoCleaningMixin:
         scale = (x1 - x2) / (y1 - y2)
         loc = (y1 * x2 - y2 * x1) / (y1 - y2)
         return scale, loc
+
+    @staticmethod
+    def get_hyperparameters():
+        a = AutoCleaningMixin()
+        hyperparameters = f"Autoclean hyperparameters: q={a.significance_level}, off_topic_cut_off={a.off_topic_cut_off}, near_duplicate_cut_off={a.near_duplicate_cut_off}, label_error_cut_off={a.label_error_cut_off}"
+        return hyperparameters

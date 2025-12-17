@@ -5,7 +5,7 @@ from typing import Optional, Tuple, Union
 import numpy as np
 import torch
 from tqdm.auto import tqdm
-from transformers.modeling_outputs import BaseModelOutputWithPoolingAndCrossAttentions
+from transformers.modeling_outputs import BaseModelOutputWithPoolingAndCrossAttentions, BaseModelOutputWithPastAndCrossAttentions
 
 from selfclean.cleaner.issue_manager import IssueTypes
 from selfclean.core.src.utils.utils import get_device
@@ -135,6 +135,9 @@ def embed_text_dataset(torch_dataset, model, batch_size, normalize=True, tqdm_de
             if isinstance(emb, BaseModelOutputWithPoolingAndCrossAttentions):
                 emb = emb.pooler_output
 
+            if isinstance(emb, BaseModelOutputWithPastAndCrossAttentions):
+                emb = emb.last_hidden_state[:,:,-1]
+
             if normalize:
                 emb = torch.nn.functional.normalize(emb, p=2, dim=1)
 
@@ -156,6 +159,8 @@ def embed_text_dataset(torch_dataset, model, batch_size, normalize=True, tqdm_de
                 context_emb = model(**filtered_context_only_inputs)
                 if isinstance(context_emb, BaseModelOutputWithPoolingAndCrossAttentions):
                     context_emb = context_emb.pooler_output
+                if isinstance(context_emb, BaseModelOutputWithPastAndCrossAttentions):
+                    context_emb = context_emb.last_hidden_state[:, :, -1]
                 if normalize:
                     context_emb = torch.nn.functional.normalize(context_emb, p=2, dim=1)
                 [context_only_embeddings.append(context_emb[i].cpu().numpy()) for i in range(context_emb.shape[0])]

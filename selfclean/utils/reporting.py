@@ -5,6 +5,7 @@ from loguru import logger
 from IPython.display import Markdown, display
 import textwrap
 
+from selfclean.cleaner.auto_cleaning_mixin import AutoCleaningMixin
 from selfclean.cleaner.issue_manager import IssueManager
 
 
@@ -14,7 +15,7 @@ def generate_markdown_report(
     model_name: str,
     top_n: int,
     output_path: Optional[Union[str, Path]] = None,
-    max_text_length: int = 400,
+    max_text_length: int = 700,
     wrap_width: int = 50
 ) -> str:
     """
@@ -132,6 +133,8 @@ def generate_markdown_report(
     report += f"Dataset name: {dataset.path.name}\n\n"
     report += f"Dataset size: {len(dataset)} samples\n\n"
     report += f"Model used: {model_name}\n\n"
+    report += AutoCleaningMixin.get_hyperparameters() + "\n\n"
+
 
     report += f"Top {top_n} issues per category\n\n"
 

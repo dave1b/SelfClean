@@ -1,3 +1,4 @@
+import time
 from pathlib import Path
 import pandas as pd
 import random
@@ -6,6 +7,8 @@ import numpy as np
 from loguru import logger
 from typing import List, Set, Dict, Any
 from datetime import datetime
+
+from tqdm import tqdm
 
 from experiment.datasets.hellaswag.off_topic_texts import get_off_topic_texts
 from experiment.datasets.llm_api_util import generate_near_duplicate_mistral
@@ -42,7 +45,7 @@ class HellaSwagContaminator:
         uncontaminated_indices = self._get_uncontaminated_indices(df)
         indices = seeded_random.sample(uncontaminated_indices, min(num_to_contaminate, len(uncontaminated_indices)))
 
-        for ind in indices:
+        for ind in tqdm(indices, desc="Generating near duplicates for questions"):
             row_index = df[df['ind'] == ind].index[0]
             original_ctx = df.at[row_index, 'ctx']
             contaminated_ctx = generate_near_duplicate_mistral(original_ctx)
@@ -55,7 +58,7 @@ class HellaSwagContaminator:
             df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
             contamination_records.append({
                 "type": "question_duplication",
-                "id": ind,
+                "id_1": ind,
                 "id_2": new_ind,
                 "original_ctx": original_ctx,
                 "contaminated_ctx": contaminated_ctx,
@@ -72,7 +75,7 @@ class HellaSwagContaminator:
         uncontaminated_indices = self._get_uncontaminated_indices(df)
         indices = seeded_random.sample(uncontaminated_indices, min(num_to_contaminate, len(uncontaminated_indices)))
 
-        for ind in indices:
+        for ind in tqdm(indices, desc="Generating near duplicates for answers"):
             row_index = df[df['ind'] == ind].index[0]
             correct_ending = df.at[row_index, 'label']
             answer_index = random.choice([i for i in range(4) if i != correct_ending])
@@ -88,6 +91,7 @@ class HellaSwagContaminator:
                 "timestamp": datetime.now().isoformat()
             })
             self.contaminated_indices.add(ind)
+            time.sleep(1)
 
         self._save_contamination_results(file, df, contamination_records, IssueTypes.NEAR_DUPLICATES)
 
@@ -128,14 +132,16 @@ class HellaSwagContaminator:
             possible_categories = df['activity_label'].unique()
             contaminated_category = random.choice([cat for cat in possible_categories if cat != original_category])
             df.at[row_index, 'activity_label'] = contaminated_category
-            contamination_records.append({
-                "type": "category_error",
-                "id": ind,
-                "original_category": original_category,
-                "contaminated_category": contaminated_category,
-                "timestamp": datetime.now().isoformat()
-            })
-            self.contaminated_indices.add(ind)
+            for i in [0,1,2,3]:
+                id = f"{ind}-{i}"
+                contamination_records.append({
+                    "type": "category_error",
+                    "id": id,
+                    "original_category": original_category,
+                    "contaminated_category": contaminated_category,
+                    "timestamp": datetime.now().isoformat()
+                })
+                self.contaminated_indices.add(id)
 
         self._save_contamination_results(file, df, contamination_records, IssueTypes.CATEGORY_ERRORS)
 
@@ -198,12 +204,12 @@ if __name__ == "__main__":
         IssueTypes.CATEGORY_ERRORS
     ]
     contamination_ratios = {
-        IssueTypes.OFF_TOPIC_SAMPLES: 0.015,
-        IssueTypes.NEAR_DUPLICATES_Q: 0.015,
-        IssueTypes.NEAR_DUPLICATES: 0.02,
-        IssueTypes.LABEL_ERRORS: 0.04,
-        IssueTypes.CATEGORY_ERRORS: 0.02,
+        IssueTypes.OFF_TOPIC_SAMPLES: 0.1,
+        IssueTypes.NEAR_DUPLICATES_Q: 0.05,
+        IssueTypes.NEAR_DUPLICATES: 0.05,
+        IssueTypes.LABEL_ERRORS: 0.1,
+        IssueTypes.CATEGORY_ERRORS: 0.1,
     }
-    file_path = Path("hs_train_10percent.json")
+    file_path = Path("golden_swag_train.json")
     contaminator = HellaSwagContaminator(contamination_ratios)
     contaminator.hs_contamination(file_path, contamination_types)
