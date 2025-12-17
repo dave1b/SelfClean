@@ -1,174 +1,144 @@
+import numpy as np
 from loguru import logger
 import time
 from pathlib import Path
-from typing import Optional
+from typing import Optional, Set, Tuple
 import pandas as pd
-from matplotlib import pyplot as plt
+import matplotlib.pyplot as plt
 import dask.dataframe as dd
 from sklearn.metrics import roc_auc_score, roc_curve
+from selfclean.core.src.utils.plotting import calculate_scores_from_ranking
 
 class PerformanceAssesser:
-    def __init__(self, prediction, contamination_log):
+    def __init__(self, prediction: dict, contamination_log: pd.DataFrame):
         self.predictions: dd.DataFrame = dd.read_parquet(prediction['data_path'])
         self.meta_data: dict = prediction['metadata']
         self.contamination_log: pd.DataFrame = contamination_log
-        self.tp = None
-        self.fp = None
-        self.fn = None
-        self.tn = None
-        self.precision = None
-        self.auc = None
+        self.tp, self.fp, self.fn = None, None, None
+        self.tn, self.auc, self.precision = None, None, None
+        self.contamination_single_ids: Set[str] = set()
+        self.contamination_pair_ids: Set[Tuple[str, str]] = set()
+        self.log_dict: dict = {}
+        self.ranked_labels: np.ndarray = np.array([])
         self.output_path: Optional[Path] = prediction['data_path'].parent
-        self._has_pairs = {'id_1', 'id_2'}.issubset(contamination_log.columns)
-        self._has_single_id = 'id' in contamination_log.columns
+        self._has_pairs: bool = {'id_1', 'id_2'}.issubset(contamination_log.columns)
+        self._has_single_id: bool = 'id' in contamination_log.columns
 
-    def assess_performance(self):
+    def assess_performance(self) -> None:
         logger.info("Assessing performance of auto-cleaning...")
         total_length = self.meta_data['dataset_size']
-        self.calculate_true_positives()
-        self.calculate_false_positives()
-        self.calculate_false_negatives()
-        self.calculate_mean_average_precision()
-        self.roc_curve()
+        self._prepare_contamination_ids()
+        self._calculate_metrics()
+        self.plotting()
         self.export_results()
-        # Print overview
-        logger.info("\nPerformance Assessment Results:")
-        logger.info(f" Total dataset size: {total_length}")
-        logger.info(f" True Positives: {self.tp}")
-        logger.info(f" False Positives: {self.fp}")
-        logger.info(f" False Negatives: {self.fn}")
-        logger.info(f" Precision: {self.precision:.4f}")
+        self._log_results(total_length)
 
-    def export_results(self):
-        metrics_df = pd.DataFrame([{
-            'total_dataset_size': self.meta_data['dataset_size'],
-            'true_positives': self.tp,
-            'false_positives': self.fp,
-            'false_negatives': self.fn,
-            'precision': self.precision,
-            'auc_roc': self.auc
-        }])
-
-        if self.output_path:
-            path = Path(self.output_path) / "result_metrics.csv"
-            metrics_df.to_csv(path, index=False)
-
-    def calculate_true_positives(self):
-        logger.info("Calculating true positives...")
-        contamination_ids = set(self.contamination_log['id'].astype(str).dropna()) if self._has_single_id else set()
-        contamination_pairs = set(zip(
-            self.contamination_log['id_1'].astype(str),
-            self.contamination_log['id_2'].astype(str)
-        )) if self._has_pairs else set()
-
-        positive_preds = self.predictions[self.predictions['prediction'] == True]
+    def _prepare_contamination_ids(self) -> None:
         if self._has_single_id:
-            tp_single = positive_preds[positive_preds['id'].notnull() &
-                                      positive_preds['id'].astype(str).isin(contamination_ids)].shape[0].compute()
-        else:
-            tp_single = 0
-
+            self.contamination_single_ids = set(
+                self.contamination_log['id'].astype(str).dropna()
+            )
         if self._has_pairs:
-            positive_preds_pairs = positive_preds[positive_preds['id'].notnull()]
-            tp_pairs = positive_preds_pairs.apply(
-                lambda x: (str(x['id_1']), str(x['id_2'])) in contamination_pairs, axis=1
-            ).sum().compute()
-        else:
-            tp_pairs = 0
-        self.tp = tp_single + tp_pairs
-        return self.tp
+            self.contamination_pair_ids = set(zip(
+                self.contamination_log['id_1'].astype(str),
+                self.contamination_log['id_2'].astype(str)
+            ))
 
-    def calculate_false_positives(self):
-        logger.info("Calculating false positives...")
-        contamination_ids = set(self.contamination_log['id'].astype(str).dropna()) if self._has_single_id else set()
-        contamination_id1 = set(self.contamination_log['id_1'].astype(str)) if self._has_pairs else set()
-        contamination_id2 = set(self.contamination_log['id_2'].astype(str)) if self._has_pairs else set()
-
+    def _calculate_metrics(self) -> None:
         positive_preds = self.predictions[self.predictions['prediction'] == True]
-        if self._has_single_id:
-            fp_single = positive_preds[positive_preds['id'].notnull() &
-                                      ~positive_preds['id'].astype(str).isin(contamination_ids)].shape[0].compute()
-        else:
-            fp_single = 0
+        self.tp = self._calculate_true_positives(positive_preds)
+        self.fp = self._calculate_false_positives(positive_preds)
+        self.fn = self._calculate_false_negatives()
+        self.precision = self._calculate_precision()
+        self._calculate_ranked_labels()
 
+    def _calculate_true_positives(self, positive_preds: dd.DataFrame) -> int:
+        tp_single = 0
+        if self._has_single_id:
+            tp_single = positive_preds[
+                positive_preds['id'].notnull() &
+                positive_preds['id'].astype(str).isin(self.contamination_single_ids)
+            ].shape[0].compute()
+
+        tp_pairs = 0
         if self._has_pairs:
-            positive_preds_pairs = positive_preds[positive_preds['id'].notnull()]
-            fp_pairs = positive_preds_pairs.apply(
-                lambda x: str(x['id_1']) not in contamination_id1 and str(x['id_2']) not in contamination_id2, axis=1
-            ).sum().compute()
-        else:
-            fp_pairs = 0
-        self.fp = fp_single + fp_pairs
-        return self.fp
+            positive_preds_pairs = positive_preds[positive_preds['id_1'].notnull()]
+            pred_pairs = set(zip(
+                positive_preds_pairs['id_1'].astype(str).compute(),
+                positive_preds_pairs['id_2'].astype(str).compute()
+            ))
+            tp_pairs = len(pred_pairs & self.contamination_pair_ids)
 
-    def calculate_false_negatives(self):
-        logger.info("Calculating false negatives...")
-        true_pred_ddf = self.predictions[self.predictions['prediction'] == True]
-        true_pred = true_pred_ddf.compute()
+        return tp_single + tp_pairs
 
+    def _calculate_false_positives(self, positive_preds: dd.DataFrame) -> int:
+        fp_single = 0
         if self._has_single_id:
-            contam_ids_df = self.contamination_log[self.contamination_log['id'].notna()]
-            contam_ids = set(contam_ids_df['id'].astype(str))
+            fp_single = positive_preds[
+                positive_preds['id'].notnull() &
+                ~positive_preds['id'].astype(str).isin(self.contamination_single_ids)
+            ].shape[0].compute()
+
+        fp_pairs = 0
+        if self._has_pairs:
+            positive_preds_pairs = positive_preds[positive_preds['id_1'].notnull()]
+            pred_pairs = set(zip(
+                positive_preds_pairs['id_1'].astype(str).compute(),
+                positive_preds_pairs['id_2'].astype(str).compute()
+            ))
+            fp_pairs = len(pred_pairs - self.contamination_pair_ids)
+
+        return fp_single + fp_pairs
+
+    def _calculate_false_negatives(self) -> int:
+        true_pred = self.predictions[self.predictions['prediction'] == True].compute()
+
+        fn_single = 0
+        if self._has_single_id:
+            contam_ids = set(self.contamination_log['id'].astype(str).dropna())
             pred_ids = set(true_pred['id'].astype(str)) if 'id' in true_pred.columns else set()
             fn_single = len(contam_ids - pred_ids)
-        else:
-            fn_single = 0
 
+        fn_pairs = 0
         if self._has_pairs:
-            contam_pairs_df = self.contamination_log[~self.contamination_log['id'].notna()]
             contam_pairs = set(zip(
-                contam_pairs_df['id_1'].astype(str),
-                contam_pairs_df['id_2'].astype(str)
+                self.contamination_log['id_1'].astype(str),
+                self.contamination_log['id_2'].astype(str)
             ))
             pred_pairs = set(zip(
                 true_pred['id_1'].astype(str),
                 true_pred['id_2'].astype(str)
             )) if {'id_1', 'id_2'}.issubset(true_pred.columns) else set()
             fn_pairs = len(contam_pairs - pred_pairs)
+
+        return fn_single + fn_pairs
+
+    def _calculate_precision(self) -> float:
+        return self.tp / (self.tp + self.fp) if (self.tp + self.fp) > 0 else 0.0
+
+    def _calculate_ranked_labels(self) -> None:
+        if self._has_single_id:
+            contamination_ids = set(self.contamination_log['id'].astype(str).dropna())
+            self.ranked_labels = self.predictions['id'].astype(str).isin(contamination_ids).values
         else:
-            fn_pairs = 0
+            contamination_index = pd.MultiIndex.from_arrays([
+                self.contamination_log['id_1'].astype(str),
+                self.contamination_log['id_2'].astype(str)
+            ])
+            pred_index = pd.MultiIndex.from_arrays([
+                self.predictions['id_1'].astype(str),
+                self.predictions['id_2'].astype(str)
+            ])
+            self.ranked_labels = pred_index.isin(contamination_index)
 
-        self.fn = fn_single + fn_pairs
-        logger.info(f"False Negatives calculated: {self.fn} (Single: {fn_single}, Pair: {fn_pairs})")
-        return self.fn
+    def plotting(self) -> None:
+        calculate_scores_from_ranking(self.ranked_labels, path=self.output_path, log_dict=self.log_dict)
 
-    def calculate_mean_average_precision(self):
-        logger.info("Calculating mean average precision...")
-        if self.tp + self.fp == 0:
-            self.precision = 0.0
-        else:
-            self.precision = self.tp / (self.tp + self.fp)
-        return self.precision
-
-    def roc_curve(self):
+    def roc_curve(self) -> None:
         logger.info("Calculating AUC-ROC...")
         start_time = time.time()
-        contamination_ids = set(self.contamination_log['id'].dropna().astype(str)) if self._has_single_id else set()
-        contamination_pairs = set(zip(
-            self.contamination_log['id_1'].astype(str),
-            self.contamination_log['id_2'].astype(str)
-        )) if self._has_pairs else set()
-
-        def compute_label(partition_df):
-            id_col = partition_df['id'].astype(str)
-            is_id_contaminated = id_col.isin(contamination_ids)
-            if self._has_pairs:
-                id_pair_col = list(zip(
-                    partition_df['id_1'].astype(str),
-                    partition_df['id_2'].astype(str)
-                ))
-                is_pair_contaminated = pd.Series([pair in contamination_pairs for pair in id_pair_col], index=partition_df.index)
-                return is_id_contaminated | is_pair_contaminated
-            else:
-                return is_id_contaminated
-
-        labels_dask = self.predictions.map_partitions(compute_label, meta=('labels', 'bool'))
-        try:
-            labels = labels_dask.compute()
-            scores = 1 - self.predictions['score'].compute()
-        except Exception as e:
-            logger.error(f"Failed to compute Dask results. Ensure labels and scores fit in memory. Error: {e}")
-            return None
+        labels = self.ranked_labels
+        scores = 1 - self.predictions['score'].compute()
 
         fpr, tpr, thresholds = roc_curve(labels, scores)
         self.auc = roc_auc_score(labels, scores)
@@ -176,10 +146,9 @@ class PerformanceAssesser:
         plt.figure(figsize=(7, 7))
         plt.plot(fpr, tpr, color='blue', label=f'ROC Curve (AUC = {self.auc:.3f})')
         plt.plot([0, 1], [0, 1], color='gray', linestyle='--')
-        for i in range(len(thresholds)):
-            if i % max(1, len(thresholds) // 10) == 0:
-                plt.scatter(fpr[i], tpr[i], color='red', s=40)
-                plt.text(fpr[i] + 0.02, tpr[i] - 0.02, f'{thresholds[i]:.2f}', fontsize=8, color='black')
+        for i in range(0, len(thresholds), max(1, len(thresholds) // 10)):
+            plt.scatter(fpr[i], tpr[i], color='red', s=40)
+            plt.text(fpr[i] + 0.02, tpr[i] - 0.02, f'{thresholds[i]:.2f}', fontsize=8, color='black')
         plt.xlabel('False Positive Rate')
         plt.ylabel('True Positive Rate')
         plt.title('ROC Curve with Threshold Markers')
@@ -187,14 +156,36 @@ class PerformanceAssesser:
         plt.grid(alpha=0.3)
         plt.tight_layout()
         if self.output_path:
-            output_path = Path(self.output_path) / "result_roc"
+            output_path = Path(self.output_path) / "result_roc.png"
             output_path.parent.mkdir(parents=True, exist_ok=True)
-            output_path_ = output_path.with_suffix('.png')
             counter = 1
-            while output_path_.exists():
-                output_path_ = output_path.with_stem(f"{output_path.stem.split('_')[0]}_{counter}_roc").with_suffix('.png')
+            while output_path.exists():
+                output_path = output_path.with_stem(f"result_roc_{counter}")
                 counter += 1
-            plt.savefig(output_path_)
-            logger.info(f"ROC plot saved to {output_path_}")
+            plt.savefig(output_path)
+            logger.info(f"ROC plot saved to {output_path}")
         plt.close()
         logger.info(f"Calculated ROC in {(time.time() - start_time) / 60:.2f} minutes, AUC: {self.auc:.4f}")
+
+    def export_results(self) -> None:
+        metric_dict = {
+            'total_dataset_size': self.meta_data['dataset_size'],
+            'true_positives': self.tp,
+            'false_positives': self.fp,
+            'false_negatives': self.fn,
+            'precision': self.precision,
+            'auc_roc': self.auc
+        }
+        self.log_dict = {**self.log_dict, **metric_dict}
+        df = pd.DataFrame([self.log_dict])
+        if self.output_path:
+            path = Path(self.output_path) / "result_metrics.csv"
+            df.to_csv(path, index=False)
+
+    def _log_results(self, total_length: int) -> None:
+        logger.info("\nPerformance Assessment Results:")
+        logger.info(f" Total dataset size: {total_length}")
+        logger.info(f" True Positives: {self.tp}")
+        logger.info(f" False Positives: {self.fp}")
+        logger.info(f" False Negatives: {self.fn}")
+        logger.info(f" Precision: {self.precision:.4f}")

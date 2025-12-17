@@ -64,7 +64,6 @@ def generate_prediction_parquet(
                 "score": scores,
                 "issue_type": issue_type_col,
                 "prediction": prediction,
-                'id': None,
             })
         else:
             # Single Index
@@ -75,8 +74,6 @@ def generate_prediction_parquet(
                 "score": scores,
                 "issue_type": issue_type_col,
                 "prediction": prediction,
-                "id_1": None,
-                "id_2": None,
             })
 
         # Filter out None values (from skipped entries)

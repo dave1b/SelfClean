@@ -610,12 +610,6 @@ class SelfClean:
                 else:
                     issue_manager = issue_manager_context_only
 
-            # plot_inspection_result_text(
-            #     issue_manager=issue_manager,
-            #     dataset=dataset,
-            #     plot_top_N=self.cleaner.plot_top_N,
-            #     output_path=self.cleaner.output_path,
-            # )
             md = generate_markdown_report(issue_manager=issue_manager, dataset=dataset, top_n=self.cleaner.plot_top_N,
                                           output_path=self.output_path, model_name=hyperparameters["model"]["base_model"])
             gc.collect()
