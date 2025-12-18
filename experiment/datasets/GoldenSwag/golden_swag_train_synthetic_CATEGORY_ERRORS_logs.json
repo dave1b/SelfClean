@@ -1,0 +1,3418 @@
+[
+    {
+        "type": "category_error",
+        "id": "35691-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Finance and Business",
+        "timestamp": "2025-12-14T18:43:12.475047"
+    },
+    {
+        "type": "category_error",
+        "id": "35691-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Finance and Business",
+        "timestamp": "2025-12-14T18:43:12.475053"
+    },
+    {
+        "type": "category_error",
+        "id": "35691-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Finance and Business",
+        "timestamp": "2025-12-14T18:43:12.475054"
+    },
+    {
+        "type": "category_error",
+        "id": "35691-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Finance and Business",
+        "timestamp": "2025-12-14T18:43:12.475055"
+    },
+    {
+        "type": "category_error",
+        "id": "7824-0",
+        "original_category": "Computers and Electronics",
+        "contaminated_category": "Health",
+        "timestamp": "2025-12-14T18:43:12.475208"
+    },
+    {
+        "type": "category_error",
+        "id": "7824-1",
+        "original_category": "Computers and Electronics",
+        "contaminated_category": "Health",
+        "timestamp": "2025-12-14T18:43:12.475209"
+    },
+    {
+        "type": "category_error",
+        "id": "7824-2",
+        "original_category": "Computers and Electronics",
+        "contaminated_category": "Health",
+        "timestamp": "2025-12-14T18:43:12.475210"
+    },
+    {
+        "type": "category_error",
+        "id": "7824-3",
+        "original_category": "Computers and Electronics",
+        "contaminated_category": "Health",
+        "timestamp": "2025-12-14T18:43:12.475211"
+    },
+    {
+        "type": "category_error",
+        "id": "13322-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Finance and Business",
+        "timestamp": "2025-12-14T18:43:12.475351"
+    },
+    {
+        "type": "category_error",
+        "id": "13322-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Finance and Business",
+        "timestamp": "2025-12-14T18:43:12.475352"
+    },
+    {
+        "type": "category_error",
+        "id": "13322-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Finance and Business",
+        "timestamp": "2025-12-14T18:43:12.475353"
+    },
+    {
+        "type": "category_error",
+        "id": "13322-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Finance and Business",
+        "timestamp": "2025-12-14T18:43:12.475354"
+    },
+    {
+        "type": "category_error",
+        "id": "38602-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Chopping wood",
+        "timestamp": "2025-12-14T18:43:12.475488"
+    },
+    {
+        "type": "category_error",
+        "id": "38602-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Chopping wood",
+        "timestamp": "2025-12-14T18:43:12.475489"
+    },
+    {
+        "type": "category_error",
+        "id": "38602-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Chopping wood",
+        "timestamp": "2025-12-14T18:43:12.475490"
+    },
+    {
+        "type": "category_error",
+        "id": "38602-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Chopping wood",
+        "timestamp": "2025-12-14T18:43:12.475491"
+    },
+    {
+        "type": "category_error",
+        "id": "8721-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Pets and Animals",
+        "timestamp": "2025-12-14T18:43:12.475627"
+    },
+    {
+        "type": "category_error",
+        "id": "8721-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Pets and Animals",
+        "timestamp": "2025-12-14T18:43:12.475629"
+    },
+    {
+        "type": "category_error",
+        "id": "8721-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Pets and Animals",
+        "timestamp": "2025-12-14T18:43:12.475630"
+    },
+    {
+        "type": "category_error",
+        "id": "8721-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Pets and Animals",
+        "timestamp": "2025-12-14T18:43:12.475631"
+    },
+    {
+        "type": "category_error",
+        "id": "44998-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Computers and Electronics",
+        "timestamp": "2025-12-14T18:43:12.475784"
+    },
+    {
+        "type": "category_error",
+        "id": "44998-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Computers and Electronics",
+        "timestamp": "2025-12-14T18:43:12.475785"
+    },
+    {
+        "type": "category_error",
+        "id": "44998-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Computers and Electronics",
+        "timestamp": "2025-12-14T18:43:12.475786"
+    },
+    {
+        "type": "category_error",
+        "id": "44998-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Computers and Electronics",
+        "timestamp": "2025-12-14T18:43:12.475787"
+    },
+    {
+        "type": "category_error",
+        "id": "7944-0",
+        "original_category": "Education and Communications",
+        "contaminated_category": "Washing face",
+        "timestamp": "2025-12-14T18:43:12.475936"
+    },
+    {
+        "type": "category_error",
+        "id": "7944-1",
+        "original_category": "Education and Communications",
+        "contaminated_category": "Washing face",
+        "timestamp": "2025-12-14T18:43:12.475937"
+    },
+    {
+        "type": "category_error",
+        "id": "7944-2",
+        "original_category": "Education and Communications",
+        "contaminated_category": "Washing face",
+        "timestamp": "2025-12-14T18:43:12.475938"
+    },
+    {
+        "type": "category_error",
+        "id": "7944-3",
+        "original_category": "Education and Communications",
+        "contaminated_category": "Washing face",
+        "timestamp": "2025-12-14T18:43:12.475939"
+    },
+    {
+        "type": "category_error",
+        "id": "27015-0",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Rope skipping",
+        "timestamp": "2025-12-14T18:43:12.476079"
+    },
+    {
+        "type": "category_error",
+        "id": "27015-1",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Rope skipping",
+        "timestamp": "2025-12-14T18:43:12.476081"
+    },
+    {
+        "type": "category_error",
+        "id": "27015-2",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Rope skipping",
+        "timestamp": "2025-12-14T18:43:12.476081"
+    },
+    {
+        "type": "category_error",
+        "id": "27015-3",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Rope skipping",
+        "timestamp": "2025-12-14T18:43:12.476082"
+    },
+    {
+        "type": "category_error",
+        "id": "37974-0",
+        "original_category": "Food and Entertaining",
+        "contaminated_category": "Finance and Business",
+        "timestamp": "2025-12-14T18:43:12.476213"
+    },
+    {
+        "type": "category_error",
+        "id": "37974-1",
+        "original_category": "Food and Entertaining",
+        "contaminated_category": "Finance and Business",
+        "timestamp": "2025-12-14T18:43:12.476214"
+    },
+    {
+        "type": "category_error",
+        "id": "37974-2",
+        "original_category": "Food and Entertaining",
+        "contaminated_category": "Finance and Business",
+        "timestamp": "2025-12-14T18:43:12.476215"
+    },
+    {
+        "type": "category_error",
+        "id": "37974-3",
+        "original_category": "Food and Entertaining",
+        "contaminated_category": "Finance and Business",
+        "timestamp": "2025-12-14T18:43:12.476216"
+    },
+    {
+        "type": "category_error",
+        "id": "35229-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Running a marathon",
+        "timestamp": "2025-12-14T18:43:12.476346"
+    },
+    {
+        "type": "category_error",
+        "id": "35229-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Running a marathon",
+        "timestamp": "2025-12-14T18:43:12.476347"
+    },
+    {
+        "type": "category_error",
+        "id": "35229-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Running a marathon",
+        "timestamp": "2025-12-14T18:43:12.476348"
+    },
+    {
+        "type": "category_error",
+        "id": "35229-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Running a marathon",
+        "timestamp": "2025-12-14T18:43:12.476349"
+    },
+    {
+        "type": "category_error",
+        "id": "18893-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Cars & Other Vehicles",
+        "timestamp": "2025-12-14T18:43:12.476479"
+    },
+    {
+        "type": "category_error",
+        "id": "18893-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Cars & Other Vehicles",
+        "timestamp": "2025-12-14T18:43:12.476480"
+    },
+    {
+        "type": "category_error",
+        "id": "18893-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Cars & Other Vehicles",
+        "timestamp": "2025-12-14T18:43:12.476481"
+    },
+    {
+        "type": "category_error",
+        "id": "18893-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Cars & Other Vehicles",
+        "timestamp": "2025-12-14T18:43:12.476482"
+    },
+    {
+        "type": "category_error",
+        "id": "168-0",
+        "original_category": "Pets and Animals",
+        "contaminated_category": "Having an ice cream",
+        "timestamp": "2025-12-14T18:43:12.476612"
+    },
+    {
+        "type": "category_error",
+        "id": "168-1",
+        "original_category": "Pets and Animals",
+        "contaminated_category": "Having an ice cream",
+        "timestamp": "2025-12-14T18:43:12.476613"
+    },
+    {
+        "type": "category_error",
+        "id": "168-2",
+        "original_category": "Pets and Animals",
+        "contaminated_category": "Having an ice cream",
+        "timestamp": "2025-12-14T18:43:12.476614"
+    },
+    {
+        "type": "category_error",
+        "id": "168-3",
+        "original_category": "Pets and Animals",
+        "contaminated_category": "Having an ice cream",
+        "timestamp": "2025-12-14T18:43:12.476615"
+    },
+    {
+        "type": "category_error",
+        "id": "31324-0",
+        "original_category": "Cars & Other Vehicles",
+        "contaminated_category": "Playing harmonica",
+        "timestamp": "2025-12-14T18:43:12.476745"
+    },
+    {
+        "type": "category_error",
+        "id": "31324-1",
+        "original_category": "Cars & Other Vehicles",
+        "contaminated_category": "Playing harmonica",
+        "timestamp": "2025-12-14T18:43:12.476746"
+    },
+    {
+        "type": "category_error",
+        "id": "31324-2",
+        "original_category": "Cars & Other Vehicles",
+        "contaminated_category": "Playing harmonica",
+        "timestamp": "2025-12-14T18:43:12.476747"
+    },
+    {
+        "type": "category_error",
+        "id": "31324-3",
+        "original_category": "Cars & Other Vehicles",
+        "contaminated_category": "Playing harmonica",
+        "timestamp": "2025-12-14T18:43:12.476748"
+    },
+    {
+        "type": "category_error",
+        "id": "41310-0",
+        "original_category": "Work World",
+        "contaminated_category": "Pole vault",
+        "timestamp": "2025-12-14T18:43:12.476878"
+    },
+    {
+        "type": "category_error",
+        "id": "41310-1",
+        "original_category": "Work World",
+        "contaminated_category": "Pole vault",
+        "timestamp": "2025-12-14T18:43:12.476879"
+    },
+    {
+        "type": "category_error",
+        "id": "41310-2",
+        "original_category": "Work World",
+        "contaminated_category": "Pole vault",
+        "timestamp": "2025-12-14T18:43:12.476880"
+    },
+    {
+        "type": "category_error",
+        "id": "41310-3",
+        "original_category": "Work World",
+        "contaminated_category": "Pole vault",
+        "timestamp": "2025-12-14T18:43:12.476881"
+    },
+    {
+        "type": "category_error",
+        "id": "1828-0",
+        "original_category": "Pets and Animals",
+        "contaminated_category": "Relationships",
+        "timestamp": "2025-12-14T18:43:12.477012"
+    },
+    {
+        "type": "category_error",
+        "id": "1828-1",
+        "original_category": "Pets and Animals",
+        "contaminated_category": "Relationships",
+        "timestamp": "2025-12-14T18:43:12.477013"
+    },
+    {
+        "type": "category_error",
+        "id": "1828-2",
+        "original_category": "Pets and Animals",
+        "contaminated_category": "Relationships",
+        "timestamp": "2025-12-14T18:43:12.477014"
+    },
+    {
+        "type": "category_error",
+        "id": "1828-3",
+        "original_category": "Pets and Animals",
+        "contaminated_category": "Relationships",
+        "timestamp": "2025-12-14T18:43:12.477015"
+    },
+    {
+        "type": "category_error",
+        "id": "15117-0",
+        "original_category": "Family Life",
+        "contaminated_category": "Personal Care and Style",
+        "timestamp": "2025-12-14T18:43:12.477144"
+    },
+    {
+        "type": "category_error",
+        "id": "15117-1",
+        "original_category": "Family Life",
+        "contaminated_category": "Personal Care and Style",
+        "timestamp": "2025-12-14T18:43:12.477145"
+    },
+    {
+        "type": "category_error",
+        "id": "15117-2",
+        "original_category": "Family Life",
+        "contaminated_category": "Personal Care and Style",
+        "timestamp": "2025-12-14T18:43:12.477146"
+    },
+    {
+        "type": "category_error",
+        "id": "15117-3",
+        "original_category": "Family Life",
+        "contaminated_category": "Personal Care and Style",
+        "timestamp": "2025-12-14T18:43:12.477148"
+    },
+    {
+        "type": "category_error",
+        "id": "35239-0",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Washing face",
+        "timestamp": "2025-12-14T18:43:12.477278"
+    },
+    {
+        "type": "category_error",
+        "id": "35239-1",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Washing face",
+        "timestamp": "2025-12-14T18:43:12.477279"
+    },
+    {
+        "type": "category_error",
+        "id": "35239-2",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Washing face",
+        "timestamp": "2025-12-14T18:43:12.477280"
+    },
+    {
+        "type": "category_error",
+        "id": "35239-3",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Washing face",
+        "timestamp": "2025-12-14T18:43:12.477281"
+    },
+    {
+        "type": "category_error",
+        "id": "27000-0",
+        "original_category": "Cars & Other Vehicles",
+        "contaminated_category": "Rock climbing",
+        "timestamp": "2025-12-14T18:43:12.477410"
+    },
+    {
+        "type": "category_error",
+        "id": "27000-1",
+        "original_category": "Cars & Other Vehicles",
+        "contaminated_category": "Rock climbing",
+        "timestamp": "2025-12-14T18:43:12.477411"
+    },
+    {
+        "type": "category_error",
+        "id": "27000-2",
+        "original_category": "Cars & Other Vehicles",
+        "contaminated_category": "Rock climbing",
+        "timestamp": "2025-12-14T18:43:12.477412"
+    },
+    {
+        "type": "category_error",
+        "id": "27000-3",
+        "original_category": "Cars & Other Vehicles",
+        "contaminated_category": "Rock climbing",
+        "timestamp": "2025-12-14T18:43:12.477413"
+    },
+    {
+        "type": "category_error",
+        "id": "47302-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Travel",
+        "timestamp": "2025-12-14T18:43:12.477543"
+    },
+    {
+        "type": "category_error",
+        "id": "47302-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Travel",
+        "timestamp": "2025-12-14T18:43:12.477545"
+    },
+    {
+        "type": "category_error",
+        "id": "47302-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Travel",
+        "timestamp": "2025-12-14T18:43:12.477545"
+    },
+    {
+        "type": "category_error",
+        "id": "47302-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Travel",
+        "timestamp": "2025-12-14T18:43:12.477546"
+    },
+    {
+        "type": "category_error",
+        "id": "34111-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "High jump",
+        "timestamp": "2025-12-14T18:43:12.477675"
+    },
+    {
+        "type": "category_error",
+        "id": "34111-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "High jump",
+        "timestamp": "2025-12-14T18:43:12.477677"
+    },
+    {
+        "type": "category_error",
+        "id": "34111-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "High jump",
+        "timestamp": "2025-12-14T18:43:12.477677"
+    },
+    {
+        "type": "category_error",
+        "id": "34111-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "High jump",
+        "timestamp": "2025-12-14T18:43:12.477678"
+    },
+    {
+        "type": "category_error",
+        "id": "29843-0",
+        "original_category": "Cars & Other Vehicles",
+        "contaminated_category": "Holidays and Traditions",
+        "timestamp": "2025-12-14T18:43:12.477809"
+    },
+    {
+        "type": "category_error",
+        "id": "29843-1",
+        "original_category": "Cars & Other Vehicles",
+        "contaminated_category": "Holidays and Traditions",
+        "timestamp": "2025-12-14T18:43:12.477810"
+    },
+    {
+        "type": "category_error",
+        "id": "29843-2",
+        "original_category": "Cars & Other Vehicles",
+        "contaminated_category": "Holidays and Traditions",
+        "timestamp": "2025-12-14T18:43:12.477811"
+    },
+    {
+        "type": "category_error",
+        "id": "29843-3",
+        "original_category": "Cars & Other Vehicles",
+        "contaminated_category": "Holidays and Traditions",
+        "timestamp": "2025-12-14T18:43:12.477812"
+    },
+    {
+        "type": "category_error",
+        "id": "25487-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Having an ice cream",
+        "timestamp": "2025-12-14T18:43:12.477943"
+    },
+    {
+        "type": "category_error",
+        "id": "25487-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Having an ice cream",
+        "timestamp": "2025-12-14T18:43:12.477944"
+    },
+    {
+        "type": "category_error",
+        "id": "25487-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Having an ice cream",
+        "timestamp": "2025-12-14T18:43:12.477945"
+    },
+    {
+        "type": "category_error",
+        "id": "25487-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Having an ice cream",
+        "timestamp": "2025-12-14T18:43:12.477946"
+    },
+    {
+        "type": "category_error",
+        "id": "2889-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Horseback riding",
+        "timestamp": "2025-12-14T18:43:12.478076"
+    },
+    {
+        "type": "category_error",
+        "id": "2889-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Horseback riding",
+        "timestamp": "2025-12-14T18:43:12.478077"
+    },
+    {
+        "type": "category_error",
+        "id": "2889-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Horseback riding",
+        "timestamp": "2025-12-14T18:43:12.478078"
+    },
+    {
+        "type": "category_error",
+        "id": "2889-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Horseback riding",
+        "timestamp": "2025-12-14T18:43:12.478078"
+    },
+    {
+        "type": "category_error",
+        "id": "27635-0",
+        "original_category": "Health",
+        "contaminated_category": "Rock climbing",
+        "timestamp": "2025-12-14T18:43:12.478208"
+    },
+    {
+        "type": "category_error",
+        "id": "27635-1",
+        "original_category": "Health",
+        "contaminated_category": "Rock climbing",
+        "timestamp": "2025-12-14T18:43:12.478209"
+    },
+    {
+        "type": "category_error",
+        "id": "27635-2",
+        "original_category": "Health",
+        "contaminated_category": "Rock climbing",
+        "timestamp": "2025-12-14T18:43:12.478210"
+    },
+    {
+        "type": "category_error",
+        "id": "27635-3",
+        "original_category": "Health",
+        "contaminated_category": "Rock climbing",
+        "timestamp": "2025-12-14T18:43:12.478211"
+    },
+    {
+        "type": "category_error",
+        "id": "1339-0",
+        "original_category": "Food and Entertaining",
+        "contaminated_category": "High jump",
+        "timestamp": "2025-12-14T18:43:12.478341"
+    },
+    {
+        "type": "category_error",
+        "id": "1339-1",
+        "original_category": "Food and Entertaining",
+        "contaminated_category": "High jump",
+        "timestamp": "2025-12-14T18:43:12.478342"
+    },
+    {
+        "type": "category_error",
+        "id": "1339-2",
+        "original_category": "Food and Entertaining",
+        "contaminated_category": "High jump",
+        "timestamp": "2025-12-14T18:43:12.478343"
+    },
+    {
+        "type": "category_error",
+        "id": "1339-3",
+        "original_category": "Food and Entertaining",
+        "contaminated_category": "High jump",
+        "timestamp": "2025-12-14T18:43:12.478343"
+    },
+    {
+        "type": "category_error",
+        "id": "25645-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Rope skipping",
+        "timestamp": "2025-12-14T18:43:12.478474"
+    },
+    {
+        "type": "category_error",
+        "id": "25645-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Rope skipping",
+        "timestamp": "2025-12-14T18:43:12.478475"
+    },
+    {
+        "type": "category_error",
+        "id": "25645-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Rope skipping",
+        "timestamp": "2025-12-14T18:43:12.478476"
+    },
+    {
+        "type": "category_error",
+        "id": "25645-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Rope skipping",
+        "timestamp": "2025-12-14T18:43:12.478477"
+    },
+    {
+        "type": "category_error",
+        "id": "21664-0",
+        "original_category": "Family Life",
+        "contaminated_category": "Home and Garden",
+        "timestamp": "2025-12-14T18:43:12.478605"
+    },
+    {
+        "type": "category_error",
+        "id": "21664-1",
+        "original_category": "Family Life",
+        "contaminated_category": "Home and Garden",
+        "timestamp": "2025-12-14T18:43:12.478606"
+    },
+    {
+        "type": "category_error",
+        "id": "21664-2",
+        "original_category": "Family Life",
+        "contaminated_category": "Home and Garden",
+        "timestamp": "2025-12-14T18:43:12.478607"
+    },
+    {
+        "type": "category_error",
+        "id": "21664-3",
+        "original_category": "Family Life",
+        "contaminated_category": "Home and Garden",
+        "timestamp": "2025-12-14T18:43:12.478608"
+    },
+    {
+        "type": "category_error",
+        "id": "30379-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Youth",
+        "timestamp": "2025-12-14T18:43:12.478740"
+    },
+    {
+        "type": "category_error",
+        "id": "30379-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Youth",
+        "timestamp": "2025-12-14T18:43:12.478742"
+    },
+    {
+        "type": "category_error",
+        "id": "30379-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Youth",
+        "timestamp": "2025-12-14T18:43:12.478742"
+    },
+    {
+        "type": "category_error",
+        "id": "30379-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Youth",
+        "timestamp": "2025-12-14T18:43:12.478743"
+    },
+    {
+        "type": "category_error",
+        "id": "12865-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Sharpening knives",
+        "timestamp": "2025-12-14T18:43:12.478877"
+    },
+    {
+        "type": "category_error",
+        "id": "12865-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Sharpening knives",
+        "timestamp": "2025-12-14T18:43:12.478878"
+    },
+    {
+        "type": "category_error",
+        "id": "12865-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Sharpening knives",
+        "timestamp": "2025-12-14T18:43:12.478879"
+    },
+    {
+        "type": "category_error",
+        "id": "12865-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Sharpening knives",
+        "timestamp": "2025-12-14T18:43:12.478880"
+    },
+    {
+        "type": "category_error",
+        "id": "11099-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Layup drill in basketball",
+        "timestamp": "2025-12-14T18:43:12.479014"
+    },
+    {
+        "type": "category_error",
+        "id": "11099-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Layup drill in basketball",
+        "timestamp": "2025-12-14T18:43:12.479015"
+    },
+    {
+        "type": "category_error",
+        "id": "11099-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Layup drill in basketball",
+        "timestamp": "2025-12-14T18:43:12.479016"
+    },
+    {
+        "type": "category_error",
+        "id": "11099-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Layup drill in basketball",
+        "timestamp": "2025-12-14T18:43:12.479017"
+    },
+    {
+        "type": "category_error",
+        "id": "15065-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Food and Entertaining",
+        "timestamp": "2025-12-14T18:43:12.479151"
+    },
+    {
+        "type": "category_error",
+        "id": "15065-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Food and Entertaining",
+        "timestamp": "2025-12-14T18:43:12.479152"
+    },
+    {
+        "type": "category_error",
+        "id": "15065-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Food and Entertaining",
+        "timestamp": "2025-12-14T18:43:12.479153"
+    },
+    {
+        "type": "category_error",
+        "id": "15065-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Food and Entertaining",
+        "timestamp": "2025-12-14T18:43:12.479154"
+    },
+    {
+        "type": "category_error",
+        "id": "46372-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Ice fishing",
+        "timestamp": "2025-12-14T18:43:12.479286"
+    },
+    {
+        "type": "category_error",
+        "id": "46372-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Ice fishing",
+        "timestamp": "2025-12-14T18:43:12.479288"
+    },
+    {
+        "type": "category_error",
+        "id": "46372-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Ice fishing",
+        "timestamp": "2025-12-14T18:43:12.479288"
+    },
+    {
+        "type": "category_error",
+        "id": "46372-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Ice fishing",
+        "timestamp": "2025-12-14T18:43:12.479289"
+    },
+    {
+        "type": "category_error",
+        "id": "30681-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Uncategorized",
+        "timestamp": "2025-12-14T18:43:12.479418"
+    },
+    {
+        "type": "category_error",
+        "id": "30681-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Uncategorized",
+        "timestamp": "2025-12-14T18:43:12.479419"
+    },
+    {
+        "type": "category_error",
+        "id": "30681-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Uncategorized",
+        "timestamp": "2025-12-14T18:43:12.479420"
+    },
+    {
+        "type": "category_error",
+        "id": "30681-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Uncategorized",
+        "timestamp": "2025-12-14T18:43:12.479421"
+    },
+    {
+        "type": "category_error",
+        "id": "8106-0",
+        "original_category": "Family Life",
+        "contaminated_category": "Shot put",
+        "timestamp": "2025-12-14T18:43:12.479549"
+    },
+    {
+        "type": "category_error",
+        "id": "8106-1",
+        "original_category": "Family Life",
+        "contaminated_category": "Shot put",
+        "timestamp": "2025-12-14T18:43:12.479550"
+    },
+    {
+        "type": "category_error",
+        "id": "8106-2",
+        "original_category": "Family Life",
+        "contaminated_category": "Shot put",
+        "timestamp": "2025-12-14T18:43:12.479551"
+    },
+    {
+        "type": "category_error",
+        "id": "8106-3",
+        "original_category": "Family Life",
+        "contaminated_category": "Shot put",
+        "timestamp": "2025-12-14T18:43:12.479551"
+    },
+    {
+        "type": "category_error",
+        "id": "31862-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Washing face",
+        "timestamp": "2025-12-14T18:43:12.479680"
+    },
+    {
+        "type": "category_error",
+        "id": "31862-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Washing face",
+        "timestamp": "2025-12-14T18:43:12.479681"
+    },
+    {
+        "type": "category_error",
+        "id": "31862-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Washing face",
+        "timestamp": "2025-12-14T18:43:12.479682"
+    },
+    {
+        "type": "category_error",
+        "id": "31862-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Washing face",
+        "timestamp": "2025-12-14T18:43:12.479683"
+    },
+    {
+        "type": "category_error",
+        "id": "20788-0",
+        "original_category": "Family Life",
+        "contaminated_category": "Uncategorized",
+        "timestamp": "2025-12-14T18:43:12.479811"
+    },
+    {
+        "type": "category_error",
+        "id": "20788-1",
+        "original_category": "Family Life",
+        "contaminated_category": "Uncategorized",
+        "timestamp": "2025-12-14T18:43:12.479812"
+    },
+    {
+        "type": "category_error",
+        "id": "20788-2",
+        "original_category": "Family Life",
+        "contaminated_category": "Uncategorized",
+        "timestamp": "2025-12-14T18:43:12.479813"
+    },
+    {
+        "type": "category_error",
+        "id": "20788-3",
+        "original_category": "Family Life",
+        "contaminated_category": "Uncategorized",
+        "timestamp": "2025-12-14T18:43:12.479814"
+    },
+    {
+        "type": "category_error",
+        "id": "12333-0",
+        "original_category": "Food and Entertaining",
+        "contaminated_category": "Finance and Business",
+        "timestamp": "2025-12-14T18:43:12.479943"
+    },
+    {
+        "type": "category_error",
+        "id": "12333-1",
+        "original_category": "Food and Entertaining",
+        "contaminated_category": "Finance and Business",
+        "timestamp": "2025-12-14T18:43:12.479944"
+    },
+    {
+        "type": "category_error",
+        "id": "12333-2",
+        "original_category": "Food and Entertaining",
+        "contaminated_category": "Finance and Business",
+        "timestamp": "2025-12-14T18:43:12.479944"
+    },
+    {
+        "type": "category_error",
+        "id": "12333-3",
+        "original_category": "Food and Entertaining",
+        "contaminated_category": "Finance and Business",
+        "timestamp": "2025-12-14T18:43:12.479945"
+    },
+    {
+        "type": "category_error",
+        "id": "38880-0",
+        "original_category": "Relationships",
+        "contaminated_category": "Family Life",
+        "timestamp": "2025-12-14T18:43:12.480075"
+    },
+    {
+        "type": "category_error",
+        "id": "38880-1",
+        "original_category": "Relationships",
+        "contaminated_category": "Family Life",
+        "timestamp": "2025-12-14T18:43:12.480077"
+    },
+    {
+        "type": "category_error",
+        "id": "38880-2",
+        "original_category": "Relationships",
+        "contaminated_category": "Family Life",
+        "timestamp": "2025-12-14T18:43:12.480078"
+    },
+    {
+        "type": "category_error",
+        "id": "38880-3",
+        "original_category": "Relationships",
+        "contaminated_category": "Family Life",
+        "timestamp": "2025-12-14T18:43:12.480079"
+    },
+    {
+        "type": "category_error",
+        "id": "35425-0",
+        "original_category": "Food and Entertaining",
+        "contaminated_category": "Finance and Business",
+        "timestamp": "2025-12-14T18:43:12.480207"
+    },
+    {
+        "type": "category_error",
+        "id": "35425-1",
+        "original_category": "Food and Entertaining",
+        "contaminated_category": "Finance and Business",
+        "timestamp": "2025-12-14T18:43:12.480208"
+    },
+    {
+        "type": "category_error",
+        "id": "35425-2",
+        "original_category": "Food and Entertaining",
+        "contaminated_category": "Finance and Business",
+        "timestamp": "2025-12-14T18:43:12.480209"
+    },
+    {
+        "type": "category_error",
+        "id": "35425-3",
+        "original_category": "Food and Entertaining",
+        "contaminated_category": "Finance and Business",
+        "timestamp": "2025-12-14T18:43:12.480210"
+    },
+    {
+        "type": "category_error",
+        "id": "18799-0",
+        "original_category": "Family Life",
+        "contaminated_category": "Personal Care and Style",
+        "timestamp": "2025-12-14T18:43:12.480351"
+    },
+    {
+        "type": "category_error",
+        "id": "18799-1",
+        "original_category": "Family Life",
+        "contaminated_category": "Personal Care and Style",
+        "timestamp": "2025-12-14T18:43:12.480353"
+    },
+    {
+        "type": "category_error",
+        "id": "18799-2",
+        "original_category": "Family Life",
+        "contaminated_category": "Personal Care and Style",
+        "timestamp": "2025-12-14T18:43:12.480354"
+    },
+    {
+        "type": "category_error",
+        "id": "18799-3",
+        "original_category": "Family Life",
+        "contaminated_category": "Personal Care and Style",
+        "timestamp": "2025-12-14T18:43:12.480354"
+    },
+    {
+        "type": "category_error",
+        "id": "4529-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Sharpening knives",
+        "timestamp": "2025-12-14T18:43:12.480498"
+    },
+    {
+        "type": "category_error",
+        "id": "4529-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Sharpening knives",
+        "timestamp": "2025-12-14T18:43:12.480499"
+    },
+    {
+        "type": "category_error",
+        "id": "4529-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Sharpening knives",
+        "timestamp": "2025-12-14T18:43:12.480500"
+    },
+    {
+        "type": "category_error",
+        "id": "4529-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Sharpening knives",
+        "timestamp": "2025-12-14T18:43:12.480501"
+    },
+    {
+        "type": "category_error",
+        "id": "28987-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Philosophy and Religion",
+        "timestamp": "2025-12-14T18:43:12.480650"
+    },
+    {
+        "type": "category_error",
+        "id": "28987-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Philosophy and Religion",
+        "timestamp": "2025-12-14T18:43:12.480651"
+    },
+    {
+        "type": "category_error",
+        "id": "28987-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Philosophy and Religion",
+        "timestamp": "2025-12-14T18:43:12.480652"
+    },
+    {
+        "type": "category_error",
+        "id": "28987-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Philosophy and Religion",
+        "timestamp": "2025-12-14T18:43:12.480653"
+    },
+    {
+        "type": "category_error",
+        "id": "22780-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Having an ice cream",
+        "timestamp": "2025-12-14T18:43:12.480787"
+    },
+    {
+        "type": "category_error",
+        "id": "22780-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Having an ice cream",
+        "timestamp": "2025-12-14T18:43:12.480788"
+    },
+    {
+        "type": "category_error",
+        "id": "22780-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Having an ice cream",
+        "timestamp": "2025-12-14T18:43:12.480789"
+    },
+    {
+        "type": "category_error",
+        "id": "22780-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Having an ice cream",
+        "timestamp": "2025-12-14T18:43:12.480789"
+    },
+    {
+        "type": "category_error",
+        "id": "50104-0",
+        "original_category": "Finance and Business",
+        "contaminated_category": "Relationships",
+        "timestamp": "2025-12-14T18:43:12.480921"
+    },
+    {
+        "type": "category_error",
+        "id": "50104-1",
+        "original_category": "Finance and Business",
+        "contaminated_category": "Relationships",
+        "timestamp": "2025-12-14T18:43:12.480922"
+    },
+    {
+        "type": "category_error",
+        "id": "50104-2",
+        "original_category": "Finance and Business",
+        "contaminated_category": "Relationships",
+        "timestamp": "2025-12-14T18:43:12.480923"
+    },
+    {
+        "type": "category_error",
+        "id": "50104-3",
+        "original_category": "Finance and Business",
+        "contaminated_category": "Relationships",
+        "timestamp": "2025-12-14T18:43:12.480924"
+    },
+    {
+        "type": "category_error",
+        "id": "14463-0",
+        "original_category": "Family Life",
+        "contaminated_category": "Education and Communications",
+        "timestamp": "2025-12-14T18:43:12.481054"
+    },
+    {
+        "type": "category_error",
+        "id": "14463-1",
+        "original_category": "Family Life",
+        "contaminated_category": "Education and Communications",
+        "timestamp": "2025-12-14T18:43:12.481055"
+    },
+    {
+        "type": "category_error",
+        "id": "14463-2",
+        "original_category": "Family Life",
+        "contaminated_category": "Education and Communications",
+        "timestamp": "2025-12-14T18:43:12.481056"
+    },
+    {
+        "type": "category_error",
+        "id": "14463-3",
+        "original_category": "Family Life",
+        "contaminated_category": "Education and Communications",
+        "timestamp": "2025-12-14T18:43:12.481057"
+    },
+    {
+        "type": "category_error",
+        "id": "20374-0",
+        "original_category": "Family Life",
+        "contaminated_category": "Pets and Animals",
+        "timestamp": "2025-12-14T18:43:12.481187"
+    },
+    {
+        "type": "category_error",
+        "id": "20374-1",
+        "original_category": "Family Life",
+        "contaminated_category": "Pets and Animals",
+        "timestamp": "2025-12-14T18:43:12.481188"
+    },
+    {
+        "type": "category_error",
+        "id": "20374-2",
+        "original_category": "Family Life",
+        "contaminated_category": "Pets and Animals",
+        "timestamp": "2025-12-14T18:43:12.481189"
+    },
+    {
+        "type": "category_error",
+        "id": "20374-3",
+        "original_category": "Family Life",
+        "contaminated_category": "Pets and Animals",
+        "timestamp": "2025-12-14T18:43:12.481190"
+    },
+    {
+        "type": "category_error",
+        "id": "29251-0",
+        "original_category": "Youth",
+        "contaminated_category": "Home and Garden",
+        "timestamp": "2025-12-14T18:43:12.481320"
+    },
+    {
+        "type": "category_error",
+        "id": "29251-1",
+        "original_category": "Youth",
+        "contaminated_category": "Home and Garden",
+        "timestamp": "2025-12-14T18:43:12.481321"
+    },
+    {
+        "type": "category_error",
+        "id": "29251-2",
+        "original_category": "Youth",
+        "contaminated_category": "Home and Garden",
+        "timestamp": "2025-12-14T18:43:12.481322"
+    },
+    {
+        "type": "category_error",
+        "id": "29251-3",
+        "original_category": "Youth",
+        "contaminated_category": "Home and Garden",
+        "timestamp": "2025-12-14T18:43:12.481323"
+    },
+    {
+        "type": "category_error",
+        "id": "46520-0",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Having an ice cream",
+        "timestamp": "2025-12-14T18:43:12.481454"
+    },
+    {
+        "type": "category_error",
+        "id": "46520-1",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Having an ice cream",
+        "timestamp": "2025-12-14T18:43:12.481456"
+    },
+    {
+        "type": "category_error",
+        "id": "46520-2",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Having an ice cream",
+        "timestamp": "2025-12-14T18:43:12.481456"
+    },
+    {
+        "type": "category_error",
+        "id": "46520-3",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Having an ice cream",
+        "timestamp": "2025-12-14T18:43:12.481457"
+    },
+    {
+        "type": "category_error",
+        "id": "24297-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Family Life",
+        "timestamp": "2025-12-14T18:43:12.481586"
+    },
+    {
+        "type": "category_error",
+        "id": "24297-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Family Life",
+        "timestamp": "2025-12-14T18:43:12.481587"
+    },
+    {
+        "type": "category_error",
+        "id": "24297-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Family Life",
+        "timestamp": "2025-12-14T18:43:12.481588"
+    },
+    {
+        "type": "category_error",
+        "id": "24297-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Family Life",
+        "timestamp": "2025-12-14T18:43:12.481589"
+    },
+    {
+        "type": "category_error",
+        "id": "45359-0",
+        "original_category": "Family Life",
+        "contaminated_category": "High jump",
+        "timestamp": "2025-12-14T18:43:12.481718"
+    },
+    {
+        "type": "category_error",
+        "id": "45359-1",
+        "original_category": "Family Life",
+        "contaminated_category": "High jump",
+        "timestamp": "2025-12-14T18:43:12.481719"
+    },
+    {
+        "type": "category_error",
+        "id": "45359-2",
+        "original_category": "Family Life",
+        "contaminated_category": "High jump",
+        "timestamp": "2025-12-14T18:43:12.481720"
+    },
+    {
+        "type": "category_error",
+        "id": "45359-3",
+        "original_category": "Family Life",
+        "contaminated_category": "High jump",
+        "timestamp": "2025-12-14T18:43:12.481721"
+    },
+    {
+        "type": "category_error",
+        "id": "24295-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Philosophy and Religion",
+        "timestamp": "2025-12-14T18:43:12.481851"
+    },
+    {
+        "type": "category_error",
+        "id": "24295-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Philosophy and Religion",
+        "timestamp": "2025-12-14T18:43:12.481852"
+    },
+    {
+        "type": "category_error",
+        "id": "24295-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Philosophy and Religion",
+        "timestamp": "2025-12-14T18:43:12.481853"
+    },
+    {
+        "type": "category_error",
+        "id": "24295-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Philosophy and Religion",
+        "timestamp": "2025-12-14T18:43:12.481854"
+    },
+    {
+        "type": "category_error",
+        "id": "29767-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Sports and Fitness",
+        "timestamp": "2025-12-14T18:43:12.481983"
+    },
+    {
+        "type": "category_error",
+        "id": "29767-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Sports and Fitness",
+        "timestamp": "2025-12-14T18:43:12.481984"
+    },
+    {
+        "type": "category_error",
+        "id": "29767-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Sports and Fitness",
+        "timestamp": "2025-12-14T18:43:12.481985"
+    },
+    {
+        "type": "category_error",
+        "id": "29767-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Sports and Fitness",
+        "timestamp": "2025-12-14T18:43:12.481985"
+    },
+    {
+        "type": "category_error",
+        "id": "13842-0",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Youth",
+        "timestamp": "2025-12-14T18:43:12.482114"
+    },
+    {
+        "type": "category_error",
+        "id": "13842-1",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Youth",
+        "timestamp": "2025-12-14T18:43:12.482115"
+    },
+    {
+        "type": "category_error",
+        "id": "13842-2",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Youth",
+        "timestamp": "2025-12-14T18:43:12.482116"
+    },
+    {
+        "type": "category_error",
+        "id": "13842-3",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Youth",
+        "timestamp": "2025-12-14T18:43:12.482116"
+    },
+    {
+        "type": "category_error",
+        "id": "17642-0",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Playing harmonica",
+        "timestamp": "2025-12-14T18:43:12.482245"
+    },
+    {
+        "type": "category_error",
+        "id": "17642-1",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Playing harmonica",
+        "timestamp": "2025-12-14T18:43:12.482246"
+    },
+    {
+        "type": "category_error",
+        "id": "17642-2",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Playing harmonica",
+        "timestamp": "2025-12-14T18:43:12.482247"
+    },
+    {
+        "type": "category_error",
+        "id": "17642-3",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Playing harmonica",
+        "timestamp": "2025-12-14T18:43:12.482248"
+    },
+    {
+        "type": "category_error",
+        "id": "49876-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Sports and Fitness",
+        "timestamp": "2025-12-14T18:43:12.482377"
+    },
+    {
+        "type": "category_error",
+        "id": "49876-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Sports and Fitness",
+        "timestamp": "2025-12-14T18:43:12.482379"
+    },
+    {
+        "type": "category_error",
+        "id": "49876-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Sports and Fitness",
+        "timestamp": "2025-12-14T18:43:12.482379"
+    },
+    {
+        "type": "category_error",
+        "id": "49876-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Sports and Fitness",
+        "timestamp": "2025-12-14T18:43:12.482380"
+    },
+    {
+        "type": "category_error",
+        "id": "46958-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Home and Garden",
+        "timestamp": "2025-12-14T18:43:12.482509"
+    },
+    {
+        "type": "category_error",
+        "id": "46958-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Home and Garden",
+        "timestamp": "2025-12-14T18:43:12.482510"
+    },
+    {
+        "type": "category_error",
+        "id": "46958-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Home and Garden",
+        "timestamp": "2025-12-14T18:43:12.482511"
+    },
+    {
+        "type": "category_error",
+        "id": "46958-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Home and Garden",
+        "timestamp": "2025-12-14T18:43:12.482512"
+    },
+    {
+        "type": "category_error",
+        "id": "36368-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Cars & Other Vehicles",
+        "timestamp": "2025-12-14T18:43:12.482642"
+    },
+    {
+        "type": "category_error",
+        "id": "36368-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Cars & Other Vehicles",
+        "timestamp": "2025-12-14T18:43:12.482643"
+    },
+    {
+        "type": "category_error",
+        "id": "36368-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Cars & Other Vehicles",
+        "timestamp": "2025-12-14T18:43:12.482644"
+    },
+    {
+        "type": "category_error",
+        "id": "36368-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Cars & Other Vehicles",
+        "timestamp": "2025-12-14T18:43:12.482645"
+    },
+    {
+        "type": "category_error",
+        "id": "10511-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Education and Communications",
+        "timestamp": "2025-12-14T18:43:12.482774"
+    },
+    {
+        "type": "category_error",
+        "id": "10511-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Education and Communications",
+        "timestamp": "2025-12-14T18:43:12.482775"
+    },
+    {
+        "type": "category_error",
+        "id": "10511-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Education and Communications",
+        "timestamp": "2025-12-14T18:43:12.482776"
+    },
+    {
+        "type": "category_error",
+        "id": "10511-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Education and Communications",
+        "timestamp": "2025-12-14T18:43:12.482776"
+    },
+    {
+        "type": "category_error",
+        "id": "43974-0",
+        "original_category": "Family Life",
+        "contaminated_category": "Cutting the grass",
+        "timestamp": "2025-12-14T18:43:12.482905"
+    },
+    {
+        "type": "category_error",
+        "id": "43974-1",
+        "original_category": "Family Life",
+        "contaminated_category": "Cutting the grass",
+        "timestamp": "2025-12-14T18:43:12.482907"
+    },
+    {
+        "type": "category_error",
+        "id": "43974-2",
+        "original_category": "Family Life",
+        "contaminated_category": "Cutting the grass",
+        "timestamp": "2025-12-14T18:43:12.482908"
+    },
+    {
+        "type": "category_error",
+        "id": "43974-3",
+        "original_category": "Family Life",
+        "contaminated_category": "Cutting the grass",
+        "timestamp": "2025-12-14T18:43:12.482908"
+    },
+    {
+        "type": "category_error",
+        "id": "9510-0",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Chopping wood",
+        "timestamp": "2025-12-14T18:43:12.483037"
+    },
+    {
+        "type": "category_error",
+        "id": "9510-1",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Chopping wood",
+        "timestamp": "2025-12-14T18:43:12.483039"
+    },
+    {
+        "type": "category_error",
+        "id": "9510-2",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Chopping wood",
+        "timestamp": "2025-12-14T18:43:12.483039"
+    },
+    {
+        "type": "category_error",
+        "id": "9510-3",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Chopping wood",
+        "timestamp": "2025-12-14T18:43:12.483040"
+    },
+    {
+        "type": "category_error",
+        "id": "6728-0",
+        "original_category": "Family Life",
+        "contaminated_category": "Home and Garden",
+        "timestamp": "2025-12-14T18:43:12.483169"
+    },
+    {
+        "type": "category_error",
+        "id": "6728-1",
+        "original_category": "Family Life",
+        "contaminated_category": "Home and Garden",
+        "timestamp": "2025-12-14T18:43:12.483170"
+    },
+    {
+        "type": "category_error",
+        "id": "6728-2",
+        "original_category": "Family Life",
+        "contaminated_category": "Home and Garden",
+        "timestamp": "2025-12-14T18:43:12.483170"
+    },
+    {
+        "type": "category_error",
+        "id": "6728-3",
+        "original_category": "Family Life",
+        "contaminated_category": "Home and Garden",
+        "timestamp": "2025-12-14T18:43:12.483171"
+    },
+    {
+        "type": "category_error",
+        "id": "15764-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Relationships",
+        "timestamp": "2025-12-14T18:43:12.483302"
+    },
+    {
+        "type": "category_error",
+        "id": "15764-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Relationships",
+        "timestamp": "2025-12-14T18:43:12.483303"
+    },
+    {
+        "type": "category_error",
+        "id": "15764-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Relationships",
+        "timestamp": "2025-12-14T18:43:12.483304"
+    },
+    {
+        "type": "category_error",
+        "id": "15764-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Relationships",
+        "timestamp": "2025-12-14T18:43:12.483305"
+    },
+    {
+        "type": "category_error",
+        "id": "6917-0",
+        "original_category": "Family Life",
+        "contaminated_category": "Education and Communications",
+        "timestamp": "2025-12-14T18:43:12.483433"
+    },
+    {
+        "type": "category_error",
+        "id": "6917-1",
+        "original_category": "Family Life",
+        "contaminated_category": "Education and Communications",
+        "timestamp": "2025-12-14T18:43:12.483434"
+    },
+    {
+        "type": "category_error",
+        "id": "6917-2",
+        "original_category": "Family Life",
+        "contaminated_category": "Education and Communications",
+        "timestamp": "2025-12-14T18:43:12.483435"
+    },
+    {
+        "type": "category_error",
+        "id": "6917-3",
+        "original_category": "Family Life",
+        "contaminated_category": "Education and Communications",
+        "timestamp": "2025-12-14T18:43:12.483436"
+    },
+    {
+        "type": "category_error",
+        "id": "22736-0",
+        "original_category": "Computers and Electronics",
+        "contaminated_category": "Shot put",
+        "timestamp": "2025-12-14T18:43:12.483564"
+    },
+    {
+        "type": "category_error",
+        "id": "22736-1",
+        "original_category": "Computers and Electronics",
+        "contaminated_category": "Shot put",
+        "timestamp": "2025-12-14T18:43:12.483565"
+    },
+    {
+        "type": "category_error",
+        "id": "22736-2",
+        "original_category": "Computers and Electronics",
+        "contaminated_category": "Shot put",
+        "timestamp": "2025-12-14T18:43:12.483566"
+    },
+    {
+        "type": "category_error",
+        "id": "22736-3",
+        "original_category": "Computers and Electronics",
+        "contaminated_category": "Shot put",
+        "timestamp": "2025-12-14T18:43:12.483567"
+    },
+    {
+        "type": "category_error",
+        "id": "36902-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Having an ice cream",
+        "timestamp": "2025-12-14T18:43:12.483696"
+    },
+    {
+        "type": "category_error",
+        "id": "36902-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Having an ice cream",
+        "timestamp": "2025-12-14T18:43:12.483697"
+    },
+    {
+        "type": "category_error",
+        "id": "36902-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Having an ice cream",
+        "timestamp": "2025-12-14T18:43:12.483698"
+    },
+    {
+        "type": "category_error",
+        "id": "36902-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Having an ice cream",
+        "timestamp": "2025-12-14T18:43:12.483698"
+    },
+    {
+        "type": "category_error",
+        "id": "43842-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Rock climbing",
+        "timestamp": "2025-12-14T18:43:12.483827"
+    },
+    {
+        "type": "category_error",
+        "id": "43842-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Rock climbing",
+        "timestamp": "2025-12-14T18:43:12.483829"
+    },
+    {
+        "type": "category_error",
+        "id": "43842-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Rock climbing",
+        "timestamp": "2025-12-14T18:43:12.483829"
+    },
+    {
+        "type": "category_error",
+        "id": "43842-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Rock climbing",
+        "timestamp": "2025-12-14T18:43:12.483830"
+    },
+    {
+        "type": "category_error",
+        "id": "24021-0",
+        "original_category": "Family Life",
+        "contaminated_category": "Cars & Other Vehicles",
+        "timestamp": "2025-12-14T18:43:12.483958"
+    },
+    {
+        "type": "category_error",
+        "id": "24021-1",
+        "original_category": "Family Life",
+        "contaminated_category": "Cars & Other Vehicles",
+        "timestamp": "2025-12-14T18:43:12.483959"
+    },
+    {
+        "type": "category_error",
+        "id": "24021-2",
+        "original_category": "Family Life",
+        "contaminated_category": "Cars & Other Vehicles",
+        "timestamp": "2025-12-14T18:43:12.483960"
+    },
+    {
+        "type": "category_error",
+        "id": "24021-3",
+        "original_category": "Family Life",
+        "contaminated_category": "Cars & Other Vehicles",
+        "timestamp": "2025-12-14T18:43:12.483961"
+    },
+    {
+        "type": "category_error",
+        "id": "35132-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Rope skipping",
+        "timestamp": "2025-12-14T18:43:12.484087"
+    },
+    {
+        "type": "category_error",
+        "id": "35132-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Rope skipping",
+        "timestamp": "2025-12-14T18:43:12.484088"
+    },
+    {
+        "type": "category_error",
+        "id": "35132-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Rope skipping",
+        "timestamp": "2025-12-14T18:43:12.484089"
+    },
+    {
+        "type": "category_error",
+        "id": "35132-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Rope skipping",
+        "timestamp": "2025-12-14T18:43:12.484090"
+    },
+    {
+        "type": "category_error",
+        "id": "34074-0",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Food and Entertaining",
+        "timestamp": "2025-12-14T18:43:12.484217"
+    },
+    {
+        "type": "category_error",
+        "id": "34074-1",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Food and Entertaining",
+        "timestamp": "2025-12-14T18:43:12.484218"
+    },
+    {
+        "type": "category_error",
+        "id": "34074-2",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Food and Entertaining",
+        "timestamp": "2025-12-14T18:43:12.484219"
+    },
+    {
+        "type": "category_error",
+        "id": "34074-3",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Food and Entertaining",
+        "timestamp": "2025-12-14T18:43:12.484219"
+    },
+    {
+        "type": "category_error",
+        "id": "27422-0",
+        "original_category": "Finance and Business",
+        "contaminated_category": "Cars & Other Vehicles",
+        "timestamp": "2025-12-14T18:43:12.484346"
+    },
+    {
+        "type": "category_error",
+        "id": "27422-1",
+        "original_category": "Finance and Business",
+        "contaminated_category": "Cars & Other Vehicles",
+        "timestamp": "2025-12-14T18:43:12.484347"
+    },
+    {
+        "type": "category_error",
+        "id": "27422-2",
+        "original_category": "Finance and Business",
+        "contaminated_category": "Cars & Other Vehicles",
+        "timestamp": "2025-12-14T18:43:12.484348"
+    },
+    {
+        "type": "category_error",
+        "id": "27422-3",
+        "original_category": "Finance and Business",
+        "contaminated_category": "Cars & Other Vehicles",
+        "timestamp": "2025-12-14T18:43:12.484349"
+    },
+    {
+        "type": "category_error",
+        "id": "49612-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Education and Communications",
+        "timestamp": "2025-12-14T18:43:12.484476"
+    },
+    {
+        "type": "category_error",
+        "id": "49612-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Education and Communications",
+        "timestamp": "2025-12-14T18:43:12.484477"
+    },
+    {
+        "type": "category_error",
+        "id": "49612-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Education and Communications",
+        "timestamp": "2025-12-14T18:43:12.484478"
+    },
+    {
+        "type": "category_error",
+        "id": "49612-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Education and Communications",
+        "timestamp": "2025-12-14T18:43:12.484479"
+    },
+    {
+        "type": "category_error",
+        "id": "12005-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Shot put",
+        "timestamp": "2025-12-14T18:43:12.484610"
+    },
+    {
+        "type": "category_error",
+        "id": "12005-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Shot put",
+        "timestamp": "2025-12-14T18:43:12.484611"
+    },
+    {
+        "type": "category_error",
+        "id": "12005-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Shot put",
+        "timestamp": "2025-12-14T18:43:12.484612"
+    },
+    {
+        "type": "category_error",
+        "id": "12005-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Shot put",
+        "timestamp": "2025-12-14T18:43:12.484613"
+    },
+    {
+        "type": "category_error",
+        "id": "8781-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Layup drill in basketball",
+        "timestamp": "2025-12-14T18:43:12.484742"
+    },
+    {
+        "type": "category_error",
+        "id": "8781-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Layup drill in basketball",
+        "timestamp": "2025-12-14T18:43:12.484743"
+    },
+    {
+        "type": "category_error",
+        "id": "8781-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Layup drill in basketball",
+        "timestamp": "2025-12-14T18:43:12.484743"
+    },
+    {
+        "type": "category_error",
+        "id": "8781-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Layup drill in basketball",
+        "timestamp": "2025-12-14T18:43:12.484744"
+    },
+    {
+        "type": "category_error",
+        "id": "33945-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Rollerblading",
+        "timestamp": "2025-12-14T18:43:12.484872"
+    },
+    {
+        "type": "category_error",
+        "id": "33945-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Rollerblading",
+        "timestamp": "2025-12-14T18:43:12.484873"
+    },
+    {
+        "type": "category_error",
+        "id": "33945-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Rollerblading",
+        "timestamp": "2025-12-14T18:43:12.484874"
+    },
+    {
+        "type": "category_error",
+        "id": "33945-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Rollerblading",
+        "timestamp": "2025-12-14T18:43:12.484875"
+    },
+    {
+        "type": "category_error",
+        "id": "16894-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Ice fishing",
+        "timestamp": "2025-12-14T18:43:12.485008"
+    },
+    {
+        "type": "category_error",
+        "id": "16894-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Ice fishing",
+        "timestamp": "2025-12-14T18:43:12.485009"
+    },
+    {
+        "type": "category_error",
+        "id": "16894-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Ice fishing",
+        "timestamp": "2025-12-14T18:43:12.485010"
+    },
+    {
+        "type": "category_error",
+        "id": "16894-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Ice fishing",
+        "timestamp": "2025-12-14T18:43:12.485011"
+    },
+    {
+        "type": "category_error",
+        "id": "49624-0",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Health",
+        "timestamp": "2025-12-14T18:43:12.485142"
+    },
+    {
+        "type": "category_error",
+        "id": "49624-1",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Health",
+        "timestamp": "2025-12-14T18:43:12.485143"
+    },
+    {
+        "type": "category_error",
+        "id": "49624-2",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Health",
+        "timestamp": "2025-12-14T18:43:12.485144"
+    },
+    {
+        "type": "category_error",
+        "id": "49624-3",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Health",
+        "timestamp": "2025-12-14T18:43:12.485145"
+    },
+    {
+        "type": "category_error",
+        "id": "27734-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Relationships",
+        "timestamp": "2025-12-14T18:43:12.485275"
+    },
+    {
+        "type": "category_error",
+        "id": "27734-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Relationships",
+        "timestamp": "2025-12-14T18:43:12.485276"
+    },
+    {
+        "type": "category_error",
+        "id": "27734-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Relationships",
+        "timestamp": "2025-12-14T18:43:12.485277"
+    },
+    {
+        "type": "category_error",
+        "id": "27734-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Relationships",
+        "timestamp": "2025-12-14T18:43:12.485277"
+    },
+    {
+        "type": "category_error",
+        "id": "31033-0",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Health",
+        "timestamp": "2025-12-14T18:43:12.485416"
+    },
+    {
+        "type": "category_error",
+        "id": "31033-1",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Health",
+        "timestamp": "2025-12-14T18:43:12.485418"
+    },
+    {
+        "type": "category_error",
+        "id": "31033-2",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Health",
+        "timestamp": "2025-12-14T18:43:12.485419"
+    },
+    {
+        "type": "category_error",
+        "id": "31033-3",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Health",
+        "timestamp": "2025-12-14T18:43:12.485420"
+    },
+    {
+        "type": "category_error",
+        "id": "33480-0",
+        "original_category": "Computers and Electronics",
+        "contaminated_category": "Layup drill in basketball",
+        "timestamp": "2025-12-14T18:43:12.485559"
+    },
+    {
+        "type": "category_error",
+        "id": "33480-1",
+        "original_category": "Computers and Electronics",
+        "contaminated_category": "Layup drill in basketball",
+        "timestamp": "2025-12-14T18:43:12.485560"
+    },
+    {
+        "type": "category_error",
+        "id": "33480-2",
+        "original_category": "Computers and Electronics",
+        "contaminated_category": "Layup drill in basketball",
+        "timestamp": "2025-12-14T18:43:12.485561"
+    },
+    {
+        "type": "category_error",
+        "id": "33480-3",
+        "original_category": "Computers and Electronics",
+        "contaminated_category": "Layup drill in basketball",
+        "timestamp": "2025-12-14T18:43:12.485561"
+    },
+    {
+        "type": "category_error",
+        "id": "42181-0",
+        "original_category": "Health",
+        "contaminated_category": "Cars & Other Vehicles",
+        "timestamp": "2025-12-14T18:43:12.485699"
+    },
+    {
+        "type": "category_error",
+        "id": "42181-1",
+        "original_category": "Health",
+        "contaminated_category": "Cars & Other Vehicles",
+        "timestamp": "2025-12-14T18:43:12.485700"
+    },
+    {
+        "type": "category_error",
+        "id": "42181-2",
+        "original_category": "Health",
+        "contaminated_category": "Cars & Other Vehicles",
+        "timestamp": "2025-12-14T18:43:12.485701"
+    },
+    {
+        "type": "category_error",
+        "id": "42181-3",
+        "original_category": "Health",
+        "contaminated_category": "Cars & Other Vehicles",
+        "timestamp": "2025-12-14T18:43:12.485702"
+    },
+    {
+        "type": "category_error",
+        "id": "34019-0",
+        "original_category": "Pets and Animals",
+        "contaminated_category": "Youth",
+        "timestamp": "2025-12-14T18:43:12.485838"
+    },
+    {
+        "type": "category_error",
+        "id": "34019-1",
+        "original_category": "Pets and Animals",
+        "contaminated_category": "Youth",
+        "timestamp": "2025-12-14T18:43:12.485840"
+    },
+    {
+        "type": "category_error",
+        "id": "34019-2",
+        "original_category": "Pets and Animals",
+        "contaminated_category": "Youth",
+        "timestamp": "2025-12-14T18:43:12.485840"
+    },
+    {
+        "type": "category_error",
+        "id": "34019-3",
+        "original_category": "Pets and Animals",
+        "contaminated_category": "Youth",
+        "timestamp": "2025-12-14T18:43:12.485841"
+    },
+    {
+        "type": "category_error",
+        "id": "35360-0",
+        "original_category": "Youth",
+        "contaminated_category": "Rope skipping",
+        "timestamp": "2025-12-14T18:43:12.485978"
+    },
+    {
+        "type": "category_error",
+        "id": "35360-1",
+        "original_category": "Youth",
+        "contaminated_category": "Rope skipping",
+        "timestamp": "2025-12-14T18:43:12.485979"
+    },
+    {
+        "type": "category_error",
+        "id": "35360-2",
+        "original_category": "Youth",
+        "contaminated_category": "Rope skipping",
+        "timestamp": "2025-12-14T18:43:12.485980"
+    },
+    {
+        "type": "category_error",
+        "id": "35360-3",
+        "original_category": "Youth",
+        "contaminated_category": "Rope skipping",
+        "timestamp": "2025-12-14T18:43:12.485981"
+    },
+    {
+        "type": "category_error",
+        "id": "50092-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Washing face",
+        "timestamp": "2025-12-14T18:43:12.486118"
+    },
+    {
+        "type": "category_error",
+        "id": "50092-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Washing face",
+        "timestamp": "2025-12-14T18:43:12.486119"
+    },
+    {
+        "type": "category_error",
+        "id": "50092-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Washing face",
+        "timestamp": "2025-12-14T18:43:12.486120"
+    },
+    {
+        "type": "category_error",
+        "id": "50092-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Washing face",
+        "timestamp": "2025-12-14T18:43:12.486121"
+    },
+    {
+        "type": "category_error",
+        "id": "35833-0",
+        "original_category": "Computers and Electronics",
+        "contaminated_category": "Home and Garden",
+        "timestamp": "2025-12-14T18:43:12.486256"
+    },
+    {
+        "type": "category_error",
+        "id": "35833-1",
+        "original_category": "Computers and Electronics",
+        "contaminated_category": "Home and Garden",
+        "timestamp": "2025-12-14T18:43:12.486257"
+    },
+    {
+        "type": "category_error",
+        "id": "35833-2",
+        "original_category": "Computers and Electronics",
+        "contaminated_category": "Home and Garden",
+        "timestamp": "2025-12-14T18:43:12.486258"
+    },
+    {
+        "type": "category_error",
+        "id": "35833-3",
+        "original_category": "Computers and Electronics",
+        "contaminated_category": "Home and Garden",
+        "timestamp": "2025-12-14T18:43:12.486259"
+    },
+    {
+        "type": "category_error",
+        "id": "13731-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Cars & Other Vehicles",
+        "timestamp": "2025-12-14T18:43:12.486395"
+    },
+    {
+        "type": "category_error",
+        "id": "13731-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Cars & Other Vehicles",
+        "timestamp": "2025-12-14T18:43:12.486396"
+    },
+    {
+        "type": "category_error",
+        "id": "13731-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Cars & Other Vehicles",
+        "timestamp": "2025-12-14T18:43:12.486397"
+    },
+    {
+        "type": "category_error",
+        "id": "13731-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Cars & Other Vehicles",
+        "timestamp": "2025-12-14T18:43:12.486398"
+    },
+    {
+        "type": "category_error",
+        "id": "9102-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Playing harmonica",
+        "timestamp": "2025-12-14T18:43:12.486541"
+    },
+    {
+        "type": "category_error",
+        "id": "9102-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Playing harmonica",
+        "timestamp": "2025-12-14T18:43:12.486543"
+    },
+    {
+        "type": "category_error",
+        "id": "9102-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Playing harmonica",
+        "timestamp": "2025-12-14T18:43:12.486544"
+    },
+    {
+        "type": "category_error",
+        "id": "9102-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Playing harmonica",
+        "timestamp": "2025-12-14T18:43:12.486544"
+    },
+    {
+        "type": "category_error",
+        "id": "11162-0",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Youth",
+        "timestamp": "2025-12-14T18:43:12.486687"
+    },
+    {
+        "type": "category_error",
+        "id": "11162-1",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Youth",
+        "timestamp": "2025-12-14T18:43:12.486688"
+    },
+    {
+        "type": "category_error",
+        "id": "11162-2",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Youth",
+        "timestamp": "2025-12-14T18:43:12.486689"
+    },
+    {
+        "type": "category_error",
+        "id": "11162-3",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Youth",
+        "timestamp": "2025-12-14T18:43:12.486690"
+    },
+    {
+        "type": "category_error",
+        "id": "35466-0",
+        "original_category": "Pets and Animals",
+        "contaminated_category": "Health",
+        "timestamp": "2025-12-14T18:43:12.486834"
+    },
+    {
+        "type": "category_error",
+        "id": "35466-1",
+        "original_category": "Pets and Animals",
+        "contaminated_category": "Health",
+        "timestamp": "2025-12-14T18:43:12.486835"
+    },
+    {
+        "type": "category_error",
+        "id": "35466-2",
+        "original_category": "Pets and Animals",
+        "contaminated_category": "Health",
+        "timestamp": "2025-12-14T18:43:12.486836"
+    },
+    {
+        "type": "category_error",
+        "id": "35466-3",
+        "original_category": "Pets and Animals",
+        "contaminated_category": "Health",
+        "timestamp": "2025-12-14T18:43:12.486837"
+    },
+    {
+        "type": "category_error",
+        "id": "28255-0",
+        "original_category": "Pets and Animals",
+        "contaminated_category": "Horseback riding",
+        "timestamp": "2025-12-14T18:43:12.486980"
+    },
+    {
+        "type": "category_error",
+        "id": "28255-1",
+        "original_category": "Pets and Animals",
+        "contaminated_category": "Horseback riding",
+        "timestamp": "2025-12-14T18:43:12.486982"
+    },
+    {
+        "type": "category_error",
+        "id": "28255-2",
+        "original_category": "Pets and Animals",
+        "contaminated_category": "Horseback riding",
+        "timestamp": "2025-12-14T18:43:12.486983"
+    },
+    {
+        "type": "category_error",
+        "id": "28255-3",
+        "original_category": "Pets and Animals",
+        "contaminated_category": "Horseback riding",
+        "timestamp": "2025-12-14T18:43:12.486984"
+    },
+    {
+        "type": "category_error",
+        "id": "20201-0",
+        "original_category": "Food and Entertaining",
+        "contaminated_category": "Relationships",
+        "timestamp": "2025-12-14T18:43:12.487201"
+    },
+    {
+        "type": "category_error",
+        "id": "20201-1",
+        "original_category": "Food and Entertaining",
+        "contaminated_category": "Relationships",
+        "timestamp": "2025-12-14T18:43:12.487202"
+    },
+    {
+        "type": "category_error",
+        "id": "20201-2",
+        "original_category": "Food and Entertaining",
+        "contaminated_category": "Relationships",
+        "timestamp": "2025-12-14T18:43:12.487203"
+    },
+    {
+        "type": "category_error",
+        "id": "20201-3",
+        "original_category": "Food and Entertaining",
+        "contaminated_category": "Relationships",
+        "timestamp": "2025-12-14T18:43:12.487204"
+    },
+    {
+        "type": "category_error",
+        "id": "34942-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Shot put",
+        "timestamp": "2025-12-14T18:43:12.487333"
+    },
+    {
+        "type": "category_error",
+        "id": "34942-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Shot put",
+        "timestamp": "2025-12-14T18:43:12.487335"
+    },
+    {
+        "type": "category_error",
+        "id": "34942-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Shot put",
+        "timestamp": "2025-12-14T18:43:12.487335"
+    },
+    {
+        "type": "category_error",
+        "id": "34942-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Shot put",
+        "timestamp": "2025-12-14T18:43:12.487336"
+    },
+    {
+        "type": "category_error",
+        "id": "2123-0",
+        "original_category": "Pets and Animals",
+        "contaminated_category": "Computers and Electronics",
+        "timestamp": "2025-12-14T18:43:12.487465"
+    },
+    {
+        "type": "category_error",
+        "id": "2123-1",
+        "original_category": "Pets and Animals",
+        "contaminated_category": "Computers and Electronics",
+        "timestamp": "2025-12-14T18:43:12.487466"
+    },
+    {
+        "type": "category_error",
+        "id": "2123-2",
+        "original_category": "Pets and Animals",
+        "contaminated_category": "Computers and Electronics",
+        "timestamp": "2025-12-14T18:43:12.487467"
+    },
+    {
+        "type": "category_error",
+        "id": "2123-3",
+        "original_category": "Pets and Animals",
+        "contaminated_category": "Computers and Electronics",
+        "timestamp": "2025-12-14T18:43:12.487468"
+    },
+    {
+        "type": "category_error",
+        "id": "13421-0",
+        "original_category": "Relationships",
+        "contaminated_category": "Having an ice cream",
+        "timestamp": "2025-12-14T18:43:12.487598"
+    },
+    {
+        "type": "category_error",
+        "id": "13421-1",
+        "original_category": "Relationships",
+        "contaminated_category": "Having an ice cream",
+        "timestamp": "2025-12-14T18:43:12.487599"
+    },
+    {
+        "type": "category_error",
+        "id": "13421-2",
+        "original_category": "Relationships",
+        "contaminated_category": "Having an ice cream",
+        "timestamp": "2025-12-14T18:43:12.487599"
+    },
+    {
+        "type": "category_error",
+        "id": "13421-3",
+        "original_category": "Relationships",
+        "contaminated_category": "Having an ice cream",
+        "timestamp": "2025-12-14T18:43:12.487600"
+    },
+    {
+        "type": "category_error",
+        "id": "32311-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Health",
+        "timestamp": "2025-12-14T18:43:12.487729"
+    },
+    {
+        "type": "category_error",
+        "id": "32311-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Health",
+        "timestamp": "2025-12-14T18:43:12.487731"
+    },
+    {
+        "type": "category_error",
+        "id": "32311-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Health",
+        "timestamp": "2025-12-14T18:43:12.487731"
+    },
+    {
+        "type": "category_error",
+        "id": "32311-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Health",
+        "timestamp": "2025-12-14T18:43:12.487732"
+    },
+    {
+        "type": "category_error",
+        "id": "28891-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Pets and Animals",
+        "timestamp": "2025-12-14T18:43:12.487860"
+    },
+    {
+        "type": "category_error",
+        "id": "28891-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Pets and Animals",
+        "timestamp": "2025-12-14T18:43:12.487862"
+    },
+    {
+        "type": "category_error",
+        "id": "28891-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Pets and Animals",
+        "timestamp": "2025-12-14T18:43:12.487862"
+    },
+    {
+        "type": "category_error",
+        "id": "28891-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Pets and Animals",
+        "timestamp": "2025-12-14T18:43:12.487863"
+    },
+    {
+        "type": "category_error",
+        "id": "12696-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Uncategorized",
+        "timestamp": "2025-12-14T18:43:12.487993"
+    },
+    {
+        "type": "category_error",
+        "id": "12696-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Uncategorized",
+        "timestamp": "2025-12-14T18:43:12.487994"
+    },
+    {
+        "type": "category_error",
+        "id": "12696-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Uncategorized",
+        "timestamp": "2025-12-14T18:43:12.487995"
+    },
+    {
+        "type": "category_error",
+        "id": "12696-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Uncategorized",
+        "timestamp": "2025-12-14T18:43:12.487996"
+    },
+    {
+        "type": "category_error",
+        "id": "36528-0",
+        "original_category": "Holidays and Traditions",
+        "contaminated_category": "Rope skipping",
+        "timestamp": "2025-12-14T18:43:12.488125"
+    },
+    {
+        "type": "category_error",
+        "id": "36528-1",
+        "original_category": "Holidays and Traditions",
+        "contaminated_category": "Rope skipping",
+        "timestamp": "2025-12-14T18:43:12.488126"
+    },
+    {
+        "type": "category_error",
+        "id": "36528-2",
+        "original_category": "Holidays and Traditions",
+        "contaminated_category": "Rope skipping",
+        "timestamp": "2025-12-14T18:43:12.488127"
+    },
+    {
+        "type": "category_error",
+        "id": "36528-3",
+        "original_category": "Holidays and Traditions",
+        "contaminated_category": "Rope skipping",
+        "timestamp": "2025-12-14T18:43:12.488128"
+    },
+    {
+        "type": "category_error",
+        "id": "30518-0",
+        "original_category": "Computers and Electronics",
+        "contaminated_category": "Travel",
+        "timestamp": "2025-12-14T18:43:12.488273"
+    },
+    {
+        "type": "category_error",
+        "id": "30518-1",
+        "original_category": "Computers and Electronics",
+        "contaminated_category": "Travel",
+        "timestamp": "2025-12-14T18:43:12.488274"
+    },
+    {
+        "type": "category_error",
+        "id": "30518-2",
+        "original_category": "Computers and Electronics",
+        "contaminated_category": "Travel",
+        "timestamp": "2025-12-14T18:43:12.488275"
+    },
+    {
+        "type": "category_error",
+        "id": "30518-3",
+        "original_category": "Computers and Electronics",
+        "contaminated_category": "Travel",
+        "timestamp": "2025-12-14T18:43:12.488276"
+    },
+    {
+        "type": "category_error",
+        "id": "32262-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Family Life",
+        "timestamp": "2025-12-14T18:43:12.488419"
+    },
+    {
+        "type": "category_error",
+        "id": "32262-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Family Life",
+        "timestamp": "2025-12-14T18:43:12.488420"
+    },
+    {
+        "type": "category_error",
+        "id": "32262-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Family Life",
+        "timestamp": "2025-12-14T18:43:12.488421"
+    },
+    {
+        "type": "category_error",
+        "id": "32262-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Family Life",
+        "timestamp": "2025-12-14T18:43:12.488422"
+    },
+    {
+        "type": "category_error",
+        "id": "46289-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Work World",
+        "timestamp": "2025-12-14T18:43:12.488563"
+    },
+    {
+        "type": "category_error",
+        "id": "46289-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Work World",
+        "timestamp": "2025-12-14T18:43:12.488564"
+    },
+    {
+        "type": "category_error",
+        "id": "46289-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Work World",
+        "timestamp": "2025-12-14T18:43:12.488565"
+    },
+    {
+        "type": "category_error",
+        "id": "46289-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Work World",
+        "timestamp": "2025-12-14T18:43:12.488566"
+    },
+    {
+        "type": "category_error",
+        "id": "4292-0",
+        "original_category": "Family Life",
+        "contaminated_category": "Running a marathon",
+        "timestamp": "2025-12-14T18:43:12.488694"
+    },
+    {
+        "type": "category_error",
+        "id": "4292-1",
+        "original_category": "Family Life",
+        "contaminated_category": "Running a marathon",
+        "timestamp": "2025-12-14T18:43:12.488696"
+    },
+    {
+        "type": "category_error",
+        "id": "4292-2",
+        "original_category": "Family Life",
+        "contaminated_category": "Running a marathon",
+        "timestamp": "2025-12-14T18:43:12.488697"
+    },
+    {
+        "type": "category_error",
+        "id": "4292-3",
+        "original_category": "Family Life",
+        "contaminated_category": "Running a marathon",
+        "timestamp": "2025-12-14T18:43:12.488698"
+    },
+    {
+        "type": "category_error",
+        "id": "40979-0",
+        "original_category": "Family Life",
+        "contaminated_category": "Finance and Business",
+        "timestamp": "2025-12-14T18:43:12.488826"
+    },
+    {
+        "type": "category_error",
+        "id": "40979-1",
+        "original_category": "Family Life",
+        "contaminated_category": "Finance and Business",
+        "timestamp": "2025-12-14T18:43:12.488827"
+    },
+    {
+        "type": "category_error",
+        "id": "40979-2",
+        "original_category": "Family Life",
+        "contaminated_category": "Finance and Business",
+        "timestamp": "2025-12-14T18:43:12.488828"
+    },
+    {
+        "type": "category_error",
+        "id": "40979-3",
+        "original_category": "Family Life",
+        "contaminated_category": "Finance and Business",
+        "timestamp": "2025-12-14T18:43:12.488828"
+    },
+    {
+        "type": "category_error",
+        "id": "25986-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Work World",
+        "timestamp": "2025-12-14T18:43:12.488953"
+    },
+    {
+        "type": "category_error",
+        "id": "25986-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Work World",
+        "timestamp": "2025-12-14T18:43:12.488954"
+    },
+    {
+        "type": "category_error",
+        "id": "25986-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Work World",
+        "timestamp": "2025-12-14T18:43:12.488955"
+    },
+    {
+        "type": "category_error",
+        "id": "25986-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Work World",
+        "timestamp": "2025-12-14T18:43:12.488956"
+    },
+    {
+        "type": "category_error",
+        "id": "36056-0",
+        "original_category": "Computers and Electronics",
+        "contaminated_category": "Having an ice cream",
+        "timestamp": "2025-12-14T18:43:12.489083"
+    },
+    {
+        "type": "category_error",
+        "id": "36056-1",
+        "original_category": "Computers and Electronics",
+        "contaminated_category": "Having an ice cream",
+        "timestamp": "2025-12-14T18:43:12.489084"
+    },
+    {
+        "type": "category_error",
+        "id": "36056-2",
+        "original_category": "Computers and Electronics",
+        "contaminated_category": "Having an ice cream",
+        "timestamp": "2025-12-14T18:43:12.489085"
+    },
+    {
+        "type": "category_error",
+        "id": "36056-3",
+        "original_category": "Computers and Electronics",
+        "contaminated_category": "Having an ice cream",
+        "timestamp": "2025-12-14T18:43:12.489085"
+    },
+    {
+        "type": "category_error",
+        "id": "29247-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Layup drill in basketball",
+        "timestamp": "2025-12-14T18:43:12.489211"
+    },
+    {
+        "type": "category_error",
+        "id": "29247-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Layup drill in basketball",
+        "timestamp": "2025-12-14T18:43:12.489212"
+    },
+    {
+        "type": "category_error",
+        "id": "29247-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Layup drill in basketball",
+        "timestamp": "2025-12-14T18:43:12.489213"
+    },
+    {
+        "type": "category_error",
+        "id": "29247-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Layup drill in basketball",
+        "timestamp": "2025-12-14T18:43:12.489214"
+    },
+    {
+        "type": "category_error",
+        "id": "2725-0",
+        "original_category": "Family Life",
+        "contaminated_category": "Computers and Electronics",
+        "timestamp": "2025-12-14T18:43:12.489342"
+    },
+    {
+        "type": "category_error",
+        "id": "2725-1",
+        "original_category": "Family Life",
+        "contaminated_category": "Computers and Electronics",
+        "timestamp": "2025-12-14T18:43:12.489343"
+    },
+    {
+        "type": "category_error",
+        "id": "2725-2",
+        "original_category": "Family Life",
+        "contaminated_category": "Computers and Electronics",
+        "timestamp": "2025-12-14T18:43:12.489344"
+    },
+    {
+        "type": "category_error",
+        "id": "2725-3",
+        "original_category": "Family Life",
+        "contaminated_category": "Computers and Electronics",
+        "timestamp": "2025-12-14T18:43:12.489344"
+    },
+    {
+        "type": "category_error",
+        "id": "29844-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Washing face",
+        "timestamp": "2025-12-14T18:43:12.489472"
+    },
+    {
+        "type": "category_error",
+        "id": "29844-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Washing face",
+        "timestamp": "2025-12-14T18:43:12.489473"
+    },
+    {
+        "type": "category_error",
+        "id": "29844-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Washing face",
+        "timestamp": "2025-12-14T18:43:12.489474"
+    },
+    {
+        "type": "category_error",
+        "id": "29844-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Washing face",
+        "timestamp": "2025-12-14T18:43:12.489474"
+    },
+    {
+        "type": "category_error",
+        "id": "25308-0",
+        "original_category": "Family Life",
+        "contaminated_category": "Pets and Animals",
+        "timestamp": "2025-12-14T18:43:12.489601"
+    },
+    {
+        "type": "category_error",
+        "id": "25308-1",
+        "original_category": "Family Life",
+        "contaminated_category": "Pets and Animals",
+        "timestamp": "2025-12-14T18:43:12.489602"
+    },
+    {
+        "type": "category_error",
+        "id": "25308-2",
+        "original_category": "Family Life",
+        "contaminated_category": "Pets and Animals",
+        "timestamp": "2025-12-14T18:43:12.489603"
+    },
+    {
+        "type": "category_error",
+        "id": "25308-3",
+        "original_category": "Family Life",
+        "contaminated_category": "Pets and Animals",
+        "timestamp": "2025-12-14T18:43:12.489604"
+    },
+    {
+        "type": "category_error",
+        "id": "44115-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Education and Communications",
+        "timestamp": "2025-12-14T18:43:12.489731"
+    },
+    {
+        "type": "category_error",
+        "id": "44115-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Education and Communications",
+        "timestamp": "2025-12-14T18:43:12.489732"
+    },
+    {
+        "type": "category_error",
+        "id": "44115-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Education and Communications",
+        "timestamp": "2025-12-14T18:43:12.489733"
+    },
+    {
+        "type": "category_error",
+        "id": "44115-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Education and Communications",
+        "timestamp": "2025-12-14T18:43:12.489734"
+    },
+    {
+        "type": "category_error",
+        "id": "1922-0",
+        "original_category": "Family Life",
+        "contaminated_category": "Chopping wood",
+        "timestamp": "2025-12-14T18:43:12.489861"
+    },
+    {
+        "type": "category_error",
+        "id": "1922-1",
+        "original_category": "Family Life",
+        "contaminated_category": "Chopping wood",
+        "timestamp": "2025-12-14T18:43:12.489862"
+    },
+    {
+        "type": "category_error",
+        "id": "1922-2",
+        "original_category": "Family Life",
+        "contaminated_category": "Chopping wood",
+        "timestamp": "2025-12-14T18:43:12.489863"
+    },
+    {
+        "type": "category_error",
+        "id": "1922-3",
+        "original_category": "Family Life",
+        "contaminated_category": "Chopping wood",
+        "timestamp": "2025-12-14T18:43:12.489864"
+    },
+    {
+        "type": "category_error",
+        "id": "43317-0",
+        "original_category": "Education and Communications",
+        "contaminated_category": "Rollerblading",
+        "timestamp": "2025-12-14T18:43:12.489992"
+    },
+    {
+        "type": "category_error",
+        "id": "43317-1",
+        "original_category": "Education and Communications",
+        "contaminated_category": "Rollerblading",
+        "timestamp": "2025-12-14T18:43:12.489993"
+    },
+    {
+        "type": "category_error",
+        "id": "43317-2",
+        "original_category": "Education and Communications",
+        "contaminated_category": "Rollerblading",
+        "timestamp": "2025-12-14T18:43:12.489994"
+    },
+    {
+        "type": "category_error",
+        "id": "43317-3",
+        "original_category": "Education and Communications",
+        "contaminated_category": "Rollerblading",
+        "timestamp": "2025-12-14T18:43:12.489995"
+    },
+    {
+        "type": "category_error",
+        "id": "23495-0",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Having an ice cream",
+        "timestamp": "2025-12-14T18:43:12.490122"
+    },
+    {
+        "type": "category_error",
+        "id": "23495-1",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Having an ice cream",
+        "timestamp": "2025-12-14T18:43:12.490123"
+    },
+    {
+        "type": "category_error",
+        "id": "23495-2",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Having an ice cream",
+        "timestamp": "2025-12-14T18:43:12.490124"
+    },
+    {
+        "type": "category_error",
+        "id": "23495-3",
+        "original_category": "Home and Garden",
+        "contaminated_category": "Having an ice cream",
+        "timestamp": "2025-12-14T18:43:12.490125"
+    },
+    {
+        "type": "category_error",
+        "id": "10059-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Sports and Fitness",
+        "timestamp": "2025-12-14T18:43:12.490252"
+    },
+    {
+        "type": "category_error",
+        "id": "10059-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Sports and Fitness",
+        "timestamp": "2025-12-14T18:43:12.490253"
+    },
+    {
+        "type": "category_error",
+        "id": "10059-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Sports and Fitness",
+        "timestamp": "2025-12-14T18:43:12.490254"
+    },
+    {
+        "type": "category_error",
+        "id": "10059-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Sports and Fitness",
+        "timestamp": "2025-12-14T18:43:12.490254"
+    },
+    {
+        "type": "category_error",
+        "id": "31069-0",
+        "original_category": "Youth",
+        "contaminated_category": "Having an ice cream",
+        "timestamp": "2025-12-14T18:43:12.490382"
+    },
+    {
+        "type": "category_error",
+        "id": "31069-1",
+        "original_category": "Youth",
+        "contaminated_category": "Having an ice cream",
+        "timestamp": "2025-12-14T18:43:12.490384"
+    },
+    {
+        "type": "category_error",
+        "id": "31069-2",
+        "original_category": "Youth",
+        "contaminated_category": "Having an ice cream",
+        "timestamp": "2025-12-14T18:43:12.490384"
+    },
+    {
+        "type": "category_error",
+        "id": "31069-3",
+        "original_category": "Youth",
+        "contaminated_category": "Having an ice cream",
+        "timestamp": "2025-12-14T18:43:12.490385"
+    },
+    {
+        "type": "category_error",
+        "id": "28513-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Family Life",
+        "timestamp": "2025-12-14T18:43:12.490514"
+    },
+    {
+        "type": "category_error",
+        "id": "28513-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Family Life",
+        "timestamp": "2025-12-14T18:43:12.490516"
+    },
+    {
+        "type": "category_error",
+        "id": "28513-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Family Life",
+        "timestamp": "2025-12-14T18:43:12.490517"
+    },
+    {
+        "type": "category_error",
+        "id": "28513-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Family Life",
+        "timestamp": "2025-12-14T18:43:12.490517"
+    },
+    {
+        "type": "category_error",
+        "id": "487-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Rollerblading",
+        "timestamp": "2025-12-14T18:43:12.490646"
+    },
+    {
+        "type": "category_error",
+        "id": "487-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Rollerblading",
+        "timestamp": "2025-12-14T18:43:12.490647"
+    },
+    {
+        "type": "category_error",
+        "id": "487-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Rollerblading",
+        "timestamp": "2025-12-14T18:43:12.490648"
+    },
+    {
+        "type": "category_error",
+        "id": "487-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Rollerblading",
+        "timestamp": "2025-12-14T18:43:12.490649"
+    },
+    {
+        "type": "category_error",
+        "id": "8522-0",
+        "original_category": "Sports and Fitness",
+        "contaminated_category": "Food and Entertaining",
+        "timestamp": "2025-12-14T18:43:12.490778"
+    },
+    {
+        "type": "category_error",
+        "id": "8522-1",
+        "original_category": "Sports and Fitness",
+        "contaminated_category": "Food and Entertaining",
+        "timestamp": "2025-12-14T18:43:12.490779"
+    },
+    {
+        "type": "category_error",
+        "id": "8522-2",
+        "original_category": "Sports and Fitness",
+        "contaminated_category": "Food and Entertaining",
+        "timestamp": "2025-12-14T18:43:12.490780"
+    },
+    {
+        "type": "category_error",
+        "id": "8522-3",
+        "original_category": "Sports and Fitness",
+        "contaminated_category": "Food and Entertaining",
+        "timestamp": "2025-12-14T18:43:12.490780"
+    },
+    {
+        "type": "category_error",
+        "id": "7073-0",
+        "original_category": "Health",
+        "contaminated_category": "Sports and Fitness",
+        "timestamp": "2025-12-14T18:43:12.490915"
+    },
+    {
+        "type": "category_error",
+        "id": "7073-1",
+        "original_category": "Health",
+        "contaminated_category": "Sports and Fitness",
+        "timestamp": "2025-12-14T18:43:12.490916"
+    },
+    {
+        "type": "category_error",
+        "id": "7073-2",
+        "original_category": "Health",
+        "contaminated_category": "Sports and Fitness",
+        "timestamp": "2025-12-14T18:43:12.490917"
+    },
+    {
+        "type": "category_error",
+        "id": "7073-3",
+        "original_category": "Health",
+        "contaminated_category": "Sports and Fitness",
+        "timestamp": "2025-12-14T18:43:12.490918"
+    },
+    {
+        "type": "category_error",
+        "id": "33435-0",
+        "original_category": "Family Life",
+        "contaminated_category": "Uncategorized",
+        "timestamp": "2025-12-14T18:43:12.491056"
+    },
+    {
+        "type": "category_error",
+        "id": "33435-1",
+        "original_category": "Family Life",
+        "contaminated_category": "Uncategorized",
+        "timestamp": "2025-12-14T18:43:12.491057"
+    },
+    {
+        "type": "category_error",
+        "id": "33435-2",
+        "original_category": "Family Life",
+        "contaminated_category": "Uncategorized",
+        "timestamp": "2025-12-14T18:43:12.491058"
+    },
+    {
+        "type": "category_error",
+        "id": "33435-3",
+        "original_category": "Family Life",
+        "contaminated_category": "Uncategorized",
+        "timestamp": "2025-12-14T18:43:12.491059"
+    },
+    {
+        "type": "category_error",
+        "id": "6423-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Cars & Other Vehicles",
+        "timestamp": "2025-12-14T18:43:12.491197"
+    },
+    {
+        "type": "category_error",
+        "id": "6423-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Cars & Other Vehicles",
+        "timestamp": "2025-12-14T18:43:12.491198"
+    },
+    {
+        "type": "category_error",
+        "id": "6423-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Cars & Other Vehicles",
+        "timestamp": "2025-12-14T18:43:12.491199"
+    },
+    {
+        "type": "category_error",
+        "id": "6423-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Cars & Other Vehicles",
+        "timestamp": "2025-12-14T18:43:12.491200"
+    },
+    {
+        "type": "category_error",
+        "id": "28818-0",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Holidays and Traditions",
+        "timestamp": "2025-12-14T18:43:12.491341"
+    },
+    {
+        "type": "category_error",
+        "id": "28818-1",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Holidays and Traditions",
+        "timestamp": "2025-12-14T18:43:12.491343"
+    },
+    {
+        "type": "category_error",
+        "id": "28818-2",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Holidays and Traditions",
+        "timestamp": "2025-12-14T18:43:12.491344"
+    },
+    {
+        "type": "category_error",
+        "id": "28818-3",
+        "original_category": "Personal Care and Style",
+        "contaminated_category": "Holidays and Traditions",
+        "timestamp": "2025-12-14T18:43:12.491344"
+    },
+    {
+        "type": "category_error",
+        "id": "20278-0",
+        "original_category": "Health",
+        "contaminated_category": "Relationships",
+        "timestamp": "2025-12-14T18:43:12.491482"
+    },
+    {
+        "type": "category_error",
+        "id": "20278-1",
+        "original_category": "Health",
+        "contaminated_category": "Relationships",
+        "timestamp": "2025-12-14T18:43:12.491483"
+    },
+    {
+        "type": "category_error",
+        "id": "20278-2",
+        "original_category": "Health",
+        "contaminated_category": "Relationships",
+        "timestamp": "2025-12-14T18:43:12.491484"
+    },
+    {
+        "type": "category_error",
+        "id": "20278-3",
+        "original_category": "Health",
+        "contaminated_category": "Relationships",
+        "timestamp": "2025-12-14T18:43:12.491485"
+    }
+]

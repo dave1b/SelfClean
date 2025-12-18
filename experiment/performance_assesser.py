@@ -26,12 +26,8 @@ class PerformanceAssesser:
 
     def assess_performance(self) -> None:
         logger.info("Assessing performance of auto-cleaning...")
-        total_length = self.meta_data['dataset_size']
-        self._prepare_contamination_ids()
-        self._calculate_metrics()
         self.plotting()
         self.export_results()
-        self._log_results(total_length)
 
     def _prepare_contamination_ids(self) -> None:
         if self._has_single_id:
@@ -50,7 +46,6 @@ class PerformanceAssesser:
         self.fp = self._calculate_false_positives(positive_preds)
         self.fn = self._calculate_false_negatives()
         self.precision = self._calculate_precision()
-        self._calculate_ranked_labels()
 
     def _calculate_true_positives(self, positive_preds: dd.DataFrame) -> int:
         tp_single = 0
@@ -117,9 +112,10 @@ class PerformanceAssesser:
         return self.tp / (self.tp + self.fp) if (self.tp + self.fp) > 0 else 0.0
 
     def _calculate_ranked_labels(self) -> None:
+        logger.info("Calculating ranked labels...")
         if self._has_single_id:
             contamination_ids = set(self.contamination_log['id'].astype(str).dropna())
-            self.ranked_labels = self.predictions['id'].astype(str).isin(contamination_ids).values
+            self.ranked_labels = self.predictions['id'].astype(str).isin(contamination_ids)
         else:
             contamination_index = pd.MultiIndex.from_arrays([
                 self.contamination_log['id_1'].astype(str),
@@ -130,9 +126,14 @@ class PerformanceAssesser:
                 self.predictions['id_2'].astype(str)
             ])
             self.ranked_labels = pred_index.isin(contamination_index)
+        if self.output_path:
+            path = self.output_path / "ranked_labels"
+            packed = np.packbits(self.ranked_labels)
+            np.save(path, packed)
 
     def plotting(self) -> None:
-        calculate_scores_from_ranking(self.ranked_labels, path=self.output_path, log_dict=self.log_dict)
+        self._calculate_ranked_labels()
+        calculate_scores_from_ranking(self.ranked_labels, path=self.output_path, log_dict=self.log_dict, show_plots=False)
 
     def roc_curve(self) -> None:
         logger.info("Calculating AUC-ROC...")
@@ -157,26 +158,12 @@ class PerformanceAssesser:
         plt.tight_layout()
         if self.output_path:
             output_path = Path(self.output_path) / "result_roc.png"
-            output_path.parent.mkdir(parents=True, exist_ok=True)
-            counter = 1
-            while output_path.exists():
-                output_path = output_path.with_stem(f"result_roc_{counter}")
-                counter += 1
             plt.savefig(output_path)
             logger.info(f"ROC plot saved to {output_path}")
         plt.close()
         logger.info(f"Calculated ROC in {(time.time() - start_time) / 60:.2f} minutes, AUC: {self.auc:.4f}")
 
     def export_results(self) -> None:
-        metric_dict = {
-            'total_dataset_size': self.meta_data['dataset_size'],
-            'true_positives': self.tp,
-            'false_positives': self.fp,
-            'false_negatives': self.fn,
-            'precision': self.precision,
-            'auc_roc': self.auc
-        }
-        self.log_dict = {**self.log_dict, **metric_dict}
         df = pd.DataFrame([self.log_dict])
         if self.output_path:
             path = Path(self.output_path) / "result_metrics.csv"

@@ -196,6 +196,7 @@ class SelfCleanCleaner(
             IssueTypes.LABEL_ERRORS,
         ],
         data_type:  DataType = DataType.IMAGE,
+        autoclean: bool = False,
     ) -> tuple[IssueManager, dict]:
         return_dict = {}
         if IssueTypes.NEAR_DUPLICATES in issues_to_detect or IssueTypes.NEAR_DUPLICATES_Q in issues_to_detect:
@@ -268,9 +269,10 @@ class SelfCleanCleaner(
                     output_path=self.output_path,
                     figsize=self.figsize,
                 )
-        self.perform_auto_cleaning(
-            issue_manger=issue_manager,
-            return_dict=return_dict,
-            output_path=self.output_path,
-        )
+        if autoclean:
+            self.perform_auto_cleaning(
+                issue_manger=issue_manager,
+                return_dict=return_dict,
+                output_path=self.output_path,
+            )
         return issue_manager

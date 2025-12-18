@@ -21,6 +21,7 @@ class IssueManager:
     def __init__(self, issue_dict: dict, meta_data_dict: Optional[dict] = None):
         self.issue_dict = issue_dict
         self.meta_data_dict = meta_data_dict if meta_data_dict is not None else {}
+        self.metric_dict = {}
 
     def get_issues(
         self,

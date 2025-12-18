@@ -1,0 +1,1710 @@
+[
+    {
+        "type": "label_error",
+        "id": "833-0",
+        "original_label": 0,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.453974"
+    },
+    {
+        "type": "label_error",
+        "id": "833-1",
+        "original_label": 0,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.453976"
+    },
+    {
+        "type": "label_error",
+        "id": "10442-3",
+        "original_label": 3,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.454092"
+    },
+    {
+        "type": "label_error",
+        "id": "10442-1",
+        "original_label": 3,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.454094"
+    },
+    {
+        "type": "label_error",
+        "id": "12091-0",
+        "original_label": 0,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.454202"
+    },
+    {
+        "type": "label_error",
+        "id": "12091-3",
+        "original_label": 0,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.454204"
+    },
+    {
+        "type": "label_error",
+        "id": "1453-1",
+        "original_label": 1,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.454308"
+    },
+    {
+        "type": "label_error",
+        "id": "1453-3",
+        "original_label": 1,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.454309"
+    },
+    {
+        "type": "label_error",
+        "id": "5295-0",
+        "original_label": 0,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.454405"
+    },
+    {
+        "type": "label_error",
+        "id": "5295-3",
+        "original_label": 0,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.454406"
+    },
+    {
+        "type": "label_error",
+        "id": "39730-0",
+        "original_label": 0,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.454500"
+    },
+    {
+        "type": "label_error",
+        "id": "39730-1",
+        "original_label": 0,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.454501"
+    },
+    {
+        "type": "label_error",
+        "id": "21723-2",
+        "original_label": 2,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.454596"
+    },
+    {
+        "type": "label_error",
+        "id": "21723-3",
+        "original_label": 2,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.454597"
+    },
+    {
+        "type": "label_error",
+        "id": "24538-0",
+        "original_label": 0,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.454690"
+    },
+    {
+        "type": "label_error",
+        "id": "24538-2",
+        "original_label": 0,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.454691"
+    },
+    {
+        "type": "label_error",
+        "id": "20486-3",
+        "original_label": 3,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.454784"
+    },
+    {
+        "type": "label_error",
+        "id": "20486-1",
+        "original_label": 3,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.454785"
+    },
+    {
+        "type": "label_error",
+        "id": "18828-0",
+        "original_label": 0,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.454881"
+    },
+    {
+        "type": "label_error",
+        "id": "18828-1",
+        "original_label": 0,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.454882"
+    },
+    {
+        "type": "label_error",
+        "id": "16056-3",
+        "original_label": 3,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.454975"
+    },
+    {
+        "type": "label_error",
+        "id": "16056-2",
+        "original_label": 3,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.454976"
+    },
+    {
+        "type": "label_error",
+        "id": "20625-1",
+        "original_label": 1,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.455069"
+    },
+    {
+        "type": "label_error",
+        "id": "20625-3",
+        "original_label": 1,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.455070"
+    },
+    {
+        "type": "label_error",
+        "id": "37749-1",
+        "original_label": 1,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.455161"
+    },
+    {
+        "type": "label_error",
+        "id": "37749-0",
+        "original_label": 1,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.455162"
+    },
+    {
+        "type": "label_error",
+        "id": "10967-2",
+        "original_label": 2,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.455256"
+    },
+    {
+        "type": "label_error",
+        "id": "10967-1",
+        "original_label": 2,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.455257"
+    },
+    {
+        "type": "label_error",
+        "id": "43274-0",
+        "original_label": 0,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.455351"
+    },
+    {
+        "type": "label_error",
+        "id": "43274-2",
+        "original_label": 0,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.455352"
+    },
+    {
+        "type": "label_error",
+        "id": "34584-2",
+        "original_label": 2,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.455446"
+    },
+    {
+        "type": "label_error",
+        "id": "34584-1",
+        "original_label": 2,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.455447"
+    },
+    {
+        "type": "label_error",
+        "id": "33220-3",
+        "original_label": 3,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.455540"
+    },
+    {
+        "type": "label_error",
+        "id": "33220-2",
+        "original_label": 3,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.455541"
+    },
+    {
+        "type": "label_error",
+        "id": "14116-2",
+        "original_label": 2,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.455633"
+    },
+    {
+        "type": "label_error",
+        "id": "14116-3",
+        "original_label": 2,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.455634"
+    },
+    {
+        "type": "label_error",
+        "id": "594-2",
+        "original_label": 2,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.455726"
+    },
+    {
+        "type": "label_error",
+        "id": "594-0",
+        "original_label": 2,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.455727"
+    },
+    {
+        "type": "label_error",
+        "id": "41618-1",
+        "original_label": 1,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.455820"
+    },
+    {
+        "type": "label_error",
+        "id": "41618-0",
+        "original_label": 1,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.455821"
+    },
+    {
+        "type": "label_error",
+        "id": "28325-1",
+        "original_label": 1,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.455913"
+    },
+    {
+        "type": "label_error",
+        "id": "28325-2",
+        "original_label": 1,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.455914"
+    },
+    {
+        "type": "label_error",
+        "id": "16911-1",
+        "original_label": 1,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.456007"
+    },
+    {
+        "type": "label_error",
+        "id": "16911-3",
+        "original_label": 1,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.456008"
+    },
+    {
+        "type": "label_error",
+        "id": "32747-2",
+        "original_label": 2,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.456102"
+    },
+    {
+        "type": "label_error",
+        "id": "32747-1",
+        "original_label": 2,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.456104"
+    },
+    {
+        "type": "label_error",
+        "id": "29643-1",
+        "original_label": 1,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.456197"
+    },
+    {
+        "type": "label_error",
+        "id": "29643-0",
+        "original_label": 1,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.456198"
+    },
+    {
+        "type": "label_error",
+        "id": "5086-0",
+        "original_label": 0,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.456291"
+    },
+    {
+        "type": "label_error",
+        "id": "5086-3",
+        "original_label": 0,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.456293"
+    },
+    {
+        "type": "label_error",
+        "id": "24124-2",
+        "original_label": 2,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.456387"
+    },
+    {
+        "type": "label_error",
+        "id": "24124-0",
+        "original_label": 2,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.456388"
+    },
+    {
+        "type": "label_error",
+        "id": "17659-2",
+        "original_label": 2,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.456481"
+    },
+    {
+        "type": "label_error",
+        "id": "17659-0",
+        "original_label": 2,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.456482"
+    },
+    {
+        "type": "label_error",
+        "id": "2027-1",
+        "original_label": 1,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.456577"
+    },
+    {
+        "type": "label_error",
+        "id": "2027-3",
+        "original_label": 1,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.456578"
+    },
+    {
+        "type": "label_error",
+        "id": "8123-3",
+        "original_label": 3,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.456672"
+    },
+    {
+        "type": "label_error",
+        "id": "8123-0",
+        "original_label": 3,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.456673"
+    },
+    {
+        "type": "label_error",
+        "id": "11397-0",
+        "original_label": 0,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.456769"
+    },
+    {
+        "type": "label_error",
+        "id": "11397-3",
+        "original_label": 0,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.456770"
+    },
+    {
+        "type": "label_error",
+        "id": "42525-0",
+        "original_label": 0,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.456864"
+    },
+    {
+        "type": "label_error",
+        "id": "42525-1",
+        "original_label": 0,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.456865"
+    },
+    {
+        "type": "label_error",
+        "id": "46524-0",
+        "original_label": 0,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.456959"
+    },
+    {
+        "type": "label_error",
+        "id": "46524-1",
+        "original_label": 0,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.456961"
+    },
+    {
+        "type": "label_error",
+        "id": "47398-1",
+        "original_label": 1,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.457054"
+    },
+    {
+        "type": "label_error",
+        "id": "47398-2",
+        "original_label": 1,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.457056"
+    },
+    {
+        "type": "label_error",
+        "id": "7137-3",
+        "original_label": 3,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.457148"
+    },
+    {
+        "type": "label_error",
+        "id": "7137-1",
+        "original_label": 3,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.457149"
+    },
+    {
+        "type": "label_error",
+        "id": "23329-1",
+        "original_label": 1,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.457243"
+    },
+    {
+        "type": "label_error",
+        "id": "23329-3",
+        "original_label": 1,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.457244"
+    },
+    {
+        "type": "label_error",
+        "id": "3353-0",
+        "original_label": 0,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.457339"
+    },
+    {
+        "type": "label_error",
+        "id": "3353-1",
+        "original_label": 0,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.457340"
+    },
+    {
+        "type": "label_error",
+        "id": "40811-0",
+        "original_label": 0,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.457434"
+    },
+    {
+        "type": "label_error",
+        "id": "40811-3",
+        "original_label": 0,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.457435"
+    },
+    {
+        "type": "label_error",
+        "id": "15758-3",
+        "original_label": 3,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.457530"
+    },
+    {
+        "type": "label_error",
+        "id": "15758-1",
+        "original_label": 3,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.457531"
+    },
+    {
+        "type": "label_error",
+        "id": "5014-0",
+        "original_label": 0,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.457625"
+    },
+    {
+        "type": "label_error",
+        "id": "5014-1",
+        "original_label": 0,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.457633"
+    },
+    {
+        "type": "label_error",
+        "id": "42830-3",
+        "original_label": 3,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.457734"
+    },
+    {
+        "type": "label_error",
+        "id": "42830-0",
+        "original_label": 3,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.457735"
+    },
+    {
+        "type": "label_error",
+        "id": "46745-2",
+        "original_label": 2,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.457829"
+    },
+    {
+        "type": "label_error",
+        "id": "46745-3",
+        "original_label": 2,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.457830"
+    },
+    {
+        "type": "label_error",
+        "id": "45548-3",
+        "original_label": 3,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.457923"
+    },
+    {
+        "type": "label_error",
+        "id": "45548-2",
+        "original_label": 3,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.457924"
+    },
+    {
+        "type": "label_error",
+        "id": "31206-3",
+        "original_label": 3,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.458017"
+    },
+    {
+        "type": "label_error",
+        "id": "31206-2",
+        "original_label": 3,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.458018"
+    },
+    {
+        "type": "label_error",
+        "id": "32920-3",
+        "original_label": 3,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.458112"
+    },
+    {
+        "type": "label_error",
+        "id": "32920-1",
+        "original_label": 3,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.458113"
+    },
+    {
+        "type": "label_error",
+        "id": "26302-0",
+        "original_label": 0,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.458208"
+    },
+    {
+        "type": "label_error",
+        "id": "26302-3",
+        "original_label": 0,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.458209"
+    },
+    {
+        "type": "label_error",
+        "id": "22127-1",
+        "original_label": 1,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.458302"
+    },
+    {
+        "type": "label_error",
+        "id": "22127-2",
+        "original_label": 1,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.458304"
+    },
+    {
+        "type": "label_error",
+        "id": "8253-1",
+        "original_label": 1,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.458399"
+    },
+    {
+        "type": "label_error",
+        "id": "8253-2",
+        "original_label": 1,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.458401"
+    },
+    {
+        "type": "label_error",
+        "id": "29199-1",
+        "original_label": 1,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.458497"
+    },
+    {
+        "type": "label_error",
+        "id": "29199-3",
+        "original_label": 1,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.458498"
+    },
+    {
+        "type": "label_error",
+        "id": "12746-1",
+        "original_label": 1,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.458594"
+    },
+    {
+        "type": "label_error",
+        "id": "12746-0",
+        "original_label": 1,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.458596"
+    },
+    {
+        "type": "label_error",
+        "id": "26295-0",
+        "original_label": 0,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.458691"
+    },
+    {
+        "type": "label_error",
+        "id": "26295-1",
+        "original_label": 0,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.458692"
+    },
+    {
+        "type": "label_error",
+        "id": "4616-1",
+        "original_label": 1,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.458794"
+    },
+    {
+        "type": "label_error",
+        "id": "4616-3",
+        "original_label": 1,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.458795"
+    },
+    {
+        "type": "label_error",
+        "id": "24823-0",
+        "original_label": 0,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.458889"
+    },
+    {
+        "type": "label_error",
+        "id": "24823-1",
+        "original_label": 0,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.458890"
+    },
+    {
+        "type": "label_error",
+        "id": "2469-2",
+        "original_label": 2,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.458983"
+    },
+    {
+        "type": "label_error",
+        "id": "2469-1",
+        "original_label": 2,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.458984"
+    },
+    {
+        "type": "label_error",
+        "id": "24405-2",
+        "original_label": 2,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.459076"
+    },
+    {
+        "type": "label_error",
+        "id": "24405-0",
+        "original_label": 2,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.459077"
+    },
+    {
+        "type": "label_error",
+        "id": "42772-3",
+        "original_label": 3,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.459170"
+    },
+    {
+        "type": "label_error",
+        "id": "42772-2",
+        "original_label": 3,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.459172"
+    },
+    {
+        "type": "label_error",
+        "id": "2120-3",
+        "original_label": 3,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.459264"
+    },
+    {
+        "type": "label_error",
+        "id": "2120-2",
+        "original_label": 3,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.459265"
+    },
+    {
+        "type": "label_error",
+        "id": "24228-3",
+        "original_label": 3,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.459359"
+    },
+    {
+        "type": "label_error",
+        "id": "24228-2",
+        "original_label": 3,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.459360"
+    },
+    {
+        "type": "label_error",
+        "id": "22070-2",
+        "original_label": 2,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.459453"
+    },
+    {
+        "type": "label_error",
+        "id": "22070-3",
+        "original_label": 2,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.459454"
+    },
+    {
+        "type": "label_error",
+        "id": "13309-0",
+        "original_label": 0,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.459547"
+    },
+    {
+        "type": "label_error",
+        "id": "13309-1",
+        "original_label": 0,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.459548"
+    },
+    {
+        "type": "label_error",
+        "id": "20008-1",
+        "original_label": 1,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.459639"
+    },
+    {
+        "type": "label_error",
+        "id": "20008-2",
+        "original_label": 1,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.459640"
+    },
+    {
+        "type": "label_error",
+        "id": "18222-1",
+        "original_label": 1,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.459732"
+    },
+    {
+        "type": "label_error",
+        "id": "18222-0",
+        "original_label": 1,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.459733"
+    },
+    {
+        "type": "label_error",
+        "id": "44046-1",
+        "original_label": 1,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.459827"
+    },
+    {
+        "type": "label_error",
+        "id": "44046-0",
+        "original_label": 1,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.459828"
+    },
+    {
+        "type": "label_error",
+        "id": "42364-1",
+        "original_label": 1,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.459920"
+    },
+    {
+        "type": "label_error",
+        "id": "42364-3",
+        "original_label": 1,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.459921"
+    },
+    {
+        "type": "label_error",
+        "id": "13024-0",
+        "original_label": 0,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.460013"
+    },
+    {
+        "type": "label_error",
+        "id": "13024-2",
+        "original_label": 0,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.460014"
+    },
+    {
+        "type": "label_error",
+        "id": "45805-0",
+        "original_label": 0,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.460106"
+    },
+    {
+        "type": "label_error",
+        "id": "45805-3",
+        "original_label": 0,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.460107"
+    },
+    {
+        "type": "label_error",
+        "id": "7360-0",
+        "original_label": 0,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.460215"
+    },
+    {
+        "type": "label_error",
+        "id": "7360-3",
+        "original_label": 0,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.460216"
+    },
+    {
+        "type": "label_error",
+        "id": "6765-3",
+        "original_label": 3,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.460320"
+    },
+    {
+        "type": "label_error",
+        "id": "6765-1",
+        "original_label": 3,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.460321"
+    },
+    {
+        "type": "label_error",
+        "id": "3207-1",
+        "original_label": 1,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.460427"
+    },
+    {
+        "type": "label_error",
+        "id": "3207-3",
+        "original_label": 1,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.460428"
+    },
+    {
+        "type": "label_error",
+        "id": "7210-3",
+        "original_label": 3,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.460534"
+    },
+    {
+        "type": "label_error",
+        "id": "7210-0",
+        "original_label": 3,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.460535"
+    },
+    {
+        "type": "label_error",
+        "id": "11789-3",
+        "original_label": 3,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.460633"
+    },
+    {
+        "type": "label_error",
+        "id": "11789-2",
+        "original_label": 3,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.460634"
+    },
+    {
+        "type": "label_error",
+        "id": "8621-1",
+        "original_label": 1,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.460729"
+    },
+    {
+        "type": "label_error",
+        "id": "8621-0",
+        "original_label": 1,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.460730"
+    },
+    {
+        "type": "label_error",
+        "id": "49917-0",
+        "original_label": 0,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.460825"
+    },
+    {
+        "type": "label_error",
+        "id": "49917-2",
+        "original_label": 0,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.460826"
+    },
+    {
+        "type": "label_error",
+        "id": "45526-0",
+        "original_label": 0,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.460921"
+    },
+    {
+        "type": "label_error",
+        "id": "45526-2",
+        "original_label": 0,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.460922"
+    },
+    {
+        "type": "label_error",
+        "id": "31734-0",
+        "original_label": 0,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.461016"
+    },
+    {
+        "type": "label_error",
+        "id": "31734-1",
+        "original_label": 0,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.461017"
+    },
+    {
+        "type": "label_error",
+        "id": "6642-1",
+        "original_label": 1,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.461108"
+    },
+    {
+        "type": "label_error",
+        "id": "6642-2",
+        "original_label": 1,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.461110"
+    },
+    {
+        "type": "label_error",
+        "id": "4954-3",
+        "original_label": 3,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.461201"
+    },
+    {
+        "type": "label_error",
+        "id": "4954-0",
+        "original_label": 3,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.461202"
+    },
+    {
+        "type": "label_error",
+        "id": "26452-2",
+        "original_label": 2,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.461294"
+    },
+    {
+        "type": "label_error",
+        "id": "26452-1",
+        "original_label": 2,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.461295"
+    },
+    {
+        "type": "label_error",
+        "id": "9603-3",
+        "original_label": 3,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.461388"
+    },
+    {
+        "type": "label_error",
+        "id": "9603-0",
+        "original_label": 3,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.461389"
+    },
+    {
+        "type": "label_error",
+        "id": "19829-0",
+        "original_label": 0,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.461482"
+    },
+    {
+        "type": "label_error",
+        "id": "19829-2",
+        "original_label": 0,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.461483"
+    },
+    {
+        "type": "label_error",
+        "id": "29758-0",
+        "original_label": 0,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.461576"
+    },
+    {
+        "type": "label_error",
+        "id": "29758-3",
+        "original_label": 0,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.461577"
+    },
+    {
+        "type": "label_error",
+        "id": "7297-0",
+        "original_label": 0,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.461671"
+    },
+    {
+        "type": "label_error",
+        "id": "7297-2",
+        "original_label": 0,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.461672"
+    },
+    {
+        "type": "label_error",
+        "id": "5466-0",
+        "original_label": 0,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.461765"
+    },
+    {
+        "type": "label_error",
+        "id": "5466-3",
+        "original_label": 0,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.461766"
+    },
+    {
+        "type": "label_error",
+        "id": "11760-2",
+        "original_label": 2,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.461860"
+    },
+    {
+        "type": "label_error",
+        "id": "11760-0",
+        "original_label": 2,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.461862"
+    },
+    {
+        "type": "label_error",
+        "id": "46937-3",
+        "original_label": 3,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.461955"
+    },
+    {
+        "type": "label_error",
+        "id": "46937-2",
+        "original_label": 3,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.461956"
+    },
+    {
+        "type": "label_error",
+        "id": "12850-3",
+        "original_label": 3,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.462048"
+    },
+    {
+        "type": "label_error",
+        "id": "12850-1",
+        "original_label": 3,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.462049"
+    },
+    {
+        "type": "label_error",
+        "id": "23862-0",
+        "original_label": 0,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.462143"
+    },
+    {
+        "type": "label_error",
+        "id": "23862-1",
+        "original_label": 0,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.462144"
+    },
+    {
+        "type": "label_error",
+        "id": "33530-0",
+        "original_label": 0,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.462237"
+    },
+    {
+        "type": "label_error",
+        "id": "33530-1",
+        "original_label": 0,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.462239"
+    },
+    {
+        "type": "label_error",
+        "id": "33178-1",
+        "original_label": 1,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.462333"
+    },
+    {
+        "type": "label_error",
+        "id": "33178-2",
+        "original_label": 1,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.462334"
+    },
+    {
+        "type": "label_error",
+        "id": "20599-0",
+        "original_label": 0,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.462428"
+    },
+    {
+        "type": "label_error",
+        "id": "20599-2",
+        "original_label": 0,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.462429"
+    },
+    {
+        "type": "label_error",
+        "id": "33501-2",
+        "original_label": 2,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.462523"
+    },
+    {
+        "type": "label_error",
+        "id": "33501-1",
+        "original_label": 2,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.462525"
+    },
+    {
+        "type": "label_error",
+        "id": "18185-3",
+        "original_label": 3,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.462618"
+    },
+    {
+        "type": "label_error",
+        "id": "18185-0",
+        "original_label": 3,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.462619"
+    },
+    {
+        "type": "label_error",
+        "id": "9473-2",
+        "original_label": 2,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.462713"
+    },
+    {
+        "type": "label_error",
+        "id": "9473-0",
+        "original_label": 2,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.462714"
+    },
+    {
+        "type": "label_error",
+        "id": "35851-1",
+        "original_label": 1,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.462809"
+    },
+    {
+        "type": "label_error",
+        "id": "35851-2",
+        "original_label": 1,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.462810"
+    },
+    {
+        "type": "label_error",
+        "id": "3691-2",
+        "original_label": 2,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.462902"
+    },
+    {
+        "type": "label_error",
+        "id": "3691-1",
+        "original_label": 2,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.462903"
+    },
+    {
+        "type": "label_error",
+        "id": "13872-3",
+        "original_label": 3,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.462994"
+    },
+    {
+        "type": "label_error",
+        "id": "13872-2",
+        "original_label": 3,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.462995"
+    },
+    {
+        "type": "label_error",
+        "id": "35822-1",
+        "original_label": 1,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.463088"
+    },
+    {
+        "type": "label_error",
+        "id": "35822-3",
+        "original_label": 1,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.463089"
+    },
+    {
+        "type": "label_error",
+        "id": "17656-0",
+        "original_label": 0,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.463183"
+    },
+    {
+        "type": "label_error",
+        "id": "17656-2",
+        "original_label": 0,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.463184"
+    },
+    {
+        "type": "label_error",
+        "id": "15205-1",
+        "original_label": 1,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.463276"
+    },
+    {
+        "type": "label_error",
+        "id": "15205-2",
+        "original_label": 1,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.463277"
+    },
+    {
+        "type": "label_error",
+        "id": "12306-3",
+        "original_label": 3,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.463368"
+    },
+    {
+        "type": "label_error",
+        "id": "12306-0",
+        "original_label": 3,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.463369"
+    },
+    {
+        "type": "label_error",
+        "id": "39852-2",
+        "original_label": 2,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.463463"
+    },
+    {
+        "type": "label_error",
+        "id": "39852-1",
+        "original_label": 2,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.463464"
+    },
+    {
+        "type": "label_error",
+        "id": "34803-2",
+        "original_label": 2,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.463559"
+    },
+    {
+        "type": "label_error",
+        "id": "34803-0",
+        "original_label": 2,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.463560"
+    },
+    {
+        "type": "label_error",
+        "id": "23979-2",
+        "original_label": 2,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.463652"
+    },
+    {
+        "type": "label_error",
+        "id": "23979-1",
+        "original_label": 2,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.463653"
+    },
+    {
+        "type": "label_error",
+        "id": "14447-2",
+        "original_label": 2,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.463747"
+    },
+    {
+        "type": "label_error",
+        "id": "14447-0",
+        "original_label": 2,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.463748"
+    },
+    {
+        "type": "label_error",
+        "id": "44709-0",
+        "original_label": 0,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.463842"
+    },
+    {
+        "type": "label_error",
+        "id": "44709-3",
+        "original_label": 0,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.463843"
+    },
+    {
+        "type": "label_error",
+        "id": "1199-0",
+        "original_label": 0,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.463936"
+    },
+    {
+        "type": "label_error",
+        "id": "1199-3",
+        "original_label": 0,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.463937"
+    },
+    {
+        "type": "label_error",
+        "id": "38268-2",
+        "original_label": 2,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.464031"
+    },
+    {
+        "type": "label_error",
+        "id": "38268-1",
+        "original_label": 2,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.464032"
+    },
+    {
+        "type": "label_error",
+        "id": "26815-2",
+        "original_label": 2,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.464127"
+    },
+    {
+        "type": "label_error",
+        "id": "26815-0",
+        "original_label": 2,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.464129"
+    },
+    {
+        "type": "label_error",
+        "id": "30291-1",
+        "original_label": 1,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.464235"
+    },
+    {
+        "type": "label_error",
+        "id": "30291-0",
+        "original_label": 1,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.464236"
+    },
+    {
+        "type": "label_error",
+        "id": "4553-1",
+        "original_label": 1,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.464340"
+    },
+    {
+        "type": "label_error",
+        "id": "4553-0",
+        "original_label": 1,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.464341"
+    },
+    {
+        "type": "label_error",
+        "id": "31030-1",
+        "original_label": 1,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.464448"
+    },
+    {
+        "type": "label_error",
+        "id": "31030-0",
+        "original_label": 1,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.464449"
+    },
+    {
+        "type": "label_error",
+        "id": "49597-3",
+        "original_label": 3,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.464555"
+    },
+    {
+        "type": "label_error",
+        "id": "49597-1",
+        "original_label": 3,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.464556"
+    },
+    {
+        "type": "label_error",
+        "id": "41368-1",
+        "original_label": 1,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.464649"
+    },
+    {
+        "type": "label_error",
+        "id": "41368-2",
+        "original_label": 1,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.464650"
+    },
+    {
+        "type": "label_error",
+        "id": "24131-2",
+        "original_label": 2,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.464742"
+    },
+    {
+        "type": "label_error",
+        "id": "24131-1",
+        "original_label": 2,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.464744"
+    },
+    {
+        "type": "label_error",
+        "id": "7966-3",
+        "original_label": 3,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.464836"
+    },
+    {
+        "type": "label_error",
+        "id": "7966-1",
+        "original_label": 3,
+        "contaminated_label": 1,
+        "timestamp": "2025-12-14T18:43:12.464837"
+    },
+    {
+        "type": "label_error",
+        "id": "36830-2",
+        "original_label": 2,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.464930"
+    },
+    {
+        "type": "label_error",
+        "id": "36830-3",
+        "original_label": 2,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.464931"
+    },
+    {
+        "type": "label_error",
+        "id": "29900-2",
+        "original_label": 2,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.465025"
+    },
+    {
+        "type": "label_error",
+        "id": "29900-3",
+        "original_label": 2,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.465026"
+    },
+    {
+        "type": "label_error",
+        "id": "33209-1",
+        "original_label": 1,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.465120"
+    },
+    {
+        "type": "label_error",
+        "id": "33209-0",
+        "original_label": 1,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.465121"
+    },
+    {
+        "type": "label_error",
+        "id": "20287-2",
+        "original_label": 2,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.465214"
+    },
+    {
+        "type": "label_error",
+        "id": "20287-3",
+        "original_label": 2,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.465215"
+    },
+    {
+        "type": "label_error",
+        "id": "21081-2",
+        "original_label": 2,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.465328"
+    },
+    {
+        "type": "label_error",
+        "id": "21081-3",
+        "original_label": 2,
+        "contaminated_label": 3,
+        "timestamp": "2025-12-14T18:43:12.465329"
+    },
+    {
+        "type": "label_error",
+        "id": "21851-2",
+        "original_label": 2,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.465422"
+    },
+    {
+        "type": "label_error",
+        "id": "21851-0",
+        "original_label": 2,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.465423"
+    },
+    {
+        "type": "label_error",
+        "id": "526-3",
+        "original_label": 3,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.465516"
+    },
+    {
+        "type": "label_error",
+        "id": "526-2",
+        "original_label": 3,
+        "contaminated_label": 2,
+        "timestamp": "2025-12-14T18:43:12.465517"
+    },
+    {
+        "type": "label_error",
+        "id": "41481-2",
+        "original_label": 2,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.465612"
+    },
+    {
+        "type": "label_error",
+        "id": "41481-0",
+        "original_label": 2,
+        "contaminated_label": 0,
+        "timestamp": "2025-12-14T18:43:12.465613"
+    }
+]

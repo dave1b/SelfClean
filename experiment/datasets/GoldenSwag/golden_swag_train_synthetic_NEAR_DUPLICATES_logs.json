@@ -1,0 +1,490 @@
+[
+    {
+        "type": "answer_duplicate",
+        "id_1": "4868-1",
+        "id_2": "4868-4",
+        "original_ending": "[step] The first stile is where you will be fastening the keyway to the lock with a copper screwdriver and keyhole pin, so ensure the lock is firmly in place before proceeding. [title] Make sure the correct keyway channel is located between the floor and door jamb.",
+        "contaminated_ending": "[step] Begin by securing the keyway to the lock using a copper screwdriver and keyhole pin at the initial stile\u2014double-check that the lock is properly positioned first. [title] Verify that the appropriate keyway channel is aligned between the floor and the door frame.",
+        "timestamp": "2025-12-14T20:39:02.803671"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "28845-2",
+        "id_2": "28845-4",
+        "original_ending": "You will also need a towel to dry the areas you will be sticking your hair so you can be ready to cut. [substeps] You will be creating a base from your bobby pins and the straws will help with this step.",
+        "contaminated_ending": "You\u2019ll also require a towel to pat dry the sections where you\u2019ll be attaching your hair, ensuring they\u2019re prepared for cutting. [substeps] The bobby pins will form the foundation, and the straws will assist in completing this part of the process.",
+        "timestamp": "2025-12-14T20:39:04.947642"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "22333-2",
+        "id_2": "22333-4",
+        "original_ending": "[substeps] Store leftover tomatoes in a resealable plastic baggie. Do not use canned tomatoes in markets, at outdoor fairs, grocery stores, or other places that tend to use raw vegetables.",
+        "contaminated_ending": "Store any remaining tomatoes in a sealable plastic bag. Avoid using canned tomatoes from markets, outdoor fairs, grocery stores, or similar locations where raw produce is commonly sold.",
+        "timestamp": "2025-12-14T20:39:06.657070"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "22112-0",
+        "id_2": "22112-4",
+        "original_ending": "If the leak is noticeable, cover the pipe with something sturdy. You may wish to wear goggles and gloves to protect your eyes from the smoke.",
+        "contaminated_ending": "If the leak is visible, shield the pipe using a durable material. Consider putting on goggles and gloves to safeguard your eyes from the fumes.",
+        "timestamp": "2025-12-14T20:39:08.300792"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "42413-3",
+        "id_2": "42413-4",
+        "original_ending": "No matter if they don't want to join you, this approach will help keep people engaged. If you can't be seated at any one spot, sit in a more cramped position.",
+        "contaminated_ending": "Even if they\u2019re reluctant to participate, this method will still hold their attention. When you can\u2019t occupy a single spot, make do with a tighter space instead.",
+        "timestamp": "2025-12-14T20:39:09.967737"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "33736-1",
+        "id_2": "33736-4",
+        "original_ending": "For some sex, blood is exchanged (for men) or saliva (for women). Some people also engage in sexual activities like kissing, touching, and making love without a condom.",
+        "contaminated_ending": "For certain sexual encounters, blood may be shared (in the case of men) or saliva (for women). Others may participate in intimate acts such as kissing, physical contact, and intercourse without using protection.",
+        "timestamp": "2025-12-14T20:39:11.764723"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "719-0",
+        "id_2": "719-4",
+        "original_ending": "The flavor and texture will be slightly different than the chocolate chips, but it will also cook better when it's mixed into the batter. [title] Add the dry ingredients to the flour and milk.",
+        "contaminated_ending": "The taste and consistency may vary a little from the chocolate chips, but blending it into the batter will also improve how it bakes. [title] Combine the dry ingredients with the flour and milk.",
+        "timestamp": "2025-12-14T20:39:13.963732"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "20170-0",
+        "id_2": "20170-4",
+        "original_ending": "[substeps] Check to make sure the base remains inside the vehicle, and on the exterior of the vehicle, but not in any of the rear-facing seats. Lift the base out of the backseat and place it on a table in front of you.",
+        "contaminated_ending": "Verify that the base stays inside the vehicle but is positioned on the outer side\u2014not in any of the rear-facing seats. Remove the base from the backseat and set it on a table in front of you.",
+        "timestamp": "2025-12-14T20:39:24.260142"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "592-0",
+        "id_2": "592-4",
+        "original_ending": "Smaller dogs taste better when they consume huge quantities of meat. Only feed your dog these ingredients if you are certain that the food you are feeding it is safe, washable, and high quality.",
+        "contaminated_ending": "Smaller dogs have a richer flavor when their diet includes large amounts of meat. Make sure to only give your dog these ingredients if you\u2019re confident the food is safe, easy to clean, and of premium quality.",
+        "timestamp": "2025-12-14T20:39:26.046445"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "40932-2",
+        "id_2": "40932-4",
+        "original_ending": "[title] Choose the appropriate app (fitbit flex main) to track you, such as \" fitbit fitbit xp k \". [step] For most such apps, you have to use a virtual recorder with a 500 meter screen.",
+        "contaminated_ending": "[Title] Select the right app (like *Fitbit Flex Main*) to monitor your activity, such as *\"Fitbit XP K.\"*  [Step] With many of these apps, you\u2019ll need to use a virtual recorder featuring a 500-meter display.",
+        "timestamp": "2025-12-14T20:39:30.448297"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "2911-2",
+        "id_2": "2911-4",
+        "original_ending": "Your natural hair color can be difficult to figure out, so it helps to know which colors you want to correct before beginning shampooing. [substeps] To get a sense of what tones you want to correct, you can use corticosteroids (marijuana).",
+        "contaminated_ending": "Your original hair shade may be tricky to determine, so it\u2019s useful to identify which tones you\u2019d like to adjust before you start washing. [substeps] To gauge the hues you want to neutralize, corticosteroids (such as marijuana) can be used.",
+        "timestamp": "2025-12-14T20:39:32.943296"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "41180-1",
+        "id_2": "41180-4",
+        "original_ending": "comes on and starts using his shovel to help start the fire.",
+        "contaminated_ending": "begins by grabbing his shovel and uses it to assist in getting the fire going.",
+        "timestamp": "2025-12-14T20:39:36.582281"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "41168-3",
+        "id_2": "41168-4",
+        "original_ending": "[step] This is the grip you can get to hold the child's scissors so as to position them correctly. [substeps] Hold the teacher's scissors straight up.",
+        "contaminated_ending": "Here\u2019s how you can grasp the child\u2019s scissors to ensure proper positioning. First, keep the teacher\u2019s scissors upright.",
+        "timestamp": "2025-12-14T20:39:38.071252"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "29308-0",
+        "id_2": "29308-4",
+        "original_ending": "Lay a drop of any size even into the fold. If it is not flat, it might leak.",
+        "contaminated_ending": "Place a droplet of any amount even within the crease. If the surface isn\u2019t level, it could spill.",
+        "timestamp": "2025-12-14T20:39:39.680062"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "30111-3",
+        "id_2": "30111-4",
+        "original_ending": "These women are not taken seriously and girls who find themselves standing around this potty seat several times a day can be left out of urine, which is why you should let other women go public. It's one of the benefits of this car, if you have more than one.",
+        "contaminated_ending": "These women often face dismissal, and young girls who frequently end up hovering near this toilet seat multiple times a day may miss out on urinating\u2014reason enough to encourage other women to use public restrooms. It\u2019s one of the perks of this vehicle, especially when you have multiple passengers.",
+        "timestamp": "2025-12-14T20:39:42.020251"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "21992-3",
+        "id_2": "21992-4",
+        "original_ending": "Use a lubricant such as cleanser or lotion that has a micro-moisture. [substeps] Dry your shoes completely with a clean paper towel before cleaning them.",
+        "contaminated_ending": "Apply a moisturizing product like a gentle cleanser or lotion containing micro-hydration. [substeps] Make sure your shoes are fully dried with a fresh paper towel before you begin cleaning.",
+        "timestamp": "2025-12-14T20:39:43.741249"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "11688-3",
+        "id_2": "11688-4",
+        "original_ending": "[step] Check to see if the rice is very hot. If the rice is very cold, add water and knead it on your face for 15 to 20 minutes.",
+        "contaminated_ending": "Verify whether the rice is scalding hot. Should it feel quite cold, mix in some water and gently massage it onto your face for about 15 to 20 minutes.",
+        "timestamp": "2025-12-14T20:39:45.503038"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "28862-0",
+        "id_2": "28862-4",
+        "original_ending": "[step] A neutral person has an opportunity to assess each family member's side of the argument and decides who can resolve the situation. [substeps] Send your family members to a mediator to discuss a possible solution.",
+        "contaminated_ending": "A neutral third party can evaluate the perspectives of each family member in the dispute and determines who is best suited to address the issue. [substeps] Arrange for your family members to meet with a mediator to explore potential resolutions.",
+        "timestamp": "2025-12-14T20:39:47.140965"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "32550-1",
+        "id_2": "32550-4",
+        "original_ending": "Do not put on jewelry to impress clients and other interested people. The rest of your evening will be spent on reflective or statement jewelry.",
+        "contaminated_ending": "Avoid wearing jewelry just to make an impression on clients or other interested parties. Instead, focus on reflective or statement pieces for the remainder of the evening.",
+        "timestamp": "2025-12-14T20:39:49.145755"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "9515-2",
+        "id_2": "9515-4",
+        "original_ending": "If you're really into it, leave garbage around your walls and furniture and knock around some boxes. [substeps] Alternatively, if you're in a particularly bad mood, you could hang out with a friend who's unlikely to find trash, like a teddy bear.",
+        "contaminated_ending": "If you're truly committed, scatter trash near your walls and furniture and shuffle a few boxes around. [substeps] Or, if you're feeling especially irritable, you might spend time with a companion who won\u2019t mind the mess\u2014say, a stuffed animal.",
+        "timestamp": "2025-12-14T20:39:51.746756"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "23365-3",
+        "id_2": "23365-4",
+        "original_ending": "You can use some scrap paper, roll paper, recycled paper or construction paper. [title] Take a piece of tissue paper, toilet paper, or any other paper you have that has color on it.",
+        "contaminated_ending": "You might opt for scrap paper, rolled paper, repurposed paper, or even construction paper. [title] Grab a sheet of tissue paper, toilet paper, or whatever colored paper you have available.",
+        "timestamp": "2025-12-14T20:40:02.515602"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "30117-1",
+        "id_2": "30117-4",
+        "original_ending": "[step] To address the ingrown hairs or scars, apply ice to the area. This will reduce blood flow to these areas and reduce your risk of infection or other noticeable scarring.",
+        "contaminated_ending": "To help with ingrown hairs or scarring, place ice on the affected spot. Doing so will minimize blood circulation in that area and lower the chances of infection or visible scarring.",
+        "timestamp": "2025-12-14T20:40:04.264395"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "19452-1",
+        "id_2": "19452-4",
+        "original_ending": "[title] Write down any telephone numbers or personal information you have left behind. [step] It may be helpful to write down your workplace phone numbers if you can only remember them upon returning to work.",
+        "contaminated_ending": "[Title] Jot down any phone numbers or personal details you might have forgotten.  [Step] You may find it useful to record your work contact numbers if you only recall them once you\u2019re back at the office.",
+        "timestamp": "2025-12-14T20:40:07.534852"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "40921-1",
+        "id_2": "40921-4",
+        "original_ending": "When you begin braiding your hair, do not pat your locks dry. Instead, work a small amount of shampoo (coconut hair shampoo) into your hands and massage the shampoo into your hair.",
+        "contaminated_ending": "When starting to braid your hair, avoid drying it by patting. Rather, rub a little shampoo (like coconut-based hair shampoo) between your palms and gently work it through your hair.",
+        "timestamp": "2025-12-14T20:40:09.711722"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "14157-0",
+        "id_2": "14157-4",
+        "original_ending": "[step] Draw a \" jump \"-like feature on the left side of the oval. Draw a long semicircle connecting the oval and two big circles or cylinders below the oval for legs.",
+        "contaminated_ending": "[step] Sketch a curved, *\"leaping\"* shape along the left edge of the oval. Then, create a lengthy half-circle linking the oval to the two large circles or cylindrical forms beneath it to represent the legs.",
+        "timestamp": "2025-12-14T20:40:11.553828"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "20529-1",
+        "id_2": "20529-4",
+        "original_ending": "You should try to pay attention to the fit and sizing of your jeans to determine how much of your current relationship can be taken care of during your workout. You should also check out the style charts for your region of that region.",
+        "contaminated_ending": "You might want to focus on how your jeans fit and their sizing to gauge what parts of your current relationship can be addressed while exercising. It\u2019s also a good idea to review the style guides specific to your area.",
+        "timestamp": "2025-12-14T20:40:13.503429"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "37977-1",
+        "id_2": "37977-4",
+        "original_ending": "[step] Usually, people commit a majority of their effort to the s\u00e9ance, but a few select the best course for the entire experiment, as well as for the potential participants. The medium should be strong, very persuasive, and large enough to move the selection tables.",
+        "contaminated_ending": "Most individuals focus the bulk of their energy on the s\u00e9ance itself, though a handful prioritize the optimal approach for the experiment as a whole and the welfare of those involved. The medium must be powerful, highly convincing, and physically imposing enough to shift the selection tables.",
+        "timestamp": "2025-12-14T20:40:16.657853"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "27489-3",
+        "id_2": "27489-4",
+        "original_ending": "[step] Describe this fact loudly so that children can hear it. If possible, have your child lock the front door, even if homework is early in the day.",
+        "contaminated_ending": "Speak this information clearly and loudly enough for kids to catch it. Whenever you can, let your child secure the front door\u2014even if their homework is due earlier in the day.",
+        "timestamp": "2025-12-14T20:40:19.082452"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "39158-3",
+        "id_2": "39158-4",
+        "original_ending": "It's usually given only once your cat is in the care of a vet, though it can be given again and again. [substeps] The veterinarian will assess your cat's conditions, although it may take several weeks to figure out if it needs treatment.",
+        "contaminated_ending": "It\u2019s typically administered just after your cat is under veterinary care, though it can be repeated as needed. [substeps] The vet will evaluate your cat\u2019s health, though determining whether treatment is necessary might take a few weeks.",
+        "timestamp": "2025-12-14T20:40:20.777816"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "50235-1",
+        "id_2": "50235-4",
+        "original_ending": "Setting a limit may even help you treat yourself when you are overindulging. [substeps] You can eat much healthier foods during the holidays.",
+        "contaminated_ending": "Putting a boundary in place might actually make it easier to reward yourself when you\u2019ve been overdoing it. [substeps] This way, you can enjoy more nutritious options throughout the holiday season.",
+        "timestamp": "2025-12-14T20:40:22.576543"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "50569-1",
+        "id_2": "50569-4",
+        "original_ending": "[substeps] Many animal behaviorists focus on the problem and whether or not the problem actually affects us as a whole or a group. This is an important practice as animal behaviorsts often focus on issues that lack organic influence and encourage introspection rather than empathy.",
+        "contaminated_ending": "Many researchers in animal behavior concentrate on the issue itself and whether it truly impacts society as a whole or specific communities. This is a crucial approach, given that animal behaviorists frequently examine concerns that lack natural relevance, fostering self-reflection over compassion.",
+        "timestamp": "2025-12-14T20:40:24.614326"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "35033-0",
+        "id_2": "35033-4",
+        "original_ending": "To ensure proper lighting, you will need to buy a coop lamp or turn off the overhead light. You will also need to provide adequate heat.",
+        "contaminated_ending": "To maintain suitable lighting, you should purchase a lamp for the coop or switch off the main ceiling light. Additionally, you\u2019ll need to supply enough warmth.",
+        "timestamp": "2025-12-14T20:40:26.288246"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "12921-3",
+        "id_2": "12921-4",
+        "original_ending": "[step] The major good or going-to magazines offer all sorts of information on classic cars. Gather all the information you can so that you can discover the stories ahead of time.",
+        "contaminated_ending": "The leading or well-known magazines provide a wide range of details about vintage automobiles. Collect as much information as possible to uncover the background stories in advance.",
+        "timestamp": "2025-12-14T20:40:28.145693"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "27137-2",
+        "id_2": "27137-4",
+        "original_ending": "It can be helpful to keep the refrigerator full of your child's favorites. Just make sure the containers are in a neat and secure location.",
+        "contaminated_ending": "Having your child\u2019s preferred foods stocked in the fridge can be useful\u2014just  ensure the containers are stored tidily and securely.",
+        "timestamp": "2025-12-14T20:40:29.741465"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "25238-3",
+        "id_2": "25238-4",
+        "original_ending": "[title] Remove the infrared shield, cartridge, and windshield washer from the lens assembly. [title] Remove the headlight filter, ignition post, and windshield wipers from the wiring compartment.",
+        "contaminated_ending": "Remove the infrared cover, cartridge, and windshield washer from the lens unit. Take off the headlight screen, ignition terminal, and windshield wiper blades from the wiring housing.",
+        "timestamp": "2025-12-14T20:40:32.736981"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "35203-3",
+        "id_2": "35203-4",
+        "original_ending": "[title] Put the egg on one of the holes in the shield while still facing your body. [step] Grab the other end with one hand and reach the other end with the other.",
+        "contaminated_ending": "[title] Place the egg over one of the openings in the shield while keeping it toward yourself. [step] Hold one end with one hand and extend your other hand to the opposite end.",
+        "timestamp": "2025-12-14T20:40:34.288013"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "43277-2",
+        "id_2": "43277-4",
+        "original_ending": "[step] This aloe vera gel will keep your skin healthy, and it also conforms to the brand's anti-inflammatory function. [title] Stir in 1/2 tablespoon of parmesan cheese.",
+        "contaminated_ending": "[step] This aloe vera gel helps maintain skin health while aligning with the brand\u2019s soothing, anti-inflammatory properties. [title] Mix in half a tablespoon of grated parmesan.",
+        "timestamp": "2025-12-14T20:40:36.341799"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "26369-2",
+        "id_2": "26369-4",
+        "original_ending": "[title] Jump into the lock and press the in button. [step] Do this for a quick, forceful push, which the lock will reach and swing open once unlocked.",
+        "contaminated_ending": "Revised text: [title] Insert yourself into the lock and hold down the in button. [step] This will trigger a swift, strong thrust\u2014once the lock engages, it will release and swing open.",
+        "timestamp": "2025-12-14T20:40:39.431934"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "307-2",
+        "id_2": "307-4",
+        "original_ending": "[title] Fold the old newspaper into pieces and make easy wedges into the corners. [step] This won't hurt your feet anyway.",
+        "contaminated_ending": "[title] Crumple the used newspaper into sections and gently tuck the folded pieces into the corners. [step] Either way, this method won\u2019t cause any discomfort to your feet.",
+        "timestamp": "2025-12-14T20:40:41.130228"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "7216-1",
+        "id_2": "7216-4",
+        "original_ending": "[title] Choose a destination that you are willing to spend money on. [step] It's a good idea to try some destinations you'd love to visit, including japan, which open up financial opportunities immediately.",
+        "contaminated_ending": "[Title] Select a location you\u2019re prepared to invest in.  [Step] Consider exploring places you\u2019ve always wanted to visit\u2014such as Japan\u2014which can quickly unlock financial possibilities.",
+        "timestamp": "2025-12-14T20:40:42.879446"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "7808-0",
+        "id_2": "7808-4",
+        "original_ending": "If you feel a deep ache on your wrist, lean forward in your seat and squeeze your wrist as tightly as you can. Don't flex your wrist, but consider moving your forearm.",
+        "contaminated_ending": "If you experience a sharp, persistent pain in your wrist, shift slightly forward in your chair and firmly grip your wrist. Avoid bending your wrist, though gently adjusting your forearm may help.",
+        "timestamp": "2025-12-14T20:40:44.782461"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "9072-3",
+        "id_2": "9072-4",
+        "original_ending": "[title] Gain a mastery of hand-eye coordination. [step] Dementia is often associated with memory loss, which can cause deep nerve damage.",
+        "contaminated_ending": "[Title] Master precise hand-eye coordination.  [Step] Dementia frequently involves memory decline, potentially leading to severe neurological harm.",
+        "timestamp": "2025-12-14T20:40:46.361072"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "2547-1",
+        "id_2": "2547-4",
+        "original_ending": "The meet and greet event will be a fun day for both parents and students. [substeps] The meet and greet event occurs every tuesday morning at 9:00 am eastern time.",
+        "contaminated_ending": "The meet and greet session promises an enjoyable experience for students and their parents alike. [substeps] This event takes place each Tuesday at 9:00 a.m. Eastern Time.",
+        "timestamp": "2025-12-14T20:40:48.104021"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "25109-0",
+        "id_2": "25109-4",
+        "original_ending": "[substeps] To lift your nails, make sure you don't lift your nails up past their width, or you'll put more strain on your joints. If you're doing handstands, place your feet shoulder width apart and your hands on the ground instead of in the pushup position.",
+        "contaminated_ending": "When raising your nails, ensure they don\u2019t extend beyond their natural width to avoid adding extra pressure to your joints. For handstands, keep your feet spaced shoulder-width apart and position your hands flat on the ground rather than in a push-up stance.",
+        "timestamp": "2025-12-14T20:40:49.949349"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "24305-0",
+        "id_2": "24305-4",
+        "original_ending": "[title] Keep at least 16 people in each room at all times. [title] Try to keep your doors and windows closed when rooms are steamy or fans are blowing.",
+        "contaminated_ending": "Maintain a minimum of 16 individuals in every room at any given time. Aim to keep doors and windows shut whenever rooms feel humid or when fans are running.",
+        "timestamp": "2025-12-14T20:40:51.584727"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "42939-1",
+        "id_2": "42939-4",
+        "original_ending": "[substeps] To prevent static, use a bobby pin instead of a regular hairspray. If possible, use this hairspray each day so that it stays static-free throughout the day.",
+        "contaminated_ending": "To avoid static, opt for a bobby pin rather than standard hairspray. Whenever you can, apply this hairspray daily to keep your hair free from static all day long.",
+        "timestamp": "2025-12-14T20:40:53.338729"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "22925-2",
+        "id_2": "22925-4",
+        "original_ending": "Your skin will be the color of your shoulders, from your neck to your fingers to your toenails to your feet. [substeps] Your undertone is a base color for your overall appearance, as a primary expression of your complexion.",
+        "contaminated_ending": "Your complexion will match the shade of your shoulders, extending from your neck down to your fingertips, toenails, and soles. [substeps] Your undertone serves as the foundational hue for your general look, acting as the core element of your skin\u2019s natural coloring.",
+        "timestamp": "2025-12-14T20:40:55.475668"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "36741-0",
+        "id_2": "36741-4",
+        "original_ending": "Cut them in half lengthwise using a knife, and separate the parts that are thick and that are thin. [substeps] If you prefer stronger chiles, consume the rest of the chiles.",
+        "contaminated_ending": "Slice them lengthwise down the middle with a knife, then set aside the thicker and thinner sections. [substeps] For a spicier kick, eat the remaining portions of the chiles.",
+        "timestamp": "2025-12-14T20:40:57.628075"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "42270-0",
+        "id_2": "42270-4",
+        "original_ending": "[title] Cut two lengths of thread about 3 times the size of your bracelet. [step] However, if you want to make a very basic design, you might not want to cut three lengths of thread.",
+        "contaminated_ending": "Title: Measure and cut two strands of thread roughly three times the length of your finished bracelet.  Step: That said, for a simpler design, you may only need to cut two strands instead of three.",
+        "timestamp": "2025-12-14T20:41:00.907054"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "8679-3",
+        "id_2": "8679-4",
+        "original_ending": "Recognizing your undertone can help you put a good image of yourself in the face. [substeps] If you have olive-toned skin, you will likely have a more neutral undertone.",
+        "contaminated_ending": "Understanding your undertone can assist you in presenting yourself in a favorable light. [substeps] Those with olive-toned skin tend to have a more balanced undertone.",
+        "timestamp": "2025-12-14T20:41:02.545389"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "335-2",
+        "id_2": "335-4",
+        "original_ending": "[title] Choose a pointed brim hat if you have a double brim. [step] A pointed brim hat with a pointy brim can look best on square faces.",
+        "contaminated_ending": "[title] Opt for a hat with a pointed brim if your face shape has a double brim. [step] Square faces tend to suit a hat featuring a sharply angled brim the most.",
+        "timestamp": "2025-12-14T20:41:04.208708"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "34245-0",
+        "id_2": "34245-4",
+        "original_ending": "[step] Your bing-like website will open with a list of all your pages saved on your android device. [title] Click the link for your html or jpg (version 6) view drop-down menu.",
+        "contaminated_ending": "Your Bing-style site will launch, displaying a catalog of every page stored on your Android device. Select the link for your HTML or JPG (version 6) file, then access the dropdown menu.",
+        "timestamp": "2025-12-14T20:41:17.234948"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "46995-3",
+        "id_2": "46995-4",
+        "original_ending": "[substeps] If possible, measure your biceps a few times throughout the day and after work to see how full they are. When you exercise, always place your hands on your upper arms.",
+        "contaminated_ending": "If you can, take measurements of your biceps multiple times during the day\u2014including after work\u2014to check their fullness. While working out, make sure to rest your hands on your upper arms.",
+        "timestamp": "2025-12-14T20:41:18.995321"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "29210-1",
+        "id_2": "29210-4",
+        "original_ending": "Oftentimes, you may not be able to make health counseling every day, but you can buy the right supply of help. Talk to your insurance provider to find out if they have insurance.",
+        "contaminated_ending": "Sometimes, you might not be able to attend health counseling daily, but you can still secure the necessary support. Check with your insurance company to see if coverage is available.",
+        "timestamp": "2025-12-14T20:41:24.950127"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "17088-0",
+        "id_2": "17088-4",
+        "original_ending": "For your other hygiene duties (like keeping your teeth clean, eating healthy, taking a shower, etc. ), do the following : [substeps] Gently suck on a paper clip or pencil.",
+        "contaminated_ending": "For your remaining personal care tasks\u2014such as brushing your teeth, maintaining a balanced diet, bathing, and so on\u2014follow these steps: [substeps] Lightly hold a paper clip or pencil between your lips.",
+        "timestamp": "2025-12-14T20:41:26.655549"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "23564-0",
+        "id_2": "23564-4",
+        "original_ending": "It is important that you use the tape long enough to wrap around, leaving just a little extra headspace at the knuckle. [substeps] Go slow when wrapping-let the tape dry for several hours.",
+        "contaminated_ending": "Make sure to apply the tape so it fully encircles the area, allowing only a small amount of extra space near the knuckle. [substeps] Take your time while wrapping, and give the tape several hours to dry completely.",
+        "timestamp": "2025-12-14T20:41:28.411071"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "27031-2",
+        "id_2": "27031-4",
+        "original_ending": "Apply the mixture to your skin, paying attention to any blemishes or discolorations. [title] Scrape off any excess honey or milk.",
+        "contaminated_ending": "Gently spread the blend onto your skin, focusing on areas with imperfections or uneven tone. [title] Remove any leftover honey or milk residue.",
+        "timestamp": "2025-12-14T20:41:29.895982"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "13422-3",
+        "id_2": "13422-4",
+        "original_ending": "After that, give yourself a week or two to relax. Relaxing during this time means that you are more likely to wear your dress earlier in the day and have less to worry about.",
+        "contaminated_ending": "Afterward, take a week or two to unwind. Taking it easy during this period increases the chances that you\u2019ll put on your dress sooner in the day and have fewer concerns to deal with.",
+        "timestamp": "2025-12-14T20:41:36.130733"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "43435-1",
+        "id_2": "43435-4",
+        "original_ending": "[step] 2 tablespoons should be plenty. Do not turn all the water in your bath/shower on yet! Make sure to leave plenty of room in a jar for when you're ready to use the bath or you risk overflowing the jar.",
+        "contaminated_ending": "[Step] Two tablespoons will be more than enough. Hold off on running the full stream of water in your bath or shower for now! Be sure to leave ample space in the jar when preparing it for later use in the bath\u2014otherwise, it might spill over.",
+        "timestamp": "2025-12-14T20:41:38.588995"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "35173-2",
+        "id_2": "35173-4",
+        "original_ending": "If you usually have to use petroleum jelly, foam tape, or glitter, you don't have to do that. Just this tiny bit can make your brackets smoother and prevent painful twists.",
+        "contaminated_ending": "You don\u2019t need to rely on petroleum jelly, foam tape, or glitter like you normally might. A small amount of this is enough to keep your brackets gliding smoothly and avoid uncomfortable tangles.",
+        "timestamp": "2025-12-14T20:41:41.042831"
+    },
+    {
+        "type": "answer_duplicate",
+        "id_1": "5493-0",
+        "id_2": "5493-4",
+        "original_ending": "Look for the ingredients listed below or refrain from adding an ingredient. Unsaturated is easier to digest and more even as you become thicker, while unsaturated will produce a longer drying time.",
+        "contaminated_ending": "Check the ingredients provided below or avoid including any extra ones. Unsaturated options digest more easily and yield a smoother finish as the mixture thickens, whereas saturated varieties will extend the drying period.",
+        "timestamp": "2025-12-14T20:41:42.873285"
+    }
+]

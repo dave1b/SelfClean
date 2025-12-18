@@ -45,7 +45,6 @@ def generate_prediction_parquet(
         batch_auto_issues = batch_auto_issues[:min_len]
         batch_scores = batch_scores[:min_len]
 
-
         scores = np.round(batch_scores, 5)
         prediction = batch_auto_issues
         issue_type_col = pd.Series([issue_type] * min_len)
@@ -81,7 +80,6 @@ def generate_prediction_parquet(
         batch_df.to_parquet(temp_file_path, index=False)  # Use Parquet for efficiency
         return temp_file_path
 
-
     def process_issue_type(issue_type: str, issue_data: Dict) -> dd.DataFrame:
         """
             Process a specific issue type using concurrent.futures for parallel batch processing.
@@ -89,10 +87,12 @@ def generate_prediction_parquet(
             """
         max_workers = os.cpu_count() - 4
         logger.info(f"Starting optimized processing for {issue_type}, max_workers={max_workers}, batch_size={batch_size}")
-        auto_issues_np = np.array(issue_data["auto_issues"])
         indices_np = np.array(issue_data["indices"])
-        scores_data = np.array(issue_data["scores"])
-        scores_np = np.array(scores_data)  # Convert scores to numpy array for slicing
+        scores_np = np.array(issue_data["scores"])
+        if 'auto_issues' in issue_data:
+            auto_issues_np = np.array(issue_data["auto_issues"])
+        else:
+            auto_issues_np = np.full_like(scores_np, None, dtype=object)
 
         is_near_duplicate = issue_type in ["near_duplicates", "near_duplicates_questions"]
         total_entries = len(indices_np)

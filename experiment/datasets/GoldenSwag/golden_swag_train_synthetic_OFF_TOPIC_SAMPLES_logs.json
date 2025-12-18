@@ -1,0 +1,856 @@
+[
+    {
+        "type": "off_topic",
+        "id": "4868-2",
+        "original_ending": "[step] Most likely it is at the bottom (six o'clock). [title] Remove the cover plate from the edge of the door and back out the set screw that is preventing the cylinder from turning.",
+        "contaminated_ending": "(module (func (export \"add\") (param $a i32) (param $b i32) (result i32)   local.get $a   local.get $b   i32.add)) (module (func (export \"add\") (param $a i32) (param $b i32) (result i32)   local.get $a   local.get $b   i32.add)) (module (func (export \"add\") (param $a i32) (param $b i32) (result i32)   local.get $a   local.get $b   i32.add))",
+        "timestamp": "2025-12-15T06:39:25.744674"
+    },
+    {
+        "type": "off_topic",
+        "id": "28845-3",
+        "original_ending": "You will also need a hairbrush or paddle brush, a hair plug attachment, and a hair blender. Once all of these items are gathered at home, you can do your hair project.",
+        "contaminated_ending": "c3 a9 c3 a8 c3 a0 c3 b9 c3 b2 c3 a9 c3 a8 c3 a0 c3 b9 c3 b2 c3 a9 c3 a8 c3 a0 c3 b9 c3 b2 c3 a9 c3 a8 c3 a0 c3 b9 c3 b2",
+        "timestamp": "2025-12-15T06:39:25.744838"
+    },
+    {
+        "type": "off_topic",
+        "id": "22333-1",
+        "original_ending": "Canned tomatoes are dark, tart, and salty. Use fresh tomatoes because they are hearty; tomatoes that have not been dried out can be very unhealthy.",
+        "contaminated_ending": "sed '/^#/d' file.txt sed 's/^/prefix_/' file.txt sed 's/foo/bar/g' input.txt > output.txt sed '4d' file.txt sed -n '/start/,/end/p' file.txt sed '/^#/d' file.txt sed 's/^/prefix_/' file.txt",
+        "timestamp": "2025-12-15T06:39:25.744991"
+    },
+    {
+        "type": "off_topic",
+        "id": "22112-2",
+        "original_ending": "If you find one, fix the leak. [title] Replace the air mattress when you're finished.",
+        "contaminated_ending": "$\\sum_{i=1}^n i = \\frac{n(n+1)}{2}$ $\\alpha \\beta \\gamma \\delta$ $\\mathbf{A} \\vec{x} = \\vec{b}$ $\\int_0^1 x^2 dx$ $$\\frac{d}{dx} e^x = e^x$$ $\\sum_{i=1}^n i = \\frac{n(n+1)}{2}$ $\\alpha \\beta \\gamma \\delta$ $\\mathbf{A} \\vec{x} = \\vec{b}$",
+        "timestamp": "2025-12-15T06:39:25.745139"
+    },
+    {
+        "type": "off_topic",
+        "id": "42413-3",
+        "original_ending": "No matter if they don't want to join you, this approach will help keep people engaged. If you can't be seated at any one spot, sit in a more cramped position.",
+        "contaminated_ending": "$\\ abla^2 V = 0$ (Laplace's equation) $\\frac{d}{dt} \\int_a^{t} f(x) dx = f(t)$ $\\lim_{x \\to 0} \\frac{\\sin x}{x} = 1$ $\\int x^n dx = \\frac{x^{n+1}}{n+1} + C$ $\\frac{\\partial f}{\\partial x}$ $\\ abla^2 V = 0$ (Laplace's equation) $\\frac{d}{dt} \\int_a^{t} f(x) dx = f(t)$",
+        "timestamp": "2025-12-15T06:39:25.745284"
+    },
+    {
+        "type": "off_topic",
+        "id": "33736-1",
+        "original_ending": "For some sex, blood is exchanged (for men) or saliva (for women). Some people also engage in sexual activities like kissing, touching, and making love without a condom.",
+        "contaminated_ending": "2023-12-14 10:00:03 WARNING:  non-optimal query execution plan 2023-12-14 10:00:04 FATAL:  too many connections 2023-12-14 10:00:00 LOG:  database system is ready to accept connections 2023-12-14 10:00:01 ERROR:  could not serialize access due to concurrent update 2023-12-14 10:00:02 STATEMENT: SELECT * FROM users WHERE id = 1 2023-12-14 10:00:03 WARNING:  non-optimal query execution plan 2023-12-14 10:00:04 FATAL:  too many connections",
+        "timestamp": "2025-12-15T06:39:25.745432"
+    },
+    {
+        "type": "off_topic",
+        "id": "719-1",
+        "original_ending": "[title] Soak the marshmallows with frozen melted chocolate. [step] Add the cocoa and the crushed strawberries and mix thoroughly.",
+        "contaminated_ending": "[DEFAULT] ServerHost = 127.0.0.1 ServerPort = 8080  [client] APIKey = 12345 Timeout = 30  [database] Host = db.example.com Port = 5432 User = admin Password = secret  [mysql] user = root password = secret  [section] key=value another_key=another_value  Timeout=30 Retries=5 log_file = /var/log/app.log error_log = /var/log/app_error.log",
+        "timestamp": "2025-12-15T06:39:25.745574"
+    },
+    {
+        "type": "off_topic",
+        "id": "20170-2",
+        "original_ending": "Follow the manufacturer's instructions for removing the carrier from the base. Usually, there is simply a lever or button to activate.",
+        "contaminated_ending": "$2(z + 3) - 7 = 9$ $(x+y)^2 = x^2 + 2xy + y^2$ $\\frac{x}{2} + 5 = 10$ $3x^2 - 4x + 1$ $(a^2 - b^2) / (a - b) = a + b$ $2(z + 3) - 7 = 9$",
+        "timestamp": "2025-12-15T06:39:25.745719"
+    },
+    {
+        "type": "off_topic",
+        "id": "592-0",
+        "original_ending": "Smaller dogs taste better when they consume huge quantities of meat. Only feed your dog these ingredients if you are certain that the food you are feeding it is safe, washable, and high quality.",
+        "contaminated_ending": "search%3Dquery%26limit%3D10%26offset%3D20%26sort%3Ddesc%26search%3Dquery%26limit%3D10%26offset%3D20%26sort%3Ddesc",
+        "timestamp": "2025-12-15T06:39:25.745864"
+    },
+    {
+        "type": "off_topic",
+        "id": "40932-0",
+        "original_ending": "[step] Tap your fitbit flex rapidly for at least two seconds to enter its sleep mode. You'll see two alternating, blinking lights moving back and forth.",
+        "contaminated_ending": "$R^2 = 1 - (SS_{res} / SS_{tot})$ $P(AIB) = \\frac{P(BIA)P(A)}{P(B)}$ (Bayes' theorem) $\\bar{x} = \\frac{1}{n} \\sum_{i=1}^n x_i$ $Z = (X - \\mu) / \\sigma$ $H_0: \\mu = 0$ (Null hypothesis) $R^2 = 1 - (SS_{res} / SS_{tot})$",
+        "timestamp": "2025-12-15T06:39:25.746007"
+    },
+    {
+        "type": "off_topic",
+        "id": "2911-0",
+        "original_ending": "Examine your hair in a mirror in both natural and artificial lights to determine which tones you want to remove. [substeps] With blonde and gray hair, it's typically yellow or gold tones that begin to show when your hair becomes brassy.",
+        "contaminated_ending": "grep -v 'ignored' debug.log grep -c 'success' history.log grep 'PID' /var/log/messages grep -i 'fatal error' system.log grep -E '^(WARNINGIERROR)' app.log grep -v 'ignored' debug.log grep -c 'success' history.log grep 'PID' /var/log/messages",
+        "timestamp": "2025-12-15T06:39:25.746150"
+    },
+    {
+        "type": "off_topic",
+        "id": "41180-1",
+        "original_ending": "comes on and starts using his shovel to help start the fire.",
+        "contaminated_ending": "example.com. IN MX 10 mail.example.com. example.com. IN TXT \"v=spf1 include:spf.google.com ~all\\ ns1.example.com. IN NS example.com. example.com. IN A 192.0.2.1 www.example.com. IN CNAME example.com. example.com. IN MX 10 mail.example.com. example.com. IN TXT \"v=spf1 include:spf.google.com ~all\\ ns1.example.com. IN NS example.com.",
+        "timestamp": "2025-12-15T06:39:25.746297"
+    },
+    {
+        "type": "off_topic",
+        "id": "41168-3",
+        "original_ending": "[step] This is the grip you can get to hold the child's scissors so as to position them correctly. [substeps] Hold the teacher's scissors straight up.",
+        "contaminated_ending": "H2O C6H12O6 NaCl H2SO4 CO2 H2O C6H12O6 NaCl H2SO4 CO2 H2O C6H12O6 NaCl H2SO4 CO2 H2O C6H12O6 NaCl H2SO4 CO2",
+        "timestamp": "2025-12-15T06:39:25.746441"
+    },
+    {
+        "type": "off_topic",
+        "id": "29308-3",
+        "original_ending": "Let the arms of the shirt lay naturally extended. If the shirt features buttons or a zipper: button all buttons, and zip the zipper shut completely before you begin folding.",
+        "contaminated_ending": "From: \"Sender\" <sender@example.com> To: \"Recipient\" <recipient@example.com> Subject: Test Email Date: Mon, 1 Jan 2024 10:00:00 +0100 Received: from mail.server.com (10.0.0.1) by other.server.com (10.0.0.2) From: \"Sender\" <sender@example.com> To: \"Recipient\" <recipient@example.com> Subject: Test Email Date: Mon, 1 Jan 2024 10:00:00 +0100 Received: from mail.server.com (10.0.0.1) by other.server.com (10.0.0.2)",
+        "timestamp": "2025-12-15T06:39:25.746586"
+    },
+    {
+        "type": "off_topic",
+        "id": "30111-2",
+        "original_ending": "[substeps] To get your money, or most likely your cheapest fellow posers, consult a bathroom photography program. Paint or pastels some open in background color.",
+        "contaminated_ending": "2 0 LOAD_GLOBAL              0 (print) 2 LOAD_CONST               1 (None) 4 LOAD_FAST                0 (n) 6 LOAD_CONST               2 (1) 8 COMPARE_OP               1 (<=) 10 POP_JUMP_IF_FALSE       20 12 LOAD_CONST               2 (1) 14 RETURN_VALUE 20 LOAD_GLOBAL              1 (factorial) 22 LOAD_FAST                0 (n) 2 0 LOAD_GLOBAL              0 (print) 2 LOAD_CONST               1 (None) 4 LOAD_FAST                0 (n) 6 LOAD_CONST               2 (1) 8 COMPARE_OP               1 (<=) 10 POP_JUMP_IF_FALSE       20 12 LOAD_CONST               2 (1) 14 RETURN_VALUE 20 LOAD_GLOBAL              1 (factorial) 22 LOAD_FAST                0 (n)",
+        "timestamp": "2025-12-15T06:39:25.746730"
+    },
+    {
+        "type": "off_topic",
+        "id": "21992-3",
+        "original_ending": "Use a lubricant such as cleanser or lotion that has a micro-moisture. [substeps] Dry your shoes completely with a clean paper towel before cleaning them.",
+        "contaminated_ending": "11111111 11111111 00000000 00000000 11111111 11111111 00000000 00000000 11111111 11111111 00000000 00000000 11111111 11111111 00000000 00000000",
+        "timestamp": "2025-12-15T06:39:25.746874"
+    },
+    {
+        "type": "off_topic",
+        "id": "11688-3",
+        "original_ending": "[step] Check to see if the rice is very hot. If the rice is very cold, add water and knead it on your face for 15 to 20 minutes.",
+        "contaminated_ending": "Fin: 1, RSV1: 0, RSV2: 0, RSV3: 0, Mask: 1 Payload length: 5 \u0081\u0005Hello\u0088\u00817\u00fa!\u00d7\u0096*\u00fe#\tq\u008c Opcode: Text (1) Fin: 1, RSV1: 0, RSV2: 0, RSV3: 0, Mask: 1 Payload length: 5",
+        "timestamp": "2025-12-15T06:39:25.747017"
+    },
+    {
+        "type": "off_topic",
+        "id": "28862-1",
+        "original_ending": "[step] If you don't know anyone in the family and have at least a friend or acquaintance with you, your people should remain neutral in any dispute or disagreement. [title] Let your spouse/partner know exactly how you want to be loved.",
+        "contaminated_ending": "IL_0000: ldstr \"Hello World\\ IL_0005: call void [mscorlib]System.Console::WriteLine(string) IL_000a: nop IL_000b: ret IL_0010: ldloc.0 IL_0000: ldstr \"Hello World\\ IL_0005: call void [mscorlib]System.Console::WriteLine(string) IL_000a: nop IL_000b: ret IL_0010: ldloc.0",
+        "timestamp": "2025-12-15T06:39:25.747158"
+    },
+    {
+        "type": "off_topic",
+        "id": "32550-1",
+        "original_ending": "Do not put on jewelry to impress clients and other interested people. The rest of your evening will be spent on reflective or statement jewelry.",
+        "contaminated_ending": "find . -type f I xargs grep 'pattern' head -n 10 log.txt I tail -n 1 cat file1.txt I less echo 'data' I tr 'a-z' 'A-Z' ls -l I wc -l find . -type f I xargs grep 'pattern' head -n 10 log.txt I tail -n 1",
+        "timestamp": "2025-12-15T06:39:25.747301"
+    },
+    {
+        "type": "off_topic",
+        "id": "9515-3",
+        "original_ending": "No one likes to be around these things anyway, so if you act like an annoyance right from the start, people will start to go around and pick up a lot of clutter. [substeps] Take a small trash can and fill it full of personal trash, such as toilet paper, empty paint cans, and trash bags.",
+        "contaminated_ending": "kernel: audit: type=1400 audit(1671001200.000): apparmor=\"DENIED\\ kernel: Out of memory: Kill process 5678 (app) score 999 or sacrifice child kernel: ACPI: button: Power Button [PWRF] present kernel: eth0: link up (1000Mbps/Full duplex) kernel: usb 1-1: new high-speed USB device number 2 using ehci-pci kernel: audit: type=1400 audit(1671001200.000): apparmor=\"DENIED\"",
+        "timestamp": "2025-12-15T06:39:25.747446"
+    },
+    {
+        "type": "off_topic",
+        "id": "23365-3",
+        "original_ending": "You can use some scrap paper, roll paper, recycled paper or construction paper. [title] Take a piece of tissue paper, toilet paper, or any other paper you have that has color on it.",
+        "contaminated_ending": "i32.const 42 local.set $result call $print i32.const 42 local.set $result call $print i32.const 42 local.set $result call $print",
+        "timestamp": "2025-12-15T06:39:25.747600"
+    },
+    {
+        "type": "off_topic",
+        "id": "30117-2",
+        "original_ending": "[step] Gently press a cool, clean washcloth on skin you have over-exfoliated. Hold on your skin for a few minutes or until your skin feels less irritated.",
+        "contaminated_ending": "$Z = (X - \\mu) / \\sigma$ $H_0: \\mu = 0$ (Null hypothesis) $R^2 = 1 - (SS_{res} / SS_{tot})$ $P(AIB) = \\frac{P(BIA)P(A)}{P(B)}$ (Bayes' theorem) $\\bar{x} = \\frac{1}{n} \\sum_{i=1}^n x_i$ $Z = (X - \\mu) / \\sigma$ $H_0: \\mu = 0$ (Null hypothesis) $R^2 = 1 - (SS_{res} / SS_{tot})$",
+        "timestamp": "2025-12-15T06:39:25.747759"
+    },
+    {
+        "type": "off_topic",
+        "id": "19452-0",
+        "original_ending": "Talk to anyone around who saw what happened and ask if they'll be willing to testify on your behalf. Take pictures of any injuries you have as soon as you can after the altercation occurred and as they develop.",
+        "contaminated_ending": "$2(z + 3) - 7 = 9$ $(x+y)^2 = x^2 + 2xy + y^2$ $\\frac{x}{2} + 5 = 10$ $3x^2 - 4x + 1$ $(a^2 - b^2) / (a - b) = a + b$ $2(z + 3) - 7 = 9$",
+        "timestamp": "2025-12-15T06:39:25.747917"
+    },
+    {
+        "type": "off_topic",
+        "id": "40921-3",
+        "original_ending": "Mist your hair with lukewarm water. [title] Combat frizz and snarls.",
+        "contaminated_ending": "$\u000bec{F} = q(\u000bec{E} + \u000bec{v} \\times \u000bec{B})$ (Lorentz force) $\\lambda = h / p$ (de Broglie wavelength) $\\Delta x \\Delta p \\ge \\hbar/2$ (Heisenberg uncertainty) $T = 2\\pi\\sqrt{L/g}$ (Pendulum period) $V = IR$ (Ohm's law) $\u000bec{F} = q(\u000bec{E} + \u000bec{v} \\times \u000bec{B})$ (Lorentz force) $\\lambda = h / p$ (de Broglie wavelength) $\\Delta x \\Delta p \\ge \\hbar/2$ (Heisenberg uncertainty) $T = 2\\pi\\sqrt{L/g}$ (Pendulum period) $V = IR$ (Ohm's law)",
+        "timestamp": "2025-12-15T06:39:25.748061"
+    },
+    {
+        "type": "off_topic",
+        "id": "14157-0",
+        "original_ending": "[step] Draw a \" jump \"-like feature on the left side of the oval. Draw a long semicircle connecting the oval and two big circles or cylinders below the oval for legs.",
+        "contaminated_ending": "Dec 14 10:00:04 hostname systemd[1]: Started Session 1 of user user. Dec 14 10:00:05 hostname dhclient[999]: DHCPACK from 192.168.1.254 Dec 14 10:00:01 hostname kernel: CPU: 1 PID: 100 comm: systemd Not tainted Dec 14 10:00:02 hostname sshd[1234]: Accepted publickey for user from 192.168.1.1 port 50000 ssh2: RSA SHA256 Dec 14 10:00:03 hostname CRON[5678]: (root) CMD (command -v something) Dec 14 10:00:04 hostname systemd[1]: Started Session 1 of user user. Dec 14 10:00:05 hostname dhclient[999]: DHCPACK from 192.168.1.254",
+        "timestamp": "2025-12-15T06:39:25.748210"
+    },
+    {
+        "type": "off_topic",
+        "id": "20529-0",
+        "original_ending": "Men's shoes that don't have the ability to cross will work well for this step, as they fit firmly, without too much design. [title] Fold an old cotton ball or cloth into a square shape.",
+        "contaminated_ending": "f0 9f 9a 80 e2 9c a8 61 73 64 66 f0 9f 9a 80 e2 9c a8 61 73 64 66 f0 9f 9a 80 e2 9c a8 61 73 64 66 f0 9f 9a 80 e2 9c a8 61 73 64 66",
+        "timestamp": "2025-12-15T06:39:25.748354"
+    },
+    {
+        "type": "off_topic",
+        "id": "37977-2",
+        "original_ending": "[step] This will be the person who will lead the s\u00e9ance and should be someone who has experience or psychic abilities. [title] Decide on who you will be summoning.",
+        "contaminated_ending": "version = 1.0  [config] mode = \"debug\\ log_level = \"info\\  [mysql] user = \"root\\ password = \"secret\\ title = \"TOML Example\\  [owner] name = \"Tom\\ age = 30  [database] server = \"192.168.1.1\\ ports = [ 8000, 8001, 8002 ]  [servers.alpha] ip = \"10.0.0.1\\ dc = \"eqdc10\\  [servers.beta] ip = \"10.0.0.2\\ dc = \"eqdc10\\ [server] ip = \"127.0.0.1\\ port = 8080 debug = true  data = [1, 2, 3, 4, 5]",
+        "timestamp": "2025-12-15T06:39:25.748496"
+    },
+    {
+        "type": "off_topic",
+        "id": "27489-3",
+        "original_ending": "[step] Describe this fact loudly so that children can hear it. If possible, have your child lock the front door, even if homework is early in the day.",
+        "contaminated_ending": "$\\mathcal{P}(S)$ (Power set) $ISI = n$ $A \\cup B$ $x \\in \\mathbb{R}$ $A \\subseteq B \\iff \forall x (x \\in A \rightarrow x \\in B)$ $\\mathcal{P}(S)$ (Power set) $ISI = n$",
+        "timestamp": "2025-12-15T06:39:25.748643"
+    },
+    {
+        "type": "off_topic",
+        "id": "39158-1",
+        "original_ending": "[substeps] In the united states, heartworm preventative medications like prednisolone are available on prescription. The fda recommends that cats drink about 8-10 ounces of ibuprofen per day, as needed, three days a week.",
+        "contaminated_ending": "Date: Mon, 1 Jan 2024 10:00:00 +0100 Received: from mail.server.com (10.0.0.1) by other.server.com (10.0.0.2) From: \"Sender\" <sender@example.com> To: \"Recipient\" <recipient@example.com> Subject: Test Email Date: Mon, 1 Jan 2024 10:00:00 +0100 Received: from mail.server.com (10.0.0.1) by other.server.com (10.0.0.2)",
+        "timestamp": "2025-12-15T06:39:25.748807"
+    },
+    {
+        "type": "off_topic",
+        "id": "50235-2",
+        "original_ending": "Before you indulge, make sure you're vegetarian and eat some healthy meals several days a week. Avoid incorporating binge feeding into your diet, due to its adverse side effects.",
+        "contaminated_ending": "ls > file_list.txt cat < file.txt command 2> error.log echo 'log entry' >> app.log command < input.txt > output.txt 2>&1 ls > file_list.txt cat < file.txt command 2> error.log",
+        "timestamp": "2025-12-15T06:39:25.748952"
+    },
+    {
+        "type": "off_topic",
+        "id": "50569-2",
+        "original_ending": "Be sure to fill out or keep a study guide, or even a notebook, to help learn about becoming an animal behaviorist. [substeps] Other career paths include the resources for a good school for animal studies, the resources for animal behaviors in your community, and/or in group work with office workers, professors and other working people.",
+        "contaminated_ending": "$x \\in \\mathbb{R}$ $A \\subseteq B \\iff \forall x (x \\in A \rightarrow x \\in B)$ $\\mathcal{P}(S)$ (Power set) $ISI = n$ $A \\cup B$ $x \\in \\mathbb{R}$ $A \\subseteq B \\iff \forall x (x \\in A \rightarrow x \\in B)$ $\\mathcal{P}(S)$ (Power set) $ISI = n$",
+        "timestamp": "2025-12-15T06:39:25.749095"
+    },
+    {
+        "type": "off_topic",
+        "id": "35033-0",
+        "original_ending": "To ensure proper lighting, you will need to buy a coop lamp or turn off the overhead light. You will also need to provide adequate heat.",
+        "contaminated_ending": "c3 a9 c3 a8 c3 a0 c3 b9 c3 b2 c3 a9 c3 a8 c3 a0 c3 b9 c3 b2 c3 a9 c3 a8 c3 a0 c3 b9 c3 b2 c3 a9 c3 a8 c3 a0 c3 b9 c3 b2",
+        "timestamp": "2025-12-15T06:39:25.749237"
+    },
+    {
+        "type": "off_topic",
+        "id": "12921-2",
+        "original_ending": "[title] Look for a car that is color coded so you can read into all the details. [step] Jot down a multi-part description such as the car's name, characteristics, vehicle registration number and history.",
+        "contaminated_ending": "function a(b){return b-1}function a(b){return b-1}function a(b){return b-1}function a(b){return b-1}",
+        "timestamp": "2025-12-15T06:39:25.749379"
+    },
+    {
+        "type": "off_topic",
+        "id": "27137-1",
+        "original_ending": "[substeps] When the sugar dish is full, ask your child why it is being served in the house. And try to put it into the refrigerator as soon as possible.",
+        "contaminated_ending": "c3 a9 c3 a8 c3 a0 c3 b9 c3 b2 c3 a9 c3 a8 c3 a0 c3 b9 c3 b2 c3 a9 c3 a8 c3 a0 c3 b9 c3 b2 c3 a9 c3 a8 c3 a0 c3 b9 c3 b2",
+        "timestamp": "2025-12-15T06:39:25.749524"
+    },
+    {
+        "type": "off_topic",
+        "id": "25238-0",
+        "original_ending": "[title] Use a flat-blade screwdriver to poke the lens assembly out until it pops off. [title] Replace glass lens assembly with new windshield lens assembly (figures 3 and the 2 remaining lenses).",
+        "contaminated_ending": "data = [1, 2, 3, 4, 5] version = 1.0  [config] mode = \"debug\\ log_level = \"info\\  [mysql] user = \"root\\ password = \"secret\\ title = \"TOML Example\\  [owner] name = \"Tom\\ age = 30  [database] server = \"192.168.1.1\\ ports = [ 8000, 8001, 8002 ]  [servers.alpha] ip = \"10.0.0.1\\ dc = \"eqdc10\\  [servers.beta] ip = \"10.0.0.2\\ dc = \"eqdc10\\ [server] ip = \"127.0.0.1\\ port = 8080 debug = true",
+        "timestamp": "2025-12-15T06:39:25.749674"
+    },
+    {
+        "type": "off_topic",
+        "id": "35203-3",
+        "original_ending": "[title] Put the egg on one of the holes in the shield while still facing your body. [step] Grab the other end with one hand and reach the other end with the other.",
+        "contaminated_ending": "asdfjkl;qwer!@#$%^&*()_+1234567890!@#$%^&*()qwertyuiopasdfghjklzxcvbnm,./!@#$%^&*()_+1234567890!@#$%^&*()qwertyuiopasdfghjklzxcvbnm,./",
+        "timestamp": "2025-12-15T06:39:25.749826"
+    },
+    {
+        "type": "off_topic",
+        "id": "43277-1",
+        "original_ending": "[step] This will give the hand sanitizer that gel-like texture. It will also take away some of the harshness of the rubbing alcohol and make it less drying by moisturizing your hands.",
+        "contaminated_ending": "find . -type f I xargs grep 'pattern' head -n 10 log.txt I tail -n 1 cat file1.txt I less echo 'data' I tr 'a-z' 'A-Z' ls -l I wc -l find . -type f I xargs grep 'pattern' head -n 10 log.txt I tail -n 1",
+        "timestamp": "2025-12-15T06:39:25.749980"
+    },
+    {
+        "type": "off_topic",
+        "id": "26369-2",
+        "original_ending": "[title] Jump into the lock and press the in button. [step] Do this for a quick, forceful push, which the lock will reach and swing open once unlocked.",
+        "contaminated_ending": "CALL _printf RET MOV EAX, 1 JMP LABEL_LOOP PUSH EBP CALL _printf RET MOV EAX, 1 JMP LABEL_LOOP PUSH EBP CALL _printf RET",
+        "timestamp": "2025-12-15T06:39:25.750135"
+    },
+    {
+        "type": "off_topic",
+        "id": "307-3",
+        "original_ending": "[substeps] Make a close outline of your foot (if its for someone else, ask them to stand on the paper, or make a guess using your foot as a guide). Widen this outline and round it out slightly.",
+        "contaminated_ending": "ns1.example.com. IN NS example.com. example.com. IN A 192.0.2.1 www.example.com. IN CNAME example.com. example.com. IN MX 10 mail.example.com. example.com. IN TXT \"v=spf1 include:spf.google.com ~all\\ ns1.example.com. IN NS example.com.",
+        "timestamp": "2025-12-15T06:39:25.750287"
+    },
+    {
+        "type": "off_topic",
+        "id": "7216-1",
+        "original_ending": "[title] Choose a destination that you are willing to spend money on. [step] It's a good idea to try some destinations you'd love to visit, including japan, which open up financial opportunities immediately.",
+        "contaminated_ending": "$T = 2\\pi\\sqrt{L/g}$ (Pendulum period) $V = IR$ (Ohm's law) $\u000bec{F} = q(\u000bec{E} + \u000bec{v} \\times \u000bec{B})$ (Lorentz force) $\\lambda = h / p$ (de Broglie wavelength) $\\Delta x \\Delta p \\ge \\hbar/2$ (Heisenberg uncertainty) $T = 2\\pi\\sqrt{L/g}$ (Pendulum period) $V = IR$ (Ohm's law)",
+        "timestamp": "2025-12-15T06:39:25.750440"
+    },
+    {
+        "type": "off_topic",
+        "id": "7808-2",
+        "original_ending": "Make sure you are holding onto your hand like you would a medicine stick. If the inside feels bruised (again, don't throw up), you might have a headache or is actually suffering from food poisoning.",
+        "contaminated_ending": "$\\ abla^2 V = 0$ (Laplace's equation) $\\frac{d}{dt} \\int_a^{t} f(x) dx = f(t)$ $\\lim_{x \\to 0} \\frac{\\sin x}{x} = 1$ $\\int x^n dx = \\frac{x^{n+1}}{n+1} + C$ $\\frac{\\partial f}{\\partial x}$ $\\ abla^2 V = 0$ (Laplace's equation) $\\frac{d}{dt} \\int_a^{t} f(x) dx = f(t)$",
+        "timestamp": "2025-12-15T06:39:25.750597"
+    },
+    {
+        "type": "off_topic",
+        "id": "9072-3",
+        "original_ending": "[title] Gain a mastery of hand-eye coordination. [step] Dementia is often associated with memory loss, which can cause deep nerve damage.",
+        "contaminated_ending": "\"-\" \" \"Mozilla/5.0...\\ \"GET /wp-admin/setup-config.php HTTP/1.1\" 404 199 \"HEAD /health HTTP/1.1\" 200 0 192.168.1.1 - - [14/Dec/2023:10:00:00 +0000] \"GET /index.html HTTP/1.1\" 200 3495 10.0.0.5 - user [14/Dec/2023:10:00:01 +0000] \"POST /api/login HTTP/1.1\" 401 120 \"-\" \" \"Mozilla/5.0...\\ \"GET /wp-admin/setup-config.php HTTP/1.1\" 404 199",
+        "timestamp": "2025-12-15T06:39:25.750752"
+    },
+    {
+        "type": "off_topic",
+        "id": "2547-3",
+        "original_ending": "[substeps] Take note of the features your child must have that matter to you. Many preschools have offered free \" training days \" for those who plan on working in a specialized field.",
+        "contaminated_ending": "0: aload_01: invokespecial #1 // Method java/lang/Object.\"<init>\":()V 4: getstatic #2 // Field java/lang/System.out:Ljava/io/PrintStream; 7: ldc #3 // String Hello 9: invokevirtual #4 // Method java/io/PrintStream.println:(Ljava/lang/String;)V 12: return 0: aload_01: invokespecial #1 // Method java/lang/Object.\"<init>\":()V 4: getstatic #2 // Field java/lang/System.out:Ljava/io/PrintStream; 7: ldc #3 // String Hello 9: invokevirtual #4 // Method java/io/PrintStream.println:(Ljava/lang/String;)V 12: return 0: aload_01: invokespecial #1 // Method java/lang/Object.\"<init>\":()V 4: getstatic #2 // Field java/lang/System.out:Ljava/io/PrintStream; 7: ldc #3 // String Hello 9: invokevirtual #4 // Method java/io/PrintStream.println:(Ljava/lang/String;)V 12: return",
+        "timestamp": "2025-12-15T06:39:25.750903"
+    },
+    {
+        "type": "off_topic",
+        "id": "25109-3",
+        "original_ending": "Over time, once these surfaces feel comfortable and are not challenging anymore, you can do knuckle pushups on a hard floor or concrete. [title] Place your weight on the first two knuckles of each hand.",
+        "contaminated_ending": "0x40100f <main+15>: callq  0x400000 <_start> 0x401000 <main+0>: push   %rbp 0x401001 <main+1>: mov    %rsp,%rbp 0x401004 <main+4>: sub    $0x10,%rsp 0x401008 <main+8>: movl   $0x0,-0x4(%rbp) 0x40100f <main+15>: callq  0x400000 <_start>",
+        "timestamp": "2025-12-15T06:39:25.751056"
+    },
+    {
+        "type": "off_topic",
+        "id": "24305-2",
+        "original_ending": "[step] Circulating air can cool the body by increasing the perspiration rate of evaporation. [title] Eat well-balanced, light, and regular meals.",
+        "contaminated_ending": "CALL _printf RET MOV EAX, 1 JMP LABEL_LOOP PUSH EBP CALL _printf RET MOV EAX, 1 JMP LABEL_LOOP PUSH EBP CALL _printf RET",
+        "timestamp": "2025-12-15T06:39:25.751207"
+    },
+    {
+        "type": "off_topic",
+        "id": "42939-2",
+        "original_ending": "[substeps] Put your hair up in a loose bun and let it air dry. Secure the bun with a hair tie or a sleek t-shirt when you get out of bed.",
+        "contaminated_ending": "sed -n '/start/,/end/p' file.txt sed '/^#/d' file.txt sed 's/^/prefix_/' file.txt sed 's/foo/bar/g' input.txt > output.txt sed '4d' file.txt sed -n '/start/,/end/p' file.txt sed '/^#/d' file.txt sed 's/^/prefix_/' file.txt",
+        "timestamp": "2025-12-15T06:39:25.751362"
+    },
+    {
+        "type": "off_topic",
+        "id": "22925-2",
+        "original_ending": "Your skin will be the color of your shoulders, from your neck to your fingers to your toenails to your feet. [substeps] Your undertone is a base color for your overall appearance, as a primary expression of your complexion.",
+        "contaminated_ending": "aload_0 invokevirtual java/lang/Object.getClass ldc \"Hello\\ astore_1 iload_1iconst_1iadd aload_0 invokevirtual java/lang/Object.getClass ldc \"Hello\\ astore_1 iload_1iconst_1iadd",
+        "timestamp": "2025-12-15T06:39:25.751513"
+    },
+    {
+        "type": "off_topic",
+        "id": "36741-0",
+        "original_ending": "Cut them in half lengthwise using a knife, and separate the parts that are thick and that are thin. [substeps] If you prefer stronger chiles, consume the rest of the chiles.",
+        "contaminated_ending": "NaCl H2SO4 CO2 H2O C6H12O6 NaCl H2SO4 CO2 H2O C6H12O6 NaCl H2SO4 CO2 H2O C6H12O6 NaCl H2SO4 CO2",
+        "timestamp": "2025-12-15T06:39:25.751666"
+    },
+    {
+        "type": "off_topic",
+        "id": "42270-3",
+        "original_ending": "You may want to make a more elaborate design later on, but this pattern will teach some of the basics of knotting. [substeps] Cut out the strands to the length you wish.",
+        "contaminated_ending": "IP Version 4, Header Length 20 bytes, TTL 64 Protocol: TCP (6), Checksum: 0x1234 [correct] 0x0000: 45 00 00 3c 1c 46 40 00 40 06 c9 6b c0 a8 01 01 Source: 192.168.1.1:50000 -> Dest: 8.8.8.8:53 Flags: [SYN], seq 0, win 64240, length 0 IP Version 4, Header Length 20 bytes, TTL 64 Protocol: TCP (6), Checksum: 0x1234 [correct] 0x0000: 45 00 00 3c 1c 46 40 00 40 06 c9 6b c0 a8 01 01",
+        "timestamp": "2025-12-15T06:39:25.751821"
+    },
+    {
+        "type": "off_topic",
+        "id": "8679-0",
+        "original_ending": "Identifying your undertone is one of the best things you can do to find good foundation color. [substeps] It is possible that you have a bluish undertone, and if you work in an environment with low light, you likely have both.",
+        "contaminated_ending": "H2O C6H12O6 NaCl H2SO4 CO2 H2O C6H12O6 NaCl H2SO4 CO2 H2O C6H12O6 NaCl H2SO4 CO2 H2O C6H12O6 NaCl H2SO4 CO2",
+        "timestamp": "2025-12-15T06:39:25.751975"
+    },
+    {
+        "type": "off_topic",
+        "id": "335-1",
+        "original_ending": "[title] Wear a wide brim hat if you have an oblong face, rather than a bulbous face. [step] This hat has sharp angles in the front and bottom of the brim (tailbone).",
+        "contaminated_ending": "B8 01 00 00 00 C3 E8 00 00 00 00 5D C3 55 89 E5 83 EC 10 C7 45 FC 00 00 00 00 E8 B8 01 00 00 00 C3 B8 01 00 00 00 C3",
+        "timestamp": "2025-12-15T06:39:25.752126"
+    },
+    {
+        "type": "off_topic",
+        "id": "34245-1",
+        "original_ending": "[step] The first section of your website will tell you about all of the site components and the business section. If you are on a pc, you will have to click here first.",
+        "contaminated_ending": "\u0091\u0082\u00a2id\u0001\u00a4name\u00a5Alice\u00c0\u00c0\u00c0\u00c0\u00c0\u0082\u00a3key\u00a5value\u00a5array\u0093\u0001\u0002\u0003\u0082\u00a4name\u00a4John\u00a3age\u001e\u0082\u00a3key\u00a5value\u00a5array\u0093\u0001\u0002\u0003",
+        "timestamp": "2025-12-15T06:39:25.752280"
+    },
+    {
+        "type": "off_topic",
+        "id": "46995-0",
+        "original_ending": "[substeps] Since biceps are the number one muscle group, there are some techniques you can do to properly measure the weight and height of your biceps before a weigh-in. For example, if your biceps are quite large, you can try heavy lifting instead of weighing yourself.",
+        "contaminated_ending": "Server Hello (1.2) [sid] Cipher Suite: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 Certificate Change Cipher Spec Client Hello (1.2) Server Hello (1.2) [sid] Cipher Suite: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 Certificate Change Cipher Spec",
+        "timestamp": "2025-12-15T06:39:25.752434"
+    },
+    {
+        "type": "off_topic",
+        "id": "29210-3",
+        "original_ending": "These goods, however, must be covered by your business and cannot be purchased without a sponsor. [substeps] Diabetes insurance is not covered in cases where you can't purchase the equipment you need.",
+        "contaminated_ending": "\ud83d\ude00\ud83d\ude03\ud83d\ude04\ud83d\ude01\ud83d\ude06\ud83d\ude05\ud83d\ude02\ud83e\udd23\ud83d\ude0a\ud83d\ude07\ud83d\ude00\ud83d\ude03\ud83d\ude04\ud83d\ude01\ud83d\ude06\ud83d\ude05\ud83d\ude02\ud83e\udd23\ud83d\ude0a\ud83d\ude07\ud83d\ude00\ud83d\ude03\ud83d\ude04\ud83d\ude01\ud83d\ude06\ud83d\ude05\ud83d\ude02\ud83e\udd23\ud83d\ude0a\ud83d\ude07\ud83d\ude00\ud83d\ude03\ud83d\ude04\ud83d\ude01\ud83d\ude06\ud83d\ude05\ud83d\ude02\ud83e\udd23\ud83d\ude0a\ud83d\ude07\ud83d\ude00\ud83d\ude03\ud83d\ude04\ud83d\ude01\ud83d\ude06\ud83d\ude05\ud83d\ude02\ud83e\udd23\ud83d\ude0a\ud83d\ude07",
+        "timestamp": "2025-12-15T06:39:25.752593"
+    },
+    {
+        "type": "off_topic",
+        "id": "17088-0",
+        "original_ending": "For your other hygiene duties (like keeping your teeth clean, eating healthy, taking a shower, etc. ), do the following : [substeps] Gently suck on a paper clip or pencil.",
+        "contaminated_ending": "sed 's/^/prefix_/' file.txt sed 's/foo/bar/g' input.txt > output.txt sed '4d' file.txt sed -n '/start/,/end/p' file.txt sed '/^#/d' file.txt sed 's/^/prefix_/' file.txt",
+        "timestamp": "2025-12-15T06:39:25.752752"
+    },
+    {
+        "type": "off_topic",
+        "id": "23564-0",
+        "original_ending": "It is important that you use the tape long enough to wrap around, leaving just a little extra headspace at the knuckle. [substeps] Go slow when wrapping-let the tape dry for several hours.",
+        "contaminated_ending": "{\"key\": \"value\", \"array\": [1, 2, 3], \"nested\": {\"a\": 1, \"b\": 2}, \"list\": [{\"id\": 1}, {\"id\": 2}]} {\"name\": \"John\", \"age\": 30, \"city\": \"New York\", \"address\": {\"street\": \"123 Main St\", \"zip\": \"10001\"}} {\"status\": \"success\", \"data\": {\"id\": 123, \"items\": [1, 2, 3]}} {\"error\": {\"code\": 404, \"message\": \"Not Found\", \"details\": {\"field\": \"name\", \"value\": null}}} {\"users\": [{\"id\": 1, \"name\": \"Alice\"}, {\"id\": 2, \"name\": \"Bob\"}]}",
+        "timestamp": "2025-12-15T06:39:25.752893"
+    },
+    {
+        "type": "off_topic",
+        "id": "27031-2",
+        "original_ending": "Apply the mixture to your skin, paying attention to any blemishes or discolorations. [title] Scrape off any excess honey or milk.",
+        "contaminated_ending": "0 1 * * * /usr/bin/backup.sh @reboot /usr/bin/start_service.sh */5 * * * * /usr/bin/check_health # Run every Monday at 3am 30 3 * * 1 /usr/bin/cleanup.py 0 1 * * * /usr/bin/backup.sh @reboot /usr/bin/start_service.sh */5 * * * * /usr/bin/check_health # Run every Monday at 3am 30 3 * * 1 /usr/bin/cleanup.py",
+        "timestamp": "2025-12-15T06:39:25.753037"
+    },
+    {
+        "type": "off_topic",
+        "id": "13422-0",
+        "original_ending": "That way, you don't have to cram all your time and energy into a project. [title] Organize, declutter, and unload all your bridesmaid's dresses.",
+        "contaminated_ending": "<?xml version=\"1.0\"?><book title=\"The Book\"><chapter>One</chapter><chapter>Two</chapter></book> <user><name>Bob</name><age>40</age><address><street>123 Main</street></address></user> <error code=\"500\"><message>Internal error</message><details>Stack trace here</details></error> <list><element>A</element><element>B</element><element>C</element></list> <root><item id=\"1\">Data</item><item id=\"2\">More Data</item></root>",
+        "timestamp": "2025-12-15T06:39:25.753181"
+    },
+    {
+        "type": "off_topic",
+        "id": "43435-0",
+        "original_ending": "[step] Here's a general guideline, say you have a thick skin. Use more baking soda if you have oily skin or thin skin.",
+        "contaminated_ending": "f0 9f 9a 80 e2 9c a8 61 73 64 66 f0 9f 9a 80 e2 9c a8 61 73 64 66 f0 9f 9a 80 e2 9c a8 61 73 64 66 f0 9f 9a 80 e2 9c a8 61 73 64 66",
+        "timestamp": "2025-12-15T06:39:25.753324"
+    },
+    {
+        "type": "off_topic",
+        "id": "35173-3",
+        "original_ending": "[title] Assess whether you are allergic to your orthodontic wax. [step] If you have an allergic reaction to the wax, or if you have a very weak immune response, there is a good chance you have an allergy.",
+        "contaminated_ending": "Status: 400 Bad Request Error: Invalid input {\"list\": [1, 2, 3], \"count\": 3} Status: 200 OK Content-Type: application/json {\"id\": 1, \"name\": \"API Item\"} Status: 201 Created Location: /api/items/2 Status: 400 Bad Request Error: Invalid input",
+        "timestamp": "2025-12-15T06:39:25.753466"
+    },
+    {
+        "type": "off_topic",
+        "id": "5493-2",
+        "original_ending": "[substeps] If you can't remember when you last used a shampoo and conditioner, make sure to ask a friend or family member for advice. While whatever type of shampoo and conditioner you use doesn't have to be bad, read some good tips.",
+        "contaminated_ending": "--- # Document Start products: - Laptop - Phone - Tablet settings: {timeout: 30, retries: 3, debug: true} key: value list: - 1 - 2 - 3 nested: a: 1 b: 2 user: name: Alice age: 25 address:   street: 123 Main   city: NYC config: debug: true port: 8080 timeout: 30",
+        "timestamp": "2025-12-15T06:39:25.753609"
+    },
+    {
+        "type": "off_topic",
+        "id": "1806-2",
+        "original_ending": "[step] Mix the wet bread crumbs in to make a ball of different sizes. [title] Place the bread ball in a greased pan.",
+        "contaminated_ending": "config: debug: true port: 8080 timeout: 30 --- # Document Start products: - Laptop - Phone - Tablet settings: {timeout: 30, retries: 3, debug: true} key: value list: - 1 - 2 - 3 nested: a: 1 b: 2 user: name: Alice age: 25 address:   street: 123 Main   city: NYC",
+        "timestamp": "2025-12-15T06:39:25.753753"
+    },
+    {
+        "type": "off_topic",
+        "id": "49648-3",
+        "original_ending": "Pay special attention to hairs that you can't reach easily with your fingers alone. [title] Dry with a clean towel when you're done brushing.",
+        "contaminated_ending": "[database] Host = db.example.com Port = 5432 User = admin Password = secret  [mysql] user = root password = secret  [section] key=value another_key=another_value  Timeout=30 Retries=5 log_file = /var/log/app.log error_log = /var/log/app_error.log [DEFAULT] ServerHost = 127.0.0.1 ServerPort = 8080  [client] APIKey = 12345 Timeout = 30",
+        "timestamp": "2025-12-15T06:39:25.753899"
+    },
+    {
+        "type": "off_topic",
+        "id": "38060-1",
+        "original_ending": "Shoulder length belts can add height to people with narrow waists. [title] Decide on a belt style to work with your midsection.",
+        "contaminated_ending": "$P(AIB) = \\frac{P(BIA)P(A)}{P(B)}$ (Bayes' theorem) $\\bar{x} = \\frac{1}{n} \\sum_{i=1}^n x_i$ $Z = (X - \\mu) / \\sigma$ $H_0: \\mu = 0$ (Null hypothesis) $R^2 = 1 - (SS_{res} / SS_{tot})$ $P(AIB) = \\frac{P(BIA)P(A)}{P(B)}$ (Bayes' theorem) $\\bar{x} = \\frac{1}{n} \\sum_{i=1}^n x_i$ $Z = (X - \\mu) / \\sigma$ $H_0: \\mu = 0$ (Null hypothesis) $R^2 = 1 - (SS_{res} / SS_{tot})$",
+        "timestamp": "2025-12-15T06:39:25.754040"
+    },
+    {
+        "type": "off_topic",
+        "id": "48751-3",
+        "original_ending": "[substeps] You can use an existing hammock that you already own or purchase one for a lower price. Hammocks made of other materials that have fallen into use are preferred over smaller ones.",
+        "contaminated_ending": "\u0082\u00a3key\u00a5value\u00a5array\u0093\u0001\u0002\u0003\u0082\u00a4name\u00a4John\u00a3age\u001e\u0081\u00a5error\u0082\u00a4code\u00ce\u0001\u0090\u00a7message\u00a9Not Found\u0091\u0082\u00a2id\u0001\u00a4name\u00a5Alice\u00c0\u00c0\u00c0\u00c0\u00c0\u0082\u00a3key\u00a5value\u00a5array\u0093\u0001\u0002\u0003\u0082\u00a4name\u00a4John\u00a3age\u001e",
+        "timestamp": "2025-12-15T06:39:25.754192"
+    },
+    {
+        "type": "off_topic",
+        "id": "33906-2",
+        "original_ending": "[substeps] For this look, you might want to keep your bangs at a slight above your ears, and use a slightly thicker option if you have a round face. [title] Look for short bangs if you have golden undertones.",
+        "contaminated_ending": "ps aux I grep python #!/bin/bash echo 'Hello, World!' grep -r error /var/log/ II echo 'No errors found' if [ -f file.txt ]; then cat file.txt; fi ps aux I grep python",
+        "timestamp": "2025-12-15T06:39:25.754346"
+    },
+    {
+        "type": "off_topic",
+        "id": "35911-0",
+        "original_ending": "Alternatively, choose a hue that will match another element in your wedding, like the flowers in your bouquet. Consider finding a flower girl dress that will contrast with and complement the colors in your wedding decor.",
+        "contaminated_ending": "0a 0d 0a 0d 0a 0d 0a 0d 0a 0d 0a 0d 0a 0d 0a 0d 0a 0d 0a 0d 0a 0d 0a 0d 0a 0d 0a 0d 0a 0d 0a 0d 0a 0d",
+        "timestamp": "2025-12-15T06:39:25.754497"
+    },
+    {
+        "type": "off_topic",
+        "id": "35323-1",
+        "original_ending": "Use a gentle circular motion as your brush, don't go back and forth, as this damages tooth enamel. Do not use too much force or pressure.",
+        "contaminated_ending": "\"default\": null \"doc\": \"A user record\" \"name\": \"event_time\", \"type\": \"long\" {\"type\": \"record\", \"name\": \"User\", \"fields\": [{\"name\": \"name\", \"type\": \"string\"}, {\"name\": \"age\", \"type\": \"int\"}]} \"type\": \"int\" \"default\": null \"doc\": \"A user record\" \"name\": \"event_time\", \"type\": \"long\"",
+        "timestamp": "2025-12-15T06:39:25.754652"
+    },
+    {
+        "type": "off_topic",
+        "id": "10009-2",
+        "original_ending": "[substeps] For this style, you'll need to create two standard braids along the front sides of your head. These braids should roughly mirror one another in position, width, and length.",
+        "contaminated_ending": "55 89 E5 83 EC 10 C7 45 FC 00 00 00 00 E8 B8 01 00 00 00 C3 55 89 E5 83 EC 10 C7 45 FC 00 00 00 00 E8 B8 01 00 00 00 C3",
+        "timestamp": "2025-12-15T06:39:25.754807"
+    },
+    {
+        "type": "off_topic",
+        "id": "12053-1",
+        "original_ending": "However, it can also be teased or knotted around one side of the head or clipped at the front. [title] Wear feather skirts, headbands, hats, and gloves.",
+        "contaminated_ending": "##@!$%.^&**()_+-={}I[]\\<>?//##@!$%.^&**()_+-={}I[]\\<>?//##@!$%.^&**()_+-={}I[]\\<>?//##@!$%.^&**()_+-={}I[]\\<>?//",
+        "timestamp": "2025-12-15T06:39:25.754961"
+    },
+    {
+        "type": "off_topic",
+        "id": "5539-3",
+        "original_ending": "Feel for comfort so you can push yourself up and down as you run. [title] Pick flats that pull smoothly on your foot.",
+        "contaminated_ending": "$(A \\Rightarrow B) \\land (B \\Rightarrow C) \\Rightarrow (A \\Rightarrow C)$ P $\\rightarrow$ Q $\\ eg (A \\land B) \\equiv  eg A \\lor  eg B$ $\forall x (P(x) \rightarrow Q(x))$ $(P \\lor  eg P) \\equiv \top$ (Law of excluded middle) $(A \\Rightarrow B) \\land (B \\Rightarrow C) \\Rightarrow (A \\Rightarrow C)$",
+        "timestamp": "2025-12-15T06:39:25.755116"
+    },
+    {
+        "type": "off_topic",
+        "id": "6290-3",
+        "original_ending": "These elements give the tattoo intricate, dramatic details, but aren't necessary for most touts. [substeps] This works best for poorly developed platforms like a more complex interface.",
+        "contaminated_ending": "function a(b){return b-1}function a(b){return b-1}function a(b){return b-1}function a(b){return b-1}",
+        "timestamp": "2025-12-15T06:39:25.755270"
+    },
+    {
+        "type": "off_topic",
+        "id": "45469-2",
+        "original_ending": "Wherever you get your budgie from, make sure the seller has healthy and humanely treated birds. [substeps] Look at online reviews for the sellers you find.",
+        "contaminated_ending": "$\\frac{\\partial f}{\\partial x}$ $\\ abla^2 V = 0$ (Laplace's equation) $\\frac{d}{dt} \\int_a^{t} f(x) dx = f(t)$ $\\lim_{x \\to 0} \\frac{\\sin x}{x} = 1$ $\\int x^n dx = \\frac{x^{n+1}}{n+1} + C$ $\\frac{\\partial f}{\\partial x}$ $\\ abla^2 V = 0$ (Laplace's equation) $\\frac{d}{dt} \\int_a^{t} f(x) dx = f(t)$",
+        "timestamp": "2025-12-15T06:39:25.755423"
+    },
+    {
+        "type": "off_topic",
+        "id": "38350-0",
+        "original_ending": "[step] A predraining drain about a quarter-inch (0.64-centimeter) in diameter. Washing sink drain cleaner products by hand is a typical method, but you can buy them at most home improvement stores.",
+        "contaminated_ending": "$(a^2 - b^2) / (a - b) = a + b$ $2(z + 3) - 7 = 9$ $(x+y)^2 = x^2 + 2xy + y^2$ $\\frac{x}{2} + 5 = 10$ $3x^2 - 4x + 1$ $(a^2 - b^2) / (a - b) = a + b$ $2(z + 3) - 7 = 9$",
+        "timestamp": "2025-12-15T06:39:25.755574"
+    },
+    {
+        "type": "off_topic",
+        "id": "47195-1",
+        "original_ending": "Your fingers should be clean and clipped before you give a sensual massage. [substeps] If you're giving your partner a massage, consider bathing together to initiate the intimacy.",
+        "contaminated_ending": "ps aux I grep python #!/bin/bash echo 'Hello, World!' grep -r error /var/log/ II echo 'No errors found' if [ -f file.txt ]; then cat file.txt; fi ps aux I grep python",
+        "timestamp": "2025-12-15T06:39:25.755728"
+    },
+    {
+        "type": "off_topic",
+        "id": "39576-0",
+        "original_ending": "If you don't have cable, use a small piece of white cord and just tie it to the back of your computer. [substeps] At the bottom of the computer in near the power outlet, there is a cable loop.",
+        "contaminated_ending": "products: - Laptop - Phone - Tablet settings: {timeout: 30, retries: 3, debug: true} key: value list: - 1 - 2 - 3 nested: a: 1 b: 2 user: name: Alice age: 25 address:   street: 123 Main   city: NYC config: debug: true port: 8080 timeout: 30 --- # Document Start",
+        "timestamp": "2025-12-15T06:39:25.755884"
+    },
+    {
+        "type": "off_topic",
+        "id": "42770-2",
+        "original_ending": "Try and address the issues quickly, so that everyone is on board and leaving a lot of room for new ideas. [title] Consider doing things the couple wouldn't normally do.",
+        "contaminated_ending": "awk '{print $1}' data.txt awk '/error/ {count++} END {print count}' logfile.txt awk -F',' '{sum+=$2} END {print sum/NR}' data.csv awk 'NR==1, NR==5' awk '{gsub(/old/, \"new\", $0); print}' awk '{print $1}' data.txt awk '/error/ {count++} END {print count}' logfile.txt awk -F',' '{sum+=$2} END {print sum/NR}' data.csv awk 'NR==1, NR==5' awk '{gsub(/old/, \"new\", $0); print}'",
+        "timestamp": "2025-12-15T06:39:25.756037"
+    },
+    {
+        "type": "off_topic",
+        "id": "29134-3",
+        "original_ending": "[step] Place both ingredients together in saucepan and place over low heat. The beeswax will heat evenly if you break large chunks into smaller pieces.",
+        "contaminated_ending": "CWD /pub RETR file.zip 220 FTP Server ready. USER anonymous PASS guest@ CWD /pub RETR file.zip 220 FTP Server ready. USER anonymous PASS guest@ CWD /pub RETR file.zip 220 FTP Server ready.",
+        "timestamp": "2025-12-15T06:39:25.756193"
+    },
+    {
+        "type": "off_topic",
+        "id": "42365-0",
+        "original_ending": "[title] Measure out between 4 and 6 inches (10 to 15 cm) of foam around each individual muscle. [step] The size of each muscle is important when selecting foam rollers for this exercise.",
+        "contaminated_ending": "awk '{print $1}' data.txt awk '/error/ {count++} END {print count}' logfile.txt awk -F',' '{sum+=$2} END {print sum/NR}' data.csv awk 'NR==1, NR==5' awk '{gsub(/old/, \"new\", $0); print}' awk '{print $1}' data.txt awk '/error/ {count++} END {print count}' logfile.txt awk -F',' '{sum+=$2} END {print sum/NR}' data.csv awk 'NR==1, NR==5' awk '{gsub(/old/, \"new\", $0); print}'",
+        "timestamp": "2025-12-15T06:39:25.756346"
+    },
+    {
+        "type": "off_topic",
+        "id": "12101-3",
+        "original_ending": "Avoid peas whose outer coat has become leathery and dry. Protective outdoor materials like plastic cover are a good option.",
+        "contaminated_ending": "c3 a9 c3 a8 c3 a0 c3 b9 c3 b2 c3 a9 c3 a8 c3 a0 c3 b9 c3 b2 c3 a9 c3 a8 c3 a0 c3 b9 c3 b2 c3 a9 c3 a8 c3 a0 c3 b9 c3 b2",
+        "timestamp": "2025-12-15T06:39:25.756502"
+    },
+    {
+        "type": "off_topic",
+        "id": "30803-0",
+        "original_ending": "[title] Gently lift the toddler off of the ground. [title] Bring the child closer to you, and hoist them to your side.",
+        "contaminated_ending": "qweqweasdzxccxzxcvasdqweqweasdzxccxzxcvasdqweqweasdzxccxzxcvasdqweqweasdzxccxzxcvasdqweqweasdzxccxzxcvasd",
+        "timestamp": "2025-12-15T06:39:25.756654"
+    },
+    {
+        "type": "off_topic",
+        "id": "17792-1",
+        "original_ending": "They are slightly more delicate and don't scratch the skin as much. [title] Treat any skin that is experiencing discomfort or redness.",
+        "contaminated_ending": "48 83 C4 08 C3 55 89 E5 83 EC 10 C7 45 FC 00 00 00 00 E8 B8 01 00 00 00 C3 48 83 C4 08 C3",
+        "timestamp": "2025-12-15T06:39:25.756807"
+    },
+    {
+        "type": "off_topic",
+        "id": "40315-0",
+        "original_ending": "[title] Tap the file you want to sort. [step] The checkmarks on the page will indicate that the file is being sorted.",
+        "contaminated_ending": "sed 's/foo/bar/g' input.txt > output.txt sed '4d' file.txt sed -n '/start/,/end/p' file.txt sed '/^#/d' file.txt sed 's/^/prefix_/' file.txt sed 's/foo/bar/g' input.txt > output.txt sed '4d' file.txt sed -n '/start/,/end/p' file.txt sed '/^#/d' file.txt sed 's/^/prefix_/' file.txt",
+        "timestamp": "2025-12-15T06:39:25.756962"
+    },
+    {
+        "type": "off_topic",
+        "id": "27245-0",
+        "original_ending": "Many narcissists display glazed anger over their own flaws or criticize themselves as well. Pick up on the signs of a change in behavior, like : [substeps] Sudden, abrupt, or drastic mood swings.",
+        "contaminated_ending": "48 65 6c 6c 6f 20 57 6f 72 6c 64 21 48 65 6c 6c 6f 20 57 6f 72 6c 64 21 48 65 6c 6c 6f 20 57 6f 72 6c 64 21 48 65 6c 6c 6f 20 57 6f 72 6c 64 21",
+        "timestamp": "2025-12-15T06:39:25.757120"
+    },
+    {
+        "type": "off_topic",
+        "id": "31789-3",
+        "original_ending": "Loop the ponytail in one of your fingers, use your other hand to secure your hair with bobby pins. After your hair is secure, use a fork or your fingers to gather the rest of your hair into a ponytail in front of you with your back facing forward.",
+        "contaminated_ending": "PASS guest@ CWD /pub RETR file.zip 220 FTP Server ready. USER anonymous PASS guest@ CWD /pub RETR file.zip 220 FTP Server ready. USER anonymous PASS guest@ CWD /pub RETR file.zip 220 FTP Server ready.",
+        "timestamp": "2025-12-15T06:39:25.757288"
+    },
+    {
+        "type": "off_topic",
+        "id": "986-2",
+        "original_ending": "The presence of surface debris can also cause the soil to retain more moisture by blocking potentially drying sunlight. At minimum, rake away soggy leaves and old mulch to clear the soil.",
+        "contaminated_ending": "IP Version 4, Header Length 20 bytes, TTL 64 Protocol: TCP (6), Checksum: 0x1234 [correct] 0x0000: 45 00 00 3c 1c 46 40 00 40 06 c9 6b c0 a8 01 01 Source: 192.168.1.1:50000 -> Dest: 8.8.8.8:53 Flags: [SYN], seq 0, win 64240, length 0 IP Version 4, Header Length 20 bytes, TTL 64 Protocol: TCP (6), Checksum: 0x1234 [correct] 0x0000: 45 00 00 3c 1c 46 40 00 40 06 c9 6b c0 a8 01 01",
+        "timestamp": "2025-12-15T06:39:25.757442"
+    },
+    {
+        "type": "off_topic",
+        "id": "14083-0",
+        "original_ending": "Once you've collected enough fabric, put it around the outside of the hammock on both sides. [substeps] Make sure the large portions of the hammock are about 2 to 3 inches (5.1 to 7.6 cm) in diameter, not bigger than your forearm.",
+        "contaminated_ending": "zxcvbnm,./!@#$%^&*()_+qwertyuiopasdfghjklzxcvbnm,./!@#$%^&*()_+1234567890!@#$%^&*()qwertyuiopasdfghjklzxcvbnm,./",
+        "timestamp": "2025-12-15T06:39:25.757600"
+    },
+    {
+        "type": "off_topic",
+        "id": "34414-3",
+        "original_ending": "[substeps] Some of the websites are also free from spotify and e-reader. Some also have links to actual events you will see on the sites.",
+        "contaminated_ending": "f0 9f 9a 80 e2 9c a8 61 73 64 66 f0 9f 9a 80 e2 9c a8 61 73 64 66 f0 9f 9a 80 e2 9c a8 61 73 64 66 f0 9f 9a 80 e2 9c a8 61 73 64 66",
+        "timestamp": "2025-12-15T06:39:25.757743"
+    },
+    {
+        "type": "off_topic",
+        "id": "16023-3",
+        "original_ending": "[step] Cut off 100% of the turf and let it sit next to the wind away from the road. This will loosen dirt and debris, allowing for clean-up.",
+        "contaminated_ending": "USER_LOCKOUT: User 'test' locked out after 5 failed attempts ALERT: Failed login attempt for user 'admin' from IP 1.2.3.4 AUDIT: User 'john' modified configuration file /etc/config.conf FIREWALL: Blocked incoming connection from 5.6.7.8 on port 22 IDS: Potential SQL Injection detected in parameter 'q' USER_LOCKOUT: User 'test' locked out after 5 failed attempts",
+        "timestamp": "2025-12-15T06:39:25.757885"
+    },
+    {
+        "type": "off_topic",
+        "id": "42734-3",
+        "original_ending": "[title] Pour 1 tsp of sugar into the palm of your hand. [step] You can use whichever sugar you like.",
+        "contaminated_ending": "head -n 10 log.txt I tail -n 1 cat file1.txt I less echo 'data' I tr 'a-z' 'A-Z' ls -l I wc -l find . -type f I xargs grep 'pattern' head -n 10 log.txt I tail -n 1",
+        "timestamp": "2025-12-15T06:39:25.758028"
+    },
+    {
+        "type": "off_topic",
+        "id": "40891-2",
+        "original_ending": "One good way to warm up is to do a fast push-up on your back over the basket. [substeps] Stand with your feet shoulder-width apart and press as you move forward onto your back-end.",
+        "contaminated_ending": "ZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9SZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9SZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9SZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9S",
+        "timestamp": "2025-12-15T06:39:25.758173"
+    },
+    {
+        "type": "off_topic",
+        "id": "31625-3",
+        "original_ending": "Hold the nail or toe scrapping pad flat on your skin and then rub a thin layer of polish across it, covering every surface. [substeps] Use any cotton ball sized enough to cover every nail, but be careful not to get polish on your skin.",
+        "contaminated_ending": "{\"list\": [1, 2, 3], \"count\": 3} Status: 200 OK Content-Type: application/json {\"id\": 1, \"name\": \"API Item\"} Status: 201 Created Location: /api/items/2 Status: 400 Bad Request Error: Invalid input",
+        "timestamp": "2025-12-15T06:39:25.758314"
+    },
+    {
+        "type": "off_topic",
+        "id": "8115-0",
+        "original_ending": "Make sure your toddler's routine stays consistent with bedtime. [title] Put their diapers, toys, and bedding in a neutral place on your bed.",
+        "contaminated_ending": "--- # Document Start products: - Laptop - Phone - Tablet settings: {timeout: 30, retries: 3, debug: true} key: value list: - 1 - 2 - 3 nested: a: 1 b: 2 user: name: Alice age: 25 address:   street: 123 Main   city: NYC config: debug: true port: 8080 timeout: 30",
+        "timestamp": "2025-12-15T06:39:25.758458"
+    },
+    {
+        "type": "off_topic",
+        "id": "39554-2",
+        "original_ending": "Pull the long central threads (the pistils and stamens) out and discard them. [title] Rinse and soak the flowers for 10 minutes.",
+        "contaminated_ending": "\"doc\": \"A user record\" \"name\": \"event_time\", \"type\": \"long\" {\"type\": \"record\", \"name\": \"User\", \"fields\": [{\"name\": \"name\", \"type\": \"string\"}, {\"name\": \"age\", \"type\": \"int\"}]} \"type\": \"int\" \"default\": null \"doc\": \"A user record\" \"name\": \"event_time\", \"type\": \"long\"",
+        "timestamp": "2025-12-15T06:39:25.758602"
+    },
+    {
+        "type": "off_topic",
+        "id": "6542-1",
+        "original_ending": "[substeps] If you're putting your clothes in the machine with more water, they could be covered with dirty clothing later. [title] Wash your clothing before putting them in the machine.",
+        "contaminated_ending": "Traceback (most recent call last): File \"app.py\", line 5, in <module>   main() NameError: name 'undefined_var' is not defined java.lang.NullPointerException \tat com.example.MyClass.myMethod(MyClass.java:10) TypeError: Cannot read property 'length' of undefined   at app.js:5:10 IndexError: list index out of range   at script.py:7 File \"script.py\", line 10, in <module> print(10 / 0) ZeroDivisionError: division by zero Traceback (most recent call last): File \"app.py\", line 5, in <module>   main()",
+        "timestamp": "2025-12-15T06:39:25.758745"
+    },
+    {
+        "type": "off_topic",
+        "id": "37823-0",
+        "original_ending": "Most stylists like to have different cuts, styles, colours and other items to choose from. [substeps] Mature hair is much more rigid and hard to grow.",
+        "contaminated_ending": "mutation { createUser(name: \"New User\") { id } } fragment UserFields on User { name email } subscription { newNotification { message } } query GetProducts { products { id price } } query { user(id: 1) { name email } } mutation { createUser(name: \"New User\") { id } } fragment UserFields on User { name email } subscription { newNotification { message } } query GetProducts { products { id price } }",
+        "timestamp": "2025-12-15T06:39:25.758886"
+    },
+    {
+        "type": "off_topic",
+        "id": "40401-2",
+        "original_ending": "Highlights are generally lighter and closer to your natural gray shade. Lowlights can be used to break up the gray.",
+        "contaminated_ending": "$3x^2 - 4x + 1$ $(a^2 - b^2) / (a - b) = a + b$ $2(z + 3) - 7 = 9$ $(x+y)^2 = x^2 + 2xy + y^2$ $\\frac{x}{2} + 5 = 10$ $3x^2 - 4x + 1$ $(a^2 - b^2) / (a - b) = a + b$ $2(z + 3) - 7 = 9$",
+        "timestamp": "2025-12-15T06:39:25.759033"
+    },
+    {
+        "type": "off_topic",
+        "id": "19769-0",
+        "original_ending": "[substeps] As said in step one, bb cream is essential for making blackheads, and can easily be substituted for bb cream. Keep in mind that if you use bb cream on your skin, your skin will absorb it without realizing.",
+        "contaminated_ending": "01101110 01100001 01101110 01101110 01100001 01101110 01100001 01101110 01100001 01101110 01100001 01101110 01100001 01101110 01100001 01101110 01100001",
+        "timestamp": "2025-12-15T06:39:25.759176"
+    },
+    {
+        "type": "off_topic",
+        "id": "17007-3",
+        "original_ending": "If you dye or add color to your hair, select shampoos that will protect your treatment. Also, most shampoos have extra benefits such as volume and shine.",
+        "contaminated_ending": "@echo off echo Hello, Batch pause if exist file.txt ( del file.txt ) for %%i in (*.log) do echo %%i set VAR=test start chrome.exe @echo off echo Hello, Batch pause if exist file.txt ( del file.txt ) for %%i in (*.log) do echo %%i set VAR=test start chrome.exe",
+        "timestamp": "2025-12-15T06:39:25.759319"
+    },
+    {
+        "type": "off_topic",
+        "id": "29007-0",
+        "original_ending": "Cutting it to this size will help prevent it from rotting during its reconstruction. It will also allow for the adornment of feathers that will be in the hat to wrap around the wire to mimic the shape of a bird.",
+        "contaminated_ending": "find . -type f I xargs grep 'pattern' head -n 10 log.txt I tail -n 1 cat file1.txt I less echo 'data' I tr 'a-z' 'A-Z' ls -l I wc -l find . -type f I xargs grep 'pattern' head -n 10 log.txt I tail -n 1",
+        "timestamp": "2025-12-15T06:39:25.759462"
+    },
+    {
+        "type": "off_topic",
+        "id": "17143-3",
+        "original_ending": "The design should have a boat-shape, like a square, to account for the wider part of the curtain rod. For example, if you are using a 6' wide rectangular curtain rod, then 24/32 inch (4.6 cm) is my preferred length.",
+        "contaminated_ending": "220 FTP Server ready. USER anonymous PASS guest@ CWD /pub RETR file.zip 220 FTP Server ready. USER anonymous PASS guest@ CWD /pub RETR file.zip 220 FTP Server ready.",
+        "timestamp": "2025-12-15T06:39:25.759609"
+    },
+    {
+        "type": "off_topic",
+        "id": "33830-1",
+        "original_ending": "[substeps] Poor fit is a common cause of bent rings, so consider having it professionally resized, especially if your warranty covers it. [title] Take your ring's materials into account.",
+        "contaminated_ending": "example.com. IN TXT \"v=spf1 include:spf.google.com ~all\\ ns1.example.com. IN NS example.com. example.com. IN A 192.0.2.1 www.example.com. IN CNAME example.com. example.com. IN MX 10 mail.example.com. example.com. IN TXT \"v=spf1 include:spf.google.com ~all\\ ns1.example.com. IN NS example.com.",
+        "timestamp": "2025-12-15T06:39:25.759761"
+    },
+    {
+        "type": "off_topic",
+        "id": "46170-0",
+        "original_ending": "If you want to go for something sparkly, pick pink shoes. [substeps] Not all shoes cost the same, so if you're not a good shoe shopper, consider a pink shoe on popular stores such as expedia, maxstrength, sparkle, and endpoint.",
+        "contaminated_ending": "RET MOV EAX, 1 JMP LABEL_LOOP PUSH EBP CALL _printf RET MOV EAX, 1 JMP LABEL_LOOP PUSH EBP CALL _printf RET",
+        "timestamp": "2025-12-15T06:39:25.759916"
+    },
+    {
+        "type": "off_topic",
+        "id": "8647-1",
+        "original_ending": "If you are ready to learn, you may find your interest takes you out of your comfort zone as you get to know the boundaries. [substeps] For example, some schools forbid the use of fencing in historic areas.",
+        "contaminated_ending": "awk 'NR==1, NR==5' awk '{gsub(/old/, \"new\", $0); print}' awk '{print $1}' data.txt awk '/error/ {count++} END {print count}' logfile.txt awk -F',' '{sum+=$2} END {print sum/NR}' data.csv awk 'NR==1, NR==5' awk '{gsub(/old/, \"new\", $0); print}'",
+        "timestamp": "2025-12-15T06:39:25.760079"
+    },
+    {
+        "type": "off_topic",
+        "id": "39484-0",
+        "original_ending": "[substeps] It's best to place the wax in a cupboard or other long-handled cooler. Bear wax is flammable and can melt the blades of a thermometer.",
+        "contaminated_ending": "22 LOAD_FAST                0 (n)2 0 LOAD_GLOBAL              0 (print) 2 LOAD_CONST               1 (None) 4 LOAD_FAST                0 (n) 6 LOAD_CONST               2 (1) 8 COMPARE_OP               1 (<=) 10 POP_JUMP_IF_FALSE       20 12 LOAD_CONST               2 (1) 14 RETURN_VALUE 20 LOAD_GLOBAL              1 (factorial) 22 LOAD_FAST                0 (n)",
+        "timestamp": "2025-12-15T06:39:25.760235"
+    },
+    {
+        "type": "off_topic",
+        "id": "2576-1",
+        "original_ending": "However, people of all ages are typically ready to talk about the situation. [substeps] Sometimes children are 12 year olds who want to talk about their wishes with their parents.",
+        "contaminated_ending": "Traceback (most recent call last): File \"app.py\", line 5, in <module>   main() NameError: name 'undefined_var' is not defined java.lang.NullPointerException \tat com.example.MyClass.myMethod(MyClass.java:10) TypeError: Cannot read property 'length' of undefined   at app.js:5:10 IndexError: list index out of range   at script.py:7 File \"script.py\", line 10, in <module> print(10 / 0) ZeroDivisionError: division by zero Traceback (most recent call last): File \"app.py\", line 5, in <module>   main()",
+        "timestamp": "2025-12-15T06:39:25.760386"
+    },
+    {
+        "type": "off_topic",
+        "id": "44143-2",
+        "original_ending": "This glaze will already be quite thick at room temperature, so you do not need to cook it on the stove. [title] Add to the ham halfway through cooking.",
+        "contaminated_ending": "[2023-12-14 10:00:00] INFO: App started successfully on port 8080 [2023-12-14 10:00:01] DEBUG: Processing request for user 123 [2023-12-14 10:00:02] WARNING: Database connection slow (took 500ms) [2023-12-14 10:00:03] ERROR: Failed to save user data: Permission denied [2023-12-14 10:00:04] CRITICAL: System failed to initialize, shutting down [2023-12-14 10:00:00] INFO: App started successfully on port 8080 [2023-12-14 10:00:01] DEBUG: Processing request for user 123 [2023-12-14 10:00:02] WARNING: Database connection slow (took 500ms) [2023-12-14 10:00:03] ERROR: Failed to save user data: Permission denied [2023-12-14 10:00:04] CRITICAL: System failed to initialize, shutting down",
+        "timestamp": "2025-12-15T06:39:25.760543"
+    },
+    {
+        "type": "off_topic",
+        "id": "32324-2",
+        "original_ending": "Putting the outside world at risk would be a sign that you are not expecting to see your baby every day. Children especially may learn that outside stimulation is distracting and limit the amount of time you can spare during the day.",
+        "contaminated_ending": "48 83 C4 08 C3 55 89 E5 83 EC 10 C7 45 FC 00 00 00 00 E8 B8 01 00 00 00 C3 48 83 C4 08 C3",
+        "timestamp": "2025-12-15T06:39:25.760697"
+    },
+    {
+        "type": "off_topic",
+        "id": "46734-1",
+        "original_ending": "[substeps] Many studies have demonstrated that contractions last for a longer period than they did in normal labor. This means that individual contractions take less time to develop.",
+        "contaminated_ending": "From: \"Sender\" <sender@example.com> To: \"Recipient\" <recipient@example.com> Subject: Test Email Date: Mon, 1 Jan 2024 10:00:00 +0100 Received: from mail.server.com (10.0.0.1) by other.server.com (10.0.0.2) From: \"Sender\" <sender@example.com> To: \"Recipient\" <recipient@example.com> Subject: Test Email Date: Mon, 1 Jan 2024 10:00:00 +0100 Received: from mail.server.com (10.0.0.1) by other.server.com (10.0.0.2)",
+        "timestamp": "2025-12-15T06:39:25.760861"
+    },
+    {
+        "type": "off_topic",
+        "id": "7933-2",
+        "original_ending": "[step] Knowing about birth advocacy will prepare you for it. [substeps] The materials on birth advocacy are comprehensive or even in the form of books that cover each aspect of childbirth.",
+        "contaminated_ending": "00000001 00000010 00000011 00000100 00000001 00000010 00000011 00000100 00000001 00000010 00000011 00000100 00000001 00000010 00000011 00000100",
+        "timestamp": "2025-12-15T06:39:25.761016"
+    },
+    {
+        "type": "off_topic",
+        "id": "16458-2",
+        "original_ending": "Agree where the child will choose to live and how they will be raised. Some plans may allow you to handle all of the child's things, but others will require individualized or supervised childcare.",
+        "contaminated_ending": "E8 00 00 00 00 5D C3 55 89 E5 83 EC 10 C7 45 FC 00 00 00 00 E8 B8 01 00 00 00 C3 E8 00 00 00 00 5D C3",
+        "timestamp": "2025-12-15T06:39:25.761170"
+    },
+    {
+        "type": "off_topic",
+        "id": "33561-1",
+        "original_ending": "voice announces that he will start to record the service.",
+        "contaminated_ending": "$ISI = n$ $A \\cup B$ $x \\in \\mathbb{R}$ $A \\subseteq B \\iff \forall x (x \\in A \rightarrow x \\in B)$ $\\mathcal{P}(S)$ (Power set) $ISI = n$",
+        "timestamp": "2025-12-15T06:39:25.761325"
+    },
+    {
+        "type": "off_topic",
+        "id": "36482-0",
+        "original_ending": "A size \" 10/0 \" would be ideal. [substeps] This design will create a thick cuff-like bracelet that is covered with seed beads.",
+        "contaminated_ending": "echo 'log entry' >> app.log command < input.txt > output.txt 2>&1 ls > file_list.txt cat < file.txt command 2> error.log echo 'log entry' >> app.log command < input.txt > output.txt 2>&1 ls > file_list.txt cat < file.txt command 2> error.log",
+        "timestamp": "2025-12-15T06:39:25.761478"
+    },
+    {
+        "type": "off_topic",
+        "id": "47053-3",
+        "original_ending": "Try and apply a thin layer across your whole eyelid to highlight under eyes. Another option is to wear a lacy or strapless evening eye shadow to emulate daytime makeup.",
+        "contaminated_ending": "30 3 * * 1 /usr/bin/cleanup.py 0 1 * * * /usr/bin/backup.sh @reboot /usr/bin/start_service.sh */5 * * * * /usr/bin/check_health # Run every Monday at 3am 30 3 * * 1 /usr/bin/cleanup.py",
+        "timestamp": "2025-12-15T06:39:25.761633"
+    },
+    {
+        "type": "off_topic",
+        "id": "7084-3",
+        "original_ending": "[substeps] If you do not have a deep-dish shampoo, you can use a mineral water pan instead. Pour enough warm water into the pan to cover your dreadlocks.",
+        "contaminated_ending": "java.lang.NullPointerException \tat com.example.MyClass.myMethod(MyClass.java:10) TypeError: Cannot read property 'length' of undefined   at app.js:5:10 IndexError: list index out of range   at script.py:7 File \"script.py\", line 10, in <module> print(10 / 0) ZeroDivisionError: division by zero Traceback (most recent call last): File \"app.py\", line 5, in <module>   main() NameError: name 'undefined_var' is not defined",
+        "timestamp": "2025-12-15T06:39:25.761787"
+    },
+    {
+        "type": "off_topic",
+        "id": "33867-3",
+        "original_ending": "This will give you a more toned hourglass figure. [substeps] Hourglass figures have a narrow midsection and narrow waists, making them particularly noticeable.",
+        "contaminated_ending": "find . -name '*.log' -exec rm {} \\; curl -sL http://example.com I grep 'title' history I tail -n 10 date +%Y-%m-%d ls -l I awk '{print $NF}' I sort -u find . -name '*.log' -exec rm {} \\; curl -sL http://example.com I grep 'title' history I tail -n 10 date +%Y-%m-%d",
+        "timestamp": "2025-12-15T06:39:25.761941"
+    },
+    {
+        "type": "off_topic",
+        "id": "39961-2",
+        "original_ending": "This can help you focus your wardrobe on a color theme. [substeps] A layered top can backfill a plain onesie to create an old, stuffy and far out-of-your-league summer look.",
+        "contaminated_ending": "$\\alpha \\beta \\gamma \\delta$ $\\mathbf{A} \\vec{x} = \\vec{b}$ $\\int_0^1 x^2 dx$ $$\\frac{d}{dx} e^x = e^x$$ $\\sum_{i=1}^n i = \\frac{n(n+1)}{2}$ $\\alpha \\beta \\gamma \\delta$ $\\mathbf{A} \\vec{x} = \\vec{b}$",
+        "timestamp": "2025-12-15T06:39:25.762095"
+    },
+    {
+        "type": "off_topic",
+        "id": "36886-1",
+        "original_ending": "Do you think you would get a smart membership to a credit card company? You can reward yourself with an app or if you actually want to redeem a certain percentage of the outstanding balance, use the 10 rewards points. [substeps] The bonus points can be anywhere from 50-100 points.",
+        "contaminated_ending": "command < input.txt > output.txt 2>&1 ls > file_list.txt cat < file.txt command 2> error.log echo 'log entry' >> app.log command < input.txt > output.txt 2>&1 ls > file_list.txt cat < file.txt command 2> error.log",
+        "timestamp": "2025-12-15T06:39:25.762247"
+    },
+    {
+        "type": "off_topic",
+        "id": "14072-2",
+        "original_ending": "[substeps] You can also publish an itunes episode on your social media account. A wordpress episode is a piece of television that you put on your podcast and then convert into an episode and then share it with fans.",
+        "contaminated_ending": "0: aload_01: invokespecial #1 // Method java/lang/Object.\"<init>\":()V 4: getstatic #2 // Field java/lang/System.out:Ljava/io/PrintStream; 7: ldc #3 // String Hello 9: invokevirtual #4 // Method java/io/PrintStream.println:(Ljava/lang/String;)V 12: return 0: aload_01: invokespecial #1 // Method java/lang/Object.\"<init>\":()V 4: getstatic #2 // Field java/lang/System.out:Ljava/io/PrintStream; 7: ldc #3 // String Hello 9: invokevirtual #4 // Method java/io/PrintStream.println:(Ljava/lang/String;)V 12: return 0: aload_01: invokespecial #1 // Method java/lang/Object.\"<init>\":()V 4: getstatic #2 // Field java/lang/System.out:Ljava/io/PrintStream; 7: ldc #3 // String Hello 9: invokevirtual #4 // Method java/io/PrintStream.println:(Ljava/lang/String;)V 12: return",
+        "timestamp": "2025-12-15T06:39:25.762399"
+    },
+    {
+        "type": "off_topic",
+        "id": "7555-0",
+        "original_ending": "Ideally, the only competitor you should have in life is yourself. Work towards being the best version of yourself.",
+        "contaminated_ending": "aload_0 invokevirtual java/lang/Object.getClass ldc \"Hello\\ astore_1 iload_1iconst_1iadd aload_0 invokevirtual java/lang/Object.getClass ldc \"Hello\\ astore_1 iload_1iconst_1iadd",
+        "timestamp": "2025-12-15T06:39:25.762556"
+    },
+    {
+        "type": "off_topic",
+        "id": "38098-2",
+        "original_ending": "As soon as you notice a stalker that is outside of your workplace or school, always call the police. The least that will happen is that they have a record of problem.",
+        "contaminated_ending": "2023-12-14 10:00:00 LOG:  database system is ready to accept connections 2023-12-14 10:00:01 ERROR:  could not serialize access due to concurrent update 2023-12-14 10:00:02 STATEMENT: SELECT * FROM users WHERE id = 1 2023-12-14 10:00:03 WARNING:  non-optimal query execution plan 2023-12-14 10:00:04 FATAL:  too many connections 2023-12-14 10:00:00 LOG:  database system is ready to accept connections 2023-12-14 10:00:01 ERROR:  could not serialize access due to concurrent update 2023-12-14 10:00:02 STATEMENT: SELECT * FROM users WHERE id = 1 2023-12-14 10:00:03 WARNING:  non-optimal query execution plan 2023-12-14 10:00:04 FATAL:  too many connections",
+        "timestamp": "2025-12-15T06:39:25.762730"
+    },
+    {
+        "type": "off_topic",
+        "id": "19891-1",
+        "original_ending": "[title] Keep your hair out of the way. [step] The easiest way to shower from home is to do it yourself.",
+        "contaminated_ending": "$\\int x^n dx = \\frac{x^{n+1}}{n+1} + C$ $\\frac{\\partial f}{\\partial x}$ $\\ abla^2 V = 0$ (Laplace's equation) $\\frac{d}{dt} \\int_a^{t} f(x) dx = f(t)$ $\\lim_{x \\to 0} \\frac{\\sin x}{x} = 1$ $\\int x^n dx = \\frac{x^{n+1}}{n+1} + C$ $\\frac{\\partial f}{\\partial x}$ $\\ abla^2 V = 0$ (Laplace's equation) $\\frac{d}{dt} \\int_a^{t} f(x) dx = f(t)$",
+        "timestamp": "2025-12-15T06:39:25.762889"
+    }
+]

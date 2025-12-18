@@ -69,7 +69,7 @@ def visualize_self_attention(
     # loop over the number of images to visualize
     for idx_img in range(imgs_to_visualize):
         # we keep only the output patch attention
-        att = attentions[idx_img, :, 0, int(remove_cls_token) :].reshape(nh, -1)
+        att = attentions[idx_img, :, 0, int(remove_cls_token):].reshape(nh, -1)
         att = att.reshape(nh, w_featmap, h_featmap)
         att = F.interpolate(att.unsqueeze(0), scale_factor=patch_size, mode="nearest")
         att = att[0].cpu()
@@ -127,7 +127,7 @@ def visualize_mae(
 
     # visualize the mask
     mask = mask.detach()
-    mask = mask.unsqueeze(-1).repeat(1, 1, patch_size**2 * 3)  # (N, H*W, p*p*3)
+    mask = mask.unsqueeze(-1).repeat(1, 1, patch_size ** 2 * 3)  # (N, H*W, p*p*3)
     mask = unpatch_images(mask, patch_size=patch_size)  # 1 is removing, 0 is keeping
     mask = mask.detach().cpu()
 
@@ -341,6 +341,7 @@ def calculate_scores_from_ranking(
     prefix_plot="",
     linestyle="solid",
 ):
+    logger.info("Calculating scores from ranking...")
     import wandb
 
     # vectorized implementation
@@ -364,14 +365,14 @@ def calculate_scores_from_ranking(
         l_recall_gain = (l_tpr - pi) / ((1 - pi) * l_tpr)
         l_recall_gain = l_recall_gain.clip(min=0, max=1)
 
-    # for k in [1, 5, 10, 20, 50, 100]:
-    for k in [1, 5, 10, 20, 50, 100, 500, 1000]:
-        log_dict[f"{wandb_cat}evaluation/Recall@{k}"] = l_tpr[k - 1]
-        log_dict[f"{wandb_cat}evaluation/Precision@{k}"] = l_precision[k - 1]
+    for k in [1, 5, 10, 20, 50, 100]:
+        # for k in [1, 5, 10, 20, 50, 100, 500, 1000]:
+        log_dict[f"{wandb_cat}Recall@{k}"] = round(l_tpr[k - 1], 4)
+        log_dict[f"{wandb_cat}Precision@{k}"] = round(l_precision[k - 1], 4)
         if show_scores:
             logger.info(
-                f"Recall@{k}: {l_tpr[k-1]*100:.1f}, \t"
-                f"Precision@{k}: {l_precision[k-1]*100:.1f}"
+                f"Recall@{k}: {l_tpr[k - 1] * 100:.1f}, \t"
+                f"Precision@{k}: {l_precision[k - 1] * 100:.1f}"
             )
 
     score_auc = auc(l_fpr, l_tpr)
@@ -392,14 +393,14 @@ def calculate_scores_from_ranking(
     score_auprg = -np.sum(np.diff(l_recall_gain) * l_precision_gain[:-1])
 
     # save the metrics
-    log_dict[f"{wandb_cat}evaluation/AUROC"] = score_auc
-    log_dict[f"{wandb_cat}evaluation/AP"] = score_ap
-    log_dict[f"{wandb_cat}evaluation/AUPRG"] = score_auprg
+    log_dict[f"{wandb_cat}AUROC"] = round(score_auc, 4)
+    log_dict[f"{wandb_cat}AP"] = round(score_ap, 4)
+    log_dict[f"{wandb_cat}AUPRG"] = round(score_auprg, 4)
     if show_scores:
-        logger.info(f"AUROC (%): {score_auc*100:.1f}")
-        logger.info(f"AP (%): {score_ap*100:.1f}")
-        logger.info(f"AUPRG (%): {score_auprg*100:.1f}")
-        logger.info(f"Percentage Pos. (%): {pi*100:.1f}")
+        logger.info(f"AUROC (%): {score_auc * 100:.1f}")
+        logger.info(f"AP (%): {score_ap * 100:.1f}")
+        logger.info(f"AUPRG (%): {score_auprg * 100:.1f}")
+        logger.info(f"Percentage Pos. (%): {pi * 100:.1f}")
 
     if show_plots:
         with plt.style.context(["science", "std-colors", "grid"]):
@@ -410,7 +411,7 @@ def calculate_scores_from_ranking(
             axes[0].plot(
                 l_fpr,
                 l_tpr,
-                label=f"{prefix_plot}AUROC = {score_auc*100:.1f}",
+                label=f"{prefix_plot}AUROC = {score_auc * 100:.1f}",
                 linestyle=linestyle,
             )
             axes[0].plot([0, 1], ls="--", color="gray")
@@ -424,7 +425,7 @@ def calculate_scores_from_ranking(
             axes[1].plot(
                 l_tpr,
                 l_precision,
-                label=f"{prefix_plot}AP = {score_ap*100:.1f}",
+                label=f"{prefix_plot}AP = {score_ap * 100:.1f}",
                 drawstyle="steps-post",
                 linestyle=linestyle,
             )
@@ -438,7 +439,7 @@ def calculate_scores_from_ranking(
             axes[2].plot(
                 l_recall_gain,
                 l_precision_gain,
-                label=f"{prefix_plot}AUPRG = {score_auprg*100:.1f}",
+                label=f"{prefix_plot}AUPRG = {score_auprg * 100:.1f}",
                 drawstyle="steps-post",
                 linestyle=linestyle,
             )
@@ -732,7 +733,7 @@ def embedding_plot_w_markers(
     X = (X - x_min) / (x_max - x_min)
     if text_X is not None:
         text_X = X[: len(text_X)]
-        X = X[len(text_X) :]
+        X = X[len(text_X):]
     plt.figure(figsize=figsize)
     fig, ax = plt.subplots(1, 1)
 

@@ -6,16 +6,19 @@ from pathlib import Path
 from typing import List, Optional, Union
 
 import numpy as np
+import pandas as pd
 import torch
 from torch.utils.data import DataLoader, Dataset, DistributedSampler
 from torchvision import transforms
 from torchvision.datasets import ImageFolder
 from torchvision.transforms import InterpolationMode
 
+from experiment.ELECTRA.train import ELECTRA_STANDARD_HYPERPARAMETERS
 from experiment.MAE.train import MAE_TEXT_STANDARD_HYPERPARAMETERS, train_mae_text
 from experiment.SimCSE.train import SIMCSE_STANDARD_HYPERPARAMETERS, train_simcse
 from experiment.datasets.hellaswag.hella_swag_dataset import HellaSwagDataset
 from experiment.datasets.mmlu.mmlu_dataset import MMLUDataset
+from experiment.performance_assesser import PerformanceAssesser
 from ..cleaner.issue_manager import IssueTypes, IssueManager
 from ..cleaner.selfclean_cleaner import SelfCleanCleaner, DataType
 from ..core.src.augmentations.multi_crop import MultiCropAugmentation
@@ -29,7 +32,6 @@ from ..core.src.utils.utils import (
     init_distributed_mode, get_export_path,
 )
 from ..core.src.models.text.encoders.utils import get_encoder_tokenizer_class
-from ..utils.plotting import plot_inspection_result_text
 from ..utils.reporting import generate_markdown_report
 from ..utils.score_export import generate_prediction_parquet
 from ..utils.utils import set_dataset_transformation
@@ -402,12 +404,15 @@ class SelfClean:
         wandb_project_name: str = "SelfClean",
         max_length: int = 180,
         cache_dir: Optional[str] = "./.cache",
+        contamination_log_path: Optional[Path] = None,
     ):
         if hyperparameters is None:
             if pretraining_type == "simcse":
                 hyperparameters = SIMCSE_STANDARD_HYPERPARAMETERS
             elif pretraining_type == "mae":
                 hyperparameters = MAE_TEXT_STANDARD_HYPERPARAMETERS
+            elif pretraining_type == "electra":
+                hyperparameters = ELECTRA_STANDARD_HYPERPARAMETERS
             else:
                 raise ValueError(f"Unknown pretraining type: {pretraining_type}")
         if base_model != "":
@@ -446,6 +451,7 @@ class SelfClean:
             additional_run_info=additional_run_info,
             wandb_logging=wandb_logging,
             wandb_project_name=wandb_project_name,
+            contamination_log_path=contamination_log_path
         )
 
     def _run_text(
@@ -472,6 +478,7 @@ class SelfClean:
         additional_run_info: str = "",
         wandb_logging: bool = False,
         wandb_project_name: str = "SelfClean",
+        contamination_log_path: Optional[Path] = None,
     ):
         if not self.cleaner.is_fitted:
             if self.model is None:
@@ -610,11 +617,19 @@ class SelfClean:
                 else:
                     issue_manager = issue_manager_context_only
 
-            md = generate_markdown_report(issue_manager=issue_manager, dataset=dataset, top_n=self.cleaner.plot_top_N,
-                                          output_path=self.output_path, model_name=hyperparameters["model"]["base_model"])
             gc.collect()
+
             # save automatic cleaning suggestions
             prediction_parquet = generate_prediction_parquet(issue_manager=issue_manager, dataset=dataset,
                                                              output_path=self.cleaner.output_path, pretraining_type=pretraining_type)
+
+            if contamination_log_path:
+                contamination_log = pd.read_json(contamination_log_path)
+                pa = PerformanceAssesser(prediction=prediction_parquet, contamination_log=contamination_log)
+                pa.assess_performance()
+                issue_manager.metric_dict = pa.log_dict
+
+            md = generate_markdown_report(issue_manager=issue_manager, dataset=dataset, top_n=self.cleaner.plot_top_N,
+                                          output_path=self.output_path, model_name=hyperparameters["model"]["base_model"])
 
             return issue_manager, prediction_parquet

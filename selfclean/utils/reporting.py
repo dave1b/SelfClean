@@ -32,6 +32,7 @@ def generate_markdown_report(
     Returns:
         Markdown report as a string
     """
+
     def wrap_text(text: str) -> str:
         return text
         """Wrap text and truncate if too long."""
@@ -60,9 +61,7 @@ def generate_markdown_report(
                 score = issues["scores"][i] if "scores" in issues else "N/A"
 
                 table_data.append({
-                    "Rank": i+1,
-                    # "Index 1": int(idx1)*factor,
-                    # "Index 2": int(idx2)*factor,
+                    "Rank": i + 1,
                     "Index 1": dataset[int(idx1)][7],
                     "Index 2": dataset[int(idx2)][7],
                     "Text 1": text1,
@@ -78,17 +77,18 @@ def generate_markdown_report(
 
                 score = issues["scores"][i] if "scores" in issues else "N/A"
 
-                table_data.append({
+                row = {
                     "Rank": i + 1,
-                    # "Index 1": int(idx1)*factor,
-                    # "Index 2": int(idx2)*factor,
                     "Index 1": dataset.get_context_only_text(int(idx1))[1],
                     "Index 2": dataset.get_context_only_text(int(idx2))[1],
                     "Text 1": text1,
                     "Text 2": text2,
                     "Score": f"{score:.4f}" if isinstance(score, (int, float)) else score,
-                    "Outlier Prediction": issues.get('auto_issues')[i],
-                })
+                }
+                if autocleaned:
+                    row["Autoclean Prediction"] = issues.get('auto_issues')[i]
+                table_data.append(row)
+
             else:
                 # Handle single indices
                 text = wrap_text(dataset[int(idx)][3])
@@ -97,7 +97,7 @@ def generate_markdown_report(
                 score = issues["scores"][i] if "scores" in issues else "N/A"
 
                 row = {
-                    "Rank": i+1,
+                    "Rank": i + 1,
                     "Index": dataset[int(idx)][7],
                     "Text": text,
                     "Score": f"{score:.4f}" if isinstance(score, (int, float)) else score,
@@ -108,8 +108,8 @@ def generate_markdown_report(
                 elif issue_type in ["label_errors", "category_errors"]:
                     row["True Label"] = true_label
                     row["Category"] = category
-
-                row["Outlier Prediction"] = issues.get('auto_issues')[i]
+                if autocleaned:
+                    row["Autoclean Prediction"] = issues.get('auto_issues')[i]
                 table_data.append(row)
 
         # Create DataFrame and convert to markdown
@@ -127,21 +127,26 @@ def generate_markdown_report(
         return md_table
 
     # Create the full report
-    report = "# Data Quality Report\n\n"
-    report += f"Generated on: {pd.Timestamp.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n"
-    report += f"Dataset type: {dataset.name}\n\n"
-    report += f"Dataset name: {dataset.path.name}\n\n"
-    report += f"Dataset size: {len(dataset)} samples\n\n"
-    report += f"Model used: {model_name}\n\n"
-    report += AutoCleaningMixin.get_hyperparameters() + "\n\n"
+    autocleaned = True if 'auto_issues' in issue_manager.issue_dict else False
 
+    metrics = pd.DataFrame.from_dict(issue_manager.metric_dict, orient='index', columns=['Value'])
+    report = "# Data Quality Report\n\n"
+    report += f"**Generated on**: {pd.Timestamp.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n"
+    report += f"**Dataset type**: {dataset.name}\n\n"
+    report += f"**Dataset name**: {dataset.path.name}\n\n"
+    report += f"**Dataset size**: {len(dataset)} samples\n\n"
+    report += f"**Model used**: {model_name}\n\n"
+    if autocleaned:
+        report += AutoCleaningMixin.get_hyperparameters() + "\n\n"
+    report += f"### Evaluation Metrics:\n\n {metrics.to_markdown(tablefmt='github')} \n\n\n"
 
     report += f"Top {top_n} issues per category\n\n"
 
     # Add near duplicates (questions)
     if issue_manager["near_duplicates_questions"] is not None:
         # assert that dataset has method get_context_only_text
-        assert hasattr(dataset, 'get_context_only_text'), "Dataset must have method get_context_only_text to properly return context_only texts."
+        assert hasattr(dataset,
+                       'get_context_only_text'), "Dataset must have method get_context_only_text to properly return context_only texts."
         description = "Near duplicate questions based only on context question similarity."
         report += create_issue_table(issue_manager["near_duplicates_questions"], "near_duplicates_questions", dataset, description)
         report += "\n\n"
@@ -180,6 +185,7 @@ def generate_markdown_report(
 
     # display_markdown_report(report)
     return report
+
 
 # Helper function to display the report in a Jupyter notebook
 def display_markdown_report(report: str):
