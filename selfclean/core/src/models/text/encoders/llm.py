@@ -100,12 +100,12 @@ def golden_swag_train_mae_bert_1():
     tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
     return model, tokenizer
 
-def golden_swag_train_mae_bert_4():
-    model = AutoModel.from_pretrained('models/Mae_golden_swag_train/epoch4')
+def golden_swag_train_mae_bert_7():
+    model = AutoModel.from_pretrained('models/Mae_golden_swag_train/epoch7')
     tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
     return model, tokenizer
 
-def golden_swag_train_mae_bert_8():
-    model = AutoModel.from_pretrained('models/Mae_golden_swag_train/epoch8')
+def golden_swag_train_mae_bert_15():
+    model = AutoModel.from_pretrained('models/Mae_golden_swag_train/epoch15')
     tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
     return model, tokenizer

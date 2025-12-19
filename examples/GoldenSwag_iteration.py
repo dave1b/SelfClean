@@ -31,9 +31,14 @@ BASE_MODELS = [
     "golden_swag_train_electra_bert_1",
     "golden_swag_train_electra_bert_6",
     "golden_swag_train_electra_bert_22",
+
     "golden_swag_train_simcse_bert_1",
     "golden_swag_train_simcse_bert_4",
     "golden_swag_train_simcse_bert_8",
+
+    "golden_swag_train_mae_bert_1",
+    "golden_swag_train_mae_bert_7",
+    "golden_swag_train_mae_bert_15",
 ]
 
 PRETRAINING_TYPES = ["simcse", "electra"]

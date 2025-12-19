@@ -6,8 +6,7 @@ from .....src.models.text.encoders.llm import bert, distilbert, roberta, bert_ml
     pretrained_bert_hellaSwag_simcse, pretrained_bert_mmlu_simcse, pretrained_bert_mmlu_mae, \
     golden_swag_train_simcse_bert_NEAR_DUPLICATES_Q, golden_swag_train_simcse_bert_NEAR_DUPLICATES, \
     golden_swag_train_electra_bert_22, golden_swag_train_electra_bert_6, golden_swag_train_electra_bert_1, golden_swag_train_simcse_bert_8, \
-    golden_swag_train_simcse_bert_4, golden_swag_train_simcse_bert_1, golden_swag_train_mae_bert_1, golden_swag_train_mae_bert_4, \
-    golden_swag_train_mae_bert_8
+    golden_swag_train_simcse_bert_4, golden_swag_train_simcse_bert_1, golden_swag_train_mae_bert_1, golden_swag_train_mae_bert_7, golden_swag_train_mae_bert_15
 
 LLM_DICT = {
     "bert": bert,
@@ -31,8 +30,8 @@ LLM_DICT = {
     "golden_swag_train_electra_bert_22": golden_swag_train_electra_bert_22,
 
     "golden_swag_train_mae_bert_1": golden_swag_train_mae_bert_1,
-    "golden_swag_train_mae_bert_6": golden_swag_train_mae_bert_4,
-    "golden_swag_train_mae_bert_22": golden_swag_train_mae_bert_8,
+    "golden_swag_train_mae_bert_7": golden_swag_train_mae_bert_7,
+    "golden_swag_train_mae_bert_15": golden_swag_train_mae_bert_15,
 
 }
 
