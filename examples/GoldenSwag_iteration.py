@@ -20,11 +20,11 @@ CONTAMINATED_PATHS = [
 ]
 
 ISSUES_TO_DETECT: List[IssueTypes] = [
-    IssueTypes.OFF_TOPIC_SAMPLES,
-    # IssueTypes.NEAR_DUPLICATES_Q,
-    # IssueTypes.NEAR_DUPLICATES,
+    IssueTypes.CATEGORY_ERRORS,
     IssueTypes.LABEL_ERRORS,
-    IssueTypes.CATEGORY_ERRORS
+    IssueTypes.NEAR_DUPLICATES_Q,
+    IssueTypes.NEAR_DUPLICATES,
+    IssueTypes.OFF_TOPIC_SAMPLES,
 ]
 
 BASE_MODELS = [
@@ -41,7 +41,7 @@ BASE_MODELS = [
     "golden_swag_train_mae_bert_15",
 ]
 
-PRETRAINING_TYPES = ["simcse", "electra"]
+PRETRAINING_TYPES = ["simcse", "electra", "mae"]
 
 
 def get_issue_type_from_path(path: Path) -> Optional[IssueTypes]:
@@ -89,7 +89,7 @@ def evaluate():
     base_output_path.mkdir(parents=True, exist_ok=False)
 
     summarized_log_dict = {}
-    summarized_log_dict['timestamp'] = timestamp_str  # Add timestamp as a top-level key
+    summarized_log_dict['timestamp'] = timestamp_str
     for issue in ISSUES_TO_DETECT:
         summarized_log_dict[issue.value] = {}
 

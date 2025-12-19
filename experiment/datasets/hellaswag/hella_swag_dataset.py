@@ -15,7 +15,7 @@ class HellaSwagDataset(Dataset):
     """HellaSwag dataset with pre-tokenization and caching."""
 
     def __init__(self, json_path: Path, tokenizer, max_length: int = 180,
-                 cache_dir: Optional[str] = None, pre_tokenize: bool = True):
+                 cache_dir: Optional[str] = None, pre_tokenize: bool = True, name: str = None) -> None:
         """
         Args:
             json_path: Path to JSON file containing the dataset
@@ -27,15 +27,16 @@ class HellaSwagDataset(Dataset):
         self.tokenizer = tokenizer
         self.max_length = max_length
         self.provide_tokenized_context = False
-        self.name = ""
+        self.name = name
         self.path = json_path
         self.context_only_id_start = None
         self.task_ids_arr: Optional[np.ndarray] = None
         self.context_only_task_ids_arr: Optional[np.ndarray] = None
 
-        for name in DATA_NAMES:
-            if name.lower() in str(json_path):
-                self.name = name
+        if name is None:
+            for name in DATA_NAMES:
+                if name.lower() in str(json_path):
+                    self.name = name
 
         # Load and validate data
         self._load_and_validate_data(json_path)
@@ -129,6 +130,7 @@ class HellaSwagDataset(Dataset):
     def _pre_tokenize_all(self, json_path: str, cache_dir: Optional[str] = None, ) -> None:
         """Pre-tokenize all texts and cache results."""
         cache_path = None
+        cache_dir = None
         if cache_dir:
             cache_dir = Path(cache_dir)
             cache_dir.mkdir(parents=True, exist_ok=True)

@@ -109,7 +109,7 @@ def train_mae_text(
             collate_fn=val_dataset.get_collate_fn(),
             drop_last=True,
             pin_memory=True,
-            **kwargs,
+            **kwargs_val,
         )
     else :
         val_loader = None
@@ -154,5 +154,5 @@ if __name__ == "__main__":
     )
 
     logger.info("Training MAE Text")
-    model = train_mae_text(train_dataset, val_dataset, 15, 32, True, 1, None, MAE_TEXT_STANDARD_HYPERPARAMETERS)
+    model = train_mae_text(train_dataset, val_dataset, 25, 32, True, 1, None, MAE_TEXT_STANDARD_HYPERPARAMETERS)
     logger.info(f'Finished MAE training after: {datetime.now() - start}')
