@@ -23,7 +23,7 @@ def generate_near_duplicate_mistral(
     1. The paraphrased text must retain the exact original meaning.
     2. Make only subtle changes (e.g. synonyms, minor restructuring).
     3. Do not add or remove any information, even if sentences are incomplete or ambiguous.
-    5. Only use special characters (e.g., brackets, symbols, punctuation marks) that exist in the original text. Do not introduce new ones!
+    5. Only use the special characters (e.g., brackets, symbols, punctuation marks) that exist in the original text. Do not introduce new special characters!
     6. Keep artefacts suche as [step] or [header] in the near-duplicate text.
 
     Return ONLY the paraphrased text, with no additional commentary:

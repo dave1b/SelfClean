@@ -41,7 +41,9 @@ class HellaSwagContaminator:
     @staticmethod
     def _replace_unicode_character(text: str) -> str:
         replace_dict = {
-            "’" : "'"
+            "’" : "'",
+            "–" : ", ",
+            "°" : "º"
         }
         for char in text:
             if char in replace_dict:
@@ -77,7 +79,7 @@ class HellaSwagContaminator:
                 "timestamp": datetime.now().isoformat()
             })
             self.contaminated_indices.add(ind)
-            time.sleep(0.5)
+            time.sleep(0.1)
 
         self._save_contamination_results(file, df, contamination_records, IssueTypes.NEAR_DUPLICATES_Q)
 
@@ -105,7 +107,7 @@ class HellaSwagContaminator:
                 "timestamp": datetime.now().isoformat()
             })
             self.contaminated_indices.add(ind)
-            time.sleep(0.5)
+            time.sleep(0.1)
 
         self._save_contamination_results(file, df, contamination_records, IssueTypes.NEAR_DUPLICATES)
 

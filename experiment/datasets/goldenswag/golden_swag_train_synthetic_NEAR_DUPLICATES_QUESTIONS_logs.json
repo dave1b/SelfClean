@@ -1,490 +1,490 @@
 [
     {
         "type": "question_duplication",
-        "id_1": 4868,
-        "id_2": "x4868",
-        "original_ctx": "[header] How to change a mortise lock cylinder [title] Open door partially to reveal the mortise lock cover plate at the edge of the door. [step] Remove the two retaining screws and set aside. [title] Note the position of the keyway as it relates to the cylinder.",
-        "contaminated_ctx": "[header] Steps to replace a mortise lock cylinder [title] Partially open the door to expose the mortise lock\u2019s cover plate along the door\u2019s edge. [step] Unscrew the two retaining screws and keep them aside. [title] Observe how the keyway aligns with the cylinder before proceeding.",
-        "timestamp": "2025-12-14T21:13:58.583183"
+        "id_1": 36886,
+        "id_2": "x36886",
+        "original_ctx": "[header] How to use credit card rewards points [title] Go for a smart signup bonus. [step] There are hundreds of credit cards you could pick. This means that they are all competing with each other to get you to sign.",
+        "contaminated_ctx": "[header] Ways to utilize credit card reward points [title] Opt for a clever sign-up offer. [step] Countless credit cards are available for selection. As a result, they vie for your enrollment.",
+        "timestamp": "2025-12-19T13:58:56.445170"
     },
     {
         "type": "question_duplication",
-        "id_1": 28845,
-        "id_2": "x28845",
-        "original_ctx": "[header] How to curl your hair with straws [title] Gather your materials. [step] Before you start your straw set, make sure you have everything you need. Both methods will require the same items: drinking straws, bobby pins, scissors, and a water spray bottle.",
-        "contaminated_ctx": "[header] Curling your hair using straws [title] Collect your supplies. [step] Prior to beginning your straw curling process, ensure all necessary items are on hand. The same tools apply to both techniques: drinking straws, bobby pins, scissors, and a spray bottle filled with water.",
-        "timestamp": "2025-12-14T21:13:59.409804"
+        "id_1": 26452,
+        "id_2": "x26452",
+        "original_ctx": "[header] How to tell if your spouse is lying [title] Look for excessive blinking. [step] This may occur when you start talking to him about an uncomfortable topic. If you are talking to your spouse about something he is lying about, he may start to panic.",
+        "contaminated_ctx": "[header] How to determine if your partner is being dishonest [title] Watch for frequent blinking. [step] This could happen when you bring up a sensitive subject. If you're discussing something your spouse is hiding, he might begin to feel anxious.",
+        "timestamp": "2025-12-19T13:58:58.490423"
     },
     {
         "type": "question_duplication",
-        "id_1": 22333,
-        "id_2": "x22333",
-        "original_ctx": "[header] How to reduce acne using tomatoes [title] Gather your supplies. [step] The most important thing is to make sure that you have tomatoes handy. You need to use fresh tomatoes, not canned.",
-        "contaminated_ctx": "[header] Using tomatoes to minimize acne [title] Collect the necessary items. [step] Above all, ensure you have tomatoes available. Only fresh tomatoes will work\u2014avoid using canned ones.",
-        "timestamp": "2025-12-14T21:14:00.227619"
+        "id_1": 24124,
+        "id_2": "x24124",
+        "original_ctx": "[header] How to put on a captive ring [title] Wait three months after the initial piercing. [step] Depending on the location of your piercing, you will need to wait at least three months before changing your ring or hardware. This allows the skin to heal and will make it possible for you to insert a new ring without tearing.",
+        "contaminated_ctx": "[header] How to fit a captive ring [title] Wait three months following the first piercing. [step] Based on where your piercing is situated, you'll have to wait no less than three months prior to swapping your ring or jewelry. This gives the tissue time to recover and ensures you can place a new ring without causing damage.",
+        "timestamp": "2025-12-19T13:59:00.806072"
     },
     {
         "type": "question_duplication",
-        "id_1": 22112,
-        "id_2": "x22112",
-        "original_ctx": "[header] How to repair an air mattress [title] Listen and look for the leak in the air mattress. [step] If you don't know where the hole is, keep the air mattress inflated as you look. Holes most often appear on the bottom or in the seams, so stand the mattress up against a wall to check.",
-        "contaminated_ctx": "[header] Fixing an air mattress [title] Detect the leak by listening and inspecting the air mattress. [step] When the hole\u2019s location is unclear, leave the mattress inflated while searching. Since leaks frequently occur along the seams or on the underside, prop the mattress upright against a wall for a thorough examination.",
-        "timestamp": "2025-12-14T21:14:01.240486"
+        "id_1": 5391,
+        "id_2": "x5391",
+        "original_ctx": "[header] How to recover from a vasectomy reversal [title] Wear tight-fitting underpants. [step] You should wear supportive underwear immediately after surgery. Relatively tight, close-fitting underwear will give you greater comfort and support.",
+        "contaminated_ctx": "[header] Recovering after a vasectomy reversal [title] Use snug-fitting briefs. [step] Put on supportive undergarments right following the procedure. Fairly snug, form-fitting briefs will provide better comfort and stability.",
+        "timestamp": "2025-12-19T13:59:02.849359"
     },
     {
         "type": "question_duplication",
-        "id_1": 42413,
-        "id_2": "x42413",
-        "original_ctx": "[header] How to become the centre of attention [title] Stand in a central position. [step] If you are at a party or another type of social setting, you'll receive more attention if you stand in a prominent place. [substeps] If you're in a social setting with friends or people you know, ask them to join you in the center of the room.",
-        "contaminated_ctx": "[header] How to draw everyone\u2019s focus [title] Position yourself centrally. [step] In gatherings like parties or other social events, you\u2019ll naturally attract more notice by placing yourself in a visible spot. [substeps] When surrounded by acquaintances or friends in a social environment, invite them to gather with you in the middle of the space.",
-        "timestamp": "2025-12-14T21:14:02.274102"
+        "id_1": 48751,
+        "id_2": "x48751",
+        "original_ctx": "[header] How to sleep in a hammock [title] Get a hammock made of nylon. [step] Look for hammocks made of parachute nylon, as they will be the most comfortable to lay in for a long period of time. Avoid hammocks made of rope or slats, as they can cause discomfort and rope burns.",
+        "contaminated_ctx": "[header] How to rest in a hammock [title] Choose a nylon hammock. [step] Seek out hammocks crafted from parachute nylon, since these provide the greatest comfort for extended lounging. Steer clear of rope or slatted hammocks, as they may lead to soreness and skin irritation.",
+        "timestamp": "2025-12-19T13:59:05.557536"
     },
     {
         "type": "question_duplication",
-        "id_1": 33736,
-        "id_2": "x33736",
-        "original_ctx": "[header] How to be a dominatrix [title] Never assume consent. [step] Consent must be freely given. A person who is intoxicated or unconscious cannot consent.",
-        "contaminated_ctx": "[header] Guide to Dominatrix Practices [title] Always confirm consent explicitly. [step] Consent must be willingly and clearly provided. Someone who is impaired or unconscious is incapable of giving valid consent.",
-        "timestamp": "2025-12-14T21:14:03.094232"
+        "id_1": 33561,
+        "id_2": "x33561",
+        "original_ctx": "A military procession carries a coffin and goes through a funeral ceremony. a news anchor",
+        "contaminated_ctx": "A ceremonial march transports a casket and proceeds through a memorial service. A news presenter",
+        "timestamp": "2025-12-19T13:59:06.857088"
     },
     {
         "type": "question_duplication",
-        "id_1": 719,
-        "id_2": "x719",
-        "original_ctx": "[header] How to make vegan tangerine fudge brownie cake [title] Start preheating the oven to 375\u00baf/190\u00bac as you line your baking pan with parchment paper. [title] Melt the chocolate chips and margarine over low heat in a saucepan. [step] Once melted, leave aside to cool.",
-        "contaminated_ctx": "[header] How to prepare vegan tangerine fudge brownies [title] Begin by preheating the oven to 375\u00b0F (190\u00b0C) while lining your baking pan with parchment paper. [title] In a saucepan, gently melt the chocolate chips and margarine over low heat. [step] After melting, set the mixture aside to cool.",
-        "timestamp": "2025-12-14T21:14:04.297042"
+        "id_1": 43103,
+        "id_2": "x43103",
+        "original_ctx": "[header] How to choose a revlon foundation [title] Determine your skin type. [step] Is your skin shiny, acne-prone and oily? Is it flaky and dry? Is it aging, with lines and wrinkles? You will need to consider your skin type when choosing what foundation to wear. [title] With your skin type in mind, decide what form of foundation you would most like : [step] Liquid, cr\u00e8me compact, or powder.",
+        "contaminated_ctx": "[header] Selecting a Revlon foundation [title] Identify your skin type. [step] Does your skin appear glossy, break out easily, and feel greasy? Is it rough and dehydrated? Or is it mature, showing fine lines and creases? Your skin type must guide your foundation selection. [title] Considering your skin type, pick the foundation type you prefer: [step] Liquid, cream compact, or powder.",
+        "timestamp": "2025-12-19T13:59:09.468624"
     },
     {
         "type": "question_duplication",
-        "id_1": 20170,
-        "id_2": "x20170",
-        "original_ctx": "[header] How to install a car seat [title] Separate the carrier from the base. [step] Most rear-facing seats consist of two parts: the base and the infant carrier. You will install the base, the part that remains in the car.",
-        "contaminated_ctx": "[header] Steps for fitting a car seat [title] Detach the carrier from its base. [step] The majority of rear-facing car seats are made up of two components: the base and the removable infant carrier. You\u2019ll need to secure the base\u2014the portion that stays fixed in the vehicle.",
-        "timestamp": "2025-12-14T21:14:05.961098"
+        "id_1": 42365,
+        "id_2": "x42365",
+        "original_ctx": "[header] How to choose a foam roller [title] Choose a 3 to 4 inch (7.6 to 10.2 cm) diameter for a targeted approach. [step] Most foam rollers have a 6-inch (15 cm) diameter, but a roller with a smaller diameter can be helpful for targeting certain parts of the body. For example, a thinner foam roller can target shoulder muscles better than a larger roller would.",
+        "contaminated_ctx": "[header] Selecting a foam roller [title] Opt for a 3 to 4 inch (7.6 to 10.2 cm) diameter for precise application. [step] The majority of foam rollers feature a 6-inch (15 cm) diameter, yet a smaller one may assist in focusing on specific body areas. A narrower roller, for instance, can more effectively work shoulder muscles compared to a wider version.",
+        "timestamp": "2025-12-19T13:59:12.311315"
     },
     {
         "type": "question_duplication",
-        "id_1": 592,
-        "id_2": "x592",
-        "original_ctx": "[header] How to take care of a dog [title] Feed your dog a high quality dog food. [step] Read the label of a prospective food. The first couple ingredients should be some kind of meat, not meat by-product or a grain.",
-        "contaminated_ctx": "[header] Caring for Your Dog [title] Provide your dog with premium dog food.  [step] Check the ingredients list on potential dog food options. The first few items listed should be real meat\u2014not meat by-products or grains.",
-        "timestamp": "2025-12-14T21:14:06.807873"
+        "id_1": 13428,
+        "id_2": "x13428",
+        "original_ctx": "A girl is jumping and swinging on balance bars. A woman in a black shirt is standing under her watching. she",
+        "contaminated_ctx": "A young girl leaps and sways on the balancing bars. Below her, a woman dressed in a dark top observes closely. she",
+        "timestamp": "2025-12-19T13:59:14.051423"
     },
     {
         "type": "question_duplication",
-        "id_1": 40932,
-        "id_2": "x40932",
-        "original_ctx": "[header] How to use your fitbit to monitor your sleep [title] Wear the fitbit flex tracker before you hit the sack. [step] Strap it around your arm firmly but not too tight. [title] Put the flex into sleep mode.",
-        "contaminated_ctx": "[header] Using Your Fitbit to Track Your Sleep [title] Put on your Fitbit Flex tracker before going to bed. [step] Secure it snugly around your wrist without making it overly tight. [title] Activate sleep mode on the Flex.",
-        "timestamp": "2025-12-14T21:14:07.596122"
+        "id_1": 43631,
+        "id_2": "x43631",
+        "original_ctx": "[header] How to avoid costly computer service calls [title] Install anti-virus software and be sure to keep your virus definitions up to date. [step] Out of date anti-virus software is about as effective as no anti-virus software. [substeps] Note: multiple anti-virus suites does not mean more protection.",
+        "contaminated_ctx": "[header] Ways to prevent expensive computer repair visits [title] Set up anti-virus programs and ensure your virus signatures remain current. [step] Anti-virus software that isn't updated is nearly as useless as having none. [substeps] Important: using several anti-virus tools doesn't provide extra security.",
+        "timestamp": "2025-12-19T13:59:16.511488"
     },
     {
         "type": "question_duplication",
-        "id_1": 2911,
-        "id_2": "x2911",
-        "original_ctx": "[header] How to use toning shampoo [title] Identify the tones in your hair that you want to correct. [step] Toning shampoos can help address brassiness that occurs in a variety of hair colors. When you're choosing a shampoo, it's important to know what color tones in your hair you want it to correct.",
-        "contaminated_ctx": "[header] Using Toning Shampoo Properly [title] Determine which hair tones need adjustment. [step] Toning shampoos effectively neutralize unwanted brassiness across different hair shades. Selecting the right one requires identifying the specific color tones in your hair that you\u2019d like to balance.",
-        "timestamp": "2025-12-14T21:14:08.523690"
+        "id_1": 5295,
+        "id_2": "x5295",
+        "original_ctx": "The race begins and people run very fast. Several people get interviewed during the race. the man who wins the race",
+        "contaminated_ctx": "The competition starts and participants sprint at great speed. A few individuals are questioned while the event continues. the individual who claims victory in the race",
+        "timestamp": "2025-12-19T13:59:18.163435"
     },
     {
         "type": "question_duplication",
-        "id_1": 41180,
-        "id_2": "x41180",
-        "original_ctx": "They both try to get up but they keep falling down. One of the women starts to crawl to the finish line. The other woman follows her. a man",
-        "contaminated_ctx": "They each attempt to stand but end up collapsing again. One of the women begins crawling toward the finish. The second woman mimics her actions. A man\u2014",
-        "timestamp": "2025-12-14T21:14:09.242264"
+        "id_1": 8008,
+        "id_2": "x8008",
+        "original_ctx": "[header] How to encourage your baby to build finger muscles [title] Recognize fine motor skills milestones. [step] From birth, your newborn will have a reflexive ability called the palmar hand reflex. This means that when you put an object into your newborn's palm, it will instinctively wrap its fingers around that object.",
+        "contaminated_ctx": "[header] Ways to help your infant develop finger strength [title] Identify key fine motor skill progress points. [step] Starting at birth, your baby possesses an automatic response known as the palmar grasp reflex. This involves your infant naturally curling their fingers around an item when it's placed in their hand.",
+        "timestamp": "2025-12-19T13:59:20.909822"
     },
     {
         "type": "question_duplication",
-        "id_1": 41168,
-        "id_2": "x41168",
-        "original_ctx": "[header] How to teach a child to use scissors [title] Take a pair of scissors and hand the child the handle side first. [step] Naturally the child will pick the pair of scissors with their dominate hand. [title] Start with the grip.",
-        "contaminated_ctx": "[header] Guiding a child in using scissors [title] Hold the scissors by the blades and offer the handles to the child first. [step] Instinctively, the child will grasp the scissors with their dominant hand. [title] Begin by focusing on the proper hold.",
-        "timestamp": "2025-12-14T21:14:10.154219"
+        "id_1": 20253,
+        "id_2": "x20253",
+        "original_ctx": "[header] How to dry yourself after a shower [title] Keep a clean towel handy. [step] You may not like to think about it, but your bathroom towel is one of the most bacteria-ridden items in your home. Bacteria grows on organic material and in damp places, making your bathroom towel a perfect breeding ground for the bacteria it collects from your skin.",
+        "contaminated_ctx": "[header] Ways to dry off after showering [title] Have a fresh towel nearby. [step] It might not be pleasant to consider, but your bath towel ranks among the most germ-filled objects in your house. Germs thrive on organic matter and in moist environments, turning your bathroom towel into an ideal habitat for the microbes it picks up from your body.",
+        "timestamp": "2025-12-19T13:59:23.270041"
     },
     {
         "type": "question_duplication",
-        "id_1": 29308,
-        "id_2": "x29308",
-        "original_ctx": "[header] How to fold a shirt with the department store method [title] Lay out the shirt. [step] Spread the shirt face-down on a flat, clean surface. Smooth out any wrinkles.",
-        "contaminated_ctx": "[header] Folding a shirt using the retail store technique [title] Start by laying the shirt flat. [step] Place the shirt facedown on a smooth, clean surface and gently remove any wrinkles.",
-        "timestamp": "2025-12-14T21:14:11.079840"
+        "id_1": 20486,
+        "id_2": "x20486",
+        "original_ctx": "[header] How to clean heat styling tools [title] Clean your hair straightener. [step] If you straighten your hair regularly, you should clean your hair straightener on occasion to stop dirt and debris from dirtying your hair. First, unplug your hair straightener and let it cool until you can easily touch it.",
+        "contaminated_ctx": "[header] Ways to maintain heat styling devices [title] Care for your flat iron. [step] If you frequently use a flat iron, it's wise to clean it now and then to prevent grime and residue from transferring to your hair. Begin by disconnecting the tool and allowing it to cool until it's safe to handle.",
+        "timestamp": "2025-12-19T13:59:25.621147"
     },
     {
         "type": "question_duplication",
-        "id_1": 30111,
-        "id_2": "x30111",
-        "original_ctx": "[header] How to urinate without touching the toilet [title] Buy a funnel. [step] Women have long been searching for ways to avoid touching the toilet. It hardly seems fair that men can stand when you have to sit, right? Fortunately, the marketplace has responded to women's needs.",
-        "contaminated_ctx": "[header] How to use the restroom without making contact with the toilet [title] Purchase a funnel. [step] For years, women have sought methods to steer clear of touching toilet surfaces. It doesn\u2019t seem equitable that men can stand while women must sit, does it? Luckily, the market now offers solutions tailored to women\u2019s concerns.",
-        "timestamp": "2025-12-14T21:14:12.377877"
+        "id_1": 43274,
+        "id_2": "x43274",
+        "original_ctx": "[header] How to buy comfortable shoes [title] Choose a reputable shoe retailer and good shoe brands. [step] Comfortable shoes are usually those that are well made and long lasting. While a cheap shoe may feel great when you first put it on, if it has a thin sole and poor supports, the initial sense of comfort will quickly wear off.",
+        "contaminated_ctx": "[header] How to purchase cozy footwear [title] Pick a trusted shoe seller and quality shoe labels. [step] Comfortable footwear is typically well-crafted and durable. Though an inexpensive shoe might seem pleasant at first, if it features a flimsy sole and weak support, the early feeling of ease will soon fade.",
+        "timestamp": "2025-12-19T13:59:28.191230"
     },
     {
         "type": "question_duplication",
-        "id_1": 21992,
-        "id_2": "x21992",
-        "original_ctx": "[header] How to clean dirty shoes [title] Remove dirt or debris from the shoes. [step] Use an old toothbrush or a small shoe brush and gently stroke the dirt or debris that is adhered to the shoe. Use just enough pressure to weaken the dirt's bond to the shoe.",
-        "contaminated_ctx": "[header] Cleaning filthy footwear [title] Clear away dirt and debris from the shoes. [step] Take an unused toothbrush or a compact shoe brush and lightly brush off any dirt or debris stuck to the shoe\u2019s surface. Apply just enough force to loosen the dirt\u2019s grip on the material.",
-        "timestamp": "2025-12-14T21:14:16.500851"
+        "id_1": 36338,
+        "id_2": "x36338",
+        "original_ctx": "[header] How to treat chicken pox scars [title] Get a punch excision. [step] If you want to get rid of chickenpox scars, see your dermatologist and ask about a punch excision. This is a method where scars are removed by a doctor cutting into the skin surrounding a scar and removing it.",
+        "contaminated_ctx": "[header] Ways to address chicken pox marks [title] Opt for punch excision. [step] To eliminate chickenpox scars, consult your dermatologist and inquire about punch excision. This technique involves a physician making an incision around the scar and extracting it.",
+        "timestamp": "2025-12-19T13:59:30.255185"
     },
     {
         "type": "question_duplication",
-        "id_1": 11688,
-        "id_2": "x11688",
-        "original_ctx": "[header] How to make a green tea face mask [title] Brew a pot of tea. [step] Let the tea cool (to speed this up, leave it in the fridge). [title] Mix 3 tablespoons of cool tea with 3 or 4 tablespoons of rice flour.",
-        "contaminated_ctx": "[header] Creating a green tea facial mask [title] Steep a batch of tea. [step] Allow the tea to reach room temperature (for faster cooling, refrigerate it). [title] Combine 3 tablespoons of chilled tea with 3 to 4 tablespoons of rice flour.",
-        "timestamp": "2025-12-14T21:14:17.325157"
+        "id_1": 37003,
+        "id_2": "x37003",
+        "original_ctx": "[header] How to create a mashup [title] Pick a subject. [substeps] What is the source of your data? This can drive the apis you'll use. For example, if you want to do something with your photos on flickr or sale items on ebay, then those vendors apis are the likely candidates.",
+        "contaminated_ctx": "[header] How to make a mashup [title] Choose a topic. [substeps] Where does your data originate? This may determine the APIs you select. For instance, if you aim to work with your Flickr photos or Ebay listings, those platforms' APIs are probably the best options.",
+        "timestamp": "2025-12-19T13:59:32.587770"
     },
     {
         "type": "question_duplication",
-        "id_1": 28862,
-        "id_2": "x28862",
-        "original_ctx": "[header] How to be loved by your family [title] Talk to family members with whom you're experiencing problems. [step] Talking about the problems in an attempt to clear things out will help you to better identify the actual problem as perceived by the family members in question and can get all of you started on making amends. [title] Ask someone who is neutral in any dispute to arbitrate.",
-        "contaminated_ctx": "[header] Ways to earn your family\u2019s love [title] Initiate conversations with relatives you\u2019re struggling with. [step] Openly discussing the issues to resolve misunderstandings can help you pinpoint the real concerns from their perspective and pave the way for reconciliation among everyone involved.  [title] Seek mediation from an impartial third party during conflicts.",
-        "timestamp": "2025-12-14T21:14:18.356024"
+        "id_1": 37705,
+        "id_2": "x37705",
+        "original_ctx": "[header] How to cut hair extensions [title] Brush your hair to remove any knots. [step] After putting in your extensions, use a hairbrush to comb through your hair gently, avoiding the places where the extensions are attached to your scalp. Stop brushing when you've worked through any tangles and the brush slides through your hair easily.",
+        "contaminated_ctx": "[header] Methods for trimming hair extensions [title] Detangle your hair to eliminate snarls. [step] Once your extensions are in place, carefully run a hairbrush through your strands, steering clear of the areas where the extensions connect to your scalp. Cease brushing once all knots are gone and the brush moves smoothly through your hair.",
+        "timestamp": "2025-12-19T13:59:35.231858"
     },
     {
         "type": "question_duplication",
-        "id_1": 32550,
-        "id_2": "x32550",
-        "original_ctx": "[header] How to accessorize with jewelry [title] Accessorize for the occasion. [step] Your jewelry should be appropriate for where you are going. Are you wearing jewelry to work? This is time to be more conservative with your accessorizing.",
-        "contaminated_ctx": "[header] Tips for styling with jewelry [title] Match your accessories to the event. [step] Choose pieces that suit the setting. Heading to the office? Opt for a more understated approach to your jewelry selection.",
-        "timestamp": "2025-12-14T21:14:23.116363"
+        "id_1": 23108,
+        "id_2": "x23108",
+        "original_ctx": "[header] How to clean makeup sponges [title] Dampen the sponge with fresh water. [step] In order for the soap to work into a cleansing lather, your dirty sponge must be wet. Turn on your faucet and run your reusable sponge under warm water.",
+        "contaminated_ctx": "[header] Ways to wash makeup sponges [title] Moisten the sponge using clean water. [step] For the soap to create a rich cleaning foam, your used sponge needs to be damp. Switch on the tap and hold your washable sponge beneath lukewarm water.",
+        "timestamp": "2025-12-19T13:59:37.414503"
     },
     {
         "type": "question_duplication",
-        "id_1": 9515,
-        "id_2": "x9515",
-        "original_ctx": "[header] How to annoy your roommate [title] Leave trash around the room. [step] First of all, this will make your room smell bad. Secondly, it'll attract flies, ants, and other bugs, which will gross your roommate out.",
-        "contaminated_ctx": "[header] Ways to irritate your roommate [title] Scatter garbage around the space.  This will not only create an unpleasant odor in the room but also draw in flies, ants, and other pests\u2014something your roommate will find disgusting.",
-        "timestamp": "2025-12-14T21:14:23.901026"
+        "id_1": 39064,
+        "id_2": "x39064",
+        "original_ctx": "[header] How to do yoga with your dog [title] Start with relaxed breathing. [step] To relax yourself and your dog, start by sitting down with your legs crossed. Your dog should be sitting near or on you.",
+        "contaminated_ctx": "[header] Ways to practice yoga alongside your dog [title] Begin with calm breathing. [step] To ease both you and your pet, sit cross-legged on the floor. Your dog ought to be positioned close to or on you.",
+        "timestamp": "2025-12-19T13:59:39.373304"
     },
     {
         "type": "question_duplication",
-        "id_1": 23365,
-        "id_2": "x23365",
-        "original_ctx": "[header] How to put tissue paper in a gift bag [title] Collect your materials. [step] You will need tissue paper, the gift, ribbons or embellishments, a gift bag, and a card. [substeps] You will need several colors of tissue paper that complement the color of the gift bag.",
-        "contaminated_ctx": "[header] How to Place Tissue Paper in a Gift Bag [title] Gather your supplies. [step] You\u2019ll require tissue paper, the gift itself, decorative ribbons or accents, a gift bag, and a card. [substeps] Choose multiple shades of tissue paper that coordinate with the gift bag\u2019s color.",
-        "timestamp": "2025-12-14T21:14:24.876663"
+        "id_1": 18101,
+        "id_2": "x18101",
+        "original_ctx": "[header] How to become an elite nerf soldier [title] Buy a nerf gun, preferably a maverick, because they work well in melee and are balanced and light. [step] The strongarm is an updated maverick and shoots farther. The recon cs-6/retaliator works well in intimidation, and is easy to load and shoot.",
+        "contaminated_ctx": "[header] How to transform into a top-tier nerf warrior [title] Purchase a nerf blaster, ideally a maverick, since they perform effectively in close combat and are well-balanced and lightweight. [step] The strongarm serves as an improved maverick and fires at greater distances. The recon cs-6/retaliator excels in intimidation and is simple to reload and operate.",
+        "timestamp": "2025-12-19T13:59:41.973966"
     },
     {
         "type": "question_duplication",
-        "id_1": 30117,
-        "id_2": "x30117",
-        "original_ctx": "[header] How to heal over exfoliated skin [title] Detect over-exfoliated skin. [step] If you suspect you applied the wrong strength product, applied too much pressure, or used too many exfoliators at once, look for symptoms of over-exfoliated skin. These may include : [substeps] Redness flaking irritation burning sensation [title] Apply cool compresses.",
-        "contaminated_ctx": "[header] How to repair over-exfoliated skin  [title] Identify signs of over-exfoliation. [step] If you think you used a product that was too strong, scrubbed too harshly, or layered multiple exfoliants together, check for indications of over-exfoliation. These can involve: [substeps] Redness Peeling Discomfort A stinging feeling  [title] Use cold compresses.",
-        "timestamp": "2025-12-14T21:14:26.543643"
+        "id_1": 12727,
+        "id_2": "x12727",
+        "original_ctx": "[header] How to look amazing in the rain [title] Avoid frizzy or straggly hair. [step] If it's raining before you go out, put an anti-frizz cream or anti-humidity styling product in your hair. Set your style with hairspray.",
+        "contaminated_ctx": "[header] How to appear stunning in the rain [title] Prevent frizzy or unruly hair. [step] If rain is falling before you head out, apply an anti-frizz serum or humidity-resistant styling treatment to your hair. Secure your look with hairspray.",
+        "timestamp": "2025-12-19T13:59:44.157354"
     },
     {
         "type": "question_duplication",
-        "id_1": 19452,
-        "id_2": "x19452",
-        "original_ctx": "[header] How to report an assault [title] Gather information and witnesses. [step] Write down an account of everything that happened as soon as practical after the assault. [substeps] Make a record of the entire event, including the circumstances surrounding it or leading up to it, as soon as possible after it happened so the events are as fresh as possible in your mind.",
-        "contaminated_ctx": "[header] Reporting an Assault [title] Collect details and witness statements.  [step] Document your experience in writing shortly after the incident occurs. [substeps] Jot down a full description of the event, covering both the incident itself and any relevant background or contributing factors, while the memory is still clear. Do this as soon as you can after it takes place.",
-        "timestamp": "2025-12-14T21:14:27.674860"
+        "id_1": 1722,
+        "id_2": "x1722",
+        "original_ctx": "[header] How to understand a teenager [title] Communicate your expectations to them clearly. [step] Slowly support your teen in developing their independence as they mature. For example, let your younger teen choose how to decorate their room and style their hair.",
+        "contaminated_ctx": "[header] Ways to comprehend a teenager [title] Express your expectations to them plainly. [step] Gradually assist your adolescent in building their autonomy as they grow. For instance, allow your pre-teen to decide how to arrange their bedroom and select their hairstyle.",
+        "timestamp": "2025-12-19T13:59:46.411988"
     },
     {
         "type": "question_duplication",
-        "id_1": 40921,
-        "id_2": "x40921",
-        "original_ctx": "[header] How to get natural looking waves [title] Wash or mist your hair. [step] When braiding your hair to create waves, it is best to begin with damp hair. You may achieve this in one of two ways : [substeps] Wash your tresses prior to braiding your hair.",
-        "contaminated_ctx": "[header] How to Achieve Natural-Looking Waves [title] Start with damp hair by washing or spritzing it. [step] For braiding hair to form waves, damp strands work best. There are two simple methods to prepare your hair: [substeps] First, shampoo your hair before you start braiding.",
-        "timestamp": "2025-12-14T21:14:28.717491"
+        "id_1": 12850,
+        "id_2": "x12850",
+        "original_ctx": "[header] How to make an avocado mask [title] Peel, pit, and mash half of an avocado in a small bowl. [step] Use the back of a fork to smoosh the avocado up well, and to get rid of any lumps. Avocado is great for the skin, because it is full of healthy fats and oils.",
+        "contaminated_ctx": "[header] How to prepare an avocado face mask [title] Remove the skin, remove the seed, and crush half an avocado in a little dish. [step] Press the avocado thoroughly with a fork's reverse side, ensuring no clumps remain. Avocado works wonders for skin since it contains beneficial fats and natural oils.",
+        "timestamp": "2025-12-19T13:59:48.871297"
     },
     {
         "type": "question_duplication",
-        "id_1": 14157,
-        "id_2": "x14157",
-        "original_ctx": "[header] How to draw a snake [title] Draw a medium-size oval shape for the snake's head. [step] Draw two small circles above that oval for a framework for the snake's head. [title] Draw a curve connecting the circles and the oval to taper the snake's body.",
-        "contaminated_ctx": "[header] Steps to sketch a snake [title] Begin with a moderately sized oval for the snake\u2019s head. [step] Add two tiny circles above the oval to outline the head\u2019s structure. [title] Sketch a curved line linking the circles to the oval to narrow into the snake\u2019s body.",
-        "timestamp": "2025-12-14T21:14:30.126351"
+        "id_1": 17007,
+        "id_2": "x17007",
+        "original_ctx": "[header] How to have nice and clean hair [title] Select the best shampoo for your hair type. [step] With so many brands and choices, it is easy to be overwhelmed with selecting a shampoo. When it comes to selecting the best shampoo, decide what your hair needs most.",
+        "contaminated_ctx": "[header] Ways to achieve healthy and tidy hair [title] Pick the ideal shampoo for your hair type. [step] Given the vast number of brands and options, choosing a shampoo can feel daunting. To find the right shampoo, determine what your hair requires most.",
+        "timestamp": "2025-12-19T13:59:51.019596"
     },
     {
         "type": "question_duplication",
-        "id_1": 20529,
-        "id_2": "x20529",
-        "original_ctx": "[header] How to roll up jeans [title] Choose your pair of jeans. [step] For women's styles, the super skinny cuff looks best with jeans that are very form fitting, often labeled \" skinny \" jeans. These jeans are straight-legged jeans, and usually have a bit of stretch to the fabric.",
-        "contaminated_ctx": "[header] How to Cuff Jeans [title] Pick your jeans. [step] With women\u2019s styles, the super skinny cuff works best on tightly fitted jeans, typically marked as *\"skinny\"* jeans. These are straight-leg jeans that generally include some stretch in the material.",
-        "timestamp": "2025-12-14T21:14:32.280216"
+        "id_1": 24037,
+        "id_2": "x24037",
+        "original_ctx": "[header] How to diagnose scalp psoriasis [title] Pay attention to red patches. [step] Psoriasis usually presents as red patches with silver or whitish scales on top. Look for patches across your scalp, as that's the first sign that you may have psoriasis.",
+        "contaminated_ctx": "[header] How to identify scalp psoriasis [title] Watch for red areas. [step] Psoriasis typically appears as red areas covered with silvery or white flakes. Check for these spots on your scalp, since this is often the initial indication of psoriasis.",
+        "timestamp": "2025-12-19T13:59:53.239983"
     },
     {
         "type": "question_duplication",
-        "id_1": 37977,
-        "id_2": "x37977",
-        "original_ctx": "[header] How to conduct a s\u00e9ance [title] Gather the participants. [step] Three is the minimum number of people who should participate in a s\u00e9ance. [title] Choose a medium.",
-        "contaminated_ctx": "[header] How to Hold a S\u00e9ance [title] Assemble the group. [step] At least three individuals must be present to properly conduct a s\u00e9ance. [title] Select a medium.",
-        "timestamp": "2025-12-14T21:14:33.424505"
+        "id_1": 4607,
+        "id_2": "x4607",
+        "original_ctx": "[header] How to reduce the appearance of old scars [title] Buy over the counter medicines. [step] There are a wide variety of over the counter medicines that can be helpful in reducing the appearance of old scars. These medicines have been proven effective and are widely available.",
+        "contaminated_ctx": "[header] Ways to minimize the look of aged scars [title] Purchase non-prescription treatments. [step] Numerous non-prescription treatments exist that may aid in lessening the visibility of old scars. These products are known to work well and are easy to find.",
+        "timestamp": "2025-12-19T13:59:55.420437"
     },
     {
         "type": "question_duplication",
-        "id_1": 27489,
-        "id_2": "x27489",
-        "original_ctx": "[header] How to keep latchkey kids safe [title] Enlist the help of a neighbor who lives close by to keep an eye out on your child and who can serve as an emergency contact for you and your child. [title] Make sure your child locks the door after letting himself in. [title] Instruct your child to limit sharing the fact that he is home alone when school is out.",
-        "contaminated_ctx": "[header] Ensuring the safety of latchkey children  [title] Ask a nearby neighbor to watch over your child and act as a backup contact for both of you in case of emergencies.  [title] Ensure your child secures the door immediately after entering the house.  [title] Teach your child to avoid disclosing that they\u2019re home alone when school isn\u2019t in session.",
-        "timestamp": "2025-12-14T21:14:35.303884"
+        "id_1": 20259,
+        "id_2": "x20259",
+        "original_ctx": "[header] How to clean suede gloves [title] Check your gloves' care tags. [step] Before you begin cleaning your suede gloves, check the care tags. There are a lot of different types of suede and suede finishes, and each type has different care needs.",
+        "contaminated_ctx": "[header] Cleaning suede gloves [title] Examine the care labels. [step] Prior to cleaning your suede gloves, inspect the care tags. Many varieties of suede and suede treatments exist, and each requires specific maintenance.",
+        "timestamp": "2025-12-19T13:59:57.278641"
     },
     {
         "type": "question_duplication",
-        "id_1": 39158,
-        "id_2": "x39158",
-        "original_ctx": "[header] How to prevent heartworm disease in cats [title] Give your cat preventative medication. [step] Like most diseases, prevention is the safest and most cost effective measure. Cats can be given once a month preventative medication that kills the heartworms.",
-        "contaminated_ctx": "[header] Protecting cats from heartworm disease [title] Administer preventive medication to your cat. [step] As with many illnesses, taking preventive steps is the most reliable and budget-friendly approach. A monthly preventive treatment can be given to cats to eliminate heartworms.",
-        "timestamp": "2025-12-14T21:14:36.578784"
+        "id_1": 5014,
+        "id_2": "x5014",
+        "original_ctx": "[header] How to take care of ladybugs [title] Purchase ladybugs. [step] If you have a garden or a greenhouse, you should consider adding more ladybugs to the environment. Ladybugs are very useful for controlling aphids.",
+        "contaminated_ctx": "[header] Caring for ladybugs [title] Buy ladybugs. [step] For those with a garden or greenhouse, introducing extra ladybugs to the area may be beneficial. These insects are highly effective at managing aphid populations.",
+        "timestamp": "2025-12-19T13:59:59.281364"
     },
     {
         "type": "question_duplication",
-        "id_1": 50235,
-        "id_2": "x50235",
-        "original_ctx": "[header] How to avoid overindulging during the holidays [title] Give yourself healthy limits. [step] It's not realistic to completely avoid indulging during the holidays. The holidays are a special time and you deserve to loosen up restrictions regarding food once in awhile.",
-        "contaminated_ctx": "[header] Tips for preventing holiday overeating [title] Set reasonable boundaries for yourself.  [step] Trying to avoid all treats during the holidays isn\u2019t practical. Since this is a festive season, it\u2019s okay to relax your usual dietary rules now and then.",
-        "timestamp": "2025-12-14T21:14:37.805811"
+        "id_1": 21426,
+        "id_2": "x21426",
+        "original_ctx": "[header] How to choose educational tech toys for your kids [title] Consider the child's age. [step] Not all educational tech toys are appropriate for all ages. This means you should think about the child's age as you choose one.",
+        "contaminated_ctx": "[header] Selecting educational tech toys for children [title] Take the kid's age into account. [step] Educational tech toys aren't suitable for every age group. This implies you ought to consider the child's age when picking one.",
+        "timestamp": "2025-12-19T14:00:01.253328"
     },
     {
         "type": "question_duplication",
-        "id_1": 50569,
-        "id_2": "x50569",
-        "original_ctx": "[header] How to become an animal behaviorist [title] Learn about being an animal behaviorist. [step] Animal behaviorists investigate the causes, functions, development and evolution of behaviors of a specific animal or groups of animals. If you like working with animals, this might be a rewarding career path for you.",
-        "contaminated_ctx": "[header] Steps to pursue a career in animal behavior [title] Explore the role of an animal behaviorist. [step] Animal behaviorists study the origins, purposes, progression, and evolutionary aspects of behavior in individual animals or entire species. For those passionate about animals, this could be a fulfilling professional choice.",
-        "timestamp": "2025-12-14T21:14:39.332653"
+        "id_1": 7557,
+        "id_2": "x7557",
+        "original_ctx": "[header] How to encourage leadership in gifted students [title] Provide a stimulating and enriching environment for your gifted child. [step] Encourage the development of diverse interests and allow your child to make observations and draw conclusions about people, events and activities. [title] Promote healthy self esteem.",
+        "contaminated_ctx": "[header] Ways to foster leadership in talented students [title] Create a challenging and engaging setting for your gifted child. [step] Support the exploration of varied passions and permit your child to notice details and form insights about individuals, situations, and experiences. [title] Nurture positive self-confidence.",
+        "timestamp": "2025-12-19T14:00:03.484679"
     },
     {
         "type": "question_duplication",
-        "id_1": 35033,
-        "id_2": "x35033",
-        "original_ctx": "[header] How to train chickens to return to their coop [title] Prepare your chicken coop. [step] Before you can train your chickens to return to the coop in the evening, you need to ensure the coop is set up properly for your chickens. A basic chicken coop should provide at least twenty-four square feet of space and multiple places for chickens to perch.",
-        "contaminated_ctx": "[header] Teaching chickens to come back to their coop [title] Get the chicken coop ready. [step] To successfully train your chickens to return to the coop at night, start by making sure the coop is properly prepared. A well-designed chicken coop must offer a minimum of twenty-four square feet of space, along with several perching spots for the birds.",
-        "timestamp": "2025-12-14T21:14:43.005573"
+        "id_1": 20374,
+        "id_2": "x20374",
+        "original_ctx": "[header] How to become a foster parent in ohio [title] Learn the responsibilities of a foster parent. [step] A foster parent provides care and a home for children who cannot currently live with their natural parents, often because of abuse or neglect. They take care of the child until the child can safely return home.",
+        "contaminated_ctx": "[header] Steps to become a foster parent in Ohio [title] Understand the duties of a foster parent. [step] A foster parent offers support and a household to kids who are unable to stay with their birth parents, typically due to mistreatment or abandonment. They look after the child until it's safe for them to go back home.",
+        "timestamp": "2025-12-19T14:00:05.866900"
     },
     {
         "type": "question_duplication",
-        "id_1": 12921,
-        "id_2": "x12921",
-        "original_ctx": "[header] How to buy a classic volkswagen [title] Start with your local newspaper classifieds by searching both the vehicle advertising section as well as the personal car ads. [step] You might be lucky enough to find a vehicle close to home and save yourself any shipping or delivery fees. [title] Check the regional trade magazines that are available at gas stations or convenience stores.",
-        "contaminated_ctx": "[header] Purchasing a vintage Volkswagen [title] Begin by browsing your local newspaper\u2019s classifieds, looking through both the automotive listings and private seller ads. [step] There\u2019s a chance you\u2019ll discover one nearby, helping you avoid extra costs for transport or delivery. [title] Review the area\u2019s specialty car magazines, which can often be found at gas stations or corner shops.",
-        "timestamp": "2025-12-14T21:14:44.092788"
+        "id_1": 33991,
+        "id_2": "x33991",
+        "original_ctx": "[header] How to apply eye black for baseball [title] Remove the eye black stick from its package. [title] Take off the lid to the eye black stick. [step] A lid to eye black is removed much in the same way you remove a lid from a stick of lip balm.",
+        "contaminated_ctx": "[header] Applying eye black for baseball [title] Take the eye black stick out of its container. [title] Remove the cap from the eye black stick. [step] The cap on eye black comes off similarly to how you'd take the top off a lip balm tube.",
+        "timestamp": "2025-12-19T14:00:08.222112"
     },
     {
         "type": "question_duplication",
-        "id_1": 27137,
-        "id_2": "x27137",
-        "original_ctx": "[header] How to limit your toddler's sugar intake [title] Remove junk food from the house. [step] One way to limit the amount of sugar your toddler eats is to keep all junk food out of the house. Your child won't have access to them, so eventually they will be less likely to ask for them if they are not around and they don't see them.",
-        "contaminated_ctx": "[header] Ways to reduce your toddler\u2019s sugar consumption [title] Eliminate unhealthy snacks from home.  A simple method to cut back on your toddler\u2019s sugar consumption is to avoid keeping junk food in the house. Without easy access to these treats, your child will gradually stop requesting them if they\u2019re not visible or available.",
-        "timestamp": "2025-12-14T21:14:45.473460"
+        "id_1": 18272,
+        "id_2": "x18272",
+        "original_ctx": "[header] How to do a dip powder manicure [title] Use polish remover as well as a cuticle pusher. [step] If you have polish on your nails, remove it with non-acetone nail polish remover on a lint-free pad. Use a cuticle pusher to gently nudge your cuticles slightly back.",
+        "contaminated_ctx": "[header] How to perform a dip powder manicure [title] Apply polish remover along with a cuticle tool. [step] In case your nails have polish, eliminate it using acetone-free nail polish remover on a lint-free wipe. Carefully push back your cuticles with a cuticle pusher.",
+        "timestamp": "2025-12-19T14:00:10.336885"
     },
     {
         "type": "question_duplication",
-        "id_1": 25238,
-        "id_2": "x25238",
-        "original_ctx": "[header] How to change the brake light bulb on a 2005 vw beetle tdi [title] Use the key remote, fob, or key to raise the deck lid. [title] Use a flat-blade screwdriver to pry off the cover to access lens assembly (figures b1 and b2). [title] Use the fingers to remove the knob of the taillight lens assembly (figures b-3 and b-4).",
-        "contaminated_ctx": "How to Replace the Brake Light Bulb on a 2005 VW Beetle TDI  Unlock the trunk lid using the key fob, remote, or manual key. With a flathead screwdriver, carefully pry away the cover to reach the lens assembly (see figures B1 and B2). Gently pull off the knob of the taillight lens assembly with your fingers (refer to figures B-3 and B-4).",
-        "timestamp": "2025-12-14T21:14:49.149838"
+        "id_1": 12037,
+        "id_2": "x12037",
+        "original_ctx": "[header] How to link paypal accounts [title] Navigate to https: // www.paypal.com/signin. [title] Sign in using the account you want to close. [step] Enter the username and password and click \" log in \".",
+        "contaminated_ctx": "[header] How to connect PayPal accounts [title] Go to https: // www.paypal.com/signin. [title] Log in with the account you intend to shut down. [step] Input the email and password, then select \" log in \".",
+        "timestamp": "2025-12-19T14:00:12.730207"
     },
     {
         "type": "question_duplication",
-        "id_1": 35203,
-        "id_2": "x35203",
-        "original_ctx": "[header] How to make scrambled eggs inside the shell [title] Gather the materials. [step] You will need the following : [substeps] A long-sleeved t-shirt rubber bands or twine an egg of your choice (uncooked ) [title] Insert the egg in one of the sleeves of the shirt. [step] Make sure that it is placed in the middle of the sleeve so you can have room to grab the ends in the next few steps.",
-        "contaminated_ctx": "[header] How to prepare scrambled eggs without cracking the shell [title] Collect the necessary items. [step] Be sure to have these ready: [substeps] - A long-sleeved shirt - Rubber bands or string - One uncooked egg (your preferred type)  [title] Slide the egg into a sleeve of the shirt. [step] Position it in the center of the sleeve, leaving enough space at both ends to grip them in the following steps.",
-        "timestamp": "2025-12-14T21:14:50.708393"
+        "id_1": 27635,
+        "id_2": "x27635",
+        "original_ctx": "[header] How to find your nhs number [title] Check any correspondence you have received from the nhs. [step] As a general rule, any official letters or documents sent to you by the nhs should also contain your nhs number. Look through your mail for official nhs correspondence.",
+        "contaminated_ctx": "[header] How to locate your NHS number [title] Review any communications you've gotten from the NHS. [step] Typically, all formal letters or paperwork mailed to you by the NHS will include your NHS number. Search your post for NHS official mail.",
+        "timestamp": "2025-12-19T14:00:14.880153"
     },
     {
         "type": "question_duplication",
-        "id_1": 43277,
-        "id_2": "x43277",
-        "original_ctx": "[header] How to make scented hand sanitizer [title] Fill a clean bowl with 2/3 cup (160 milliliters) of rubbing alcohol. [step] Try to use 99% rubbing alcohol instead of the regular 70%, as it will kill more germs. [title] Add 1/3 cup (80 grams) of aloe vera gel.",
-        "contaminated_ctx": "[header] How to create fragrant hand sanitizer [title] Pour 2/3 cup (160 mL) of rubbing alcohol into a sanitized bowl. [step] Whenever possible, opt for 99% isopropyl alcohol over the standard 70%, since it\u2019s more effective at eliminating bacteria. [title] Mix in 1/3 cup (80 g) of aloe vera gel.",
-        "timestamp": "2025-12-14T21:14:51.833332"
+        "id_1": 9665,
+        "id_2": "x9665",
+        "original_ctx": "[header] How to create an eco friendly nursery [title] Purchase an organic baby crib. [substeps] Consider purchasing a crib made with recycled wood or certified natural wood to be sure your baby's crib is not painted with a harmful varnish. Furthermore, cribs fashioned from natural or recycled woods benefit our environment and allow the consumer to obtain a quality product.",
+        "contaminated_ctx": "[header] How to design an environmentally conscious nursery [title] Buy an organic infant bed. [substeps] Think about acquiring a bed crafted from reclaimed timber or verified sustainable wood to guarantee your child's bed isn't coated with toxic lacquer. Additionally, beds constructed from natural or recycled materials support the planet and enable buyers to secure a durable item.",
+        "timestamp": "2025-12-19T14:00:17.685980"
     },
     {
         "type": "question_duplication",
-        "id_1": 26369,
-        "id_2": "x26369",
-        "original_ctx": "[header] How to unlock a door [title] Use a credit card on a spring lock. [step] Though it won't work for deadbolts, it will work for spring locks (the kind that's slanted and a part of a handle). Grab one that's cheap and you don't care about--if it breaks, no harm, no foul.",
-        "contaminated_ctx": "[header] How to open a locked door [title] Unlock a spring latch with a credit card. [step] While this method doesn\u2019t work on deadbolts, it\u2019s effective for spring latches (the type with a slanted edge built into the handle). Pick a card you won\u2019t miss\u2014if it gets damaged in the process, there\u2019s nothing lost.",
-        "timestamp": "2025-12-14T21:14:53.169888"
+        "id_1": 25986,
+        "id_2": "x25986",
+        "original_ctx": "[header] How to start a hot tub [title] Shut off power to the hot tub. [step] While cleaning and getting your hot tub ready, you might accidentally turn it on. Running your hot tub without water or too little water can damage its pump and heater.",
+        "contaminated_ctx": "[header] Beginning a hot tub [title] Cut the power to the hot tub. [step] During maintenance or preparation, you may unintentionally activate it. Operating the hot tub with no water or insufficient water can harm the pump and heater.",
+        "timestamp": "2025-12-19T14:00:19.638849"
     },
     {
         "type": "question_duplication",
-        "id_1": 307,
-        "id_2": "x307",
-        "original_ctx": "[header] How to make simple non slip slippers from scratch [title] Use a file folder or another kind of stiff paper to make the soles. [step] You could even use cardboard, if you prefer. If you can, fold it in half, this way you have less work to do.",
-        "contaminated_ctx": "[header] Crafting basic non-slip slippers from the ground up [title] Create the soles using a file folder or any rigid paper. [step] Cardboard also works well if that\u2019s what you have. For efficiency, try folding it in half\u2014this cuts down on the effort required.",
-        "timestamp": "2025-12-14T21:14:54.296961"
+        "id_1": 10414,
+        "id_2": "x10414",
+        "original_ctx": "[header] How to have a tidy linen closet [title] Keep like with like. [step] It makes good common sense to keep the same items together in the linen closet. For example : [substeps] Put all the bed linen together.",
+        "contaminated_ctx": "[header] Ways to maintain an organized linen cupboard [title] Group similar items. [step] Storing identical things in one place in the linen cupboard is a practical approach. For instance: [substeps] Arrange all bedding in the same section.",
+        "timestamp": "2025-12-19T14:00:21.936777"
     },
     {
         "type": "question_duplication",
-        "id_1": 7216,
-        "id_2": "x7216",
-        "original_ctx": "[header] How to get free honeymoon upgrades [title] Sign up for frequent flier miles membership cards. [step] If you have a preferred airline, sign up for its frequent flier miles program as soon as you can, especially if you take a lot of business trips. Frequent flier miles can add up quickly and lead to free tickets and upgrades.",
-        "contaminated_ctx": "[header] Ways to secure complimentary honeymoon upgrades [title] Join airline loyalty programs. [step] If you frequently fly with a specific airline, enroll in its rewards program right away\u2014particularly if you travel often for work. Accumulated miles can quickly translate into free flights and cabin upgrades.",
-        "timestamp": "2025-12-14T21:14:55.525359"
+        "id_1": 15205,
+        "id_2": "x15205",
+        "original_ctx": "[header] How to get great looking skin [title] Wash your hands properly. [step] If you don't, the bacteria and oil from your fingers can get in your pores and create infections and breakouts. It may seem like a simple task, but it may also be easily forgotten.",
+        "contaminated_ctx": "[header] Ways to achieve healthy-looking skin [title] Clean your hands thoroughly. [step] Without doing so, germs and grease from your hands can clog pores, leading to irritation and blemishes. Though it appears basic, this step is often overlooked.",
+        "timestamp": "2025-12-19T14:00:25.634556"
     },
     {
         "type": "question_duplication",
-        "id_1": 7808,
-        "id_2": "x7808",
-        "original_ctx": "[header] How to survive an upset stomach on an airplane [title] Use a quick trick to reduce upset stomach. [step] Are you close to throwing up in the air? There are some small measures you can take that might help you feel better fast. [substeps] Put pressure on the inside of your wrist.",
-        "contaminated_ctx": "[header] How to manage nausea while flying [title] Try this simple method to ease an upset stomach.  [step] Feeling queasy mid-flight? A few easy steps could quickly relieve your discomfort.  [substeps] Apply gentle pressure to the inner part of your wrist.",
-        "timestamp": "2025-12-14T21:14:56.901003"
+        "id_1": 6765,
+        "id_2": "x6765",
+        "original_ctx": "[header] How to make natural hairspray [title] Fill a pot with 2 cups of water and bring it to a boil. [step] This will take 6-8 minutes depending on your stovetop. Covering the pot while it heats up can make it boil a bit faster.",
+        "contaminated_ctx": "[header] How to create organic hairspray [title] Place 2 cups of water in a saucepan and heat until boiling. [step] The process should require 6-8 minutes based on your stove. Keeping the pot covered while warming may speed up the boiling.",
+        "timestamp": "2025-12-19T14:00:27.651351"
     },
     {
         "type": "question_duplication",
-        "id_1": 9072,
-        "id_2": "x9072",
-        "original_ctx": "[header] How to teach a blind or visually impaired child to tie their shoes [title] Start giving lessons between ages five and seven. [step] Teachers of the blind and visually impaired often stress the importance of learning age-appropriate skills, which contributes to developing motor functioning and increasing independence. Most children learn to tie their shoes between the ages of five and seven, so a blind child should also start learning during this age range.",
-        "contaminated_ctx": "[header] Teaching a blind or visually impaired child to tie their shoes [title] Begin instruction between ages five and seven. [step] Educators specializing in blindness and visual impairment emphasize the value of mastering skills suitable for their age, as this helps refine motor abilities and foster self-reliance. Since most children typically learn to tie their shoes between five and seven years old, a blind child should likewise start practicing within that same timeframe.",
-        "timestamp": "2025-12-14T21:15:01.768856"
+        "id_1": 31820,
+        "id_2": "x31820",
+        "original_ctx": "[header] How to make potato salad for 50 people [title] Leaving the skins on, cook the potatoes in salted water until easily pierced with a fork. [step] The skins may split, which is fine. You can cook in batches.",
+        "contaminated_ctx": "[header] Preparing potato salad for 50 guests [title] With the skins left on, boil the potatoes in salted water until tender enough to be pierced by a fork. [step] The skins might crack, which is acceptable. It's possible to cook them in portions.",
+        "timestamp": "2025-12-19T14:00:32.586385"
     },
     {
         "type": "question_duplication",
-        "id_1": 2547,
-        "id_2": "x2547",
-        "original_ctx": "[header] How to avoid parent teacher conflicts [title] Get acquainted in your child's presence. [step] Many schools host a \" meet the teacher \" event at the start of a new school year to let parents and students introduce themselves to teachers. Attending this event sets the tone for positive interaction with your child's teacher.",
-        "contaminated_ctx": "[header] Preventing disputes between parents and teachers [title] Introduce yourself while your child is present. [step] At the beginning of each academic year, numerous schools organize a *\"meet the teacher\"* gathering, giving parents and students the chance to meet their educators. Participating in this event helps establish a foundation for constructive communication with your child\u2019s teacher.",
-        "timestamp": "2025-12-14T21:15:05.661483"
+        "id_1": 28349,
+        "id_2": "x28349",
+        "original_ctx": "[header] How to wear a dirndl [title] Start with the appropriate undergarments. [step] Dirndls usually expose a fair amount of cleavage, so it's best to wear a supportive bra with plenty of lift. Many shops which carry dirndls also sell push-up bras, known in the area as a bustehouder, or bh.",
+        "contaminated_ctx": "[header] How to put on a dirndl [title] Begin with the right underclothes. [step] Since dirndls often reveal a good deal of d\u00e9colletage, opt for a sturdy bra that offers ample support. Numerous stores selling dirndls also stock push-up bras, referred to locally as a bustehouder, or bh.",
+        "timestamp": "2025-12-19T14:00:35.355205"
     },
     {
         "type": "question_duplication",
-        "id_1": 25109,
-        "id_2": "x25109",
-        "original_ctx": "[header] How to condition your knuckles [title] Get in a standard pushup position. [step] Make sure your back is straight and your feet are shoulder length apart. Complete knuckle pushups on a soft surface like carpet, a workout mat, or even grass.",
-        "contaminated_ctx": "[header] How to train your knuckles for pushups [title] Start in a basic pushup stance. [step] Keep your back aligned and your feet spaced at shoulder width. Perform knuckle pushups on a cushioned surface, such as a rug, exercise mat, or grass.",
-        "timestamp": "2025-12-14T21:15:06.392591"
+        "id_1": 19639,
+        "id_2": "x19639",
+        "original_ctx": "People are standing on a basketball court. A man in an orange shirt throws a ball. they",
+        "contaminated_ctx": "Individuals are gathered on a basketball court. A male in an orange top hurls a ball. they",
+        "timestamp": "2025-12-19T14:00:36.794962"
     },
     {
         "type": "question_duplication",
-        "id_1": 24305,
-        "id_2": "x24305",
-        "original_ctx": "[header] How to be safe during a heat emergency [title] Stay indoors as much as possible and limit exposure to the sun. [title] Stay on the lowest floor out of the sunshine if air conditioning is not available. [title] Consider spending the warmest part of the day in public buildings such as libraries, schools, movie theaters, shopping malls, and other community facilities.",
-        "contaminated_ctx": "[header] Safety tips for extreme heat conditions [title] Minimize time outside and reduce direct sunlight exposure. [title] If there\u2019s no air conditioning, stay on the ground level away from sunlight. [title] During peak heat hours, visit cooled public spaces like libraries, schools, theaters, malls, or community centers.",
-        "timestamp": "2025-12-14T21:15:07.912722"
+        "id_1": 21376,
+        "id_2": "x21376",
+        "original_ctx": "[header] How to stop using inhalants [title] Always remember that almost any product used in the home can be abused as an inhalant. [step] They have safe legal purposes but can be deadly if used incorrectly. Among them are whipped cream containers, toxic dry erase/permanent markers, paint, glues, and even bath salts.",
+        "contaminated_ctx": "[header] Ways to quit inhalant use [title] Keep in mind that nearly any household item can be misused as an inhalant. [step] These products serve legitimate, harmless functions but may become lethal when used improperly. Examples include aerosol whipped cream cans, hazardous dry erase or permanent markers, paint, adhesives, and even certain bath salts.",
+        "timestamp": "2025-12-19T14:00:39.258305"
     },
     {
         "type": "question_duplication",
-        "id_1": 42939,
-        "id_2": "x42939",
-        "original_ctx": "[header] How to prevent static hair [title] Use hairspray. [step] If you live in a dry area and are prone to static hair, hairspray is vital. Using hairspray in the morning and throughout the day can help prevent and eliminate static hair.",
-        "contaminated_ctx": "[header] Ways to stop hair from getting static [title] Apply hairspray. [step] For those in arid climates or dealing with frequent static, hairspray is essential. Spritzing it in the morning and reapplying as needed can both reduce and remove static from your hair.",
-        "timestamp": "2025-12-14T21:15:08.891090"
+        "id_1": 14072,
+        "id_2": "x14072",
+        "original_ctx": "[header] How to add an itunes subscribe button to a wordpress blog for a podcast [title] Add your podcast to itunes. [step] You will need to host your original podcast on a server and then post the rss link on itunes. Go to apple.com/itunes/podcasts/specs for further information about keeping and posting podcast episodes on itunes.",
+        "contaminated_ctx": "[header] How to include an iTunes subscription button on a WordPress blog for a podcast [title] Submit your podcast to iTunes. [step] You must store your podcast on a server first, then provide the RSS feed link on iTunes. Visit apple.com/itunes/podcasts/specs for more details on managing and uploading podcast episodes to iTunes.",
+        "timestamp": "2025-12-19T14:00:41.738723"
     },
     {
         "type": "question_duplication",
-        "id_1": 22925,
-        "id_2": "x22925",
-        "original_ctx": "[header] How to know what to wear [title] Identify your skin tone. [step] There are many terms used to describe skin tone, from light or dark, to pale or olive. The most accurate way to figure out what colors look good on you is to figure out the undertone of your skin.",
-        "contaminated_ctx": "[header] Determining the right outfit [title] Find your skin tone. [step] Skin tone is often labeled with terms like fair, deep, pale, or olive. To best determine which colors suit you, pinpoint the undertone of your skin.",
-        "timestamp": "2025-12-14T21:15:09.746683"
+        "id_1": 22070,
+        "id_2": "x22070",
+        "original_ctx": "[header] How to remove set in stains [title] Purchase an oxygen bleach product. [step] There are many to choose from, but oxiclean is probably the most easily recognized. The specific product you buy is your preference, but you should look for a powdered formula that contains sodium percarbonate and sodium carbonate.",
+        "contaminated_ctx": "[header] Ways to eliminate set-in stains [title] Get an oxygen-based bleach. [step] Numerous options exist, though Oxiclean is likely the most well-known. The exact brand you select is up to you, but opt for a powdered version containing sodium percarbonate and sodium carbonate.",
+        "timestamp": "2025-12-19T14:00:44.472722"
     },
     {
         "type": "question_duplication",
-        "id_1": 36741,
-        "id_2": "x36741",
-        "original_ctx": "[header] How to make pickled chiles [title] Separate out bad chiles. [step] Because the oil from the chiles can irritate your skin and eyes, wear plastic gloves when handling your chiles and wash your hands after handling chiles barehanded. Remove limp, spotted, and soft chiles.",
-        "contaminated_ctx": "[header] Preparing Pickled Chilies [title] Discard any spoiled chilies. [step] Since chili oil may cause skin and eye irritation, put on plastic gloves before touching them and thoroughly wash your hands if you handle them without protection. Set aside any chilies that are wilted, discolored, or mushy.",
-        "timestamp": "2025-12-14T21:15:10.883349"
+        "id_1": 49624,
+        "id_2": "x49624",
+        "original_ctx": "[header] How to reset a water heater [title] Disconnect the electricity to the heater. [step] Never tamper with a water heater that's still powered on. Before you begin opening the heater, figure out where it's plugged into the wall and turn off the electricity.",
+        "contaminated_ctx": "[header] How to restart a water heater [title] Cut off the power to the heater. [step] Avoid interfering with a water heater that remains connected to electricity. Prior to accessing the heater, locate its power source and switch off the electrical supply.",
+        "timestamp": "2025-12-19T14:00:46.266780"
     },
     {
         "type": "question_duplication",
-        "id_1": 42270,
-        "id_2": "x42270",
-        "original_ctx": "[header] How to make bracelets out of thread [title] Cut 3 equal sized strands of thread. [step] If you want to make a very basic design, you can use three strands of thread. In this example, we're using violet, pink and blue.",
-        "contaminated_ctx": "[header] Crafting Thread Bracelets [title] Trim three strands of thread to the same length. [step] For a simple design, three threads will suffice\u2014here, we\u2019ve chosen violet, pink, and blue.",
-        "timestamp": "2025-12-14T21:15:11.692305"
+        "id_1": 31099,
+        "id_2": "x31099",
+        "original_ctx": "[header] How to pluck facial hair [title] Clean your skin. [step] It is important to start with clean skin because dirt and bacteria can get into the pores where you have plucked the hair and cause breakouts. Additionally, you will probably be touching your face with your hands, so it's good to start with a clean palette.",
+        "contaminated_ctx": "[header] Methods for removing facial hair [title] Wash your face. [step] Beginning with clean skin is essential since grime and germs may enter the follicles after hair is pulled, leading to irritation. Also, you'll likely handle your face with your fingers, so a fresh surface helps avoid issues.",
+        "timestamp": "2025-12-19T14:00:48.568227"
     },
     {
         "type": "question_duplication",
-        "id_1": 8679,
-        "id_2": "x8679",
-        "original_ctx": "[header] How to find the best foundation color shade for you [title] Understand your undertone. [step] Before trying to choose a foundation, it's best to determine a few things about your skin, such as your undertone. While the surface of your skin can change color because of many things, such as exposure to the elements or acne, your undertone will always stay the same.",
-        "contaminated_ctx": "[header] How to select the perfect foundation shade for your skin [title] Identify your undertone first. [step] Before picking a foundation, start by assessing key aspects of your skin\u2014particularly your undertone. Although external factors like sun exposure or breakouts may alter your skin\u2019s surface tone, your undertone remains constant.",
-        "timestamp": "2025-12-14T21:15:13.341326"
+        "id_1": 28818,
+        "id_2": "x28818",
+        "original_ctx": "[header] How to measure hockey gloves [title] Bend your arm at the elbow. [step] The measurement for a glove is based on the distance from the crook, or crease, of your elbow to your middle finger. Bend your elbow slightly.",
+        "contaminated_ctx": "[header] Measuring hockey gloves [title] Flex your arm at the elbow. [step] Glove sizing relies on the length from the bend, or fold, of your elbow to your middle finger. Fold your elbow a little.",
+        "timestamp": "2025-12-19T14:00:50.718478"
     },
     {
         "type": "question_duplication",
-        "id_1": 335,
-        "id_2": "x335",
-        "original_ctx": "[header] How to wear a wide brim hat [title] Choose a hat with a smaller brim if you have a diamond shaped face. [step] If you have an angular face with wide cheekbones, then you most likely have a diamond shaped face. Wearing a hat with a smaller brim and pinched crown like a fedora or trilby hat may be good options for you.",
-        "contaminated_ctx": "[header] Tips for Styling a Wide-Brimmed Hat [title] Opt for a hat with a narrower brim if your face is diamond-shaped.  [step] Those with a diamond-shaped face typically have sharp angles and prominent cheekbones. A hat featuring a modest brim and a slightly tapered crown\u2014such as a fedora or trilby\u2014could complement your features well.",
-        "timestamp": "2025-12-14T21:15:14.656630"
+        "id_1": 20401,
+        "id_2": "x20401",
+        "original_ctx": "[header] How to make muddy buddies [title] Cover a large baking sheet with wax paper. [step] Make sure that the bowl is large enough to fit the rest of the ingredients. You will be mixing everything in this bowl at the end.",
+        "contaminated_ctx": "[header] How to prepare muddy buddies [title] Line a big baking tray with wax paper. [step] Ensure the bowl is spacious enough to hold the remaining components. All ingredients will be combined in this bowl later.",
+        "timestamp": "2025-12-19T14:00:52.759984"
     },
     {
         "type": "question_duplication",
-        "id_1": 34245,
-        "id_2": "x34245",
-        "original_ctx": "[header] How to set a bookmark shortcut in your home screen on android [title] Navigate to your android web browser. [step] Locate the icon that looks like a globe and tap on it to open. [title] Go to your website of choice.",
-        "contaminated_ctx": "[header] How to create a bookmark shortcut on your Android home screen [title] Open your Android web browser. [step] Find the globe-shaped icon and select it to launch the browser. [title] Visit the website you want to bookmark.",
-        "timestamp": "2025-12-14T21:15:15.493447"
+        "id_1": 42600,
+        "id_2": "x42600",
+        "original_ctx": "[header] How to clean road rash [title] Look at the depth of the wound. [step] When you get road rash, you first need to decide how deep the wound goes. If you had a small fall, the road rash will likely be shallow and only affect the upper layer of skin.",
+        "contaminated_ctx": "[header] How to treat road rash [title] Assess the wound's depth. [step] After sustaining road rash, your initial step is to determine how deep the injury extends. In cases of a minor tumble, the abrasion will probably be superficial, impacting just the top skin layer.",
+        "timestamp": "2025-12-19T14:00:55.374647"
     },
     {
         "type": "question_duplication",
-        "id_1": 46995,
-        "id_2": "x46995",
-        "original_ctx": "[header] How to measure biceps [title] Measure before you weight lift. [step] If you've exercised your arms right before you measure your bicep size, you won't get an accurate bicep measurement. Working out forces blood into your muscles, which temporarily inflates the size of your biceps and triceps.",
-        "contaminated_ctx": "[header] How to check bicep size [title] Take measurements before lifting weights. [step] Measuring your biceps immediately after arm exercises will give you an inaccurate result. Physical activity causes blood to rush into the muscles, leading to a temporary increase in the size of your biceps and triceps.",
-        "timestamp": "2025-12-14T21:15:16.412594"
+        "id_1": 5641,
+        "id_2": "x5641",
+        "original_ctx": "[header] How to make enchilada sauce [title] Melt the butter or margarine in a saucepan on medium heat. [title] Add the flour. [step] Three tablespoons should be enough but if not, add a little more to form a loose paste.",
+        "contaminated_ctx": "[header] How to prepare enchilada sauce [title] Heat the butter or margarine in a saucepan over medium heat. [title] Stir in the flour. [step] Three tablespoons will suffice, though you may need to add slightly more to create a thin paste.",
+        "timestamp": "2025-12-19T14:00:57.477312"
     },
     {
         "type": "question_duplication",
-        "id_1": 29210,
-        "id_2": "x29210",
-        "original_ctx": "[header] How to get free diabetes supplies [title] Obtain insurance. [step] If you do not have insurance already, you should enroll in an insurance program. Insurance can provide free or discounted diabetes supplies under basic coverage.",
-        "contaminated_ctx": "[header] Ways to receive no-cost diabetes supplies [title] Secure insurance coverage. [step] If you\u2019re currently uninsured, sign up for an insurance plan. Many policies include free or low-cost diabetes supplies as part of their standard benefits.",
-        "timestamp": "2025-12-14T21:15:17.440252"
+        "id_1": 28724,
+        "id_2": "x28724",
+        "original_ctx": "[header] How to find the publisher of a book [title] Look for the publisher's name on the title page. [step] The name of the publisher should appear at the bottom of the title page, under the title and author of the book. The publisher's name will usually be listed under the logo for the publisher.",
+        "contaminated_ctx": "[header] How to locate a book's publisher [title] Search for the publisher's name on the title page. [step] The publisher's name is typically found at the base of the title page, beneath the book's title and author. It is often displayed below the publisher's logo.",
+        "timestamp": "2025-12-19T14:01:00.096314"
     },
     {
         "type": "question_duplication",
-        "id_1": 17088,
-        "id_2": "x17088",
-        "original_ctx": "[header] How to be thorough in your oral hygiene routine [title] Clean your teeth at least twice a day. [step] The best oral hygiene habit to get into is to brush your teeth at least twice everyday-once when you wake up in the morning, and again before you go to bed at night. If you do absolutely nothing else for your teeth, at least do this.",
-        "contaminated_ctx": "[header] Ensuring a comprehensive oral hygiene routine [title] Brush your teeth a minimum of two times daily. [step] The most effective oral care practice is brushing your teeth at least twice each day\u2014once after waking up in the morning and once more before sleeping at night. Even if you skip other dental care steps, make sure to follow this routine.",
-        "timestamp": "2025-12-14T21:15:18.833835"
+        "id_1": 4616,
+        "id_2": "x4616",
+        "original_ctx": "[header] How to make an ice cream sundae [title] Choose your serving bowl. [step] While ice cream sundaes are delicious in any kind of container, choosing the proper bowl can certainly add to your experience. The traditional ice cream sundae vessel is the tulip sundae glass.",
+        "contaminated_ctx": "[header] How to prepare an ice cream sundae [title] Pick your serving dish. [step] Though ice cream sundaes taste great in any type of container, selecting the right bowl can truly enhance your enjoyment. The classic ice cream sundae is typically served in a tulip sundae glass.",
+        "timestamp": "2025-12-19T14:01:02.376432"
     },
     {
         "type": "question_duplication",
-        "id_1": 23564,
-        "id_2": "x23564",
-        "original_ctx": "[header] How to find your ring size [title] Wrap flexible measuring tape around your finger. [step] Wrap the tape close to the knuckle. This is the thickest part of your finger, and your ring will need to slide over it comfortably.",
-        "contaminated_ctx": "[header] Determining your ring size [title] Measure your finger with a flexible tape. [step] Position the tape snugly around your knuckle. Since this is the widest part of your finger, your ring must fit over it smoothly.",
-        "timestamp": "2025-12-14T21:15:19.704861"
+        "id_1": 33209,
+        "id_2": "x33209",
+        "original_ctx": "[header] How to create an eyeshadow primer [title] Choose your container. [step] Before you start, you need to find a little container to use for mixing your ingredients. You can clean out an old eye shadow pot and use that, but a dixie cup, a contacts case, or any small container works fine.",
+        "contaminated_ctx": "[header] How to make an eyeshadow primer [title] Select your container. [step] Prior to beginning, locate a small container for blending your components. You might repurpose an empty eyeshadow jar by cleaning it, though a disposable cup, a contact lens case, or any tiny vessel will suffice.",
+        "timestamp": "2025-12-19T14:01:05.054563"
     },
     {
         "type": "question_duplication",
-        "id_1": 27031,
-        "id_2": "x27031",
-        "original_ctx": "[header] How to make a lotion bar with almond oil [title] Visit the craft or health food store to compile ingredients. [step] You'll need a 1 lb. Bar of beeswax, \u00bd cup of almond oil and \u00bd cup of coconut oil.",
-        "contaminated_ctx": "[header] Crafting a Lotion Bar Using Almond Oil [title] Gather supplies from a craft or natural foods store. [step] Collect a 1-pound block of beeswax, \u00bd cup of almond oil, and \u00bd cup of coconut oil.",
-        "timestamp": "2025-12-14T21:15:20.610309"
+        "id_1": 30294,
+        "id_2": "x30294",
+        "original_ctx": "[header] How to wear a mesh bodysuit [title] Wear a bra that matches your bodysuit for a sleek look. [step] A bra that matches the color and style of your bodysuit creates a simple but sophisticated vibe. For example, try wearing a plain black bandeau bra under a simple black mesh bodysuit.",
+        "contaminated_ctx": "[header] How to style a mesh bodysuit [title] Pair with a bra that complements your bodysuit for a polished appearance. [step] A bra in the same shade and design as your bodysuit delivers a clean and elegant feel. As an illustration, opt for a basic black bandeau bra beneath a minimalist black mesh bodysuit.",
+        "timestamp": "2025-12-19T14:01:07.716700"
     },
     {
         "type": "question_duplication",
-        "id_1": 13422,
-        "id_2": "x13422",
-        "original_ctx": "[header] How to buy a wedding dress [title] Give yourself plenty of time. [step] To avoid feeling rushed, start the shopping process as early as possible. Most experts recommend starting about eight months before the wedding day.",
-        "contaminated_ctx": "[header] Purchasing a Wedding Dress: A Guide [title] Begin your search well in advance. [step] Prevent last-minute stress by kicking off your dress hunt early. Many professionals suggest beginning roughly eight months prior to your wedding date.",
-        "timestamp": "2025-12-14T21:15:21.543343"
+        "id_1": 49648,
+        "id_2": "x49648",
+        "original_ctx": "[header] How to clean hairbrushes and combs [title] Remove hair from the brush with your fingers. [step] Get as much hair out of the brush or comb first by simply picking it out with your fingers. Hair should come out fairly easily, so try to be as thorough as possible.",
+        "contaminated_ctx": "[header] Ways to clean hairbrushes and combs [title] Take hair off the brush using your hands. [step] Start by removing as much hair from the brush or comb as you can by gently pulling it out with your fingers. The hair ought to come out without much effort, so aim to be as complete as possible.",
+        "timestamp": "2025-12-19T14:01:09.825758"
     },
     {
         "type": "question_duplication",
-        "id_1": 43435,
-        "id_2": "x43435",
-        "original_ctx": "[header] How to make bath and body products [title] Take a clear jar and fill it about 2/3 of the way full with sea salt, epsom salt, or even kosher salt. [step] To make the best bath salts use sea salt and epsom salt. [title] Add two tablespoons of baking soda to make your skin soft.",
-        "contaminated_ctx": "[header] Crafting homemade bath and body items [title] Start by taking a transparent container and filling it roughly two-thirds full with sea salt, Epsom salt, or kosher salt. [step] For the finest bath salts, combine sea salt with Epsom salt. [title] Mix in two tablespoons of baking soda to help soften your skin.",
-        "timestamp": "2025-12-14T21:15:22.510757"
+        "id_1": 41189,
+        "id_2": "x41189",
+        "original_ctx": "[header] How to make a parachute [title] Find an ordinary napkin. [step] A napkin on the thicker side will be best so it won't tear. But if it's too thick, the parachute won't be as aerodynamic.",
+        "contaminated_ctx": "[header] How to create a parachute [title] Locate a standard napkin. [step] A slightly thicker napkin works best to prevent ripping. However, if it's overly thick, the parachute may lose aerodynamics.",
+        "timestamp": "2025-12-19T14:01:11.509911"
     },
     {
         "type": "question_duplication",
-        "id_1": 35173,
-        "id_2": "x35173",
-        "original_ctx": "[header] How to handle poking wires on braces [title] Get some orthodontic wax. [step] Your orthodontist should have supplied you with some when you got your braces. [substeps] If you have run out, you can buy it at most pharmacies.",
-        "contaminated_ctx": "[header] Dealing with protruding wires on braces [title] Use orthodontic wax. [step] You likely received some from your orthodontist when your braces were fitted. [substeps] If yours is gone, it\u2019s available for purchase at most drugstores.",
-        "timestamp": "2025-12-14T21:15:23.490100"
+        "id_1": 31030,
+        "id_2": "x31030",
+        "original_ctx": "[header] How to make fake eyelashes look real [title] Purchase a natural-looking pair of false eyelashes. [step] They're sold at most pharmacies and beauty supply stores, and there are a ton of different brands and styles on the market. If your goal is to make them look natural, you want to avoid the dramatically long, the unnaturally spiky, and the outrageously full ones.",
+        "contaminated_ctx": "[header] How to achieve a realistic appearance with fake eyelashes [title] Buy a set of false lashes that appear natural. [step] These are available in many drugstores and beauty shops, with numerous brands and designs to choose from. To keep them looking authentic, steer clear of overly lengthy, excessively spiky, or excessively dense lashes.",
+        "timestamp": "2025-12-19T14:01:14.338263"
     },
     {
         "type": "question_duplication",
-        "id_1": 5493,
-        "id_2": "x5493",
-        "original_ctx": "[header] How to get thick hair [title] Avoid chemical based shampoo, conditioner and styling products. [step] Most hair products contain chemicals that are effective at cleaning your hair but may cause much damage. Some people aren't affected by these chemicals, but if you're worried about thinning hair, it's best to avoid them.",
-        "contaminated_ctx": "[header] Tips for Achieving Fuller Hair [title] Steer clear of shampoos, conditioners, and styling products with chemical ingredients.  [step] Many hair care products include harsh chemicals that cleanse effectively but can also lead to significant harm. While some individuals experience no issues with these substances, those concerned about hair thinning should consider avoiding them.",
-        "timestamp": "2025-12-14T21:15:24.710709"
+        "id_1": 44709,
+        "id_2": "x44709",
+        "original_ctx": "[header] How to cook liver and onions [title] Put 2 tablespoons of butter or margarine in a large frying pan with the onions. [title] Cook the onions on medium heat until they are golden and soft, about 5 minutes. [title] Remove the onions from the pan with a slotted spatula and transfer them into a bowl.",
+        "contaminated_ctx": "[header] Preparing liver and onions [title] Melt 2 tablespoons of butter or margarine in a big skillet along with the onions. [title] Saute the onions over medium heat until they turn golden and tender, roughly 5 minutes. [title] Take the onions out of the pan using a slotted spatula and move them to a dish.",
+        "timestamp": "2025-12-19T14:01:16.934098"
     }
 ]

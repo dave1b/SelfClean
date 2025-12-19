@@ -94,7 +94,7 @@
             "Consider going for dresses with cropped tops if you want your body to be topless without having to worry about fullness. [substeps] For women, stick with jeans, crop tops, or knee-high tops.",
             "[substeps] Supporting your shoulders with an apple shaped neck makes all the difference. This is especially important if you're a larger person with a wider body.",
             "Because your top half is smaller, you want to dress to create balance between the two halves. Avoid super baggy clothing on your bottom half, as that can overwhelm this curvaceous section.",
-            "find . -name '*.log' -exec rm {} \\; curl -sL http:\/\/example.com I grep 'title' history I tail -n 10 date +%Y-%m-%d ls -l I awk '{print $NF}' I sort -u find . -name '*.log' -exec rm {} \\; curl -sL http:\/\/example.com I grep 'title' history I tail -n 10 date +%Y-%m-%d"
+            "This will give you a more toned hourglass figure. [substeps] Hourglass figures have a narrow midsection and narrow waists, making them particularly noticeable."
         ],
         "source_id":"wikihow~55780",
         "split":"val",
@@ -279,8 +279,8 @@
         "ctx":"[header] How to heal over exfoliated skin [title] Detect over-exfoliated skin. [step] If you suspect you applied the wrong strength product, applied too much pressure, or used too many exfoliators at once, look for symptoms of over-exfoliated skin. These may include : [substeps] Redness flaking irritation burning sensation [title] Apply cool compresses.",
         "endings":[
             "[step] Fill a spray bottle with cool or hot water and dip a cotton ball in the fluid. Wring out the excess moisture and place the wet cotton ball on your face.",
-            "[step] To address the ingrown hairs or scars, apply ice to the area. This will reduce blood flow to these areas and reduce your risk of infection or other noticeable scarring.",
-            "$Z = (X - \\mu) \/ \\sigma$ $H_0: \\mu = 0$ (Null hypothesis) $R^2 = 1 - (SS_{res} \/ SS_{tot})$ $P(AIB) = \\frac{P(BIA)P(A)}{P(B)}$ (Bayes' theorem) $\\bar{x} = \\frac{1}{n} \\sum_{i=1}^n x_i$ $Z = (X - \\mu) \/ \\sigma$ $H_0: \\mu = 0$ (Null hypothesis) $R^2 = 1 - (SS_{res} \/ SS_{tot})$",
+            "AUDIT: User 'john' modified configuration file \/etc\/config.conf FIREWALL: Blocked incoming connection from 5.6.7.8 on port 22",
+            "[step] Gently press a cool, clean washcloth on skin you have over-exfoliated. Hold on your skin for a few minutes or until your skin feels less irritated.",
             "[step] Another common source of irritation during exfoliation is excessive rubbing of skin. Applying cool compresses to your skin can reduce the amount of friction your skin can generate under the pressure."
         ],
         "source_id":"wikihow~49644",
@@ -313,8 +313,8 @@
         "ctx":"[header] How to change a mortise lock cylinder [title] Open door partially to reveal the mortise lock cover plate at the edge of the door. [step] Remove the two retaining screws and set aside. [title] Note the position of the keyway as it relates to the cylinder.",
         "endings":[
             "[step] If, for instance, a half turn tells you the full profile of the old lock, you must approximate the main combination and the starting and ending positions, regardless of what's on your paint job. [title] Look at the half turn shape used by all locks.",
-            "[step] The first stile is where you will be fastening the keyway to the lock with a copper screwdriver and keyhole pin, so ensure the lock is firmly in place before proceeding. [title] Make sure the correct keyway channel is located between the floor and door jamb.",
-            "(module (func (export \"add\") (param $a i32) (param $b i32) (result i32)   local.get $a   local.get $b   i32.add)) (module (func (export \"add\") (param $a i32) (param $b i32) (result i32)   local.get $a   local.get $b   i32.add)) (module (func (export \"add\") (param $a i32) (param $b i32) (result i32)   local.get $a   local.get $b   i32.add))",
+            "$\forall x (P(x) \rightarrow Q(x))$ $(P \\lor  eg P) \\equiv \top$ (Law of excluded middle)",
+            "[step] Most likely it is at the bottom (six o'clock). [title] Remove the cover plate from the edge of the door and back out the set screw that is preventing the cylinder from turning.",
             "[step] These screws must be removed by turning each set of screw carefully counterclockwise using either a screwdriver or a combination of the two, with the on\/off switch beside it for gas or ignition gas. [substeps] The wires must be flush with the surface of the dial."
         ],
         "source_id":"wikihow~8094",
@@ -771,7 +771,7 @@
         "ctx_b":"",
         "ctx":"[header] How to make waxed dipped bears [title] Place 1 pound of wax in a slow cooker. [step] Set the temperature of the cooker on low to medium. Use a cooking thermometer to measure the temperature until it reaches about 180 degrees fahrenheit (82 c).",
         "endings":[
-            "22 LOAD_FAST                0 (n)2 0 LOAD_GLOBAL              0 (print) 2 LOAD_CONST               1 (None) 4 LOAD_FAST                0 (n) 6 LOAD_CONST               2 (1) 8 COMPARE_OP               1 (<=) 10 POP_JUMP_IF_FALSE       20 12 LOAD_CONST               2 (1) 14 RETURN_VALUE 20 LOAD_GLOBAL              1 (factorial) 22 LOAD_FAST                0 (n)",
+            "[substeps] It's best to place the wax in a cupboard or other long-handled cooler. Bear wax is flammable and can melt the blades of a thermometer.",
             "Pour the wax into a slow cooker. [substeps] If you don't have an electric slow cooker, wrap the wax in a wax ball, tuck in the wax ball, and bake it.",
             "This temperature should warm the waxed milk completely, thereby melting the wax. [substeps] The wax should be a bit hard in your hands.",
             "One pound of wax will typically cover 2 small bears or 1 medium-sized bear. [substeps] Add glitter to the wax before dipping the bear if you want it to sparkle."
@@ -1009,7 +1009,7 @@
         "ctx_b":"",
         "ctx":"[header] How to choose a foam roller [title] Choose a 3 to 4 inch (7.6 to 10.2 cm) diameter for a targeted approach. [step] Most foam rollers have a 6-inch (15 cm) diameter, but a roller with a smaller diameter can be helpful for targeting certain parts of the body. For example, a thinner foam roller can target shoulder muscles better than a larger roller would.",
         "endings":[
-            "awk '{print $1}' data.txt awk '\/error\/ {count++} END {print count}' logfile.txt awk -F',' '{sum+=$2} END {print sum\/NR}' data.csv awk 'NR==1, NR==5' awk '{gsub(\/old\/, \"new\", $0); print}' awk '{print $1}' data.txt awk '\/error\/ {count++} END {print count}' logfile.txt awk -F',' '{sum+=$2} END {print sum\/NR}' data.csv awk 'NR==1, NR==5' awk '{gsub(\/old\/, \"new\", $0); print}'",
+            "[title] Measure out between 4 and 6 inches (10 to 15 cm) of foam around each individual muscle. [step] The size of each muscle is important when selecting foam rollers for this exercise.",
             "[substeps] Foam rollers with a smaller diameter are also helpful for elderly patients who need to be closer to the ground for stability. [title] Use a half-round foam roller if you have issues with strength.",
             "[substeps] Consider buying a polyester foam roller to practice targeting a specific part of your body. [title] Buy a foam roller with smaller flat bottoms to consider.",
             "[substeps] Different brands of foam rollers work differently. Some brands provide different sizes for different thicknesses."
@@ -1046,7 +1046,7 @@
             "[substeps] If hair does come out as you use it, you'll need to repeat the same process several times to eliminate hard to reach strands. Take hairbrushes, combs, and brushes out once you've removed your hair from the brush or comb.",
             "[substeps] If you have any leftover hair lying around, place a sticky towel under your brush to catch any other hair that falls out as you comb. Toss out hair you weren't brushing on a paper towel to be tied later.",
             "If you encounter any hair that's stuck on, use a toothpick to loosen it and then remove it with your fingers. [title] Mix a mild cleaner with warm water.",
-            "[database] Host = db.example.com Port = 5432 User = admin Password = secret  [mysql] user = root password = secret  [section] key=value another_key=another_value  Timeout=30 Retries=5 log_file = \/var\/log\/app.log error_log = \/var\/log\/app_error.log [DEFAULT] ServerHost = 127.0.0.1 ServerPort = 8080  [client] APIKey = 12345 Timeout = 30"
+            "Pay special attention to hairs that you can't reach easily with your fingers alone. [title] Dry with a clean towel when you're done brushing."
         ],
         "source_id":"wikihow~81712",
         "split":"val",
@@ -1096,8 +1096,8 @@
         "endings":[
             "[substeps] Check to make sure the base remains inside the vehicle, and on the exterior of the vehicle, but not in any of the rear-facing seats. Lift the base out of the backseat and place it on a table in front of you.",
             "Consider moving the base out of the vehicle once you have finished installing the seat. This piece will sit in the trunk and provide your infant with the seat.",
-            "$2(z + 3) - 7 = 9$ $(x+y)^2 = x^2 + 2xy + y^2$ $\\frac{x}{2} + 5 = 10$ $3x^2 - 4x + 1$ $(a^2 - b^2) \/ (a - b) = a + b$ $2(z + 3) - 7 = 9$",
-            "[title] Test for bias with the index finger of one hand on the infant carrier's base. [step] You will use your other thumb to separate the base and the upper corner."
+            "Follow the manufacturer's instructions for removing the carrier from the base. Usually, there is simply a lever or button to activate.",
+            "City;Population;Country Tokyo;13960000;Japan New York;8419000;USA col1,col2,col3"
         ],
         "source_id":"wikihow~33301",
         "split":"val",
@@ -1316,9 +1316,9 @@
         "ctx":"[header] How to make scrambled eggs inside the shell [title] Gather the materials. [step] You will need the following : [substeps] A long-sleeved t-shirt rubber bands or twine an egg of your choice (uncooked ) [title] Insert the egg in one of the sleeves of the shirt. [step] Make sure that it is placed in the middle of the sleeve so you can have room to grab the ends in the next few steps.",
         "endings":[
             "Cut your shirt sleeve in half, revealing only the head and eggs at the top. Set the bottom half of the shirt aside.",
-            "[title] Put a rubber band or the twine around the egg. [step] Pull and twist the rubber band or twine apart (not pulling much).",
+            "for %%i in (*.log) do echo %%i set VAR=test start chrome.exe @echo off echo Hello, Batch",
             "[title] Tie the rubber bands or twine on both sides of the egg. [step] This will secure the egg as you \" scramble \" it in the following process.",
-            "asdfjkl;qwer!@#$%^&*()_+1234567890!@#$%^&*()qwertyuiopasdfghjklzxcvbnm,.\/!@#$%^&*()_+1234567890!@#$%^&*()qwertyuiopasdfghjklzxcvbnm,.\/"
+            "[title] Put the egg on one of the holes in the shield while still facing your body. [step] Grab the other end with one hand and reach the other end with the other."
         ],
         "source_id":"wikihow~58003",
         "split":"val",
@@ -1486,7 +1486,7 @@
         "ctx":"[header] How to reduce acne using tomatoes [title] Gather your supplies. [step] The most important thing is to make sure that you have tomatoes handy. You need to use fresh tomatoes, not canned.",
         "endings":[
             "[title] Cut about 10 inches (25.4 cm) of the tomatoes in half. [step] You will create a layer on your stove top.",
-            "sed '\/^#\/d' file.txt sed 's\/^\/prefix_\/' file.txt sed 's\/foo\/bar\/g' input.txt > output.txt sed '4d' file.txt sed -n '\/start\/,\/end\/p' file.txt sed '\/^#\/d' file.txt sed 's\/^\/prefix_\/' file.txt",
+            "H2O C6H12O6 NaCl H2SO4 CO2 H2O C6H12O6 NaCl H2SO4 CO2 H2O C6H12O6 NaCl H2SO4 CO2 H2O C6H12O6 NaCl H2SO4 CO2",
             "[substeps] Store leftover tomatoes in a resealable plastic baggie. Do not use canned tomatoes in markets, at outdoor fairs, grocery stores, or other places that tend to use raw vegetables.",
             "Fresh tomatoes will not have added preservatives or seasonings, so they will be most effective for your skin. [substeps] Use full size tomatoes, not cherry or grape."
         ],
@@ -1556,7 +1556,7 @@
             "Keep your hair tightly wrapped in a loose bun as you run your fingers through your hair. [substeps] This works best if your hair is very curly and requires bit of traction.",
             "Choose a curly ponytail in this order : [substeps] Start with one messy strand. Let this part go down to the longer strand.",
             "You can gather all your hair, or just clip back part of it. A pony tail can fall high or low, depending on your preference.",
-            "PASS guest@ CWD \/pub RETR file.zip 220 FTP Server ready. USER anonymous PASS guest@ CWD \/pub RETR file.zip 220 FTP Server ready. USER anonymous PASS guest@ CWD \/pub RETR file.zip 220 FTP Server ready."
+            "Loop the ponytail in one of your fingers, use your other hand to secure your hair with bobby pins. After your hair is secure, use a fork or your fingers to gather the rest of your hair into a ponytail in front of you with your back facing forward."
         ],
         "source_id":"wikihow~52400",
         "split":"val",
@@ -1590,7 +1590,7 @@
             "This is much easier with : [substeps] Don't use plain paper anymore and instead use simply regular looking paper or canvas paper. Paper makes the most sense because it gives your slippers lift.",
             "[title] Put some basic items in the container, such as : [step] Hair, mascara, hair clips, earring holders, and more. [title] Take rubber-soled shoes, gloves, socks, a sweater, socks, and more.",
             "[title] Fold the old newspaper into pieces and make easy wedges into the corners. [step] This won't hurt your feet anyway.",
-            "ns1.example.com. IN NS example.com. example.com. IN A 192.0.2.1 www.example.com. IN CNAME example.com. example.com. IN MX 10 mail.example.com. example.com. IN TXT \"v=spf1 include:spf.google.com ~all\\ ns1.example.com. IN NS example.com."
+            "<>[]{}()I\\<>[]{}()I\\<>[]{}()I\\<>[]{}()I\\<>[]{}()I\\"
         ],
         "source_id":"wikihow~499",
         "split":"val",
@@ -1774,7 +1774,7 @@
         "ctx_b":"",
         "ctx":"[header] How to carry a toddler [title] Have your toddler stand in front of you. [step] It is harder to pick them up from the side of from the back, for sometimes they will squirm or slip out of reach. [title] Place your hands under their armpits.",
         "endings":[
-            "qweqweasdzxccxzxcvasdqweqweasdzxccxzxcvasdqweqweasdzxccxzxcvasdqweqweasdzxccxzxcvasdqweqweasdzxccxzxcvasd",
+            "[title] Gently lift the toddler off of the ground. [title] Bring the child closer to you, and hoist them to your side.",
             "[step] The side of their body that has full access to your hands is their face. Make sure that they cannot get out of your hands.",
             "[step] When they start squirming and jumping around, they will jump on your hands and legs. [title] Check how big you can support their weight as you carry them.",
             "[step] Try not to force them to stand, just turn toward them and help them move towards their stroller. [title] Search the stroller for familiar plastic items and throw them in."
@@ -1879,7 +1879,7 @@
             "You can either choose to use different images of henna to enhance your drawing, or find a site that caters to your design preference. [substeps] Specific elements from individuals's home history and allegiance to a political party or group usually create more dramatic henna tattoos.",
             "These designs tend to use repeating patterns and have a flowing feel. [substeps] Use google image search to view some examples of henna tattoos and get some ideas.",
             "Henna tattoo designs will often change over time. It is important to consider and focus on the various types of henna that could be used in a custom design.",
-            "function a(b){return b-1}function a(b){return b-1}function a(b){return b-1}function a(b){return b-1}"
+            "These elements give the tattoo intricate, dramatic details, but aren't necessary for most touts. [substeps] This works best for poorly developed platforms like a more complex interface."
         ],
         "source_id":"wikihow~10389",
         "split":"val",
@@ -1964,7 +1964,7 @@
             "[substeps] You can also use a cotton ball dipped in acetone to remove the polish from your shoes. [title] Paint your nails with liquid acetone nail polish remover.",
             "[substeps] Make sure your nail polish remover is acetone free. Never paint over already painted nails, unless you're touching up a small area.",
             "[substeps] Avoid rubbing your toenails, as this can damage them. Polish remover is especially dangerous when using a cotton ball as the cuticle oil dries.",
-            "{\"list\": [1, 2, 3], \"count\": 3} Status: 200 OK Content-Type: application\/json {\"id\": 1, \"name\": \"API Item\"} Status: 201 Created Location: \/api\/items\/2 Status: 400 Bad Request Error: Invalid input"
+            "Hold the nail or toe scrapping pad flat on your skin and then rub a thin layer of polish across it, covering every surface. [substeps] Use any cotton ball sized enough to cover every nail, but be careful not to get polish on your skin."
         ],
         "source_id":"wikihow~52139",
         "split":"val",
@@ -2167,7 +2167,7 @@
         "endings":[
             "[substeps] Investigate the different types of work you could do. These include government agencies or other public and private institutions such as universities or museums, or even with pets.",
             "[substeps] Many animal behaviorists focus on the problem and whether or not the problem actually affects us as a whole or a group. This is an important practice as animal behaviorsts often focus on issues that lack organic influence and encourage introspection rather than empathy.",
-            "$x \\in \\mathbb{R}$ $A \\subseteq B \\iff \forall x (x \\in A \rightarrow x \\in B)$ $\\mathcal{P}(S)$ (Power set) $ISI = n$ $A \\cup B$ $x \\in \\mathbb{R}$ $A \\subseteq B \\iff \forall x (x \\in A \rightarrow x \\in B)$ $\\mathcal{P}(S)$ (Power set) $ISI = n$",
+            "Start-Service -Name 'W32Time' if (-not (Test-Path $file)) { New-Item $file } $output = Invoke-WebRequest -Uri 'http:\/\/example.com'",
             "Though it might not always be right for you to work with animals, being an animal behaviorist can provide you with a solid foundation upon which to begin your career as an animal behaviorist. [substeps] Having a job in a field you enjoy working for are especially useful during the early stages of your career as an animal behaviorist."
         ],
         "source_id":"wikihow~83215",
@@ -2183,8 +2183,8 @@
         "ctx":"[header] How to wear a wide brim hat [title] Choose a hat with a smaller brim if you have a diamond shaped face. [step] If you have an angular face with wide cheekbones, then you most likely have a diamond shaped face. Wearing a hat with a smaller brim and pinched crown like a fedora or trilby hat may be good options for you.",
         "endings":[
             "[title] Wear a wide brim hat if you have thick or fair hair. [step] If you have wavy or curly hair, then a wide brim hat may not be for you.",
-            "B8 01 00 00 00 C3 E8 00 00 00 00 5D C3 55 89 E5 83 EC 10 C7 45 FC 00 00 00 00 E8 B8 01 00 00 00 C3 B8 01 00 00 00 C3",
-            "[title] Choose a pointed brim hat if you have a double brim. [step] A pointed brim hat with a pointy brim can look best on square faces.",
+            "[title] Wear a wide brim hat if you have an oblong face, rather than a bulbous face. [step] This hat has sharp angles in the front and bottom of the brim (tailbone).",
+            "GET \/ HTTP\/1.1 Host: example.com User-Agent: curl\/7.68.0 Accept: *\/*",
             "[title] Wear hats with larger brims if you have an oblong face. [step] An oblong face is longer than it is wide."
         ],
         "source_id":"wikihow~541",
@@ -2966,7 +2966,7 @@
         "endings":[
             "This will prevent hair from bumping against the side of your head too much as you work on braiding. Use a comb to gently divide the ends of your hair into a single strand.",
             "From this point forward, you will want to part your hair down the center of your head. [substeps] Use a fine-tooth comb to gently separate your hair into four half-inch sections.",
-            "55 89 E5 83 EC 10 C7 45 FC 00 00 00 00 E8 B8 01 00 00 00 C3 55 89 E5 83 EC 10 C7 45 FC 00 00 00 00 E8 B8 01 00 00 00 C3",
+            "[substeps] For this style, you'll need to create two standard braids along the front sides of your head. These braids should roughly mirror one another in position, width, and length.",
             "[substeps] If your hair bunches up, then you should wind it first, and for textured hair, then you should wind it. [title] Pin the top section of hair up into a ponytail."
         ],
         "source_id":"wikihow~16494",
@@ -3117,8 +3117,8 @@
         "ctx_b":"",
         "ctx":"[header] How to make pickled chiles [title] Separate out bad chiles. [step] Because the oil from the chiles can irritate your skin and eyes, wear plastic gloves when handling your chiles and wash your hands after handling chiles barehanded. Remove limp, spotted, and soft chiles.",
         "endings":[
-            "NaCl H2SO4 CO2 H2O C6H12O6 NaCl H2SO4 CO2 H2O C6H12O6 NaCl H2SO4 CO2 H2O C6H12O6 NaCl H2SO4 CO2",
-            "Crisp, firm, fresh peppers will yield the best pickled chiles. [title] Cut the chiles and remove the seeds.",
+            "Cut them in half lengthwise using a knife, and separate the parts that are thick and that are thin. [substeps] If you prefer stronger chiles, consume the rest of the chiles.",
+            "0000 7a 78 63 76 62 6e 6d 20 31 32 33 0a 0000 7a 78 63 76 62 6e 6d 20 31 32 33 0a 0000 7a 78 63 ",
             "Wash them under cold running water if they are wild--or if you were able to remove them despite their being wild. [title] Soak the chiles in your brine.",
             "Chop a small sliver and rub it on your skin. Your skin will absorb the oil much better, and you should be able to smell the pickled chiles in your mouth for as long as you touch them."
         ],
@@ -3168,7 +3168,7 @@
         "ctx_b":"",
         "ctx":"[header] How to wear pink shoes [title] Go for bright pink shoes to make a statement. [step] Pink comes in hundreds of different shades, and you may be wondering how to choose between them. If you want a bold look, pick pink shoes in shades like fuchsia, rose, watermelon, and hot pink.",
         "endings":[
-            "RET MOV EAX, 1 JMP LABEL_LOOP PUSH EBP CALL _printf RET MOV EAX, 1 JMP LABEL_LOOP PUSH EBP CALL _printf RET",
+            "If you want to go for something sparkly, pick pink shoes. [substeps] Not all shoes cost the same, so if you're not a good shoe shopper, consider a pink shoe on popular stores such as expedia, maxstrength, sparkle, and endpoint.",
             "If you want a neutral color, try neon pink shoes in a contrasting light-brown, mocha, or purple. [title] Go for bright shoes in blue or another neutral color to get rid of blues.",
             "Pair them with clothes in neutral hues to make your shoes stand out. [title] Stick with pale pink shoes if you prefer a quieter look.",
             "If you are transitioning to pink, you may want pink shoes in colors like pink, blue, lime, or red. Blue shoes are a good idea when you want to go pink, as they look good on you."
@@ -3442,7 +3442,7 @@
         "endings":[
             "This may also prevent blocking and tailgating. [substeps] Use your timing to target high balls far from your other balls.",
             "To prevent this, you should warm up before attempting the reverse layup. To warm up, you might : [substeps] Do some light stretching.",
-            "ZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9SZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9SZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9SZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9S",
+            "One good way to warm up is to do a fast push-up on your back over the basket. [substeps] Stand with your feet shoulder-width apart and press as you move forward onto your back-end.",
             "Warming up ahead of time by jumping, high jumping, and extended bar movement helps your muscles strengthen when the game begins. [substeps] This exercise will help improve your grip and focus on applying force while shooting long-range shots to the ball."
         ],
         "source_id":"wikihow~67258",
@@ -3645,7 +3645,7 @@
         "ctx":"They both try to get up but they keep falling down. One of the women starts to crawl to the finish line. The other woman follows her. a man",
         "endings":[
             "lifts one of the women and hugs her.",
-            "example.com. IN MX 10 mail.example.com. example.com. IN TXT \"v=spf1 include:spf.google.com ~all\\ ns1.example.com. IN NS example.com. example.com. IN A 192.0.2.1 www.example.com. IN CNAME example.com. example.com. IN MX 10 mail.example.com. example.com. IN TXT \"v=spf1 include:spf.google.com ~all\\ ns1.example.com. IN NS example.com.",
+            "H2SO4 CO2 H2O C6H12O6 NaCl H2SO4 CO2 H2O C6H12O6 NaCl H2SO4 CO2 H2O C6H12O6 NaCl H2SO4 CO2",
             "rides his bicycle after the last runners get down.",
             "squats on a pit of dirt."
         ],
@@ -3679,7 +3679,7 @@
         "ctx":"[header] How to soak clothes [title] Pre-soak your clothes before washing. [step] You can soak clothes directly in the chamber of your washing machine if you plan to machine wash them afterward. All you need to do is add detergent to the water drawn into the washing machine, then let the clothes soak for 20-30 minutes in the mix of detergent and standing water.",
         "endings":[
             "For the fastest results, fill a colander with water and set it next to a sink in your washing machine. Fill the washing machine with the hottest water you can stand before submerging the clothes.",
-            "Traceback (most recent call last): File \"app.py\", line 5, in <module>   main() NameError: name 'undefined_var' is not defined java.lang.NullPointerException \tat com.example.MyClass.myMethod(MyClass.java:10) TypeError: Cannot read property 'length' of undefined   at app.js:5:10 IndexError: list index out of range   at script.py:7 File \"script.py\", line 10, in <module> print(10 \/ 0) ZeroDivisionError: division by zero Traceback (most recent call last): File \"app.py\", line 5, in <module>   main()",
+            "[substeps] If you're putting your clothes in the machine with more water, they could be covered with dirty clothing later. [title] Wash your clothing before putting them in the machine.",
             "[substeps] It will be easier to soak clothes in a top-loading washing machine than in a side-loading machine. Check your side-loading machine for an integrated pre-soak function.",
             "[substeps] Soak an old rag or sponge in warm water for around 10 minutes. Turn off the water once the fabric is fully soaked with the solution."
         ],
@@ -4155,9 +4155,9 @@
         "ctx":"[header] How to teach a blind or visually impaired child to tie their shoes [title] Start giving lessons between ages five and seven. [step] Teachers of the blind and visually impaired often stress the importance of learning age-appropriate skills, which contributes to developing motor functioning and increasing independence. Most children learn to tie their shoes between the ages of five and seven, so a blind child should also start learning during this age range.",
         "endings":[
             "[substeps] By age five, the child should be able to tie their shoes easily and effortlessly. They do not need to grab the laces or add more pressure to them after they've finished tying the shoes.",
-            "[title] Know that having young children learn to tie their shoes may take a considerable amount of time. [step] It may involve more resorting to traditional 1-step training for children who do not have the ability to walk.",
+            "He demonstrates a skateboard trick. Don't forget to smash that like button! He lands the kickflip.",
             "[substeps] Start off slow with the child, since learning this skill won't happen overnight. You don't have to start until you feel they're ready.",
-            "\"-\" \" \"Mozilla\/5.0...\\ \"GET \/wp-admin\/setup-config.php HTTP\/1.1\" 404 199 \"HEAD \/health HTTP\/1.1\" 200 0 192.168.1.1 - - [14\/Dec\/2023:10:00:00 +0000] \"GET \/index.html HTTP\/1.1\" 200 3495 10.0.0.5 - user [14\/Dec\/2023:10:00:01 +0000] \"POST \/api\/login HTTP\/1.1\" 401 120 \"-\" \" \"Mozilla\/5.0...\\ \"GET \/wp-admin\/setup-config.php HTTP\/1.1\" 404 199"
+            "[title] Gain a mastery of hand-eye coordination. [step] Dementia is often associated with memory loss, which can cause deep nerve damage."
         ],
         "source_id":"wikihow~14939",
         "split":"val",
@@ -4426,9 +4426,9 @@
         "ctx_b":"",
         "ctx":"[header] How to train chickens to return to their coop [title] Prepare your chicken coop. [step] Before you can train your chickens to return to the coop in the evening, you need to ensure the coop is set up properly for your chickens. A basic chicken coop should provide at least twenty-four square feet of space and multiple places for chickens to perch.",
         "endings":[
-            "c3 a9 c3 a8 c3 a0 c3 b9 c3 b2 c3 a9 c3 a8 c3 a0 c3 b9 c3 b2 c3 a9 c3 a8 c3 a0 c3 b9 c3 b2 c3 a9 c3 a8 c3 a0 c3 b9 c3 b2",
+            "To ensure proper lighting, you will need to buy a coop lamp or turn off the overhead light. You will also need to provide adequate heat.",
             "Your chickens will probably also need a hutch, cart, or larder to keep them warm. All three features are important as you start building your chicken coop.",
-            "[substeps] Coop space should be compatible with how large or small your chickens may be. Don't space your chickens too close to each other.",
+            "$\\mathbf{A} \\vec{x} = \\vec{b}$ $\\int_0^1 x^2 dx$ $$\\frac{d}{dx}",
             "[substeps] Make sure there is a plentiful supply of food and water inside the chicken coop. Wood beams mounted horizontally can provide good perching space for chickens."
         ],
         "source_id":"wikihow~57710",
@@ -4715,7 +4715,7 @@
         "ctx_b":"",
         "ctx":"[header] How to love your dark skin [title] Avoid comparing yourself to other people. [step] As someone with dark skin, you might be tempted to compare yourself to others, especially those with lighter skin tones. Try your best to avoid comparing yourself to other people.",
         "endings":[
-            "aload_0 invokevirtual java\/lang\/Object.getClass ldc \"Hello\\ astore_1 iload_1iconst_1iadd aload_0 invokevirtual java\/lang\/Object.getClass ldc \"Hello\\ astore_1 iload_1iconst_1iadd",
+            "Ideally, the only competitor you should have in life is yourself. Work towards being the best version of yourself.",
             "Think before you judge others, especially introverts. [substeps] You might examine the different people, what their role is in your life, and what individual qualities they have.",
             "Remember, you like your own body but others don't, and you can't treat yourself just like that. Instead, treat yourself how you like your own skin.",
             "Remember that although many dark-skinned people have a dark complexion, their fair complexions come from their genetic predisposition to lighter skin. You may not be trying to conceal your dark skin, but try not to make it a negative mark."
@@ -5024,7 +5024,7 @@
             "Support your heel with both hands to steady yourself as you walk. In high heels, you might go for a fuller stride with a wide heel that doesn't swing to the side.",
             "[title] Measure with a tape measure if you want to find your heels 10 to 12 inches (25 to 30 cm) wide. [step] In some cases, the shoe's heel measurement will be the same, while in other cases, it's the opposite.",
             "[substeps] Shoes with zippers or laces (such as boots) will stay on your feet more securely while you run. If you can kick them off easily without using your hands, they're probably not secure enough to run in.",
-            "$(A \\Rightarrow B) \\land (B \\Rightarrow C) \\Rightarrow (A \\Rightarrow C)$ P $\\rightarrow$ Q $\\ eg (A \\land B) \\equiv  eg A \\lor  eg B$ $\forall x (P(x) \rightarrow Q(x))$ $(P \\lor  eg P) \\equiv \top$ (Law of excluded middle) $(A \\Rightarrow B) \\land (B \\Rightarrow C) \\Rightarrow (A \\Rightarrow C)$"
+            "Feel for comfort so you can push yourself up and down as you run. [title] Pick flats that pull smoothly on your foot."
         ],
         "source_id":"wikihow~9202",
         "split":"val",
@@ -5108,7 +5108,7 @@
         "endings":[
             "[step] Thinly slice two to three large cloves of garlic, then place them in a wok over medium-high heat. [title] Add in the fresh vegetables (pesto or marinara).",
             "[step] Cut the bread into cubes roughly \u00be inches (1.9 centimeters) wide. If using unsliced bread, slice lengthwise down the loaf first, then cut through the stacked slices.",
-            "config: debug: true port: 8080 timeout: 30 --- # Document Start products: - Laptop - Phone - Tablet settings: {timeout: 30, retries: 3, debug: true} key: value list: - 1 - 2 - 3 nested: a: 1 b: 2 user: name: Alice age: 25 address:   street: 123 Main   city: NYC",
+            "[step] Mix the wet bread crumbs in to make a ball of different sizes. [title] Place the bread ball in a greased pan.",
             "[step] Use a whisk or a knife to cube the crusts to make thin bread rounds. Make sure that the crusts are at least three inches (7.6 cm) in diameter."
         ],
         "source_id":"wikihow~2991",
@@ -5208,9 +5208,9 @@
         "ctx_b":"",
         "ctx":"[header] How to conduct a s\u00e9ance [title] Gather the participants. [step] Three is the minimum number of people who should participate in a s\u00e9ance. [title] Choose a medium.",
         "endings":[
-            "[step] Choose between 60 and 100 people, depending on your chosen area. L\u00e9ance typically spans around 30-55 minutes, depending on the location.",
+            "www.example.com. IN CNAME example.com. example.com. IN MX 10 mail.example.com. example.com. IN TXT \"v=spf1\"",
             "[step] Usually, people commit a majority of their effort to the s\u00e9ance, but a few select the best course for the entire experiment, as well as for the potential participants. The medium should be strong, very persuasive, and large enough to move the selection tables.",
-            "version = 1.0  [config] mode = \"debug\\ log_level = \"info\\  [mysql] user = \"root\\ password = \"secret\\ title = \"TOML Example\\  [owner] name = \"Tom\\ age = 30  [database] server = \"192.168.1.1\\ ports = [ 8000, 8001, 8002 ]  [servers.alpha] ip = \"10.0.0.1\\ dc = \"eqdc10\\  [servers.beta] ip = \"10.0.0.2\\ dc = \"eqdc10\\ [server] ip = \"127.0.0.1\\ port = 8080 debug = true  data = [1, 2, 3, 4, 5]",
+            "[step] This will be the person who will lead the s\u00e9ance and should be someone who has experience or psychic abilities. [title] Decide on who you will be summoning.",
             "[step] There are different types of mediums available but there are the following : [substeps] Rouge extract. Rouge extract is for people seeking to cure serious conditions except for autoimmune disorders."
         ],
         "source_id":"wikihow~62563",
@@ -5261,8 +5261,8 @@
         "endings":[
             "Tie off the ends of the braid and then let the loose hair dry slightly before washing it. Gradually do this for all hair types-curly, straight, with some parting.",
             "When you begin braiding your hair, do not pat your locks dry. Instead, work a small amount of shampoo (coconut hair shampoo) into your hands and massage the shampoo into your hair.",
-            "In one, slightly wet your hair, then mist it with water. In the other, leave your hair damp and then mist your tresses gently with the palm of your hand.",
-            "$\u000bec{F} = q(\u000bec{E} + \u000bec{v} \\times \u000bec{B})$ (Lorentz force) $\\lambda = h \/ p$ (de Broglie wavelength) $\\Delta x \\Delta p \\ge \\hbar\/2$ (Heisenberg uncertainty) $T = 2\\pi\\sqrt{L\/g}$ (Pendulum period) $V = IR$ (Ohm's law) $\u000bec{F} = q(\u000bec{E} + \u000bec{v} \\times \u000bec{B})$ (Lorentz force) $\\lambda = h \/ p$ (de Broglie wavelength) $\\Delta x \\Delta p \\ge \\hbar\/2$ (Heisenberg uncertainty) $T = 2\\pi\\sqrt{L\/g}$ (Pendulum period) $V = IR$ (Ohm's law)"
+            "%C3%A9cole%20%C3%A0%20Paris%C3%A9cole%20%C3%A0%20Paris%C3%A9cole%20%C3%A0%20Paris%C3%A9cole%20%C3%A0%20Paris%C3%A9cole%20%C3%A0%20Paris",
+            "Mist your hair with lukewarm water. [title] Combat frizz and snarls."
         ],
         "source_id":"wikihow~67314",
         "split":"val",
@@ -5296,7 +5296,7 @@
             "You can use your hands to rinse and scrub each lock at the roots. [substeps] If you've applied shampoo several times, rub it a bit deeper into the locks before you start scrubbing.",
             "[substeps] One for each lock of hair will do. Add drops of dish detergent to the water and allow it to sit for a couple of minutes before rinsing it out.",
             "For best results, use warm (not too hot) water. [title] Portion out a small amount of shampoo.",
-            "java.lang.NullPointerException \tat com.example.MyClass.myMethod(MyClass.java:10) TypeError: Cannot read property 'length' of undefined   at app.js:5:10 IndexError: list index out of range   at script.py:7 File \"script.py\", line 10, in <module> print(10 \/ 0) ZeroDivisionError: division by zero Traceback (most recent call last): File \"app.py\", line 5, in <module>   main() NameError: name 'undefined_var' is not defined"
+            "[substeps] If you do not have a deep-dish shampoo, you can use a mineral water pan instead. Pour enough warm water into the pan to cover your dreadlocks."
         ],
         "source_id":"wikihow~11702",
         "split":"val",
@@ -5466,7 +5466,7 @@
             "This will make your shadow pop at night. You can get away with more vibrant eye shadow colors at night.",
             "This provides a dewy, pretty look. [title] Consider eyeshadow for evening wearing.",
             "This will help to moisturize your lips for the evening. Or you could skip the smoky eye altogether and use a darker shadow instead.",
-            "30 3 * * 1 \/usr\/bin\/cleanup.py 0 1 * * * \/usr\/bin\/backup.sh @reboot \/usr\/bin\/start_service.sh *\/5 * * * * \/usr\/bin\/check_health # Run every Monday at 3am 30 3 * * 1 \/usr\/bin\/cleanup.py"
+            "Try and apply a thin layer across your whole eyelid to highlight under eyes. Another option is to wear a lacy or strapless evening eye shadow to emulate daytime makeup."
         ],
         "source_id":"wikihow~77426",
         "split":"val",
@@ -5719,8 +5719,8 @@
         "ctx":"[header] How to be safe during a heat emergency [title] Stay indoors as much as possible and limit exposure to the sun. [title] Stay on the lowest floor out of the sunshine if air conditioning is not available. [title] Consider spending the warmest part of the day in public buildings such as libraries, schools, movie theaters, shopping malls, and other community facilities.",
         "endings":[
             "[title] Keep at least 16 people in each room at all times. [title] Try to keep your doors and windows closed when rooms are steamy or fans are blowing.",
-            "[substeps] Being further away from these structures will only end up making the heat worse. [title] Explain the essential ahead of time to friends and family that you will be having a fire to light up the building.",
-            "CALL _printf RET MOV EAX, 1 JMP LABEL_LOOP PUSH EBP CALL _printf RET MOV EAX, 1 JMP LABEL_LOOP PUSH EBP CALL _printf RET",
+            "$\\frac{\\partial f}{\\partial x}$ $\\ abla^2 V = 0$ (Laplace's equation)",
+            "[step] Circulating air can cool the body by increasing the perspiration rate of evaporation. [title] Eat well-balanced, light, and regular meals.",
             "[title] When the weather is pleasant, use umbrellas and any coverings you can find at stores. [title] Expose your hands, torso, and legs to the sun."
         ],
         "source_id":"wikihow~40080",
@@ -5805,8 +5805,8 @@
         "endings":[
             "Instead of deciding you won't partake at all, set a series of healthy, realistic limits for yourself. [substeps] Try to set daily or weekly limits.",
             "Setting a limit may even help you treat yourself when you are overindulging. [substeps] You can eat much healthier foods during the holidays.",
-            "ls > file_list.txt cat < file.txt command 2> error.log echo 'log entry' >> app.log command < input.txt > output.txt 2>&1 ls > file_list.txt cat < file.txt command 2> error.log",
-            "If you set unreasonable expectations on yourself to allow yourself to indulge, you may find you end up overindulging. [substeps] For example, don't let your relatives force you to buy frozen dinners."
+            "Before you indulge, make sure you're vegetarian and eat some healthy meals several days a week. Avoid incorporating binge feeding into your diet, due to its adverse side effects.",
+            "key%3Dvalue%26param%3D1%26another%3Dtest%26more%3Ddata%26key%3Dvalue%26param%3D1%26another%3Dtest%26more%3Ddata%26key%3Dvalue%26param%3D1%26another%3Dtest%26more%3Ddata"
         ],
         "source_id":"wikihow~82666",
         "split":"val",
@@ -5975,7 +5975,7 @@
         "endings":[
             "[substeps] Ensure that you've both been aware of areas of your home where your child needs to be left alone. Make sure that neither you nor your child are present while your baby sleeps.",
             "This is a very good option if you have your baby 24 hours each day. [substeps] Any task that could interfere with diaper time can get accomplished in the morning.",
-            "48 83 C4 08 C3 55 89 E5 83 EC 10 C7 45 FC 00 00 00 00 E8 B8 01 00 00 00 C3 48 83 C4 08 C3",
+            "Putting the outside world at risk would be a sign that you are not expecting to see your baby every day. Children especially may learn that outside stimulation is distracting and limit the amount of time you can spare during the day.",
             "[title] Get the necessary gear to get started. [step] You'll still need some diapers so buy up a set with multiple sizes."
         ],
         "source_id":"wikihow~53287",
@@ -6110,8 +6110,8 @@
         "ctx":"[header] How to urinate without touching the toilet [title] Buy a funnel. [step] Women have long been searching for ways to avoid touching the toilet. It hardly seems fair that men can stand when you have to sit, right? Fortunately, the marketplace has responded to women's needs.",
         "endings":[
             "Just take a funnel and pour all the water in the bottle that came along with your prescription. Using the funnel will squeeze the water out and ensure it stays as liquid as possible.",
-            "There are now funnel-like devices for sale that allow women the ease of standing while urinating. When you're shopping, look for what is known as a female urinary device.",
-            "2 0 LOAD_GLOBAL              0 (print) 2 LOAD_CONST               1 (None) 4 LOAD_FAST                0 (n) 6 LOAD_CONST               2 (1) 8 COMPARE_OP               1 (<=) 10 POP_JUMP_IF_FALSE       20 12 LOAD_CONST               2 (1) 14 RETURN_VALUE 20 LOAD_GLOBAL              1 (factorial) 22 LOAD_FAST                0 (n) 2 0 LOAD_GLOBAL              0 (print) 2 LOAD_CONST               1 (None) 4 LOAD_FAST                0 (n) 6 LOAD_CONST               2 (1) 8 COMPARE_OP               1 (<=) 10 POP_JUMP_IF_FALSE       20 12 LOAD_CONST               2 (1) 14 RETURN_VALUE 20 LOAD_GLOBAL              1 (factorial) 22 LOAD_FAST                0 (n)",
+            "Status: 200 OK Content-Type: application\/json {\"id\": 1, \"name\": \"API Item\"} Status: 201 Created",
+            "[substeps] To get your money, or most likely your cheapest fellow posers, consult a bathroom photography program. Paint or pastels some open in background color.",
             "These women are not taken seriously and girls who find themselves standing around this potty seat several times a day can be left out of urine, which is why you should let other women go public. It's one of the benefits of this car, if you have more than one."
         ],
         "source_id":"wikihow~49635",
@@ -6262,7 +6262,7 @@
         "ctx_b":"",
         "ctx":"[header] How to find the best foundation color shade for you [title] Understand your undertone. [step] Before trying to choose a foundation, it's best to determine a few things about your skin, such as your undertone. While the surface of your skin can change color because of many things, such as exposure to the elements or acne, your undertone will always stay the same.",
         "endings":[
-            "H2O C6H12O6 NaCl H2SO4 CO2 H2O C6H12O6 NaCl H2SO4 CO2 H2O C6H12O6 NaCl H2SO4 CO2 H2O C6H12O6 NaCl H2SO4 CO2",
+            "[mysql] user = root password = secret [section] key=value another_key=another_value",
             "Therefore, determining your undertone will help you choose the right foundation color. In general, people fall into one of three undertones : [substeps] Cool, which means your skin is more blue, red, or pink.",
             "[substeps] People with a warm complexion typically have warmer undertones than people with a neutral complexion. Choose a foundation that's somewhere between a warm and neutral shade.",
             "Recognizing your undertone can help you put a good image of yourself in the face. [substeps] If you have olive-toned skin, you will likely have a more neutral undertone."
@@ -6432,7 +6432,7 @@
         "ctx_b":"",
         "ctx":"[header] How to choose a flower girl dress [title] Choose a color for the dress. [step] Choose a dress color that will complement other colors in the wedding. Match the flower girl dress to your bridesmaids' dresses.",
         "endings":[
-            "0a 0d 0a 0d 0a 0d 0a 0d 0a 0d 0a 0d 0a 0d 0a 0d 0a 0d 0a 0d 0a 0d 0a 0d 0a 0d 0a 0d 0a 0d 0a 0d 0a 0d",
+            "Alternatively, choose a hue that will match another element in your wedding, like the flowers in your bouquet. Consider finding a flower girl dress that will contrast with and complement the colors in your wedding decor.",
             "[substeps] Whenever possible, try pairing the flower girl dress with a dress contrasting your bridesmaids' dresses. The color scheme works well in formal weddings because bridesmaids can pick and match flowers.",
             "Think about what you like and what you want when choosing a color for your bouquet. [substeps] If you are not big on color, choose a dress that is a darker color than your wedding dress.",
             "This will give you a reasonable opportunity to have fun. [substeps] For example, if you have black dresses made of black around the edges, opt for a dress in an earthy shade like bronze."
@@ -6605,7 +6605,7 @@
             "[title] Make sure the hammock is 4 feet (1.1 m) wide. [step] Hammocks made of other materials like nylon for durability are better for sleeping outdoors than those made of synthetic materials.",
             "[substeps] Nylon is heavier, meaning that it will wear out faster, or shrink faster, after being wet for long periods of time. [title] Buy a hammock made of a light material.",
             "[substeps] You can buy parachute nylon hammocks at your local outdoors store or online. [title] Choose a hammock that fits your height and weight.",
-            "\u0082\u00a3key\u00a5value\u00a5array\u0093\u0001\u0002\u0003\u0082\u00a4name\u00a4John\u00a3age\u001e\u0081\u00a5error\u0082\u00a4code\u00ce\u0001\u0090\u00a7message\u00a9Not Found\u0091\u0082\u00a2id\u0001\u00a4name\u00a5Alice\u00c0\u00c0\u00c0\u00c0\u00c0\u0082\u00a3key\u00a5value\u00a5array\u0093\u0001\u0002\u0003\u0082\u00a4name\u00a4John\u00a3age\u001e"
+            "[substeps] You can use an existing hammock that you already own or purchase one for a lower price. Hammocks made of other materials that have fallen into use are preferred over smaller ones."
         ],
         "source_id":"wikihow~80244",
         "split":"val",
@@ -6672,7 +6672,7 @@
         "endings":[
             "[substeps] If you have naturally light hair, instead add in white highlights. If your hair is lighter, choose green highlights.",
             "Highlights brighten the color through infusions and highlights, which can be applied with a brush. Lowshadows are different from lowlights, so skip highlighting and lowshadows.",
-            "$3x^2 - 4x + 1$ $(a^2 - b^2) \/ (a - b) = a + b$ $2(z + 3) - 7 = 9$ $(x+y)^2 = x^2 + 2xy + y^2$ $\\frac{x}{2} + 5 = 10$ $3x^2 - 4x + 1$ $(a^2 - b^2) \/ (a - b) = a + b$ $2(z + 3) - 7 = 9$",
+            "Highlights are generally lighter and closer to your natural gray shade. Lowlights can be used to break up the gray.",
             "[substeps] If you have gray hair, you can dye it the opposite color. Highlights are a good option if you plan to dye your hair near the hairline."
         ],
         "source_id":"wikihow~66458",
@@ -6774,7 +6774,7 @@
         "endings":[
             "Always remember that nothing is guaranteed to be true, and sometimes, the best defense is to be outright honest with your stalker. Confide in them and make sure someone hears back from you as soon as possible.",
             "Your best course of defense is to be as honest as possible. Why would you want to keep your secrets from somebody else? [title] Do not run.",
-            "2023-12-14 10:00:00 LOG:  database system is ready to accept connections 2023-12-14 10:00:01 ERROR:  could not serialize access due to concurrent update 2023-12-14 10:00:02 STATEMENT: SELECT * FROM users WHERE id = 1 2023-12-14 10:00:03 WARNING:  non-optimal query execution plan 2023-12-14 10:00:04 FATAL:  too many connections 2023-12-14 10:00:00 LOG:  database system is ready to accept connections 2023-12-14 10:00:01 ERROR:  could not serialize access due to concurrent update 2023-12-14 10:00:02 STATEMENT: SELECT * FROM users WHERE id = 1 2023-12-14 10:00:03 WARNING:  non-optimal query execution plan 2023-12-14 10:00:04 FATAL:  too many connections",
+            "As soon as you notice a stalker that is outside of your workplace or school, always call the police. The least that will happen is that they have a record of problem.",
             "Some evidence can be circumstantial, some can be substantial. [substeps] Prepare evidence to refute the issue, e.g., a phone bill you accidentally pay."
         ],
         "source_id":"wikihow~62748",
@@ -7061,7 +7061,7 @@
         "ctx_b":"",
         "ctx":"[header] How to build your own variable bench power supply using an atx power supply [title] Unplug the power cord from the back of the computer. [step] Make sure your computer is turned off first! [title] Cut off the connectors. [step] ( leave a few inches of wire on the connectors so that you can use them later on for other projects).",
         "endings":[
-            "products: - Laptop - Phone - Tablet settings: {timeout: 30, retries: 3, debug: true} key: value list: - 1 - 2 - 3 nested: a: 1 b: 2 user: name: Alice age: 25 address:   street: 123 Main   city: NYC config: debug: true port: 8080 timeout: 30 --- # Document Start",
+            "If you don't have cable, use a small piece of white cord and just tie it to the back of your computer. [substeps] At the bottom of the computer in near the power outlet, there is a cable loop.",
             "[title] Open up the power supply unit by removing the screws connecting the top and the bottom of the psu case. [title] Bundle wires of the same colors together.",
             "The connectors have a locking point so they won't raise up above the pegs. [substeps] Cut the connectors off of the back of the computer.",
             "[title] Connect the positive battery that will be supplying your electric current through the input jack on the console. [title] Check behind the game box that is at the back of the console to see if there are any voltage surges."
@@ -7112,9 +7112,9 @@
         "ctx_b":"",
         "ctx":"[header] How to prevent static hair [title] Use hairspray. [step] If you live in a dry area and are prone to static hair, hairspray is vital. Using hairspray in the morning and throughout the day can help prevent and eliminate static hair.",
         "endings":[
-            "[substeps] For best results, spray hairspray on your brush. Then, brush your hair while it's still damp.",
+            "ls -l I awk '{print $NF}' I sort -u find . -name '*.log' -exec rm {} \\; curl -sL http:\/\/example.com I grep 'title'",
             "[substeps] To prevent static, use a bobby pin instead of a regular hairspray. If possible, use this hairspray each day so that it stays static-free throughout the day.",
-            "sed -n '\/start\/,\/end\/p' file.txt sed '\/^#\/d' file.txt sed 's\/^\/prefix_\/' file.txt sed 's\/foo\/bar\/g' input.txt > output.txt sed '4d' file.txt sed -n '\/start\/,\/end\/p' file.txt sed '\/^#\/d' file.txt sed 's\/^\/prefix_\/' file.txt",
+            "[substeps] Put your hair up in a loose bun and let it air dry. Secure the bun with a hair tie or a sleek t-shirt when you get out of bed.",
             "[substeps] Use hairspray after a shower to help prevent wet hair from sticking to a shower mat. Your hair should now most likely have a static content that you are unable to control."
         ],
         "source_id":"wikihow~70645",
@@ -7283,7 +7283,7 @@
         "ctx":"[header] How to wear wide belts [title] Determine if a wide belt works with your waist. [step] Wide belts tend to work best with a variety of body shapes. Wide belts can add curves to people with thin waists.",
         "endings":[
             "In thicker waists, a wide belt can define a waistline. Wide belts can also help support and hold in extra weight around the waist.",
-            "$P(AIB) = \\frac{P(BIA)P(A)}{P(B)}$ (Bayes' theorem) $\\bar{x} = \\frac{1}{n} \\sum_{i=1}^n x_i$ $Z = (X - \\mu) \/ \\sigma$ $H_0: \\mu = 0$ (Null hypothesis) $R^2 = 1 - (SS_{res} \/ SS_{tot})$ $P(AIB) = \\frac{P(BIA)P(A)}{P(B)}$ (Bayes' theorem) $\\bar{x} = \\frac{1}{n} \\sum_{i=1}^n x_i$ $Z = (X - \\mu) \/ \\sigma$ $H_0: \\mu = 0$ (Null hypothesis) $R^2 = 1 - (SS_{res} \/ SS_{tot})$",
+            "Shoulder length belts can add height to people with narrow waists. [title] Decide on a belt style to work with your midsection.",
             "[title] Consider a wide belt for a more basic style. [step] If you want a baggy or oversized belt, a wide belt may be best.",
             "Wide belts can also help support people with an hourglass figure. [substeps] If your waist is wide, a wide belt will elongate your waistline (beneath the hips or lower)."
         ],
@@ -7333,7 +7333,7 @@
         "ctx_b":"",
         "ctx":"[header] How to make blemish balm (bb cream ) [title] Gather everything listed in the things needed section. [step] You're now ready to start! [title] Pump in about 5 to 10 squirts of moisturizer into your container. [step] You can add more or less depending on how much bb cream you're making and how moisturizing you want it to be.",
         "endings":[
-            "01101110 01100001 01101110 01101110 01100001 01101110 01100001 01101110 01100001 01101110 01100001 01101110 01100001 01101110 01100001 01101110 01100001",
+            "[substeps] As said in step one, bb cream is essential for making blackheads, and can easily be substituted for bb cream. Keep in mind that if you use bb cream on your skin, your skin will absorb it without realizing.",
             "Use a little bit at a time to avoid wetting your skin. [title] Add one or two drops of your favorite essential oil blend.",
             "[title] Bb creams have sunscreen protection in them usually, so squirt a little of your favorite sunscreen into the jar. [title] Add in some foundation! [step] This will give your bb cream its color.",
             "[title] Dip your brush into the non-stick spray. [step] Then, fill it up about 5 to 6 centimeters with your chosen moisturizer."
@@ -7404,7 +7404,7 @@
             "[title] Fold 1 panel in half lengthwise. [step] Cut along the fold to create 2 narrower panels.",
             "Be sure to take your measurements to give you a better choice of fabric. [title] Choose brown fabric for a warm and sunny configuration, many shower curtains are made of polyester or polypropylene.",
             "[title] Place a shower curtain over the open faucet unit to head into the shower. [step] The shower curtain should be covered by the fabric.",
-            "220 FTP Server ready. USER anonymous PASS guest@ CWD \/pub RETR file.zip 220 FTP Server ready. USER anonymous PASS guest@ CWD \/pub RETR file.zip 220 FTP Server ready."
+            "The design should have a boat-shape, like a square, to account for the wider part of the curtain rod. For example, if you are using a 6' wide rectangular curtain rod, then 24\/32 inch (4.6 cm) is my preferred length."
         ],
         "source_id":"wikihow~28338",
         "split":"val",
@@ -7455,7 +7455,7 @@
             "Gently use your fingers, scrubbing through so the cleanser forms a paste. [title] Rinse the cleanser off your face with warm water.",
             "Make sure to do this with your fingertips or fingers as soap will create friction. Remember to only scrub for 20-30 seconds at a time.",
             "The only way you can get rid of the sugar, though, is by using a spoon to spread the mask on your face. Don't worry if you have pink spots on your face when this part is done-they'll disappear.",
-            "head -n 10 log.txt I tail -n 1 cat file1.txt I less echo 'data' I tr 'a-z' 'A-Z' ls -l I wc -l find . -type f I xargs grep 'pattern' head -n 10 log.txt I tail -n 1"
+            "[title] Pour 1 tsp of sugar into the palm of your hand. [step] You can use whichever sugar you like."
         ],
         "source_id":"wikihow~70279",
         "split":"val",
@@ -7469,9 +7469,9 @@
         "ctx_b":"",
         "ctx":"[header] How to use your fitbit to monitor your sleep [title] Wear the fitbit flex tracker before you hit the sack. [step] Strap it around your arm firmly but not too tight. [title] Put the flex into sleep mode.",
         "endings":[
-            "$R^2 = 1 - (SS_{res} \/ SS_{tot})$ $P(AIB) = \\frac{P(BIA)P(A)}{P(B)}$ (Bayes' theorem) $\\bar{x} = \\frac{1}{n} \\sum_{i=1}^n x_i$ $Z = (X - \\mu) \/ \\sigma$ $H_0: \\mu = 0$ (Null hypothesis) $R^2 = 1 - (SS_{res} \/ SS_{tot})$",
+            "[step] Tap your fitbit flex rapidly for at least two seconds to enter its sleep mode. You'll see two alternating, blinking lights moving back and forth.",
             "[step] It goes into sleep mode on most day of the week. Make sure that you wear the tracker for at least 3 hours before you hit the sack.",
-            "[title] Choose the appropriate app (fitbit flex main) to track you, such as \" fitbit fitbit xp k \". [step] For most such apps, you have to use a virtual recorder with a 500 meter screen.",
+            "$\\sum_{i=1}^n i = \\frac{n(n+1)}{2}$ $\\alpha \\beta \\gamma$",
             "[step] The program will turn off if you lock it. [title] Once you sleep you might have to switch the tracker on again."
         ],
         "source_id":"wikihow~67329",
@@ -7504,9 +7504,9 @@
         "ctx":"[header] How to prevent heartworm disease in cats [title] Give your cat preventative medication. [step] Like most diseases, prevention is the safest and most cost effective measure. Cats can be given once a month preventative medication that kills the heartworms.",
         "endings":[
             "These preventative medications are available from your veterinarian in the form of a prescription. [substeps] In year round warm weather regions, your cat should be given this medication year round.",
-            "Date: Mon, 1 Jan 2024 10:00:00 +0100 Received: from mail.server.com (10.0.0.1) by other.server.com (10.0.0.2) From: \"Sender\" <sender@example.com> To: \"Recipient\" <recipient@example.com> Subject: Test Email Date: Mon, 1 Jan 2024 10:00:00 +0100 Received: from mail.server.com (10.0.0.1) by other.server.com (10.0.0.2)",
+            "[substeps] In the united states, heartworm preventative medications like prednisolone are available on prescription. The fda recommends that cats drink about 8-10 ounces of ibuprofen per day, as needed, three days a week.",
             "In severe cases, the cat's immune system will try to flush the medication from their system. [substeps] Dosage is less drastic if your cat has it.",
-            "It's usually given only once your cat is in the care of a vet, though it can be given again and again. [substeps] The veterinarian will assess your cat's conditions, although it may take several weeks to figure out if it needs treatment."
+            "query GetProducts { products { id price } } query { user(id: 1) { name email } } mutation {"
         ],
         "source_id":"wikihow~64480",
         "split":"val",
@@ -7809,7 +7809,7 @@
         "ctx_b":"",
         "ctx":"[header] How to take care of a dog [title] Feed your dog a high quality dog food. [step] Read the label of a prospective food. The first couple ingredients should be some kind of meat, not meat by-product or a grain.",
         "endings":[
-            "search%3Dquery%26limit%3D10%26offset%3D20%26sort%3Ddesc%26search%3Dquery%26limit%3D10%26offset%3D20%26sort%3Ddesc",
+            "2023-12-14 10:00:02 STATEMENT: SELECT * FROM users WHERE id = 1 2023-12-14 10:00:03 WARNING:  non-optimal query execution plan",
             "High quality food will help to keep your dog's teeth soft. As a dog ages, its teeth become stronger.",
             "This will help you know that the food is high in good protein, not just filler. [substeps] Ask your veterinarian for food recommendations.",
             "Talk to a veterinary nutritionist before you buy a dog food product. Too much high quality dog food can lead to a negative health risk."
@@ -8081,10 +8081,10 @@
         "ctx_b":"",
         "ctx":"[header] How to buy a wedding dress [title] Give yourself plenty of time. [step] To avoid feeling rushed, start the shopping process as early as possible. Most experts recommend starting about eight months before the wedding day.",
         "endings":[
-            "<?xml version=\"1.0\"?><book title=\"The Book\"><chapter>One<\/chapter><chapter>Two<\/chapter><\/book> <user><name>Bob<\/name><age>40<\/age><address><street>123 Main<\/street><\/address><\/user> <error code=\"500\"><message>Internal error<\/message><details>Stack trace here<\/details><\/error> <list><element>A<\/element><element>B<\/element><element>C<\/element><\/list> <root><item id=\"1\">Data<\/item><item id=\"2\">More Data<\/item><\/root>",
+            "That way, you don't have to cram all your time and energy into a project. [title] Organize, declutter, and unload all your bridesmaid's dresses.",
             "Dresses usually take three to six months to arrive after they're ordered. You will then need additional time to have the dress fitted and adjusted.",
             "This gives yourself even more time to prepare, before the actual process begins. Try to prepare breakfast when you leave work.",
-            "After that, give yourself a week or two to relax. Relaxing during this time means that you are more likely to wear your dress earlier in the day and have less to worry about."
+            "22 LOAD_FAST 0 (n)2 0 LOAD_GLOBAL 0 (print)"
         ],
         "source_id":"wikihow~22243",
         "split":"val",
@@ -8098,7 +8098,7 @@
         "ctx_b":"",
         "ctx":"[header] How to sort on google sheets on android [title] Open the google sheets app on your android. [step] The sheets app looks like a white spreadsheet table on a green document icon. You can find it on your apps menu.",
         "endings":[
-            "sed 's\/foo\/bar\/g' input.txt > output.txt sed '4d' file.txt sed -n '\/start\/,\/end\/p' file.txt sed '\/^#\/d' file.txt sed 's\/^\/prefix_\/' file.txt sed 's\/foo\/bar\/g' input.txt > output.txt sed '4d' file.txt sed -n '\/start\/,\/end\/p' file.txt sed '\/^#\/d' file.txt sed 's\/^\/prefix_\/' file.txt",
+            "[title] Tap the file you want to sort. [step] The checkmarks on the page will indicate that the file is being sorted.",
             "[substeps] If you don't have sheets on your android phone, you can download them for free from the google sheets app on a new device. [title] Tap the blank boxes on the spreadsheet screen.",
             "[substeps] If you are running a windows or mac computer, you'll find it in the app drawer. If you are running a mac, but you have just created a document, tap the file menu in the upper right-hand corner.",
             "[title] Tap the file you want to edit. [step] Find the spreadsheet you want to edit on your saved files list, and open it."
@@ -8370,10 +8370,10 @@
         "ctx_b":"",
         "ctx":"[header] How to change the brake light bulb on a 2005 vw beetle tdi [title] Use the key remote, fob, or key to raise the deck lid. [title] Use a flat-blade screwdriver to pry off the cover to access lens assembly (figures b1 and b2). [title] Use the fingers to remove the knob of the taillight lens assembly (figures b-3 and b-4).",
         "endings":[
-            "data = [1, 2, 3, 4, 5] version = 1.0  [config] mode = \"debug\\ log_level = \"info\\  [mysql] user = \"root\\ password = \"secret\\ title = \"TOML Example\\  [owner] name = \"Tom\\ age = 30  [database] server = \"192.168.1.1\\ ports = [ 8000, 8001, 8002 ]  [servers.alpha] ip = \"10.0.0.1\\ dc = \"eqdc10\\  [servers.beta] ip = \"10.0.0.2\\ dc = \"eqdc10\\ [server] ip = \"127.0.0.1\\ port = 8080 debug = true",
+            "[title] Use a flat-blade screwdriver to poke the lens assembly out until it pops off. [title] Replace glass lens assembly with new windshield lens assembly (figures 3 and the 2 remaining lenses).",
             "[title] Remove the starter retaining coil without maneuvering because it holds fuel and is difficult to pump. [title] Use a large, heavy-duty jigsaw.",
             "[title] Use a non-marring trim tool to pry loose the lens assembly (figure b-5). [title] Rotate trim tool around lens to loosen lens assembly (figure b-6).",
-            "[title] Remove the infrared shield, cartridge, and windshield washer from the lens assembly. [title] Remove the headlight filter, ignition post, and windshield wipers from the wiring compartment."
+            "EAX: 0x00000000, EBX: 0x00000000, ECX: 0x00000000, EDX: 0x00000000 Call stack: 0x401000 in main at main.c:10"
         ],
         "source_id":"wikihow~41607",
         "split":"val",
@@ -8660,9 +8660,9 @@
         "ctx":"[header] How to limit your toddler's sugar intake [title] Remove junk food from the house. [step] One way to limit the amount of sugar your toddler eats is to keep all junk food out of the house. Your child won't have access to them, so eventually they will be less likely to ask for them if they are not around and they don't see them.",
         "endings":[
             "Focus on limiting their junk foods, and raising your child as a parent. [substeps] Keep cookies, cakes, and cupcakes out of your toddler's room during the day.",
-            "c3 a9 c3 a8 c3 a0 c3 b9 c3 b2 c3 a9 c3 a8 c3 a0 c3 b9 c3 b2 c3 a9 c3 a8 c3 a0 c3 b9 c3 b2 c3 a9 c3 a8 c3 a0 c3 b9 c3 b2",
+            "[substeps] When the sugar dish is full, ask your child why it is being served in the house. And try to put it into the refrigerator as soon as possible.",
             "It can be helpful to keep the refrigerator full of your child's favorites. Just make sure the containers are in a neat and secure location.",
-            "[substeps] Designate a cheat day for your toddler, where they get treats they like. This can be a weekend day, like a saturday, or an after dinner treat."
+            "RGFzayBpcyBvZnRlbiB1c2VkIyBpcyBvZnRERhc2sgaXMgb2Z0ZW4gdXNlZA=="
         ],
         "source_id":"wikihow~44709",
         "split":"val",
@@ -8966,7 +8966,7 @@
         "ctx":"[header] How to be a dominatrix [title] Never assume consent. [step] Consent must be freely given. A person who is intoxicated or unconscious cannot consent.",
         "endings":[
             "Consent should come either voluntarily or in a controlled manner, without any doubt or hesitance. It is a taboo, not a pleasurable activity or a wonderful thing.",
-            "2023-12-14 10:00:03 WARNING:  non-optimal query execution plan 2023-12-14 10:00:04 FATAL:  too many connections 2023-12-14 10:00:00 LOG:  database system is ready to accept connections 2023-12-14 10:00:01 ERROR:  could not serialize access due to concurrent update 2023-12-14 10:00:02 STATEMENT: SELECT * FROM users WHERE id = 1 2023-12-14 10:00:03 WARNING:  non-optimal query execution plan 2023-12-14 10:00:04 FATAL:  too many connections",
+            "\u0088\u00817\u00fa!\u00d7\u0096*\u00fe#\tq\u008c Opcode: Text (1) Fin: 1, RSV1: 0",
             "A person with a history of drugs and alcohol use with a loved one cannot be abstinent. If a person is drunk, they cannot continue sexual intercourse until they are completely sober.",
             "It's best to check in from time to time to make sure. Of course, with bdsm it can be trickier to ensure consent, which is why it is important to set boundaries beforehand."
         ],
@@ -9101,7 +9101,7 @@
         "ctx_b":"",
         "ctx":"[header] How to be thorough in your oral hygiene routine [title] Clean your teeth at least twice a day. [step] The best oral hygiene habit to get into is to brush your teeth at least twice everyday-once when you wake up in the morning, and again before you go to bed at night. If you do absolutely nothing else for your teeth, at least do this.",
         "endings":[
-            "sed 's\/^\/prefix_\/' file.txt sed 's\/foo\/bar\/g' input.txt > output.txt sed '4d' file.txt sed -n '\/start\/,\/end\/p' file.txt sed '\/^#\/d' file.txt sed 's\/^\/prefix_\/' file.txt",
+            "$\forall x (P(x) \rightarrow Q(x))$ $(P \\lor  eg P) \\equiv \top$ (Law of excluded middle)",
             "[title] Wait at least one hour after eating to brush your teeth. [step] When you eat and drink during a meal, the enamel on your teeth can soften temporarily.",
             "[substeps] Check the inside of your mouth to make sure you don't have anything in your mouth that is also stinky or bad smelling. If you do have some, don't put that into your mouth.",
             "[title] If you are going to be exercising, be sure to stretch, too. [step] At regular intervals throughout the day, you should stretch up and down to stretch out every muscle involved in exercising."
@@ -9986,8 +9986,8 @@
         "ctx":"[header] How to set a bookmark shortcut in your home screen on android [title] Navigate to your android web browser. [step] Locate the icon that looks like a globe and tap on it to open. [title] Go to your website of choice.",
         "endings":[
             "[step] Your bing-like website will open with a list of all your pages saved on your android device. [title] Click the link for your html or jpg (version 6) view drop-down menu.",
-            "\u0091\u0082\u00a2id\u0001\u00a4name\u00a5Alice\u00c0\u00c0\u00c0\u00c0\u00c0\u0082\u00a3key\u00a5value\u00a5array\u0093\u0001\u0002\u0003\u0082\u00a4name\u00a4John\u00a3age\u001e\u0082\u00a3key\u00a5value\u00a5array\u0093\u0001\u0002\u0003",
-            "[step] Enter the name of the website in the text bar and press \" enter \" or \" go. \" [title] Tap on the create bookmark icon.",
+            "[step] The first section of your website will tell you about all of the site components and the business section. If you are on a pc, you will have to click here first.",
+            "gjhgjhkjghkjh...!!!ghjlkjhlkgjhgjhkj...!!!ghkjhghjlkjhlkhjlkjhlkgjhgjhkjg",
             "[step] Once you open the app, you'll be directed to your home screen. [substeps] You can also find links on facebook and twitter on your home screen, all of which should contain a link to your bookmark."
         ],
         "source_id":"wikihow~56390",
@@ -10138,9 +10138,9 @@
         "ctx_b":"",
         "ctx":"[header] How to make bath and body products [title] Take a clear jar and fill it about 2\/3 of the way full with sea salt, epsom salt, or even kosher salt. [step] To make the best bath salts use sea salt and epsom salt. [title] Add two tablespoons of baking soda to make your skin soft.",
         "endings":[
-            "f0 9f 9a 80 e2 9c a8 61 73 64 66 f0 9f 9a 80 e2 9c a8 61 73 64 66 f0 9f 9a 80 e2 9c a8 61 73 64 66 f0 9f 9a 80 e2 9c a8 61 73 64 66",
+            "[step] Here's a general guideline, say you have a thick skin. Use more baking soda if you have oily skin or thin skin.",
             "[step] 2 tablespoons should be plenty. Do not turn all the water in your bath\/shower on yet! Make sure to leave plenty of room in a jar for when you're ready to use the bath or you risk overflowing the jar.",
-            "[step] If you wish, mix 1\/16 cup of baking soda and a little salt in a small bowl. [title] Take about 1\/2 cup of salt and add it to your bathwater.",
+            "$R^2 = 1 - (SS_{res} \/ SS_{tot})$ $P(AIB) = \\frac{P(BIA)P(A)}{P(B)}$",
             "[title] Sprinkle relaxing flowers or scents into your salt mixture. [step] Great scents are thyme, vanilla, lavender, or orange powder."
         ],
         "source_id":"wikihow~71481",
@@ -10444,10 +10444,10 @@
         "ctx_b":"",
         "ctx":"[header] How to use toning shampoo [title] Identify the tones in your hair that you want to correct. [step] Toning shampoos can help address brassiness that occurs in a variety of hair colors. When you're choosing a shampoo, it's important to know what color tones in your hair you want it to correct.",
         "endings":[
-            "grep -v 'ignored' debug.log grep -c 'success' history.log grep 'PID' \/var\/log\/messages grep -i 'fatal error' system.log grep -E '^(WARNINGIERROR)' app.log grep -v 'ignored' debug.log grep -c 'success' history.log grep 'PID' \/var\/log\/messages",
+            "Examine your hair in a mirror in both natural and artificial lights to determine which tones you want to remove. [substeps] With blonde and gray hair, it's typically yellow or gold tones that begin to show when your hair becomes brassy.",
             "[substeps] For example, if you want to achieve a deep reddish hair color, using your shampoos for rich tones may help disguise brassiness. If you want to achieve a deep reddish hair color, go for a rich bleaching or highlighter look.",
             "Your natural hair color can be difficult to figure out, so it helps to know which colors you want to correct before beginning shampooing. [substeps] To get a sense of what tones you want to correct, you can use corticosteroids (marijuana).",
-            "For example, you could go for a brown or hazel shampoo if you want to reduce the brassiness of your hair. [title] Use toning shampoos with long, hydrating lengths."
+            "EAX: 0x00000000, EBX: 0x00000000, ECX: 0x00000000, EDX: 0x00000000 Call stack: 0x401000 in main at main.c:10"
         ],
         "source_id":"wikihow~4798",
         "split":"val",
@@ -10512,7 +10512,7 @@
         "ctx_b":"",
         "ctx":"[header] How to make a bracelet out of safety pins [title] Open up a safety pin and slide seed beads onto the pin. [step] Leave enough space on the top of the pin so that you can close it. You can use any color of seed bead you want, but avoid using ones that are too small, or you won't fit them onto the pin.",
         "endings":[
-            "echo 'log entry' >> app.log command < input.txt > output.txt 2>&1 ls > file_list.txt cat < file.txt command 2> error.log echo 'log entry' >> app.log command < input.txt > output.txt 2>&1 ls > file_list.txt cat < file.txt command 2> error.log",
+            "A size \" 10\/0 \" would be ideal. [substeps] This design will create a thick cuff-like bracelet that is covered with seed beads.",
             "Choose a color that's not too heavy. [substeps] These are green, rose, and gold beads.",
             "Many safety pins are filled with seed beads, which you can tie into ribbons. [substeps] Plastic bands would work, though you should also get ones with a snap in the middle.",
             "[title] Slide a slip of how-to tape to the pin. [step] You can use any color of tape you want, or avoid ones that are too small, or you won't fit them onto the pin."
@@ -10648,9 +10648,9 @@
         "ctx_b":"",
         "ctx":"[header] How to survive an upset stomach on an airplane [title] Use a quick trick to reduce upset stomach. [step] Are you close to throwing up in the air? There are some small measures you can take that might help you feel better fast. [substeps] Put pressure on the inside of your wrist.",
         "endings":[
-            "If you feel a deep ache on your wrist, lean forward in your seat and squeeze your wrist as tightly as you can. Don't flex your wrist, but consider moving your forearm.",
+            "$H_0: \\mu = 0$ (Null hypothesis) $R^2 = 1 - (SS_{res} \/ SS_{tot})$",
             "Press down, gently but firmly, with your fingers about two fingertip widths above your hand's bottom. Suck on hard candy to keep your saliva going.",
-            "$\\ abla^2 V = 0$ (Laplace's equation) $\\frac{d}{dt} \\int_a^{t} f(x) dx = f(t)$ $\\lim_{x \\to 0} \\frac{\\sin x}{x} = 1$ $\\int x^n dx = \\frac{x^{n+1}}{n+1} + C$ $\\frac{\\partial f}{\\partial x}$ $\\ abla^2 V = 0$ (Laplace's equation) $\\frac{d}{dt} \\int_a^{t} f(x) dx = f(t)$",
+            "Make sure you are holding onto your hand like you would a medicine stick. If the inside feels bruised (again, don't throw up), you might have a headache or is actually suffering from food poisoning.",
             "Grab a bottle of water and feel the back of your wrist. Continue squeezing and twisting your wrist to increase blood flow."
         ],
         "source_id":"wikihow~12891",
@@ -10855,7 +10855,7 @@
             "Orthodontic wax comes in small cases containing long strips of wax. If you cannot find wax at a pharmacy, call your orthodontist for some.",
             "Wait for the wax to harden on your braces. Apply it slowly with a soft toothbrush to get wax off your teeth quickly.",
             "If you usually have to use petroleum jelly, foam tape, or glitter, you don't have to do that. Just this tiny bit can make your brackets smoother and prevent painful twists.",
-            "Status: 400 Bad Request Error: Invalid input {\"list\": [1, 2, 3], \"count\": 3} Status: 200 OK Content-Type: application\/json {\"id\": 1, \"name\": \"API Item\"} Status: 201 Created Location: \/api\/items\/2 Status: 400 Bad Request Error: Invalid input"
+            "00000001 00000010 00000011 00000100 00000001 00000010 00000011 00000100 00000001 00000010 "
         ],
         "source_id":"wikihow~57946",
         "split":"val",
@@ -11023,7 +11023,7 @@
         "ctx":"[header] How to recognize contractions [title] Notice if contractions are regular. [step] Real labor contractions will quickly develop a pattern of duration and frequency. While the length of time that you experience the contractions and the time between them will vary, the changes will be progressive and steady.",
         "endings":[
             "[substeps] You will be able to expect when the contractions will happen. There will not be gaps of time where the contractions stop, such as an hour long break.",
-            "From: \"Sender\" <sender@example.com> To: \"Recipient\" <recipient@example.com> Subject: Test Email Date: Mon, 1 Jan 2024 10:00:00 +0100 Received: from mail.server.com (10.0.0.1) by other.server.com (10.0.0.2) From: \"Sender\" <sender@example.com> To: \"Recipient\" <recipient@example.com> Subject: Test Email Date: Mon, 1 Jan 2024 10:00:00 +0100 Received: from mail.server.com (10.0.0.1) by other.server.com (10.0.0.2)",
+            "[substeps] Many studies have demonstrated that contractions last for a longer period than they did in normal labor. This means that individual contractions take less time to develop.",
             "[substeps] Contractions will last for at least 20-30 seconds, but they may feel like they are coming apart. After a few seconds the consistency of real contractions will worsen.",
             "Contracting contractions may only last for a few hours, but they should begin to become more frequent as they grow. [substeps] After the contractions occur, you should be able to hear a little rattle when the contraction ends and it will likely sound less like a snap."
         ],
@@ -11141,7 +11141,7 @@
         "ctx_b":"",
         "ctx":"[header] How to set up an aerial yoga hammock [title] Gather the material on both ends of the fabric. [step] Lay the hammock flat on the ground and place your fingertips on the left and right edge of the fabric. Start to walk your fingers up the fabric so that both ends bunch up.",
         "endings":[
-            "zxcvbnm,.\/!@#$%^&*()_+qwertyuiopasdfghjklzxcvbnm,.\/!@#$%^&*()_+1234567890!@#$%^&*()qwertyuiopasdfghjklzxcvbnm,.\/",
+            "Once you've collected enough fabric, put it around the outside of the hammock on both sides. [substeps] Make sure the large portions of the hammock are about 2 to 3 inches (5.1 to 7.6 cm) in diameter, not bigger than your forearm.",
             "Finish by pulling the fabric together so that the hammock stays close to your body. The fabric should lie on the floor of the hammock.",
             "The bottom hem should be wrapped around the inside edge of the fabric and the top hem should be wrapped around the outside edge of the fabric. You shouldn't disturb or stretch this layer, but you should secure it in place with pins or clips.",
             "[substeps] Instead of looking like a sheet, your hammock should look like a loose rope when you're done gathering the material on both ends. [title] Wrap the end of the fabric around your arm."
@@ -11382,7 +11382,7 @@
             "[title] Cut two lengths of thread about 3 times the size of your bracelet. [step] However, if you want to make a very basic design, you might not want to cut three lengths of thread.",
             "The color of the thread is your choice. [substeps] To make violet, punch large holes in each end of the thread.",
             "Since this project involves multiple strands, we want to leave some threads blank. In this case, you will use blue for each strand.",
-            "IP Version 4, Header Length 20 bytes, TTL 64 Protocol: TCP (6), Checksum: 0x1234 [correct] 0x0000: 45 00 00 3c 1c 46 40 00 40 06 c9 6b c0 a8 01 01 Source: 192.168.1.1:50000 -> Dest: 8.8.8.8:53 Flags: [SYN], seq 0, win 64240, length 0 IP Version 4, Header Length 20 bytes, TTL 64 Protocol: TCP (6), Checksum: 0x1234 [correct] 0x0000: 45 00 00 3c 1c 46 40 00 40 06 c9 6b c0 a8 01 01"
+            "ZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9SZGF0YTppbWFnZS9wbmc="
         ],
         "source_id":"wikihow~69530",
         "split":"val",
@@ -11517,8 +11517,8 @@
         "endings":[
             "It also shows your concern for your child's educational experience. [substeps] These events can be busy and aren't the best environment for extended dialogue.",
             "The meet and greet event will be a fun day for both parents and students. [substeps] The meet and greet event occurs every tuesday morning at 9:00 am eastern time.",
-            "[substeps] If you are hosting the meet-and-greet event, be in the same room with your child and seek his\/her consent to meet the teacher in advance. You may also want to consider including other parents or fellow students.",
-            "0: aload_01: invokespecial #1 \/\/ Method java\/lang\/Object.\"<init>\":()V 4: getstatic #2 \/\/ Field java\/lang\/System.out:Ljava\/io\/PrintStream; 7: ldc #3 \/\/ String Hello 9: invokevirtual #4 \/\/ Method java\/io\/PrintStream.println:(Ljava\/lang\/String;)V 12: return 0: aload_01: invokespecial #1 \/\/ Method java\/lang\/Object.\"<init>\":()V 4: getstatic #2 \/\/ Field java\/lang\/System.out:Ljava\/io\/PrintStream; 7: ldc #3 \/\/ String Hello 9: invokevirtual #4 \/\/ Method java\/io\/PrintStream.println:(Ljava\/lang\/String;)V 12: return 0: aload_01: invokespecial #1 \/\/ Method java\/lang\/Object.\"<init>\":()V 4: getstatic #2 \/\/ Field java\/lang\/System.out:Ljava\/io\/PrintStream; 7: ldc #3 \/\/ String Hello 9: invokevirtual #4 \/\/ Method java\/io\/PrintStream.println:(Ljava\/lang\/String;)V 12: return"
+            "fragment UserFields on User { name email } subscription { newNotification { message } } query GetProducts",
+            "[substeps] Take note of the features your child must have that matter to you. Many preschools have offered free \" training days \" for those who plan on working in a specialized field."
         ],
         "source_id":"wikihow~4176",
         "split":"val",
@@ -11788,7 +11788,7 @@
         "ctx":"[header] How to get a close shave [title] Choose a clean and sharp, quality safety razor. [step] A quality razor blade means a quality shave. When proper preparation of the skin takes place, you will only need a single blade razor.",
         "endings":[
             "Take the time to select a shaving power razor that has the right blade for your top quality shave. [substeps] Your razor should not have a metal blade.",
-            "48 83 C4 08 C3 55 89 E5 83 EC 10 C7 45 FC 00 00 00 00 E8 B8 01 00 00 00 C3 48 83 C4 08 C3",
+            "They are slightly more delicate and don't scratch the skin as much. [title] Treat any skin that is experiencing discomfort or redness.",
             "However, picking a double or triple blade won't hurt your skin and can provide a closer shave. [substeps] Many razors have a pivoting head.",
             "Both a razor and the right size of blade will ensure the best shave possible. [substeps] Go for a quality one that is at least 10 mm long and has a sharp tip."
         ],
@@ -11857,7 +11857,7 @@
         "endings":[
             "You don't need to pair gym clothes with a ratty t-shirt and a pair of flip flops. That just has to wear out the rest of your wardrobe.",
             "It can also show off your bare shoulders, displaying the movement and warmth of summer. [substeps] Sweaters can be paired with sweaters or wrap-ins like backless jackets or bomber jackets, which can result in paired outfits throughout the summer.",
-            "$\\alpha \\beta \\gamma \\delta$ $\\mathbf{A} \\vec{x} = \\vec{b}$ $\\int_0^1 x^2 dx$ $$\\frac{d}{dx} e^x = e^x$$ $\\sum_{i=1}^n i = \\frac{n(n+1)}{2}$ $\\alpha \\beta \\gamma \\delta$ $\\mathbf{A} \\vec{x} = \\vec{b}$",
+            "This can help you focus your wardrobe on a color theme. [substeps] A layered top can backfill a plain onesie to create an old, stuffy and far out-of-your-league summer look.",
             "[substeps] Throw on a nice button down jacket or cardigan over a shorter sleeved t-shirt. This will make the item warm enough for fall."
         ],
         "source_id":"wikihow~65763",
@@ -11994,7 +11994,7 @@
             "[step] Cut short side to side as well as deeper, consistent cuts so as to create best results and fade around the turf. Keep running your lawnmower as it will suck up dirt and debris.",
             "[step] Apply beer or rain on the turf if it is wet or wet. In the winter, layer the turf around it to keep the ground moist.",
             "[substeps] Lay corrugated cardboard, or between 6 and 8 layers of newspaper, over the turf to be stripped. Ensure that there is no colored ink on the newspaper or cardboard.",
-            "USER_LOCKOUT: User 'test' locked out after 5 failed attempts ALERT: Failed login attempt for user 'admin' from IP 1.2.3.4 AUDIT: User 'john' modified configuration file \/etc\/config.conf FIREWALL: Blocked incoming connection from 5.6.7.8 on port 22 IDS: Potential SQL Injection detected in parameter 'q' USER_LOCKOUT: User 'test' locked out after 5 failed attempts"
+            "[step] Cut off 100% of the turf and let it sit next to the wind away from the road. This will loosen dirt and debris, allowing for clean-up."
         ],
         "source_id":"wikihow~26520",
         "split":"val",
@@ -12059,9 +12059,9 @@
         "ctx_b":"",
         "ctx":"[header] How to make a lotion bar with almond oil [title] Visit the craft or health food store to compile ingredients. [step] You'll need a 1 lb. Bar of beeswax, \u00bd cup of almond oil and \u00bd cup of coconut oil.",
         "endings":[
-            "[title] Locate your double boiler or create your own using two pans and a little water. [step] This will be the tool you use to melt the bars down to create your own slice of skin paradise.",
+            "192.168.1.1 - - [14\/Dec\/2023:10:00:00 +0000] \"GET \/index.html HTTP\/1.1\" 200 3495 10.0.0.5 - user [14\/Dec\/2023:10:00:01 +0000] \"POST \/api\/login HTTP\/1.1\" 401 120",
             "Make sure you stock up on the ingredients that you will use to make your bar of coconut cream. [substeps] You will want a blender, bugle bowl, or electric mixer to process and put the ingredients in, in order.",
-            "0 1 * * * \/usr\/bin\/backup.sh @reboot \/usr\/bin\/start_service.sh *\/5 * * * * \/usr\/bin\/check_health # Run every Monday at 3am 30 3 * * 1 \/usr\/bin\/cleanup.py 0 1 * * * \/usr\/bin\/backup.sh @reboot \/usr\/bin\/start_service.sh *\/5 * * * * \/usr\/bin\/check_health # Run every Monday at 3am 30 3 * * 1 \/usr\/bin\/cleanup.py",
+            "Apply the mixture to your skin, paying attention to any blemishes or discolorations. [title] Scrape off any excess honey or milk.",
             "You can also find a good dairy-free menthogenic lotion at the store. [title] Break the sunglass shell and shave it off."
         ],
         "source_id":"wikihow~44535",
@@ -12265,7 +12265,7 @@
         "endings":[
             "Most animal shelters sell budgies for a flat fee, so this will limit your bank expenses. [substeps] You might also be able to compare prices to get a good deal.",
             "You'll need to get a price point that is reasonable. Here's a guide to locate an experienced seller : [substeps] Generally , 20-50% off the appraised price is reasonable.",
-            "$\\frac{\\partial f}{\\partial x}$ $\\ abla^2 V = 0$ (Laplace's equation) $\\frac{d}{dt} \\int_a^{t} f(x) dx = f(t)$ $\\lim_{x \\to 0} \\frac{\\sin x}{x} = 1$ $\\int x^n dx = \\frac{x^{n+1}}{n+1} + C$ $\\frac{\\partial f}{\\partial x}$ $\\ abla^2 V = 0$ (Laplace's equation) $\\frac{d}{dt} \\int_a^{t} f(x) dx = f(t)$",
+            "Wherever you get your budgie from, make sure the seller has healthy and humanely treated birds. [substeps] Look at online reviews for the sellers you find.",
             "Basically, you need to find a good seller who has had previous owners. [substeps] Check to see if the parent owned the budgie."
         ],
         "source_id":"wikihow~74841",
@@ -12299,7 +12299,7 @@
         "endings":[
             "For example, you may be removing plants from the lawn beds that need frequent cleansing. If you have a garden sprayer, extend it towards a hose and squirt the soil around the roots.",
             "If this is the case, you might consider putting a film over the area and digging a hole around the existing debris. You want to clean the area around the unwanted object before you begin working to prevent the object from falling apart.",
-            "IP Version 4, Header Length 20 bytes, TTL 64 Protocol: TCP (6), Checksum: 0x1234 [correct] 0x0000: 45 00 00 3c 1c 46 40 00 40 06 c9 6b c0 a8 01 01 Source: 192.168.1.1:50000 -> Dest: 8.8.8.8:53 Flags: [SYN], seq 0, win 64240, length 0 IP Version 4, Header Length 20 bytes, TTL 64 Protocol: TCP (6), Checksum: 0x1234 [correct] 0x0000: 45 00 00 3c 1c 46 40 00 40 06 c9 6b c0 a8 01 01",
+            "The presence of surface debris can also cause the soil to retain more moisture by blocking potentially drying sunlight. At minimum, rake away soggy leaves and old mulch to clear the soil.",
             "Gather a blanket or tarp and drape it over the dirt. Drape the blanket or tarp over as much of the stuck-on dirt as possible."
         ],
         "source_id":"wikihow~1617",
@@ -12334,7 +12334,7 @@
             "This will help you appear friendly and connected; new individuals will be drawn to you and your friend group. [title] Move locations every 15-20 minutes.",
             "This will allow your friends to signal that you're ready for conversation. If your friends don't know where to begin, ask them to move back to one place next to you.",
             "If not, sit on one end of the table and disappear to the other to avoid wandering into a space (this will increase the chances of moving away from the group without getting noticed). Ask friends about what they think of your new center of interest.",
-            "$\\ abla^2 V = 0$ (Laplace's equation) $\\frac{d}{dt} \\int_a^{t} f(x) dx = f(t)$ $\\lim_{x \\to 0} \\frac{\\sin x}{x} = 1$ $\\int x^n dx = \\frac{x^{n+1}}{n+1} + C$ $\\frac{\\partial f}{\\partial x}$ $\\ abla^2 V = 0$ (Laplace's equation) $\\frac{d}{dt} \\int_a^{t} f(x) dx = f(t)$"
+            "syntax = \"proto3\"; enum State { ACTIVE = 0; INACTIVE = 1; } message Account {"
         ],
         "source_id":"wikihow~69766",
         "split":"val",
@@ -12519,7 +12519,7 @@
         "ctx":"[header] How to learn to fence [title] Decide why you want to fence. [step] Is it for, competition, or for historical appeal? All of these are legitimate reasons, and each leads to a different type of fencing and training. Fencing is an old art that has great traditions and cultures, so you may find it more enjoyable if you immerse yourself in it.",
         "endings":[
             "[title] Know your subjects\/fields and places. [step] The smell or taste of old fencing is still delicious.",
-            "awk 'NR==1, NR==5' awk '{gsub(\/old\/, \"new\", $0); print}' awk '{print $1}' data.txt awk '\/error\/ {count++} END {print count}' logfile.txt awk -F',' '{sum+=$2} END {print sum\/NR}' data.csv awk 'NR==1, NR==5' awk '{gsub(\/old\/, \"new\", $0); print}'",
+            "If you are ready to learn, you may find your interest takes you out of your comfort zone as you get to know the boundaries. [substeps] For example, some schools forbid the use of fencing in historic areas.",
             "Fencing is a great way to learn both mental and physical skill and discipline. But it's also great exercise and great fun for the more casual fencer too! [title] Research different types of fencing.",
             "If you want to strike a balance between visual and physical fencing, then you may want to consider your cultural background and your community. [substeps] Your community might not accept any sponsored competitions through which you can actually compete."
         ],
@@ -13031,7 +13031,7 @@
             "Also be sure to get all the dirt out of the sole, including the toe part. [substeps] When you replace shoes, be sure to use gloves when handling the shoe.",
             "As this forces the dirt or debris back into the shoe, it may break the shoe. [substeps] If the dirt or debris is stuck to the shoe, you may want to wipe the dirt or debris away with a few drops of dish soap and a bathroom sponge.",
             "This will loosen and remove the debris or dirt. [title] Clean the soles using a baking soda paste.",
-            "11111111 11111111 00000000 00000000 11111111 11111111 00000000 00000000 11111111 11111111 00000000 00000000 11111111 11111111 00000000 00000000"
+            "<list><element>A<\/element><element>B<\/element><element>C<\/element><\/list>"
         ],
         "source_id":"wikihow~36325",
         "split":"val",
@@ -13080,7 +13080,7 @@
         "ctx":"[header] How to fix a bent ring [title] Check your warranty before beginning repairs or investing in tools. [step] Many jewelers offer free repair services, such as reshaping dents, resizing, and cleaning. Dig out your warranty, see what it covers, and determine whether its coverage is lifetime or has a time limit.",
         "endings":[
             "Make sure your ring has returned to its original brand and that all parts have been replaced. Check the expiration date to confirm that it has been renewed.",
-            "example.com. IN TXT \"v=spf1 include:spf.google.com ~all\\ ns1.example.com. IN NS example.com. example.com. IN A 192.0.2.1 www.example.com. IN CNAME example.com. example.com. IN MX 10 mail.example.com. example.com. IN TXT \"v=spf1 include:spf.google.com ~all\\ ns1.example.com. IN NS example.com.",
+            "[substeps] Poor fit is a common cause of bent rings, so consider having it professionally resized, especially if your warranty covers it. [title] Take your ring's materials into account.",
             "[substeps] Buying replacement equipment and electronics can be expensive, especially if you have an extended warranty. If it's not extended, you have a good chance of getting a new ring.",
             "Look at the clock to see if your ring is currently in use or has been in usage for a long time. [substeps] Examine your ring if there is any indication of more than a lifetime warranty."
         ],
@@ -13097,9 +13097,9 @@
         "ctx":"[header] How to annoy your roommate [title] Leave trash around the room. [step] First of all, this will make your room smell bad. Secondly, it'll attract flies, ants, and other bugs, which will gross your roommate out.",
         "endings":[
             "She will now be forced to clean up your mess or will leave it there, and it will annoy her. [substeps] Avoid leaving anything you might also find gross.",
-            "Leave trash around the room until it's gone! Remind your roommate to check their room frequently for trash. Finally, move a few boxes that are not worth moving around, from your room all the way to another part of the house to make room for trash.",
+            "AUDIT: User 'john' modified configuration file \/etc\/config.conf FIREWALL: Blocked incoming connection from 5.6.7.8 on port 22",
             "If you're really into it, leave garbage around your walls and furniture and knock around some boxes. [substeps] Alternatively, if you're in a particularly bad mood, you could hang out with a friend who's unlikely to find trash, like a teddy bear.",
-            "kernel: audit: type=1400 audit(1671001200.000): apparmor=\"DENIED\\ kernel: Out of memory: Kill process 5678 (app) score 999 or sacrifice child kernel: ACPI: button: Power Button [PWRF] present kernel: eth0: link up (1000Mbps\/Full duplex) kernel: usb 1-1: new high-speed USB device number 2 using ehci-pci kernel: audit: type=1400 audit(1671001200.000): apparmor=\"DENIED\""
+            "No one likes to be around these things anyway, so if you act like an annoyance right from the start, people will start to go around and pick up a lot of clutter. [substeps] Take a small trash can and fill it full of personal trash, such as toilet paper, empty paint cans, and trash bags."
         ],
         "source_id":"wikihow~15702",
         "split":"val",
@@ -13320,7 +13320,7 @@
             "They should have a solid green skin free of any cracks. The pods should be fairly flat, indicating small sized peas.",
             "[substeps] Pick 1 large, round seed and 1 medium one. You can harvest it fairly easily, but this is not necessary to make an adult snow pea.",
             "[substeps] This step goes for peas that have burrs; white-annical peas tend to be the exception. Brown colored peas use 100% return bleach, even if they are very dirty.",
-            "c3 a9 c3 a8 c3 a0 c3 b9 c3 b2 c3 a9 c3 a8 c3 a0 c3 b9 c3 b2 c3 a9 c3 a8 c3 a0 c3 b9 c3 b2 c3 a9 c3 a8 c3 a0 c3 b9 c3 b2"
+            "Avoid peas whose outer coat has become leathery and dry. Protective outdoor materials like plastic cover are a good option."
         ],
         "source_id":"wikihow~19954",
         "split":"val",
@@ -13490,7 +13490,7 @@
             "Remember that changing your hair type can result in different growth patterns, as well as increased risk for hair loss. [substeps] If you have thick hair, choose a shampoo that is specifically for curly hair.",
             "If your hair is usually straight, you may need a sulfate-free shampoo. If it is generally wavy, you may want to vary this amount to balance out the curls.",
             "If you have straight or curly hair, you will need to follow the following tips : [substeps] Don't use a shampoo that is too harsh and packed with chemicals or sulfates. Avoid using a salon-specific shampoo because these will create tight, wavy hair.",
-            "@echo off echo Hello, Batch pause if exist file.txt ( del file.txt ) for %%i in (*.log) do echo %%i set VAR=test start chrome.exe @echo off echo Hello, Batch pause if exist file.txt ( del file.txt ) for %%i in (*.log) do echo %%i set VAR=test start chrome.exe"
+            "If you dye or add color to your hair, select shampoos that will protect your treatment. Also, most shampoos have extra benefits such as volume and shine."
         ],
         "source_id":"wikihow~28128",
         "split":"val",
@@ -13608,7 +13608,7 @@
         "endings":[
             "This is the number one key to identifying your skin color. [substeps] If you have a mixture of olive skin and warm undertones (such as an ivory skin tone), your skin tone is probably somewhere between warm and cool.",
             "If you have a medium or warm body type, you generally have noticeable undertones. Here are some common undertones : [substeps] Warm skin and warm undertones include all three medium, all three cool, all four hot, and all four warm.",
-            "aload_0 invokevirtual java\/lang\/Object.getClass ldc \"Hello\\ astore_1 iload_1iconst_1iadd aload_0 invokevirtual java\/lang\/Object.getClass ldc \"Hello\\ astore_1 iload_1iconst_1iadd",
+            "10.0.0.5 - user [14\/Dec\/2023:10:00:01 +0000] \"POST \/api\/login HTTP\/1.1\" 401 120 \"-\" \" \"Mozilla\/5.0...\"",
             "There are three types: warm, cool, and neutral. Because you're looking for the undertones in your skin, you can't simply look in the mirror and confirm them."
         ],
         "source_id":"wikihow~37888",
@@ -13641,7 +13641,7 @@
         "ctx":"[header] How to shower quickly [title] Take cold showers. [step] If the water is cold, you may find that you're less inclined to wallow in the shower. Jump into the shower as soon as you turn it on, and try to keep the shower on for under two minutes.",
         "endings":[
             "Beyond efficiency, cold showers can increase alertness, improve circulation, stimulate weight loss, ease stress, and speed muscle recovery. [title] Complete other tasks while the water heats up.",
-            "$\\int x^n dx = \\frac{x^{n+1}}{n+1} + C$ $\\frac{\\partial f}{\\partial x}$ $\\ abla^2 V = 0$ (Laplace's equation) $\\frac{d}{dt} \\int_a^{t} f(x) dx = f(t)$ $\\lim_{x \\to 0} \\frac{\\sin x}{x} = 1$ $\\int x^n dx = \\frac{x^{n+1}}{n+1} + C$ $\\frac{\\partial f}{\\partial x}$ $\\ abla^2 V = 0$ (Laplace's equation) $\\frac{d}{dt} \\int_a^{t} f(x) dx = f(t)$",
+            "[title] Keep your hair out of the way. [step] The easiest way to shower from home is to do it yourself.",
             "Remember to take every precaution that you can to stay cool-it helps with maintaining clean running water. [substeps] Some companies, like john macdonald international, offer quicker showers, but others don't.",
             "By doing this, you are taking more water out of your body than if you were standing in the bathroom constantly cleaning your house. [substeps] On average, showers should last between thirty and forty minutes, while a little more is usually enough."
         ],
@@ -13779,7 +13779,7 @@
             "Lay a drop of any size even into the fold. If it is not flat, it might leak.",
             "[substeps] The shirt should be neat and not wrinkle-able. A clean, wrinkle-free shirt works well.",
             "Plan out the sleeves and corners so that they're the same size, same shape, and a lot more space is present. Make sure not to change any pocket pocket space.",
-            "From: \"Sender\" <sender@example.com> To: \"Recipient\" <recipient@example.com> Subject: Test Email Date: Mon, 1 Jan 2024 10:00:00 +0100 Received: from mail.server.com (10.0.0.1) by other.server.com (10.0.0.2) From: \"Sender\" <sender@example.com> To: \"Recipient\" <recipient@example.com> Subject: Test Email Date: Mon, 1 Jan 2024 10:00:00 +0100 Received: from mail.server.com (10.0.0.1) by other.server.com (10.0.0.2)"
+            "$3x^2 - 4x + 1$ $(a^2 - b^2) \/ (a - b) = a + b$ $2(z + 3)$"
         ],
         "source_id":"wikihow~48322",
         "split":"val",
@@ -14034,7 +14034,7 @@
             "This knowledge might help convince your parents to support your decision. [substeps] Use the tips and resources on the sites to learn things such as the enlistment process, the required asvab test, and the various types of training available.",
             "You can actually learn more about the military for free using cyberdating. You'll not only learn more from internet tips but also from the military.",
             "On twitter, for example, there are sites that offer information on how to be a soldier in the military. [substeps] While online news sites provide information all the time, they can also introduce you to other military careers that offer an interview about your field.",
-            "f0 9f 9a 80 e2 9c a8 61 73 64 66 f0 9f 9a 80 e2 9c a8 61 73 64 66 f0 9f 9a 80 e2 9c a8 61 73 64 66 f0 9f 9a 80 e2 9c a8 61 73 64 66"
+            "[substeps] Some of the websites are also free from spotify and e-reader. Some also have links to actual events you will see on the sites."
         ],
         "source_id":"wikihow~56685",
         "split":"val",
@@ -14422,9 +14422,9 @@
         "ctx_b":"",
         "ctx":"[header] How to draw a snake [title] Draw a medium-size oval shape for the snake's head. [step] Draw two small circles above that oval for a framework for the snake's head. [title] Draw a curve connecting the circles and the oval to taper the snake's body.",
         "endings":[
-            "Dec 14 10:00:04 hostname systemd[1]: Started Session 1 of user user. Dec 14 10:00:05 hostname dhclient[999]: DHCPACK from 192.168.1.254 Dec 14 10:00:01 hostname kernel: CPU: 1 PID: 100 comm: systemd Not tainted Dec 14 10:00:02 hostname sshd[1234]: Accepted publickey for user from 192.168.1.1 port 50000 ssh2: RSA SHA256 Dec 14 10:00:03 hostname CRON[5678]: (root) CMD (command -v something) Dec 14 10:00:04 hostname systemd[1]: Started Session 1 of user user. Dec 14 10:00:05 hostname dhclient[999]: DHCPACK from 192.168.1.254",
+            "[step] Draw a \" jump \"-like feature on the left side of the oval. Draw a long semicircle connecting the oval and two big circles or cylinders below the oval for legs.",
             "[title] Draw the curves extending from the small circle at the left end to complete the snake's body. [step] The tail becomes more slender near the tail.",
-            "[step] Draw two long slender arms to lengthen the snake's body. [title] Draw a series of short ovals at the top of the body, as well as a vertical line for an antenna.",
+            "Date: Mon, 1 Jan 2024 10:00:00 +0100 Received: from mail.server.com (10.0.0.1) by other.server.com",
             "[step] Draw a small spade-like curve in the back to serve as a wing tip for the head. [title] Repeat with a smaller oval for the body, and a small spade-like curve for the face."
         ],
         "source_id":"wikihow~23412",
@@ -14490,9 +14490,9 @@
         "ctx_b":"",
         "ctx":"[header] How to measure biceps [title] Measure before you weight lift. [step] If you've exercised your arms right before you measure your bicep size, you won't get an accurate bicep measurement. Working out forces blood into your muscles, which temporarily inflates the size of your biceps and triceps.",
         "endings":[
-            "Server Hello (1.2) [sid] Cipher Suite: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 Certificate Change Cipher Spec Client Hello (1.2) Server Hello (1.2) [sid] Cipher Suite: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 Certificate Change Cipher Spec",
+            "[substeps] Since biceps are the number one muscle group, there are some techniques you can do to properly measure the weight and height of your biceps before a weigh-in. For example, if your biceps are quite large, you can try heavy lifting instead of weighing yourself.",
             "[substeps] If you're planning to measure your arms and work out in the same day, always take the measurements first. [title] Measure at the thickest part of both biceps.",
-            "Rather than wasting time measuring the strength of your biceps, spend the time doing exercises that target your biceps. [substeps] Sit down on the floor and place your hands flat on the floor.",
+            "{\"error\": {\"code\": 404, \"message\": \"Not Found\", \"details\": {\"field\": \"name\"}}}",
             "[substeps] If possible, measure your biceps a few times throughout the day and after work to see how full they are. When you exercise, always place your hands on your upper arms."
         ],
         "source_id":"wikihow~77330",
@@ -14796,7 +14796,7 @@
         "ctx_b":"",
         "ctx":"[header] How to grow out an inverted bob [title] Have a goal in mind. [step] As you grow out your hair, have an end look or goal in mind. Let your stylist know what kind of look or style you want to transition into.",
         "endings":[
-            "mutation { createUser(name: \"New User\") { id } } fragment UserFields on User { name email } subscription { newNotification { message } } query GetProducts { products { id price } } query { user(id: 1) { name email } } mutation { createUser(name: \"New User\") { id } } fragment UserFields on User { name email } subscription { newNotification { message } } query GetProducts { products { id price } }",
+            "Most stylists like to have different cuts, styles, colours and other items to choose from. [substeps] Mature hair is much more rigid and hard to grow.",
             "If you're unsure, politely ask your stylist what your goal is. [substeps] You might decide to cut your hair to a similar length as yours.",
             "If you don't already have a goal, approach your stylist and ask them where you can find one. They may recommend something specific or suggest something more subtle.",
             "That way, they can slowly reshape your hair into your next style, giving you something to look forward to. [title] Ask your stylist to thin the ends."
@@ -14916,7 +14916,7 @@
         "ctx":"[header] How to feather your hair [title] Learn what feathering is. [step] A feathered hairstyle is a look that is created with layered hair, with smooth layers that flip out and back looking almost like the overlapping feathers on a bird. The hair is usually parted down the middle and then curled back away from the face.",
         "endings":[
             "[substeps] Feathered hair includes two feathers if you have spiky or layered hair, two feathers if you are long, and two feathers if you are short. Try to use a feather that fades fairly easily after you use it.",
-            "##@!$%.^&**()_+-={}I[]\\<>?\/\/##@!$%.^&**()_+-={}I[]\\<>?\/\/##@!$%.^&**()_+-={}I[]\\<>?\/\/##@!$%.^&**()_+-={}I[]\\<>?\/\/",
+            "However, it can also be teased or knotted around one side of the head or clipped at the front. [title] Wear feather skirts, headbands, hats, and gloves.",
             "It requires a finely-textured layered hairstyle and can be created from short and smooth hair or long and curly. However, if you feather curly hair, the feathers will only be visible when you straighten your hair.",
             "The feathered parts of the hair are pinned back with clip in at the temples, and are often worn with aviator sunglasses. In actuality, feathered hair is made up of softer hairs located on the top layer of hair about half an inch larger than the previous layer."
         ],
@@ -15102,9 +15102,9 @@
         "ctx_b":"",
         "ctx":"[header] How to get thick hair [title] Avoid chemical based shampoo, conditioner and styling products. [step] Most hair products contain chemicals that are effective at cleaning your hair but may cause much damage. Some people aren't affected by these chemicals, but if you're worried about thinning hair, it's best to avoid them.",
         "endings":[
-            "Look for the ingredients listed below or refrain from adding an ingredient. Unsaturated is easier to digest and more even as you become thicker, while unsaturated will produce a longer drying time.",
+            "Signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x0 EAX: 0x00000000, EBX: 0x00000000, ECX: 0x00000000, EDX: 0x00000000",
             "Adding too much styling products while your hair is already thick will only result in too much damage. Consider the following products : [substeps] Blow dryers.",
-            "--- # Document Start products: - Laptop - Phone - Tablet settings: {timeout: 30, retries: 3, debug: true} key: value list: - 1 - 2 - 3 nested: a: 1 b: 2 user: name: Alice age: 25 address:   street: 123 Main   city: NYC config: debug: true port: 8080 timeout: 30",
+            "[substeps] If you can't remember when you last used a shampoo and conditioner, make sure to ask a friend or family member for advice. While whatever type of shampoo and conditioner you use doesn't have to be bad, read some good tips.",
             "[substeps] Sodium laurel and laureth sulfates are cleaning agents found in most shampoos. They strip the hair of natural oils and cause hair to weaken and fall out over time."
         ],
         "source_id":"wikihow~9125",
@@ -15411,7 +15411,7 @@
             "[substeps] Shop for free food, easy-to-ensure services, and health items at your local supermarket. Shop for supplies according to your needs and budget.",
             "Oftentimes, you may not be able to make health counseling every day, but you can buy the right supply of help. Talk to your insurance provider to find out if they have insurance.",
             "[substeps] You can enroll in an insurance program through healthcare. Gov, a public database provided under the affordable care act.",
-            "\ud83d\ude00\ud83d\ude03\ud83d\ude04\ud83d\ude01\ud83d\ude06\ud83d\ude05\ud83d\ude02\ud83e\udd23\ud83d\ude0a\ud83d\ude07\ud83d\ude00\ud83d\ude03\ud83d\ude04\ud83d\ude01\ud83d\ude06\ud83d\ude05\ud83d\ude02\ud83e\udd23\ud83d\ude0a\ud83d\ude07\ud83d\ude00\ud83d\ude03\ud83d\ude04\ud83d\ude01\ud83d\ude06\ud83d\ude05\ud83d\ude02\ud83e\udd23\ud83d\ude0a\ud83d\ude07\ud83d\ude00\ud83d\ude03\ud83d\ude04\ud83d\ude01\ud83d\ude06\ud83d\ude05\ud83d\ude02\ud83e\udd23\ud83d\ude0a\ud83d\ude07\ud83d\ude00\ud83d\ude03\ud83d\ude04\ud83d\ude01\ud83d\ude06\ud83d\ude05\ud83d\ude02\ud83e\udd23\ud83d\ude0a\ud83d\ude07"
+            "call void @print_int(i32 %1) br label %loop_cond define i32 @main() #0 { ret i32 0 } %1 = alloca i32,"
         ],
         "source_id":"wikihow~48156",
         "split":"val",
@@ -15528,7 +15528,7 @@
         "ctx":"[header] How to use credit card rewards points [title] Go for a smart signup bonus. [step] There are hundreds of credit cards you could pick. This means that they are all competing with each other to get you to sign.",
         "endings":[
             "Account transfers are good choices for these devices as they treat the rewards with something like rewards, but credit cards charge a fee for the added (and savings) rewards. It requires special identification cards, such as passport, mastercard, and western union, because they can only earn points for your mastercard rewards.",
-            "command < input.txt > output.txt 2>&1 ls > file_list.txt cat < file.txt command 2> error.log echo 'log entry' >> app.log command < input.txt > output.txt 2>&1 ls > file_list.txt cat < file.txt command 2> error.log",
+            "Do you think you would get a smart membership to a credit card company? You can reward yourself with an app or if you actually want to redeem a certain percentage of the outstanding balance, use the 10 rewards points. [substeps] The bonus points can be anywhere from 50-100 points.",
             "Look at the different sign-up bonuses to see who will fix you up with the most rewards possibilities up front. [substeps] For example, a good signup bonuses might give you high points or airline miles in the first several months for relatively little money spent.",
             "Tricks like these have advantages over credit card rewards. In this case, you will probably still earn the points for the same reward (however, you may have to price them differently)."
         ],
@@ -15766,7 +15766,7 @@
         "ctx":"[header] How to make vegan tangerine fudge brownie cake [title] Start preheating the oven to 375\u00baf\/190\u00bac as you line your baking pan with parchment paper. [title] Melt the chocolate chips and margarine over low heat in a saucepan. [step] Once melted, leave aside to cool.",
         "endings":[
             "The flavor and texture will be slightly different than the chocolate chips, but it will also cook better when it's mixed into the batter. [title] Add the dry ingredients to the flour and milk.",
-            "[DEFAULT] ServerHost = 127.0.0.1 ServerPort = 8080  [client] APIKey = 12345 Timeout = 30  [database] Host = db.example.com Port = 5432 User = admin Password = secret  [mysql] user = root password = secret  [section] key=value another_key=another_value  Timeout=30 Retries=5 log_file = \/var\/log\/app.log error_log = \/var\/log\/app_error.log",
+            "\"-\" \" \"Mozilla\/5.0...\\ \"GET \/wp-admin\/setup-config.php HTTP\/1.1\" 404 199 \"HEAD \/health HTTP\/1.1\" 200 0 192.168.1.1",
             "[title] Add the dry ingredients to a mixing bowl. [title] Pour in the made-up egg replacer and whisk the ingredients together until combined well.",
             "Once it reaches room temperature, add the chocolate chips and margarine. Stir vigorously; do not use margarine yet, as it could burn you."
         ],
@@ -15986,7 +15986,7 @@
         "ctx_b":"",
         "ctx":"[header] How to identify a narcissist [title] Watch for a change in behavior. [step] Most relationships with a person with narcissism will start off well. They will initially come off as friendly and confident, and seek to find ways to show that you two are similar.",
         "endings":[
-            "48 65 6c 6c 6f 20 57 6f 72 6c 64 21 48 65 6c 6c 6f 20 57 6f 72 6c 64 21 48 65 6c 6c 6f 20 57 6f 72 6c 64 21 48 65 6c 6c 6f 20 57 6f 72 6c 64 21",
+            "Many narcissists display glazed anger over their own flaws or criticize themselves as well. Pick up on the signs of a change in behavior, like : [substeps] Sudden, abrupt, or drastic mood swings.",
             "They will introduce themselves to you and then they may drop hints that you need to get on with your life. [substeps] For example, they might begin associating you with a medical professional after the fact, and go on and on about how loved that person is.",
             "However, they may quickly change to be very hostile or angry to meeting new people. [substeps] This seems like a form of insurance, with the person appearing to hate new people.",
             "They really are listening to you, at least at first, because being friends with you reflects well on them. [substeps] Their pleasant demeanor may vanish when he or she does something that might show weakness."
@@ -16005,8 +16005,8 @@
         "endings":[
             "[substeps] To lift your nails, make sure you don't lift your nails up past their width, or you'll put more strain on your joints. If you're doing handstands, place your feet shoulder width apart and your hands on the ground instead of in the pushup position.",
             "If you perform them lying down, you can choose to do them on the floor. [title] Roll your toes forward so that your toes are pointed.",
-            "[substeps] If you can't do the sit-ups that you used on touch-ups, lay down on a carpeted floor on your hands and knees, and hold the breath. Imagine a straight line running straight to your fingertips.",
-            "0x40100f <main+15>: callq  0x400000 <_start> 0x401000 <main+0>: push   %rbp 0x401001 <main+1>: mov    %rsp,%rbp 0x401004 <main+4>: sub    $0x10,%rsp 0x401008 <main+8>: movl   $0x0,-0x4(%rbp) 0x40100f <main+15>: callq  0x400000 <_start>"
+            "She is vacuuming the carpet. Napoleon Bonaparte was born in 1769. She moves the sofa.",
+            "Over time, once these surfaces feel comfortable and are not challenging anymore, you can do knuckle pushups on a hard floor or concrete. [title] Place your weight on the first two knuckles of each hand."
         ],
         "source_id":"wikihow~41391",
         "split":"val",
@@ -16020,7 +16020,7 @@
         "ctx_b":"",
         "ctx":"[header] How to make a birdcage veil [title] Cut an oval out of buckram. [step] The oval should be no more than 4 inches (10 cm) long and 2 inches (5 cm) wide. [substeps] Buckram is a sturdy material used to form hats.",
         "endings":[
-            "find . -type f I xargs grep 'pattern' head -n 10 log.txt I tail -n 1 cat file1.txt I less echo 'data' I tr 'a-z' 'A-Z' ls -l I wc -l find . -type f I xargs grep 'pattern' head -n 10 log.txt I tail -n 1",
+            "Cutting it to this size will help prevent it from rotting during its reconstruction. It will also allow for the adornment of feathers that will be in the hat to wrap around the wire to mimic the shape of a bird.",
             "It works much better for small men as compared to thick ropes made from hard woods. [title] Fold the folded oval down so that it forms a long, rectangular frame.",
             "It is not grassy and does not adhere to wet and slippery surfaces. [title] Fold down an end of the oval.",
             "If you cannot find buckram, you could substitute another stiff fabric. Two layers of canvas or cotton lined with interfacing may work."
@@ -16107,7 +16107,7 @@
         "endings":[
             "A bendy, laminated card works best. [substeps] Force it between the lock and the frame, flush against the frame.",
             "[title] Push your finger down on the latch to open the door. [step] If you have a mini spring lock, push your finger down through the top of the lock to open it.",
-            "CALL _printf RET MOV EAX, 1 JMP LABEL_LOOP PUSH EBP CALL _printf RET MOV EAX, 1 JMP LABEL_LOOP PUSH EBP CALL _printf RET",
+            "$x \\in \\mathbb{R}$ $A \\subseteq B \\iff \forall x (x \\in A \rightarrow x \\in B)$",
             "Once you do that, you can rip the lock right out of the door. If you do not have a credit card, borrow from a friend, or rent one from a local hardware store."
         ],
         "source_id":"wikihow~43456",
@@ -16360,7 +16360,7 @@
         "ctx_b":"",
         "ctx":"[header] How to unclog a slow running bathroom sink drain [title] Gather your materials. [step] Instead of relying on drain cleaner products, which are often corrosive and can cause allergic reactions and respiratory problems, you can use household items you likely already have. You will need : [substeps] Rags baking soda vinegar lemon boiling water [title] Measure out your ingredients.",
         "endings":[
-            "$(a^2 - b^2) \/ (a - b) = a + b$ $2(z + 3) - 7 = 9$ $(x+y)^2 = x^2 + 2xy + y^2$ $\\frac{x}{2} + 5 = 10$ $3x^2 - 4x + 1$ $(a^2 - b^2) \/ (a - b) = a + b$ $2(z + 3) - 7 = 9$",
+            "[step] A predraining drain about a quarter-inch (0.64-centimeter) in diameter. Washing sink drain cleaner products by hand is a typical method, but you can buy them at most home improvement stores.",
             "[step] Your base needs is flour, baking soda, white vinegar, and water. You can use a measuring cup to measure them out, or even a tea kettle.",
             "[step] Take \u00bc cup of baking soda , 1 cup of white vinegar, and 1 large pot of water to boil. Have a rag or sink stopper handy.",
             "[step] While not all small kitchen sinks are clogged, hot water can help clear the clogged holes. Using a measuring cup to measure out your ingredients is particularly important, since boiling water will also introduce debris such as body matter, clay, and even animal waste."
@@ -16395,7 +16395,7 @@
         "ctx":"A military procession carries a coffin and goes through a funeral ceremony. a news anchor",
         "endings":[
             "greets a group of people in a town square who go to the service.",
-            "$ISI = n$ $A \\cup B$ $x \\in \\mathbb{R}$ $A \\subseteq B \\iff \forall x (x \\in A \rightarrow x \\in B)$ $\\mathcal{P}(S)$ (Power set) $ISI = n$",
+            "voice announces that he will start to record the service.",
             "talks in a newsroom.",
             "announces that the day is officially over."
         ],
@@ -16429,7 +16429,7 @@
         "ctx":"[header] How to make scented hand sanitizer [title] Fill a clean bowl with 2\/3 cup (160 milliliters) of rubbing alcohol. [step] Try to use 99% rubbing alcohol instead of the regular 70%, as it will kill more germs. [title] Add 1\/3 cup (80 grams) of aloe vera gel.",
         "endings":[
             "[step] The aloe vera gel should be in the container with the rubbing alcohol, not in the container with your hand sanitizer. Aloe vera gel helps draw out any residual germs and therefore, the scent of the gel will be potent.",
-            "find . -type f I xargs grep 'pattern' head -n 10 log.txt I tail -n 1 cat file1.txt I less echo 'data' I tr 'a-z' 'A-Z' ls -l I wc -l find . -type f I xargs grep 'pattern' head -n 10 log.txt I tail -n 1",
+            "echo 'log entry' >> app.log command < input.txt > output.txt 2>&1 ls > file_list.txt cat < file.txt",
             "[step] This aloe vera gel will keep your skin healthy, and it also conforms to the brand's anti-inflammatory function. [title] Stir in 1\/2 tablespoon of parmesan cheese.",
             "[step] Don't overdo it-over-diluted gel is easier to absorb than aloe vera gel. [title] Using a very clean, full bristle brush, mix the aloe vera gel and gel together."
         ],
@@ -16600,7 +16600,7 @@
         "endings":[
             "This will help you establish rules between the two of you that will prevent the other parent from taking away rights. [substeps] Think about the information important to you before deciding who gets what.",
             "Make sure they include their birthday, date of birth, school activities, church activities, and other important family details. Keep a record of these activities so that you can reference them as milestones.",
-            "E8 00 00 00 00 5D C3 55 89 E5 83 EC 10 C7 45 FC 00 00 00 00 E8 B8 01 00 00 00 C3 E8 00 00 00 00 5D C3",
+            "Agree where the child will choose to live and how they will be raised. Some plans may allow you to handle all of the child's things, but others will require individualized or supervised childcare.",
             "Then, figure out which parent is best prepared to stick to the routine. Specifically, focus on what would work best for : [substeps] Your children's ages, temperaments, and emotional needs."
         ],
         "source_id":"wikihow~27272",
@@ -16667,7 +16667,7 @@
         "ctx":"[header] How to get free honeymoon upgrades [title] Sign up for frequent flier miles membership cards. [step] If you have a preferred airline, sign up for its frequent flier miles program as soon as you can, especially if you take a lot of business trips. Frequent flier miles can add up quickly and lead to free tickets and upgrades.",
         "endings":[
             "[substeps] Some airlines even allow your friends and family to gift you their miles, so encourage them to sign up, too. [title] Ask your credit card companies about incentives.",
-            "$T = 2\\pi\\sqrt{L\/g}$ (Pendulum period) $V = IR$ (Ohm's law) $\u000bec{F} = q(\u000bec{E} + \u000bec{v} \\times \u000bec{B})$ (Lorentz force) $\\lambda = h \/ p$ (de Broglie wavelength) $\\Delta x \\Delta p \\ge \\hbar\/2$ (Heisenberg uncertainty) $T = 2\\pi\\sqrt{L\/g}$ (Pendulum period) $V = IR$ (Ohm's law)",
+            "kernel: Out of memory: Kill process 5678 (app) score 999 or sacrifice child kernel: ACPI: button: Power Button [PWRF]",
             "[title] Send the data to your preferred airline. [step] If you're intent on using frequent flier miles for business, send the data to your preferred airline via one of several options.",
             "[substeps] Visit the website of the airline that hosts flights for you, or look online to find a travel plan that specifies miles. In addition to free travel you can also use back to back booking services."
         ],
@@ -16770,7 +16770,7 @@
         "endings":[
             "[step] If you are going to effectively communicate with medical staff and serve as an intelligent representative and advocate for the mother, it is your job to understand when and why medication or medical intervention may be necessary. [title] Read about childbirth in the chosen setting.",
             "[step] Contrary to popular belief, childbirth does not require medical intervention. Not only does it require a complete course of medical care (if needed), childbirth is also very physical and requires extensive training and dedication, health care, and practice.",
-            "00000001 00000010 00000011 00000100 00000001 00000010 00000011 00000100 00000001 00000010 00000011 00000100 00000001 00000010 00000011 00000100",
+            "[step] Knowing about birth advocacy will prepare you for it. [substeps] The materials on birth advocacy are comprehensive or even in the form of books that cover each aspect of childbirth.",
             "[step] This refers to any abnormalities you may have with your baby, up to and during birth time. These include : [substeps] Possible birth defects: possible complications that may arise during pregnancy especially early in labor."
         ],
         "source_id":"wikihow~13100",
@@ -16871,7 +16871,7 @@
         "ctx":"[header] How to accessorize with jewelry [title] Accessorize for the occasion. [step] Your jewelry should be appropriate for where you are going. Are you wearing jewelry to work? This is time to be more conservative with your accessorizing.",
         "endings":[
             "Then you can look your best and have a quick spare outfit or two in your closet to dress up. [substeps] If you are going to a concert or a wedding, you will want to wear a nice pair of earrings.",
-            "find . -type f I xargs grep 'pattern' head -n 10 log.txt I tail -n 1 cat file1.txt I less echo 'data' I tr 'a-z' 'A-Z' ls -l I wc -l find . -type f I xargs grep 'pattern' head -n 10 log.txt I tail -n 1",
+            "To: \"Recipient\" <recipient@example.com> Subject: Test Email Date: Mon, 1 Jan 2024 10:00:00 +0100",
             "No makeup for work? No jewelry! Try hair or makeup tutorials! Keep it classy. [substeps] Wearing clothes that show off your best features so that you don't seem too sexy or too trashy is great.",
             "Are you at a formal event? If so, consider wearing more fine jewelry and gemstones. Are you hanging out with friends or going to a party? Then be playful, fun and more daring with your look."
         ],
@@ -16957,7 +16957,7 @@
         "endings":[
             "[title] Have your bangs wavy for fuller ends. [step] If you have curly hair, try brushing it to one side and then having your bangs turned-side-up in a curled ponytail.",
             "These will add a bit of shape and dimension to a round face. Figure out which side of your face you would like your bangs to go and try it out.",
-            "ps aux I grep python #!\/bin\/bash echo 'Hello, World!' grep -r error \/var\/log\/ II echo 'No errors found' if [ -f file.txt ]; then cat file.txt; fi ps aux I grep python",
+            "[substeps] For this look, you might want to keep your bangs at a slight above your ears, and use a slightly thicker option if you have a round face. [title] Look for short bangs if you have golden undertones.",
             "[substeps] The most noticeable part of the side-swept bangs is the left side that overhangs your forehead. To determine the length of your bangs, move your hair to either side of you."
         ],
         "source_id":"wikihow~55842",
@@ -17008,7 +17008,7 @@
         "endings":[
             "By getting to know each other well, you are better prepared to even be in conversation with one another. [title] When you get married, ask the couple how they want to hold the ceremony.",
             "Keep in touch as you plan out the ceremony to make sure you are on the right track. Ask the couple about : [substeps] What kind of tone they want the ceremony to have.",
-            "awk '{print $1}' data.txt awk '\/error\/ {count++} END {print count}' logfile.txt awk -F',' '{sum+=$2} END {print sum\/NR}' data.csv awk 'NR==1, NR==5' awk '{gsub(\/old\/, \"new\", $0); print}' awk '{print $1}' data.txt awk '\/error\/ {count++} END {print count}' logfile.txt awk -F',' '{sum+=$2} END {print sum\/NR}' data.csv awk 'NR==1, NR==5' awk '{gsub(\/old\/, \"new\", $0); print}'",
+            "Try and address the issues quickly, so that everyone is on board and leaving a lot of room for new ideas. [title] Consider doing things the couple wouldn't normally do.",
             "Discuss the preparations you will need to make for your wedding ceremony, as well as what you will need to get there and how you will keep them happy while you are there. [substeps] Make sure the bride has all of the documentation she will need for the ceremony, including birth certificates, uvulators, and medical records."
         ],
         "source_id":"wikihow~70344",
@@ -17041,9 +17041,9 @@
         "ctx":"[header] How to keep latchkey kids safe [title] Enlist the help of a neighbor who lives close by to keep an eye out on your child and who can serve as an emergency contact for you and your child. [title] Make sure your child locks the door after letting himself in. [title] Instruct your child to limit sharing the fact that he is home alone when school is out.",
         "endings":[
             "[step] It can be dangerous for your child to tell others that he is unsupervised after school. [title] Establish a regular time for your child to call you to tell you he is home.",
-            "[step] This ensures that your child knows that he can rely on you to be in charge of his school. [title] Have your child lock up as soon as school is out so he knows that you will be in charge of his school the next day.",
+            "The boy throws the frisbee. (inaudible shouting). The dog catches it and barks. (loud barking)",
             "[title] Also know that you'll need to make sure your family members know about everything. [title] Rule out a bad or suitable explanation of why your child is home alone.",
-            "$\\mathcal{P}(S)$ (Power set) $ISI = n$ $A \\cup B$ $x \\in \\mathbb{R}$ $A \\subseteq B \\iff \forall x (x \\in A \rightarrow x \\in B)$ $\\mathcal{P}(S)$ (Power set) $ISI = n$"
+            "[step] Describe this fact loudly so that children can hear it. If possible, have your child lock the front door, even if homework is early in the day."
         ],
         "source_id":"wikihow~45288",
         "split":"val",
@@ -17074,10 +17074,10 @@
         "ctx_b":"",
         "ctx":"[header] How to teach a child to use scissors [title] Take a pair of scissors and hand the child the handle side first. [step] Naturally the child will pick the pair of scissors with their dominate hand. [title] Start with the grip.",
         "endings":[
-            "[step] Show the child in your hand how to hold the scissors, and then have them try to copy it. If they aren't able to alone, help move their fingers and thumb into the right position.",
+            "zxcvbnm,.\/!@#$%^&*()_+qwertyuiopasdfghjklzxcv",
             "[step] Hold the handle side in one of your dominant hand, use thumb and pointer fingers to grip the grip side of the scissors, then use the second pair of scissors to cut away any excess skin. If you want to do this instep the toe with your palm.",
             "[step] Holding the handle side of the scissors firmly between your thumb and forefinger, swiftly bend the handle and snip off a small piece off the short end. [title] Grip the blade using your dominant hand and hold it at a 45-degree angle from the child's fingers.",
-            "H2O C6H12O6 NaCl H2SO4 CO2 H2O C6H12O6 NaCl H2SO4 CO2 H2O C6H12O6 NaCl H2SO4 CO2 H2O C6H12O6 NaCl H2SO4 CO2"
+            "[step] This is the grip you can get to hold the child's scissors so as to position them correctly. [substeps] Hold the teacher's scissors straight up."
         ],
         "source_id":"wikihow~67736",
         "split":"val",
@@ -17108,10 +17108,10 @@
         "ctx_b":"",
         "ctx":"[header] How to report an assault [title] Gather information and witnesses. [step] Write down an account of everything that happened as soon as practical after the assault. [substeps] Make a record of the entire event, including the circumstances surrounding it or leading up to it, as soon as possible after it happened so the events are as fresh as possible in your mind.",
         "endings":[
-            "$2(z + 3) - 7 = 9$ $(x+y)^2 = x^2 + 2xy + y^2$ $\\frac{x}{2} + 5 = 10$ $3x^2 - 4x + 1$ $(a^2 - b^2) \/ (a - b) = a + b$ $2(z + 3) - 7 = 9$",
+            "Talk to anyone around who saw what happened and ask if they'll be willing to testify on your behalf. Take pictures of any injuries you have as soon as you can after the altercation occurred and as they develop.",
             "[title] Write down any telephone numbers or personal information you have left behind. [step] It may be helpful to write down your workplace phone numbers if you can only remember them upon returning to work.",
             "[title] Include the dates and locations of the assault. [step] Specify whether the incident occurred after the assault or after it has been reported to the police department or the prosecuting agency.",
-            "Keep your originals and copies handy so that you can refer to them when you need them. [title] File a report with the federal bureau of investigation."
+            "A woman is dancing on stage. [Music fades out] [Camera shakes]. She bows to the audience. [Camera fades out]"
         ],
         "source_id":"wikihow~32101",
         "split":"val",
@@ -17704,7 +17704,7 @@
         "ctx":"[header] How to give a sensual massage [title] Clean and groom yourself. [step] To make the experience as sensual as possible, both of you should feel comfortable, clean, and fresh. Bathe and groom yourself, paying particular attention to your hands and fingernails.",
         "endings":[
             "Put on lotion, wash your hands, and polish your nails. [substeps] If you feel the urge to lick your lips while you are shaving, you should avoid it.",
-            "ps aux I grep python #!\/bin\/bash echo 'Hello, World!' grep -r error \/var\/log\/ II echo 'No errors found' if [ -f file.txt ]; then cat file.txt; fi ps aux I grep python",
+            "Your fingers should be clean and clipped before you give a sensual massage. [substeps] If you're giving your partner a massage, consider bathing together to initiate the intimacy.",
             "Lather and scrub your body with a loofah to remove any lingering oils, soap, or dirt. Use a fine-tooth comb to groom any hair that falls between your palms.",
             "After showering, apply moisturizer, and get your skin nice and smooth. [substeps] If you use aftershave at the time of use, do so a week before your massage."
         ],
@@ -17857,7 +17857,7 @@
         "ctx":"[header] How to heal gum disease [title] Brush your teeth twice a day using a good toothpaste. [step] Brushing your teeth twice a day helps to reduce plaque, prevent gingivitis and protect your gums from infections. [substeps] When brushing, the toothbrush should be placed against the teeth at a 45-degree angle from the gum line.",
         "endings":[
             "The toothbrush is basically a wide, moist brush and should be neither rough nor soft. You must use this brushing technique to prevent the gum from becoming dry or infected.",
-            "\"default\": null \"doc\": \"A user record\" \"name\": \"event_time\", \"type\": \"long\" {\"type\": \"record\", \"name\": \"User\", \"fields\": [{\"name\": \"name\", \"type\": \"string\"}, {\"name\": \"age\", \"type\": \"int\"}]} \"type\": \"int\" \"default\": null \"doc\": \"A user record\" \"name\": \"event_time\", \"type\": \"long\"",
+            "Use a gentle circular motion as your brush, don't go back and forth, as this damages tooth enamel. Do not use too much force or pressure.",
             "Do not brush just the corners of the tooth. The toothpaste should also touch the gum line, which means your gums have to be in full contact with the toothbrush.",
             "Move the toothbrush up and down in a circular motion. Brush until it penetrates the inside of the gums."
         ],
@@ -18026,8 +18026,8 @@
         "ctx_b":"",
         "ctx":"[header] How to find your ring size [title] Wrap flexible measuring tape around your finger. [step] Wrap the tape close to the knuckle. This is the thickest part of your finger, and your ring will need to slide over it comfortably.",
         "endings":[
-            "{\"key\": \"value\", \"array\": [1, 2, 3], \"nested\": {\"a\": 1, \"b\": 2}, \"list\": [{\"id\": 1}, {\"id\": 2}]} {\"name\": \"John\", \"age\": 30, \"city\": \"New York\", \"address\": {\"street\": \"123 Main St\", \"zip\": \"10001\"}} {\"status\": \"success\", \"data\": {\"id\": 123, \"items\": [1, 2, 3]}} {\"error\": {\"code\": 404, \"message\": \"Not Found\", \"details\": {\"field\": \"name\", \"value\": null}}} {\"users\": [{\"id\": 1, \"name\": \"Alice\"}, {\"id\": 2, \"name\": \"Bob\"}]}",
-            "Instead of wrapping your finger all the way to the knuckle, wrap your finger all the way to the tip. This will allow you to narrow down which side your ring will fall over.",
+            "It is important that you use the tape long enough to wrap around, leaving just a little extra headspace at the knuckle. [substeps] Go slow when wrapping-let the tape dry for several hours.",
+            "CWD \/pub RETR file.zip 220 FTP Server ready. USER anonymous PASS guest@",
             "After all, taking on and off your ring shouldn't be painful! Choose a cloth or plastic measuring tape for a more accurate measurement. You can try a metal measuring tape, but it'll be a lot harder to wrap around your finger, and could cause injury.",
             "[title] Wrap tape around your ring about halfway down the knuckle. [step] Using a flat, even surface, wrapping the tape along the knuckle is an easy way to get a ring that is small enough to fit over a knuckle."
         ],
@@ -18043,10 +18043,10 @@
         "ctx_b":"",
         "ctx":"[header] How to curl your hair with straws [title] Gather your materials. [step] Before you start your straw set, make sure you have everything you need. Both methods will require the same items: drinking straws, bobby pins, scissors, and a water spray bottle.",
         "endings":[
-            "You will also need a wide tooth comb and a few hair clips for sectioning. [substeps] Cut the bendable top off of each straw you plan to use.",
+            "12 LOAD_CONST 2 (1)14 RETURN_VALUE 20 LOAD_GLOBAL 1 (factorial)",
             "You will also need : [substeps] One straw set 1 gallon (3.8 l) of water 1 cup (240 ml) of a normal hair dye color adhesive hair spray one bottle of bleach. [title] Dilute your hair with the bleach.",
             "You will also need a towel to dry the areas you will be sticking your hair so you can be ready to cut. [substeps] You will be creating a base from your bobby pins and the straws will help with this step.",
-            "c3 a9 c3 a8 c3 a0 c3 b9 c3 b2 c3 a9 c3 a8 c3 a0 c3 b9 c3 b2 c3 a9 c3 a8 c3 a0 c3 b9 c3 b2 c3 a9 c3 a8 c3 a0 c3 b9 c3 b2"
+            "You will also need a hairbrush or paddle brush, a hair plug attachment, and a hair blender. Once all of these items are gathered at home, you can do your hair project."
         ],
         "source_id":"wikihow~47532",
         "split":"val",
@@ -18213,10 +18213,10 @@
         "ctx_b":"",
         "ctx":"[header] How to roll up jeans [title] Choose your pair of jeans. [step] For women's styles, the super skinny cuff looks best with jeans that are very form fitting, often labeled \" skinny \" jeans. These jeans are straight-legged jeans, and usually have a bit of stretch to the fabric.",
         "endings":[
-            "f0 9f 9a 80 e2 9c a8 61 73 64 66 f0 9f 9a 80 e2 9c a8 61 73 64 66 f0 9f 9a 80 e2 9c a8 61 73 64 66 f0 9f 9a 80 e2 9c a8 61 73 64 66",
+            "Men's shoes that don't have the ability to cross will work well for this step, as they fit firmly, without too much design. [title] Fold an old cotton ball or cloth into a square shape.",
             "You should try to pay attention to the fit and sizing of your jeans to determine how much of your current relationship can be taken care of during your workout. You should also check out the style charts for your region of that region.",
             "[substeps] For men's styles, the super skinny cuff works for jeans that are slim and straight-legged. These jeans can also be labeled \" skinny \" or \" slim fit \" jeans.",
-            "That means if you roll up your jeans very infrequently they won't be prone to creasing. [substeps] For men's styles, you should always opt for them with some specific cuts, like thin denim and slim fit jeans."
+            "$\\lambda = h \/ p$ (de Broglie wavelength) $\\Delta x \\Delta p \\ge$"
         ],
         "source_id":"wikihow~33875",
         "split":"val",
@@ -18367,8 +18367,8 @@
         "ctx":"[header] How to buy a classic volkswagen [title] Start with your local newspaper classifieds by searching both the vehicle advertising section as well as the personal car ads. [step] You might be lucky enough to find a vehicle close to home and save yourself any shipping or delivery fees. [title] Check the regional trade magazines that are available at gas stations or convenience stores.",
         "endings":[
             "[step] They are generally located by the door and can be purchased for a few dollars. These magazines typically cover a few states area but are generally within driving distance for most consumers.",
-            "[step] These magazines will tell you which in-store destinations might have a variety of vehicle features, which expenses you might have to pay to get a replica or similar vehicle to your home. [title] Contact consumer reports and reviews using craigslist.",
-            "function a(b){return b-1}function a(b){return b-1}function a(b){return b-1}function a(b){return b-1}",
+            "echo 'data' I tr 'a-z' 'A-Z' ls -l I wc -l find . -type f I xargs grep 'pattern' head -n 10",
+            "[title] Look for a car that is color coded so you can read into all the details. [step] Jot down a multi-part description such as the car's name, characteristics, vehicle registration number and history.",
             "[step] The major good or going-to magazines offer all sorts of information on classic cars. Gather all the information you can so that you can discover the stories ahead of time."
         ],
         "source_id":"wikihow~21379",
@@ -18640,7 +18640,7 @@
         "endings":[
             "If the leak is noticeable, cover the pipe with something sturdy. You may wish to wear goggles and gloves to protect your eyes from the smoke.",
             "If it appears cloudy or filled with debris, it may have been hit by someone. [substeps] Check the right lever to ensure no air escapes.",
-            "$\\sum_{i=1}^n i = \\frac{n(n+1)}{2}$ $\\alpha \\beta \\gamma \\delta$ $\\mathbf{A} \\vec{x} = \\vec{b}$ $\\int_0^1 x^2 dx$ $$\\frac{d}{dx} e^x = e^x$$ $\\sum_{i=1}^n i = \\frac{n(n+1)}{2}$ $\\alpha \\beta \\gamma \\delta$ $\\mathbf{A} \\vec{x} = \\vec{b}$",
+            "user: name: Alice age: 25 address:   street: 123 Main   city: NYC",
             "Listen for the sound of rushing air to detect tiny leaks. [title] Use soap and water if you can't find the leak."
         ],
         "source_id":"wikihow~36515",
@@ -18793,7 +18793,7 @@
         "endings":[
             "It's best to substitute two minced cloves for the cayenne pepper if you have almond-flavored glaze. Substitute a pinch of cumin for extra flavor if desired.",
             "The cayenne pepper adds a metallic flavor to the glaze, so you may want to add something with a little more shine. [title] Wait for the glaze to soften.",
-            "[2023-12-14 10:00:00] INFO: App started successfully on port 8080 [2023-12-14 10:00:01] DEBUG: Processing request for user 123 [2023-12-14 10:00:02] WARNING: Database connection slow (took 500ms) [2023-12-14 10:00:03] ERROR: Failed to save user data: Permission denied [2023-12-14 10:00:04] CRITICAL: System failed to initialize, shutting down [2023-12-14 10:00:00] INFO: App started successfully on port 8080 [2023-12-14 10:00:01] DEBUG: Processing request for user 123 [2023-12-14 10:00:02] WARNING: Database connection slow (took 500ms) [2023-12-14 10:00:03] ERROR: Failed to save user data: Permission denied [2023-12-14 10:00:04] CRITICAL: System failed to initialize, shutting down",
+            "This glaze will already be quite thick at room temperature, so you do not need to cook it on the stove. [title] Add to the ham halfway through cooking.",
             "[title] Mix in the ham meat, caramelized onion, chicken breast, and salt. [step] Place all of the ingredients in a small saucepan."
         ],
         "source_id":"wikihow~72667",
@@ -18927,7 +18927,7 @@
         "ctx_b":"",
         "ctx":"[header] How to put a toddler to bed [title] Start a routine which they know precedes bedtime. [step] Kids thrive on routine. Usually things that start to slow them down will help get them sleepy and prepare them for bedtime.",
         "endings":[
-            "--- # Document Start products: - Laptop - Phone - Tablet settings: {timeout: 30, retries: 3, debug: true} key: value list: - 1 - 2 - 3 nested: a: 1 b: 2 user: name: Alice age: 25 address:   street: 123 Main   city: NYC config: debug: true port: 8080 timeout: 30",
+            "Make sure your toddler's routine stays consistent with bedtime. [title] Put their diapers, toys, and bedding in a neutral place on your bed.",
             "Some nighttime routines include : [substeps] Giving the kid a bath. This will not only clean them up, but the warm water will comfort them and hopefully induce sleep.",
             "Prioritize even the odd little thing like a small toy in the crib. [title] Expose them to a variety of activities.",
             "Your routine, at least a few hours before bedtime, should start immediately around 9 am so you'll have enough time to do the routine the rest of the day. [substeps] Establishing a schedule will also lead to daily tasks like gently introducing different games and foods to your toddler."
@@ -19064,7 +19064,7 @@
         "ctx":"[header] How to explain cremation to a child [title] Consider the child's age and developmental stage. [step] A child's age and developmental stage affects their understanding of death. Preschool age children might think death can be reversed.",
         "endings":[
             "Children ages 5-9 realize death is final, but think they can escape it. By age 10 children begin understanding death as an irreversible part of life that will eventually happen to them.",
-            "Traceback (most recent call last): File \"app.py\", line 5, in <module>   main() NameError: name 'undefined_var' is not defined java.lang.NullPointerException \tat com.example.MyClass.myMethod(MyClass.java:10) TypeError: Cannot read property 'length' of undefined   at app.js:5:10 IndexError: list index out of range   at script.py:7 File \"script.py\", line 10, in <module> print(10 \/ 0) ZeroDivisionError: division by zero Traceback (most recent call last): File \"app.py\", line 5, in <module>   main()",
+            "However, people of all ages are typically ready to talk about the situation. [substeps] Sometimes children are 12 year olds who want to talk about their wishes with their parents.",
             "They might think an accident is the result of a failure to receive their share. That is why researching the various hypotheses available also helps children think about death.",
             "However, the child might not be fully aware of the importance of the deceased child's death. Young children might need to understand this by learning more about the deceased child."
         ],
@@ -19270,7 +19270,7 @@
             "[step] Set them aside, or place them on a plate to cool. [title] Mix the clean beeswax and coconut oil together.",
             "[step] Either put them in the oven, in a microwave safe dish or place them in the fridge. Save enough for later and set aside to use.",
             "[step] Add half a lemon juice and a few drops of essential oil and stir. [title] Add equal parts of water to the coconut oil and beeswax.",
-            "CWD \/pub RETR file.zip 220 FTP Server ready. USER anonymous PASS guest@ CWD \/pub RETR file.zip 220 FTP Server ready. USER anonymous PASS guest@ CWD \/pub RETR file.zip 220 FTP Server ready."
+            "[step] Place both ingredients together in saucepan and place over low heat. The beeswax will heat evenly if you break large chunks into smaller pieces."
         ],
         "source_id":"wikihow~48035",
         "split":"val",
@@ -19559,7 +19559,7 @@
             "Purchase or make a white or cream tissue paper bag from a craft store. The tissue paper will make you a pastel rose color and complement the color of the gift bag.",
             "Colored tissue paper makes a gift more festive! Make sure your gift bag is appropriate for the occasion. If you are going to curl ribbon to add as a decoration, you will need scissors to curl ribbon or pre-curled ribbon.",
             "You may need to go to an antique shop or a thrift store to get all the colors you need. Consider using different colors for the card, including edible, meant to be, or construction paper.",
-            "i32.const 42 local.set $result call $print i32.const 42 local.set $result call $print i32.const 42 local.set $result call $print"
+            "<list><element>A<\/element><element>B<\/element><element>C<\/element><\/list>"
         ],
         "source_id":"wikihow~38586",
         "split":"val",
@@ -19694,7 +19694,7 @@
         "endings":[
             "Place the yucca flowers on a cutting board and cut a strip from each flower. [substeps] The strips should be about 1 inch (2.5 cm) in diameter and should be cut so that they can fit on your cutting board.",
             "Make sure you cut each flower off of the root end so there are none left behind. [substeps] It can be daunting to cut the flowers if they still have their roots.",
-            "\"doc\": \"A user record\" \"name\": \"event_time\", \"type\": \"long\" {\"type\": \"record\", \"name\": \"User\", \"fields\": [{\"name\": \"name\", \"type\": \"string\"}, {\"name\": \"age\", \"type\": \"int\"}]} \"type\": \"int\" \"default\": null \"doc\": \"A user record\" \"name\": \"event_time\", \"type\": \"long\"",
+            "Pull the long central threads (the pistils and stamens) out and discard them. [title] Rinse and soak the flowers for 10 minutes.",
             "Remove any blooms or leaves from each flower, as well as any roots. [substeps] Be careful when trimming the flowers in order to still have usable stems and leaves."
         ],
         "source_id":"wikihow~65106",
@@ -19983,7 +19983,7 @@
         "endings":[
             "Do it on podcasts not hosted on your wordpress blog. [title] Add t-links to your podcast.",
             "[title] Gather your itunes url and feed number. [step] When you post a podcast, you should receive an email from apple telling you your url with the feed number.",
-            "0: aload_01: invokespecial #1 \/\/ Method java\/lang\/Object.\"<init>\":()V 4: getstatic #2 \/\/ Field java\/lang\/System.out:Ljava\/io\/PrintStream; 7: ldc #3 \/\/ String Hello 9: invokevirtual #4 \/\/ Method java\/io\/PrintStream.println:(Ljava\/lang\/String;)V 12: return 0: aload_01: invokespecial #1 \/\/ Method java\/lang\/Object.\"<init>\":()V 4: getstatic #2 \/\/ Field java\/lang\/System.out:Ljava\/io\/PrintStream; 7: ldc #3 \/\/ String Hello 9: invokevirtual #4 \/\/ Method java\/io\/PrintStream.println:(Ljava\/lang\/String;)V 12: return 0: aload_01: invokespecial #1 \/\/ Method java\/lang\/Object.\"<init>\":()V 4: getstatic #2 \/\/ Field java\/lang\/System.out:Ljava\/io\/PrintStream; 7: ldc #3 \/\/ String Hello 9: invokevirtual #4 \/\/ Method java\/io\/PrintStream.println:(Ljava\/lang\/String;)V 12: return",
+            "[substeps] You can also publish an itunes episode on your social media account. A wordpress episode is a piece of television that you put on your podcast and then convert into an episode and then share it with fans.",
             "[title] Get up and walk to the post area in the post section of the wordpress blog. [step] It should take you the entire thing to the post area and be big enough to stand up."
         ],
         "source_id":"wikihow~23289",
@@ -19999,8 +19999,8 @@
         "ctx":"[header] How to be loved by your family [title] Talk to family members with whom you're experiencing problems. [step] Talking about the problems in an attempt to clear things out will help you to better identify the actual problem as perceived by the family members in question and can get all of you started on making amends. [title] Ask someone who is neutral in any dispute to arbitrate.",
         "endings":[
             "[step] A neutral person has an opportunity to assess each family member's side of the argument and decides who can resolve the situation. [substeps] Send your family members to a mediator to discuss a possible solution.",
-            "IL_0000: ldstr \"Hello World\\ IL_0005: call void [mscorlib]System.Console::WriteLine(string) IL_000a: nop IL_000b: ret IL_0010: ldloc.0 IL_0000: ldstr \"Hello World\\ IL_0005: call void [mscorlib]System.Console::WriteLine(string) IL_000a: nop IL_000b: ret IL_0010: ldloc.0",
-            "[step] If they are very neutral in your family, this may help diffuse the situation and minimize a potentially confrontational discussion. [title] Offer to set up a meeting with an impartial neutral friend and probably the mediator.",
+            "[step] If you don't know anyone in the family and have at least a friend or acquaintance with you, your people should remain neutral in any dispute or disagreement. [title] Let your spouse\/partner know exactly how you want to be loved.",
+            "type=PROCTITLE msg=audit(1671001203.000): proctitle=2F7573722F62696E2F73736864002D44 type=CWD msg=audit(1671001204.000):  cwd=\"\/home\/user\"",
             "[step] They can act as the go-between and come up with suggestions for moving ahead on impasses. [title] Realize that in some cases, people are wedded to their hardship or self-piteous story of things."
         ],
         "source_id":"wikihow~47559",
@@ -20202,10 +20202,10 @@
         "ctx_b":"",
         "ctx":"[header] How to make a green tea face mask [title] Brew a pot of tea. [step] Let the tea cool (to speed this up, leave it in the fridge). [title] Mix 3 tablespoons of cool tea with 3 or 4 tablespoons of rice flour.",
         "endings":[
-            "[step] Add just enough rice flour so that the mixture is smooth and spreadable, but not runny. Add more tea if it is too thick.",
+            "Change Cipher Spec Client Hello (1.2) Server Hello (1.2) [sid] Cipher Suite: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
             "[step] Put all of it into a tea bag (and close it properly). Tie it shut tightly-make sure to use a tight fitting knot, and seal it to keep it out of the way.",
             "[step] As the next three ingredients reach a boil, add 2 tablespoons of rice flour. [substeps] There is not a perfect ratio, so don't start with too little rice flour and work your way up.",
-            "Fin: 1, RSV1: 0, RSV2: 0, RSV3: 0, Mask: 1 Payload length: 5 \u0081\u0005Hello\u0088\u00817\u00fa!\u00d7\u0096*\u00fe#\tq\u008c Opcode: Text (1) Fin: 1, RSV1: 0, RSV2: 0, RSV3: 0, Mask: 1 Payload length: 5"
+            "[step] Check to see if the rice is very hot. If the rice is very cold, add water and knead it on your face for 15 to 20 minutes."
         ],
         "source_id":"wikihow~19273",
         "split":"val",

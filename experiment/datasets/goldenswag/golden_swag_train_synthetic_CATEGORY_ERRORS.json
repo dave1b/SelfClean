@@ -18,7 +18,7 @@
     },
     {
         "ind":43010,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Home and Garden",
         "ctx_a":"[header] How to jumbo braid [title] Attach a rubber band to the center of the hairpiece. [step] Spread your hairpiece across a flat surface. Place a rubber band at the center where the hair thins.",
         "ctx_b":"",
         "ctx":"[header] How to jumbo braid [title] Attach a rubber band to the center of the hairpiece. [step] Spread your hairpiece across a flat surface. Place a rubber band at the center where the hair thins.",
@@ -171,7 +171,7 @@
     },
     {
         "ind":22780,
-        "activity_label":"Having an ice cream",
+        "activity_label":"High jump",
         "ctx_a":"[header] How to choose makeup for your skin tone [title] Look at your skin in natural lighting to determine your overtone. [step] The overtone of your skin refers to the initial color you see and how dark or light that color is. Go somewhere with natural lighting and then look closely at your skin to determine your overtone accurately.",
         "ctx_b":"",
         "ctx":"[header] How to choose makeup for your skin tone [title] Look at your skin in natural lighting to determine your overtone. [step] The overtone of your skin refers to the initial color you see and how dark or light that color is. Go somewhere with natural lighting and then look closely at your skin to determine your overtone accurately.",
@@ -188,7 +188,7 @@
     },
     {
         "ind":20201,
-        "activity_label":"Relationships",
+        "activity_label":"Food and Entertaining",
         "ctx_a":"[header] How to make resurrection rolls [title] Pour the milk into a bowl. [step] To activate the yeast, you need to mix it with a warm liquid. Add \u00bd cup (118 ml) of warm milk to the bowl of a stand mixer.",
         "ctx_b":"",
         "ctx":"[header] How to make resurrection rolls [title] Pour the milk into a bowl. [step] To activate the yeast, you need to mix it with a warm liquid. Add \u00bd cup (118 ml) of warm milk to the bowl of a stand mixer.",
@@ -205,7 +205,7 @@
     },
     {
         "ind":4584,
-        "activity_label":"Family Life",
+        "activity_label":"Health",
         "ctx_a":"[header] How to find a symbolic baby name [title] Pick family names. [step] Naming your child after your grandparents, uncles, and aunts is a way to make that person live on in the next generation. It ties your child's name into the heritage of your family.",
         "ctx_b":"",
         "ctx":"[header] How to find a symbolic baby name [title] Pick family names. [step] Naming your child after your grandparents, uncles, and aunts is a way to make that person live on in the next generation. It ties your child's name into the heritage of your family.",
@@ -443,7 +443,7 @@
     },
     {
         "ind":23394,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Chopping wood",
         "ctx_a":"[header] How to style hair in five minutes [title] Tease the top of your hair with a comb. [step] Take a large chunk of your hair and run the comb through your hair several times without taking it out or off your hair. [title] Put your hair in a ponytail.",
         "ctx_b":"",
         "ctx":"[header] How to style hair in five minutes [title] Tease the top of your hair with a comb. [step] Take a large chunk of your hair and run the comb through your hair several times without taking it out or off your hair. [title] Put your hair in a ponytail.",
@@ -477,7 +477,7 @@
     },
     {
         "ind":33713,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Horseback riding",
         "ctx_a":"[header] How to get beautiful hands [title] Keep products on your bathroom counter. [step] Keeping moisturizers and hand creams on your bathroom counter can be the first step to maintaining your hands. Hopefully, this step will remind you to apply your products on a regular basis.",
         "ctx_b":"",
         "ctx":"[header] How to get beautiful hands [title] Keep products on your bathroom counter. [step] Keeping moisturizers and hand creams on your bathroom counter can be the first step to maintaining your hands. Hopefully, this step will remind you to apply your products on a regular basis.",
@@ -545,7 +545,7 @@
     },
     {
         "ind":32920,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Education and Communications",
         "ctx_a":"[header] How to shrink leather shoes [title] Be cautious when using this method. [step] Water has the potential to damage leather, and if you use too much your shoe may become stiff, stained, or cracked. Optionally, you may apply a leather guard or leather protector solution to the surface you plan on treating, but this may make the shoe more resistant to water treatment.",
         "ctx_b":"",
         "ctx":"[header] How to shrink leather shoes [title] Be cautious when using this method. [step] Water has the potential to damage leather, and if you use too much your shoe may become stiff, stained, or cracked. Optionally, you may apply a leather guard or leather protector solution to the surface you plan on treating, but this may make the shoe more resistant to water treatment.",
@@ -630,7 +630,7 @@
     },
     {
         "ind":47302,
-        "activity_label":"Travel",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to remove splat hair color [title] Crush 6 vitamin c tablets into a fine powder. [step] Put the tablets into a plastic bag, then seal the bag and place it on a cutting board. Use a rolling pin or hammer to crush the tablets into a powder consistency.",
         "ctx_b":"",
         "ctx":"[header] How to remove splat hair color [title] Crush 6 vitamin c tablets into a fine powder. [step] Put the tablets into a plastic bag, then seal the bag and place it on a cutting board. Use a rolling pin or hammer to crush the tablets into a powder consistency.",
@@ -817,7 +817,7 @@
     },
     {
         "ind":19267,
-        "activity_label":"Rock climbing",
+        "activity_label":"Work World",
         "ctx_a":"A man in a green t-shirt talks to the camera while standing next to a rock climbing wall interspersed with still shots of the wall and the wall elements (ropes, labels).",
         "ctx_b":"a man",
         "ctx":"A man in a green t-shirt talks to the camera while standing next to a rock climbing wall interspersed with still shots of the wall and the wall elements (ropes, labels). a man",
@@ -851,7 +851,7 @@
     },
     {
         "ind":29844,
-        "activity_label":"Washing face",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to take care of your skin after using a tanning bed [title] Consider skipping a shower. [step] It's not because you need to worry about \" washing away \" your tan. The melanin production stimulated by uva light won't be stopped by a shower.",
         "ctx_b":"",
         "ctx":"[header] How to take care of your skin after using a tanning bed [title] Consider skipping a shower. [step] It's not because you need to worry about \" washing away \" your tan. The melanin production stimulated by uva light won't be stopped by a shower.",
@@ -919,7 +919,7 @@
     },
     {
         "ind":11789,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Layup drill in basketball",
         "ctx_a":"[header] How to smell good [title] Bathe regularly. [step] On average, you should take a shower every one to two days. Even if you are unable to smell an unpleasant odor on your skin by the end of day two, you should still wash up.",
         "ctx_b":"",
         "ctx":"[header] How to smell good [title] Bathe regularly. [step] On average, you should take a shower every one to two days. Even if you are unable to smell an unpleasant odor on your skin by the end of day two, you should still wash up.",
@@ -936,7 +936,7 @@
     },
     {
         "ind":43787,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Computers and Electronics",
         "ctx_a":"[header] How to remove nail polish from around the nails [title] Have a brush ready. [step] A new, clean eyeshadow brush or an old nail polish brush that you've cleaned and sanitized will work perfectly for this. In order to clean a nail polish brush, swirl it around in 2 or 3 drops of nail polish thinner on a plastic plate.",
         "ctx_b":"",
         "ctx":"[header] How to remove nail polish from around the nails [title] Have a brush ready. [step] A new, clean eyeshadow brush or an old nail polish brush that you've cleaned and sanitized will work perfectly for this. In order to clean a nail polish brush, swirl it around in 2 or 3 drops of nail polish thinner on a plastic plate.",
@@ -1072,7 +1072,7 @@
     },
     {
         "ind":36928,
-        "activity_label":"Family Life",
+        "activity_label":"Relationships",
         "ctx_a":"[header] How to plan a brunch wedding [title] Create and follow a per-person budget. [step] Talk with your fianc\u00e9e and consider your finances when making this decision. Estimate how much you can afford to reasonably spend on the entire wedding and reception.",
         "ctx_b":"",
         "ctx":"[header] How to plan a brunch wedding [title] Create and follow a per-person budget. [step] Talk with your fianc\u00e9e and consider your finances when making this decision. Estimate how much you can afford to reasonably spend on the entire wedding and reception.",
@@ -1106,7 +1106,7 @@
     },
     {
         "ind":46372,
-        "activity_label":"Ice fishing",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to dye hair two colors [title] Separate your hair. [step] Brush or comb your hair into two loose pigtails. This will make it easier to wrap in foil after you apply the bleach and the dye.",
         "ctx_b":"",
         "ctx":"[header] How to dye hair two colors [title] Separate your hair. [step] Brush or comb your hair into two loose pigtails. This will make it easier to wrap in foil after you apply the bleach and the dye.",
@@ -1208,7 +1208,7 @@
     },
     {
         "ind":43317,
-        "activity_label":"Rollerblading",
+        "activity_label":"Education and Communications",
         "ctx_a":"[header] How to choose a preschool phonics program [title] Understand the basics of phonics. [step] Before you choose a specific phonics program, review the basics of phonics, including terminology. Teaching preschoolers phonics begins with the alphabet.",
         "ctx_b":"",
         "ctx":"[header] How to choose a preschool phonics program [title] Understand the basics of phonics. [step] Before you choose a specific phonics program, review the basics of phonics, including terminology. Teaching preschoolers phonics begins with the alphabet.",
@@ -1242,7 +1242,7 @@
     },
     {
         "ind":35466,
-        "activity_label":"Health",
+        "activity_label":"Pets and Animals",
         "ctx_a":"[header] How to diagnose entropion in boxers [title] Look for squinting. [step] If your dog is feeling uncomfortable, you may notice him squinting or narrowing his eye. Compare one eye with the other to see if one eye is worse.",
         "ctx_b":"",
         "ctx":"[header] How to diagnose entropion in boxers [title] Look for squinting. [step] If your dog is feeling uncomfortable, you may notice him squinting or narrowing his eye. Compare one eye with the other to see if one eye is worse.",
@@ -1259,7 +1259,7 @@
     },
     {
         "ind":26302,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Work World",
         "ctx_a":"[header] How to repair nails after a gel manicure [title] Moisturize your nails. [step] Moisture will help your nails recover after a gel manicure, which strips them of a lot of their natural moisture. You can buy nail moisturizer at a local beauty supply store or department store.",
         "ctx_b":"",
         "ctx":"[header] How to repair nails after a gel manicure [title] Moisturize your nails. [step] Moisture will help your nails recover after a gel manicure, which strips them of a lot of their natural moisture. You can buy nail moisturizer at a local beauty supply store or department store.",
@@ -1344,7 +1344,7 @@
     },
     {
         "ind":42805,
-        "activity_label":"Family Life",
+        "activity_label":"Cars & Other Vehicles",
         "ctx_a":"[header] How to care for your new baby [title] Support your baby's head. [step] When you pick your baby up, be sure that you are supporting the head and neck. Babies have little muscle development in this area and if they do not have support when lifted, they can become seriously injured.",
         "ctx_b":"",
         "ctx":"[header] How to care for your new baby [title] Support your baby's head. [step] When you pick your baby up, be sure that you are supporting the head and neck. Babies have little muscle development in this area and if they do not have support when lifted, they can become seriously injured.",
@@ -1378,7 +1378,7 @@
     },
     {
         "ind":27635,
-        "activity_label":"Rock climbing",
+        "activity_label":"Health",
         "ctx_a":"[header] How to find your nhs number [title] Check any correspondence you have received from the nhs. [step] As a general rule, any official letters or documents sent to you by the nhs should also contain your nhs number. Look through your mail for official nhs correspondence.",
         "ctx_b":"",
         "ctx":"[header] How to find your nhs number [title] Check any correspondence you have received from the nhs. [step] As a general rule, any official letters or documents sent to you by the nhs should also contain your nhs number. Look through your mail for official nhs correspondence.",
@@ -1718,7 +1718,7 @@
     },
     {
         "ind":28891,
-        "activity_label":"Pets and Animals",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to tan in the sun [title] Change into clothes that expose your skin to the sun. [step] The most common clothes to wear for tanning is a bathing suit, but you can wear shorts, tank tops, or nothing at all if you are somewhere amenable to nude sunbathing. Any exposed skin, left out under direct sunlight, will tan.",
         "ctx_b":"",
         "ctx":"[header] How to tan in the sun [title] Change into clothes that expose your skin to the sun. [step] The most common clothes to wear for tanning is a bathing suit, but you can wear shorts, tank tops, or nothing at all if you are somewhere amenable to nude sunbathing. Any exposed skin, left out under direct sunlight, will tan.",
@@ -1769,7 +1769,7 @@
     },
     {
         "ind":30803,
-        "activity_label":"Family Life",
+        "activity_label":"Education and Communications",
         "ctx_a":"[header] How to carry a toddler [title] Have your toddler stand in front of you. [step] It is harder to pick them up from the side of from the back, for sometimes they will squirm or slip out of reach. [title] Place your hands under their armpits.",
         "ctx_b":"",
         "ctx":"[header] How to carry a toddler [title] Have your toddler stand in front of you. [step] It is harder to pick them up from the side of from the back, for sometimes they will squirm or slip out of reach. [title] Place your hands under their armpits.",
@@ -1820,7 +1820,7 @@
     },
     {
         "ind":28255,
-        "activity_label":"Horseback riding",
+        "activity_label":"Pets and Animals",
         "ctx_a":"[header] How to collect bodily fluid samples from a cat [title] Gather the necessary supplies. [step] You may need to collect a small amount of blood from a cat to monitor the cat's glucose levels. This is a common practice for cats that have diabetes.",
         "ctx_b":"",
         "ctx":"[header] How to collect bodily fluid samples from a cat [title] Gather the necessary supplies. [step] You may need to collect a small amount of blood from a cat to monitor the cat's glucose levels. This is a common practice for cats that have diabetes.",
@@ -1854,7 +1854,7 @@
     },
     {
         "ind":1922,
-        "activity_label":"Chopping wood",
+        "activity_label":"Family Life",
         "ctx_a":"[header] How to handle insecurity after your spouse cheats [title] Work on your self-esteem. [step] Realize that your spouse's infidelity does not mean you deserve to be cheated on or disrespected. You deserve dignity and fairness in your relationships, and it's not your fault that your spouse decided to stray behind your back.",
         "ctx_b":"",
         "ctx":"[header] How to handle insecurity after your spouse cheats [title] Work on your self-esteem. [step] Realize that your spouse's infidelity does not mean you deserve to be cheated on or disrespected. You deserve dignity and fairness in your relationships, and it's not your fault that your spouse decided to stray behind your back.",
@@ -1922,7 +1922,7 @@
     },
     {
         "ind":27015,
-        "activity_label":"Rope skipping",
+        "activity_label":"Home and Garden",
         "ctx_a":"[header] How to choose a solar inverter [title] Learn about the commonly used solar inverters. [step] Generally speaking, there are three major types of solar inverters on the market, including grid-tie, off-grid and hybrid inverters. [substeps] Grid-tie inverter: it functions to convert dc to ac, with an ability to synchronize to interface with a utility line.",
         "ctx_b":"",
         "ctx":"[header] How to choose a solar inverter [title] Learn about the commonly used solar inverters. [step] Generally speaking, there are three major types of solar inverters on the market, including grid-tie, off-grid and hybrid inverters. [substeps] Grid-tie inverter: it functions to convert dc to ac, with an ability to synchronize to interface with a utility line.",
@@ -2024,7 +2024,7 @@
     },
     {
         "ind":12696,
-        "activity_label":"Uncategorized",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to apply a temporary tattoo [title] Start with clean, dry skin. [step] Temporary tattoos are made with water-based ink, which means that they're repelled by skin's natural oils. Carefully clean the area you want to decorate with soap and water, and pat it dry with a paper towel.",
         "ctx_b":"",
         "ctx":"[header] How to apply a temporary tattoo [title] Start with clean, dry skin. [step] Temporary tattoos are made with water-based ink, which means that they're repelled by skin's natural oils. Carefully clean the area you want to decorate with soap and water, and pat it dry with a paper towel.",
@@ -2211,7 +2211,7 @@
     },
     {
         "ind":38381,
-        "activity_label":"Family Life",
+        "activity_label":"Chopping wood",
         "ctx_a":"[header] How to dress for a wedding [title] Read the invitation carefully. [step] Often times the invitation will give you direct information regarding what to wear and the level of formality. The style or decoration of the invitation is also a clue.",
         "ctx_b":"",
         "ctx":"[header] How to dress for a wedding [title] Read the invitation carefully. [step] Often times the invitation will give you direct information regarding what to wear and the level of formality. The style or decoration of the invitation is also a clue.",
@@ -2415,7 +2415,7 @@
     },
     {
         "ind":33192,
-        "activity_label":"Food and Entertaining",
+        "activity_label":"Using uneven bars",
         "ctx_a":"[header] How to create a bond with your hamster [title] Pick a cage type. [step] When looking for a hamster cage, you will come across a few different types of cages. Each type of cage will have its own benefits and drawbacks.",
         "ctx_b":"",
         "ctx":"[header] How to create a bond with your hamster [title] Pick a cage type. [step] When looking for a hamster cage, you will come across a few different types of cages. Each type of cage will have its own benefits and drawbacks.",
@@ -2449,7 +2449,7 @@
     },
     {
         "ind":23464,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"High jump",
         "ctx_a":"[header] How to apply body makeup [title] Purchase body makeup in your preferred shade. [step] Also purchase one shade lighter, and one shade darker. Get loose powder, translucent or shimmery.",
         "ctx_b":"",
         "ctx":"[header] How to apply body makeup [title] Purchase body makeup in your preferred shade. [step] Also purchase one shade lighter, and one shade darker. Get loose powder, translucent or shimmery.",
@@ -2466,7 +2466,7 @@
     },
     {
         "ind":46568,
-        "activity_label":"Cars & Other Vehicles",
+        "activity_label":"Washing face",
         "ctx_a":"[header] How to become a flight crew scheduler [title] Graduate from high school. [substeps] Airlines, including small, commuter airlines will not hire you if you do not have a high school diploma. [title] Learn how to use a computer.",
         "ctx_b":"",
         "ctx":"[header] How to become a flight crew scheduler [title] Graduate from high school. [substeps] Airlines, including small, commuter airlines will not hire you if you do not have a high school diploma. [title] Learn how to use a computer.",
@@ -2551,7 +2551,7 @@
     },
     {
         "ind":49612,
-        "activity_label":"Education and Communications",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to dress for a date (for teen girls ) [title] Check the weather. [step] Is it going to be warm and sunny or cold and wet? Look at the hourly weather report for the time you expect to be gone on your date. This will help you know what kind of clothes to wear as well if you may need additional items, such as an umbrella or sunscreen.",
         "ctx_b":"",
         "ctx":"[header] How to dress for a date (for teen girls ) [title] Check the weather. [step] Is it going to be warm and sunny or cold and wet? Look at the hourly weather report for the time you expect to be gone on your date. This will help you know what kind of clothes to wear as well if you may need additional items, such as an umbrella or sunscreen.",
@@ -2602,7 +2602,7 @@
     },
     {
         "ind":32311,
-        "activity_label":"Health",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to do a messy bun (for curly hair ) [title] Start with dry hair, and have everything you need on hand. [step] Once you start making your bun, it will be difficult to open boxes and drawers. Keep a bunch of bobby pins handy, and your hair tie around your wrist.",
         "ctx_b":"",
         "ctx":"[header] How to do a messy bun (for curly hair ) [title] Start with dry hair, and have everything you need on hand. [step] Once you start making your bun, it will be difficult to open boxes and drawers. Keep a bunch of bobby pins handy, and your hair tie around your wrist.",
@@ -2704,7 +2704,7 @@
     },
     {
         "ind":6573,
-        "activity_label":"Health",
+        "activity_label":"Shot put",
         "ctx_a":"[header] How to treat dermatitis [title] Recognize symptoms of contact dermatitis. [step] Contact dermatitis is one of the most common forms of dermatitis. This type of skin inflammation is caused by exposure to an allergen or irritant (such as poison ivy).",
         "ctx_b":"",
         "ctx":"[header] How to treat dermatitis [title] Recognize symptoms of contact dermatitis. [step] Contact dermatitis is one of the most common forms of dermatitis. This type of skin inflammation is caused by exposure to an allergen or irritant (such as poison ivy).",
@@ -2721,7 +2721,7 @@
     },
     {
         "ind":48898,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Layup drill in basketball",
         "ctx_a":"[header] How to remove your mustache (for girls ) [title] Choose a depilatory cream for a painless option. [step] Because the chemicals involved in this process are harsh, select a cream designed for delicate facial skin. Visit a beauty supply store, and search for a product that specifically states it's for facial hair.",
         "ctx_b":"",
         "ctx":"[header] How to remove your mustache (for girls ) [title] Choose a depilatory cream for a painless option. [step] Because the chemicals involved in this process are harsh, select a cream designed for delicate facial skin. Visit a beauty supply store, and search for a product that specifically states it's for facial hair.",
@@ -2772,7 +2772,7 @@
     },
     {
         "ind":15117,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Food and Entertaining",
         "ctx_a":"[header] How to assess the safe firmness of an infant mattress to prevent asphyxiation [title] Gather your supplies. [step] Take your pen or marker, and your ruler. Place your ruler at the bottom edge of the carton.",
         "ctx_b":"",
         "ctx":"[header] How to assess the safe firmness of an infant mattress to prevent asphyxiation [title] Gather your supplies. [step] Take your pen or marker, and your ruler. Place your ruler at the bottom edge of the carton.",
@@ -2789,7 +2789,7 @@
     },
     {
         "ind":8424,
-        "activity_label":"Youth",
+        "activity_label":"Finance and Business",
         "ctx_a":"[header] How to manage pimples and still be beautiful [title] Wash your face twice a day. [step] Wash your face with a gentle cleanser in the morning and before you go to bed. Also wash your face after you sweat or wear a hat or helmet.",
         "ctx_b":"",
         "ctx":"[header] How to manage pimples and still be beautiful [title] Wash your face twice a day. [step] Wash your face with a gentle cleanser in the morning and before you go to bed. Also wash your face after you sweat or wear a hat or helmet.",
@@ -2840,7 +2840,7 @@
     },
     {
         "ind":7073,
-        "activity_label":"Sports and Fitness",
+        "activity_label":"Health",
         "ctx_a":"[header] How to feel more awake without coffee [title] Open the curtains. [step] The environment around us often plays a big role in how alert we are. Natural sunlight can improve your mood even when you suffer from seasonal mood changes.",
         "ctx_b":"",
         "ctx":"[header] How to feel more awake without coffee [title] Open the curtains. [step] The environment around us often plays a big role in how alert we are. Natural sunlight can improve your mood even when you suffer from seasonal mood changes.",
@@ -2959,7 +2959,7 @@
     },
     {
         "ind":10009,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Horseback riding",
         "ctx_a":"[header] How to braid short hair [title] Part your hair down the center. [step] Use a comb to draw a part down the center of your hairline. Brush the hair flat on either side of this part.",
         "ctx_b":"",
         "ctx":"[header] How to braid short hair [title] Part your hair down the center. [step] Use a comb to draw a part down the center of your hairline. Brush the hair flat on either side of this part.",
@@ -2993,7 +2993,7 @@
     },
     {
         "ind":15065,
-        "activity_label":"Food and Entertaining",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to fake bangs [title] Start with a center part and neatly-brushed hair. [step] This style works with most lengths of hair. It will be even more convincing if your hair is long enough to tuck behind your ears, however.",
         "ctx_b":"",
         "ctx":"[header] How to fake bangs [title] Start with a center part and neatly-brushed hair. [step] This style works with most lengths of hair. It will be even more convincing if your hair is long enough to tuck behind your ears, however.",
@@ -3129,7 +3129,7 @@
     },
     {
         "ind":41310,
-        "activity_label":"Pole vault",
+        "activity_label":"Work World",
         "ctx_a":"[header] How to decline a job offer [title] Call promptly. [step] As soon as you know you won't be able to accept the position, make the call. The longer you delay, the longer it will take for your potential employers to hire another candidate.",
         "ctx_b":"",
         "ctx":"[header] How to decline a job offer [title] Call promptly. [step] As soon as you know you won't be able to accept the position, make the call. The longer you delay, the longer it will take for your potential employers to hire another candidate.",
@@ -3180,7 +3180,7 @@
     },
     {
         "ind":46649,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Using uneven bars",
         "ctx_a":"[header] How to create a steam facial with essential oils [title] Open your sinuses and treat colds. [step] Several essential oils can reduce symptoms of the common cold and open your sinus passages. Add a total of 3 to 7 drops of peppermint, eucalyptus, or oregano essential oils.",
         "ctx_b":"",
         "ctx":"[header] How to create a steam facial with essential oils [title] Open your sinuses and treat colds. [step] Several essential oils can reduce symptoms of the common cold and open your sinus passages. Add a total of 3 to 7 drops of peppermint, eucalyptus, or oregano essential oils.",
@@ -3214,7 +3214,7 @@
     },
     {
         "ind":46520,
-        "activity_label":"Having an ice cream",
+        "activity_label":"Home and Garden",
         "ctx_a":"[header] How to clean a fiberglass shower [title] Empty out your shower. [step] Remove all bottles, soap, razors, and accessories from your shower. Wipe down the items to remove any grime that may be transferred back into the shower, especially mildew.",
         "ctx_b":"",
         "ctx":"[header] How to clean a fiberglass shower [title] Empty out your shower. [step] Remove all bottles, soap, razors, and accessories from your shower. Wipe down the items to remove any grime that may be transferred back into the shower, especially mildew.",
@@ -3384,7 +3384,7 @@
     },
     {
         "ind":20788,
-        "activity_label":"Uncategorized",
+        "activity_label":"Family Life",
         "ctx_a":"[header] How to teach values [title] Decide what values are important to pass on to your children. [step] Some values, such as \" do not lie, cheat, or steal, \" may be universal within your culture. Others, like those from a religious belief system, may be more specific to you and your family.",
         "ctx_b":"",
         "ctx":"[header] How to teach values [title] Decide what values are important to pass on to your children. [step] Some values, such as \" do not lie, cheat, or steal, \" may be universal within your culture. Others, like those from a religious belief system, may be more specific to you and your family.",
@@ -3401,7 +3401,7 @@
     },
     {
         "ind":36368,
-        "activity_label":"Cars & Other Vehicles",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to bleach hair blonde [title] Start with healthy hair. [step] Don't dye or otherwise process your hair in the months leading up to the bleaching. Bleaching your hair will work much better if your hair is relatively strong and unprocessed.",
         "ctx_b":"",
         "ctx":"[header] How to bleach hair blonde [title] Start with healthy hair. [step] Don't dye or otherwise process your hair in the months leading up to the bleaching. Bleaching your hair will work much better if your hair is relatively strong and unprocessed.",
@@ -3486,7 +3486,7 @@
     },
     {
         "ind":11568,
-        "activity_label":"Pets and Animals",
+        "activity_label":"Finance and Business",
         "ctx_a":"[header] How to build a ladybug house [title] Find a sturdy piece of cardboard in the form of a box or sheet. [step] A shoebox or thick card-stock is a good weight. [title] Cut out five 5 x 5 inch (12. 5 x 12. 5 cm) squares from the cardboard.",
         "ctx_b":"",
         "ctx":"[header] How to build a ladybug house [title] Find a sturdy piece of cardboard in the form of a box or sheet. [step] A shoebox or thick card-stock is a good weight. [title] Cut out five 5 x 5 inch (12. 5 x 12. 5 cm) squares from the cardboard.",
@@ -3775,7 +3775,7 @@
     },
     {
         "ind":31324,
-        "activity_label":"Playing harmonica",
+        "activity_label":"Cars & Other Vehicles",
         "ctx_a":"[header] How to install your premounted winter tires [title] Gather the materials needed for the job. [title] Remove all four wheel covers (if equipped) by sliding the screwdriver between the wheel and cover. [step] Gently pry the cover off.",
         "ctx_b":"",
         "ctx":"[header] How to install your premounted winter tires [title] Gather the materials needed for the job. [title] Remove all four wheel covers (if equipped) by sliding the screwdriver between the wheel and cover. [step] Gently pry the cover off.",
@@ -3911,7 +3911,7 @@
     },
     {
         "ind":7137,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Food and Entertaining",
         "ctx_a":"[header] How to get the right haircut [title] Get a short cut. [step] If you have a round face and want to go short, you should go very short. Get a pixie cut with spikey layers.",
         "ctx_b":"",
         "ctx":"[header] How to get the right haircut [title] Get a short cut. [step] If you have a round face and want to go short, you should go very short. Get a pixie cut with spikey layers.",
@@ -3945,7 +3945,7 @@
     },
     {
         "ind":8253,
-        "activity_label":"Family Life",
+        "activity_label":"Shot put",
         "ctx_a":"[header] How to advertise for wedding photography [title] Purchase a small newspaper advertisement in your local paper. [substeps] Start out by placing a print ad in your town's sunday paper. Newspaper advertisement returns have been on the decline for some time, but ad space can be relatively inexpensive depending on the paper.",
         "ctx_b":"",
         "ctx":"[header] How to advertise for wedding photography [title] Purchase a small newspaper advertisement in your local paper. [substeps] Start out by placing a print ad in your town's sunday paper. Newspaper advertisement returns have been on the decline for some time, but ad space can be relatively inexpensive depending on the paper.",
@@ -4013,7 +4013,7 @@
     },
     {
         "ind":8919,
-        "activity_label":"Travel",
+        "activity_label":"Pole vault",
         "ctx_a":"[header] How to decide where to go on a day out [title] Just go somewhere. [step] At the start of the holidays the kids won't really mind where they go. Maybe you can call up a few of the moms or dads that you know from school and invite everyone to a local park or inexpensive country park with play areas.",
         "ctx_b":"",
         "ctx":"[header] How to decide where to go on a day out [title] Just go somewhere. [step] At the start of the holidays the kids won't really mind where they go. Maybe you can call up a few of the moms or dads that you know from school and invite everyone to a local park or inexpensive country park with play areas.",
@@ -4081,7 +4081,7 @@
     },
     {
         "ind":39511,
-        "activity_label":"Home and Garden",
+        "activity_label":"Philosophy and Religion",
         "ctx_a":"[header] How to kill black ants [title] Buy commercial ant bait. [step] Using a commercial bait is a very effective way to kill black ants. Ants are attracted to the bait, which is a mixture of poison and a sweet substance.",
         "ctx_b":"",
         "ctx":"[header] How to kill black ants [title] Buy commercial ant bait. [step] Using a commercial bait is a very effective way to kill black ants. Ants are attracted to the bait, which is a mixture of poison and a sweet substance.",
@@ -4336,7 +4336,7 @@
     },
     {
         "ind":14554,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Uncategorized",
         "ctx_a":"[header] How to put cowrie shells on dreads [title] Pick a dreadlock. [step] The width of the dreadlock needs to be small enough to fit into the front opening of the cowrie shell. Do not choose a dreadlock that is significantly smaller than the cowrie shell, though, since the shell could end up weighing down the hair and weakening the dread.",
         "ctx_b":"",
         "ctx":"[header] How to put cowrie shells on dreads [title] Pick a dreadlock. [step] The width of the dreadlock needs to be small enough to fit into the front opening of the cowrie shell. Do not choose a dreadlock that is significantly smaller than the cowrie shell, though, since the shell could end up weighing down the hair and weakening the dread.",
@@ -4506,7 +4506,7 @@
     },
     {
         "ind":47444,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Health",
         "ctx_a":"[header] How to design your own piece of jewelry [title] Browse websites and jewelry stores for inspiration. [step] When it comes to designing jewelry at home, you will need some inspiration before you start drawing. Browse jewelry online or head to your local craft store or craft show to browse the selection.",
         "ctx_b":"",
         "ctx":"[header] How to design your own piece of jewelry [title] Browse websites and jewelry stores for inspiration. [step] When it comes to designing jewelry at home, you will need some inspiration before you start drawing. Browse jewelry online or head to your local craft store or craft show to browse the selection.",
@@ -4557,7 +4557,7 @@
     },
     {
         "ind":35360,
-        "activity_label":"Rope skipping",
+        "activity_label":"Youth",
         "ctx_a":"[header] How to succeed on a first date [title] Cell phone-no, not so you can receive an \" emergency \" call in case you need to beat a hasty retreat. [step] That trick predates the rotary phone; it's insulting and frankly unnecessary. Why? Sure, some first dates are worthy of quick escapes, but that's why you plan them to be brief in the first place.",
         "ctx_b":"",
         "ctx":"[header] How to succeed on a first date [title] Cell phone-no, not so you can receive an \" emergency \" call in case you need to beat a hasty retreat. [step] That trick predates the rotary phone; it's insulting and frankly unnecessary. Why? Sure, some first dates are worthy of quick escapes, but that's why you plan them to be brief in the first place.",
@@ -4574,7 +4574,7 @@
     },
     {
         "ind":36787,
-        "activity_label":"Family Life",
+        "activity_label":"Shot put",
         "ctx_a":"[header] How to be safe during a cruise ship fire [title] Participate fully in any muster drill. [step] This is an exercise designed for passengers to practice moving safely and quickly during an emergency to prevent injury and save lives. Passengers learn how to use life vests and about escape routes on their ships.",
         "ctx_b":"",
         "ctx":"[header] How to be safe during a cruise ship fire [title] Participate fully in any muster drill. [step] This is an exercise designed for passengers to practice moving safely and quickly during an emergency to prevent injury and save lives. Passengers learn how to use life vests and about escape routes on their ships.",
@@ -4608,7 +4608,7 @@
     },
     {
         "ind":45359,
-        "activity_label":"High jump",
+        "activity_label":"Family Life",
         "ctx_a":"[header] How to cope with the death of your cat [title] Do not ignore your pain. [step] Ignoring your pain can actually make grief harder. In order to actually heal from the loss of your cat, you will need to actively face your pain and deal with it.",
         "ctx_b":"",
         "ctx":"[header] How to cope with the death of your cat [title] Do not ignore your pain. [step] Ignoring your pain can actually make grief harder. In order to actually heal from the loss of your cat, you will need to actively face your pain and deal with it.",
@@ -4625,7 +4625,7 @@
     },
     {
         "ind":14416,
-        "activity_label":"Youth",
+        "activity_label":"Rollerblading",
         "ctx_a":"[header] How to kiss a girl if you have never been kissed before [title] Use the back of your hand. [step] Practice with the back of your hand in the privacy of your own room or when you are alone so you don't look strange because you are essentially kissing yourself. [substeps] To do this, you should open your mouth as wide as your index finger when you have it laying sideways over your mouth.",
         "ctx_b":"",
         "ctx":"[header] How to kiss a girl if you have never been kissed before [title] Use the back of your hand. [step] Practice with the back of your hand in the privacy of your own room or when you are alone so you don't look strange because you are essentially kissing yourself. [substeps] To do this, you should open your mouth as wide as your index finger when you have it laying sideways over your mouth.",
@@ -4744,7 +4744,7 @@
     },
     {
         "ind":13024,
-        "activity_label":"Health",
+        "activity_label":"Horseback riding",
         "ctx_a":"[header] How to prevent spider veins [title] Avoid sitting or standing for long periods. [step] If your job requires you to be on your feet all day, break up the time you stand still by walking around the office or taking a walk at lunch. [title] Aid circulation with your body positioning.",
         "ctx_b":"",
         "ctx":"[header] How to prevent spider veins [title] Avoid sitting or standing for long periods. [step] If your job requires you to be on your feet all day, break up the time you stand still by walking around the office or taking a walk at lunch. [title] Aid circulation with your body positioning.",
@@ -4778,7 +4778,7 @@
     },
     {
         "ind":40979,
-        "activity_label":"Finance and Business",
+        "activity_label":"Family Life",
         "ctx_a":"[header] How to wish someone a happy retirement [title] Choose a card that is sentimental to emphasize that you enjoyed working with the person. [step] One approach to selecting a card is to find a message that reflects how you felt about working with the person. If they had an impact on you, you can let them know that they made your time at work better and that you will miss them.",
         "ctx_b":"",
         "ctx":"[header] How to wish someone a happy retirement [title] Choose a card that is sentimental to emphasize that you enjoyed working with the person. [step] One approach to selecting a card is to find a message that reflects how you felt about working with the person. If they had an impact on you, you can let them know that they made your time at work better and that you will miss them.",
@@ -4812,7 +4812,7 @@
     },
     {
         "ind":17642,
-        "activity_label":"Playing harmonica",
+        "activity_label":"Computers and Electronics",
         "ctx_a":"[header] How to prepare your garden for winter [title] Bring less hardy plants inside. [step] Some of your plants won't have died yet, but they won't be strong enough to withstand the winter weather. You'll want to research the specific plants you have in your garden and find out which ones can be easily moved inside for the winter.",
         "ctx_b":"",
         "ctx":"[header] How to prepare your garden for winter [title] Bring less hardy plants inside. [step] Some of your plants won't have died yet, but they won't be strong enough to withstand the winter weather. You'll want to research the specific plants you have in your garden and find out which ones can be easily moved inside for the winter.",
@@ -4931,7 +4931,7 @@
     },
     {
         "ind":12005,
-        "activity_label":"Shot put",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to make a bracelet out of staples [title] Fill a stapler with the staples of choice. [step] You can go with the usual plain silver colored staples or be a little more funky and choose staples in different colors (these can be found in some stationery stores). [title] Punch enough staples for the bracelet.",
         "ctx_b":"",
         "ctx":"[header] How to make a bracelet out of staples [title] Fill a stapler with the staples of choice. [step] You can go with the usual plain silver colored staples or be a little more funky and choose staples in different colors (these can be found in some stationery stores). [title] Punch enough staples for the bracelet.",
@@ -5067,7 +5067,7 @@
     },
     {
         "ind":36528,
-        "activity_label":"Rope skipping",
+        "activity_label":"Holidays and Traditions",
         "ctx_a":"[header] How to create a christmas wreath [title] Start by preparing the elements that will form the basis of the wreath around the oasis ring. [substeps] Cut small sprigs of blue pine, removing the bottom 2 cm\/1 inch of needles. You can either trim the needles with scissors or remove them with your fingers.",
         "ctx_b":"",
         "ctx":"[header] How to create a christmas wreath [title] Start by preparing the elements that will form the basis of the wreath around the oasis ring. [substeps] Cut small sprigs of blue pine, removing the bottom 2 cm\/1 inch of needles. You can either trim the needles with scissors or remove them with your fingers.",
@@ -5152,7 +5152,7 @@
     },
     {
         "ind":23495,
-        "activity_label":"Having an ice cream",
+        "activity_label":"Home and Garden",
         "ctx_a":"[header] How to melt chocolate in the microwave [title] Chop the chocolate into small pieces with a serrated knife. [step] If you try to melt a whole chocolate bar, the outside will melt before the center, and the chocolate will be more likely to scorch. By chopping up the chocolate into small pieces, it will melt more evenly.",
         "ctx_b":"",
         "ctx":"[header] How to melt chocolate in the microwave [title] Chop the chocolate into small pieces with a serrated knife. [step] If you try to melt a whole chocolate bar, the outside will melt before the center, and the chocolate will be more likely to scorch. By chopping up the chocolate into small pieces, it will melt more evenly.",
@@ -5407,7 +5407,7 @@
     },
     {
         "ind":13421,
-        "activity_label":"Having an ice cream",
+        "activity_label":"Relationships",
         "ctx_a":"[header] How to deal with a narcissist [title] Learn to identify a narcissist. [step] Before you start tossing the word around, you need to remember that a lot of people have some narcissistic tendencies but aren't necessarily narcissists. By learning what makes a narcissist, you'll be able to better avoid them and deal with the ones already in your life.",
         "ctx_b":"",
         "ctx":"[header] How to deal with a narcissist [title] Learn to identify a narcissist. [step] Before you start tossing the word around, you need to remember that a lot of people have some narcissistic tendencies but aren't necessarily narcissists. By learning what makes a narcissist, you'll be able to better avoid them and deal with the ones already in your life.",
@@ -5475,7 +5475,7 @@
     },
     {
         "ind":833,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Running a marathon",
         "ctx_a":"[header] How to cut long layers [title] Dampen and comb through your hair. [step] Fill a spray bottle with warm water. Spray your hair until it is damp.",
         "ctx_b":"",
         "ctx":"[header] How to cut long layers [title] Dampen and comb through your hair. [step] Fill a spray bottle with warm water. Spray your hair until it is damp.",
@@ -5492,7 +5492,7 @@
     },
     {
         "ind":47241,
-        "activity_label":"Health",
+        "activity_label":"High jump",
         "ctx_a":"[header] How to make clove cigarettes or kretek [title] Gather your looseleaf tobacco and whole cloves. [step] Depending on how much clove you like, you can do a clove: tobacco ratio of anywhere from 1:3 to 2:3. Any more than that and it will not burn properly.",
         "ctx_b":"",
         "ctx":"[header] How to make clove cigarettes or kretek [title] Gather your looseleaf tobacco and whole cloves. [step] Depending on how much clove you like, you can do a clove: tobacco ratio of anywhere from 1:3 to 2:3. Any more than that and it will not burn properly.",
@@ -5560,7 +5560,7 @@
     },
     {
         "ind":357,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Youth",
         "ctx_a":"[header] How to cut your own hair [title] Buy a sharp pair of scissors. [step] The first step in cutting your hair at home is to invest in the right tools. You will need a sharp pair of hair cutting scissors (not just any old scissors you have lying around at home) and a fine-toothed comb.",
         "ctx_b":"",
         "ctx":"[header] How to cut your own hair [title] Buy a sharp pair of scissors. [step] The first step in cutting your hair at home is to invest in the right tools. You will need a sharp pair of hair cutting scissors (not just any old scissors you have lying around at home) and a fine-toothed comb.",
@@ -5594,7 +5594,7 @@
     },
     {
         "ind":6423,
-        "activity_label":"Cars & Other Vehicles",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to waist train without a corset [title] Practice forearm plank. [step] The transverse abdominus muscles act like an inner-girdle, wrapping around the sides of your waist. A great exercise for working the transverse abdominus is a basic forearm plank.",
         "ctx_b":"",
         "ctx":"[header] How to waist train without a corset [title] Practice forearm plank. [step] The transverse abdominus muscles act like an inner-girdle, wrapping around the sides of your waist. A great exercise for working the transverse abdominus is a basic forearm plank.",
@@ -5628,7 +5628,7 @@
     },
     {
         "ind":8781,
-        "activity_label":"Layup drill in basketball",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to wrap hair [title] Part your hair. [step] Use a comb to part your hair from the crown of your head to the top of your neck. The crown begins at the upper back of your skull where your head begins to curve downward.",
         "ctx_b":"",
         "ctx":"[header] How to wrap hair [title] Part your hair. [step] Use a comb to part your hair from the crown of your head to the top of your neck. The crown begins at the upper back of your skull where your head begins to curve downward.",
@@ -5662,7 +5662,7 @@
     },
     {
         "ind":36136,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Washing face",
         "ctx_a":"[header] How to build the choedan kal in minecraft [title] Build a 6x12 rectangle of quartz. [step] The four blocks in the corners and the blocks in the middle of the long sides should be pillar quartz. Place a layer of slabs to prevent monsters from spawning inside the statue.",
         "ctx_b":"",
         "ctx":"[header] How to build the choedan kal in minecraft [title] Build a 6x12 rectangle of quartz. [step] The four blocks in the corners and the blocks in the middle of the long sides should be pillar quartz. Place a layer of slabs to prevent monsters from spawning inside the statue.",
@@ -5696,7 +5696,7 @@
     },
     {
         "ind":44067,
-        "activity_label":"Computers and Electronics",
+        "activity_label":"Health",
         "ctx_a":"[header] How to create a frequency table with spss predictive analytics software [title] Collect data and create a title for each variable. [step] For this example you want to test the correlation (if any) between an individuals affinity for cats and their overall happiness. [title] Open the spss software.",
         "ctx_b":"",
         "ctx":"[header] How to create a frequency table with spss predictive analytics software [title] Collect data and create a title for each variable. [step] For this example you want to test the correlation (if any) between an individuals affinity for cats and their overall happiness. [title] Open the spss software.",
@@ -5730,7 +5730,7 @@
     },
     {
         "ind":35229,
-        "activity_label":"Running a marathon",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to store winter clothes [title] Machine wash or dry clean all of your winter items. [step] When stored for long periods of time, dirty clothing attracts pests and can also produce unwanted odors, mold, or mildew. Unclean items that contain perfumes, lotions, oils, and\/or perspiration can also cause fabric to stain and yellow.",
         "ctx_b":"",
         "ctx":"[header] How to store winter clothes [title] Machine wash or dry clean all of your winter items. [step] When stored for long periods of time, dirty clothing attracts pests and can also produce unwanted odors, mold, or mildew. Unclean items that contain perfumes, lotions, oils, and\/or perspiration can also cause fabric to stain and yellow.",
@@ -5764,7 +5764,7 @@
     },
     {
         "ind":10059,
-        "activity_label":"Sports and Fitness",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to insert a tampon without applicator [title] Go to your nearest shop and choose a box of tampons that are the right absorbency for you. [title] Go to a bathroom where you will not be disturbed or bothered and take your time. [title] Make sure your hands are washed and your vagina is moist.",
         "ctx_b":"",
         "ctx":"[header] How to insert a tampon without applicator [title] Go to your nearest shop and choose a box of tampons that are the right absorbency for you. [title] Go to a bathroom where you will not be disturbed or bothered and take your time. [title] Make sure your hands are washed and your vagina is moist.",
@@ -5849,7 +5849,7 @@
     },
     {
         "ind":43337,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Food and Entertaining",
         "ctx_a":"[header] How to apply self adjusting makeup [title] Apply a makeup primer. [step] Just like with a regular, color foundation, you want to begin your routine by applying a primer. A makeup primer creates a base for your foundation, helping it to adhere solidly and evenly and last all day.",
         "ctx_b":"",
         "ctx":"[header] How to apply self adjusting makeup [title] Apply a makeup primer. [step] Just like with a regular, color foundation, you want to begin your routine by applying a primer. A makeup primer creates a base for your foundation, helping it to adhere solidly and evenly and last all day.",
@@ -5866,7 +5866,7 @@
     },
     {
         "ind":25986,
-        "activity_label":"Work World",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to start a hot tub [title] Shut off power to the hot tub. [step] While cleaning and getting your hot tub ready, you might accidentally turn it on. Running your hot tub without water or too little water can damage its pump and heater.",
         "ctx_b":"",
         "ctx":"[header] How to start a hot tub [title] Shut off power to the hot tub. [step] While cleaning and getting your hot tub ready, you might accidentally turn it on. Running your hot tub without water or too little water can damage its pump and heater.",
@@ -5900,7 +5900,7 @@
     },
     {
         "ind":4292,
-        "activity_label":"Running a marathon",
+        "activity_label":"Family Life",
         "ctx_a":"[header] How to travel by plane with an infant or toddler [title] Use an approved restraint if possible. [step] Lap travel, while legal for children under 2 years of age, is much less safe than traveling in an approved seat. The faa recommends that all children use a restraint on board from birth to 40 pounds.",
         "ctx_b":"",
         "ctx":"[header] How to travel by plane with an infant or toddler [title] Use an approved restraint if possible. [step] Lap travel, while legal for children under 2 years of age, is much less safe than traveling in an approved seat. The faa recommends that all children use a restraint on board from birth to 40 pounds.",
@@ -5934,7 +5934,7 @@
     },
     {
         "ind":9102,
-        "activity_label":"Playing harmonica",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to use an alum block [title] Purchase an alum block. [step] Alum blocks are becoming more common in the us. You can now find them at many drugstores and beauty supply stores.",
         "ctx_b":"",
         "ctx":"[header] How to use an alum block [title] Purchase an alum block. [step] Alum blocks are becoming more common in the us. You can now find them at many drugstores and beauty supply stores.",
@@ -6223,7 +6223,7 @@
     },
     {
         "ind":46958,
-        "activity_label":"Home and Garden",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to give yourself a facial [title] Pull your hair back from your face. [step] Use a hairband or hairpins to secure your hair away from your face, so your forehead is completely exposed. This way your entire face will benefit from your facial.",
         "ctx_b":"",
         "ctx":"[header] How to give yourself a facial [title] Pull your hair back from your face. [step] Use a hairband or hairpins to secure your hair away from your face, so your forehead is completely exposed. This way your entire face will benefit from your facial.",
@@ -6291,7 +6291,7 @@
     },
     {
         "ind":35833,
-        "activity_label":"Home and Garden",
+        "activity_label":"Computers and Electronics",
         "ctx_a":"[header] How to make a rose and lavender perfume [title] Look round your garden for roses and lavender flowers. [step] Make sure they are fresh and smell great, before picking 1 good sized rose and about 3 lavender flower heads. [title] Remove the petals from the rose and the buds from the lavender.",
         "ctx_b":"",
         "ctx":"[header] How to make a rose and lavender perfume [title] Look round your garden for roses and lavender flowers. [step] Make sure they are fresh and smell great, before picking 1 good sized rose and about 3 lavender flower heads. [title] Remove the petals from the rose and the buds from the lavender.",
@@ -6342,7 +6342,7 @@
     },
     {
         "ind":37498,
-        "activity_label":"Family Life",
+        "activity_label":"Horseback riding",
         "ctx_a":"[header] How to treat a sinus infection for a toddler [title] Recognize the symptoms of a sinus infection. [step] Sinus infections in children are characterized by persistent cold-like symptoms. Sinusitis can be caused by a bacterial, fungal, or viral infection.",
         "ctx_b":"",
         "ctx":"[header] How to treat a sinus infection for a toddler [title] Recognize the symptoms of a sinus infection. [step] Sinus infections in children are characterized by persistent cold-like symptoms. Sinusitis can be caused by a bacterial, fungal, or viral infection.",
@@ -6410,7 +6410,7 @@
     },
     {
         "ind":7824,
-        "activity_label":"Health",
+        "activity_label":"Computers and Electronics",
         "ctx_a":"[header] How to download music off myspace [title] Search for the \" right \" site for you. [step] Most sites will give you a trial membership, allowing you to download a couple of songs without signing up for the site. [substeps] An example of good membership websites is file2hd.com.",
         "ctx_b":"",
         "ctx":"[header] How to download music off myspace [title] Search for the \" right \" site for you. [step] Most sites will give you a trial membership, allowing you to download a couple of songs without signing up for the site. [substeps] An example of good membership websites is file2hd.com.",
@@ -6512,7 +6512,7 @@
     },
     {
         "ind":37374,
-        "activity_label":"Finance and Business",
+        "activity_label":"Health",
         "ctx_a":"[header] How to save money on video game purchases [title] Rent video games before you buy them. [step] Renting video games will allow you to test and preview video games to determine if you like them enough to buy them. This will prevent you from being disappointed if you spend money on a video game, then discover that you do not enjoy playing the game.",
         "ctx_b":"",
         "ctx":"[header] How to save money on video game purchases [title] Rent video games before you buy them. [step] Renting video games will allow you to test and preview video games to determine if you like them enough to buy them. This will prevent you from being disappointed if you spend money on a video game, then discover that you do not enjoy playing the game.",
@@ -6699,7 +6699,7 @@
     },
     {
         "ind":17758,
-        "activity_label":"Food and Entertaining",
+        "activity_label":"Home and Garden",
         "ctx_a":"[header] How to make shrimp bisque [title] Mix the shrimp shells and seafood stock. [step] Add the shells from 1 pound (454 g) of fresh shrimp and 4 cups (946 ml) of seafood stock to a large saucepan. Set the peeled and deveined shrimp aside for later use.",
         "ctx_b":"",
         "ctx":"[header] How to make shrimp bisque [title] Mix the shrimp shells and seafood stock. [step] Add the shells from 1 pound (454 g) of fresh shrimp and 4 cups (946 ml) of seafood stock to a large saucepan. Set the peeled and deveined shrimp aside for later use.",
@@ -6903,7 +6903,7 @@
     },
     {
         "ind":28987,
-        "activity_label":"Philosophy and Religion",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to style medium length hair [title] Create loose waves. [step] On days where you want to look like you just rolled out of bed, try adding natural waves to your hair. You can do this by twisting big sections of your hair around a large curling iron.",
         "ctx_b":"",
         "ctx":"[header] How to style medium length hair [title] Create loose waves. [step] On days where you want to look like you just rolled out of bed, try adding natural waves to your hair. You can do this by twisting big sections of your hair around a large curling iron.",
@@ -6954,7 +6954,7 @@
     },
     {
         "ind":14156,
-        "activity_label":"Food and Entertaining",
+        "activity_label":"Youth",
         "ctx_a":"[header] How to make almond paste [title] Bring water to a boil. [step] Fill a small saucepan 2\/3 full with water. Warm this water on the stove on high, heating it until it reaches a rolling boil.",
         "ctx_b":"",
         "ctx":"[header] How to make almond paste [title] Bring water to a boil. [step] Fill a small saucepan 2\/3 full with water. Warm this water on the stove on high, heating it until it reaches a rolling boil.",
@@ -6971,7 +6971,7 @@
     },
     {
         "ind":29872,
-        "activity_label":"Computers and Electronics",
+        "activity_label":"Shot put",
         "ctx_a":"[header] How to clean cuts [title] Wash your hands. [step] Before attempting to clean a cut, either on yourself or on another person, it is key that your own hands be clean. This way, you will not introduce any germs or foreign substances into the cut that may later cause it to become infected.",
         "ctx_b":"",
         "ctx":"[header] How to clean cuts [title] Wash your hands. [step] Before attempting to clean a cut, either on yourself or on another person, it is key that your own hands be clean. This way, you will not introduce any germs or foreign substances into the cut that may later cause it to become infected.",
@@ -7022,7 +7022,7 @@
     },
     {
         "ind":38562,
-        "activity_label":"Home and Garden",
+        "activity_label":"Shot put",
         "ctx_a":"[header] How to take out the trash [title] Secure the bag. [step] Use the extra room at the top of the bag to securely tie a single knot so that the garbage does not fall out of the bag. Sometimes trash bags come with twist ties.",
         "ctx_b":"",
         "ctx":"[header] How to take out the trash [title] Secure the bag. [step] Use the extra room at the top of the bag to securely tie a single knot so that the garbage does not fall out of the bag. Sometimes trash bags come with twist ties.",
@@ -7073,7 +7073,7 @@
     },
     {
         "ind":8721,
-        "activity_label":"Pets and Animals",
+        "activity_label":"Philosophy and Religion",
         "ctx_a":"[header] How to make a pumpkin rainbow loom bracelet [title] Start from the very bottom of the loom. [step] Place one black band from the middle peg to the left peg going up. This will gradually turn into the part of the bracelet that holds the pumpkins together.",
         "ctx_b":"",
         "ctx":"[header] How to make a pumpkin rainbow loom bracelet [title] Start from the very bottom of the loom. [step] Place one black band from the middle peg to the left peg going up. This will gradually turn into the part of the bracelet that holds the pumpkins together.",
@@ -7549,7 +7549,7 @@
     },
     {
         "ind":4529,
-        "activity_label":"Sharpening knives",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to choose a henna powder [title] Get the freshest powder possible. [step] Check the date, henna is best used within a few months if it hasn't been kept cold. Most store henna sits on shelves for extended periods.",
         "ctx_b":"",
         "ctx":"[header] How to choose a henna powder [title] Get the freshest powder possible. [step] Check the date, henna is best used within a few months if it hasn't been kept cold. Most store henna sits on shelves for extended periods.",
@@ -7583,7 +7583,7 @@
     },
     {
         "ind":2123,
-        "activity_label":"Computers and Electronics",
+        "activity_label":"Ice fishing",
         "ctx_a":"[header] How to look after a horse [title] Make sure the horse has proper shelter at all times. [step] Your horse needs to have access to shelter throughout the year. This means dry, safe, and comfortable protection from rain, wind, snow, as well as from heat and biting insects.",
         "ctx_b":"",
         "ctx":"[header] How to look after a horse [title] Make sure the horse has proper shelter at all times. [step] Your horse needs to have access to shelter throughout the year. This means dry, safe, and comfortable protection from rain, wind, snow, as well as from heat and biting insects.",
@@ -7600,7 +7600,7 @@
     },
     {
         "ind":42181,
-        "activity_label":"Cars & Other Vehicles",
+        "activity_label":"Health",
         "ctx_a":"[header] How to be adventurous [title] Let go of what is holding you back. [step] Inhibitions are feelings that make you self-conscious and unable to act in a relaxed and natural way. Perhaps you are shy, inexperienced or fearful.",
         "ctx_b":"",
         "ctx":"[header] How to be adventurous [title] Let go of what is holding you back. [step] Inhibitions are feelings that make you self-conscious and unable to act in a relaxed and natural way. Perhaps you are shy, inexperienced or fearful.",
@@ -7634,7 +7634,7 @@
     },
     {
         "ind":46911,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Sports and Fitness",
         "ctx_a":"[header] How to have a fresh looking face [title] Wear a hat. [step] One way to protect your skin is to keep it out of the sun's rays. When you head outside, especially in the harsh light of summer, try wearing a hat to protect your face.",
         "ctx_b":"",
         "ctx":"[header] How to have a fresh looking face [title] Wear a hat. [step] One way to protect your skin is to keep it out of the sun's rays. When you head outside, especially in the harsh light of summer, try wearing a hat to protect your face.",
@@ -7668,7 +7668,7 @@
     },
     {
         "ind":12145,
-        "activity_label":"Home and Garden",
+        "activity_label":"Using uneven bars",
         "ctx_a":"[header] How to solder wire sculptures [title] Clean off your work area. [step] Make sure there are no flammable materials in the path of the torch's flame. Remember that the heat of the flame reaches out much farther than the glowing area.",
         "ctx_b":"",
         "ctx":"[header] How to solder wire sculptures [title] Clean off your work area. [step] Make sure there are no flammable materials in the path of the torch's flame. Remember that the heat of the flame reaches out much farther than the glowing area.",
@@ -7736,7 +7736,7 @@
     },
     {
         "ind":11245,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Computers and Electronics",
         "ctx_a":"[header] How to straighten hair with a roller brush [title] Towel dry hair to remove the majority of moisture. [step] Hair will need to be damp to straighten. [title] Comb hair to remove tangles and excess moisture.",
         "ctx_b":"",
         "ctx":"[header] How to straighten hair with a roller brush [title] Towel dry hair to remove the majority of moisture. [step] Hair will need to be damp to straighten. [title] Comb hair to remove tangles and excess moisture.",
@@ -7957,7 +7957,7 @@
     },
     {
         "ind":12113,
-        "activity_label":"Family Life",
+        "activity_label":"Rope skipping",
         "ctx_a":"[header] How to install hydraulic seals for various applications [title] Make working space. [step] Take out the hydraulic cylinder in an open space so that you can get enough space to work with. It will make it easier for you to install new hydraulic seal.",
         "ctx_b":"",
         "ctx":"[header] How to install hydraulic seals for various applications [title] Make working space. [step] Take out the hydraulic cylinder in an open space so that you can get enough space to work with. It will make it easier for you to install new hydraulic seal.",
@@ -7991,7 +7991,7 @@
     },
     {
         "ind":50092,
-        "activity_label":"Washing face",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to tie a silk scarf [title] Tie it in the bandit style. [step] This is one of the most classic styles for a square silk scarf. Lay your scarf flat on a table.",
         "ctx_b":"",
         "ctx":"[header] How to tie a silk scarf [title] Tie it in the bandit style. [step] This is one of the most classic styles for a square silk scarf. Lay your scarf flat on a table.",
@@ -8042,7 +8042,7 @@
     },
     {
         "ind":45548,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Uncategorized",
         "ctx_a":"[header] How to look entirely emotionless [title] Relax your eyes and mouth. [step] The eyes and the mouth can express a multitude of emotions. It is important to keep control over them at all times.",
         "ctx_b":"",
         "ctx":"[header] How to look entirely emotionless [title] Relax your eyes and mouth. [step] The eyes and the mouth can express a multitude of emotions. It is important to keep control over them at all times.",
@@ -8059,7 +8059,7 @@
     },
     {
         "ind":46887,
-        "activity_label":"Family Life",
+        "activity_label":"Travel",
         "ctx_a":"[header] How to paint brass [title] Remove the item if necessary. [step] Some brass objects, such as door handles, faucets, and fixtures will be easier to paint if you remove them from where they are. Other objects, like furniture, utensils, and lamps, are already portable.",
         "ctx_b":"",
         "ctx":"[header] How to paint brass [title] Remove the item if necessary. [step] Some brass objects, such as door handles, faucets, and fixtures will be easier to paint if you remove them from where they are. Other objects, like furniture, utensils, and lamps, are already portable.",
@@ -8280,7 +8280,7 @@
     },
     {
         "ind":1288,
-        "activity_label":"Home and Garden",
+        "activity_label":"Philosophy and Religion",
         "ctx_a":"[header] How to clean tile with vinegar [title] Sweep or vacuum the floor. [step] Before cleaning a tile floor with vinegar, you will want to remove all debris from the surface of the floor. Use a broom, dust mop, or vacuum cleaner to remove all loose dirt and debris from the tile floor.",
         "ctx_b":"",
         "ctx":"[header] How to clean tile with vinegar [title] Sweep or vacuum the floor. [step] Before cleaning a tile floor with vinegar, you will want to remove all debris from the surface of the floor. Use a broom, dust mop, or vacuum cleaner to remove all loose dirt and debris from the tile floor.",
@@ -8467,7 +8467,7 @@
     },
     {
         "ind":39311,
-        "activity_label":"Sports and Fitness",
+        "activity_label":"Shot put",
         "ctx_a":"[header] How to catch walleye [title] Choose your bait. [step] Live bait is the best to use when catching walleyes. The three basic types of live bait for this fish are minnows, leeches, and night crawlers.",
         "ctx_b":"",
         "ctx":"[header] How to catch walleye [title] Choose your bait. [step] Live bait is the best to use when catching walleyes. The three basic types of live bait for this fish are minnows, leeches, and night crawlers.",
@@ -8586,7 +8586,7 @@
     },
     {
         "ind":12333,
-        "activity_label":"Finance and Business",
+        "activity_label":"Food and Entertaining",
         "ctx_a":"[header] How to test coffee freshness with a zipper bag [title] Measure 1\/2 cup of your coffee beans and pour it into a medium sized zipper bag. [step] Make sure that there is enough room for the beans and for expansion. [title] Push all the air out of the bag.",
         "ctx_b":"",
         "ctx":"[header] How to test coffee freshness with a zipper bag [title] Measure 1\/2 cup of your coffee beans and pour it into a medium sized zipper bag. [step] Make sure that there is enough room for the beans and for expansion. [title] Push all the air out of the bag.",
@@ -8620,7 +8620,7 @@
     },
     {
         "ind":14463,
-        "activity_label":"Education and Communications",
+        "activity_label":"Family Life",
         "ctx_a":"[header] How to have a girls' night out with your teenage daughter [title] Know your daughter. [step] You may spend a lot of time working, or maybe your daughter spends a lot of time alone in her room. Either way, make sure you know her interests and hobbies, her likes and dislikes.",
         "ctx_b":"",
         "ctx":"[header] How to have a girls' night out with your teenage daughter [title] Know your daughter. [step] You may spend a lot of time working, or maybe your daughter spends a lot of time alone in her room. Either way, make sure you know her interests and hobbies, her likes and dislikes.",
@@ -8637,7 +8637,7 @@
     },
     {
         "ind":29767,
-        "activity_label":"Sports and Fitness",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to create pin curls [title] Wash your hair. [step] To create pin curls, you must start with evenly damp hair. Although you can just spray your hair to wet it, washing it will give you a clean slate and your curls will last for longer.",
         "ctx_b":"",
         "ctx":"[header] How to create pin curls [title] Wash your hair. [step] To create pin curls, you must start with evenly damp hair. Although you can just spray your hair to wet it, washing it will give you a clean slate and your curls will last for longer.",
@@ -8688,7 +8688,7 @@
     },
     {
         "ind":30812,
-        "activity_label":"Family Life",
+        "activity_label":"Having an ice cream",
         "ctx_a":"[header] How to include the father of the groom [title] Start by asking the father of groom for advice on any traditions that he may know of from that side of the family. [step] Possibly ask him how he planned his wedding and possibly ask his advice if there was anything he would have done differently. [title] Include the father and mother of the groom on the invitations if they are helping pay a significant amount for the wedding itself.",
         "ctx_b":"",
         "ctx":"[header] How to include the father of the groom [title] Start by asking the father of groom for advice on any traditions that he may know of from that side of the family. [step] Possibly ask him how he planned his wedding and possibly ask his advice if there was anything he would have done differently. [title] Include the father and mother of the groom on the invitations if they are helping pay a significant amount for the wedding itself.",
@@ -8790,7 +8790,7 @@
     },
     {
         "ind":9510,
-        "activity_label":"Chopping wood",
+        "activity_label":"Home and Garden",
         "ctx_a":"[header] How to make chicken bone fertilizer [title] Clean as much of the meat and fat off of the bones as you can. [title] Place them on a microwavable plate and microwave them for three minutes in three separate increments (a total of nine minutes). [title] Let the bones cool for several minutes, as they will be very hot and dry at this point.",
         "ctx_b":"",
         "ctx":"[header] How to make chicken bone fertilizer [title] Clean as much of the meat and fat off of the bones as you can. [title] Place them on a microwavable plate and microwave them for three minutes in three separate increments (a total of nine minutes). [title] Let the bones cool for several minutes, as they will be very hot and dry at this point.",
@@ -8807,7 +8807,7 @@
     },
     {
         "ind":25487,
-        "activity_label":"Having an ice cream",
+        "activity_label":"Horseback riding",
         "ctx_a":"[header] How to make a greeting card envelope [title] Lay your card on a piece of 8 1\/2 x 11 paper. [step] Center it horizontally on the paper but a little low. If you don't have a card already, just mark the paper where you want your card to be.",
         "ctx_b":"",
         "ctx":"[header] How to make a greeting card envelope [title] Lay your card on a piece of 8 1\/2 x 11 paper. [step] Center it horizontally on the paper but a little low. If you don't have a card already, just mark the paper where you want your card to be.",
@@ -8841,7 +8841,7 @@
     },
     {
         "ind":38602,
-        "activity_label":"Chopping wood",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to get a smoke smell out of fabric handbags [title] Fill a sink or tub with cool water. [step] Warm water can shrink or damage the fabric of your handbag. Fill the sink or tub with enough water to fully submerge your bag.",
         "ctx_b":"",
         "ctx":"[header] How to get a smoke smell out of fabric handbags [title] Fill a sink or tub with cool water. [step] Warm water can shrink or damage the fabric of your handbag. Fill the sink or tub with enough water to fully submerge your bag.",
@@ -8926,7 +8926,7 @@
     },
     {
         "ind":43974,
-        "activity_label":"Cutting the grass",
+        "activity_label":"Family Life",
         "ctx_a":"[header] How to help toddlers adjust to daylight saving time [title] Establish a routine. [step] If you don't already have a nighttime routine established for your toddler, take the time to set one up. Having a routine helps your child prepare for the evening and gives them a sense of security.",
         "ctx_b":"",
         "ctx":"[header] How to help toddlers adjust to daylight saving time [title] Establish a routine. [step] If you don't already have a nighttime routine established for your toddler, take the time to set one up. Having a routine helps your child prepare for the evening and gives them a sense of security.",
@@ -9011,7 +9011,7 @@
     },
     {
         "ind":40364,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Rock climbing",
         "ctx_a":"[header] How to get ready for summer using earl grey tea [title] Wash your face. [step] Your face should be squeaky clean. [title] Prepare your earl grey teabags, and a glass with a little hot water in it.",
         "ctx_b":"",
         "ctx":"[header] How to get ready for summer using earl grey tea [title] Wash your face. [step] Your face should be squeaky clean. [title] Prepare your earl grey teabags, and a glass with a little hot water in it.",
@@ -9045,7 +9045,7 @@
     },
     {
         "ind":44998,
-        "activity_label":"Computers and Electronics",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to use petroleum jelly for beauty uses [title] Moisturize your face. [step] If you have chronic dry skin or tend to get dry patches in cold weather, petroleum jelly can be an effective moisturizer for your face. It creates a barrier over your skin that helps lock in the natural oils and moisture.",
         "ctx_b":"",
         "ctx":"[header] How to use petroleum jelly for beauty uses [title] Moisturize your face. [step] If you have chronic dry skin or tend to get dry patches in cold weather, petroleum jelly can be an effective moisturizer for your face. It creates a barrier over your skin that helps lock in the natural oils and moisture.",
@@ -9079,7 +9079,7 @@
     },
     {
         "ind":27734,
-        "activity_label":"Relationships",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to wear brogues [title] Go with full brogue shoes for a detailed, fancy footwear option. [step] Full brogues have a pointed toe cap and extending lines or \" wingtips \" that run along both sides of the shoe. They have perforations in the leather across the edges, and many styles also have decorative holes on the center of the toe cap (called the \" medallion \").",
         "ctx_b":"",
         "ctx":"[header] How to wear brogues [title] Go with full brogue shoes for a detailed, fancy footwear option. [step] Full brogues have a pointed toe cap and extending lines or \" wingtips \" that run along both sides of the shoe. They have perforations in the leather across the edges, and many styles also have decorative holes on the center of the toe cap (called the \" medallion \").",
@@ -9147,7 +9147,7 @@
     },
     {
         "ind":16894,
-        "activity_label":"Ice fishing",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to apply draping blush [title] Use the right type of brush. [step] The kind of brush depends on where you are going to apply the blush. Since you will be applying blush to more than just the apples of your cheeks, you will want to use a smaller brush for smaller areas.",
         "ctx_b":"",
         "ctx":"[header] How to apply draping blush [title] Use the right type of brush. [step] The kind of brush depends on where you are going to apply the blush. Since you will be applying blush to more than just the apples of your cheeks, you will want to use a smaller brush for smaller areas.",
@@ -9215,7 +9215,7 @@
     },
     {
         "ind":50104,
-        "activity_label":"Relationships",
+        "activity_label":"Finance and Business",
         "ctx_a":"[header] How to know if you should work in customer service [title] Determine if you have patience. [step] Perhaps one of the most important personality traits for customer service representatives is patience. Patience, which is defined as the ability to deal with delay and complications without problem, is critical for customer service representatives.",
         "ctx_b":"",
         "ctx":"[header] How to know if you should work in customer service [title] Determine if you have patience. [step] Perhaps one of the most important personality traits for customer service representatives is patience. Patience, which is defined as the ability to deal with delay and complications without problem, is critical for customer service representatives.",
@@ -9266,7 +9266,7 @@
     },
     {
         "ind":5002,
-        "activity_label":"Food and Entertaining",
+        "activity_label":"Sharpening knives",
         "ctx_a":"[header] How to make healthy ramen [title] Bring two eggs to a boil. [step] Healthy chicken ramen has a classic chicken broth-based flavor that is reminiscent of instant ramen, but tastes fresher and is much healthier. Begin by adding two whole eggs in their shells, to a medium sized pot.",
         "ctx_b":"",
         "ctx":"[header] How to make healthy ramen [title] Bring two eggs to a boil. [step] Healthy chicken ramen has a classic chicken broth-based flavor that is reminiscent of instant ramen, but tastes fresher and is much healthier. Begin by adding two whole eggs in their shells, to a medium sized pot.",
@@ -9453,7 +9453,7 @@
     },
     {
         "ind":11099,
-        "activity_label":"Layup drill in basketball",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to wear bell sleeves [title] Wear jeans. [step] Tuck a bell-sleeved blouse or collared shirt into jeans and wear pumps or wedges that match your clutch. Or wear a bell-sleeved sweater or cardigan with jeans.",
         "ctx_b":"",
         "ctx":"[header] How to wear bell sleeves [title] Wear jeans. [step] Tuck a bell-sleeved blouse or collared shirt into jeans and wear pumps or wedges that match your clutch. Or wear a bell-sleeved sweater or cardigan with jeans.",
@@ -9504,7 +9504,7 @@
     },
     {
         "ind":35132,
-        "activity_label":"Rope skipping",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to paint your nails according to the time available [title] Use a cotton ball and nail polish remover to remove any old nail polish and oils. [title] Choose the color you want to use for your manicure. [title] Start with the painting.",
         "ctx_b":"",
         "ctx":"[header] How to paint your nails according to the time available [title] Use a cotton ball and nail polish remover to remove any old nail polish and oils. [title] Choose the color you want to use for your manicure. [title] Start with the painting.",
@@ -9538,7 +9538,7 @@
     },
     {
         "ind":18893,
-        "activity_label":"Cars & Other Vehicles",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to make loom bracelets [title] Think about the sort of colors you would like to wear. [step] Do you have blue eyes? Match your bracelet to your eyes with an alternating blue\/green, or blue\/yellow bracelet. Are you planning on wearing a red outfit? Make a predominantly red bracelet.",
         "ctx_b":"",
         "ctx":"[header] How to make loom bracelets [title] Think about the sort of colors you would like to wear. [step] Do you have blue eyes? Match your bracelet to your eyes with an alternating blue\/green, or blue\/yellow bracelet. Are you planning on wearing a red outfit? Make a predominantly red bracelet.",
@@ -9691,7 +9691,7 @@
     },
     {
         "ind":48924,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Horseback riding",
         "ctx_a":"[header] How to wear a greek fisherman's cap [title] Select a hat made of sturdy material if you'll be out in the elements. [step] Go with a cotton or wool blend if you plan to wear your fisherman's hat occupationally. These materials can weather the sun and moisture of the sea.",
         "ctx_b":"",
         "ctx":"[header] How to wear a greek fisherman's cap [title] Select a hat made of sturdy material if you'll be out in the elements. [step] Go with a cotton or wool blend if you plan to wear your fisherman's hat occupationally. These materials can weather the sun and moisture of the sea.",
@@ -9861,7 +9861,7 @@
     },
     {
         "ind":23766,
-        "activity_label":"Family Life",
+        "activity_label":"Education and Communications",
         "ctx_a":"[header] How to find consistency in life [title] Commit to change. [step] The first step to making any transformation in your life is to commit to change. Making a conscious, willful declaration to yourself that you will stick it out and pursue your desired outcome can help keep you motivated and push you to achieve that goal.",
         "ctx_b":"",
         "ctx":"[header] How to find consistency in life [title] Commit to change. [step] The first step to making any transformation in your life is to commit to change. Making a conscious, willful declaration to yourself that you will stick it out and pursue your desired outcome can help keep you motivated and push you to achieve that goal.",
@@ -9912,7 +9912,7 @@
     },
     {
         "ind":3653,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"High jump",
         "ctx_a":"[header] How to use an eyeshadow quad [title] Make sure the quad has at least two colors you like. [step] Before applying a quad to your face, make sure you'll like the look. In general, quads work best if they have at least two out of three colors you like.",
         "ctx_b":"",
         "ctx":"[header] How to use an eyeshadow quad [title] Make sure the quad has at least two colors you like. [step] Before applying a quad to your face, make sure you'll like the look. In general, quads work best if they have at least two out of three colors you like.",
@@ -9946,7 +9946,7 @@
     },
     {
         "ind":44174,
-        "activity_label":"Computers and Electronics",
+        "activity_label":"Having an ice cream",
         "ctx_a":"[header] How to make haystacks [title] Cover two large baking sheets with parchment paper or wax paper, and set them aside. [step] If you'd like to make bird nests instead, lightly grease the wells of a large muffin or cupcake tin instead. [title] Add the chocolate chips or butterscotch chips into a small saucepan.",
         "ctx_b":"",
         "ctx":"[header] How to make haystacks [title] Cover two large baking sheets with parchment paper or wax paper, and set them aside. [step] If you'd like to make bird nests instead, lightly grease the wells of a large muffin or cupcake tin instead. [title] Add the chocolate chips or butterscotch chips into a small saucepan.",
@@ -9963,7 +9963,7 @@
     },
     {
         "ind":24297,
-        "activity_label":"Family Life",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to defrizz hair [title] Use anti-static spray. [step] You can buy an anti-static spray at your local pharmacy or hair salon. Don't overdo it with the spray-a quick once-over of your hair should do the trick.",
         "ctx_b":"",
         "ctx":"[header] How to defrizz hair [title] Use anti-static spray. [step] You can buy an anti-static spray at your local pharmacy or hair salon. Don't overdo it with the spray-a quick once-over of your hair should do the trick.",
@@ -9997,7 +9997,7 @@
     },
     {
         "ind":811,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Pets and Animals",
         "ctx_a":"[header] How to get bigger hair [title] Choose a volumizing shampoo and conditioner. [step] If you have fine or thin hair, using a volumizing shampoo and conditioner can help give you bigger hair. They cleanse and moisturize your tresses without weighing them down, so your hair appears fuller and thicker.",
         "ctx_b":"",
         "ctx":"[header] How to get bigger hair [title] Choose a volumizing shampoo and conditioner. [step] If you have fine or thin hair, using a volumizing shampoo and conditioner can help give you bigger hair. They cleanse and moisturize your tresses without weighing them down, so your hair appears fuller and thicker.",
@@ -10031,7 +10031,7 @@
     },
     {
         "ind":27422,
-        "activity_label":"Cars & Other Vehicles",
+        "activity_label":"Finance and Business",
         "ctx_a":"[header] How to protect your ideas as a freelancer [title] Research the entities you plan on disclosing your ideas to. [step] It is possible to get a lot of information by asking your industry contacts about and searching online accounts of the business practices used by any party or organization you hope to share your idea with. The best way to protect your ideas is to be choosy about with whom you share them.",
         "ctx_b":"",
         "ctx":"[header] How to protect your ideas as a freelancer [title] Research the entities you plan on disclosing your ideas to. [step] It is possible to get a lot of information by asking your industry contacts about and searching online accounts of the business practices used by any party or organization you hope to share your idea with. The best way to protect your ideas is to be choosy about with whom you share them.",
@@ -10116,7 +10116,7 @@
     },
     {
         "ind":30681,
-        "activity_label":"Uncategorized",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to put together outfits [title] Organize your closet. [step] A lot of times when we don't know what to wear or how to put together an outfit it means that it is time to organize our closet. Organizing means it will be easier to locate the clothes you want for the outfits you'll be putting together and it will remind you what you own in way of clothing.",
         "ctx_b":"",
         "ctx":"[header] How to put together outfits [title] Organize your closet. [step] A lot of times when we don't know what to wear or how to put together an outfit it means that it is time to organize our closet. Organizing means it will be easier to locate the clothes you want for the outfits you'll be putting together and it will remind you what you own in way of clothing.",
@@ -10150,7 +10150,7 @@
     },
     {
         "ind":15764,
-        "activity_label":"Relationships",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to color your converse [title] Start with a clean shoe. [step] The best converse to work on are brand new. If you can't get new ones, you will need to clean the ones you already own.",
         "ctx_b":"",
         "ctx":"[header] How to color your converse [title] Start with a clean shoe. [step] The best converse to work on are brand new. If you can't get new ones, you will need to clean the ones you already own.",
@@ -10354,7 +10354,7 @@
     },
     {
         "ind":13731,
-        "activity_label":"Cars & Other Vehicles",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to define your cheekbones [title] Pick the right colors. [step] You will need at least two different shades of makeup: one that is significantly darker than your natural skin tone for the shadows and one that is just a little lighter than your skin for the highlights. Depending on your skin tone and preference, these can be any combination of foundations, bronzers, highlighters, and blushes.",
         "ctx_b":"",
         "ctx":"[header] How to define your cheekbones [title] Pick the right colors. [step] You will need at least two different shades of makeup: one that is significantly darker than your natural skin tone for the shadows and one that is just a little lighter than your skin for the highlights. Depending on your skin tone and preference, these can be any combination of foundations, bronzers, highlighters, and blushes.",
@@ -10473,7 +10473,7 @@
     },
     {
         "ind":48645,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Travel",
         "ctx_a":"[header] How to increase breast size with a bra [title] Check your bra size. [step] Wearing a bra that is too big will not make your breasts look larger. That is why it is important to wear the right size bra for you.",
         "ctx_b":"",
         "ctx":"[header] How to increase breast size with a bra [title] Check your bra size. [step] Wearing a bra that is too big will not make your breasts look larger. That is why it is important to wear the right size bra for you.",
@@ -10490,7 +10490,7 @@
     },
     {
         "ind":50015,
-        "activity_label":"Finance and Business",
+        "activity_label":"Family Life",
         "ctx_a":"[header] How to calculate how much money you need to retire [title] Determine basic living expenses. [step] An important first step is to determine the amount necessary to cover basic living expenses each year. There are different perspectives on how much this will be.",
         "ctx_b":"",
         "ctx":"[header] How to calculate how much money you need to retire [title] Determine basic living expenses. [step] An important first step is to determine the amount necessary to cover basic living expenses each year. There are different perspectives on how much this will be.",
@@ -10541,7 +10541,7 @@
     },
     {
         "ind":16193,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Relationships",
         "ctx_a":"[header] How to wear an ear warmer [title] Consider the color. [step] Your ear warmer should be a fashionable accessory that works with the rest of your clothes. When choosing an ear warmer to wear, select one that will match the colors you're wearing.",
         "ctx_b":"",
         "ctx":"[header] How to wear an ear warmer [title] Consider the color. [step] Your ear warmer should be a fashionable accessory that works with the rest of your clothes. When choosing an ear warmer to wear, select one that will match the colors you're wearing.",
@@ -10660,7 +10660,7 @@
     },
     {
         "ind":30955,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Youth",
         "ctx_a":"[header] How to get beachy waves using sea salt [title] Fill an empty squirt bottle with water from a tap. [title] Add two tablespoons of sea salt. [step] Then pour in 1 tablespoon of coconut oil.",
         "ctx_b":"",
         "ctx":"[header] How to get beachy waves using sea salt [title] Fill an empty squirt bottle with water from a tap. [title] Add two tablespoons of sea salt. [step] Then pour in 1 tablespoon of coconut oil.",
@@ -10728,7 +10728,7 @@
     },
     {
         "ind":1339,
-        "activity_label":"High jump",
+        "activity_label":"Food and Entertaining",
         "ctx_a":"[header] How to make brownies in a mug [title] Use a clean, ceramic, microwave-safe mug. [step] It shouldn't have any metal on it. In general, a simple, unadorned ceramic mug is going to work the best.",
         "ctx_b":"",
         "ctx":"[header] How to make brownies in a mug [title] Use a clean, ceramic, microwave-safe mug. [step] It shouldn't have any metal on it. In general, a simple, unadorned ceramic mug is going to work the best.",
@@ -10966,7 +10966,7 @@
     },
     {
         "ind":38880,
-        "activity_label":"Family Life",
+        "activity_label":"Relationships",
         "ctx_a":"[header] How to know what it means to love someone [title] Know that you focus on someone else's happiness, not just your own, when you are in love. [step] Being in love is about connecting with another person emotionally, caring for their happiness as if it was your own. When you love someone their fate becomes intertwined with yours.",
         "ctx_b":"",
         "ctx":"[header] How to know what it means to love someone [title] Know that you focus on someone else's happiness, not just your own, when you are in love. [step] Being in love is about connecting with another person emotionally, caring for their happiness as if it was your own. When you love someone their fate becomes intertwined with yours.",
@@ -11000,7 +11000,7 @@
     },
     {
         "ind":40811,
-        "activity_label":"Family Life",
+        "activity_label":"Shot put",
         "ctx_a":"[header] How to have an emotionally healthy divorce [title] Avoid being combative. [step] Because of what you might hear\/see on tv and from others who have gotten divorced, you may think that getting divorced has to be a big fight. The truth is, however, that it doesn't.",
         "ctx_b":"",
         "ctx":"[header] How to have an emotionally healthy divorce [title] Avoid being combative. [step] Because of what you might hear\/see on tv and from others who have gotten divorced, you may think that getting divorced has to be a big fight. The truth is, however, that it doesn't.",
@@ -11068,7 +11068,7 @@
     },
     {
         "ind":35425,
-        "activity_label":"Finance and Business",
+        "activity_label":"Education and Communications",
         "ctx_a":"[header] How to caulk walls [title] Clean the wall. [step] Caulk should never go on a dirty surface. Wipe down the wall with a dry cloth to remove dust.",
         "ctx_b":"",
         "ctx":"[header] How to caulk walls [title] Clean the wall. [step] Caulk should never go on a dirty surface. Wipe down the wall with a dry cloth to remove dust.",
@@ -11102,7 +11102,7 @@
     },
     {
         "ind":2725,
-        "activity_label":"Computers and Electronics",
+        "activity_label":"Family Life",
         "ctx_a":"[header] How to get married on maplestory [title] Be sure you want to go through with it. [step] It takes time and nx cash as well. If you've talked it over and are sure, keep reading.",
         "ctx_b":"",
         "ctx":"[header] How to get married on maplestory [title] Be sure you want to go through with it. [step] It takes time and nx cash as well. If you've talked it over and are sure, keep reading.",
@@ -11204,7 +11204,7 @@
     },
     {
         "ind":48063,
-        "activity_label":"Food and Entertaining",
+        "activity_label":"Pets and Animals",
         "ctx_a":"[header] How to catch mesprit in pok\u00e9mon diamond and pearl [title] Defeat team galactic. [step] Mesprit is not available to catch until you have proceeded through the story far enough to defeat team galactic by defeating cyrus and catching dialga\/palkia. This will happen automatically in the story after you complete the seventh gym and raid the galactic headquarters.",
         "ctx_b":"",
         "ctx":"[header] How to catch mesprit in pok\u00e9mon diamond and pearl [title] Defeat team galactic. [step] Mesprit is not available to catch until you have proceeded through the story far enough to defeat team galactic by defeating cyrus and catching dialga\/palkia. This will happen automatically in the story after you complete the seventh gym and raid the galactic headquarters.",
@@ -11408,7 +11408,7 @@
     },
     {
         "ind":8280,
-        "activity_label":"Computers and Electronics",
+        "activity_label":"Running a marathon",
         "ctx_a":"[header] How to drug test someone [title] Use laboratory testing to drug test employees. [step] Laboratory tests require the patient to go to a specialized facility. Lab tests are more accurate than take-home tests and are what you should use if you plan on drug screening employees or job applicants.",
         "ctx_b":"",
         "ctx":"[header] How to drug test someone [title] Use laboratory testing to drug test employees. [step] Laboratory tests require the patient to go to a specialized facility. Lab tests are more accurate than take-home tests and are what you should use if you plan on drug screening employees or job applicants.",
@@ -11561,7 +11561,7 @@
     },
     {
         "ind":34074,
-        "activity_label":"Food and Entertaining",
+        "activity_label":"Home and Garden",
         "ctx_a":"[header] How to prevent spider mites on houseplants [title] Keep your houseplants hydrated. [step] Watering your houseplants as needed on a regular basis will prevent spider mite infestation, since spider mites only thrive on houseplants that are dry. [substeps] Use cold water instead of lukewarm water to water your houseplants.",
         "ctx_b":"",
         "ctx":"[header] How to prevent spider mites on houseplants [title] Keep your houseplants hydrated. [step] Watering your houseplants as needed on a regular basis will prevent spider mite infestation, since spider mites only thrive on houseplants that are dry. [substeps] Use cold water instead of lukewarm water to water your houseplants.",
@@ -11612,7 +11612,7 @@
     },
     {
         "ind":8522,
-        "activity_label":"Food and Entertaining",
+        "activity_label":"Sports and Fitness",
         "ctx_a":"[header] How to workout at home using hand weights [title] Know what hand weights are good for. [step] Keep in mind that hand weights are also called dumbbells or free weights. Exercises that use hand weights are good for building up strength, increasing your endurance, and building muscle mass.",
         "ctx_b":"",
         "ctx":"[header] How to workout at home using hand weights [title] Know what hand weights are good for. [step] Keep in mind that hand weights are also called dumbbells or free weights. Exercises that use hand weights are good for building up strength, increasing your endurance, and building muscle mass.",
@@ -11748,7 +11748,7 @@
     },
     {
         "ind":43842,
-        "activity_label":"Rock climbing",
+        "activity_label":"Rope skipping",
         "ctx_a":"[header] How to give a leg massage [title] Learn about basic anatomy. [step] It's helpful to know some anatomy before you give a massage. Thigh muscles are in 4 basic groups which run from the hips down to the knee, in the front, sides, and backs of the legs.",
         "ctx_b":"",
         "ctx":"[header] How to give a leg massage [title] Learn about basic anatomy. [step] It's helpful to know some anatomy before you give a massage. Thigh muscles are in 4 basic groups which run from the hips down to the knee, in the front, sides, and backs of the legs.",
@@ -11782,7 +11782,7 @@
     },
     {
         "ind":17792,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Cutting the grass",
         "ctx_a":"[header] How to get a close shave [title] Choose a clean and sharp, quality safety razor. [step] A quality razor blade means a quality shave. When proper preparation of the skin takes place, you will only need a single blade razor.",
         "ctx_b":"",
         "ctx":"[header] How to get a close shave [title] Choose a clean and sharp, quality safety razor. [step] A quality razor blade means a quality shave. When proper preparation of the skin takes place, you will only need a single blade razor.",
@@ -11833,7 +11833,7 @@
     },
     {
         "ind":9549,
-        "activity_label":"Family Life",
+        "activity_label":"Food and Entertaining",
         "ctx_a":"[header] How to dress a newborn for sleep in the summer [title] Use lightweight clothing and breathable fabric. [step] Light fabrics like cotton will keep your baby cool. Avoid heavy fabrics like wool or flannel.",
         "ctx_b":"",
         "ctx":"[header] How to dress a newborn for sleep in the summer [title] Use lightweight clothing and breathable fabric. [step] Light fabrics like cotton will keep your baby cool. Avoid heavy fabrics like wool or flannel.",
@@ -11867,7 +11867,7 @@
     },
     {
         "ind":37974,
-        "activity_label":"Finance and Business",
+        "activity_label":"Food and Entertaining",
         "ctx_a":"[header] How to make a baked cheesecake [title] Use a springform pan. [step] Cheesecakes are notoriously crumbly, so choosing the right pan will ensure that your cheesecake comes out smoothly when you take it out of the pan. For the best outcome, use a springform pan.",
         "ctx_b":"",
         "ctx":"[header] How to make a baked cheesecake [title] Use a springform pan. [step] Cheesecakes are notoriously crumbly, so choosing the right pan will ensure that your cheesecake comes out smoothly when you take it out of the pan. For the best outcome, use a springform pan.",
@@ -11901,7 +11901,7 @@
     },
     {
         "ind":33435,
-        "activity_label":"Uncategorized",
+        "activity_label":"Family Life",
         "ctx_a":"[header] How to enjoy palm beach with the kids [title] Consider what type of accommodations would best fit your family. [substeps] Look for pet friendly hotels if you will be bringing the family pet along. There are a number of resorts and spas that allow for pets to stay with your family for a fee.",
         "ctx_b":"",
         "ctx":"[header] How to enjoy palm beach with the kids [title] Consider what type of accommodations would best fit your family. [substeps] Look for pet friendly hotels if you will be bringing the family pet along. There are a number of resorts and spas that allow for pets to stay with your family for a fee.",
@@ -11935,7 +11935,7 @@
     },
     {
         "ind":34942,
-        "activity_label":"Shot put",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to use hot stones [title] Find smooth, flat rocks. [step] Look for river rocks, which tend to be smooth and flat. You can also purchase soapstones, which retain heat well.",
         "ctx_b":"",
         "ctx":"[header] How to use hot stones [title] Find smooth, flat rocks. [step] Look for river rocks, which tend to be smooth and flat. You can also purchase soapstones, which retain heat well.",
@@ -11986,7 +11986,7 @@
     },
     {
         "ind":16023,
-        "activity_label":"Home and Garden",
+        "activity_label":"Pole vault",
         "ctx_a":"[header] How to strip turf [title] Cut the turf. [step] Use a lawnmower to cut the turf as short as possible. [title] Cover the turf.",
         "ctx_b":"",
         "ctx":"[header] How to strip turf [title] Cut the turf. [step] Use a lawnmower to cut the turf as short as possible. [title] Cover the turf.",
@@ -12207,7 +12207,7 @@
     },
     {
         "ind":11162,
-        "activity_label":"Youth",
+        "activity_label":"Home and Garden",
         "ctx_a":"[header] How to control cutworms [title] Know the signs of a cutworm infestation. [step] You won't see cutworms during the day, since they feed at night. Most gardeners don't know they have a cutworm problem until they see evidence in the morning after a night of feasting has occurred.",
         "ctx_b":"",
         "ctx":"[header] How to control cutworms [title] Know the signs of a cutworm infestation. [step] You won't see cutworms during the day, since they feed at night. Most gardeners don't know they have a cutworm problem until they see evidence in the morning after a night of feasting has occurred.",
@@ -12428,7 +12428,7 @@
     },
     {
         "ind":15339,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Computers and Electronics",
         "ctx_a":"[header] How to apply lip paint [title] Exfoliate and moisturize your lips. [step] Lip paint can dry out lips, so take some preventative measures before applying it. Use a lip scrub to gently exfoliate your lips.",
         "ctx_b":"",
         "ctx":"[header] How to apply lip paint [title] Exfoliate and moisturize your lips. [step] Lip paint can dry out lips, so take some preventative measures before applying it. Use a lip scrub to gently exfoliate your lips.",
@@ -12445,7 +12445,7 @@
     },
     {
         "ind":24295,
-        "activity_label":"Philosophy and Religion",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to wear a black skirt [title] Select a long-sleeved tailored blouse. [step] Choose a button-down, collared shirt for the most traditional option, and stick with colors like white or light gray pinstripes. If the skirt has a high enough waistline, tuck the shirt in.",
         "ctx_b":"",
         "ctx":"[header] How to wear a black skirt [title] Select a long-sleeved tailored blouse. [step] Choose a button-down, collared shirt for the most traditional option, and stick with colors like white or light gray pinstripes. If the skirt has a high enough waistline, tuck the shirt in.",
@@ -12513,7 +12513,7 @@
     },
     {
         "ind":8647,
-        "activity_label":"Sports and Fitness",
+        "activity_label":"Rollerblading",
         "ctx_a":"[header] How to learn to fence [title] Decide why you want to fence. [step] Is it for, competition, or for historical appeal? All of these are legitimate reasons, and each leads to a different type of fencing and training. Fencing is an old art that has great traditions and cultures, so you may find it more enjoyable if you immerse yourself in it.",
         "ctx_b":"",
         "ctx":"[header] How to learn to fence [title] Decide why you want to fence. [step] Is it for, competition, or for historical appeal? All of these are legitimate reasons, and each leads to a different type of fencing and training. Fencing is an old art that has great traditions and cultures, so you may find it more enjoyable if you immerse yourself in it.",
@@ -12615,7 +12615,7 @@
     },
     {
         "ind":17266,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Layup drill in basketball",
         "ctx_a":"[header] How to maintain waterproof leather boots [title] Remove the boot laces. [step] Before you begin treating or waterproofing the leather, be sure to take out the laces. They'll only get in the way if you leave them in the boots.",
         "ctx_b":"",
         "ctx":"[header] How to maintain waterproof leather boots [title] Remove the boot laces. [step] Before you begin treating or waterproofing the leather, be sure to take out the laces. They'll only get in the way if you leave them in the boots.",
@@ -12683,7 +12683,7 @@
     },
     {
         "ind":32428,
-        "activity_label":"Pets and Animals",
+        "activity_label":"Playing harmonica",
         "ctx_a":"[header] How to hold your syrian hamster [title] Let your hamster get used to his environment. [step] If you have just brought your syrian hamster home, he is going to need some time to adjust to his new surroundings. Let him explore his cage for a day or two before you start trying to hold him.",
         "ctx_b":"",
         "ctx":"[header] How to hold your syrian hamster [title] Let your hamster get used to his environment. [step] If you have just brought your syrian hamster home, he is going to need some time to adjust to his new surroundings. Let him explore his cage for a day or two before you start trying to hold him.",
@@ -12734,7 +12734,7 @@
     },
     {
         "ind":13842,
-        "activity_label":"Youth",
+        "activity_label":"Home and Garden",
         "ctx_a":"[header] How to plant pitcher plants [title] Use a premade mix specially created for carnivorous plants. [step] Using these mixes is highly recommended. Pitcher plants typically grow in damp soils that are devoid of most regular nutrients.",
         "ctx_b":"",
         "ctx":"[header] How to plant pitcher plants [title] Use a premade mix specially created for carnivorous plants. [step] Using these mixes is highly recommended. Pitcher plants typically grow in damp soils that are devoid of most regular nutrients.",
@@ -13040,7 +13040,7 @@
     },
     {
         "ind":9516,
-        "activity_label":"Family Life",
+        "activity_label":"Relationships",
         "ctx_a":"[header] How to make a memorial book [title] Collect pictures of your loved one. [step] Find all of the images you have of your loved one, and go through them. Pick out which ones are most meaningful to you, your family, and the friends of the deceased.",
         "ctx_b":"",
         "ctx":"[header] How to make a memorial book [title] Collect pictures of your loved one. [step] Find all of the images you have of your loved one, and go through them. Pick out which ones are most meaningful to you, your family, and the friends of the deceased.",
@@ -13125,7 +13125,7 @@
     },
     {
         "ind":41810,
-        "activity_label":"Computers and Electronics",
+        "activity_label":"Using uneven bars",
         "ctx_a":"[header] How to learn a programming language [title] Determine your area of interest. [step] You can start learning with any programming language (though some are definitely \" easier \" than others), so you'll want to start by asking yourself what it is you want to accomplish by learning a programming language. This will help you determine what type of programming you should pursue, and provide you a good starting point.",
         "ctx_b":"",
         "ctx":"[header] How to learn a programming language [title] Determine your area of interest. [step] You can start learning with any programming language (though some are definitely \" easier \" than others), so you'll want to start by asking yourself what it is you want to accomplish by learning a programming language. This will help you determine what type of programming you should pursue, and provide you a good starting point.",
@@ -13159,7 +13159,7 @@
     },
     {
         "ind":27000,
-        "activity_label":"Rock climbing",
+        "activity_label":"Cars & Other Vehicles",
         "ctx_a":"[header] How to do external car detailing properly [title] The first thing you need to do properly is to wash down your car effectively. [step] There is no point trying to do external car detailing if you are just going to end up scratching your duco even more because you left dirt on your car. [substeps] You must first hose down your car with firm pressure.",
         "ctx_b":"",
         "ctx":"[header] How to do external car detailing properly [title] The first thing you need to do properly is to wash down your car effectively. [step] There is no point trying to do external car detailing if you are just going to end up scratching your duco even more because you left dirt on your car. [substeps] You must first hose down your car with firm pressure.",
@@ -13397,7 +13397,7 @@
     },
     {
         "ind":34111,
-        "activity_label":"High jump",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to give a foot massage [title] Rub the top of the foot with your thumbs. [step] Start at the tip of the toe and move slowly up to their ankle. Move back down their foot, starting from their ankle.",
         "ctx_b":"",
         "ctx":"[header] How to give a foot massage [title] Rub the top of the foot with your thumbs. [step] Start at the tip of the toe and move slowly up to their ankle. Move back down their foot, starting from their ankle.",
@@ -13431,7 +13431,7 @@
     },
     {
         "ind":487,
-        "activity_label":"Rollerblading",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to be a redhead [title] Pick a brand. [step] The two most popular red dye brands are schwarzkopf and l'oreal, but a trip to your local drugstore beauty aisle will reveal dozens of reliable and affordable dyes. This step can be overwhelming since there are so many options.",
         "ctx_b":"",
         "ctx":"[header] How to be a redhead [title] Pick a brand. [step] The two most popular red dye brands are schwarzkopf and l'oreal, but a trip to your local drugstore beauty aisle will reveal dozens of reliable and affordable dyes. This step can be overwhelming since there are so many options.",
@@ -13533,7 +13533,7 @@
     },
     {
         "ind":35239,
-        "activity_label":"Washing face",
+        "activity_label":"Home and Garden",
         "ctx_a":"[header] How to make a natural disinfectant [title] Make a basic vinegar-based spray. [step] In a standard-sized glass spray bottle, add 1 part water , 1 part vinegar and 5-15 drops of 100% essential oil. You can use whichever essential oil whose scent you prefer, or customize the scent according to what room in your home you are cleaning.",
         "ctx_b":"",
         "ctx":"[header] How to make a natural disinfectant [title] Make a basic vinegar-based spray. [step] In a standard-sized glass spray bottle, add 1 part water , 1 part vinegar and 5-15 drops of 100% essential oil. You can use whichever essential oil whose scent you prefer, or customize the scent according to what room in your home you are cleaning.",
@@ -13550,7 +13550,7 @@
     },
     {
         "ind":39642,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Cutting the grass",
         "ctx_a":"[header] How to accessorize a summer white outfit [title] Don a straw sun hat. [step] Straw has a natural appeal for summer, and the sun hat is a classic design that adds whimsical charm to your outfit. Try the straw hat in bold colors, like yellow or pink, or go for something softer, like coral or turquoise.",
         "ctx_b":"",
         "ctx":"[header] How to accessorize a summer white outfit [title] Don a straw sun hat. [step] Straw has a natural appeal for summer, and the sun hat is a classic design that adds whimsical charm to your outfit. Try the straw hat in bold colors, like yellow or pink, or go for something softer, like coral or turquoise.",
@@ -13805,7 +13805,7 @@
     },
     {
         "ind":5029,
-        "activity_label":"Food and Entertaining",
+        "activity_label":"Finance and Business",
         "ctx_a":"[header] How to make coffee brownies [title] Preheat the oven to 325 \u00b0 f (160 \u00b0 c). [title] Simmer a pot of water. [step] Set a metal or glass bowl over the pot (or use a double-boiler).",
         "ctx_b":"",
         "ctx":"[header] How to make coffee brownies [title] Preheat the oven to 325 \u00b0 f (160 \u00b0 c). [title] Simmer a pot of water. [step] Set a metal or glass bowl over the pot (or use a double-boiler).",
@@ -14009,7 +14009,7 @@
     },
     {
         "ind":8514,
-        "activity_label":"Food and Entertaining",
+        "activity_label":"Uncategorized",
         "ctx_a":"[header] How to do formal vegetable cuts [title] Trim tops, stems, and roots. [step] Place your vegetables on a cutting board. With a sharp knife, carefully trim off the leaves, stems, tops, and tails.",
         "ctx_b":"",
         "ctx":"[header] How to do formal vegetable cuts [title] Trim tops, stems, and roots. [step] Place your vegetables on a cutting board. With a sharp knife, carefully trim off the leaves, stems, tops, and tails.",
@@ -14026,7 +14026,7 @@
     },
     {
         "ind":34414,
-        "activity_label":"Work World",
+        "activity_label":"Using uneven bars",
         "ctx_a":"[header] How to join the army without your parents supporting you [title] Learn all you can about the army. [step] If you are well-informed on joining the military you will have a much better time convincing your parents that you are not making a rash decision. There are a lot of great websites online with information on all aspects of making the military your career.",
         "ctx_b":"",
         "ctx":"[header] How to join the army without your parents supporting you [title] Learn all you can about the army. [step] If you are well-informed on joining the military you will have a much better time convincing your parents that you are not making a rash decision. There are a lot of great websites online with information on all aspects of making the military your career.",
@@ -14791,7 +14791,7 @@
     },
     {
         "ind":37823,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Running a marathon",
         "ctx_a":"[header] How to grow out an inverted bob [title] Have a goal in mind. [step] As you grow out your hair, have an end look or goal in mind. Let your stylist know what kind of look or style you want to transition into.",
         "ctx_b":"",
         "ctx":"[header] How to grow out an inverted bob [title] Have a goal in mind. [step] As you grow out your hair, have an end look or goal in mind. Let your stylist know what kind of look or style you want to transition into.",
@@ -14842,7 +14842,7 @@
     },
     {
         "ind":32262,
-        "activity_label":"Family Life",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to spot age discrimination [title] Identify discriminatory job advertisements. [step] A notice or advertisement for a job may not require or prefer any age or age range for qualified applicants. The only exception to this rule occurs if the employer can show that age is a bona fide occupational qualification (bfoq).",
         "ctx_b":"",
         "ctx":"[header] How to spot age discrimination [title] Identify discriminatory job advertisements. [step] A notice or advertisement for a job may not require or prefer any age or age range for qualified applicants. The only exception to this rule occurs if the employer can show that age is a bona fide occupational qualification (bfoq).",
@@ -14877,9 +14877,9 @@
     {
         "ind":17528,
         "activity_label":"Personal Care and Style",
-        "ctx_a":"[header] How to style straight hair [title] Opt for a pixie cut. [step] A [style a pixie cut | pixie cut] can provide short straight hair with a lot of volume and movement. To achieve a voluminous pixie, keep the sides cropped, the top long, and add lots of layers throughout your short locks.",
+        "ctx_a":"[header] How to style straight hair [title] Opt for a pixie cut. [step] A [style a pixie cut I pixie cut] can provide short straight hair with a lot of volume and movement. To achieve a voluminous pixie, keep the sides cropped, the top long, and add lots of layers throughout your short locks.",
         "ctx_b":"",
-        "ctx":"[header] How to style straight hair [title] Opt for a pixie cut. [step] A [style a pixie cut | pixie cut] can provide short straight hair with a lot of volume and movement. To achieve a voluminous pixie, keep the sides cropped, the top long, and add lots of layers throughout your short locks.",
+        "ctx":"[header] How to style straight hair [title] Opt for a pixie cut. [step] A [style a pixie cut I pixie cut] can provide short straight hair with a lot of volume and movement. To achieve a voluminous pixie, keep the sides cropped, the top long, and add lots of layers throughout your short locks.",
         "endings":[
             "[substeps] You can style your hair or model it. Make sure your hair isn't too long or too short and that you fill in any lumps.",
             "Make sure your short locks fall evenly throughout your hair to provide approximately a dozen layers. [title] Keep extensions or pomade for wavy hair.",
@@ -15029,7 +15029,7 @@
     },
     {
         "ind":18828,
-        "activity_label":"Computers and Electronics",
+        "activity_label":"Health",
         "ctx_a":"[header] How to clean a laptop [title] Get the right cleaning supplies for your laptop. [step] For the screen you should use a special screen cleaner. For the rest of the laptop, all you should need is a bowl, some soap (if you wish to clean your laptop with the keys removed), a can of compressed air, and some isopropyl alcohol.",
         "ctx_b":"",
         "ctx":"[header] How to clean a laptop [title] Get the right cleaning supplies for your laptop. [step] For the screen you should use a special screen cleaner. For the rest of the laptop, all you should need is a bowl, some soap (if you wish to clean your laptop with the keys removed), a can of compressed air, and some isopropyl alcohol.",
@@ -15131,7 +15131,7 @@
     },
     {
         "ind":36902,
-        "activity_label":"Having an ice cream",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to do 70s hair [title] Brush your hair into a side part. [step] To make a pageboy cut, you will do a lot of molding and styling. It's important to start out with smooth, flat hair.",
         "ctx_b":"",
         "ctx":"[header] How to do 70s hair [title] Brush your hair into a side part. [step] To make a pageboy cut, you will do a lot of molding and styling. It's important to start out with smooth, flat hair.",
@@ -15233,7 +15233,7 @@
     },
     {
         "ind":42830,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Washing face",
         "ctx_a":"[header] How to wear a pashmina [title] Wrap your pashmina loosely around your neck. [step] Unfold your scarf so that all of the material is exposed. Then, wrap the scarf around your neck once.",
         "ctx_b":"",
         "ctx":"[header] How to wear a pashmina [title] Wrap your pashmina loosely around your neck. [step] Unfold your scarf so that all of the material is exposed. Then, wrap the scarf around your neck once.",
@@ -15318,7 +15318,7 @@
     },
     {
         "ind":6728,
-        "activity_label":"Home and Garden",
+        "activity_label":"Horseback riding",
         "ctx_a":"[header] How to breastfeed a newborn in the first week after birth [title] Try breastfeeding almost immediately after birth. [step] The sooner you introduce your baby to the breast, the better your chances of having the baby accept and effectively breastfeed. It will also immediately prompt your body to begin the process of producing milk.",
         "ctx_b":"",
         "ctx":"[header] How to breastfeed a newborn in the first week after birth [title] Try breastfeeding almost immediately after birth. [step] The sooner you introduce your baby to the breast, the better your chances of having the baby accept and effectively breastfeed. It will also immediately prompt your body to begin the process of producing milk.",
@@ -15335,7 +15335,7 @@
     },
     {
         "ind":42525,
-        "activity_label":"Food and Entertaining",
+        "activity_label":"Philosophy and Religion",
         "ctx_a":"[header] How to make tomato soup [title] Bring a large pot of water to a boil. [step] Fill the pot about halfway with water, then place it on a burner over high heat and allow it to come to a full boil. [title] Cut an \" x \" shape into the tomatoes.",
         "ctx_b":"",
         "ctx":"[header] How to make tomato soup [title] Bring a large pot of water to a boil. [step] Fill the pot about halfway with water, then place it on a burner over high heat and allow it to come to a full boil. [title] Cut an \" x \" shape into the tomatoes.",
@@ -15386,7 +15386,7 @@
     },
     {
         "ind":30379,
-        "activity_label":"Youth",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to stop an angora sweater from shedding [title] Determine if your sweater can be frozen. [step] This method of freezing works best for angora sweaters that are blended with another material. If your sweater is 100% angora, your sweater will still shed because of the high amount of angora.",
         "ctx_b":"",
         "ctx":"[header] How to stop an angora sweater from shedding [title] Determine if your sweater can be frozen. [step] This method of freezing works best for angora sweaters that are blended with another material. If your sweater is 100% angora, your sweater will still shed because of the high amount of angora.",
@@ -15641,7 +15641,7 @@
     },
     {
         "ind":29247,
-        "activity_label":"Layup drill in basketball",
+        "activity_label":"Travel",
         "ctx_a":"[header] How to choose the best products for african american hair [title] Know your hair type. [step] To begin with, it helps to know what your hair type is likely to be and therefore, what the best products for it will be. To test your hair type, try a daily density test to determine how well your hair absorbs moisture : [substeps] Wash your hair.",
         "ctx_b":"",
         "ctx":"[header] How to choose the best products for african american hair [title] Know your hair type. [step] To begin with, it helps to know what your hair type is likely to be and therefore, what the best products for it will be. To test your hair type, try a daily density test to determine how well your hair absorbs moisture : [substeps] Wash your hair.",
@@ -15777,7 +15777,7 @@
     },
     {
         "ind":36056,
-        "activity_label":"Having an ice cream",
+        "activity_label":"Computers and Electronics",
         "ctx_a":"[header] How to block on gmail [title] Tap the \" gmail \" app. [title] Tap an email to open it. [title] Tap the android menu button.",
         "ctx_b":"",
         "ctx":"[header] How to block on gmail [title] Tap the \" gmail \" app. [title] Tap an email to open it. [title] Tap the android menu button.",
@@ -15794,7 +15794,7 @@
     },
     {
         "ind":44115,
-        "activity_label":"Education and Communications",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to shave your arms [title] Exfoliate your arms. [step] When shaving, the presence of dead skin cells can cause razor burn and ingrown hairs. It is possible to prevent razor burn and ingrown hairs by exfoliating the skin one to two days before shaving.",
         "ctx_b":"",
         "ctx":"[header] How to shave your arms [title] Exfoliate your arms. [step] When shaving, the presence of dead skin cells can cause razor burn and ingrown hairs. It is possible to prevent razor burn and ingrown hairs by exfoliating the skin one to two days before shaving.",
@@ -15862,7 +15862,7 @@
     },
     {
         "ind":1828,
-        "activity_label":"Relationships",
+        "activity_label":"Ice fishing",
         "ctx_a":"[header] How to keep both dogs safe while mating them [title] Make sure both dogs are the right age. [step] Before mating your dogs, it is important to wait until both dogs have reached maturity. In fact, although most dogs become mature during the first year and a half of life, waiting until both dogs are at least 2 years old can further ensure their health and safety.",
         "ctx_b":"",
         "ctx":"[header] How to keep both dogs safe while mating them [title] Make sure both dogs are the right age. [step] Before mating your dogs, it is important to wait until both dogs have reached maturity. In fact, although most dogs become mature during the first year and a half of life, waiting until both dogs are at least 2 years old can further ensure their health and safety.",
@@ -15896,7 +15896,7 @@
     },
     {
         "ind":35691,
-        "activity_label":"Finance and Business",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to get pretty eyes without wearing makeup [title] Get enough sleep. [step] One of the main reasons people have dark circles under their eyes is lack of sleep. Make sure that you get eight uninterrupted hours.",
         "ctx_b":"",
         "ctx":"[header] How to get pretty eyes without wearing makeup [title] Get enough sleep. [step] One of the main reasons people have dark circles under their eyes is lack of sleep. Make sure that you get eight uninterrupted hours.",
@@ -15964,7 +15964,7 @@
     },
     {
         "ind":30518,
-        "activity_label":"Travel",
+        "activity_label":"Having an ice cream",
         "ctx_a":"[header] How to get a cell phone with no internet access [title] Browse older phones. [step] Older phones generally have a lower level of functionality than newer phones. The best place to start your search for a cell phone without internet access is by looking for one that was manufactured 10 years ago or more.",
         "ctx_b":"",
         "ctx":"[header] How to get a cell phone with no internet access [title] Browse older phones. [step] Older phones generally have a lower level of functionality than newer phones. The best place to start your search for a cell phone without internet access is by looking for one that was manufactured 10 years ago or more.",
@@ -16151,7 +16151,7 @@
     },
     {
         "ind":15417,
-        "activity_label":"Sports and Fitness",
+        "activity_label":"Rock climbing",
         "ctx_a":"[header] How to prevent swelling in hot weather [title] Stay active. [step] You don't have to perform rigorous exercises in the heat in order to benefit from them. Walking is a great way to prevent swelling because it gives you enough cardio to get your blood flowing.",
         "ctx_b":"",
         "ctx":"[header] How to prevent swelling in hot weather [title] Stay active. [step] You don't have to perform rigorous exercises in the heat in order to benefit from them. Walking is a great way to prevent swelling because it gives you enough cardio to get your blood flowing.",
@@ -16202,7 +16202,7 @@
     },
     {
         "ind":33167,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Layup drill in basketball",
         "ctx_a":"[header] How to grow hollyhocks [title] Purchase seeds in your choice of variety and color. [step] Hollyhocks come in a seemingly endless assortment of shades of white, yellow, pink, maroon and red flowers, which grow on 6 to 9 foot (1.8 to 2.7 m) stalks. [substeps] Hollyhocks will reseed themselves for subsequent growing years.",
         "ctx_b":"",
         "ctx":"[header] How to grow hollyhocks [title] Purchase seeds in your choice of variety and color. [step] Hollyhocks come in a seemingly endless assortment of shades of white, yellow, pink, maroon and red flowers, which grow on 6 to 9 foot (1.8 to 2.7 m) stalks. [substeps] Hollyhocks will reseed themselves for subsequent growing years.",
@@ -16270,7 +16270,7 @@
     },
     {
         "ind":29251,
-        "activity_label":"Home and Garden",
+        "activity_label":"Youth",
         "ctx_a":"[header] How to ask a girl out in middle school over text message [title] Find a good opening sentence during your conversation. [step] From here on you can slowly ease into the topic of boyfriends and relationships without making her feel too uncomfortable. [title] Exchange a handful of messages about the topic and observe her answers.",
         "ctx_b":"",
         "ctx":"[header] How to ask a girl out in middle school over text message [title] Find a good opening sentence during your conversation. [step] From here on you can slowly ease into the topic of boyfriends and relationships without making her feel too uncomfortable. [title] Exchange a handful of messages about the topic and observe her answers.",
@@ -16508,7 +16508,7 @@
     },
     {
         "ind":20374,
-        "activity_label":"Pets and Animals",
+        "activity_label":"Family Life",
         "ctx_a":"[header] How to become a foster parent in ohio [title] Learn the responsibilities of a foster parent. [step] A foster parent provides care and a home for children who cannot currently live with their natural parents, often because of abuse or neglect. They take care of the child until the child can safely return home.",
         "ctx_b":"",
         "ctx":"[header] How to become a foster parent in ohio [title] Learn the responsibilities of a foster parent. [step] A foster parent provides care and a home for children who cannot currently live with their natural parents, often because of abuse or neglect. They take care of the child until the child can safely return home.",
@@ -16610,7 +16610,7 @@
     },
     {
         "ind":31033,
-        "activity_label":"Health",
+        "activity_label":"Home and Garden",
         "ctx_a":"[header] How to hire a house cleaning service [title] Decide what you want cleaned. [step] You may only choose to have the service tackle particularly tough spots in your home, such as the kitchen and main bathroom. Some families will want the house cleaned from top to bottom.",
         "ctx_b":"",
         "ctx":"[header] How to hire a house cleaning service [title] Decide what you want cleaned. [step] You may only choose to have the service tackle particularly tough spots in your home, such as the kitchen and main bathroom. Some families will want the house cleaned from top to bottom.",
@@ -16797,7 +16797,7 @@
     },
     {
         "ind":34019,
-        "activity_label":"Youth",
+        "activity_label":"Pets and Animals",
         "ctx_a":"[header] How to be safe around stray dogs [title] Differentiate between stray animals and lost pets. [step] If you happen upon a dog, you will most likely be able to tell whether the dog is a stray or a lost pet. [substeps] Stray dogs may not have had any positive human contact and are not socialized towards humans.",
         "ctx_b":"",
         "ctx":"[header] How to be safe around stray dogs [title] Differentiate between stray animals and lost pets. [step] If you happen upon a dog, you will most likely be able to tell whether the dog is a stray or a lost pet. [substeps] Stray dogs may not have had any positive human contact and are not socialized towards humans.",
@@ -16882,7 +16882,7 @@
     },
     {
         "ind":25645,
-        "activity_label":"Rope skipping",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to wear white dresses [title] Consider your skin tone. [step] While anyone can wear white, pairing your unique skin tone with the right shade of white can help you pull off the look even better. If white makes your skin look drab, gray, or sallow, you might be wearing the wrong shade.",
         "ctx_b":"",
         "ctx":"[header] How to wear white dresses [title] Consider your skin tone. [step] While anyone can wear white, pairing your unique skin tone with the right shade of white can help you pull off the look even better. If white makes your skin look drab, gray, or sallow, you might be wearing the wrong shade.",
@@ -17324,7 +17324,7 @@
     },
     {
         "ind":33945,
-        "activity_label":"Rollerblading",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to create a home spa treatment with nail polish, jojoba oil and apricot exfoliator [title] Gather the items you will need. [step] Have a bottle of jojoba oil at hand. Along with this, have a tube of nail polish with nail polish remover, and apricot exfoliator as well.",
         "ctx_b":"",
         "ctx":"[header] How to create a home spa treatment with nail polish, jojoba oil and apricot exfoliator [title] Gather the items you will need. [step] Have a bottle of jojoba oil at hand. Along with this, have a tube of nail polish with nail polish remover, and apricot exfoliator as well.",
@@ -17358,7 +17358,7 @@
     },
     {
         "ind":49876,
-        "activity_label":"Sports and Fitness",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to wear boots with jeans [title] Choose ankle boots that end 2 inches (5.1 cm) above your ankle. [step] This is the thinnest part of your leg, which you want to show off to keep your silhouette proportionate. If the boots cut you off any higher than a couple inches above your ankle, they can make you look shorter and stockier.",
         "ctx_b":"",
         "ctx":"[header] How to wear boots with jeans [title] Choose ankle boots that end 2 inches (5.1 cm) above your ankle. [step] This is the thinnest part of your leg, which you want to show off to keep your silhouette proportionate. If the boots cut you off any higher than a couple inches above your ankle, they can make you look shorter and stockier.",
@@ -17426,7 +17426,7 @@
     },
     {
         "ind":7944,
-        "activity_label":"Washing face",
+        "activity_label":"Education and Communications",
         "ctx_a":"[header] How to talk to a human when calling a business [title] Dial \" 0 \". [step] Most of the time, pressing \" 0 \" will take you to a person. If it doesn't, press it multiple times.",
         "ctx_b":"",
         "ctx":"[header] How to talk to a human when calling a business [title] Dial \" 0 \". [step] Most of the time, pressing \" 0 \" will take you to a person. If it doesn't, press it multiple times.",
@@ -17443,7 +17443,7 @@
     },
     {
         "ind":36484,
-        "activity_label":"Pets and Animals",
+        "activity_label":"Health",
         "ctx_a":"[header] How to read pedigrees [title] Figure out the orientation of the pedigree. [step] Pedigrees can be laid out in a variety of orientations. Assess whether the chart is oriented either vertically or horizontally on the page.",
         "ctx_b":"",
         "ctx":"[header] How to read pedigrees [title] Figure out the orientation of the pedigree. [step] Pedigrees can be laid out in a variety of orientations. Assess whether the chart is oriented either vertically or horizontally on the page.",
@@ -17528,7 +17528,7 @@
     },
     {
         "ind":31294,
-        "activity_label":"Pets and Animals",
+        "activity_label":"Holidays and Traditions",
         "ctx_a":"[header] How to care for newborn puppies [title] Choose a box that is a comfortable size for your dog. [step] A whelping box is one in which the dog gives birth. It should also keep the puppies warm and protect them from being squashed if their mother lies on them.",
         "ctx_b":"",
         "ctx":"[header] How to care for newborn puppies [title] Choose a box that is a comfortable size for your dog. [step] A whelping box is one in which the dog gives birth. It should also keep the puppies warm and protect them from being squashed if their mother lies on them.",
@@ -17562,7 +17562,7 @@
     },
     {
         "ind":32522,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Sharpening knives",
         "ctx_a":"[header] How to deal with peeling skin [title] Cool the skin to prevent peeling. [step] If your skin is starting to peel, it's a good idea to immediately jump in a cold shower or bath. The cold water will soothe your skin, and it will also prevent your skin from peeling so fast by cooling it down.",
         "ctx_b":"",
         "ctx":"[header] How to deal with peeling skin [title] Cool the skin to prevent peeling. [step] If your skin is starting to peel, it's a good idea to immediately jump in a cold shower or bath. The cold water will soothe your skin, and it will also prevent your skin from peeling so fast by cooling it down.",
@@ -17681,7 +17681,7 @@
     },
     {
         "ind":31862,
-        "activity_label":"Washing face",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to make loose face powder into compact at home [title] Find a suitable container. [step] Preferably use an old, cleaned out compact or a new one but you could also use a pillbox, flat plastic container, and so on. The main thing is that the item be clean and dry.",
         "ctx_b":"",
         "ctx":"[header] How to make loose face powder into compact at home [title] Find a suitable container. [step] Preferably use an old, cleaned out compact or a new one but you could also use a pillbox, flat plastic container, and so on. The main thing is that the item be clean and dry.",
@@ -17868,7 +17868,7 @@
     },
     {
         "ind":28513,
-        "activity_label":"Family Life",
+        "activity_label":"Pole vault",
         "ctx_a":"[header] How to confront others about their poor hygiene [title] Set a goal for the conversation. [step] Making sure that you have a particular result in mind will help you plan for the difficult conversation. Know the specific changes that you want to see in your friend or colleague's behavior and be clear about why those changes are important.",
         "ctx_b":"",
         "ctx":"[header] How to confront others about their poor hygiene [title] Set a goal for the conversation. [step] Making sure that you have a particular result in mind will help you plan for the difficult conversation. Know the specific changes that you want to see in your friend or colleague's behavior and be clear about why those changes are important.",
@@ -17953,7 +17953,7 @@
     },
     {
         "ind":20278,
-        "activity_label":"Relationships",
+        "activity_label":"Health",
         "ctx_a":"[header] How to diagnose septic arthritis [title] Recognize risk factors. [step] Individuals of any age can develop septic arthritis. However, some people may be more susceptible to this condition.",
         "ctx_b":"",
         "ctx":"[header] How to diagnose septic arthritis [title] Recognize risk factors. [step] Individuals of any age can develop septic arthritis. However, some people may be more susceptible to this condition.",
@@ -18242,7 +18242,7 @@
     },
     {
         "ind":28818,
-        "activity_label":"Holidays and Traditions",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to measure hockey gloves [title] Bend your arm at the elbow. [step] The measurement for a glove is based on the distance from the crook, or crease, of your elbow to your middle finger. Bend your elbow slightly.",
         "ctx_b":"",
         "ctx":"[header] How to measure hockey gloves [title] Bend your arm at the elbow. [step] The measurement for a glove is based on the distance from the crook, or crease, of your elbow to your middle finger. Bend your elbow slightly.",
@@ -18284,7 +18284,7 @@
             "[title] Put in a spray bottle of mousse. [step] While light hairspray may not provide foam, a bit of hold can help, which will hold the waves when you straighten your hair.",
             "[substeps] If you want curls that aren't yet in place, you'll have to sacrifice curls by just getting a light texturizing product. You can use a texturizing spray to tame unruly waves.",
             "Dry hair is easier to style by itself than wet hair, so it is important that you find out how to do it. [substeps] Use a smoothing serum, a shine serum and a thin, oil-free water-based product.",
-            "[substeps] If your hair is naturally very curly, [straighten your hair | straighten it] before continuing. If you want loose waves, you'll need to start with either straight or slightly wavy hair."
+            "[substeps] If your hair is naturally very curly, [straighten your hair I straighten it] before continuing. If you want loose waves, you'll need to start with either straight or slightly wavy hair."
         ],
         "source_id":"wikihow~24936",
         "split":"val",
@@ -18497,7 +18497,7 @@
     },
     {
         "ind":6917,
-        "activity_label":"Education and Communications",
+        "activity_label":"Pets and Animals",
         "ctx_a":"[header] How to choose who walks you down the aisle [title] Identify the most important family member in your life. [step] It may help to start by thinking about who is the most important family member in your life and then consider asking that person to walk you down the aisle. Perhaps you consider your brother your most important person in your life.",
         "ctx_b":"",
         "ctx":"[header] How to choose who walks you down the aisle [title] Identify the most important family member in your life. [step] It may help to start by thinking about who is the most important family member in your life and then consider asking that person to walk you down the aisle. Perhaps you consider your brother your most important person in your life.",
@@ -18514,7 +18514,7 @@
     },
     {
         "ind":18799,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Family Life",
         "ctx_a":"[header] How to continue breastfeeding after returning to work [title] Prepare yourself. [step] Before returning to work, you need to plan ahead and prepare early. This means building up a stockpile of expressed breast milk (ebm) and establishing the infrastructure for successfully expressing breast milk at work.",
         "ctx_b":"",
         "ctx":"[header] How to continue breastfeeding after returning to work [title] Prepare yourself. [step] Before returning to work, you need to plan ahead and prepare early. This means building up a stockpile of expressed breast milk (ebm) and establishing the infrastructure for successfully expressing breast milk at work.",
@@ -18616,7 +18616,7 @@
     },
     {
         "ind":2889,
-        "activity_label":"Horseback riding",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to hide your nipples [title] Wear reusable silicone nipple covers under thin fabrics. [step] These small, circular or flower-shaped adhesive coverings are meant to cover only your nipples, so they're a great option for low-cut tops and thin or sheer fabrics that might make your nipples visible. Stick the adhesive side onto your nipple and press it down gently.",
         "ctx_b":"",
         "ctx":"[header] How to hide your nipples [title] Wear reusable silicone nipple covers under thin fabrics. [step] These small, circular or flower-shaped adhesive coverings are meant to cover only your nipples, so they're a great option for low-cut tops and thin or sheer fabrics that might make your nipples visible. Stick the adhesive side onto your nipple and press it down gently.",
@@ -18650,7 +18650,7 @@
     },
     {
         "ind":21664,
-        "activity_label":"Home and Garden",
+        "activity_label":"Family Life",
         "ctx_a":"[header] How to treat flu in toddlers [title] Keep your child hydrated. [step] Children may forget to drink enough fluids when they are not feeling well. In addition, you child will lose water faster than usual if her body is producing mucus or if she is running a fever.",
         "ctx_b":"",
         "ctx":"[header] How to treat flu in toddlers [title] Keep your child hydrated. [step] Children may forget to drink enough fluids when they are not feeling well. In addition, you child will lose water faster than usual if her body is producing mucus or if she is running a fever.",
@@ -18718,7 +18718,7 @@
     },
     {
         "ind":40861,
-        "activity_label":"Education and Communications",
+        "activity_label":"Using uneven bars",
         "ctx_a":"[header] How to make a protractor [title] Get heavyweight paper or transparent paper. [step] Find cardstock paper or another piece of heavyweight paper that will work for your printer. Heavyweight paper will make the protractor more durable.",
         "ctx_b":"",
         "ctx":"[header] How to make a protractor [title] Get heavyweight paper or transparent paper. [step] Find cardstock paper or another piece of heavyweight paper that will work for your printer. Heavyweight paper will make the protractor more durable.",
@@ -18803,7 +18803,7 @@
     },
     {
         "ind":49624,
-        "activity_label":"Health",
+        "activity_label":"Home and Garden",
         "ctx_a":"[header] How to reset a water heater [title] Disconnect the electricity to the heater. [step] Never tamper with a water heater that's still powered on. Before you begin opening the heater, figure out where it's plugged into the wall and turn off the electricity.",
         "ctx_b":"",
         "ctx":"[header] How to reset a water heater [title] Disconnect the electricity to the heater. [step] Never tamper with a water heater that's still powered on. Before you begin opening the heater, figure out where it's plugged into the wall and turn off the electricity.",
@@ -18837,7 +18837,7 @@
     },
     {
         "ind":168,
-        "activity_label":"Having an ice cream",
+        "activity_label":"Pets and Animals",
         "ctx_a":"[header] How to choose a water dish for your rabbit [title] Avoid plastic bowls. [step] Your rabbit's bowl should be made of ceramic or metal. Plastic bowls are easily scratched.",
         "ctx_b":"",
         "ctx":"[header] How to choose a water dish for your rabbit [title] Avoid plastic bowls. [step] Your rabbit's bowl should be made of ceramic or metal. Plastic bowls are easily scratched.",
@@ -18888,7 +18888,7 @@
     },
     {
         "ind":25308,
-        "activity_label":"Pets and Animals",
+        "activity_label":"Family Life",
         "ctx_a":"[header] How to set up a safe playpen [title] Use playpens for babies from six months on. [step] Playpens are most useful for babies from about six to seven months old, just when they are beginning to crawl. However, you should feel free to buy a playpen before your baby reaches this age, so she can get used to it early.",
         "ctx_b":"",
         "ctx":"[header] How to set up a safe playpen [title] Use playpens for babies from six months on. [step] Playpens are most useful for babies from about six to seven months old, just when they are beginning to crawl. However, you should feel free to buy a playpen before your baby reaches this age, so she can get used to it early.",
@@ -18905,7 +18905,7 @@
     },
     {
         "ind":22736,
-        "activity_label":"Shot put",
+        "activity_label":"Computers and Electronics",
         "ctx_a":"[header] How to repair a laptop key [title] Gather your repair equipment. [step] In order to attempt to repair a key on your laptop's keyboard, you'll need the following items : [substeps] Prying item-something plastic, such as a credit card or a spudger, is best; you can use a butter knife or a flathead screwdriver in a pinch. Q-tip-used to clean grit and dust from the area surrounding the key.",
         "ctx_b":"",
         "ctx":"[header] How to repair a laptop key [title] Gather your repair equipment. [step] In order to attempt to repair a key on your laptop's keyboard, you'll need the following items : [substeps] Prying item-something plastic, such as a credit card or a spudger, is best; you can use a butter knife or a flathead screwdriver in a pinch. Q-tip-used to clean grit and dust from the area surrounding the key.",
@@ -18973,7 +18973,7 @@
     },
     {
         "ind":3555,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Sports and Fitness",
         "ctx_a":"[header] How to take an epsom salt bath [title] Draw a warm bath. [step] Very hot water feels great, but warm water is best for your skin. Fill the bath with warm water.",
         "ctx_b":"",
         "ctx":"[header] How to take an epsom salt bath [title] Draw a warm bath. [step] Very hot water feels great, but warm water is best for your skin. Fill the bath with warm water.",
@@ -19092,7 +19092,7 @@
     },
     {
         "ind":42772,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Chopping wood",
         "ctx_a":"[header] How to stop peeling fingernail polish off [title] Remind yourself you want healthy nails. [step] One of the worst things you can do to your nail bed is peel the polish off of it. The reason behind this is simple: you peel off a layer of your nail along with the polish.",
         "ctx_b":"",
         "ctx":"[header] How to stop peeling fingernail polish off [title] Remind yourself you want healthy nails. [step] One of the worst things you can do to your nail bed is peel the polish off of it. The reason behind this is simple: you peel off a layer of your nail along with the polish.",
@@ -19143,7 +19143,7 @@
     },
     {
         "ind":12865,
-        "activity_label":"Sharpening knives",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to make antibacterial ointment at home [title] Choose your oils. [step] Coconut oil is naturally antiviral, antibacterial, and antifungal. Coconut oil should be your first ingredient, comprising about half of your oil base (about \u00bd cup).",
         "ctx_b":"",
         "ctx":"[header] How to make antibacterial ointment at home [title] Choose your oils. [step] Coconut oil is naturally antiviral, antibacterial, and antifungal. Coconut oil should be your first ingredient, comprising about half of your oil base (about \u00bd cup).",
@@ -19211,7 +19211,7 @@
     },
     {
         "ind":10511,
-        "activity_label":"Education and Communications",
+        "activity_label":"Having an ice cream",
         "ctx_a":"[header] How to take off clothes in a sexy way [title] Prepare in advance (optional). [step] You can use these tips any time you're taking off clothes, no matter what you're wearing and how far you intend to go. But if you want to give your sexual partner a special striptease, choose your clothing and location in advance.",
         "ctx_b":"",
         "ctx":"[header] How to take off clothes in a sexy way [title] Prepare in advance (optional). [step] You can use these tips any time you're taking off clothes, no matter what you're wearing and how far you intend to go. But if you want to give your sexual partner a special striptease, choose your clothing and location in advance.",
@@ -19228,7 +19228,7 @@
     },
     {
         "ind":46556,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Work World",
         "ctx_a":"[header] How to make yoga pants look fashionable [title] Decide on a style. [step] Let your personal preferences guide this decision. Pants with a simple fold-down waist and legs that hug your ankle will fit into many styles, and stay in the background while other parts of the outfit draw attention.",
         "ctx_b":"",
         "ctx":"[header] How to make yoga pants look fashionable [title] Decide on a style. [step] Let your personal preferences guide this decision. Pants with a simple fold-down waist and legs that hug your ankle will fit into many styles, and stay in the background while other parts of the outfit draw attention.",
@@ -19330,7 +19330,7 @@
     },
     {
         "ind":45655,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Uncategorized",
         "ctx_a":"[header] How to wear berry lipstick [title] Decide how dark and opaque you want the lipstick to be. [step] There are a wide variety of berry lipsticks on the market, which run the spectrum from light to dark and highly opaque to sheer. Determine how intense you want your berry lip color to be, so you can choose the appropriate lipstick.",
         "ctx_b":"",
         "ctx":"[header] How to wear berry lipstick [title] Decide how dark and opaque you want the lipstick to be. [step] There are a wide variety of berry lipsticks on the market, which run the spectrum from light to dark and highly opaque to sheer. Determine how intense you want your berry lip color to be, so you can choose the appropriate lipstick.",
@@ -19415,7 +19415,7 @@
     },
     {
         "ind":50640,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Horseback riding",
         "ctx_a":"[header] How to create a looped updo [title] Blow dry your hair. [step] Prior to creating a looped updo, you should wash and blow dry your hair. If you have thick hair, you will need to separate your hair into sections.",
         "ctx_b":"",
         "ctx":"[header] How to create a looped updo [title] Blow dry your hair. [step] Prior to creating a looped updo, you should wash and blow dry your hair. If you have thick hair, you will need to separate your hair into sections.",
@@ -19534,7 +19534,7 @@
     },
     {
         "ind":33480,
-        "activity_label":"Layup drill in basketball",
+        "activity_label":"Computers and Electronics",
         "ctx_a":"[header] How to fix a dell laptop key [title] Find the key cap and retainer that have fallen off. [title] Snap off the cap on another key but make sure the retainer remains connected. [title] Observe how the retainer under the key cap that you unsnapped is positioned and how the 4 points connect to the rest of the keyboard.",
         "ctx_b":"",
         "ctx":"[header] How to fix a dell laptop key [title] Find the key cap and retainer that have fallen off. [title] Snap off the cap on another key but make sure the retainer remains connected. [title] Observe how the retainer under the key cap that you unsnapped is positioned and how the 4 points connect to the rest of the keyboard.",
@@ -19568,7 +19568,7 @@
     },
     {
         "ind":43246,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Pole vault",
         "ctx_a":"[header] How to towel dry hair [title] Get a soft towel or t-shirt ready. [step] When you're towel drying your hair, it's best to use a very soft towel or even an old t-shirt instead of a coarse, nubby towel. Using softer material will prevent your hair from getting tangled and damaged when you dry it.",
         "ctx_b":"",
         "ctx":"[header] How to towel dry hair [title] Get a soft towel or t-shirt ready. [step] When you're towel drying your hair, it's best to use a very soft towel or even an old t-shirt instead of a coarse, nubby towel. Using softer material will prevent your hair from getting tangled and damaged when you dry it.",
@@ -19823,7 +19823,7 @@
     },
     {
         "ind":47060,
-        "activity_label":"Home and Garden",
+        "activity_label":"Travel",
         "ctx_a":"[header] How to clean colored leather [title] Vacuum or shake off loose debris. [step] Use a furniture attachment to remove all extra dirt and debris from your furniture. Be very gentle when vacuuming so you don't scratch the leather.",
         "ctx_b":"",
         "ctx":"[header] How to clean colored leather [title] Vacuum or shake off loose debris. [step] Use a furniture attachment to remove all extra dirt and debris from your furniture. Be very gentle when vacuuming so you don't scratch the leather.",
@@ -19840,7 +19840,7 @@
     },
     {
         "ind":6560,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Travel",
         "ctx_a":"[header] How to have healthy hair [title] Change your washing routine. [step] Do you wash your hair every single day? This can really dry it out, since you're washing away the oils your scalp produces to keep your hair shiny and healthy. Washing every day can also lead to oily hair, since stripping your hair of its oils causes your oil glands to go into overdrive.",
         "ctx_b":"",
         "ctx":"[header] How to have healthy hair [title] Change your washing routine. [step] Do you wash your hair every single day? This can really dry it out, since you're washing away the oils your scalp produces to keep your hair shiny and healthy. Washing every day can also lead to oily hair, since stripping your hair of its oils causes your oil glands to go into overdrive.",
@@ -19874,7 +19874,7 @@
     },
     {
         "ind":29843,
-        "activity_label":"Holidays and Traditions",
+        "activity_label":"Cutting the grass",
         "ctx_a":"[header] How to open frozen car doors [title] Push on your car door. [step] Apply pressure by leaning on your frozen door. Push as hard as you can against the door.",
         "ctx_b":"",
         "ctx":"[header] How to open frozen car doors [title] Push on your car door. [step] Apply pressure by leaning on your frozen door. Push as hard as you can against the door.",
@@ -19908,7 +19908,7 @@
     },
     {
         "ind":14390,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Sports and Fitness",
         "ctx_a":"[header] How to get soft feet [title] Exfoliate your feet every day. [step] Calluses and dead skin will build up on your feet from simple, every day use. In order to remove calluses, use a foot file or pumice stone to remove dead skin from the bottom or sides of your feet every day, after a shower or bath.",
         "ctx_b":"",
         "ctx":"[header] How to get soft feet [title] Exfoliate your feet every day. [step] Calluses and dead skin will build up on your feet from simple, every day use. In order to remove calluses, use a foot file or pumice stone to remove dead skin from the bottom or sides of your feet every day, after a shower or bath.",
@@ -19942,7 +19942,7 @@
     },
     {
         "ind":8106,
-        "activity_label":"Shot put",
+        "activity_label":"Family Life",
         "ctx_a":"[header] How to raise kids with dogs [title] Allow your dog to enter the nursery. [step] This will help your dog become accustomed to new furniture, new smells, and a new environment. [title] Apply baby products to yourself or your dog's toys.",
         "ctx_b":"",
         "ctx":"[header] How to raise kids with dogs [title] Allow your dog to enter the nursery. [step] This will help your dog become accustomed to new furniture, new smells, and a new environment. [title] Apply baby products to yourself or your dog's toys.",
@@ -20010,7 +20010,7 @@
     },
     {
         "ind":5086,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Cutting the grass",
         "ctx_a":"[header] How to treat oily skin [title] Set up a consistent wash schedule. [step] Oily skin becomes more oily often for two reasons: you wash your skin too often, or not enough. Washing your face too often dries out your skin, causing your body to try to compensate by creating more oil.",
         "ctx_b":"",
         "ctx":"[header] How to treat oily skin [title] Set up a consistent wash schedule. [step] Oily skin becomes more oily often for two reasons: you wash your skin too often, or not enough. Washing your face too often dries out your skin, causing your body to try to compensate by creating more oil.",
@@ -20163,7 +20163,7 @@
     },
     {
         "ind":2027,
-        "activity_label":"Computers and Electronics",
+        "activity_label":"Sharpening knives",
         "ctx_a":"[header] How to use duolingo [title] Sign up via facebook or email. [step] When you visit duolingo's main page, you'll be asked to sign up in one of two ways. [substeps] If you choose to sign up via email, you can link your facebook account to duolingo later.",
         "ctx_b":"",
         "ctx":"[header] How to use duolingo [title] Sign up via facebook or email. [step] When you visit duolingo's main page, you'll be asked to sign up in one of two ways. [substeps] If you choose to sign up via email, you can link your facebook account to duolingo later.",
@@ -20180,7 +20180,7 @@
     },
     {
         "ind":14750,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Holidays and Traditions",
         "ctx_a":"[header] How to look wonderful while being plus sized [title] Start your outfit by laying a solid foundation of proper-fitting undergarments. [substeps] Well fitting bras and panties are a must to avoid awkward lumps and bumps under clothing. Take the time to get measured at a specialty store to get under garments tailored to your shape.",
         "ctx_b":"",
         "ctx":"[header] How to look wonderful while being plus sized [title] Start your outfit by laying a solid foundation of proper-fitting undergarments. [substeps] Well fitting bras and panties are a must to avoid awkward lumps and bumps under clothing. Take the time to get measured at a specialty store to get under garments tailored to your shape.",
@@ -20367,7 +20367,7 @@
     },
     {
         "ind":13322,
-        "activity_label":"Finance and Business",
+        "activity_label":"Personal Care and Style",
         "ctx_a":"[header] How to make a terry cloth bath wrap [title] Before beginning, check the stretch of your fabric. [step] Decide if you want the the stretch wrapping around your body or hanging toward your feet. Depending on the width of your fabric, you may have no choice in the matter.",
         "ctx_b":"",
         "ctx":"[header] How to make a terry cloth bath wrap [title] Before beginning, check the stretch of your fabric. [step] Decide if you want the the stretch wrapping around your body or hanging toward your feet. Depending on the width of your fabric, you may have no choice in the matter.",
@@ -20435,7 +20435,7 @@
     },
     {
         "ind":31069,
-        "activity_label":"Having an ice cream",
+        "activity_label":"Rope skipping",
         "ctx_a":"[header] How to remove acne overnight with ice [title] Make an ice pack. [step] Rather than applying ice directly to your face, it's best to make an ice wrap or an ice pack. If you don't have an existing ice pack, you can easily make one at home.",
         "ctx_b":"",
         "ctx":"[header] How to remove acne overnight with ice [title] Make an ice pack. [step] Rather than applying ice directly to your face, it's best to make an ice wrap or an ice pack. If you don't have an existing ice pack, you can easily make one at home.",
@@ -20571,7 +20571,7 @@
     },
     {
         "ind":27888,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Rock climbing",
         "ctx_a":"[header] How to take care of a new monroe piercing [title] Find a reputable parlor. [step] When looking for a good parlor, you should look for several things that indicate the parlor is a good one. You can ask for recommendations from friends, but always check out the place for yourself.",
         "ctx_b":"",
         "ctx":"[header] How to take care of a new monroe piercing [title] Find a reputable parlor. [step] When looking for a good parlor, you should look for several things that indicate the parlor is a good one. You can ask for recommendations from friends, but always check out the place for yourself.",
@@ -20605,7 +20605,7 @@
     },
     {
         "ind":40464,
-        "activity_label":"Relationships",
+        "activity_label":"Horseback riding",
         "ctx_a":"[header] How to be a good friend to both parties in a divorce [title] Listen to both of your friends. [step] Supporting a friend through divorce is a major hurdle, but you can offer valuable help just by listening. Hear them out when they need to go over what happened for the thousandth time.",
         "ctx_b":"",
         "ctx":"[header] How to be a good friend to both parties in a divorce [title] Listen to both of your friends. [step] Supporting a friend through divorce is a major hurdle, but you can offer valuable help just by listening. Hear them out when they need to go over what happened for the thousandth time.",
@@ -20707,7 +20707,7 @@
     },
     {
         "ind":34728,
-        "activity_label":"Personal Care and Style",
+        "activity_label":"Pets and Animals",
         "ctx_a":"[header] How to care for your skin before and after a brazilian wax [title] Prepare 24 hours before wax. [step] The day before your wax, exfoliate the area. You don't need to use a special scrub.",
         "ctx_b":"",
         "ctx":"[header] How to care for your skin before and after a brazilian wax [title] Prepare 24 hours before wax. [step] The day before your wax, exfoliate the area. You don't need to use a special scrub.",
@@ -20724,7 +20724,7 @@
     },
     {
         "ind":24021,
-        "activity_label":"Cars & Other Vehicles",
+        "activity_label":"Family Life",
         "ctx_a":"[header] How to be patient with a child with special needs [title] Explain the instructions for an activity or a task slowly and clearly. [step] Special needs children can have difficulty following instructions and remaining on task. You can help the child focus on a task by sitting down with them and laying out the instructions for an activity or a task slowly and clearly.",
         "ctx_b":"",
         "ctx":"[header] How to be patient with a child with special needs [title] Explain the instructions for an activity or a task slowly and clearly. [step] Special needs children can have difficulty following instructions and remaining on task. You can help the child focus on a task by sitting down with them and laying out the instructions for an activity or a task slowly and clearly.",
