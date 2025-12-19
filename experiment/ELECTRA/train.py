@@ -83,8 +83,8 @@ def train_electra(
         kwargs = {"shuffle": True}
         kwargs_val = {"shuffle": True}
 
-        # due to a problem with worker spawning on apple silicon
-        # we set it here to 0
+    # due to a problem with worker spawning on apple silicon
+    # we set it here to 0
     kwargs["num_workers"] = num_workers
     kwargs_val["num_workers"] = num_workers
     if platform.machine().lower() == "arm64":

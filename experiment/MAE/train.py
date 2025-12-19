@@ -75,17 +75,23 @@ def train_mae_text(
         hyperparameters["work_dir"] = work_dir
 
     init_distributed_mode()
+
     if torch.cuda.is_available():
         sampler = DistributedSampler(train_dataset, shuffle=True)
+        sampler_val = DistributedSampler(val_dataset, shuffle=False)
         kwargs = {"sampler": sampler}
+        kwargs_val = {"sampler": sampler_val}
     else:
         kwargs = {"shuffle": True}
+        kwargs_val = {"shuffle": True}
 
     # due to a problem with worker spawning on apple silicon
     # we set it here to 0
     kwargs["num_workers"] = num_workers
+    kwargs_val["num_workers"] = num_workers
     if platform.machine().lower() == "arm64":
         kwargs["num_workers"] = 0
+        kwargs_val["num_workers"] = 0
 
     train_loader = DataLoader(
         train_dataset,
@@ -98,7 +104,7 @@ def train_mae_text(
 
     if val_dataset is not None:
         val_loader = DataLoader(
-            train_dataset,
+            val_dataset,
             batch_size=batch_size,
             collate_fn=val_dataset.get_collate_fn(),
             drop_last=True,
@@ -110,6 +116,7 @@ def train_mae_text(
 
     trainer = MAETextTrainer(
         train_dataset=train_loader,
+        val_dataset=val_loader,
         config=hyperparameters,
         additional_run_info=additional_run_info,
         wandb_logging=wandb_logging,

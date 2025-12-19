@@ -90,16 +90,6 @@ class MAETextTrainer(Trainer):
         self.config = to_restore["config"]
         # save the config.yaml file
         self._save_config_file(self.run_dir / "checkpoints")
-        # log embedding before training
-        self._log_embeddings(
-            model=self.model,
-            log_self_attention=self.config["visualize_attention"],
-            log_mae=True,
-            log_dict={
-                "counters/epoch": 0,
-                "counters/train_step": 0,
-            },
-        )
         # training loop
         n_iter = 0
         best_val_loss = float('inf')  # Track best validation loss
