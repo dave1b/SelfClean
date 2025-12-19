@@ -2,7 +2,7 @@ import json
 import shutil
 import time
 from pathlib import Path
-from typing import List, Optional
+from typing import List, Optional, Dict, Any
 
 import pandas as pd
 from loguru import logger
@@ -12,11 +12,11 @@ from selfclean.cleaner.issue_manager import IssueTypes
 
 # Constants
 CONTAMINATED_PATHS = [
-    Path('../experiment/datasets/GoldenSwag/golden_swag_train_synthetic_CATEGORY_ERRORS.json'),
-    Path('../experiment/datasets/GoldenSwag/golden_swag_train_synthetic_LABEL_ERRORS.json'),
-    Path('../experiment/datasets/GoldenSwag/golden_swag_train_synthetic_NEAR_DUPLICATES.json'),
-    Path('../experiment/datasets/GoldenSwag/golden_swag_train_synthetic_NEAR_DUPLICATES_QUESTIONS.json'),
-    Path('../experiment/datasets/GoldenSwag/golden_swag_train_synthetic_OFF_TOPIC_SAMPLES.json'),
+    Path('../experiment/datasets/goldenswag/golden_swag_train_synthetic_CATEGORY_ERRORS.json'),
+    Path('../experiment/datasets/goldenswag/golden_swag_train_synthetic_LABEL_ERRORS.json'),
+    Path('../experiment/datasets/goldenswag/golden_swag_train_synthetic_NEAR_DUPLICATES.json'),
+    Path('../experiment/datasets/goldenswag/golden_swag_train_synthetic_NEAR_DUPLICATES_QUESTIONS.json'),
+    Path('../experiment/datasets/goldenswag/golden_swag_train_synthetic_OFF_TOPIC_SAMPLES.json'),
 ]
 
 ISSUES_TO_DETECT: List[IssueTypes] = [
@@ -45,9 +45,37 @@ def get_issue_type_from_path(path: Path) -> Optional[IssueTypes]:
             return issue
     return None
 
+
 def clear_cache(cache_path: Path):
     if cache_path.is_dir():
         shutil.rmtree(cache_path)
+
+
+def generate_markdown_table(data: Dict[str, Any], base_output_path: Path) -> None:
+    for issue_type in ISSUES_TO_DETECT:
+        issue_key = issue_type.value
+        if issue_key not in data:
+            continue
+
+        issue_data = data[issue_key]
+        rows = []
+
+        for model, metrics in issue_data.items():
+            row = {
+                "Model": model,
+                "AP": metrics.get("AP", "N/A"),
+                "AUROC": metrics.get("AUROC", "N/A")
+            }
+            rows.append(row)
+
+        df = pd.DataFrame(rows)
+        markdown_table = df.to_markdown(tablefmt="github", index=False)
+
+        output_path = base_output_path / f"{issue_key}.md"
+        with open(output_path, 'w') as f:
+            f.write(f"# {issue_key.replace('_', ' ').title()}\n\n")
+            f.write(markdown_table)
+
 
 
 def evaluate():
@@ -86,9 +114,11 @@ def evaluate():
                     pretraining_type = type
                     break
 
-            logger.info(f"Starting evaluation {issue_to_detect.value} from {contaminated_path.name}, with pretraining_type={pretraining_type}, base_model={model}")
+            logger.info(
+                f"Starting evaluation {issue_to_detect.value} from {contaminated_path.name}, with pretraining_type={pretraining_type}, base_model={model}")
             start_time = time.time()
-            output_path = Path(__file__).parent.parent / "examples" / "output" / "goldenswag" / timestamp_str / f"{issue_to_detect.value}_{model}"
+            output_path = Path(
+                __file__).parent.parent / "examples" / "output" / "goldenswag" / timestamp_str / f"{issue_to_detect.value}_{model}"
             output_path.mkdir(parents=False, exist_ok=True)
 
             selfclean = SelfClean(plot_top_N=400, output_path=output_path)
@@ -113,6 +143,7 @@ def evaluate():
 
     with open(base_output_path / "summary.json", 'w') as f:
         json.dump(summarized_log_dict, f, indent=2)
+    generate_markdown_table(summarized_log_dict, base_output_path)
 
 
 def main():
@@ -120,6 +151,7 @@ def main():
     clear_cache(cache_dir)
     evaluate()
     clear_cache(cache_dir)
+
 
 if __name__ == "__main__":
     main()

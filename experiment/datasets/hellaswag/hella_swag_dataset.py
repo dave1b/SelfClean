@@ -9,6 +9,7 @@ from tqdm.auto import tqdm
 import json
 from pathlib import Path
 
+DATA_NAMES = ['HellaSwag', 'GoldenSwag']
 
 class HellaSwagDataset(Dataset):
     """HellaSwag dataset with pre-tokenization and caching."""
@@ -26,11 +27,15 @@ class HellaSwagDataset(Dataset):
         self.tokenizer = tokenizer
         self.max_length = max_length
         self.provide_tokenized_context = False
-        self.name = "HellaSwag"
+        self.name = ""
         self.path = json_path
         self.context_only_id_start = None
         self.task_ids_arr: Optional[np.ndarray] = None
         self.context_only_task_ids_arr: Optional[np.ndarray] = None
+
+        for name in DATA_NAMES:
+            if name.lower() in str(json_path):
+                self.name = name
 
         # Load and validate data
         self._load_and_validate_data(json_path)

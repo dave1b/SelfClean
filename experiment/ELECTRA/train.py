@@ -132,14 +132,14 @@ if __name__ == "__main__":
     start = datetime.now()
     tokenizer = get_encoder_tokenizer_class("electra")[1]
 
-    hs_train_dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "golden_swag_train.json"
-    hs_val_dataset_path = Path(__file__).parent.parent / "datasets" / "hellaswag" / "golden_swag_validation.json"
+    hs_train_dataset_path = Path(__file__).parent.parent / "datasets" / "goldenswag" / "golden_swag_train.json"
+    hs_val_dataset_path = Path(__file__).parent.parent / "datasets" / "goldenswag" / "golden_swag_validation.json"
     # mmlu_dataset_path = Path(__file__).parent.parent / "datasets" / "mmlu" / "mmlu_test.json"
 
     train_dataset = HellaSwagDataset(
         json_path=hs_train_dataset_path,
         tokenizer=tokenizer,
-        cache_dir="./cache",
+        # cache_dir="./cache",
         pre_tokenize=True  # Enable pre-tokenization
     )
     train_dataset.name = "GoldenSwag"
