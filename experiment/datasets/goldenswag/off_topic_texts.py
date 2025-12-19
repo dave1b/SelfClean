@@ -35,9 +35,10 @@ categories = {
         "Shell one-liners",
         "Sed commands", "Grepping logs", "Piping commands", "Redirecting output"
     ],
+    "Scraper Artefacts": ["Links in text", "Video Meta-Commentary", "Domain Shift", "Audience Interaction"]
 }
 
-expanded_example_templates = {
+off_topic_answers = {
     # --- Non-readable/Gibberish ---
     "Random characters": [
         "asdfjkl;qwer!@#$%^&*()_+1234567890!@#$%^&*()qwertyuiopasdf",
@@ -429,14 +430,38 @@ expanded_example_templates = {
         "cat < file.txt command 2> error.log echo 'log entry' >> app.log command < input.txt > output.txt 2>&1",
         "command 2> error.log echo 'log entry' >> app.log command < input.txt > output.txt 2>&1 ls > file_list.txt"
     ],
+    "Links in text": [
+        "A man is applying plaster to a wall. [Click here to see related articles]. {Advertisement}. He smooths it out.",
+        "She braids her hair. Source: www.wikihow.com/howto/hair/braid. She ties it with a ribbon.",
+        "He jumps over the hurdle. http://skating.com/tutorials/howto/track-tips. He lands on his feet.",
+        "[Image 2] The chef chops the onions. [Image 4 of 12]. He places them in the pan. [Image: 5 -> Image of a pan]"
+    ],
+    "Video Meta-Commentary": [
+        "A woman is dancing on stage. [Music fades out] [Camera shakes]. She bows to the audience. [Camera fades out]",
+        "The boy throws the frisbee. (inaudible shouting). The dog catches it and barks. (loud barking)",
+        "She applies the makeup. Subtitles by MoviesLover99. She checks the mirror.",
+        "He starts the car engine. [Silence]. [Wind blowing]. He drives away. [Engine howling]"
+    ],
+    "Domain Shift": [
+        "He cuts the carrots. The stock market is up. 01.10.2025: 5 People died in a car accident in Zurich.",
+        "The cat chases the laser pointer. The atomic weight of Hydrogen is 1.008. It pounces on the red dot.",
+        "She is vacuuming the carpet. Napoleon Bonaparte was born in 1769. She moves the sofa.",
+        "The player serves the tennis ball. Only 5% of the ocean has been explored. The opponent hits it back."
+    ],
+    "Audience Interaction": [
+        "He demonstrates a skateboard trick. Don't forget to smash that like button! He lands the kickflip.",
+        "She mixes the paint colors. Comment down below what you think! She applies the blue stroke.",
+        "The gamer wins the match. Subscribe for more daily content. He puts down the controller.",
+        "He fixes the leaking pipe. Thanks to our sponsor NordVPN. He tightens the valve."
+    ],
 }
 
 
-def get_off_topic_texts():
+def get_off_topic_answer():
     off_topic_texts = []
     for category, subcategories in categories.items():
         for subcategory in subcategories:
-            examples = expanded_example_templates.get(subcategory, [])
+            examples = off_topic_answers.get(subcategory, [])
             off_topic_texts.extend(examples[:5])
 
     # Shuffle the list to mix categories
@@ -444,3 +469,7 @@ def get_off_topic_texts():
     seeded_random.shuffle(off_topic_texts)
 
     return off_topic_texts
+
+
+def get_off_topic_question():
+    off_topic_answers = {}

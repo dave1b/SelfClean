@@ -1,8 +1,6 @@
 def generate_near_duplicate_mistral(
     text: str,
-    model: str = "mistral-tiny",
-    temperature: float = 0.3,
-    max_tokens: int = 100
+    model: str = "mistral-large-2512",
 ) -> str:
     """
     Generate a near-duplicate of the input text using Mistral's API.
@@ -10,8 +8,6 @@ def generate_near_duplicate_mistral(
     Args:
         text (str): Original text to paraphrase.
         model (str): Mistral model to use (e.g., "mistral-tiny", "mistral-small", "mistral-medium").
-        temperature (float): Controls randomness (lower = more deterministic).
-        max_tokens (int): Maximum number of tokens in the response.
 
     Returns:
         str: Near-duplicate text.
@@ -22,12 +18,13 @@ def generate_near_duplicate_mistral(
     load_dotenv()  # Loads the .env file
 
     prompt = f"""
-    You are a text paraphraser. Your task is to generate a close near-duplicate of the given text.
-    The near-duplicate needs to:
-    1. Preserve the original meaning.
-    2. Make only subtle changes (e.g., synonyms, rephrasing, minor restructuring).
-    3. Avoid adding or removing details.
-    4. Do not add any new information, even when sentences are incomplete.
+    You are a text paraphraser. Your task is to generate a near-duplicate of the given text, adhering strictly to the following rules:
+
+    1. The paraphrased text must retain the exact original meaning.
+    2. Make only subtle changes (e.g. synonyms, minor restructuring).
+    3. Do not add or remove any information, even if sentences are incomplete or ambiguous.
+    5. Only use special characters (e.g., brackets, symbols, punctuation marks) that exist in the original text. Do not introduce new ones!
+    6. Keep artefacts suche as [step] or [header] in the near-duplicate text.
 
     Return ONLY the paraphrased text, with no additional commentary:
 
@@ -36,7 +33,7 @@ def generate_near_duplicate_mistral(
     """
 
     client = Mistral(api_key=os.getenv("MISTRAL_API_KEY", ""))
-    res = client.chat.complete(model="mistral-medium-2508", messages=[
+    res = client.chat.complete(model=model, messages=[
         {
             "content": prompt,
             "role": "user",

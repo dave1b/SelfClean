@@ -10,7 +10,7 @@ from datetime import datetime
 
 from tqdm import tqdm
 
-from experiment.datasets.hellaswag.off_topic_texts import get_off_topic_texts
+from experiment.datasets.goldenswag.off_topic_texts import get_off_topic_answer
 from experiment.datasets.llm_api_util import generate_near_duplicate_mistral
 from selfclean.cleaner.issue_manager import IssueTypes
 
@@ -38,6 +38,17 @@ class HellaSwagContaminator:
         all_indices = set(df['ind'].tolist())
         return list(all_indices - self.contaminated_indices)
 
+    @staticmethod
+    def _replace_unicode_character(text: str) -> str:
+        replace_dict = {
+            "’" : "'"
+        }
+        for char in text:
+            if char in replace_dict:
+                text = text.replace(char, replace_dict[char])
+        return text
+
+
     def _question_duplication_contamination(self, file: Path) -> None:
         df = pd.read_json(file, encoding='utf-8')
         contamination_records = []
@@ -49,10 +60,11 @@ class HellaSwagContaminator:
             row_index = df[df['ind'] == ind].index[0]
             original_ctx = df.at[row_index, 'ctx']
             contaminated_ctx = generate_near_duplicate_mistral(original_ctx)
+            cleaned_contaminated_ctx = self._replace_unicode_character(contaminated_ctx)
             new_ind = f"x{ind}"
             new_row = df.loc[row_index].copy()
             new_row['ind'] = new_ind
-            new_row['ctx'] = contaminated_ctx
+            new_row['ctx'] = cleaned_contaminated_ctx
             new_row['endings'] = []
             new_row['label'] = -1
             df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
@@ -61,10 +73,11 @@ class HellaSwagContaminator:
                 "id_1": ind,
                 "id_2": new_ind,
                 "original_ctx": original_ctx,
-                "contaminated_ctx": contaminated_ctx,
+                "contaminated_ctx": cleaned_contaminated_ctx,
                 "timestamp": datetime.now().isoformat()
             })
             self.contaminated_indices.add(ind)
+            time.sleep(0.5)
 
         self._save_contamination_results(file, df, contamination_records, IssueTypes.NEAR_DUPLICATES_Q)
 
@@ -81,17 +94,18 @@ class HellaSwagContaminator:
             answer_index = random.choice([i for i in range(4) if i != correct_ending])
             original_ending = df.at[row_index, 'endings'][answer_index]
             contaminated_ending = generate_near_duplicate_mistral(original_ending)
-            df.at[row_index, 'endings'].append(contaminated_ending)
+            cleaned_contaminated_ctx = self._replace_unicode_character(contaminated_ending)
+            df.at[row_index, 'endings'].append(cleaned_contaminated_ctx)
             contamination_records.append({
                 "type": "answer_duplicate",
                 "id_1": f"{ind}-{answer_index}",
                 "id_2": f"{ind}-4",
                 "original_ending": original_ending,
-                "contaminated_ending": contaminated_ending,
+                "contaminated_ending": cleaned_contaminated_ctx,
                 "timestamp": datetime.now().isoformat()
             })
             self.contaminated_indices.add(ind)
-            time.sleep(1)
+            time.sleep(0.5)
 
         self._save_contamination_results(file, df, contamination_records, IssueTypes.NEAR_DUPLICATES)
 
@@ -106,7 +120,7 @@ class HellaSwagContaminator:
             row_index = df[df['ind'] == ind].index[0]
             answer_index = random.randint(0, 3)
             original_ending = df.at[row_index, 'endings'][answer_index]
-            contaminated_ending = random.choice(get_off_topic_texts())
+            contaminated_ending = seeded_random.choice(get_off_topic_answer())
             df.at[row_index, 'endings'][answer_index] = contaminated_ending
             contamination_records.append({
                 "type": "off_topic",
@@ -204,7 +218,7 @@ if __name__ == "__main__":
         IssueTypes.CATEGORY_ERRORS
     ]
     contamination_ratios = {
-        IssueTypes.OFF_TOPIC_SAMPLES: 0.1,
+        IssueTypes.OFF_TOPIC_SAMPLES: 0.05,
         IssueTypes.NEAR_DUPLICATES_Q: 0.05,
         IssueTypes.NEAR_DUPLICATES: 0.05,
         IssueTypes.LABEL_ERRORS: 0.1,
