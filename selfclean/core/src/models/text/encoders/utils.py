@@ -3,8 +3,10 @@ import torch.nn as nn
 from transformers import models as transformers_models
 
 from .....src.models.text.encoders.llm import bert, distilbert, roberta, bert_mlm, pretrained_bert_hellaSwag_mae, electra, \
-    pretrained_bert_hellaSwag_simcse, pretrained_bert_mmlu_simcse, pretrained_bert_mmlu_mae, golden_swag_train_simcse_bert, \
-    golden_swag_train_simcse_bert_NEAR_DUPLICATES_Q, golden_swag_train_simcse_bert_NEAR_DUPLICATES, golden_swag_train_electra_bert
+    pretrained_bert_hellaSwag_simcse, pretrained_bert_mmlu_simcse, pretrained_bert_mmlu_mae, \
+    golden_swag_train_simcse_bert_NEAR_DUPLICATES_Q, golden_swag_train_simcse_bert_NEAR_DUPLICATES, \
+    golden_swag_train_electra_bert_22, golden_swag_train_electra_bert_6, golden_swag_train_electra_bert_1, golden_swag_train_simcse_bert_8, \
+    golden_swag_train_simcse_bert_4, golden_swag_train_simcse_bert_1
 
 LLM_DICT = {
     "bert": bert,
@@ -16,8 +18,12 @@ LLM_DICT = {
     "pretrained_bert_mmlu_simcse": pretrained_bert_mmlu_simcse,
     "pretrained_bert_hellaSwag_mae": pretrained_bert_hellaSwag_mae,
     "pretrained_bert_mmlu_mae": pretrained_bert_mmlu_mae,
-    "golden_swag_train_simcse_bert": golden_swag_train_simcse_bert,
-    "golden_swag_train_electra_bert": golden_swag_train_electra_bert,
+    "golden_swag_train_simcse_bert_1": golden_swag_train_simcse_bert_1,
+    "golden_swag_train_simcse_bert_4": golden_swag_train_simcse_bert_4,
+    "golden_swag_train_simcse_bert_8": golden_swag_train_simcse_bert_8,
+    "golden_swag_train_electra_bert_1": golden_swag_train_electra_bert_1,
+    "golden_swag_train_electra_bert_6": golden_swag_train_electra_bert_6,
+    "golden_swag_train_electra_bert_22": golden_swag_train_electra_bert_22,
     "golden_swag_train_simcse_bert_NEAR_DUPLICATES_Q": golden_swag_train_simcse_bert_NEAR_DUPLICATES_Q,
     "golden_swag_train_simcse_bert_NEAR_DUPLICATES": golden_swag_train_simcse_bert_NEAR_DUPLICATES,
 }

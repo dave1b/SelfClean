@@ -52,8 +52,19 @@ def electra():
     tokenizer = AutoTokenizer.from_pretrained("google/electra-base-discriminator")
     return discriminator, tokenizer
 
-def golden_swag_train_simcse_bert():
-    model = AutoModel.from_pretrained('models/SimCSE_golden_swag_train/epoch7')
+############################################### SimCSE
+def golden_swag_train_simcse_bert_1():
+    model = AutoModel.from_pretrained('models/SimCSE_golden_swag_train/epoch1')
+    tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+    return model, tokenizer
+
+def golden_swag_train_simcse_bert_4():
+    model = AutoModel.from_pretrained('models/SimCSE_golden_swag_train/epoch4')
+    tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+    return model, tokenizer
+
+def golden_swag_train_simcse_bert_8():
+    model = AutoModel.from_pretrained('models/SimCSE_golden_swag_train/epoch8')
     tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
     return model, tokenizer
 
@@ -67,7 +78,18 @@ def golden_swag_train_simcse_bert_NEAR_DUPLICATES():
     tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
     return model, tokenizer
 
-def golden_swag_train_electra_bert():
+############################################### Electra
+def golden_swag_train_electra_bert_1():
     model = AutoModel.from_pretrained('models/Electra_golden_swag_train/epoch1')
+    tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+    return model, tokenizer
+
+def golden_swag_train_electra_bert_6():
+    model = AutoModel.from_pretrained('models/Electra_golden_swag_train/epoch6')
+    tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+    return model, tokenizer
+
+def golden_swag_train_electra_bert_22():
+    model = AutoModel.from_pretrained('models/Electra_golden_swag_train/epoch22')
     tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
     return model, tokenizer

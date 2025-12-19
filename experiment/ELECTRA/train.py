@@ -41,7 +41,8 @@ ELECTRA_STANDARD_HYPERPARAMETERS = {
         },
     },
     "visualize_attention": False,
-    "embed_vis_every_n_epochs": 1
+    "embed_vis_every_n_epochs": 1,
+    "optim": "adamw",
 }
 
 
@@ -118,7 +119,6 @@ def train_electra(
         additional_run_info=additional_run_info,
         wandb_logging=wandb_logging,
         wandb_project_name=wandb_project_name,
-        mask_token_id=tokenizer.mask_token_id,
     )
     model = trainer.fit()
     del trainer, train_loader

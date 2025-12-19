@@ -13,7 +13,7 @@ from torchvision import transforms
 from torchvision.datasets import ImageFolder
 from torchvision.transforms import InterpolationMode
 
-from experiment.ELECTRA.train import ELECTRA_STANDARD_HYPERPARAMETERS
+from experiment.ELECTRA.train import ELECTRA_STANDARD_HYPERPARAMETERS, train_electra
 from experiment.MAE.train import MAE_TEXT_STANDARD_HYPERPARAMETERS, train_mae_text
 from experiment.SimCSE.train import SIMCSE_STANDARD_HYPERPARAMETERS, train_simcse
 from experiment.datasets.hellaswag.hella_swag_dataset import HellaSwagDataset
@@ -529,6 +529,35 @@ class SelfClean:
                         hyperparameters["work_dir"] = work_dir
 
                     self.model = train_mae_text(
+                        train_dataset=dataset,
+                        val_dataset=val_dataset,
+                        epochs=epochs,
+                        batch_size=batch_size,
+                        ssl_pre_training=ssl_pre_training,
+                        save_every_n_epochs=save_every_n_epochs,
+                        work_dir=work_dir,
+                        hyperparameters=hyperparameters,
+                        num_workers=num_workers,
+                        additional_run_info=additional_run_info,
+                        wandb_logging=wandb_logging,
+                        wandb_project_name=wandb_project_name,
+                    )
+                elif pretraining_type == "electra":
+                    if hyperparameters is None:
+                        hyperparameters = ELECTRA_STANDARD_HYPERPARAMETERS
+
+                    assert all(
+                        key in hyperparameters for key in ELECTRA_STANDARD_HYPERPARAMETERS
+                    ), "`hyperparameters` need to contain all standard hyperparameters."
+
+                    hyperparameters["epochs"] = epochs
+                    hyperparameters["batch_size"] = batch_size
+                    hyperparameters["ssl_pre_training"] = ssl_pre_training
+                    hyperparameters["save_every_n_epochs"] = save_every_n_epochs
+                    if work_dir is not None:
+                        hyperparameters["work_dir"] = work_dir
+
+                    self.model = train_electra(
                         train_dataset=dataset,
                         val_dataset=val_dataset,
                         epochs=epochs,
