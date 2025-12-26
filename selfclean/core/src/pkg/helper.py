@@ -133,10 +133,10 @@ def embed_text_dataset(torch_dataset, model, batch_size, normalize=True, tqdm_de
             emb = model(**inputs)
 
             if isinstance(emb, BaseModelOutputWithPoolingAndCrossAttentions):
-                emb = emb.pooler_output
+                emb = emb.last_hidden_state[:, 0, :] # Retrieve [CLS] embedding
 
             if isinstance(emb, BaseModelOutputWithPastAndCrossAttentions):
-                emb = emb.last_hidden_state[:,:,-1]
+                emb = emb.last_hidden_state[:, 0, :] # Retrieve [CLS] embedding
 
             if normalize:
                 emb = torch.nn.functional.normalize(emb, p=2, dim=1)
