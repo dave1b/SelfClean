@@ -33,8 +33,6 @@ MAE_TEXT_STANDARD_HYPERPARAMETERS = {
         "emb_dim": None,
         "base_model": "bert",
         "model_type": "BERT",
-        "use_bn_in_head": False,
-        "norm_last_layer": True,
         "eval": {"n_last_blocks": 4, "avgpool_patchtokens": False},
         "encoder": {
             "out_dim": 756,
@@ -154,5 +152,5 @@ if __name__ == "__main__":
     )
 
     logger.info("Training MAE Text")
-    model = train_mae_text(train_dataset, val_dataset, 25, 32, True, 1, None, MAE_TEXT_STANDARD_HYPERPARAMETERS)
+    model = train_mae_text(train_dataset, val_dataset, 35, 32, True, 1, None, MAE_TEXT_STANDARD_HYPERPARAMETERS)
     logger.info(f'Finished MAE training after: {datetime.now() - start}')

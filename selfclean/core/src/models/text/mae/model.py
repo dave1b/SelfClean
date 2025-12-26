@@ -6,7 +6,7 @@ import torch
 import torch.nn as nn
 
 class BertMae(nn.Module):
-    def __init__(self, base_model: str, encoder_mask_ratio: float = 0.75, decoder_mask_ratio: float = 0.25):
+    def __init__(self, base_model: str, encoder_mask_ratio: float = 0.75):
         super(BertMae, self).__init__()
         self.encoder, tokenizer = get_encoder_tokenizer_class(base_model)
         decoder_config = BertConfig(
@@ -20,7 +20,6 @@ class BertMae(nn.Module):
         self.decoder = BertModel(decoder_config)
 
         self.encoder_mask_ratio = encoder_mask_ratio
-        self.decoder_mask_ratio = decoder_mask_ratio
         self.mask_token_id = tokenizer.mask_token_id
 
         # Projection layer to map encoder hidden size to vocab size for reconstruction

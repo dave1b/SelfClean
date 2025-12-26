@@ -395,8 +395,6 @@ class SelfClean:
             IssueTypes.CATEGORY_ERRORS
         ],
         base_model: str = "bert",
-        # embedding
-        n_layers: int = 1,
         apply_l2_norm: bool = True,
         # logging
         dataset_name: Optional[str] = None,
@@ -446,7 +444,6 @@ class SelfClean:
             pretraining_type=pretraining_type,
             hyperparameters=hyperparameters,
             issues_to_detect=issues_to_detect,
-            n_layers=n_layers,
             apply_l2_norm=apply_l2_norm,
             additional_run_info=additional_run_info,
             wandb_logging=wandb_logging,
@@ -472,7 +469,6 @@ class SelfClean:
             IssueTypes.LABEL_ERRORS,
         ],
         # embedding
-        n_layers: int = 1,
         apply_l2_norm: bool = True,
         # logging
         additional_run_info: str = "",

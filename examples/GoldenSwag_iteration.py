@@ -9,6 +9,7 @@ from loguru import logger
 from datetime import datetime
 from selfclean import SelfClean
 from selfclean.cleaner.issue_manager import IssueTypes
+from selfclean.core.src.models.text.encoders.utils import LLM_DICT
 
 # Constants
 CONTAMINATED_PATHS = [
@@ -25,20 +26,6 @@ ISSUES_TO_DETECT: List[IssueTypes] = [
     IssueTypes.NEAR_DUPLICATES_Q,
     IssueTypes.NEAR_DUPLICATES,
     IssueTypes.OFF_TOPIC_SAMPLES,
-]
-
-BASE_MODELS = [
-    "golden_swag_train_electra_bert_1",
-    "golden_swag_train_electra_bert_6",
-    "golden_swag_train_electra_bert_22",
-
-    "golden_swag_train_simcse_bert_1",
-    "golden_swag_train_simcse_bert_4",
-    "golden_swag_train_simcse_bert_8",
-
-    "golden_swag_train_mae_bert_1",
-    "golden_swag_train_mae_bert_7",
-    "golden_swag_train_mae_bert_15",
 ]
 
 PRETRAINING_TYPES = ["simcse", "electra", "mae"]
@@ -93,7 +80,7 @@ def evaluate():
     for issue in ISSUES_TO_DETECT:
         summarized_log_dict[issue.value] = {}
 
-    number_of_runs = len(ISSUES_TO_DETECT) * len(CONTAMINATED_PATHS) * len(PRETRAINING_TYPES)
+    number_of_runs = len(CONTAMINATED_PATHS) * (len(LLM_DICT.values()) -1)
 
     for i, contaminated_path in enumerate(CONTAMINATED_PATHS):
         logger.info(f"Start performing run {i}/{number_of_runs}")
@@ -112,7 +99,9 @@ def evaluate():
             logger.warning(f"Contamination log file not found: {log_file}")
             continue
 
-        for model in BASE_MODELS:
+        for model in LLM_DICT.keys():
+            if model == 'bert':
+                continue
             pretraining_type = None
             for type in PRETRAINING_TYPES:
                 if type in model:

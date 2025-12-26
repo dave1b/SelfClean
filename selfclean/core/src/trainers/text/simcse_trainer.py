@@ -190,8 +190,6 @@ class SimCSETrainer(Trainer):
     def _model_step(self, model, sentences: Dict[str, torch.Tensor]):
         embs_1, projs_1 = model(sentences['input_ids'], sentences['attention_mask'])
         embs_2, projs_2 = model(sentences['input_ids'], sentences['attention_mask'])
-        projs_1 = torch.stack([F.normalize(proj, dim=0) for proj in projs_1])
-        projs_2 = torch.stack([F.normalize(proj, dim=0) for proj in projs_2])
         embeddings = torch.cat([embs_1, embs_2])
         loss = self.loss(projs_1, projs_2)
         return loss, embeddings

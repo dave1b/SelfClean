@@ -13,8 +13,7 @@ from experiment.datasets.hellaswag.hella_swag_dataset import HellaSwagDataset
 from selfclean.core.src.models.text.encoders.utils import get_encoder_tokenizer_class
 
 CONTAMINATED_PATHS = [
-    # Path("datasets/goldenswag/golden_swag_train_synthetic_CATEGORY_ERRORS.json"),
-    # Path("datasets/goldenswag/golden_swag_train_synthetic_LABEL_ERRORS.json"),
+    Path("datasets/goldenswag/golden_swag_train.json"),
     Path("datasets/goldenswag/golden_swag_train_synthetic_NEAR_DUPLICATES.json"),
     Path("datasets/goldenswag/golden_swag_train_synthetic_NEAR_DUPLICATES_QUESTIONS.json"),
     Path("datasets/goldenswag/golden_swag_train_synthetic_OFF_TOPIC_SAMPLES.json"),
@@ -32,7 +31,7 @@ HYPERPARAMETERS = {
 TRAIN_CONFIGS = {
     "mae": {"epochs": 35, "batch_size": 32, "ssl_pre_training": True, "save_every_n_epochs": 1},
     "simcse": {"epochs": 25, "batch_size": 16, "ssl_pre_training": True, "save_every_n_epochs": 1},
-    "electra": {"epochs": 50, "batch_size": 32, "ssl_pre_training": True, "save_every_n_epochs": 1},
+    "electra": {"epochs": 35, "batch_size": 32, "ssl_pre_training": True, "save_every_n_epochs": 1},
 }
 
 
@@ -115,7 +114,10 @@ def train_all() -> None:
     val_dataset = load_val_dataset()
 
     for path in CONTAMINATED_PATHS:
-        issue_type = get_issue_type_from_path(path).value
+        if "golden_swag_train.json" in str(path):
+            issue_type = "default"
+        else:
+            issue_type = get_issue_type_from_path(path).value
         for ssl_method, train_function in TRAIN_FUNCTIONS.items():
             train_dataset = load_train_dataset(path, ssl_method, issue_type)
             train_function(train_dataset, val_dataset)

@@ -23,15 +23,12 @@ SIMCSE_STANDARD_HYPERPARAMETERS = {
     "weight_decay": 0.04,
     "weight_decay_end": 0.4,
     "warmup_epochs": 10,
-    "momentum_teacher": 0.996,
     "clip_grad": 3.0,
     "apply_l2_norm": True,
     "model": {
         "emb_dim": None,
         "base_model": "bert",
         "model_type": "BERT",
-        "use_bn_in_head": False,
-        "norm_last_layer": True,
         "eval": {"n_last_blocks": 4, "avgpool_patchtokens": False},
         "encoder": {
             "out_dim": 756,
@@ -43,7 +40,6 @@ SIMCSE_STANDARD_HYPERPARAMETERS = {
         "use_cosine_similarity": True,
     },
     "optimizer": {"freeze_last_layer": 1},
-    "visualize_attention": False,
     "embed_vis_every_n_epochs": 1
 }
 
@@ -153,5 +149,5 @@ if __name__ == "__main__":
     )
 
     logger.info("Training SimCSE")
-    model = train_simcse(train_dataset, val_dataset, 15, 16, True, 1, None, SIMCSE_STANDARD_HYPERPARAMETERS)
+    model = train_simcse(train_dataset, val_dataset, 25, 16, True, 1, None, SIMCSE_STANDARD_HYPERPARAMETERS)
     logger.info(f'Finished SimCSE training after: {datetime.now() - start}')
