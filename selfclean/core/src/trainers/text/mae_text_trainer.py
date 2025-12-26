@@ -46,8 +46,7 @@ class MAETextTrainer(Trainer):
         self.loss = nn.CrossEntropyLoss().to(self.device)
         self.print_model_summary = print_model_summary
         # create model
-        self.model = BertMae(self.config["model"]["base_model"], self.config["model"]["encoder_mask_ratio"],
-                             self.config["model"]["decoder_mask_ratio"])
+        self.model = BertMae(self.config["model"]["base_model"], self.config["model"]["encoder_mask_ratio"])
         self.model.to(self.device)
         self.model = torch.nn.SyncBatchNorm.convert_sync_batchnorm(self.model)
         self.model = self.distribute_model(self.model)

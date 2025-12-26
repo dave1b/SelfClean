@@ -19,7 +19,7 @@ class BertSimCSE(nn.Module):
 
     def forward(self, input_ids, attention_mask):
         outputs = self.backbone(input_ids, attention_mask)
-        cls_embedding = outputs.pooler_output  # [CLS] token representation
+        cls_embedding = outputs.last_hidden_state[:, 0, :]   # [CLS] token representation
 
         z = self.dense1(cls_embedding)
         z = F.relu(z)

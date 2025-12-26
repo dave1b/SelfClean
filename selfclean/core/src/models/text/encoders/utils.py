@@ -6,16 +6,10 @@ from .....src.models.text.encoders.llm import *
 LLM_DICT = {
     # Base models
     "bert": bert,
-    # "roberta": roberta,
-    # "distilbert": distilbert,
-    # "bert_mlm": bert_mlm,
-    # "electra": electra,
-
-    # Pretrained models
-    # "pretrained_bert_hellaSwag_simcse": pretrained_bert_hellaSwag_simcse,
-    # "pretrained_bert_mmlu_simcse": pretrained_bert_mmlu_simcse,
-    # "pretrained_bert_hellaSwag_mae": pretrained_bert_hellaSwag_mae,
-    # "pretrained_bert_mmlu_mae": pretrained_bert_mmlu_mae,
+    "roberta": roberta,
+    "distilbert": distilbert,
+    "bert_mlm": bert_mlm,
+    "electra": electra,
 
     # SimCSE models
     "golden_swag_train_simcse_bert_1": golden_swag_train_simcse_bert_1,

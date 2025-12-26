@@ -11,6 +11,52 @@ from selfclean import SelfClean
 from selfclean.cleaner.issue_manager import IssueTypes
 from selfclean.core.src.models.text.encoders.utils import LLM_DICT
 
+
+BASE_MODELS = [
+    # SimCSE models
+    "golden_swag_train_simcse_bert_1",
+    "golden_swag_train_simcse_bert_12",
+    "golden_swag_train_simcse_bert_25",
+    "golden_swag_train_simcse_bert_NEAR_DUPLICATES_1",
+    "golden_swag_train_simcse_bert_NEAR_DUPLICATES_12",
+    "golden_swag_train_simcse_bert_NEAR_DUPLICATES_25",
+    "golden_swag_train_simcse_bert_NEAR_DUPLICATES_Q_1",
+    "golden_swag_train_simcse_bert_NEAR_DUPLICATES_Q_12",
+    "golden_swag_train_simcse_bert_NEAR_DUPLICATES_Q_25",
+    "golden_swag_train_simcse_bert_OFF_TOPIC_1",
+    "golden_swag_train_simcse_bert_OFF_TOPIC_12",
+    "golden_swag_train_simcse_bert_OFF_TOPIC_25",
+
+    # Electra models
+    "golden_swag_train_electra_bert_1",
+    "golden_swag_train_electra_bert_25",
+    "golden_swag_train_electra_bert_50",
+    "golden_swag_train_electra_bert_NEAR_DUPLICATE_1",
+    "golden_swag_train_electra_bert_NEAR_DUPLICATE_25",
+    "golden_swag_train_electra_bert_NEAR_DUPLICATE_50",
+    "golden_swag_train_electra_bert_NEAR_DUPLICATE_Q_1",
+    "golden_swag_train_electra_bert_NEAR_DUPLICATE_Q_25",
+    "golden_swag_train_electra_bert_NEAR_DUPLICATE_Q_50",
+    "golden_swag_train_electra_bert_OFF_TOPIC_1",
+    "golden_swag_train_electra_bert_OFF_TOPIC_25",
+    "golden_swag_train_electra_bert_OFF_TOPIC_50",
+
+    # MAE models
+    "golden_swag_train_mae_bert_1",
+    "golden_swag_train_mae_bert_17",
+    "golden_swag_train_mae_bert_35",
+    "golden_swag_train_mae_bert_NEAR_DUPLICATE_1",
+    "golden_swag_train_mae_bert_NEAR_DUPLICATE_17",
+    "golden_swag_train_mae_bert_NEAR_DUPLICATE_35",
+    "golden_swag_train_mae_bert_NEAR_DUPLICATE_Q_1",
+    "golden_swag_train_mae_bert_NEAR_DUPLICATE_Q_17",
+    "golden_swag_train_mae_bert_NEAR_DUPLICATE_Q_35",
+    "golden_swag_train_mae_bert_OFF_TOPIC_1",
+    "golden_swag_train_mae_bert_OFF_TOPIC_17",
+    "golden_swag_train_mae_bert_OFF_TOPIC_35",
+]
+
+
 # Constants
 CONTAMINATED_PATHS = [
     Path('../experiment/datasets/goldenswag/golden_swag_train_synthetic_CATEGORY_ERRORS.json'),
@@ -99,9 +145,7 @@ def evaluate():
             logger.warning(f"Contamination log file not found: {log_file}")
             continue
 
-        for model in LLM_DICT.keys():
-            if model == 'bert':
-                continue
+        for model in BASE_MODELS:
             pretraining_type = None
             for type in PRETRAINING_TYPES:
                 if type in model:
