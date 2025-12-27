@@ -1,16 +1,23 @@
 from datetime import datetime, timedelta
 from pathlib import Path
-from typing import Dict, Callable
+from typing import Dict, Callable, Optional
 
 import wandb
 from loguru import logger
 
-from examples.GoldenSwag_iteration import get_issue_type_from_path
 from experiment.ELECTRA.train import ELECTRA_STANDARD_HYPERPARAMETERS, train_electra
 from experiment.MAE.train import MAE_TEXT_STANDARD_HYPERPARAMETERS, train_mae_text
 from experiment.SimCSE.train import SIMCSE_STANDARD_HYPERPARAMETERS, train_simcse
 from experiment.datasets.hellaswag.hella_swag_dataset import HellaSwagDataset
+from selfclean.cleaner.issue_manager import IssueTypes
 from selfclean.core.src.models.text.encoders.utils import get_encoder_tokenizer_class
+
+def get_issue_type_from_path(path: Path) -> Optional[IssueTypes]:
+    """Determine the issue type from the path."""
+    for issue in IssueTypes:
+        if issue.value.upper() in str(path):
+            return issue
+    return None
 
 CONTAMINATED_PATHS = [
     Path("datasets/goldenswag/golden_swag_train.json"),

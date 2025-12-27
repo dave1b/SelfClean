@@ -5,11 +5,11 @@ from typing import Dict, Callable
 import wandb
 from loguru import logger
 
-from examples.GoldenSwag_iteration import get_issue_type_from_path
 from experiment.ELECTRA.train import ELECTRA_STANDARD_HYPERPARAMETERS, train_electra
 from experiment.MAE.train import MAE_TEXT_STANDARD_HYPERPARAMETERS, train_mae_text
 from experiment.SimCSE.train import SIMCSE_STANDARD_HYPERPARAMETERS, train_simcse
 from experiment.datasets.hellaswag.hella_swag_dataset import HellaSwagDataset
+from experiment.train_all import get_issue_type_from_path
 from selfclean.core.src.models.text.encoders.utils import get_encoder_tokenizer_class
 
 CONTAMINATED_PATHS = [

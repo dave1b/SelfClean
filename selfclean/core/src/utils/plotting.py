@@ -454,7 +454,7 @@ def calculate_scores_from_ranking(
 
             fig.tight_layout()
             wandb_fig = wandb.Image(fig)
-            log_dict[f"{wandb_cat}evaluation/evaluation"] = wandb_fig
+            # log_dict[f"{wandb_cat}evaluation/evaluation"] = wandb_fig
             if path is not None:
                 plt.savefig(path / "plot.png", bbox_inches="tight")
             if plot_existing:
