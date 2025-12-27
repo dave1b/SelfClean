@@ -333,6 +333,7 @@ def calculate_scores_from_ranking(
     log_wandb: bool = False,
     wandb_cat: str = "",
     show_plots: bool = True,
+    save_plots: bool = True,
     show_scores: bool = True,
     log_dict: dict = {},
     path: Optional[str] = None,
@@ -402,7 +403,7 @@ def calculate_scores_from_ranking(
         logger.info(f"AUPRG (%): {score_auprg * 100:.1f}")
         logger.info(f"Percentage Pos. (%): {pi * 100:.1f}")
 
-    if show_plots:
+    if show_plots | save_plots:
         with plt.style.context(["science", "std-colors", "grid"]):
             plot_existing = True
             if fig is None and axes is None:
@@ -458,7 +459,8 @@ def calculate_scores_from_ranking(
                 plt.savefig(path / "plot.png", bbox_inches="tight")
             if plot_existing:
                 return log_dict
-            plt.show()
+            if show_plots:
+                plt.show()
             plt.close(fig)
             plt.figure().clear()
             plt.close("all")

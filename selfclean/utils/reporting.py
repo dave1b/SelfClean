@@ -60,15 +60,18 @@ def generate_markdown_report(
 
                 score = issues["scores"][i] if "scores" in issues else "N/A"
 
-                table_data.append({
+                row = {
                     "Rank": i + 1,
                     "Index 1": dataset[int(idx1)][7],
                     "Index 2": dataset[int(idx2)][7],
                     "Text 1": text1,
                     "Text 2": text2,
                     "Score": f"{score:.4f}" if isinstance(score, (int, float)) else score,
-                    "Outlier Prediction": issues.get('auto_issues')[i],
-                })
+                }
+                if autocleaned:
+                    row["Autoclean Prediction"] = issues.get('auto_issues')[i]
+                table_data.append(row)
+
             elif issue_type == "near_duplicates_questions":
                 # Handle near duplicates (pairs of indices)
                 idx1, idx2 = idx

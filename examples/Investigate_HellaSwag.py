@@ -19,16 +19,16 @@ results, prediction = selfclean.run_on_text_dataset(
     epochs=0,
     batch_size=32,
     dataset_name="hellaswag",
-    base_model="golden_swag_train_electra_bert",
+    base_model="golden_swag_train_simcse_bert_1",
     wandb_logging=False,
     issues_to_detect=[
         # IssueTypes.OFF_TOPIC_SAMPLES,
         # IssueTypes.NEAR_DUPLICATES_Q,
-        # IssueTypes.NEAR_DUPLICATES,
+        IssueTypes.NEAR_DUPLICATES,
         # IssueTypes.LABEL_ERRORS,
-        IssueTypes.CATEGORY_ERRORS
+        # IssueTypes.CATEGORY_ERRORS
     ],
-    contamination_log_path=Path("../experiment/datasets/hellaswag/golden_swag_train_synthetic_CATEGORY_ERRORS_logs.json")
+    contamination_log_path=Path("../experiment/datasets/goldenswag/golden_swag_train_synthetic_NEAR_DUPLICATES_logs.json")
 )
 print(f"\nFinished in {(time.time() - start_time) / 60:.2f} minutes")
 

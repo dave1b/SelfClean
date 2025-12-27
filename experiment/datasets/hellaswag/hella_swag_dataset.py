@@ -96,7 +96,7 @@ class HellaSwagDataset(Dataset):
 
             correct_ending = entry["endings"][entry["label"]]
             correct_ending_idx = entry["endings"].index(correct_ending)
-            wrong_endings = [entry["endings"][i] for i in range(4) if i != entry["label"]]
+            wrong_endings = [entry["endings"][i] for i in range(len(entry['endings'])) if i != entry["label"]]
             wrong_endings_idx = [entry["endings"].index(wrong_ending) for wrong_ending in wrong_endings]
 
             # Add correct ending

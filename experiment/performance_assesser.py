@@ -122,8 +122,8 @@ class PerformanceAssesser:
                 self.contamination_log['id_2'].astype(str)
             ])
             pred_index = pd.MultiIndex.from_arrays([
-                self.predictions['id_1'].astype(str),
-                self.predictions['id_2'].astype(str)
+                self.predictions['id_1'].astype(str).compute(),
+                self.predictions['id_2'].astype(str).compute()
             ])
             self.ranked_labels = pred_index.isin(contamination_index)
         if self.output_path:
@@ -133,7 +133,7 @@ class PerformanceAssesser:
 
     def plotting(self) -> None:
         self._calculate_ranked_labels()
-        calculate_scores_from_ranking(self.ranked_labels, path=self.output_path, log_dict=self.log_dict, show_plots=False)
+        calculate_scores_from_ranking(self.ranked_labels, path=self.output_path, log_dict=self.log_dict, show_plots=False, save_plots=True)
 
     def roc_curve(self) -> None:
         logger.info("Calculating AUC-ROC...")
