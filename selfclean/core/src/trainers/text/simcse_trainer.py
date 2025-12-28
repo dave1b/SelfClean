@@ -4,7 +4,7 @@ from typing import List, Optional, Union, Dict
 from loguru import logger
 
 import torch
-import torch.nn.functional as F
+from torch.cuda.amp import GradScaler, autocast
 from torch.utils.data import DataLoader, DistributedSampler
 from torchinfo import summary
 from tqdm.auto import tqdm
@@ -55,6 +55,7 @@ class SimCSETrainer(Trainer):
             wandb.watch(self.model, log="all")
         if print_model_summary:
             summary(self.model, input_size=(self.config["batch_size"], 3, 224, 224))
+        self.scaler = GradScaler()
 
     def fit(self) -> torch.nn.Module:
         logger.info(f"Start training {self.arch_name}")
@@ -141,19 +142,24 @@ class SimCSETrainer(Trainer):
                 'input_ids': batch['input_ids'].to(self.device, non_blocking=True),
                 'attention_mask': batch['attention_mask'].to(self.device, non_blocking=True)
             }
-            optimizer.zero_grad()
-            loss, embeddings = self._model_step(self.model, sentences)
+            optimizer.zero_grad(set_to_none=True)
+
+            with autocast():
+                loss, embeddings = self._model_step(self.model, sentences)
+
+            self.check_loss_nan(loss.detach())
+            self.scaler.scale(loss).backward()
+            if self.config["clip_grad"]:
+                self.scaler.unscale_(optimizer)
+                _ = clip_gradients(self.model, self.config["clip_grad"])
+            self.scaler.step(optimizer)
+            self.scaler.update()
+            total_loss += loss.item() * sentences['input_ids'].size(0)
+            total_samples += sentences['input_ids'].size(0)
             if n_iter % 100 == 0:
                 with torch.no_grad():
                     entropy = calculate_embedding_entropy(embeddings.cpu())
                     ent_avg, ent_min, ent_max, ent_std, ent_med = entropy
-            self.check_loss_nan(loss.detach())
-            loss.backward()
-            if self.config["clip_grad"]:
-                _ = clip_gradients(self.model, self.config["clip_grad"])
-            optimizer.step()
-            total_loss += loss.item() * sentences['input_ids'].size(0)
-            total_samples += sentences['input_ids'].size(0)
             if self.wandb_logging:
                 import wandb
                 wandb.log({
@@ -181,7 +187,8 @@ class SimCSETrainer(Trainer):
                     'input_ids': batch['input_ids'].to(self.device, non_blocking=True),
                     'attention_mask': batch['attention_mask'].to(self.device, non_blocking=True)
                 }
-                loss, _ = self._model_step(self.model, sentences)
+                with autocast():
+                    loss, _ = self._model_step(self.model, sentences)
                 total_loss += loss.item() * sentences['input_ids'].size(0)
                 total_samples += sentences['input_ids'].size(0)
         return total_loss / total_samples

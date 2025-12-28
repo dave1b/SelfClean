@@ -2,6 +2,7 @@ import gc
 from pathlib import Path
 from typing import Optional, Union
 import torch
+from torch.cuda.amp import GradScaler, autocast
 from loguru import logger
 from torch.utils.data import DataLoader, DistributedSampler
 from torchinfo import summary
@@ -45,6 +46,8 @@ class ElectraTrainer(Trainer):
         self.model = self.model.to(self.device)
         self.model = self.distribute_model(self.model)
         self.mask_token_id = mask_token_id
+        self.scaler_gen = GradScaler()
+        self.scaler_disc = GradScaler()
 
         if wandb_logging:
             import wandb
@@ -140,26 +143,34 @@ class ElectraTrainer(Trainer):
             attention_masks = batch['attention_mask'].to(self.device, non_blocking=True)
 
             # Generate corrupted input and get generator loss
-            corrupted_ids, labels, mlm_loss = self.generate_corrupted_input(input_ids, attention_masks)
-            optimizer_gen.zero_grad()
-            mlm_loss.backward()
+            with autocast():
+                corrupted_ids, labels, mlm_loss = self.generate_corrupted_input(input_ids, attention_masks)
+
+            optimizer_gen.zero_grad(set_to_none=True)
+            self.scaler_gen.scale(mlm_loss).backward()
             if self.config["clip_grad"]:
+                self.scaler_gen.unscale_(optimizer_gen)
                 _ = clip_gradients(self.model.generator, self.config["clip_grad"])
-            optimizer_gen.step()
+            self.scaler_gen.step(optimizer_gen)
+            self.scaler_gen.update()
 
             # Discriminator forward/backward
-            optimizer_disc.zero_grad()
-            outputs = self.model(
-                input_ids=corrupted_ids,
-                attention_mask=attention_masks,
-                labels=labels
-            )
-            disc_loss = outputs.loss
+            optimizer_disc.zero_grad(set_to_none=True)
+            with autocast():
+                outputs = self.model(
+                    input_ids=corrupted_ids,
+                    attention_mask=attention_masks,
+                    labels=labels
+                )
+                disc_loss = outputs.loss
+
             self.check_loss_nan(disc_loss.detach())
-            disc_loss.backward()
+            self.scaler_disc.scale(disc_loss).backward()
             if self.config["clip_grad"]:
+                self.scaler_disc.unscale_(optimizer_disc)
                 _ = clip_gradients(self.model.backbone, self.config["clip_grad"])
-            optimizer_disc.step()
+            self.scaler_disc.step(optimizer_disc)
+            self.scaler_disc.update()
             embeddings = outputs.logits
 
             if n_iter % 100 == 0:
@@ -196,12 +207,13 @@ class ElectraTrainer(Trainer):
                 input_ids = batch['input_ids'].to(self.device, non_blocking=True)
                 attention_masks = batch['attention_mask'].to(self.device, non_blocking=True)
                 corrupted_ids, labels = self.generate_corrupted_input(input_ids, attention_masks)
-                outputs = self.model(
-                    input_ids=corrupted_ids,
-                    attention_mask=attention_masks,
-                    labels=labels
-                )
-                loss = outputs.loss
+                with autocast():
+                    outputs = self.model(
+                        input_ids=corrupted_ids,
+                        attention_mask=attention_masks,
+                        labels=labels
+                    )
+                    loss = outputs.loss
                 total_loss += loss.item() * input_ids.size(0)
                 total_samples += input_ids.size(0)
         return total_loss / total_samples
@@ -210,11 +222,12 @@ class ElectraTrainer(Trainer):
         mask_arr = (torch.rand(input_ids.shape, device=input_ids.device) < replace_prob)
         masked_ids = input_ids.clone()
         masked_ids[mask_arr] = self.mask_token_id
-        gen_outputs = self.model.generator(
-            input_ids=masked_ids,
-            attention_mask=attention_mask,
-            labels=input_ids  # Generator tries to predict original tokens
-        )
+        with autocast():
+            gen_outputs = self.model.generator(
+                input_ids=masked_ids,
+                attention_mask=attention_mask,
+                labels=input_ids  # Generator tries to predict original tokens
+            )
         mlm_loss = gen_outputs.loss
         sampled = torch.multinomial(torch.softmax(gen_outputs.logits[mask_arr], -1), 1).squeeze(-1)
         corrupted = input_ids.clone()

@@ -4,6 +4,7 @@ from typing import Optional, Union
 
 import torch
 from torch import nn
+from torch.cuda.amp import GradScaler, autocast
 from torch.utils.data import DataLoader, DistributedSampler
 from torchinfo import summary
 from tqdm.auto import tqdm
@@ -19,7 +20,6 @@ from ....src.utils.utils import (
     restart_from_checkpoint,
     save_checkpoint, save_model,
 )
-
 
 class MAETextTrainer(Trainer):
     def __init__(
@@ -54,6 +54,7 @@ class MAETextTrainer(Trainer):
             wandb.watch(self.model, log="all")
         if self.print_model_summary:
             summary(self.model, input_size=(self.config["batch_size"], 3, 224, 224))
+        self.scaler = GradScaler()
 
     def fit(self) -> BertMae:
         # create optimizer
@@ -145,20 +146,23 @@ class MAETextTrainer(Trainer):
                 'input_ids': batch['input_ids'].to(self.device, non_blocking=True),
                 'attention_mask': batch['attention_mask'].to(self.device, non_blocking=True)
             }
-            optimizer.zero_grad()
+            optimizer.zero_grad(set_to_none=True)
 
-            embeddings, logits, rand_mask = self.model(sentences["input_ids"], sentences["attention_mask"])
-            # Targets are the original input_ids at the positions where we masked
-            targets = sentences["input_ids"][rand_mask]
-            # Logits at the same positions
-            masked_logits = logits[rand_mask]
-            loss = self.loss(masked_logits, targets)
+            with autocast():
+                embeddings, logits, rand_mask = self.model(sentences["input_ids"], sentences["attention_mask"])
+                # Targets are the original input_ids at the positions where we masked
+                targets = sentences["input_ids"][rand_mask]
+                # Logits at the same positions
+                masked_logits = logits[rand_mask]
+                loss = self.loss(masked_logits, targets)
 
             self.check_loss_nan(loss.detach())
-            loss.backward()
+            self.scaler.scale(loss).backward()
             if self.config["clip_grad"]:
+                self.scaler.unscale_(optimizer)
                 _ = clip_gradients(self.model, self.config["clip_grad"])
-            optimizer.step()
+            self.scaler.step(optimizer)
+            self.scaler.update()
             total_loss += loss.item() * sentences['input_ids'].size(0)
             total_samples += sentences['input_ids'].size(0)
             if n_iter % 25 == 0:  # Calculate entropy every 25 iterations
@@ -200,10 +204,11 @@ class MAETextTrainer(Trainer):
                     'attention_mask': batch['attention_mask'].to(self.device, non_blocking=True)
                 }
 
-                embeddings, logits, rand_mask = self.model(sentences["input_ids"], sentences["attention_mask"])
-                targets = sentences["input_ids"][rand_mask]
-                masked_logits = logits[rand_mask]
-                loss = self.loss(masked_logits, targets)
+                with autocast():
+                    embeddings, logits, rand_mask = self.model(sentences["input_ids"], sentences["attention_mask"])
+                    targets = sentences["input_ids"][rand_mask]
+                    masked_logits = logits[rand_mask]
+                    loss = self.loss(masked_logits, targets)
                 total_loss += loss.item() * sentences['input_ids'].size(0)
                 total_samples += sentences['input_ids'].size(0)
         return total_loss / total_samples
