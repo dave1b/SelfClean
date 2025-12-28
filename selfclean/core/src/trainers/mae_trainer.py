@@ -54,7 +54,6 @@ class MAETrainer(Trainer):
         model_cls, _ = get_model_class(self.config["model"]["base_model"])
         self.model = model_cls(**self.config["model"]["configs"])
         self.model.to(self.device)
-        self.model = torch.nn.SyncBatchNorm.convert_sync_batchnorm(self.model)
         self.model = self.distribute_model(self.model)
         if wandb_logging:
             import wandb

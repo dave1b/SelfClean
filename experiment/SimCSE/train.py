@@ -18,11 +18,11 @@ from selfclean.core.src.utils.utils import init_distributed_mode, cleanup
 
 SIMCSE_STANDARD_HYPERPARAMETERS = {
     "optim": "adamw",
-    "lr": 0.0005,
+    "lr": 5e-4,
     "min_lr": 1e-6,
     "weight_decay": 0.04,
-    "weight_decay_end": 0.4,
-    "warmup_epochs": 10,
+    "weight_decay_end": 0.2,
+    "warmup_epochs": 5,
     "clip_grad": 3.0,
     "apply_l2_norm": True,
     "model": {
@@ -36,7 +36,7 @@ SIMCSE_STANDARD_HYPERPARAMETERS = {
         }
     },
     "loss": {
-        "temperature": 0.2,
+        "temperature": 0.1,
         "use_cosine_similarity": True,
     },
     "optimizer": {"freeze_last_layer": 1},

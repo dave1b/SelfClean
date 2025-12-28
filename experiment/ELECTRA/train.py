@@ -20,13 +20,14 @@ ELECTRA_STANDARD_HYPERPARAMETERS = {
         "name": "adamw",
         "args": {}
     },
-    "lr": 0.0005,
+    "lr_generator": 5e-3,
+    "lr_discriminator": 1e-4,
+    "weight_decay_end": 0.1,
     "min_lr": 1e-6,
     "weight_decay": 0.04,
-    "weight_decay_end": 0.4,
-    "warmup_epochs": 10,
+    "warmup_epochs": 5,
     "clip_grad": 3.0,
-    "apply_l2_norm": True,
+    "apply_l2_norm": False,
     "model": {
         "out_dim": None,
         "emb_dim": None,
@@ -109,7 +110,7 @@ def train_electra(
             pin_memory=True,
             **kwargs_val,
         )
-    else :
+    else:
         val_loader = None
 
     trainer = ElectraTrainer(
@@ -151,7 +152,6 @@ if __name__ == "__main__":
         pre_tokenize=True  # Enable pre-tokenization
     )
     val_dataset.name = "GoldenSwag"
-
 
     logger.info("Training ELECTRA Text")
     model = train_electra(train_dataset, val_dataset, 50, 32, True, 1, None, ELECTRA_STANDARD_HYPERPARAMETERS)

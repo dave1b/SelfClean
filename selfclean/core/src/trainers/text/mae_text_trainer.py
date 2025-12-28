@@ -48,7 +48,6 @@ class MAETextTrainer(Trainer):
         # create model
         self.model = BertMae(self.config["model"]["base_model"], self.config["model"]["encoder_mask_ratio"])
         self.model.to(self.device)
-        self.model = torch.nn.SyncBatchNorm.convert_sync_batchnorm(self.model)
         self.model = self.distribute_model(self.model)
         if wandb_logging:
             import wandb
@@ -91,7 +90,7 @@ class MAETextTrainer(Trainer):
         self._save_config_file(self.run_dir / "checkpoints")
         # training loop
         n_iter = 0
-        best_val_loss = float('inf')  # Track best validation loss
+        best_val_loss = float('inf')
         progress_bar = tqdm(
             range(self.start_epoch, self.config["epochs"] + 1),
             desc="Self-supervised pre-training",
@@ -147,8 +146,14 @@ class MAETextTrainer(Trainer):
                 'attention_mask': batch['attention_mask'].to(self.device, non_blocking=True)
             }
             optimizer.zero_grad()
-            embeddings, logits = self.model(input_ids=sentences["input_ids"], attention_mask=sentences["attention_mask"])
-            loss = self.loss(logits.view(-1, logits.size(-1)), sentences["input_ids"].view(-1))
+
+            embeddings, logits, rand_mask = self.model(sentences["input_ids"], sentences["attention_mask"])
+            # Targets are the original input_ids at the positions where we masked
+            targets = sentences["input_ids"][rand_mask]
+            # Logits at the same positions
+            masked_logits = logits[rand_mask]
+            loss = self.loss(masked_logits, targets)
+
             self.check_loss_nan(loss.detach())
             loss.backward()
             if self.config["clip_grad"]:
@@ -194,8 +199,11 @@ class MAETextTrainer(Trainer):
                     'input_ids': batch['input_ids'].to(self.device, non_blocking=True),
                     'attention_mask': batch['attention_mask'].to(self.device, non_blocking=True)
                 }
-                embeddings, logits = self.model(input_ids=sentences["input_ids"], attention_mask=sentences["attention_mask"])
-                loss = self.loss(logits.view(-1, logits.size(-1)), sentences["input_ids"].view(-1))
+
+                embeddings, logits, rand_mask = self.model(sentences["input_ids"], sentences["attention_mask"])
+                targets = sentences["input_ids"][rand_mask]
+                masked_logits = logits[rand_mask]
+                loss = self.loss(masked_logits, targets)
                 total_loss += loss.item() * sentences['input_ids'].size(0)
                 total_samples += sentences['input_ids'].size(0)
         return total_loss / total_samples

@@ -5,6 +5,7 @@ from ..encoders.utils import get_encoder_tokenizer_class
 import torch
 import torch.nn as nn
 
+
 class BertMae(nn.Module):
     def __init__(self, base_model: str, encoder_mask_ratio: float = 0.75):
         super(BertMae, self).__init__()
@@ -15,7 +16,9 @@ class BertMae(nn.Module):
             intermediate_size=self.encoder.config.intermediate_size,
             num_attention_heads=self.encoder.config.num_attention_heads,
             is_decoder=True,
-            add_cross_attention=True
+            add_cross_attention=True,
+            hidden_dropout_prob=0.1,
+            attention_probs_dropout_prob=0.1,
         )
         self.decoder = BertModel(decoder_config)
 
@@ -26,13 +29,16 @@ class BertMae(nn.Module):
         self.proj = nn.Linear(self.encoder.config.hidden_size, self.encoder.config.vocab_size)
 
     def forward(self, input_ids, attention_mask):
-
         batch_size, seq_length = input_ids.shape
 
         # Create a random mask for the encoder input
-        encoder_mask = torch.rand(batch_size, seq_length, device=input_ids.device) < self.encoder_mask_ratio
+        rand_mask = torch.rand(batch_size, seq_length, device=input_ids.device) < self.encoder_mask_ratio
+
+        # Ensure we don't mask [PAD] or [CLS] (optional but recommended)
+        rand_mask = rand_mask & (attention_mask == 1)
+
         masked_input = input_ids.clone()
-        masked_input[encoder_mask] = self.mask_token_id
+        masked_input[rand_mask] = self.mask_token_id
 
         # Encode the masked input
         encoder_outputs = self.encoder(input_ids=masked_input, attention_mask=attention_mask)
@@ -52,4 +58,4 @@ class BertMae(nn.Module):
         # Project decoder hidden states to vocab size for loss calculation
         reconstructed_token_logits = self.proj(decoder_hidden_states)  # Shape: [batch_size, seq_length, vocab_size]
 
-        return encoder_hidden_states, reconstructed_token_logits
+        return encoder_hidden_states, reconstructed_token_logits, rand_mask

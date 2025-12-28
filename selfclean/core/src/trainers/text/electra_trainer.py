@@ -43,7 +43,6 @@ class ElectraTrainer(Trainer):
         )
         self.model = ElectraModel(base_model=self.config["model"]["base_model"])
         self.model = self.model.to(self.device)
-        self.model = torch.nn.SyncBatchNorm.convert_sync_batchnorm(self.model)
         self.model = self.distribute_model(self.model)
         self.mask_token_id = mask_token_id
 
@@ -58,9 +57,14 @@ class ElectraTrainer(Trainer):
         logger.info(f"Start training {self.arch_name}")
         params_groups = get_params_groups(self.model)
         optimizer_cls = get_optimizer_type(self.config["optim"])
-        optimizer = optimizer_cls(
-            params=params_groups,
-            lr=self.config["lr"],
+        optimizer_gen = get_optimizer_type(self.config["optim"])(
+            params=self.model.generator.parameters(),
+            lr=self.config.get("lr_generator", 5e-4),
+            weight_decay=self.config["weight_decay"],
+        )
+        optimizer_disc = get_optimizer_type(self.config["optim"])(
+            params=self.model.backbone.parameters(),
+            lr=self.config.get("lr_discriminator", 2e-5),
             weight_decay=self.config["weight_decay"],
         )
         lr_schedule = cosine_scheduler(
@@ -77,12 +81,6 @@ class ElectraTrainer(Trainer):
             len(self.train_dataset),
         )
         to_restore = {"epoch": 1, "config": self.config}
-        restart_from_checkpoint(
-            self.get_ckp_path / "model_best.pth",
-            run_variables=to_restore,
-            state_dict=self.model,
-            optimizer=optimizer,
-        )
         self.start_epoch = to_restore["epoch"]
         self.config = to_restore["config"]
         self._save_config_file(self.run_dir / "checkpoints")
@@ -96,7 +94,7 @@ class ElectraTrainer(Trainer):
             if type(self.train_dataset.sampler) is DistributedSampler:
                 self.train_dataset.sampler.set_epoch(epoch - 1)
             self.model.train()
-            train_loss = self._train_epoch(epoch, optimizer, lr_schedule, wd_schedule, n_iter)
+            train_loss = self._train_epoch(epoch, optimizer_gen, optimizer_disc, lr_schedule, wd_schedule, n_iter)
             if self.val_dataset is not None:
                 val_loss = self._validate_epoch(epoch)
                 if self.wandb_logging:
@@ -120,13 +118,19 @@ class ElectraTrainer(Trainer):
             backbone = self.model.backbone
         return backbone
 
-    def _train_epoch(self, epoch: int, optimizer, lr_schedule, wd_schedule, n_iter: int) -> float:
+    def _train_epoch(self, epoch: int, optimizer_gen, optimizer_disc, lr_schedule, wd_schedule, n_iter: int) -> float:
         self.model.train()
         total_loss = 0.0
         total_samples = 0
         for batch in self.train_dataset:
             self.update_optim_from_schedulers(
-                optimizer=optimizer,
+                optimizer=optimizer_disc,
+                lr_schedule=lr_schedule,
+                wd_schedule=wd_schedule,
+                n_iter=n_iter,
+            )
+            self.update_optim_from_schedulers(
+                optimizer=optimizer_gen,
                 lr_schedule=lr_schedule,
                 wd_schedule=wd_schedule,
                 n_iter=n_iter,
@@ -134,32 +138,45 @@ class ElectraTrainer(Trainer):
             n_iter += 1
             input_ids = batch['input_ids'].to(self.device, non_blocking=True)
             attention_masks = batch['attention_mask'].to(self.device, non_blocking=True)
-            corrupted_ids, labels = self.generate_corrupted_input(input_ids, attention_masks)
-            optimizer.zero_grad()
+
+            # Generate corrupted input and get generator loss
+            corrupted_ids, labels, mlm_loss = self.generate_corrupted_input(input_ids, attention_masks)
+            optimizer_gen.zero_grad()
+            mlm_loss.backward()
+            if self.config["clip_grad"]:
+                _ = clip_gradients(self.model.generator, self.config["clip_grad"])
+            optimizer_gen.step()
+
+            # Discriminator forward/backward
+            optimizer_disc.zero_grad()
             outputs = self.model(
                 input_ids=corrupted_ids,
                 attention_mask=attention_masks,
                 labels=labels
             )
-            embeddings = outputs.logits
-            loss = outputs.loss
-            self.check_loss_nan(loss.detach())
-            loss.backward()
+            disc_loss = outputs.loss
+            self.check_loss_nan(disc_loss.detach())
+            disc_loss.backward()
             if self.config["clip_grad"]:
-                _ = clip_gradients(self.model, self.config["clip_grad"])
-            optimizer.step()
+                _ = clip_gradients(self.model.backbone, self.config["clip_grad"])
+            optimizer_disc.step()
+            embeddings = outputs.logits
+
             if n_iter % 100 == 0:
                 with torch.no_grad():
                     entropy = calculate_embedding_entropy(embeddings.cpu())
                     ent_avg, ent_min, ent_max, ent_std, ent_med = entropy
-            total_loss += loss.item() * input_ids.size(0)
+            total_loss += disc_loss.item() * input_ids.size(0)
             total_samples += input_ids.size(0)
             if self.wandb_logging:
                 import wandb
                 wandb.log({
-                    "train_loss": loss.item(),
-                    "lr": optimizer.param_groups[0]["lr"],
-                    "weight_decay": optimizer.param_groups[0]["weight_decay"],
+                    "train_loss/disc_loss": disc_loss.item(),
+                    "train_loss/mlm_loss": mlm_loss.item(),
+                    "lr_disc": optimizer_disc.param_groups[0]["lr"],
+                    "weight_decay_disc": optimizer_disc.param_groups[0]["weight_decay"],
+                    "lr_gen": optimizer_gen.param_groups[0]["lr"],
+                    "weight_decay_gen": optimizer_gen.param_groups[0]["weight_decay"],
                     "entropy/train_ent_avg": ent_avg if n_iter % 100 == 0 else None,
                     "entropy/train_ent_min": ent_min if n_iter % 100 == 0 else None,
                     "entropy/train_ent_max": ent_max if n_iter % 100 == 0 else None,
@@ -193,10 +210,14 @@ class ElectraTrainer(Trainer):
         mask_arr = (torch.rand(input_ids.shape, device=input_ids.device) < replace_prob)
         masked_ids = input_ids.clone()
         masked_ids[mask_arr] = self.mask_token_id
-        with torch.no_grad():
-            gen_logits = self.model.generator(input_ids=masked_ids, attention_mask=attention_mask).logits
-        sampled = torch.multinomial(torch.softmax(gen_logits[mask_arr], -1), 1).squeeze(-1)
+        gen_outputs = self.model.generator(
+            input_ids=masked_ids,
+            attention_mask=attention_mask,
+            labels=input_ids  # Generator tries to predict original tokens
+        )
+        mlm_loss = gen_outputs.loss
+        sampled = torch.multinomial(torch.softmax(gen_outputs.logits[mask_arr], -1), 1).squeeze(-1)
         corrupted = input_ids.clone()
         corrupted[mask_arr] = sampled
         is_replaced = (corrupted != input_ids).long()
-        return corrupted, is_replaced
+        return corrupted, is_replaced, mlm_loss

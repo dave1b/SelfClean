@@ -49,7 +49,6 @@ class SimCSETrainer(Trainer):
         self.loss = self.loss.to(self.device)
         self.model = BertSimCSE(base_model=self.config["model"]["base_model"])
         self.model = self.model.to(self.device)
-        self.model = torch.nn.SyncBatchNorm.convert_sync_batchnorm(self.model)
         self.model = self.distribute_model(self.model)
         if wandb_logging:
             import wandb
