@@ -128,7 +128,7 @@ def train_simcse(
 
 if __name__ == "__main__":
     start = datetime.now()
-    tokenizer = get_encoder_tokenizer_class("bert")[1]
+    tokenizer = get_encoder_tokenizer_class(SIMCSE_STANDARD_HYPERPARAMETERS['model']['base_model'])[1]
 
     hs_train_dataset_path = Path(__file__).parent.parent / "datasets" / "goldenswag" / "golden_swag_train.json"
     hs_val_dataset_path = Path(__file__).parent.parent / "datasets" / "goldenswag" / "golden_swag_validation.json"
@@ -149,5 +149,5 @@ if __name__ == "__main__":
     )
 
     logger.info("Training SimCSE")
-    model = train_simcse(train_dataset, val_dataset, 25, 16, True, 1, None, SIMCSE_STANDARD_HYPERPARAMETERS)
+    model = train_simcse(train_dataset, val_dataset, 25, 24, True, 1, None, SIMCSE_STANDARD_HYPERPARAMETERS)
     logger.info(f'Finished SimCSE training after: {datetime.now() - start}')

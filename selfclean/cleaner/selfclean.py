@@ -401,7 +401,7 @@ class SelfClean:
         wandb_logging: bool = False,
         wandb_project_name: str = "SelfClean",
         max_length: int = 180,
-        cache_dir: Optional[str] = "./.cache",
+        cache_dir: Optional[str] = None,
         contamination_log_path: Optional[Path] = None,
     ):
         if hyperparameters is None:

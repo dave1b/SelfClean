@@ -15,6 +15,7 @@ class BertMae(nn.Module):
             hidden_size=self.encoder.config.hidden_size,
             intermediate_size=self.encoder.config.intermediate_size,
             num_attention_heads=self.encoder.config.num_attention_heads,
+            vocab_size=self.encoder.config.vocab_size,
             is_decoder=True,
             add_cross_attention=True,
             hidden_dropout_prob=0.1,

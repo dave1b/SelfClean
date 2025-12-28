@@ -131,7 +131,7 @@ def train_electra(
 
 if __name__ == "__main__":
     start = datetime.now()
-    tokenizer = get_encoder_tokenizer_class("electra")[1]
+    tokenizer = get_encoder_tokenizer_class(ELECTRA_STANDARD_HYPERPARAMETERS['model']['base_model'])[1]
 
     hs_train_dataset_path = Path(__file__).parent.parent / "datasets" / "goldenswag" / "golden_swag_train.json"
     hs_val_dataset_path = Path(__file__).parent.parent / "datasets" / "goldenswag" / "golden_swag_validation.json"
@@ -154,5 +154,5 @@ if __name__ == "__main__":
     val_dataset.name = "GoldenSwag"
 
     logger.info("Training ELECTRA Text")
-    model = train_electra(train_dataset, val_dataset, 50, 32, True, 1, None, ELECTRA_STANDARD_HYPERPARAMETERS)
+    model = train_electra(train_dataset, val_dataset, 50, 64, True, 1, None, ELECTRA_STANDARD_HYPERPARAMETERS)
     logger.info(f'Finished ELECTRA training after: {datetime.now() - start}')

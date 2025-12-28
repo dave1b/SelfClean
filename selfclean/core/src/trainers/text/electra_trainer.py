@@ -70,8 +70,15 @@ class ElectraTrainer(Trainer):
             lr=self.config.get("lr_discriminator", 2e-5),
             weight_decay=self.config["weight_decay"],
         )
-        lr_schedule = cosine_scheduler(
-            self.config["lr"] * (self.config["batch_size"] * get_world_size()) / 256.0,
+        lr_schedule_gen = cosine_scheduler(
+            self.config["lr_generator"] * (self.config["batch_size"] * get_world_size()) / 256.0,
+            self.config["min_lr"],
+            self.config["epochs"],
+            len(self.train_dataset),
+            warmup_epochs=min(self.config["warmup_epochs"], self.config["epochs"]),
+        )
+        lr_schedule_disc = cosine_scheduler(
+            self.config["lr_discriminator"] * (self.config["batch_size"] * get_world_size()) / 256.0,
             self.config["min_lr"],
             self.config["epochs"],
             len(self.train_dataset),
@@ -97,7 +104,7 @@ class ElectraTrainer(Trainer):
             if type(self.train_dataset.sampler) is DistributedSampler:
                 self.train_dataset.sampler.set_epoch(epoch - 1)
             self.model.train()
-            train_loss = self._train_epoch(epoch, optimizer_gen, optimizer_disc, lr_schedule, wd_schedule, n_iter)
+            train_loss = self._train_epoch(epoch, optimizer_gen, optimizer_disc, lr_schedule_gen, lr_schedule_disc, wd_schedule, n_iter)
             if self.val_dataset is not None:
                 val_loss = self._validate_epoch(epoch)
                 if self.wandb_logging:
@@ -121,20 +128,20 @@ class ElectraTrainer(Trainer):
             backbone = self.model.backbone
         return backbone
 
-    def _train_epoch(self, epoch: int, optimizer_gen, optimizer_disc, lr_schedule, wd_schedule, n_iter: int) -> float:
+    def _train_epoch(self, epoch: int, optimizer_gen, optimizer_disc, lr_schedule_gen, lr_schedule_disc, wd_schedule, n_iter: int) -> float:
         self.model.train()
         total_loss = 0.0
         total_samples = 0
         for batch in self.train_dataset:
             self.update_optim_from_schedulers(
-                optimizer=optimizer_disc,
-                lr_schedule=lr_schedule,
+                optimizer=optimizer_gen,
+                lr_schedule=lr_schedule_gen,
                 wd_schedule=wd_schedule,
                 n_iter=n_iter,
             )
             self.update_optim_from_schedulers(
-                optimizer=optimizer_gen,
-                lr_schedule=lr_schedule,
+                optimizer=optimizer_disc,
+                lr_schedule=lr_schedule_disc,
                 wd_schedule=wd_schedule,
                 n_iter=n_iter,
             )

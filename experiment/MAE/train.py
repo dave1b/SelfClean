@@ -128,7 +128,7 @@ def train_mae_text(
 
 if __name__ == "__main__":
     start = datetime.now()
-    tokenizer = get_encoder_tokenizer_class("bert_mlm")[1]
+    tokenizer = get_encoder_tokenizer_class(MAE_TEXT_STANDARD_HYPERPARAMETERS['model']['base_model'])[1]
 
     hs_train_dataset_path = Path(__file__).parent.parent / "datasets" / "goldenswag" / "golden_swag_train.json"
     hs_val_dataset_path = Path(__file__).parent.parent / "datasets" / "goldenswag" / "golden_swag_validation.json"
@@ -150,5 +150,5 @@ if __name__ == "__main__":
     )
 
     logger.info("Training MAE Text")
-    model = train_mae_text(train_dataset, val_dataset, 35, 32, True, 1, None, MAE_TEXT_STANDARD_HYPERPARAMETERS)
+    model = train_mae_text(train_dataset, val_dataset, 35, 16, True, 1, None, MAE_TEXT_STANDARD_HYPERPARAMETERS)
     logger.info(f'Finished MAE training after: {datetime.now() - start}')

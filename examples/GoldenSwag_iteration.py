@@ -87,12 +87,6 @@ CONFIG = {
     }
 }
 
-def clear_cache(cache_path: Path) -> None:
-    """Clear the cache directory."""
-    if cache_path.is_dir():
-        logger.info(f"Clearing cache directory: {cache_path}")
-        shutil.rmtree(cache_path)
-
 def generate_markdown_table(data: Dict[str, Any], base_output_path: Path) -> None:
     """Generate Markdown tables for each issue type."""
     for issue_type in CONFIG["issues_to_detect"]:
@@ -188,7 +182,8 @@ def evaluate() -> None:
                     pretraining_type=pretraining_type,
                     **{k: v for k, v in CONFIG["selfclean_params"].items() if k != "plot_top_N"},
                     base_model=model,
-                    issues_to_detect=[issue_type]
+                    issues_to_detect=[issue_type],
+                    cache_dir=None
                 )
 
                 summarized_log_dict[issue_type.value][model] = {
@@ -218,15 +213,10 @@ def evaluate() -> None:
 
 def main() -> None:
     """Main function to run the evaluation pipeline."""
-    cache_dir = Path(__file__).parent / ".cache"
-    clear_cache(cache_dir)
-
     try:
         evaluate()
     except Exception as e:
         logger.exception(f"Error during evaluation: {str(e)}")
-    finally:
-        clear_cache(cache_dir)
 
 if __name__ == "__main__":
     main()

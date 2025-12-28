@@ -5,12 +5,12 @@ from typing import Dict, Callable, Optional
 import wandb
 from loguru import logger
 
-from experiment.ELECTRA.train import ELECTRA_STANDARD_HYPERPARAMETERS, train_electra
-from experiment.MAE.train import MAE_TEXT_STANDARD_HYPERPARAMETERS, train_mae_text
-from experiment.SimCSE.train import SIMCSE_STANDARD_HYPERPARAMETERS, train_simcse
 from experiment.datasets.hellaswag.hella_swag_dataset import HellaSwagDataset
 from selfclean.cleaner.issue_manager import IssueTypes
 from selfclean.core.src.models.text.encoders.utils import get_encoder_tokenizer_class
+from experiment.ELECTRA.train import ELECTRA_STANDARD_HYPERPARAMETERS, train_electra
+from experiment.MAE.train import MAE_TEXT_STANDARD_HYPERPARAMETERS, train_mae_text
+from experiment.SimCSE.train import SIMCSE_STANDARD_HYPERPARAMETERS, train_simcse
 
 def get_issue_type_from_path(path: Path) -> Optional[IssueTypes]:
     """Determine the issue type from the path."""
@@ -26,7 +26,6 @@ CONTAMINATED_PATHS = [
     Path("datasets/goldenswag/golden_swag_train_synthetic_OFF_TOPIC_SAMPLES.json"),
 ]
 VAL_DATASET_PATH = Path("datasets/goldenswag/golden_swag_validation.json")
-TOKENIZER_NAME = "bert"
 
 HYPERPARAMETERS = {
     "mae": MAE_TEXT_STANDARD_HYPERPARAMETERS,
@@ -36,9 +35,9 @@ HYPERPARAMETERS = {
 
 # Training configurations
 TRAIN_CONFIGS = {
-    "mae": {"epochs": 35, "batch_size": 32, "ssl_pre_training": True, "save_every_n_epochs": 1},
-    "simcse": {"epochs": 25, "batch_size": 16, "ssl_pre_training": True, "save_every_n_epochs": 1},
-    "electra": {"epochs": 35, "batch_size": 32, "ssl_pre_training": True, "save_every_n_epochs": 1},
+    "mae": {"epochs": 35, "batch_size": 16, "ssl_pre_training": True, "save_every_n_epochs": 1},
+    "simcse": {"epochs": 25, "batch_size": 24, "ssl_pre_training": True, "save_every_n_epochs": 1},
+    "electra": {"epochs": 35, "batch_size": 64, "ssl_pre_training": True, "save_every_n_epochs": 1},
 }
 
 
@@ -96,8 +95,8 @@ TRAIN_FUNCTIONS: Dict[str, Callable] = {
 }
 
 
-def load_val_dataset() -> HellaSwagDataset:
-    _, tokenizer = get_encoder_tokenizer_class(TOKENIZER_NAME)
+def load_val_dataset(ssl_method: str) -> HellaSwagDataset:
+    _, tokenizer = get_encoder_tokenizer_class(HYPERPARAMETERS[ssl_method]["model"]["base_model"])
     return HellaSwagDataset(
         json_path=VAL_DATASET_PATH,
         tokenizer=tokenizer,
@@ -106,7 +105,7 @@ def load_val_dataset() -> HellaSwagDataset:
 
 
 def load_train_dataset(path: Path, ssl_method: str, issue_type: str) -> HellaSwagDataset:
-    _, tokenizer = get_encoder_tokenizer_class(TOKENIZER_NAME)
+    _, tokenizer = get_encoder_tokenizer_class(HYPERPARAMETERS[ssl_method]["model"]["base_model"])
     return HellaSwagDataset(
         json_path=path,
         tokenizer=tokenizer,
@@ -118,7 +117,6 @@ def load_train_dataset(path: Path, ssl_method: str, issue_type: str) -> HellaSwa
 def train_all() -> None:
     logger.info("Starting training for all SSL methods and issue types...")
     logger.info(f"Will run training for {len(CONTAMINATED_PATHS) * len(TRAIN_FUNCTIONS)} combinations")
-    val_dataset = load_val_dataset()
 
     for path in CONTAMINATED_PATHS:
         if "golden_swag_train.json" in str(path):
@@ -126,6 +124,7 @@ def train_all() -> None:
         else:
             issue_type = get_issue_type_from_path(path).value
         for ssl_method, train_function in TRAIN_FUNCTIONS.items():
+            val_dataset = load_val_dataset(ssl_method)
             train_dataset = load_train_dataset(path, ssl_method, issue_type)
             train_function(train_dataset, val_dataset)
             wandb.finish()
