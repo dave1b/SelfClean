@@ -146,7 +146,7 @@ def evaluate() -> None:
         summarized_log_dict[issue.value] = {}
 
     # Calculate total number of runs
-    total_runs = sum(len(CONFIG["models"].get(issue, [])) for issue in CONFIG["issues_to_detect"])
+    total_runs = sum(len(CONFIG["models"].get(issue, [])) for issue in CONFIG["issues_to_detect"]) + (2* len(CONFIG["models"]['general']))
     logger.info(f"Starting evaluation with {total_runs} total runs")
 
     run_count = 1
