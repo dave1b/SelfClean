@@ -1,0 +1,1 @@
+emb.last_hidden_state[:, 0, :] was used everywhere
