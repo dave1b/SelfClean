@@ -150,7 +150,7 @@ class ElectraTrainer(Trainer):
             attention_masks = batch['attention_mask'].to(self.device, non_blocking=True)
 
             # Generate corrupted input and get generator loss
-            with autocast():
+            with autocast(dtype=torch.bfloat16):
                 corrupted_ids, labels, mlm_loss = self.generate_corrupted_input(input_ids, attention_masks)
 
             optimizer_gen.zero_grad(set_to_none=True)
@@ -163,7 +163,7 @@ class ElectraTrainer(Trainer):
 
             # Discriminator forward/backward
             optimizer_disc.zero_grad(set_to_none=True)
-            with autocast():
+            with autocast(dtype=torch.bfloat16):
                 outputs = self.model(
                     input_ids=corrupted_ids,
                     attention_mask=attention_masks,
@@ -214,7 +214,7 @@ class ElectraTrainer(Trainer):
                 input_ids = batch['input_ids'].to(self.device, non_blocking=True)
                 attention_masks = batch['attention_mask'].to(self.device, non_blocking=True)
                 corrupted_ids, labels = self.generate_corrupted_input(input_ids, attention_masks)
-                with autocast():
+                with autocast(dtype=torch.bfloat16):
                     outputs = self.model(
                         input_ids=corrupted_ids,
                         attention_mask=attention_masks,
@@ -229,7 +229,7 @@ class ElectraTrainer(Trainer):
         mask_arr = (torch.rand(input_ids.shape, device=input_ids.device) < replace_prob)
         masked_ids = input_ids.clone()
         masked_ids[mask_arr] = self.mask_token_id
-        with autocast():
+        with autocast(dtype=torch.bfloat16):
             gen_outputs = self.model.generator(
                 input_ids=masked_ids,
                 attention_mask=attention_mask,

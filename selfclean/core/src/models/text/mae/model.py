@@ -19,7 +19,7 @@ class BertMae(nn.Module):
             is_decoder=True,
             add_cross_attention=True,
             hidden_dropout_prob=0.1,
-            attention_probs_dropout_prob=0.1,
+            attention_probs_dropout_prob=0.1
         )
         self.decoder = BertModel(decoder_config)
 

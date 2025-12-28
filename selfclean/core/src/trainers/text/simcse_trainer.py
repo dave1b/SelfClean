@@ -144,7 +144,7 @@ class SimCSETrainer(Trainer):
             }
             optimizer.zero_grad(set_to_none=True)
 
-            with autocast():
+            with autocast(dtype=torch.bfloat16):
                 loss, embeddings = self._model_step(self.model, sentences)
 
             self.check_loss_nan(loss.detach())
@@ -187,7 +187,7 @@ class SimCSETrainer(Trainer):
                     'input_ids': batch['input_ids'].to(self.device, non_blocking=True),
                     'attention_mask': batch['attention_mask'].to(self.device, non_blocking=True)
                 }
-                with autocast():
+                with autocast(dtype=torch.bfloat16):
                     loss, _ = self._model_step(self.model, sentences)
                 total_loss += loss.item() * sentences['input_ids'].size(0)
                 total_samples += sentences['input_ids'].size(0)

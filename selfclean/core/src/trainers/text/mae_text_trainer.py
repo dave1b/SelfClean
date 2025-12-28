@@ -148,7 +148,7 @@ class MAETextTrainer(Trainer):
             }
             optimizer.zero_grad(set_to_none=True)
 
-            with autocast():
+            with autocast(dtype=torch.bfloat16):
                 embeddings, logits, rand_mask = self.model(sentences["input_ids"], sentences["attention_mask"])
                 # Targets are the original input_ids at the positions where we masked
                 targets = sentences["input_ids"][rand_mask]
@@ -204,7 +204,7 @@ class MAETextTrainer(Trainer):
                     'attention_mask': batch['attention_mask'].to(self.device, non_blocking=True)
                 }
 
-                with autocast():
+                with autocast(dtype=torch.bfloat16):
                     embeddings, logits, rand_mask = self.model(sentences["input_ids"], sentences["attention_mask"])
                     targets = sentences["input_ids"][rand_mask]
                     masked_logits = logits[rand_mask]

@@ -20,13 +20,13 @@ ELECTRA_STANDARD_HYPERPARAMETERS = {
         "name": "adamw",
         "args": {}
     },
-    "lr_generator": 5e-3,
-    "lr_discriminator": 1e-4,
+    "lr_generator": 5e-4,
+    "lr_discriminator": 1e-5,
     "weight_decay_end": 0.1,
     "min_lr": 1e-6,
     "weight_decay": 0.04,
     "warmup_epochs": 5,
-    "clip_grad": 3.0,
+    "clip_grad": 1,
     "apply_l2_norm": False,
     "model": {
         "out_dim": None,

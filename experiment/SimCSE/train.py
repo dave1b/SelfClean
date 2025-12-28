@@ -18,12 +18,12 @@ from selfclean.core.src.utils.utils import init_distributed_mode, cleanup
 
 SIMCSE_STANDARD_HYPERPARAMETERS = {
     "optim": "adamw",
-    "lr": 5e-4,
+    "lr": 1e-5,
     "min_lr": 1e-6,
     "weight_decay": 0.04,
     "weight_decay_end": 0.2,
     "warmup_epochs": 5,
-    "clip_grad": 3.0,
+    "clip_grad": 1,
     "apply_l2_norm": True,
     "model": {
         "emb_dim": None,
