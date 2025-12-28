@@ -31,7 +31,7 @@ MAE_TEXT_STANDARD_HYPERPARAMETERS = {
     "model": {
         "out_dim": None,
         "emb_dim": None,
-        "base_model": "bert",
+        "base_model": "deberta",
         "model_type": "BERT",
         "eval": {"n_last_blocks": 4, "avgpool_patchtokens": False},
         "encoder": {

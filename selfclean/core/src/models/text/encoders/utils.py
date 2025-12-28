@@ -10,6 +10,7 @@ LLM_DICT = {
     "distilbert": distilbert,
     "bert_mlm": bert_mlm,
     "electra": electra,
+    "deberta": deberta,
 
     # SimCSE models
     "golden_swag_train_simcse_bert_1": golden_swag_train_simcse_bert_1,
