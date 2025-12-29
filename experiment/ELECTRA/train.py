@@ -21,7 +21,7 @@ ELECTRA_STANDARD_HYPERPARAMETERS = {
         "args": {}
     },
     "lr_generator": 5e-4,
-    "lr_discriminator": 1e-5,
+    "lr_discriminator": 3e-5,
     "weight_decay_end": 0.1,
     "min_lr": 1e-6,
     "weight_decay": 0.04,

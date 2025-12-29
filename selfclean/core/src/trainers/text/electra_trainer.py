@@ -48,6 +48,7 @@ class ElectraTrainer(Trainer):
         self.mask_token_id = mask_token_id
         self.scaler_gen = GradScaler()
         self.scaler_disc = GradScaler()
+        logger.info("Weight sharing is enabled={}", self.model.generator.get_input_embeddings() is self.model.backbone.get_input_embeddings())
 
         if wandb_logging:
             import wandb

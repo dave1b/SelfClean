@@ -8,7 +8,8 @@ class ElectraModel(nn.Module):
     def __init__(self, base_model):
         super(ElectraModel, self).__init__()
         self.backbone, _ = get_encoder_tokenizer_class(base_model)
-        self.generator = ElectraForMaskedLM.from_pretrained('google/electra-small-generator')
+        self.generator = ElectraForMaskedLM.from_pretrained('google/electra-base-generator')
+        self.generator.set_input_embeddings(self.backbone.get_input_embeddings())
 
     def forward(self, input_ids, attention_mask, labels):
         outputs = self.backbone(
