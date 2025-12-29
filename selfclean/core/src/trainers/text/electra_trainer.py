@@ -213,7 +213,7 @@ class ElectraTrainer(Trainer):
             for batch in self.val_dataset:
                 input_ids = batch['input_ids'].to(self.device, non_blocking=True)
                 attention_masks = batch['attention_mask'].to(self.device, non_blocking=True)
-                corrupted_ids, labels = self.generate_corrupted_input(input_ids, attention_masks)
+                corrupted_ids, labels, _ = self.generate_corrupted_input(input_ids, attention_masks)
                 with autocast(dtype=torch.bfloat16):
                     outputs = self.model(
                         input_ids=corrupted_ids,

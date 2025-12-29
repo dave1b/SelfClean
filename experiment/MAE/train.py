@@ -20,7 +20,7 @@ MAE_TEXT_STANDARD_HYPERPARAMETERS = {
         "name": "adamw",
         "args": {}
     },
-    "lr": 1e-5,
+    "lr": 4e-5,
     "min_lr": 1e-6,
     "weight_decay": 0.01,
     "weight_decay_end": 0.1,

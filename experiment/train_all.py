@@ -36,7 +36,7 @@ HYPERPARAMETERS = {
 # Training configurations
 TRAIN_CONFIGS = {
     "mae": {"epochs": 35, "batch_size": 16, "ssl_pre_training": True, "save_every_n_epochs": 1},
-    "simcse": {"epochs": 25, "batch_size": 24, "ssl_pre_training": True, "save_every_n_epochs": 1},
+    "simcse": {"epochs": 35, "batch_size": 24, "ssl_pre_training": True, "save_every_n_epochs": 1},
     "electra": {"epochs": 35, "batch_size": 64, "ssl_pre_training": True, "save_every_n_epochs": 1},
 }
 
