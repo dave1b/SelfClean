@@ -20,9 +20,9 @@ def get_issue_type_from_path(path: Path) -> Optional[IssueTypes]:
     return None
 
 CONTAMINATED_PATHS = [
-    Path("datasets/goldenswag/golden_swag_train.json"),
-    Path("datasets/goldenswag/golden_swag_train_synthetic_NEAR_DUPLICATES.json"),
-    Path("datasets/goldenswag/golden_swag_train_synthetic_NEAR_DUPLICATES_QUESTIONS.json"),
+    # Path("datasets/goldenswag/golden_swag_train.json"),
+    # Path("datasets/goldenswag/golden_swag_train_synthetic_NEAR_DUPLICATES.json"),
+    # Path("datasets/goldenswag/golden_swag_train_synthetic_NEAR_DUPLICATES_QUESTIONS.json"),
     Path("datasets/goldenswag/golden_swag_train_synthetic_OFF_TOPIC_SAMPLES.json"),
 ]
 VAL_DATASET_PATH = Path("datasets/goldenswag/golden_swag_validation.json")

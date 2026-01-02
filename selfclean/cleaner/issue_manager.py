@@ -11,8 +11,8 @@ class IssueTypes(Enum):
     # via "irrelevants" to ensure backwards compatibility
     IRRELEVANTS = "irrelevants"
     OFF_TOPIC_SAMPLES = "off_topic_samples"
-    NEAR_DUPLICATES = "near_duplicates"
     NEAR_DUPLICATES_Q = "near_duplicates_questions"
+    NEAR_DUPLICATES = "near_duplicates"
     LABEL_ERRORS = "label_errors"
     CATEGORY_ERRORS = "category_errors"
 
