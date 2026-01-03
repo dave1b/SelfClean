@@ -10,6 +10,7 @@ from datetime import datetime
 
 from selfclean import SelfClean
 from selfclean.cleaner.issue_manager import IssueTypes
+from selfclean.core.src.pkg.helper import EmbeddingPoolingType
 
 # Unified configuration
 CONFIG = {
@@ -208,7 +209,8 @@ def evaluate() -> None:
                     **{k: v for k, v in CONFIG["selfclean_params"].items() if k != "plot_top_N"},
                     base_model=model,
                     issues_to_detect=[issue_type],
-                    cache_dir=None
+                    cache_dir=None,
+                    pooling_type=EmbeddingPoolingType.MEAN
                 )
 
                 summarized_log_dict[issue_type.value][model] = {

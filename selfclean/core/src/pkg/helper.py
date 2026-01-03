@@ -1,16 +1,23 @@
 import tempfile
+from enum import Enum
 from pathlib import Path
 from typing import Optional, Tuple, Union
 
 import numpy as np
 import torch
 from tqdm.auto import tqdm
-from transformers.modeling_outputs import BaseModelOutputWithPoolingAndCrossAttentions, BaseModelOutputWithPastAndCrossAttentions
 
 from selfclean.cleaner.issue_manager import IssueTypes
 from selfclean.core.src.utils.utils import get_device
 
 ARR_TYPE = Union[np.ndarray, np.memmap, torch.Tensor]
+
+
+class EmbeddingPoolingType(Enum):
+    CLS = "cls"
+    MEAN = "mean_pooling"
+    FIRST_LAST_AVERAGE = "first_last_average",
+    POOLER = "pooler"
 
 
 def embed_dataset(
@@ -93,12 +100,12 @@ def embed_dataset(
             emb = emb.squeeze()
             if normalize:
                 emb = torch.nn.functional.normalize(emb, dim=-1, p=2)
-            emb_space[batch_size * i : batch_size * (i + 1), :] = emb.cpu()
+            emb_space[batch_size * i: batch_size * (i + 1), :] = emb.cpu()
             if type(emb_space) is np.memmap:
                 emb_space.flush()
             labels.append(label.cpu())
             if not return_only_embedding_and_labels:
-                images[batch_size * i : batch_size * (i + 1), :] = batch.cpu()
+                images[batch_size * i: batch_size * (i + 1), :] = batch.cpu()
                 if type(images) is np.memmap:
                     images.flush()
                 if path is not None:
@@ -112,7 +119,9 @@ def embed_dataset(
         paths = None
     return emb_space, labels, images, paths
 
-def embed_text_dataset(torch_dataset, model, batch_size, normalize=True, tqdm_desc="", issues_to_detect=[]):
+
+def embed_text_dataset(torch_dataset, model, batch_size, normalize=True, tqdm_desc="", issues_to_detect=[],
+                       pooling_type=EmbeddingPoolingType.CLS):
     """Embed a text dataset using the given model."""
     from tqdm.auto import tqdm
 
@@ -132,17 +141,7 @@ def embed_text_dataset(torch_dataset, model, batch_size, normalize=True, tqdm_de
             # Get embeddings
             emb = model(**inputs)
 
-            if isinstance(emb, BaseModelOutputWithPoolingAndCrossAttentions):
-                # SimCSE + MAE
-                # emb = emb.pooler_output
-                emb = emb.last_hidden_state[:, 0, :] # [CLS] embedding
-
-            if isinstance(emb, BaseModelOutputWithPastAndCrossAttentions):
-                # ELECTRA
-                emb = emb.last_hidden_state[:, 0, :] # [CLS] embedding
-
-            if normalize:
-                emb = torch.nn.functional.normalize(emb, p=2, dim=1)
+            emb = get_embedding(emb, inputs, pooling_type, normalize=normalize)
 
             [embeddings.append(emb[i].cpu().numpy()) for i in range(emb.shape[0])]
 
@@ -160,12 +159,9 @@ def embed_text_dataset(torch_dataset, model, batch_size, normalize=True, tqdm_de
 
                 filtered_context_only_inputs = {k: v.to(get_device()) for k, v in filtered_context_only_inputs.items()}
                 context_emb = model(**filtered_context_only_inputs)
-                if isinstance(context_emb, BaseModelOutputWithPoolingAndCrossAttentions):
-                    context_emb = context_emb.pooler_output
-                if isinstance(context_emb, BaseModelOutputWithPastAndCrossAttentions):
-                    context_emb = context_emb.last_hidden_state[:, :, -1]
-                if normalize:
-                    context_emb = torch.nn.functional.normalize(context_emb, p=2, dim=1)
+
+                context_emb = get_embedding(context_emb, filtered_context_only_inputs, pooling_type, normalize=normalize)
+
                 [context_only_embeddings.append(context_emb[i].cpu().numpy()) for i in range(context_emb.shape[0])]
 
             labels.extend(label.cpu().numpy())
@@ -174,6 +170,50 @@ def embed_text_dataset(torch_dataset, model, batch_size, normalize=True, tqdm_de
             paths.extend(ids)
 
     return embeddings, labels, paths, categories, context_only_embeddings
+
+
+def get_embedding(emb, inputs, pooling_type: EmbeddingPoolingType, normalize=True):
+    """
+    Extract embeddings from model output based on the specified pooling type.
+
+    Args:
+        emb: Model output (BaseModelOutputWithPoolingAndCrossAttentions, BaseModelOutputWithPastAndCrossAttentions, or BaseModelOutput)
+        inputs: Dictionary containing 'attention_mask'
+        pooling_type: Type of pooling to use (CLS, MEAN, FIRST_LAST_AVERAGE, or POOLER)
+        normalize: Whether to normalize the embeddings
+
+    Returns:
+        Tensor of shape [batch_size, hidden_size] containing the pooled embeddings
+    """
+    if pooling_type == EmbeddingPoolingType.CLS:
+        return _normalize_if_needed(emb.last_hidden_state[:, 0, :], normalize)
+    elif pooling_type == EmbeddingPoolingType.MEAN:
+        return _mean_pooling(emb.last_hidden_state, inputs['attention_mask'], normalize)
+    elif pooling_type == EmbeddingPoolingType.FIRST_LAST_AVERAGE:
+        return _first_last_average(emb, normalize)
+    elif pooling_type == EmbeddingPoolingType.POOLER:
+        if not hasattr(emb, 'pooler_output'):
+            raise ValueError("Model output does not have pooler_output attribute")
+        return _normalize_if_needed(emb.pooler_output, normalize)
+    else:
+        raise ValueError(f"Unknown pooling type: {pooling_type}")
+
+
+def _normalize_if_needed(embeddings, normalize):
+    return torch.nn.functional.normalize(embeddings, p=2, dim=1) if normalize else embeddings
+
+
+def _mean_pooling(token_embeddings, attention_mask, normalize):
+    input_mask_expanded = attention_mask.unsqueeze(-1).expand(token_embeddings.size()).float()
+    sum_embeddings = torch.sum(token_embeddings * input_mask_expanded, 1)
+    sum_mask = torch.clamp(input_mask_expanded.sum(1), min=1e-9)
+    return _normalize_if_needed(sum_embeddings / sum_mask, normalize)
+
+
+def _first_last_average(emb, normalize):
+    hidden_states = emb.hidden_states if hasattr(emb, 'hidden_states') else emb.last_hidden_state.unsqueeze(0)
+    pooled_output = (hidden_states[1] + hidden_states[-1]) / 2
+    return _normalize_if_needed(pooled_output[:, 0, :], normalize)
 
 
 def create_memmap(memmap_path: Path, memmap_file_name: str, len_dataset: int, *dims):

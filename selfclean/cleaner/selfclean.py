@@ -23,7 +23,7 @@ from ..cleaner.issue_manager import IssueTypes, IssueManager
 from ..cleaner.selfclean_cleaner import SelfCleanCleaner, DataType
 from ..core.src.augmentations.multi_crop import MultiCropAugmentation
 from ..core.src.pkg import Embedder, embed_dataset
-from ..core.src.pkg.helper import embed_text_dataset
+from ..core.src.pkg.helper import embed_text_dataset, EmbeddingPoolingType
 from ..core.src.trainers.dino_trainer import DINOTrainer
 from ..core.src.utils.logging import set_log_level
 from ..core.src.utils.utils import (
@@ -403,6 +403,7 @@ class SelfClean:
         max_length: int = 180,
         cache_dir: Optional[str] = None,
         contamination_log_path: Optional[Path] = None,
+        pooling_type: EmbeddingPoolingType = EmbeddingPoolingType.CLS
     ):
         if hyperparameters is None:
             if pretraining_type == "simcse":
@@ -450,7 +451,8 @@ class SelfClean:
             additional_run_info=additional_run_info,
             wandb_logging=wandb_logging,
             wandb_project_name=wandb_project_name,
-            contamination_log_path=contamination_log_path
+            contamination_log_path=contamination_log_path,
+            pooling_type=pooling_type
         )
 
     def _run_text(
@@ -477,6 +479,7 @@ class SelfClean:
         wandb_logging: bool = False,
         wandb_project_name: str = "SelfClean",
         contamination_log_path: Optional[Path] = None,
+        pooling_type: EmbeddingPoolingType = EmbeddingPoolingType.CLS
     ):
         if not self.cleaner.is_fitted:
             if self.model is None:
@@ -602,7 +605,8 @@ class SelfClean:
                 normalize=apply_l2_norm,
                 tqdm_desc="Creating dataset representation",
                 issues_to_detect=issues_to_detect,
-                batch_size=batch_size
+                batch_size=batch_size,
+                pooling_type=pooling_type
             )
 
             # cleanup
