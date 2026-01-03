@@ -31,140 +31,212 @@ def electra():
     tokenizer = AutoTokenizer.from_pretrained("google/electra-base-discriminator")
     return discriminator, tokenizer
 
+
 ############################################### SimCSE
+# General models
 def golden_swag_train_simcse_1():
     model = AutoModel.from_pretrained('models/SimCSE_golden_swag_train/epoch1')
     tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
     return model, tokenizer
 
-def golden_swag_train_simcse_12():
-    model = AutoModel.from_pretrained('models/SimCSE_golden_swag_train/epoch12')
+def golden_swag_train_simcse_10():
+    model = AutoModel.from_pretrained('models/SimCSE_golden_swag_train/epoch10')
     tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
     return model, tokenizer
 
-def golden_swag_train_simcse_25():
-    model = AutoModel.from_pretrained('models/SimCSE_golden_swag_train/epoch25')
+def golden_swag_train_simcse_20():
+    model = AutoModel.from_pretrained('models/SimCSE_golden_swag_train/epoch20')
     tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
     return model, tokenizer
 
+def golden_swag_train_simcse_35():
+    model = AutoModel.from_pretrained('models/SimCSE_golden_swag_train/epoch35')
+    tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
+    return model, tokenizer
+
+# Near duplicates models
 def golden_swag_train_simcse_NEAR_DUPLICATES_1():
-    model = AutoModel.from_pretrained('models/SimCSE_golden_swag_train/near_duplicate_question/epoch1')
+    model = AutoModel.from_pretrained('models/SimCSE_golden_swag_train/near_duplicate/epoch1')
     tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
     return model, tokenizer
 
-
-def golden_swag_train_simcse_NEAR_DUPLICATES_12():
-    model = AutoModel.from_pretrained('models/SimCSE_golden_swag_train/near_duplicate_question/epoch12')
+def golden_swag_train_simcse_NEAR_DUPLICATES_10():
+    model = AutoModel.from_pretrained('models/SimCSE_golden_swag_train/near_duplicate/epoch10')
     tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
     return model, tokenizer
 
-
-def golden_swag_train_simcse_NEAR_DUPLICATES_25():
-    model = AutoModel.from_pretrained('models/SimCSE_golden_swag_train/near_duplicate_question/epoch25')
+def golden_swag_train_simcse_NEAR_DUPLICATES_20():
+    model = AutoModel.from_pretrained('models/SimCSE_golden_swag_train/near_duplicate/epoch20')
     tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
     return model, tokenizer
 
+def golden_swag_train_simcse_NEAR_DUPLICATES_35():
+    model = AutoModel.from_pretrained('models/SimCSE_golden_swag_train/near_duplicate/epoch35')
+    tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
+    return model, tokenizer
 
+# Near duplicates in questions models
 def golden_swag_train_simcse_NEAR_DUPLICATES_Q_1():
     model = AutoModel.from_pretrained('models/SimCSE_golden_swag_train/near_duplicate_question/epoch1')
     tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
     return model, tokenizer
 
-def golden_swag_train_simcse_NEAR_DUPLICATES_Q_12():
-    model = AutoModel.from_pretrained('models/SimCSE_golden_swag_train/near_duplicate_question/epoch12')
+def golden_swag_train_simcse_NEAR_DUPLICATES_Q_10():
+    model = AutoModel.from_pretrained('models/SimCSE_golden_swag_train/near_duplicate_question/epoch10')
     tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
     return model, tokenizer
 
-def golden_swag_train_simcse_NEAR_DUPLICATES_Q_25():
-    model = AutoModel.from_pretrained('models/SimCSE_golden_swag_train/near_duplicate_question/epoch25')
+def golden_swag_train_simcse_NEAR_DUPLICATES_Q_20():
+    model = AutoModel.from_pretrained('models/SimCSE_golden_swag_train/near_duplicate_question/epoch20')
     tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
     return model, tokenizer
 
+def golden_swag_train_simcse_NEAR_DUPLICATES_Q_35():
+    model = AutoModel.from_pretrained('models/SimCSE_golden_swag_train/near_duplicate_question/epoch35')
+    tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
+    return model, tokenizer
+
+# Off-topic models
 def golden_swag_train_simcse_OFF_TOPIC_1():
     model = AutoModel.from_pretrained('models/SimCSE_golden_swag_train/off_topic/epoch1')
     tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
     return model, tokenizer
 
-def golden_swag_train_simcse_OFF_TOPIC_12():
-    model = AutoModel.from_pretrained('models/SimCSE_golden_swag_train/off_topic/epoch12')
+def golden_swag_train_simcse_OFF_TOPIC_10():
+    model = AutoModel.from_pretrained('models/SimCSE_golden_swag_train/off_topic/epoch10')
     tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
     return model, tokenizer
 
-def golden_swag_train_simcse_OFF_TOPIC_25():
-    model = AutoModel.from_pretrained('models/SimCSE_golden_swag_train/off_topic/epoch25')
+def golden_swag_train_simcse_OFF_TOPIC_20():
+    model = AutoModel.from_pretrained('models/SimCSE_golden_swag_train/off_topic/epoch20')
+    tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
+    return model, tokenizer
+
+def golden_swag_train_simcse_OFF_TOPIC_35():
+    model = AutoModel.from_pretrained('models/SimCSE_golden_swag_train/off_topic/epoch35')
     tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
     return model, tokenizer
 
 ############################################### Electra
+# General models
 def golden_swag_train_electra_1():
     model = AutoModel.from_pretrained('models/Electra_golden_swag_train/epoch1')
     tokenizer = AutoTokenizer.from_pretrained("google/electra-base-discriminator")
     return model, tokenizer
 
-def golden_swag_train_electra_25():
-    model = AutoModel.from_pretrained('models/Electra_golden_swag_train/epoch25')
+def golden_swag_train_electra_10():
+    model = AutoModel.from_pretrained('models/Electra_golden_swag_train/epoch10')
     tokenizer = AutoTokenizer.from_pretrained("google/electra-base-discriminator")
     return model, tokenizer
 
-def golden_swag_train_electra_50():
-    model = AutoModel.from_pretrained('models/Electra_golden_swag_train/epoch50')
+def golden_swag_train_electra_20():
+    model = AutoModel.from_pretrained('models/Electra_golden_swag_train/epoch20')
     tokenizer = AutoTokenizer.from_pretrained("google/electra-base-discriminator")
     return model, tokenizer
 
+def golden_swag_train_electra_35():
+    model = AutoModel.from_pretrained('models/Electra_golden_swag_train/epoch35')
+    tokenizer = AutoTokenizer.from_pretrained("google/electra-base-discriminator")
+    return model, tokenizer
+
+# General models without weight sharing
+def golden_swag_train_electra_w_weight_1():
+    model = AutoModel.from_pretrained('models/Electra_golden_swag_train/default_w_weights_sharing/epoch1')
+    tokenizer = AutoTokenizer.from_pretrained("google/electra-base-discriminator")
+    return model, tokenizer
+
+def golden_swag_train_electra_w_weight_10():
+    model = AutoModel.from_pretrained('models/Electra_golden_swag_train/default_w_weights_sharing/epoch10')
+    tokenizer = AutoTokenizer.from_pretrained("google/electra-base-discriminator")
+    return model, tokenizer
+
+def golden_swag_train_electra_w_weight_20():
+    model = AutoModel.from_pretrained('models/Electra_golden_swag_train/default_w_weights_sharing/epoch20')
+    tokenizer = AutoTokenizer.from_pretrained("google/electra-base-discriminator")
+    return model, tokenizer
+
+def golden_swag_train_electra_w_weight_35():
+    model = AutoModel.from_pretrained('models/Electra_golden_swag_train/default_w_weights_sharing/epoch35')
+    tokenizer = AutoTokenizer.from_pretrained("google/electra-base-discriminator")
+    return model, tokenizer
+
+# Near duplicates models
 def golden_swag_train_electra_NEAR_DUPLICATE_1():
     model = AutoModel.from_pretrained('models/Electra_golden_swag_train/near_duplicate/epoch1')
     tokenizer = AutoTokenizer.from_pretrained("google/electra-base-discriminator")
     return model, tokenizer
 
-def golden_swag_train_electra_NEAR_DUPLICATE_25():
-    model = AutoModel.from_pretrained('models/Electra_golden_swag_train/near_duplicate/epoch25')
+def golden_swag_train_electra_NEAR_DUPLICATE_10():
+    model = AutoModel.from_pretrained('models/Electra_golden_swag_train/near_duplicate/epoch10')
     tokenizer = AutoTokenizer.from_pretrained("google/electra-base-discriminator")
     return model, tokenizer
 
-def golden_swag_train_electra_NEAR_DUPLICATE_50():
-    model = AutoModel.from_pretrained('models/Electra_golden_swag_train/near_duplicate/epoch50')
+def golden_swag_train_electra_NEAR_DUPLICATE_20():
+    model = AutoModel.from_pretrained('models/Electra_golden_swag_train/near_duplicate/epoch20')
     tokenizer = AutoTokenizer.from_pretrained("google/electra-base-discriminator")
     return model, tokenizer
 
+def golden_swag_train_electra_NEAR_DUPLICATE_35():
+    model = AutoModel.from_pretrained('models/Electra_golden_swag_train/near_duplicate/epoch35')
+    tokenizer = AutoTokenizer.from_pretrained("google/electra-base-discriminator")
+    return model, tokenizer
+
+# Near duplicates in questions models
 def golden_swag_train_electra_NEAR_DUPLICATE_Q_1():
     model = AutoModel.from_pretrained('models/Electra_golden_swag_train/near_duplicate_question/epoch1')
     tokenizer = AutoTokenizer.from_pretrained("google/electra-base-discriminator")
     return model, tokenizer
 
-def golden_swag_train_electra_NEAR_DUPLICATE_Q_25():
-    model = AutoModel.from_pretrained('models/Electra_golden_swag_train/near_duplicate_question/epoch25')
+def golden_swag_train_electra_NEAR_DUPLICATE_Q_10():
+    model = AutoModel.from_pretrained('models/Electra_golden_swag_train/near_duplicate_question/epoch10')
     tokenizer = AutoTokenizer.from_pretrained("google/electra-base-discriminator")
     return model, tokenizer
 
-def golden_swag_train_electra_NEAR_DUPLICATE_Q_50():
-    model = AutoModel.from_pretrained('models/Electra_golden_swag_train/near_duplicate_question/epoch50')
+def golden_swag_train_electra_NEAR_DUPLICATE_Q_20():
+    model = AutoModel.from_pretrained('models/Electra_golden_swag_train/near_duplicate_question/epoch20')
     tokenizer = AutoTokenizer.from_pretrained("google/electra-base-discriminator")
     return model, tokenizer
 
+def golden_swag_train_electra_NEAR_DUPLICATE_Q_35():
+    model = AutoModel.from_pretrained('models/Electra_golden_swag_train/near_duplicate_question/epoch35')
+    tokenizer = AutoTokenizer.from_pretrained("google/electra-base-discriminator")
+    return model, tokenizer
 
+# Off-topic models
 def golden_swag_train_electra_OFF_TOPIC_1():
     model = AutoModel.from_pretrained('models/Electra_golden_swag_train/off_topic/epoch1')
     tokenizer = AutoTokenizer.from_pretrained("google/electra-base-discriminator")
     return model, tokenizer
 
-def golden_swag_train_electra_OFF_TOPIC_25():
-    model = AutoModel.from_pretrained('models/Electra_golden_swag_train/off_topic/epoch25')
+def golden_swag_train_electra_OFF_TOPIC_10():
+    model = AutoModel.from_pretrained('models/Electra_golden_swag_train/off_topic/epoch10')
     tokenizer = AutoTokenizer.from_pretrained("google/electra-base-discriminator")
     return model, tokenizer
 
-def golden_swag_train_electra_OFF_TOPIC_50():
-    model = AutoModel.from_pretrained('models/Electra_golden_swag_train/off_topic/epoch50')
+def golden_swag_train_electra_OFF_TOPIC_20():
+    model = AutoModel.from_pretrained('models/Electra_golden_swag_train/off_topic/epoch20')
+    tokenizer = AutoTokenizer.from_pretrained("google/electra-base-discriminator")
+    return model, tokenizer
+
+def golden_swag_train_electra_OFF_TOPIC_35():
+    model = AutoModel.from_pretrained('models/Electra_golden_swag_train/off_topic/epoch35')
     tokenizer = AutoTokenizer.from_pretrained("google/electra-base-discriminator")
     return model, tokenizer
 
 ############################################### MAE
+# General models
 def golden_swag_train_mae_1():
     model = AutoModel.from_pretrained('models/Mae_golden_swag_train/epoch1')
     tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
     return model, tokenizer
 
-def golden_swag_train_mae_17():
-    model = AutoModel.from_pretrained('models/Mae_golden_swag_train/epoch17')
+def golden_swag_train_mae_10():
+    model = AutoModel.from_pretrained('models/Mae_golden_swag_train/epoch10')
+    tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
+    return model, tokenizer
+
+def golden_swag_train_mae_20():
+    model = AutoModel.from_pretrained('models/Mae_golden_swag_train/epoch20')
     tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
     return model, tokenizer
 
@@ -173,13 +245,19 @@ def golden_swag_train_mae_35():
     tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
     return model, tokenizer
 
+# Near duplicates models
 def golden_swag_train_mae_NEAR_DUPLICATE_1():
     model = AutoModel.from_pretrained('models/Mae_golden_swag_train/near_duplicate/epoch1')
     tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
     return model, tokenizer
 
-def golden_swag_train_mae_NEAR_DUPLICATE_17():
-    model = AutoModel.from_pretrained('models/Mae_golden_swag_train/near_duplicate/epoch17')
+def golden_swag_train_mae_NEAR_DUPLICATE_10():
+    model = AutoModel.from_pretrained('models/Mae_golden_swag_train/near_duplicate/epoch10')
+    tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
+    return model, tokenizer
+
+def golden_swag_train_mae_NEAR_DUPLICATE_20():
+    model = AutoModel.from_pretrained('models/Mae_golden_swag_train/near_duplicate/epoch20')
     tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
     return model, tokenizer
 
@@ -188,13 +266,19 @@ def golden_swag_train_mae_NEAR_DUPLICATE_35():
     tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
     return model, tokenizer
 
+# Near duplicates in questions models
 def golden_swag_train_mae_NEAR_DUPLICATE_Q_1():
     model = AutoModel.from_pretrained('models/Mae_golden_swag_train/near_duplicate_question/epoch1')
     tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
     return model, tokenizer
 
-def golden_swag_train_mae_NEAR_DUPLICATE_Q_17():
-    model = AutoModel.from_pretrained('models/Mae_golden_swag_train/near_duplicate_question/epoch17')
+def golden_swag_train_mae_NEAR_DUPLICATE_Q_10():
+    model = AutoModel.from_pretrained('models/Mae_golden_swag_train/near_duplicate_question/epoch10')
+    tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
+    return model, tokenizer
+
+def golden_swag_train_mae_NEAR_DUPLICATE_Q_20():
+    model = AutoModel.from_pretrained('models/Mae_golden_swag_train/near_duplicate_question/epoch20')
     tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
     return model, tokenizer
 
@@ -203,13 +287,19 @@ def golden_swag_train_mae_NEAR_DUPLICATE_Q_35():
     tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
     return model, tokenizer
 
+# Off-topic models
 def golden_swag_train_mae_OFF_TOPIC_1():
     model = AutoModel.from_pretrained('models/Mae_golden_swag_train/off_topic/epoch1')
     tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
     return model, tokenizer
 
-def golden_swag_train_mae_OFF_TOPIC_17():
-    model = AutoModel.from_pretrained('models/Mae_golden_swag_train/off_topic/epoch17')
+def golden_swag_train_mae_OFF_TOPIC_10():
+    model = AutoModel.from_pretrained('models/Mae_golden_swag_train/off_topic/epoch10')
+    tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
+    return model, tokenizer
+
+def golden_swag_train_mae_OFF_TOPIC_20():
+    model = AutoModel.from_pretrained('models/Mae_golden_swag_train/off_topic/epoch20')
     tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
     return model, tokenizer
 

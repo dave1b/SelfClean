@@ -12,46 +12,91 @@ LLM_DICT = {
     "electra": electra,
     "deberta": deberta,
 
+    # Pretrained models
+    # "pretrained_bert_hellaSwag_simcse": pretrained_bert_hellaSwag_simcse,
+    # "pretrained_bert_mmlu_simcse": pretrained_bert_mmlu_simcse,
+    # "pretrained_bert_hellaSwag_mae": pretrained_bert_hellaSwag_mae,
+    # "pretrained_bert_mmlu_mae": pretrained_bert_mmlu_mae,
+
     # SimCSE models
+    # General
     "golden_swag_train_simcse_1": golden_swag_train_simcse_1,
-    "golden_swag_train_simcse_12": golden_swag_train_simcse_12,
-    "golden_swag_train_simcse_25": golden_swag_train_simcse_25,
+    "golden_swag_train_simcse_10": golden_swag_train_simcse_10,
+    "golden_swag_train_simcse_20": golden_swag_train_simcse_20,
+    "golden_swag_train_simcse_35": golden_swag_train_simcse_35,
+
+    # Near duplicates
     "golden_swag_train_simcse_NEAR_DUPLICATES_1": golden_swag_train_simcse_NEAR_DUPLICATES_1,
-    "golden_swag_train_simcse_NEAR_DUPLICATES_12": golden_swag_train_simcse_NEAR_DUPLICATES_12,
-    "golden_swag_train_simcse_NEAR_DUPLICATES_25": golden_swag_train_simcse_NEAR_DUPLICATES_25,
+    "golden_swag_train_simcse_NEAR_DUPLICATES_10": golden_swag_train_simcse_NEAR_DUPLICATES_10,
+    "golden_swag_train_simcse_NEAR_DUPLICATES_20": golden_swag_train_simcse_NEAR_DUPLICATES_20,
+    "golden_swag_train_simcse_NEAR_DUPLICATES_35": golden_swag_train_simcse_NEAR_DUPLICATES_35,
+
+    # Near duplicates in questions
     "golden_swag_train_simcse_NEAR_DUPLICATES_Q_1": golden_swag_train_simcse_NEAR_DUPLICATES_Q_1,
-    "golden_swag_train_simcse_NEAR_DUPLICATES_Q_12": golden_swag_train_simcse_NEAR_DUPLICATES_Q_12,
-    "golden_swag_train_simcse_NEAR_DUPLICATES_Q_25": golden_swag_train_simcse_NEAR_DUPLICATES_Q_25,
+    "golden_swag_train_simcse_NEAR_DUPLICATES_Q_10": golden_swag_train_simcse_NEAR_DUPLICATES_Q_10,
+    "golden_swag_train_simcse_NEAR_DUPLICATES_Q_20": golden_swag_train_simcse_NEAR_DUPLICATES_Q_20,
+    "golden_swag_train_simcse_NEAR_DUPLICATES_Q_35": golden_swag_train_simcse_NEAR_DUPLICATES_Q_35,
+
+    # Off-topic
     "golden_swag_train_simcse_OFF_TOPIC_1": golden_swag_train_simcse_OFF_TOPIC_1,
-    "golden_swag_train_simcse_OFF_TOPIC_12": golden_swag_train_simcse_OFF_TOPIC_12,
-    "golden_swag_train_simcse_OFF_TOPIC_25": golden_swag_train_simcse_OFF_TOPIC_25,
+    "golden_swag_train_simcse_OFF_TOPIC_10": golden_swag_train_simcse_OFF_TOPIC_10,
+    "golden_swag_train_simcse_OFF_TOPIC_20": golden_swag_train_simcse_OFF_TOPIC_20,
+    "golden_swag_train_simcse_OFF_TOPIC_35": golden_swag_train_simcse_OFF_TOPIC_35,
 
     # Electra models
+    # General
     "golden_swag_train_electra_1": golden_swag_train_electra_1,
-    "golden_swag_train_electra_25": golden_swag_train_electra_25,
-    "golden_swag_train_electra_50": golden_swag_train_electra_50,
+    "golden_swag_train_electra_10": golden_swag_train_electra_10,
+    "golden_swag_train_electra_20": golden_swag_train_electra_20,
+    "golden_swag_train_electra_35": golden_swag_train_electra_35,
+
+    # General models without weight sharing
+    "golden_swag_train_electra_w_weight_1": golden_swag_train_electra_w_weight_1,
+    "golden_swag_train_electra_w_weight_10": golden_swag_train_electra_w_weight_10,
+    "golden_swag_train_electra_w_weight_20": golden_swag_train_electra_w_weight_20,
+    "golden_swag_train_electra_w_weight_35": golden_swag_train_electra_w_weight_35,
+
+    # Near duplicates
     "golden_swag_train_electra_NEAR_DUPLICATE_1": golden_swag_train_electra_NEAR_DUPLICATE_1,
-    "golden_swag_train_electra_NEAR_DUPLICATE_25": golden_swag_train_electra_NEAR_DUPLICATE_25,
-    "golden_swag_train_electra_NEAR_DUPLICATE_50": golden_swag_train_electra_NEAR_DUPLICATE_50,
+    "golden_swag_train_electra_NEAR_DUPLICATE_10": golden_swag_train_electra_NEAR_DUPLICATE_10,
+    "golden_swag_train_electra_NEAR_DUPLICATE_20": golden_swag_train_electra_NEAR_DUPLICATE_20,
+    "golden_swag_train_electra_NEAR_DUPLICATE_35": golden_swag_train_electra_NEAR_DUPLICATE_35,
+
+    # Near duplicates in questions
     "golden_swag_train_electra_NEAR_DUPLICATE_Q_1": golden_swag_train_electra_NEAR_DUPLICATE_Q_1,
-    "golden_swag_train_electra_NEAR_DUPLICATE_Q_25": golden_swag_train_electra_NEAR_DUPLICATE_Q_25,
-    "golden_swag_train_electra_NEAR_DUPLICATE_Q_50": golden_swag_train_electra_NEAR_DUPLICATE_Q_50,
+    "golden_swag_train_electra_NEAR_DUPLICATE_Q_10": golden_swag_train_electra_NEAR_DUPLICATE_Q_10,
+    "golden_swag_train_electra_NEAR_DUPLICATE_Q_20": golden_swag_train_electra_NEAR_DUPLICATE_Q_20,
+    "golden_swag_train_electra_NEAR_DUPLICATE_Q_35": golden_swag_train_electra_NEAR_DUPLICATE_Q_35,
+
+    # Off-topic
     "golden_swag_train_electra_OFF_TOPIC_1": golden_swag_train_electra_OFF_TOPIC_1,
-    "golden_swag_train_electra_OFF_TOPIC_25": golden_swag_train_electra_OFF_TOPIC_25,
-    "golden_swag_train_electra_OFF_TOPIC_50": golden_swag_train_electra_OFF_TOPIC_50,
+    "golden_swag_train_electra_OFF_TOPIC_10": golden_swag_train_electra_OFF_TOPIC_10,
+    "golden_swag_train_electra_OFF_TOPIC_20": golden_swag_train_electra_OFF_TOPIC_20,
+    "golden_swag_train_electra_OFF_TOPIC_35": golden_swag_train_electra_OFF_TOPIC_35,
 
     # MAE models
+    # General
     "golden_swag_train_mae_1": golden_swag_train_mae_1,
-    "golden_swag_train_mae_17": golden_swag_train_mae_17,
+    "golden_swag_train_mae_10": golden_swag_train_mae_10,
+    "golden_swag_train_mae_20": golden_swag_train_mae_20,
     "golden_swag_train_mae_35": golden_swag_train_mae_35,
+
+    # Near duplicates
     "golden_swag_train_mae_NEAR_DUPLICATE_1": golden_swag_train_mae_NEAR_DUPLICATE_1,
-    "golden_swag_train_mae_NEAR_DUPLICATE_17": golden_swag_train_mae_NEAR_DUPLICATE_17,
+    "golden_swag_train_mae_NEAR_DUPLICATE_10": golden_swag_train_mae_NEAR_DUPLICATE_10,
+    "golden_swag_train_mae_NEAR_DUPLICATE_20": golden_swag_train_mae_NEAR_DUPLICATE_20,
     "golden_swag_train_mae_NEAR_DUPLICATE_35": golden_swag_train_mae_NEAR_DUPLICATE_35,
+
+    # Near duplicates in questions
     "golden_swag_train_mae_NEAR_DUPLICATE_Q_1": golden_swag_train_mae_NEAR_DUPLICATE_Q_1,
-    "golden_swag_train_mae_NEAR_DUPLICATE_Q_17": golden_swag_train_mae_NEAR_DUPLICATE_Q_17,
+    "golden_swag_train_mae_NEAR_DUPLICATE_Q_10": golden_swag_train_mae_NEAR_DUPLICATE_Q_10,
+    "golden_swag_train_mae_NEAR_DUPLICATE_Q_20": golden_swag_train_mae_NEAR_DUPLICATE_Q_20,
     "golden_swag_train_mae_NEAR_DUPLICATE_Q_35": golden_swag_train_mae_NEAR_DUPLICATE_Q_35,
+
+    # Off-topic
     "golden_swag_train_mae_OFF_TOPIC_1": golden_swag_train_mae_OFF_TOPIC_1,
-    "golden_swag_train_mae_OFF_TOPIC_17": golden_swag_train_mae_OFF_TOPIC_17,
+    "golden_swag_train_mae_OFF_TOPIC_10": golden_swag_train_mae_OFF_TOPIC_10,
+    "golden_swag_train_mae_OFF_TOPIC_20": golden_swag_train_mae_OFF_TOPIC_20,
     "golden_swag_train_mae_OFF_TOPIC_35": golden_swag_train_mae_OFF_TOPIC_35,
 }
 

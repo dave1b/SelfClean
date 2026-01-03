@@ -25,50 +25,67 @@ CONFIG = {
         IssueTypes.NEAR_DUPLICATES: [
             "bert",
             "golden_swag_train_simcse_NEAR_DUPLICATES_1",
-            "golden_swag_train_simcse_NEAR_DUPLICATES_12",
-            "golden_swag_train_simcse_NEAR_DUPLICATES_25",
+            "golden_swag_train_simcse_NEAR_DUPLICATES_10",
+            "golden_swag_train_simcse_NEAR_DUPLICATES_20",
+            "golden_swag_train_simcse_NEAR_DUPLICATES_35",
             "golden_swag_train_electra_NEAR_DUPLICATE_1",
-            "golden_swag_train_electra_NEAR_DUPLICATE_25",
-            "golden_swag_train_electra_NEAR_DUPLICATE_50",
+            "golden_swag_train_electra_NEAR_DUPLICATE_10",
+            "golden_swag_train_electra_NEAR_DUPLICATE_20",
+            "golden_swag_train_electra_NEAR_DUPLICATE_35",
             "golden_swag_train_mae_NEAR_DUPLICATE_1",
-            "golden_swag_train_mae_NEAR_DUPLICATE_17",
+            "golden_swag_train_mae_NEAR_DUPLICATE_10",
+            "golden_swag_train_mae_NEAR_DUPLICATE_20",
             "golden_swag_train_mae_NEAR_DUPLICATE_35",
         ],
         IssueTypes.NEAR_DUPLICATES_Q: [
             "bert",
             "golden_swag_train_simcse_NEAR_DUPLICATES_Q_1",
-            "golden_swag_train_simcse_NEAR_DUPLICATES_Q_12",
-            "golden_swag_train_simcse_NEAR_DUPLICATES_Q_25",
+            "golden_swag_train_simcse_NEAR_DUPLICATES_Q_10",
+            "golden_swag_train_simcse_NEAR_DUPLICATES_Q_20",
+            "golden_swag_train_simcse_NEAR_DUPLICATES_Q_35",
             "golden_swag_train_electra_NEAR_DUPLICATE_Q_1",
-            "golden_swag_train_electra_NEAR_DUPLICATE_Q_25",
-            "golden_swag_train_electra_NEAR_DUPLICATE_Q_50",
+            "golden_swag_train_electra_NEAR_DUPLICATE_Q_10",
+            "golden_swag_train_electra_NEAR_DUPLICATE_Q_20",
+            "golden_swag_train_electra_NEAR_DUPLICATE_Q_35",
             "golden_swag_train_mae_NEAR_DUPLICATE_Q_1",
-            "golden_swag_train_mae_NEAR_DUPLICATE_Q_17",
+            "golden_swag_train_mae_NEAR_DUPLICATE_Q_10",
+            "golden_swag_train_mae_NEAR_DUPLICATE_Q_20",
             "golden_swag_train_mae_NEAR_DUPLICATE_Q_35",
         ],
         IssueTypes.OFF_TOPIC_SAMPLES: [
             "bert",
             "golden_swag_train_simcse_OFF_TOPIC_1",
-            "golden_swag_train_simcse_OFF_TOPIC_12",
-            "golden_swag_train_simcse_OFF_TOPIC_25",
+            "golden_swag_train_simcse_OFF_TOPIC_10",
+            "golden_swag_train_simcse_OFF_TOPIC_20",
+            "golden_swag_train_simcse_OFF_TOPIC_35",
             "golden_swag_train_electra_OFF_TOPIC_1",
-            "golden_swag_train_electra_OFF_TOPIC_25",
-            "golden_swag_train_electra_OFF_TOPIC_50",
+            "golden_swag_train_electra_OFF_TOPIC_10",
+            "golden_swag_train_electra_OFF_TOPIC_20",
+            "golden_swag_train_electra_OFF_TOPIC_35",
             "golden_swag_train_mae_OFF_TOPIC_1",
-            "golden_swag_train_mae_OFF_TOPIC_17",
+            "golden_swag_train_mae_OFF_TOPIC_10",
+            "golden_swag_train_mae_OFF_TOPIC_20",
             "golden_swag_train_mae_OFF_TOPIC_35",
         ],
         "general": [
             "bert",
             "golden_swag_train_simcse_1",
-            "golden_swag_train_simcse_12",
-            "golden_swag_train_simcse_25",
+            "golden_swag_train_simcse_10",
+            "golden_swag_train_simcse_20",
+            "golden_swag_train_simcse_35",
             "golden_swag_train_electra_1",
-            "golden_swag_train_electra_25",
-            "golden_swag_train_electra_50",
+            "golden_swag_train_electra_10",
+            "golden_swag_train_electra_20",
+            "golden_swag_train_electra_35",
             "golden_swag_train_mae_1",
-            "golden_swag_train_mae_17",
+            "golden_swag_train_mae_10",
+            "golden_swag_train_mae_20",
             "golden_swag_train_mae_35",
+            # without weight sharing
+            "golden_swag_train_electra_w_weight_1",
+            "golden_swag_train_electra_w_weight_10",
+            "golden_swag_train_electra_w_weight_20",
+            "golden_swag_train_electra_w_weight_35",
         ]
     },
 
@@ -90,6 +107,7 @@ CONFIG = {
         "wandb_logging": False
     }
 }
+
 
 def generate_markdown_table(data: Dict[str, Any], base_output_path: Path) -> None:
     """Generate Markdown tables for each issue type."""
@@ -119,6 +137,7 @@ def generate_markdown_table(data: Dict[str, Any], base_output_path: Path) -> Non
             f.write(markdown_table)
         logger.info(f"Generated markdown table for {issue_key} at {output_path}")
 
+
 def setup_output_directory() -> Path:
     """Create a timestamped output directory."""
     timestamp_str = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
@@ -127,12 +146,14 @@ def setup_output_directory() -> Path:
     logger.info(f"Created output directory: {base_output_path}")
     return base_output_path
 
+
 def get_pretraining_type(model_name: str) -> Optional[str]:
     """Extract pretraining type from model name."""
     for pretraining_type in CONFIG["pretraining_types"]:
         if pretraining_type in model_name:
             return pretraining_type
     return None
+
 
 def evaluate() -> None:
     """Run evaluation for all configurations."""
@@ -144,7 +165,7 @@ def evaluate() -> None:
         summarized_log_dict[issue.value] = {}
 
     # Calculate total number of runs
-    total_runs = sum(len(CONFIG["models"].get(issue, [])) for issue in CONFIG["issues_to_detect"]) + (2* len(CONFIG["models"]['general']))
+    total_runs = sum(len(CONFIG["models"].get(issue, [])) for issue in CONFIG["issues_to_detect"]) + (2 * len(CONFIG["models"]['general']))
     logger.info(f"Starting evaluation with {total_runs} total runs")
 
     run_count = 1
@@ -215,12 +236,14 @@ def evaluate() -> None:
 
     generate_markdown_table(summarized_log_dict, base_output_path)
 
+
 def main() -> None:
     """Main function to run the evaluation pipeline."""
     try:
         evaluate()
     except Exception as e:
         logger.exception(f"Error during evaluation: {str(e)}")
+
 
 if __name__ == "__main__":
     main()

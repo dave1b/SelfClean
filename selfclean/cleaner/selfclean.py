@@ -411,6 +411,8 @@ class SelfClean:
                 hyperparameters = MAE_TEXT_STANDARD_HYPERPARAMETERS
             elif pretraining_type == "electra":
                 hyperparameters = ELECTRA_STANDARD_HYPERPARAMETERS
+            elif pretraining_type == "bert":
+                hyperparameters = ELECTRA_STANDARD_HYPERPARAMETERS
             else:
                 raise ValueError(f"Unknown pretraining type: {pretraining_type}")
         if base_model != "":
@@ -538,7 +540,7 @@ class SelfClean:
                         wandb_logging=wandb_logging,
                         wandb_project_name=wandb_project_name,
                     )
-                elif pretraining_type == "electra":
+                elif pretraining_type == "electra" or pretraining_type == "bert":
                     if hyperparameters is None:
                         hyperparameters = ELECTRA_STANDARD_HYPERPARAMETERS
 
