@@ -8,9 +8,9 @@ LLM_DICT = {
     "bert": bert,
     "roberta": roberta,
     "distilbert": distilbert,
-    "bert_mlm": bert_mlm,
     "electra": electra,
     "deberta": deberta,
+    "deberta_mlm": deberta_mlm,
 
     # Pretrained models
     # "pretrained_bert_hellaSwag_simcse": pretrained_bert_hellaSwag_simcse,

@@ -5,6 +5,7 @@ from typing import Dict, Callable, Optional
 import wandb
 from loguru import logger
 
+from experiment.MLM.train import MLM_TEXT_STANDARD_HYPERPARAMETERS, train_mlm_text
 from experiment.datasets.hellaswag.hella_swag_dataset import HellaSwagDataset
 from selfclean.cleaner.issue_manager import IssueTypes
 from selfclean.core.src.models.text.encoders.utils import get_encoder_tokenizer_class
@@ -20,14 +21,16 @@ def get_issue_type_from_path(path: Path) -> Optional[IssueTypes]:
     return None
 
 CONTAMINATED_PATHS = [
-    # Path("datasets/goldenswag/golden_swag_train.json"),
-    # Path("datasets/goldenswag/golden_swag_train_synthetic_NEAR_DUPLICATES.json"),
-    # Path("datasets/goldenswag/golden_swag_train_synthetic_NEAR_DUPLICATES_QUESTIONS.json"),
+    Path("datasets/goldenswag/golden_swag_train.json"),
+    Path("datasets/goldenswag/golden_swag_train_synthetic_NEAR_DUPLICATES.json"),
+    Path("datasets/goldenswag/golden_swag_train_synthetic_NEAR_DUPLICATES_QUESTIONS.json"),
     Path("datasets/goldenswag/golden_swag_train_synthetic_OFF_TOPIC_SAMPLES.json"),
 ]
+
 VAL_DATASET_PATH = Path("datasets/goldenswag/golden_swag_validation.json")
 
 HYPERPARAMETERS = {
+    "mlm": MLM_TEXT_STANDARD_HYPERPARAMETERS,
     "mae": MAE_TEXT_STANDARD_HYPERPARAMETERS,
     "simcse": SIMCSE_STANDARD_HYPERPARAMETERS,
     "electra": ELECTRA_STANDARD_HYPERPARAMETERS,
@@ -35,6 +38,7 @@ HYPERPARAMETERS = {
 
 # Training configurations
 TRAIN_CONFIGS = {
+    "mlm": {"epochs": 35, "batch_size": 16, "ssl_pre_training": True, "save_every_n_epochs": 1},
     "mae": {"epochs": 35, "batch_size": 16, "ssl_pre_training": True, "save_every_n_epochs": 1},
     "simcse": {"epochs": 35, "batch_size": 24, "ssl_pre_training": True, "save_every_n_epochs": 1},
     "electra": {"epochs": 35, "batch_size": 64, "ssl_pre_training": True, "save_every_n_epochs": 1},
@@ -48,6 +52,17 @@ def log_training_start(ssl_method: str, issue_type: str) -> None:
 def log_training_end(ssl_method: str, duration: timedelta) -> None:
     logger.info(f"Finished {ssl_method.upper()} training after: {duration}")
 
+def start_train_mlm(train_dataset, val_dataset):
+    start = datetime.now()
+    log_training_start("mlm", train_dataset.name)
+    model = train_mlm_text(
+        train_dataset=train_dataset,
+        val_dataset=val_dataset,
+        **TRAIN_CONFIGS["mlm"],
+        hyperparameters=HYPERPARAMETERS["mlm"],
+    )
+    log_training_end("mlm", datetime.now() - start)
+    return model
 
 def start_train_mae(train_dataset, val_dataset):
     start = datetime.now()
@@ -89,9 +104,10 @@ def start_train_electra(train_dataset, val_dataset):
 
 
 TRAIN_FUNCTIONS: Dict[str, Callable] = {
-    "mae": start_train_mae,
-    "simcse": start_train_simcse,
-    "electra": start_train_electra,
+    "mlm": start_train_mlm,
+    # "mae": start_train_mae,
+    # "simcse": start_train_simcse,
+    # "electra": start_train_electra,
 }
 
 

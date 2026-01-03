@@ -1,4 +1,5 @@
-from transformers import AutoModel, AutoTokenizer, BertTokenizer, BertForMaskedLM, ElectraForPreTraining, ElectraForMaskedLM
+from transformers import AutoModel, AutoTokenizer, BertTokenizer, BertForMaskedLM, ElectraForPreTraining, ElectraForMaskedLM, \
+    DebertaV2ForMaskedLM
 
 
 def bert():
@@ -24,6 +25,11 @@ def distilbert():
 def bert_mlm():
     model = BertForMaskedLM.from_pretrained('bert-base-uncased')
     tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+    return model, tokenizer
+
+def deberta_mlm():
+    model = DebertaV2ForMaskedLM.from_pretrained('microsoft/deberta-v3-base')
+    tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
     return model, tokenizer
 
 def electra():
