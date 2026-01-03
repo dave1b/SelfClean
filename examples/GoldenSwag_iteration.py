@@ -25,63 +25,95 @@ CONFIG = {
     "models": {
         IssueTypes.NEAR_DUPLICATES: [
             "bert",
+            # SimCSE models
             "golden_swag_train_simcse_NEAR_DUPLICATES_1",
             "golden_swag_train_simcse_NEAR_DUPLICATES_10",
             "golden_swag_train_simcse_NEAR_DUPLICATES_20",
             "golden_swag_train_simcse_NEAR_DUPLICATES_35",
+            # Electra models
             "golden_swag_train_electra_NEAR_DUPLICATE_1",
             "golden_swag_train_electra_NEAR_DUPLICATE_10",
             "golden_swag_train_electra_NEAR_DUPLICATE_20",
             "golden_swag_train_electra_NEAR_DUPLICATE_35",
+            # MAE models
             "golden_swag_train_mae_NEAR_DUPLICATE_1",
             "golden_swag_train_mae_NEAR_DUPLICATE_10",
             "golden_swag_train_mae_NEAR_DUPLICATE_20",
             "golden_swag_train_mae_NEAR_DUPLICATE_35",
+            # MLM models
+            "golden_swag_train_mlm_NEAR_DUPLICATE_1",
+            "golden_swag_train_mlm_NEAR_DUPLICATE_10",
+            "golden_swag_train_mlm_NEAR_DUPLICATE_20",
+            "golden_swag_train_mlm_NEAR_DUPLICATE_35",
         ],
         IssueTypes.NEAR_DUPLICATES_Q: [
             "bert",
+            # SimCSE models
             "golden_swag_train_simcse_NEAR_DUPLICATES_Q_1",
             "golden_swag_train_simcse_NEAR_DUPLICATES_Q_10",
             "golden_swag_train_simcse_NEAR_DUPLICATES_Q_20",
             "golden_swag_train_simcse_NEAR_DUPLICATES_Q_35",
+            # Electra models
             "golden_swag_train_electra_NEAR_DUPLICATE_Q_1",
             "golden_swag_train_electra_NEAR_DUPLICATE_Q_10",
             "golden_swag_train_electra_NEAR_DUPLICATE_Q_20",
             "golden_swag_train_electra_NEAR_DUPLICATE_Q_35",
+            # MAE models
             "golden_swag_train_mae_NEAR_DUPLICATE_Q_1",
             "golden_swag_train_mae_NEAR_DUPLICATE_Q_10",
             "golden_swag_train_mae_NEAR_DUPLICATE_Q_20",
             "golden_swag_train_mae_NEAR_DUPLICATE_Q_35",
+            # MLM models
+            "golden_swag_train_mlm_NEAR_DUPLICATE_Q_1",
+            "golden_swag_train_mlm_NEAR_DUPLICATE_Q_10",
+            "golden_swag_train_mlm_NEAR_DUPLICATE_Q_20",
+            "golden_swag_train_mlm_NEAR_DUPLICATE_Q_35",
         ],
         IssueTypes.OFF_TOPIC_SAMPLES: [
             "bert",
+            # SimCSE models
             "golden_swag_train_simcse_OFF_TOPIC_1",
             "golden_swag_train_simcse_OFF_TOPIC_10",
             "golden_swag_train_simcse_OFF_TOPIC_20",
             "golden_swag_train_simcse_OFF_TOPIC_35",
+            # Electra models
             "golden_swag_train_electra_OFF_TOPIC_1",
             "golden_swag_train_electra_OFF_TOPIC_10",
             "golden_swag_train_electra_OFF_TOPIC_20",
             "golden_swag_train_electra_OFF_TOPIC_35",
+            # MAE models
             "golden_swag_train_mae_OFF_TOPIC_1",
             "golden_swag_train_mae_OFF_TOPIC_10",
             "golden_swag_train_mae_OFF_TOPIC_20",
             "golden_swag_train_mae_OFF_TOPIC_35",
+            # MLM models
+            "golden_swag_train_mlm_OFF_TOPIC_1",
+            "golden_swag_train_mlm_OFF_TOPIC_10",
+            "golden_swag_train_mlm_OFF_TOPIC_20",
+            "golden_swag_train_mlm_OFF_TOPIC_35",
         ],
         "general": [
             "bert",
+            # SimCSE models
             "golden_swag_train_simcse_1",
             "golden_swag_train_simcse_10",
             "golden_swag_train_simcse_20",
             "golden_swag_train_simcse_35",
+            # Electra models
             "golden_swag_train_electra_1",
             "golden_swag_train_electra_10",
             "golden_swag_train_electra_20",
             "golden_swag_train_electra_35",
+            # MAE models
             "golden_swag_train_mae_1",
             "golden_swag_train_mae_10",
             "golden_swag_train_mae_20",
             "golden_swag_train_mae_35",
+            # MLM models
+            "golden_swag_train_mlm_1",
+            "golden_swag_train_mlm_10",
+            "golden_swag_train_mlm_20",
+            "golden_swag_train_mlm_35",
             # without weight sharing
             "golden_swag_train_electra_w_weight_1",
             "golden_swag_train_electra_w_weight_10",
@@ -90,7 +122,7 @@ CONFIG = {
         ]
     },
 
-    "pretraining_types": ["simcse", "electra", "mae", "bert"],
+    "pretraining_types": ["simcse", "electra", "mae", "bert", "mlm"],
 
     "issues_to_detect": [
         IssueTypes.CATEGORY_ERRORS,

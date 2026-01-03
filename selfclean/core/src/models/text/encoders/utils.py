@@ -98,6 +98,32 @@ LLM_DICT = {
     "golden_swag_train_mae_OFF_TOPIC_10": golden_swag_train_mae_OFF_TOPIC_10,
     "golden_swag_train_mae_OFF_TOPIC_20": golden_swag_train_mae_OFF_TOPIC_20,
     "golden_swag_train_mae_OFF_TOPIC_35": golden_swag_train_mae_OFF_TOPIC_35,
+
+    # MLM models
+    # General
+    "golden_swag_train_mlm_1": golden_swag_train_mlm_1,
+    "golden_swag_train_mlm_10": golden_swag_train_mlm_10,
+    "golden_swag_train_mlm_20": golden_swag_train_mlm_20,
+    "golden_swag_train_mlm_35": golden_swag_train_mlm_35,
+
+    # Near duplicates
+    "golden_swag_train_mlm_NEAR_DUPLICATE_1": golden_swag_train_mlm_NEAR_DUPLICATE_1,
+    "golden_swag_train_mlm_NEAR_DUPLICATE_10": golden_swag_train_mlm_NEAR_DUPLICATE_10,
+    "golden_swag_train_mlm_NEAR_DUPLICATE_20": golden_swag_train_mlm_NEAR_DUPLICATE_20,
+    "golden_swag_train_mlm_NEAR_DUPLICATE_35": golden_swag_train_mlm_NEAR_DUPLICATE_35,
+
+    # Near duplicates in questions
+    "golden_swag_train_mlm_NEAR_DUPLICATE_Q_1": golden_swag_train_mlm_NEAR_DUPLICATE_Q_1,
+    "golden_swag_train_mlm_NEAR_DUPLICATE_Q_10": golden_swag_train_mlm_NEAR_DUPLICATE_Q_10,
+    "golden_swag_train_mlm_NEAR_DUPLICATE_Q_20": golden_swag_train_mlm_NEAR_DUPLICATE_Q_20,
+    "golden_swag_train_mlm_NEAR_DUPLICATE_Q_35": golden_swag_train_mlm_NEAR_DUPLICATE_Q_35,
+
+    # Off-topic
+    "golden_swag_train_mlm_OFF_TOPIC_1": golden_swag_train_mlm_OFF_TOPIC_1,
+    "golden_swag_train_mlm_OFF_TOPIC_10": golden_swag_train_mlm_OFF_TOPIC_10,
+    "golden_swag_train_mlm_OFF_TOPIC_20": golden_swag_train_mlm_OFF_TOPIC_20,
+    "golden_swag_train_mlm_OFF_TOPIC_35": golden_swag_train_mlm_OFF_TOPIC_35,
+
 }
 
 def get_encoder_tokenizer_class(base_model_name: str) -> Tuple[nn.Module, nn.Module]:
