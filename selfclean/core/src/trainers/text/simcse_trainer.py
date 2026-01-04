@@ -9,7 +9,7 @@ from torch.utils.data import DataLoader, DistributedSampler
 from torchinfo import summary
 from tqdm.auto import tqdm
 
-from ....src.models.text.simcse.model import BertSimCSE
+from ....src.models.text.simcse.model import SimCSEModel
 from ....src.losses.nt_xent import NTXentLoss
 from ....src.models.utils import ModelType, cosine_scheduler
 from ....src.optimizers.utils import get_optimizer_type
@@ -47,7 +47,7 @@ class SimCSETrainer(Trainer):
         )
         self.loss = NTXentLoss(self.device, config["batch_size"], **config["loss"])
         self.loss = self.loss.to(self.device)
-        self.model = BertSimCSE(base_model=self.config["model"]["base_model"])
+        self.model = SimCSEModel(base_model=self.config["model"]["base_model"])
         self.model = self.model.to(self.device)
         self.model = self.distribute_model(self.model)
         if wandb_logging:

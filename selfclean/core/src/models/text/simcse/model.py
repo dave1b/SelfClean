@@ -3,9 +3,9 @@ import torch.nn.functional as F
 from ..encoders.utils import get_encoder_tokenizer_class
 
 
-class BertSimCSE(nn.Module):
+class SimCSEModel(nn.Module):
     def __init__(self, base_model: str):
-        super(BertSimCSE, self).__init__()
+        super(SimCSEModel, self).__init__()
         self.backbone, _ = get_encoder_tokenizer_class(base_model)
         self.backbone.dropout = nn.Dropout(p=0.1)
         n_feat = self.backbone.config.hidden_size

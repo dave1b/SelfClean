@@ -6,9 +6,9 @@ import torch
 import torch.nn as nn
 
 
-class BertMae(nn.Module):
-    def __init__(self, base_model: str, encoder_mask_ratio: float = 0.75):
-        super(BertMae, self).__init__()
+class MaeTextModel(nn.Module):
+    def __init__(self, base_model: str, encoder_mask_ratio: float = 0.3):
+        super(MaeTextModel, self).__init__()
         self.encoder, tokenizer = get_encoder_tokenizer_class(base_model)
         decoder_config = BertConfig(
             num_hidden_layers=2,

@@ -9,7 +9,7 @@ from torch.utils.data import DataLoader, DistributedSampler
 from torchinfo import summary
 from tqdm.auto import tqdm
 
-from ...models.text.mae.model import BertMae
+from ...models.text.mae.model import MaeTextModel
 from ....src.models.utils import cosine_scheduler, get_params_groups
 from ....src.optimizers.utils import get_optimizer_type
 from ....src.trainers.base_trainer import Trainer
@@ -46,7 +46,7 @@ class MAETextTrainer(Trainer):
         self.loss = nn.CrossEntropyLoss().to(self.device)
         self.print_model_summary = print_model_summary
         # create model
-        self.model = BertMae(self.config["model"]["base_model"], self.config["model"]["encoder_mask_ratio"])
+        self.model = MaeTextModel(self.config["model"]["base_model"], self.config["model"]["encoder_mask_ratio"])
         self.model.to(self.device)
         self.model = self.distribute_model(self.model)
         if wandb_logging:
@@ -56,7 +56,7 @@ class MAETextTrainer(Trainer):
             summary(self.model, input_size=(self.config["batch_size"], 3, 224, 224))
         self.scaler = GradScaler()
 
-    def fit(self) -> BertMae:
+    def fit(self) -> MaeTextModel:
         # create optimizer
         params_groups = get_params_groups(self.model)
         optimizer_name = self.config["optimizer"]["name"]
