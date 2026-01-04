@@ -25,6 +25,7 @@ CONFIG = {
     "models": {
         IssueTypes.NEAR_DUPLICATES: [
             "bert",
+            "deberta",
             # SimCSE models
             "golden_swag_train_simcse_NEAR_DUPLICATES_1",
             "golden_swag_train_simcse_NEAR_DUPLICATES_10",
@@ -48,6 +49,7 @@ CONFIG = {
         ],
         IssueTypes.NEAR_DUPLICATES_Q: [
             "bert",
+            "deberta",
             # SimCSE models
             "golden_swag_train_simcse_NEAR_DUPLICATES_Q_1",
             "golden_swag_train_simcse_NEAR_DUPLICATES_Q_10",
@@ -71,6 +73,7 @@ CONFIG = {
         ],
         IssueTypes.OFF_TOPIC_SAMPLES: [
             "bert",
+            "deberta",
             # SimCSE models
             "golden_swag_train_simcse_OFF_TOPIC_1",
             "golden_swag_train_simcse_OFF_TOPIC_10",
@@ -94,6 +97,7 @@ CONFIG = {
         ],
         "general": [
             "bert",
+            "deberta",
             # SimCSE models
             "golden_swag_train_simcse_1",
             "golden_swag_train_simcse_10",
@@ -138,7 +142,9 @@ CONFIG = {
         "batch_size": 32,
         "dataset_name": "hellaswag",
         "wandb_logging": False
-    }
+    },
+
+    "embedding_poolings": [EmbeddingPoolingType.CLS, EmbeddingPoolingType.MEAN, EmbeddingPoolingType.FIRST_LAST_AVERAGE, EmbeddingPoolingType.]
 }
 
 
@@ -162,6 +168,8 @@ def generate_markdown_table(data: Dict[str, Any], base_output_path: Path) -> Non
             rows.append(row)
 
         df = pd.DataFrame(rows)
+        df = df.sort_values(by="AP", ascending=False)
+
         markdown_table = df.to_markdown(tablefmt="github", index=False)
 
         output_path = base_output_path / f"{issue_key}.md"
@@ -242,7 +250,7 @@ def evaluate() -> None:
                     base_model=model,
                     issues_to_detect=[issue_type],
                     cache_dir=None,
-                    pooling_type=EmbeddingPoolingType.MEAN
+                    pooling_type=EmbeddingPoolingType.FIRST_LAST_AVERAGE
                 )
 
                 summarized_log_dict[issue_type.value][model] = {
