@@ -16,7 +16,7 @@ ARR_TYPE = Union[np.ndarray, np.memmap, torch.Tensor]
 class EmbeddingPoolingType(Enum):
     CLS = "cls"
     MEAN = "mean_pooling"
-    FIRST_LAST_AVERAGE = "first_last_average",
+    FIRST_LAST_AVERAGE = "first_last_average"
     MAX = "max"
 
 
