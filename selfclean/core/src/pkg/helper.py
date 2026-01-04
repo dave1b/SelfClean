@@ -17,7 +17,7 @@ class EmbeddingPoolingType(Enum):
     CLS = "cls"
     MEAN = "mean_pooling"
     FIRST_LAST_AVERAGE = "first_last_average",
-    POOLER = "pooler"
+    MAX = "max"
 
 
 def embed_dataset(
@@ -139,7 +139,12 @@ def embed_text_dataset(torch_dataset, model, batch_size, normalize=True, tqdm_de
             inputs = {k: v.to(get_device()) for k, v in inputs.items()}
 
             # Get embeddings
-            emb = model(**inputs)
+            if pooling_type == EmbeddingPoolingType.FIRST_LAST_AVERAGE:
+                output_hidden_states = True
+            else:
+                output_hidden_states = False
+
+            emb = model(**inputs, output_hidden_states=output_hidden_states)
 
             emb = get_embedding(emb, inputs, pooling_type, normalize=normalize)
 
@@ -191,10 +196,8 @@ def get_embedding(emb, inputs, pooling_type: EmbeddingPoolingType, normalize=Tru
         return _mean_pooling(emb.last_hidden_state, inputs['attention_mask'], normalize)
     elif pooling_type == EmbeddingPoolingType.FIRST_LAST_AVERAGE:
         return _first_last_average(emb, normalize)
-    elif pooling_type == EmbeddingPoolingType.POOLER:
-        if not hasattr(emb, 'pooler_output'):
-            raise ValueError("Model output does not have pooler_output attribute")
-        return _normalize_if_needed(emb.pooler_output, normalize)
+    elif pooling_type == EmbeddingPoolingType.MAX:
+        return _max_pooling(emb.last_hidden_state, inputs['attention_mask'], normalize)
     else:
         raise ValueError(f"Unknown pooling type: {pooling_type}")
 
@@ -212,8 +215,28 @@ def _mean_pooling(token_embeddings, attention_mask, normalize):
 
 def _first_last_average(emb, normalize):
     hidden_states = emb.hidden_states if hasattr(emb, 'hidden_states') else emb.last_hidden_state.unsqueeze(0)
-    pooled_output = (hidden_states[1] + hidden_states[-1]) / 2
-    return _normalize_if_needed(pooled_output[:, 0, :], normalize)
+    pooled_output = (hidden_states[0] + hidden_states[-1]) / 2
+    del emb.hidden_states
+
+    # Option A: [CLS] token pooling
+    pooled_output = pooled_output[:, 0, :]
+
+    # Option B: Global Average Pooling (Often performs better for sentence similarity)
+    # pooled_output = torch.mean(pooled_output, dim=1)
+
+    return _normalize_if_needed(pooled_output, normalize)
+
+
+def _max_pooling(token_embeddings, attention_mask, normalize):
+    # Create a mask for non-padding tokens
+    input_mask_expanded = attention_mask.unsqueeze(-1).expand(token_embeddings.size()).float()
+
+    # Set padding token embeddings to a very small value so they don't affect max pooling
+    masked_embeddings = token_embeddings * input_mask_expanded - (1 - input_mask_expanded) * 1e9
+
+    max_embeddings, _ = torch.max(masked_embeddings, dim=1)
+
+    return _normalize_if_needed(max_embeddings, normalize)
 
 
 def create_memmap(memmap_path: Path, memmap_file_name: str, len_dataset: int, *dims):

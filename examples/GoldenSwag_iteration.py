@@ -144,7 +144,10 @@ CONFIG = {
         "wandb_logging": False
     },
 
-    "embedding_poolings": [EmbeddingPoolingType.CLS, EmbeddingPoolingType.MEAN, EmbeddingPoolingType.FIRST_LAST_AVERAGE, EmbeddingPoolingType.]
+    "embedding_poolings": [EmbeddingPoolingType.CLS,
+                           EmbeddingPoolingType.MEAN,
+                           EmbeddingPoolingType.FIRST_LAST_AVERAGE,
+                           EmbeddingPoolingType.MAX]
 }
 
 
