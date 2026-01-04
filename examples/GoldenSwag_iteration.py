@@ -1,5 +1,4 @@
 import json
-import shutil
 import time
 from pathlib import Path
 from typing import List, Dict, Any, Optional
@@ -15,11 +14,11 @@ from selfclean.core.src.pkg.helper import EmbeddingPoolingType
 # Unified configuration
 CONFIG = {
     "contaminated_paths": {
-        IssueTypes.CATEGORY_ERRORS: Path('../experiment/datasets/goldenswag/golden_swag_train_synthetic_CATEGORY_ERRORS.json'),
-        IssueTypes.LABEL_ERRORS: Path('../experiment/datasets/goldenswag/golden_swag_train_synthetic_LABEL_ERRORS.json'),
         IssueTypes.NEAR_DUPLICATES: Path('../experiment/datasets/goldenswag/golden_swag_train_synthetic_NEAR_DUPLICATES.json'),
         IssueTypes.NEAR_DUPLICATES_Q: Path('../experiment/datasets/goldenswag/golden_swag_train_synthetic_NEAR_DUPLICATES_QUESTIONS.json'),
         IssueTypes.OFF_TOPIC_SAMPLES: Path('../experiment/datasets/goldenswag/golden_swag_train_synthetic_OFF_TOPIC_SAMPLES.json'),
+        IssueTypes.CATEGORY_ERRORS: Path('../experiment/datasets/goldenswag/golden_swag_train_synthetic_CATEGORY_ERRORS.json'),
+        IssueTypes.LABEL_ERRORS: Path('../experiment/datasets/goldenswag/golden_swag_train_synthetic_LABEL_ERRORS.json'),
     },
 
     "models": {
@@ -27,102 +26,102 @@ CONFIG = {
             "bert",
             "deberta",
             # SimCSE models
-            "golden_swag_train_simcse_NEAR_DUPLICATES_1",
-            "golden_swag_train_simcse_NEAR_DUPLICATES_10",
-            "golden_swag_train_simcse_NEAR_DUPLICATES_20",
+            # "golden_swag_train_simcse_NEAR_DUPLICATES_1",
+            # "golden_swag_train_simcse_NEAR_DUPLICATES_10",
+            # "golden_swag_train_simcse_NEAR_DUPLICATES_20",
             "golden_swag_train_simcse_NEAR_DUPLICATES_35",
             # Electra models
-            "golden_swag_train_electra_NEAR_DUPLICATE_1",
-            "golden_swag_train_electra_NEAR_DUPLICATE_10",
-            "golden_swag_train_electra_NEAR_DUPLICATE_20",
+            # "golden_swag_train_electra_NEAR_DUPLICATE_1",
+            # "golden_swag_train_electra_NEAR_DUPLICATE_10",
+            # "golden_swag_train_electra_NEAR_DUPLICATE_20",
             "golden_swag_train_electra_NEAR_DUPLICATE_35",
             # MAE models
-            "golden_swag_train_mae_NEAR_DUPLICATE_1",
-            "golden_swag_train_mae_NEAR_DUPLICATE_10",
-            "golden_swag_train_mae_NEAR_DUPLICATE_20",
+            # "golden_swag_train_mae_NEAR_DUPLICATE_1",
+            # "golden_swag_train_mae_NEAR_DUPLICATE_10",
+            # "golden_swag_train_mae_NEAR_DUPLICATE_20",
             "golden_swag_train_mae_NEAR_DUPLICATE_35",
             # MLM models
-            "golden_swag_train_mlm_NEAR_DUPLICATE_1",
-            "golden_swag_train_mlm_NEAR_DUPLICATE_10",
-            "golden_swag_train_mlm_NEAR_DUPLICATE_20",
+            # "golden_swag_train_mlm_NEAR_DUPLICATE_1",
+            # "golden_swag_train_mlm_NEAR_DUPLICATE_10",
+            # "golden_swag_train_mlm_NEAR_DUPLICATE_20",
             "golden_swag_train_mlm_NEAR_DUPLICATE_35",
         ],
         IssueTypes.NEAR_DUPLICATES_Q: [
             "bert",
             "deberta",
             # SimCSE models
-            "golden_swag_train_simcse_NEAR_DUPLICATES_Q_1",
-            "golden_swag_train_simcse_NEAR_DUPLICATES_Q_10",
-            "golden_swag_train_simcse_NEAR_DUPLICATES_Q_20",
+            # "golden_swag_train_simcse_NEAR_DUPLICATES_Q_1",
+            # "golden_swag_train_simcse_NEAR_DUPLICATES_Q_10",
+            # "golden_swag_train_simcse_NEAR_DUPLICATES_Q_20",
             "golden_swag_train_simcse_NEAR_DUPLICATES_Q_35",
             # Electra models
-            "golden_swag_train_electra_NEAR_DUPLICATE_Q_1",
-            "golden_swag_train_electra_NEAR_DUPLICATE_Q_10",
-            "golden_swag_train_electra_NEAR_DUPLICATE_Q_20",
+            # "golden_swag_train_electra_NEAR_DUPLICATE_Q_1",
+            # "golden_swag_train_electra_NEAR_DUPLICATE_Q_10",
+            # "golden_swag_train_electra_NEAR_DUPLICATE_Q_20",
             "golden_swag_train_electra_NEAR_DUPLICATE_Q_35",
             # MAE models
-            "golden_swag_train_mae_NEAR_DUPLICATE_Q_1",
-            "golden_swag_train_mae_NEAR_DUPLICATE_Q_10",
-            "golden_swag_train_mae_NEAR_DUPLICATE_Q_20",
+            # "golden_swag_train_mae_NEAR_DUPLICATE_Q_1",
+            # "golden_swag_train_mae_NEAR_DUPLICATE_Q_10",
+            # "golden_swag_train_mae_NEAR_DUPLICATE_Q_20",
             "golden_swag_train_mae_NEAR_DUPLICATE_Q_35",
             # MLM models
-            "golden_swag_train_mlm_NEAR_DUPLICATE_Q_1",
-            "golden_swag_train_mlm_NEAR_DUPLICATE_Q_10",
-            "golden_swag_train_mlm_NEAR_DUPLICATE_Q_20",
+            # "golden_swag_train_mlm_NEAR_DUPLICATE_Q_1",
+            # "golden_swag_train_mlm_NEAR_DUPLICATE_Q_10",
+            # "golden_swag_train_mlm_NEAR_DUPLICATE_Q_20",
             "golden_swag_train_mlm_NEAR_DUPLICATE_Q_35",
         ],
         IssueTypes.OFF_TOPIC_SAMPLES: [
             "bert",
             "deberta",
             # SimCSE models
-            "golden_swag_train_simcse_OFF_TOPIC_1",
-            "golden_swag_train_simcse_OFF_TOPIC_10",
-            "golden_swag_train_simcse_OFF_TOPIC_20",
+            # "golden_swag_train_simcse_OFF_TOPIC_1",
+            # "golden_swag_train_simcse_OFF_TOPIC_10",
+            # "golden_swag_train_simcse_OFF_TOPIC_20",
             "golden_swag_train_simcse_OFF_TOPIC_35",
             # Electra models
-            "golden_swag_train_electra_OFF_TOPIC_1",
-            "golden_swag_train_electra_OFF_TOPIC_10",
-            "golden_swag_train_electra_OFF_TOPIC_20",
+            # "golden_swag_train_electra_OFF_TOPIC_1",
+            # "golden_swag_train_electra_OFF_TOPIC_10",
+            # "golden_swag_train_electra_OFF_TOPIC_20",
             "golden_swag_train_electra_OFF_TOPIC_35",
             # MAE models
-            "golden_swag_train_mae_OFF_TOPIC_1",
-            "golden_swag_train_mae_OFF_TOPIC_10",
-            "golden_swag_train_mae_OFF_TOPIC_20",
+            # "golden_swag_train_mae_OFF_TOPIC_1",
+            # "golden_swag_train_mae_OFF_TOPIC_10",
+            # "golden_swag_train_mae_OFF_TOPIC_20",
             "golden_swag_train_mae_OFF_TOPIC_35",
             # MLM models
-            "golden_swag_train_mlm_OFF_TOPIC_1",
-            "golden_swag_train_mlm_OFF_TOPIC_10",
-            "golden_swag_train_mlm_OFF_TOPIC_20",
+            # "golden_swag_train_mlm_OFF_TOPIC_1",
+            # "golden_swag_train_mlm_OFF_TOPIC_10",
+            # "golden_swag_train_mlm_OFF_TOPIC_20",
             "golden_swag_train_mlm_OFF_TOPIC_35",
         ],
         "general": [
             "bert",
             "deberta",
             # SimCSE models
-            "golden_swag_train_simcse_1",
-            "golden_swag_train_simcse_10",
-            "golden_swag_train_simcse_20",
+            # "golden_swag_train_simcse_1",
+            # "golden_swag_train_simcse_10",
+            # "golden_swag_train_simcse_20",
             "golden_swag_train_simcse_35",
             # Electra models
-            "golden_swag_train_electra_1",
-            "golden_swag_train_electra_10",
-            "golden_swag_train_electra_20",
+            # "golden_swag_train_electra_1",
+            # "golden_swag_train_electra_10",
+            # "golden_swag_train_electra_20",
             "golden_swag_train_electra_35",
             # MAE models
-            "golden_swag_train_mae_1",
-            "golden_swag_train_mae_10",
-            "golden_swag_train_mae_20",
+            # "golden_swag_train_mae_1",
+            # "golden_swag_train_mae_10",
+            # "golden_swag_train_mae_20",
             "golden_swag_train_mae_35",
             # MLM models
-            "golden_swag_train_mlm_1",
-            "golden_swag_train_mlm_10",
-            "golden_swag_train_mlm_20",
+            # "golden_swag_train_mlm_1",
+            # "golden_swag_train_mlm_10",
+            # "golden_swag_train_mlm_20",
             "golden_swag_train_mlm_35",
             # without weight sharing
-            "golden_swag_train_electra_w_weight_1",
-            "golden_swag_train_electra_w_weight_10",
-            "golden_swag_train_electra_w_weight_20",
-            "golden_swag_train_electra_w_weight_35",
+            # "golden_swag_train_electra_w_weight_1",
+            # "golden_swag_train_electra_w_weight_10",
+            # "golden_swag_train_electra_w_weight_20",
+            # "golden_swag_train_electra_w_weight_35",
         ]
     },
 
@@ -144,15 +143,16 @@ CONFIG = {
         "wandb_logging": False
     },
 
-    "embedding_poolings": [EmbeddingPoolingType.CLS,
-                           EmbeddingPoolingType.MEAN,
-                           EmbeddingPoolingType.FIRST_LAST_AVERAGE,
-                           EmbeddingPoolingType.MAX]
+    "embedding_poolings": [
+        EmbeddingPoolingType.CLS,
+        EmbeddingPoolingType.MEAN,
+        EmbeddingPoolingType.FIRST_LAST_AVERAGE,
+        EmbeddingPoolingType.MAX
+    ]
 }
 
-
 def generate_markdown_table(data: Dict[str, Any], base_output_path: Path) -> None:
-    """Generate Markdown tables for each issue type."""
+    """Generate Markdown tables for each issue type, sorted by AP in descending order."""
     for issue_type in CONFIG["issues_to_detect"]:
         issue_key = issue_type.value
         if issue_key not in data:
@@ -162,16 +162,20 @@ def generate_markdown_table(data: Dict[str, Any], base_output_path: Path) -> Non
         issue_data = data[issue_key]
         rows = []
 
-        for model, metrics in issue_data.items():
-            row = {
-                "Model": model,
-                "AP": metrics.get("AP", "N/A"),
-                "AUROC": metrics.get("AUROC", "N/A")
-            }
-            rows.append(row)
+        # Create a list of all results with pooling type information
+        for model, pooling_results in issue_data.items():
+            for pooling_type, metrics in pooling_results.items():
+                row = {
+                    "Model": model,
+                    "AP": metrics.get("AP", "N/A"),
+                    "AUROC": metrics.get("AUROC", "N/A"),
+                    "Pooling Type": pooling_type
+                }
+                rows.append(row)
 
         df = pd.DataFrame(rows)
-        df = df.sort_values(by="AP", ascending=False)
+        if len(df) != 0:
+            df = df.sort_values(by="AP", ascending=False)
 
         markdown_table = df.to_markdown(tablefmt="github", index=False)
 
@@ -181,7 +185,6 @@ def generate_markdown_table(data: Dict[str, Any], base_output_path: Path) -> Non
             f.write(markdown_table)
         logger.info(f"Generated markdown table for {issue_key} at {output_path}")
 
-
 def setup_output_directory() -> Path:
     """Create a timestamped output directory."""
     timestamp_str = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
@@ -190,7 +193,6 @@ def setup_output_directory() -> Path:
     logger.info(f"Created output directory: {base_output_path}")
     return base_output_path
 
-
 def get_pretraining_type(model_name: str) -> Optional[str]:
     """Extract pretraining type from model name."""
     for pretraining_type in CONFIG["pretraining_types"]:
@@ -198,6 +200,13 @@ def get_pretraining_type(model_name: str) -> Optional[str]:
             return pretraining_type
     return None
 
+def calculate_number_of_run():
+    count = 0
+    num_poolings = len(CONFIG["embedding_poolings"])
+    for issue_type, path in CONFIG["contaminated_paths"].items():
+        models = CONFIG["models"].get(issue_type, CONFIG["models"]["general"])
+        count += len(models) * num_poolings
+    return count
 
 def evaluate() -> None:
     """Run evaluation for all configurations."""
@@ -209,7 +218,8 @@ def evaluate() -> None:
         summarized_log_dict[issue.value] = {}
 
     # Calculate total number of runs
-    total_runs = sum(len(CONFIG["models"].get(issue, [])) for issue in CONFIG["issues_to_detect"]) + (2 * len(CONFIG["models"]['general']))
+    total_runs = calculate_number_of_run()
+
     logger.info(f"Starting evaluation with {total_runs} total runs")
 
     run_count = 1
@@ -232,46 +242,52 @@ def evaluate() -> None:
                 logger.warning(f"Could not determine pretraining type for model: {model}")
                 continue
 
-            logger.info(f"Run {run_count}/{total_runs}: Evaluating {issue_type.value} with {model}")
+            # Initialize model entry in the log dict
+            if model not in summarized_log_dict[issue_type.value]:
+                summarized_log_dict[issue_type.value][model] = {}
 
-            output_path = base_output_path / f"{issue_type.value}_{model}"
-            output_path.mkdir(parents=True, exist_ok=True)
+            for pooling_type in CONFIG["embedding_poolings"]:
+                logger.info(f"Run {run_count}/{total_runs}: Evaluating {issue_type.value} with {model} and {pooling_type.value} pooling")
 
-            start_time = time.time()
+                output_path = base_output_path / f"{issue_type.value}_{model}_{pooling_type.value}"
+                output_path.mkdir(parents=True, exist_ok=True)
 
-            try:
-                selfclean = SelfClean(
-                    plot_top_N=CONFIG["selfclean_params"]["plot_top_N"],
-                    output_path=output_path
-                )
+                start_time = time.time()
 
-                issue_manager, _ = selfclean.run_on_text_dataset(
-                    dataset_path=path,
-                    contamination_log_path=log_file,
-                    pretraining_type=pretraining_type,
-                    **{k: v for k, v in CONFIG["selfclean_params"].items() if k != "plot_top_N"},
-                    base_model=model,
-                    issues_to_detect=[issue_type],
-                    cache_dir=None,
-                    pooling_type=EmbeddingPoolingType.FIRST_LAST_AVERAGE
-                )
+                try:
+                    selfclean = SelfClean(
+                        plot_top_N=CONFIG["selfclean_params"]["plot_top_N"],
+                        output_path=output_path
+                    )
 
-                summarized_log_dict[issue_type.value][model] = {
-                    **{'data': path.name},
-                    **issue_manager.metric_dict
-                }
+                    issue_manager, _ = selfclean.run_on_text_dataset(
+                        dataset_path=path,
+                        contamination_log_path=log_file,
+                        pretraining_type=pretraining_type,
+                        **{k: v for k, v in CONFIG["selfclean_params"].items() if k != "plot_top_N"},
+                        base_model=model,
+                        issues_to_detect=[issue_type],
+                        cache_dir=None,
+                        pooling_type=pooling_type
+                    )
 
-                elapsed_time = (time.time() - start_time) / 60
-                logger.success(f"Completed {issue_type.value} with {model} in {elapsed_time:.2f} minutes")
+                    # Store metrics with pooling type as key
+                    summarized_log_dict[issue_type.value][model][pooling_type.value] = {
+                        **{'data': path.name},
+                        **issue_manager.metric_dict
+                    }
 
-            except Exception as e:
-                logger.error(f"Error evaluating {issue_type.value} with {model}: {str(e)}")
-                summarized_log_dict[issue_type.value][model] = {
-                    "error": str(e),
-                    "data": path.name
-                }
+                    elapsed_time = (time.time() - start_time) / 60
+                    logger.success(f"Completed {issue_type.value} with {model} and {pooling_type.value} pooling in {elapsed_time:.2f} minutes")
 
-            run_count += 1
+                except Exception as e:
+                    logger.error(f"Error evaluating {issue_type.value} with {model} and {pooling_type.value} pooling: {str(e)}")
+                    summarized_log_dict[issue_type.value][model][pooling_type.value] = {
+                        "error": str(e),
+                        "data": path.name
+                    }
+
+                run_count += 1
 
     # Save summary and generate tables
     summary_path = base_output_path / "summary.json"
@@ -281,14 +297,12 @@ def evaluate() -> None:
 
     generate_markdown_table(summarized_log_dict, base_output_path)
 
-
 def main() -> None:
     """Main function to run the evaluation pipeline."""
     try:
         evaluate()
     except Exception as e:
         logger.exception(f"Error during evaluation: {str(e)}")
-
 
 if __name__ == "__main__":
     main()

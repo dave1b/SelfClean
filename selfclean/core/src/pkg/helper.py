@@ -163,7 +163,7 @@ def embed_text_dataset(torch_dataset, model, batch_size, normalize=True, tqdm_de
                             )
 
                 filtered_context_only_inputs = {k: v.to(get_device()) for k, v in filtered_context_only_inputs.items()}
-                context_emb = model(**filtered_context_only_inputs)
+                context_emb = model(**filtered_context_only_inputs, output_hidden_states=output_hidden_states)
 
                 context_emb = get_embedding(context_emb, filtered_context_only_inputs, pooling_type, normalize=normalize)
 

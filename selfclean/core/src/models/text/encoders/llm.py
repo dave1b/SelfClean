@@ -318,84 +318,84 @@ def golden_swag_train_mae_OFF_TOPIC_35():
 ############################################### MLM
 # General models
 def golden_swag_train_mlm_1():
-    model = AutoModelForMaskedLM.from_pretrained('models/MLM_golden_swag_train/epoch1')
+    model = AutoModel.from_pretrained('models/MLM_golden_swag_train/epoch1')
     tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
     return model, tokenizer
 
 def golden_swag_train_mlm_10():
-    model = AutoModelForMaskedLM.from_pretrained('models/MLM_golden_swag_train/epoch10')
+    model = AutoModel.from_pretrained('models/MLM_golden_swag_train/epoch10')
     tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
     return model, tokenizer
 
 def golden_swag_train_mlm_20():
-    model = AutoModelForMaskedLM.from_pretrained('models/MLM_golden_swag_train/epoch20')
+    model = AutoModel.from_pretrained('models/MLM_golden_swag_train/epoch20')
     tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
     return model, tokenizer
 
 def golden_swag_train_mlm_35():
-    model = AutoModelForMaskedLM.from_pretrained('models/MLM_golden_swag_train/epoch35')
+    model = AutoModel.from_pretrained('models/MLM_golden_swag_train/epoch35')
     tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
     return model, tokenizer
 
 # Near duplicates models
 def golden_swag_train_mlm_NEAR_DUPLICATE_1():
-    model = AutoModelForMaskedLM.from_pretrained('models/MLM_golden_swag_train/near_duplicate/epoch1')
+    model = AutoModel.from_pretrained('models/MLM_golden_swag_train/near_duplicate/epoch1')
     tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
     return model, tokenizer
 
 def golden_swag_train_mlm_NEAR_DUPLICATE_10():
-    model = AutoModelForMaskedLM.from_pretrained('models/MLM_golden_swag_train/near_duplicate/epoch10')
+    model = AutoModel.from_pretrained('models/MLM_golden_swag_train/near_duplicate/epoch10')
     tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
     return model, tokenizer
 
 def golden_swag_train_mlm_NEAR_DUPLICATE_20():
-    model = AutoModelForMaskedLM.from_pretrained('models/MLM_golden_swag_train/near_duplicate/epoch20')
+    model = AutoModel.from_pretrained('models/MLM_golden_swag_train/near_duplicate/epoch20')
     tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
     return model, tokenizer
 
 def golden_swag_train_mlm_NEAR_DUPLICATE_35():
-    model = AutoModelForMaskedLM.from_pretrained('models/MLM_golden_swag_train/near_duplicate/epoch35')
+    model = AutoModel.from_pretrained('models/MLM_golden_swag_train/near_duplicate/epoch35')
     tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
     return model, tokenizer
 
 # Near duplicates in questions models
 def golden_swag_train_mlm_NEAR_DUPLICATE_Q_1():
-    model = AutoModelForMaskedLM.from_pretrained('models/MLM_golden_swag_train/near_duplicate_question/epoch1')
+    model = AutoModel.from_pretrained('models/MLM_golden_swag_train/near_duplicate_question/epoch1')
     tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
     return model, tokenizer
 
 def golden_swag_train_mlm_NEAR_DUPLICATE_Q_10():
-    model = AutoModelForMaskedLM.from_pretrained('models/MLM_golden_swag_train/near_duplicate_question/epoch10')
+    model = AutoModel.from_pretrained('models/MLM_golden_swag_train/near_duplicate_question/epoch10')
     tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
     return model, tokenizer
 
 def golden_swag_train_mlm_NEAR_DUPLICATE_Q_20():
-    model = AutoModelForMaskedLM.from_pretrained('models/MLM_golden_swag_train/near_duplicate_question/epoch20')
+    model = AutoModel.from_pretrained('models/MLM_golden_swag_train/near_duplicate_question/epoch20')
     tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
     return model, tokenizer
 
 def golden_swag_train_mlm_NEAR_DUPLICATE_Q_35():
-    model = AutoModelForMaskedLM.from_pretrained('models/MLM_golden_swag_train/near_duplicate_question/epoch35')
+    model = AutoModel.from_pretrained('models/MLM_golden_swag_train/near_duplicate_question/epoch35')
     tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
     return model, tokenizer
 
 # Off-topic models
 def golden_swag_train_mlm_OFF_TOPIC_1():
-    model = AutoModelForMaskedLM.from_pretrained('models/MLM_golden_swag_train/off_topic/epoch1')
+    model = AutoModel.from_pretrained('models/MLM_golden_swag_train/off_topic/epoch1')
     tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
     return model, tokenizer
 
 def golden_swag_train_mlm_OFF_TOPIC_10():
-    model = AutoModelForMaskedLM.from_pretrained('models/MLM_golden_swag_train/off_topic/epoch10')
+    model = AutoModel.from_pretrained('models/MLM_golden_swag_train/off_topic/epoch10')
     tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
     return model, tokenizer
 
 def golden_swag_train_mlm_OFF_TOPIC_20():
-    model = AutoModelForMaskedLM.from_pretrained('models/MLM_golden_swag_train/off_topic/epoch20')
+    model = AutoModel.from_pretrained('models/MLM_golden_swag_train/off_topic/epoch20')
     tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
     return model, tokenizer
 
 def golden_swag_train_mlm_OFF_TOPIC_35():
-    model = AutoModelForMaskedLM.from_pretrained('models/MLM_golden_swag_train/off_topic/epoch35')
+    model = AutoModel.from_pretrained('models/MLM_golden_swag_train/off_topic/epoch35')
     tokenizer = AutoTokenizer.from_pretrained('microsoft/deberta-v3-base')
     return model, tokenizer
