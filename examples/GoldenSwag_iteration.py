@@ -25,6 +25,7 @@ CONFIG = {
         IssueTypes.NEAR_DUPLICATES: [
             "bert",
             "deberta",
+            "electra",
             # SimCSE models
             # "golden_swag_train_simcse_NEAR_DUPLICATES_1",
             # "golden_swag_train_simcse_NEAR_DUPLICATES_10",
@@ -49,6 +50,7 @@ CONFIG = {
         IssueTypes.NEAR_DUPLICATES_Q: [
             "bert",
             "deberta",
+            "electra",
             # SimCSE models
             # "golden_swag_train_simcse_NEAR_DUPLICATES_Q_1",
             # "golden_swag_train_simcse_NEAR_DUPLICATES_Q_10",
@@ -73,6 +75,7 @@ CONFIG = {
         IssueTypes.OFF_TOPIC_SAMPLES: [
             "bert",
             "deberta",
+            "electra",
             # SimCSE models
             # "golden_swag_train_simcse_OFF_TOPIC_1",
             # "golden_swag_train_simcse_OFF_TOPIC_10",
@@ -97,6 +100,7 @@ CONFIG = {
         "general": [
             "bert",
             "deberta",
+            "electra",
             # SimCSE models
             # "golden_swag_train_simcse_1",
             # "golden_swag_train_simcse_10",
