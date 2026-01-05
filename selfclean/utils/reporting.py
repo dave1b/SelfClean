@@ -16,7 +16,8 @@ def generate_markdown_report(
     top_n: int,
     output_path: Optional[Union[str, Path]] = None,
     max_text_length: int = 700,
-    wrap_width: int = 50
+    wrap_width: int = 50,
+    contamination_log=None
 ) -> str:
     """
     Generate a markdown report for data quality issues.
@@ -58,18 +59,27 @@ def generate_markdown_report(
                 text1 = wrap_text(dataset[int(idx1)][3])
                 text2 = wrap_text(dataset[int(idx2)][3])
 
+                id1 = dataset[int(idx1)][7]
+                id2 = dataset[int(idx2)][7]
+
+                if contamination_log_provided:
+                    pred_index = pd.MultiIndex.from_tuples([(id1, id2)])
+                    is_contaminated = pred_index.isin(contamination_indexes)
+
                 score = issues["scores"][i] if "scores" in issues else "N/A"
 
                 row = {
                     "Rank": i + 1,
-                    "Index 1": dataset[int(idx1)][7],
-                    "Index 2": dataset[int(idx2)][7],
+                    "Index 1": id1,
+                    "Index 2": id2,
                     "Text 1": text1,
                     "Text 2": text2,
                     "Score": f"{score:.4f}" if isinstance(score, (int, float)) else score,
                 }
                 if autocleaned:
                     row["Autoclean Prediction"] = issues.get('auto_issues')[i]
+                if contamination_log_provided:
+                    row["Synthetic Contaminated"] = is_contaminated
                 table_data.append(row)
 
             elif issue_type == "near_duplicates_questions":
@@ -78,18 +88,27 @@ def generate_markdown_report(
                 text1 = wrap_text(dataset.get_context_only_text(int(idx1))[0])
                 text2 = wrap_text(dataset.get_context_only_text(int(idx2))[0])
 
+                id1 = dataset.get_context_only_text(int(idx1))[1]
+                id2 = dataset.get_context_only_text(int(idx2))[1]
+
+                if contamination_log_provided:
+                    pred_index = pd.MultiIndex.from_tuples([(id1, id2)])
+                    is_contaminated = pred_index.isin(contamination_indexes)
+
                 score = issues["scores"][i] if "scores" in issues else "N/A"
 
                 row = {
                     "Rank": i + 1,
-                    "Index 1": dataset.get_context_only_text(int(idx1))[1],
-                    "Index 2": dataset.get_context_only_text(int(idx2))[1],
+                    "Index 1": id1,
+                    "Index 2": id2,
                     "Text 1": text1,
                     "Text 2": text2,
                     "Score": f"{score:.4f}" if isinstance(score, (int, float)) else score,
                 }
                 if autocleaned:
                     row["Autoclean Prediction"] = issues.get('auto_issues')[i]
+                if contamination_log_provided:
+                    row["Synthetic Contaminated"] = is_contaminated
                 table_data.append(row)
 
             else:
@@ -98,10 +117,14 @@ def generate_markdown_report(
                 category = dataset[int(idx)][2]
                 true_label = dataset[int(idx)][1]
                 score = issues["scores"][i] if "scores" in issues else "N/A"
+                id_ = dataset[int(idx)][7]
+
+                if contamination_log_provided:
+                    is_contaminated = id_ in contamination_ids
 
                 row = {
                     "Rank": i + 1,
-                    "Index": dataset[int(idx)][7],
+                    "Index": id_,
                     "Text": text,
                     "Score": f"{score:.4f}" if isinstance(score, (int, float)) else score,
                 }
@@ -113,6 +136,8 @@ def generate_markdown_report(
                     row["Category"] = category
                 if autocleaned:
                     row["Autoclean Prediction"] = issues.get('auto_issues')[i]
+                if contamination_log_provided:
+                    row["Synthetic Contaminated"] = is_contaminated
                 table_data.append(row)
 
         # Create DataFrame and convert to markdown
@@ -131,6 +156,15 @@ def generate_markdown_report(
 
     # Create the full report
     autocleaned = True if 'auto_issues' in issue_manager.issue_dict else False
+    contamination_log_provided = True if contamination_log is not None else False
+    if contamination_log_provided:
+        if {'id_1', 'id_2'}.issubset(contamination_log.columns):
+            contamination_indexes = pd.MultiIndex.from_arrays([
+                contamination_log['id_1'].astype(str),
+                contamination_log['id_2'].astype(str)
+            ])
+        if 'id' in contamination_log.columns:
+            contamination_ids = set(contamination_log['id'].astype(str).dropna())
 
     metrics = pd.DataFrame.from_dict(issue_manager.metric_dict, orient='index', columns=['Value'])
     report = "# Data Quality Report\n\n"

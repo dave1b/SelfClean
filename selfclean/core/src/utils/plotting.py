@@ -366,7 +366,8 @@ def calculate_scores_from_ranking(
         l_recall_gain = (l_tpr - pi) / ((1 - pi) * l_tpr)
         l_recall_gain = l_recall_gain.clip(min=0, max=1)
 
-    for k in [1, 5, 10, 20, 50, 100]:
+    five_percent = len(target) // 100 * 5
+    for k in [1, 5, 10, 20, 50, 100, five_percent]:
         # for k in [1, 5, 10, 20, 50, 100, 500, 1000]:
         log_dict[f"{wandb_cat}Recall@{k}"] = round(l_tpr[k - 1], 4)
         log_dict[f"{wandb_cat}Precision@{k}"] = round(l_precision[k - 1], 4)

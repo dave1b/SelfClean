@@ -686,6 +686,7 @@ class SelfClean:
             prediction_parquet = generate_prediction_parquet(issue_manager=issue_manager, dataset=dataset,
                                                              output_path=self.cleaner.output_path, pretraining_type=pretraining_type)
 
+            contamination_log = None
             if contamination_log_path:
                 contamination_log = pd.read_json(contamination_log_path)
                 pa = PerformanceAssesser(prediction=prediction_parquet, contamination_log=contamination_log)
@@ -693,6 +694,7 @@ class SelfClean:
                 issue_manager.metric_dict = pa.log_dict
 
             md = generate_markdown_report(issue_manager=issue_manager, dataset=dataset, top_n=self.cleaner.plot_top_N,
-                                          output_path=self.output_path, model_name=hyperparameters["model"]["base_model"])
+                                          output_path=self.output_path, model_name=hyperparameters["model"]["base_model"],
+                                          contamination_log=contamination_log)
 
             return issue_manager, prediction_parquet
