@@ -31,7 +31,7 @@ ELECTRA_STANDARD_HYPERPARAMETERS = {
     "model": {
         "out_dim": None,
         "emb_dim": None,
-        "base_model": "electra",
+        "base_model": "electra_electra",
         "model_type": "BERT",
         "use_bn_in_head": False,
         "norm_last_layer": True,

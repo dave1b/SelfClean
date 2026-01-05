@@ -11,6 +11,7 @@ LLM_DICT = {
     "electra": electra,
     "deberta": deberta,
     "deberta_mlm": deberta_mlm,
+    "electra_electra": electra_electra,
 
     # Pretrained models
     # "pretrained_bert_hellaSwag_simcse": pretrained_bert_hellaSwag_simcse,

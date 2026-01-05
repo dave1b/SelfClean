@@ -33,6 +33,11 @@ def deberta_mlm():
     return model, tokenizer
 
 def electra():
+    discriminator = AutoModel.from_pretrained("google/electra-base-discriminator")
+    tokenizer = AutoTokenizer.from_pretrained("google/electra-base-discriminator")
+    return discriminator, tokenizer
+
+def electra_electra():
     discriminator = ElectraForPreTraining.from_pretrained("google/electra-base-discriminator")
     tokenizer = AutoTokenizer.from_pretrained("google/electra-base-discriminator")
     return discriminator, tokenizer
