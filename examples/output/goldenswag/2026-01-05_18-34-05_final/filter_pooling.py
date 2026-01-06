@@ -13,7 +13,7 @@ issues_to_detect = [
     IssueTypes.OFF_TOPIC_SAMPLES,
 ]
 
-pool_filter = "cls"
+pool_filter = "mean_pooling"
 
 with open('summary.json', 'r') as f:
     data = json.load(f)

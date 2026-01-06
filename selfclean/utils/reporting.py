@@ -132,7 +132,7 @@ def generate_markdown_report(
                 if issue_type == "off_topic_samples":
                     row["Category"] = category
                 elif issue_type in ["label_errors", "category_errors"]:
-                    row["True Label"] = true_label
+                    row["Answer Correct"] = true_label
                     row["Category"] = category
                 if autocleaned:
                     row["Autoclean Prediction"] = issues.get('auto_issues')[i]
