@@ -13,16 +13,16 @@ from experiment.SimCSE.train import SIMCSE_STANDARD_HYPERPARAMETERS, train_simcs
 from experiment.MLM.train import MLM_TEXT_STANDARD_HYPERPARAMETERS, train_mlm_text
 
 CONTAMINATED_PATHS = [
-    Path("datasets/hellaswag/hellaswag_train.json"),
+    Path("datasets/hellaswag/hellaswag_train_first_10k.json"),
 ]
 
-VAL_DATASET_PATH = Path("datasets/hellaswag/hellaswag_val.json")
+VAL_DATASET_PATH = Path("datasets/hellaswag/hellaswag_val_first_2500.json")
 
 HYPERPARAMETERS = {
-    "mae": MAE_TEXT_STANDARD_HYPERPARAMETERS,
+    # "mae": MAE_TEXT_STANDARD_HYPERPARAMETERS,
     "simcse": SIMCSE_STANDARD_HYPERPARAMETERS,
     "electra": ELECTRA_STANDARD_HYPERPARAMETERS,
-    "mlm": MLM_TEXT_STANDARD_HYPERPARAMETERS,
+    # "mlm": MLM_TEXT_STANDARD_HYPERPARAMETERS,
 }
 
 
@@ -97,7 +97,7 @@ TRAIN_FUNCTIONS: Dict[str, Callable] = {
     "electra": start_train_electra,
     # "mlm": start_train_mlm,
     # "mae": start_train_mae,
-    # "simcse": start_train_simcse,
+    "simcse": start_train_simcse,
 }
 
 
