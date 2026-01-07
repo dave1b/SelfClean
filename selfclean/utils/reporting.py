@@ -129,11 +129,8 @@ def generate_markdown_report(
                     "Score": f"{score:.4f}" if isinstance(score, (int, float)) else score,
                 }
 
-                if issue_type == "off_topic_samples":
-                    row["Category"] = category
-                elif issue_type in ["label_errors", "category_errors"]:
-                    row["Answer Correct"] = true_label
-                    row["Category"] = category
+                row["Answer Correct"] = true_label
+                row["Category"] = category
                 if autocleaned:
                     row["Autoclean Prediction"] = issues.get('auto_issues')[i]
                 if contamination_log_provided:
@@ -220,7 +217,7 @@ def generate_markdown_report(
             f.write(report)
         logger.info(f"Report saved to {path}")
 
-    # display_markdown_report(report)
+    display_markdown_report(report)
     return report
 
 
