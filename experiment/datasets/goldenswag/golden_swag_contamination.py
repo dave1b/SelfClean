@@ -16,7 +16,7 @@ from selfclean.cleaner.issue_manager import IssueTypes
 
 seeded_random = random.Random(42)
 
-class HellaSwagContaminator:
+class GoldenSwagContaminator:
     def __init__(self, contamination_ratios: Dict[IssueTypes, float]):
         self.contamination_ratios = contamination_ratios
         self.contaminated_indices: Set[int] = set()
@@ -138,7 +138,7 @@ class HellaSwagContaminator:
     def _category_contamination(self, file: Path) -> None:
         df = pd.read_json(file, encoding='utf-8')
         contamination_records = []
-        num_to_contaminate = int(len(df) * self.contamination_ratios[IssueTypes.CATEGORY_ERRORS])
+        num_to_contaminate = int(len(df) * self.contamination_ratios[IssueTypes.CATEGORY_ERRORS]) // 4
         uncontaminated_indices = self._get_uncontaminated_indices(df)
         indices = seeded_random.sample(uncontaminated_indices, min(num_to_contaminate, len(uncontaminated_indices)))
 
@@ -164,7 +164,7 @@ class HellaSwagContaminator:
     def _label_contamination(self, file: Path) -> None:
         df = pd.read_json(file, encoding='utf-8')
         contamination_records = []
-        num_to_contaminate = int(len(df) * self.contamination_ratios[IssueTypes.LABEL_ERRORS])
+        num_to_contaminate = int(len(df) * self.contamination_ratios[IssueTypes.LABEL_ERRORS]) // 2
         uncontaminated_indices = self._get_uncontaminated_indices(df)
         indices = seeded_random.sample(uncontaminated_indices, min(num_to_contaminate, len(uncontaminated_indices)))
 
@@ -227,5 +227,5 @@ if __name__ == "__main__":
         IssueTypes.CATEGORY_ERRORS: 0.1,
     }
     file_path = Path("golden_swag_train.json")
-    contaminator = HellaSwagContaminator(contamination_ratios)
+    contaminator = GoldenSwagContaminator(contamination_ratios)
     contaminator.hs_contamination(file_path, contamination_types)
