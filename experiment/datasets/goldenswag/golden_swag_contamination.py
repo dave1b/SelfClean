@@ -138,7 +138,7 @@ class GoldenSwagContaminator:
     def _category_contamination(self, file: Path) -> None:
         df = pd.read_json(file, encoding='utf-8')
         contamination_records = []
-        num_to_contaminate = int(len(df) * self.contamination_ratios[IssueTypes.CATEGORY_ERRORS]) // 4
+        num_to_contaminate = int(len(df) * self.contamination_ratios[IssueTypes.CATEGORY_ERRORS])
         uncontaminated_indices = self._get_uncontaminated_indices(df)
         indices = seeded_random.sample(uncontaminated_indices, min(num_to_contaminate, len(uncontaminated_indices)))
 
@@ -162,9 +162,14 @@ class GoldenSwagContaminator:
         self._save_contamination_results(file, df, contamination_records, IssueTypes.CATEGORY_ERRORS)
 
     def _label_contamination(self, file: Path) -> None:
+        """
+        Because per question 4 answers exist which all can be true or false,
+        contamination would need to be multiplied by 4.
+        Here its multiplied by 2 and in addition afterward 2 labels get swapped, equaling  '* 4'
+        """
         df = pd.read_json(file, encoding='utf-8')
         contamination_records = []
-        num_to_contaminate = int(len(df) * self.contamination_ratios[IssueTypes.LABEL_ERRORS]) // 2
+        num_to_contaminate = int(len(df) * self.contamination_ratios[IssueTypes.LABEL_ERRORS]) * 2
         uncontaminated_indices = self._get_uncontaminated_indices(df)
         indices = seeded_random.sample(uncontaminated_indices, min(num_to_contaminate, len(uncontaminated_indices)))
 
@@ -223,7 +228,7 @@ if __name__ == "__main__":
         IssueTypes.OFF_TOPIC_SAMPLES: 0.05,
         IssueTypes.NEAR_DUPLICATES_Q: 0.05,
         IssueTypes.NEAR_DUPLICATES: 0.05,
-        IssueTypes.LABEL_ERRORS: 0.1,
+        IssueTypes.LABEL_ERRORS: 0.05,
         IssueTypes.CATEGORY_ERRORS: 0.1,
     }
     file_path = Path("golden_swag_train.json")
