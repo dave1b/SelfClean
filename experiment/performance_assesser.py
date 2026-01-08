@@ -9,6 +9,7 @@ import dask.dataframe as dd
 from sklearn.metrics import roc_auc_score, roc_curve
 from selfclean.core.src.utils.plotting import calculate_scores_from_ranking
 
+
 class PerformanceAssesser:
     def __init__(self, prediction: dict, contamination_log: pd.DataFrame):
         self.predictions: dd.DataFrame = dd.read_parquet(prediction['data_path'])
@@ -16,6 +17,7 @@ class PerformanceAssesser:
         self.contamination_log: pd.DataFrame = contamination_log
         self.tp, self.fp, self.fn = None, None, None
         self.tn, self.auc, self.precision = None, None, None
+        self.afe = None
         self.contamination_single_ids: Set[str] = set()
         self.contamination_pair_ids: Set[Tuple[str, str]] = set()
         self.log_dict: dict = {}
@@ -53,7 +55,7 @@ class PerformanceAssesser:
             tp_single = positive_preds[
                 positive_preds['id'].notnull() &
                 positive_preds['id'].astype(str).isin(self.contamination_single_ids)
-            ].shape[0].compute()
+                ].shape[0].compute()
 
         tp_pairs = 0
         if self._has_pairs:
@@ -72,7 +74,7 @@ class PerformanceAssesser:
             fp_single = positive_preds[
                 positive_preds['id'].notnull() &
                 ~positive_preds['id'].astype(str).isin(self.contamination_single_ids)
-            ].shape[0].compute()
+                ].shape[0].compute()
 
         fp_pairs = 0
         if self._has_pairs:
@@ -131,8 +133,47 @@ class PerformanceAssesser:
             packed = np.packbits(self.ranked_labels)
             np.save(path, packed)
 
+    def _calculate_fraction_of_effort(self) -> None:
+        """
+        Calculate Fraction of Effort (FoE) for different inspection thresholds.
+        FoE measures what fraction of all contaminated samples can be found by inspecting
+        only the top-k samples ranked by contamination likelihood.
+
+        For HellaSwag/SelfClean, this shows how much human effort is reduced by using
+        the model's predictions to prioritize inspection.
+        """
+        logger.info("Calculating Fraction of Effort (FoE)...")
+
+        scores = self.predictions['score'].compute()
+        labels = self.ranked_labels
+
+        combined = list(zip(scores, labels))
+        combined_sorted = sorted(combined, key=lambda x: x[0], reverse=True)  # High score first
+        sorted_scores, sorted_labels = zip(*combined_sorted)
+        sorted_labels = np.array(sorted_labels)
+
+        cumulative_contaminated = np.cumsum(sorted_labels)
+        total_contamination = cumulative_contaminated[-1]  # Total contaminated samples
+
+        if total_contamination == 0:
+            logger.warning("No contaminated samples found in the data. FoE calculation aborted.")
+            return
+
+        total_samples = len(sorted_labels)
+
+        k_values = np.arange(1, total_samples + 1)
+        foe_curve = cumulative_contaminated / total_contamination
+
+        self.log_dict['total_contamination'] = total_contamination
+
+        # Calculate area under FoE curve (additional metric)
+        foe_auc = np.trapz(foe_curve, k_values) / total_samples
+        self.afe = foe_auc
+        self.log_dict['foe_auc'] = round(foe_auc, 4)
+
     def plotting(self) -> None:
         self._calculate_ranked_labels()
+        self._calculate_fraction_of_effort()  # Add this line
         calculate_scores_from_ranking(self.ranked_labels, path=self.output_path, log_dict=self.log_dict, show_plots=False, save_plots=True)
 
     def roc_curve(self) -> None:
@@ -176,3 +217,4 @@ class PerformanceAssesser:
         logger.info(f" False Positives: {self.fp}")
         logger.info(f" False Negatives: {self.fn}")
         logger.info(f" Precision: {self.precision:.4f}")
+        logger.info(f" Average Fraction of Effort: {self.afe:.4f}")
