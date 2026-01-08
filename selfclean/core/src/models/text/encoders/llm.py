@@ -43,7 +43,12 @@ def electra_electra():
     return discriminator, tokenizer
 
 def hella_swag_electra():
-    discriminator = AutoModel.from_pretrained("models/Electra_hella_swag")
+    discriminator = AutoModel.from_pretrained("models/Electra_hella_swag/epoch30")
+    tokenizer = AutoTokenizer.from_pretrained("google/electra-base-discriminator")
+    return discriminator, tokenizer
+
+def hella_swag_simcse():
+    discriminator = AutoModel.from_pretrained("models/SimCSE_hella_swag/epoch16")
     tokenizer = AutoTokenizer.from_pretrained("google/electra-base-discriminator")
     return discriminator, tokenizer
 

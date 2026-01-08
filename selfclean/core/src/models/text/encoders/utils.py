@@ -15,6 +15,7 @@ LLM_DICT = {
 
     # HellaSwag fine-tuned models
     "hella_swag_electra": hella_swag_electra,
+    "hella_swag_simcse": hella_swag_simcse,
 
     # SimCSE models
     # General

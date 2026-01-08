@@ -17,7 +17,8 @@ def generate_markdown_report(
     output_path: Optional[Union[str, Path]] = None,
     max_text_length: int = 700,
     wrap_width: int = 50,
-    contamination_log=None
+    contamination_log=None,
+    pooling_type = None
 ) -> str:
     """
     Generate a markdown report for data quality issues.
@@ -170,6 +171,8 @@ def generate_markdown_report(
     report += f"**Dataset name**: {dataset.path.name}\n\n"
     report += f"**Dataset size**: {len(dataset)} samples\n\n"
     report += f"**Model used**: {model_name}\n\n"
+    if pooling_type is not None:
+        report += f"**Pooling Type**: {pooling_type}\n\n"
     if autocleaned:
         report += AutoCleaningMixin.get_hyperparameters() + "\n\n"
     report += f"### Evaluation Metrics:\n\n {metrics.to_markdown(tablefmt='github')} \n\n\n"

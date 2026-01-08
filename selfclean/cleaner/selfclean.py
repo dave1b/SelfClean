@@ -695,6 +695,6 @@ class SelfClean:
 
             md = generate_markdown_report(issue_manager=issue_manager, dataset=dataset, top_n=self.cleaner.plot_top_N,
                                           output_path=self.output_path, model_name=hyperparameters["model"]["base_model"],
-                                          contamination_log=contamination_log)
+                                          contamination_log=contamination_log, pooling_type=pooling_type)
 
             return issue_manager, prediction_parquet
