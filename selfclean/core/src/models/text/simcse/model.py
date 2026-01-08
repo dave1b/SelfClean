@@ -13,7 +13,7 @@ class SimCSEModel(nn.Module):
         # Projection MLP
         self.dense1 = nn.Linear(n_feat, n_feat)
         self.dense2 = nn.Linear(n_feat, n_feat)
-        self.dropout = nn.Dropout(0.1)  # Match backbone dropout
+        self.dropout = nn.Dropout(0.1)
         nn.init.xavier_uniform_(self.dense1.weight)
         nn.init.xavier_uniform_(self.dense2.weight)
 

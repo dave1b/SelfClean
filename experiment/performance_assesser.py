@@ -173,7 +173,7 @@ class PerformanceAssesser:
 
     def plotting(self) -> None:
         self._calculate_ranked_labels()
-        self._calculate_fraction_of_effort()  # Add this line
+        self._calculate_fraction_of_effort()
         calculate_scores_from_ranking(self.ranked_labels, path=self.output_path, log_dict=self.log_dict, show_plots=False, save_plots=True)
 
     def roc_curve(self) -> None:
