@@ -477,3 +477,111 @@ def plot_pca_3d_side_by_side(
 
     fig.show()
     # return embeddings_pca_3d, embeddings_finetuned_pca_3d
+
+
+
+from enum import Enum
+import torch
+import pandas as pd
+import plotly.express as px
+from sklearn.decomposition import PCA
+
+class EmbeddingPoolingType(Enum):
+    CLS = "cls"
+    MEAN = "mean_pooling"
+    FIRST_LAST_AVERAGE = "first_last_average"
+    MAX = "max"
+
+def plot_pca_3d_combined(
+    embeddings_cls: Tensor,
+    embeddings_mean: Tensor,
+    embeddings_first_last: Tensor,
+    embeddings_max: Tensor,
+    df: pd.DataFrame,
+    color_label="category",
+    model_name="",
+) -> Tensor:
+    """Plot 3D PCA visualization comparing embeddings from different pooling types.
+
+    Args:
+        embeddings_cls: Input embeddings tensor (CLS pooling)
+        embeddings_mean: Input embeddings tensor (Mean pooling)
+        embeddings_first_last: Input embeddings tensor (First-Last Average pooling)
+        embeddings_max: Input embeddings tensor (Max pooling)
+        df: DataFrame containing 'correct', 'category', 'text', and 'task_id' columns
+        color_label: Column name for coloring points (default: "category")
+        model_name: Name of the model for legend
+
+    Returns:
+        Tensor: 3D PCA embeddings
+    """
+    # Concatenate all embeddings and create a DataFrame with pooling type info
+    embeddings_all = torch.cat([embeddings_cls, embeddings_mean, embeddings_first_last, embeddings_max], dim=0)
+    df_all = pd.concat([df] * 4, ignore_index=True)
+    df_all["pooling_type"] = (
+        [EmbeddingPoolingType.CLS.value] * len(df) +
+        [EmbeddingPoolingType.MEAN.value] * len(df) +
+        [EmbeddingPoolingType.FIRST_LAST_AVERAGE.value] * len(df) +
+        [EmbeddingPoolingType.MAX.value] * len(df)
+    )
+
+    # Fit PCA for 3D
+    pca = PCA(n_components=3, random_state=42)
+    embeddings_pca_3d = pca.fit_transform(embeddings_all)
+
+    # Create DataFrame with formatted text for hover
+    final_df = pd.DataFrame({
+        "x": embeddings_pca_3d[:, 0],
+        "y": embeddings_pca_3d[:, 1],
+        "z": embeddings_pca_3d[:, 2],
+        "correct": df_all["correct"],
+        "category": df_all["category"],
+        "task_id": df_all["task_id"],
+        "pooling_type": df_all["pooling_type"],
+        "off_topic": df_all["off_topic"],
+        "formatted_text": df_all["text"].apply(lambda x: '<br>'.join(x[i:i + 50] for i in range(0, len(x), 50))),
+    })
+
+    # Create 3D Plotly figure
+    fig = px.scatter_3d(
+        final_df,
+        x="x",
+        y="y",
+        z="z",
+        color="pooling_type",  # Color by pooling type
+        symbol="pooling_type",  # Symbol by pooling type (optional)
+        custom_data=["category", "correct", "pooling_type", "task_id", "formatted_text", "off_topic"],
+        title=f"PCA: (PC1: {pca.explained_variance_ratio_[0]:.2f}, PC2: {pca.explained_variance_ratio_[1]:.2f}, PC3: {pca.explained_variance_ratio_[2]:.2f}), {color_label[0].upper() + color_label[1:]} (Color)",
+        color_discrete_sequence=px.colors.qualitative.Plotly
+    )
+
+    # Customize legend
+    fig.update_traces(showlegend=True)
+    fig.update_layout(
+        legend_title_text="Pooling Type",
+        legend=dict(
+            itemsizing='constant',
+            orientation="h",
+            yanchor="bottom",
+            y=1.02,
+            xanchor="right",
+            x=1
+        ),
+        scene=dict(
+            xaxis_title=f"PC1 ({pca.explained_variance_ratio_[0]*100:.1f}%)",
+            yaxis_title=f"PC2 ({pca.explained_variance_ratio_[1]*100:.1f}%)",
+            zaxis_title=f"PC3 ({pca.explained_variance_ratio_[2]*100:.1f}%)"
+        )
+    )
+
+    # Update hover template
+    fig.update_traces(
+        hovertemplate="<b>Category:</b> %{customdata[0]}<br>" +
+                      "<b>Correct:</b> %{customdata[1]}<br>" +
+                      "<b>Pooling Type:</b> %{customdata[2]}<br>" +
+                      "<b>Task ID:</b> %{customdata[3]}<br>" +
+                      "<b>Off-Topic:</b> %{customdata[5]}<br><br>" +
+                      "<b>Text:</b><br>%{customdata[4]}<extra></extra>"
+    )
+    fig.update_layout(width=1000, height=700)
+    fig.show()
